@@ -14,4 +14,6 @@ from input_module import *
 from measure_accuracy import *
 from visualizing_dfg import *
 
-print("hello world")
+dfg = read_xes("sample_data/manufacurer.xes")
+
+print(dfg)
