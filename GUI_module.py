@@ -93,8 +93,8 @@ def view_model():
 #frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
 
 
-#the shareprom title
-title= tk.Label(root, text="Shareprom-  a Secure Multi-party computation system\n for Inter-organizational Process Mining", font='Helvetica 14 bold', bg="white")
+#the Amun title
+title= tk.Label(root, text="Amun", font='Helvetica 14 bold', bg="white")
 title.pack()
 
 '''open file Button'''
