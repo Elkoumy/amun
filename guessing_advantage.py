@@ -1,9 +1,25 @@
 """
 This module will include the guessing advantage implementation.
 """
+from math import log, exp
 
 def calculate_epsilon_from_delta(dfg,delta):
-    epsilon =0
+    # we will eventually have different epsilons for frequency and for time
+    # we can output two epsilons, or have two different functions
+    # in any case, it is safe to take the minimum of these epsilons if DP interface takes only one
+
+    #for frequencies, we have r = 1
+    r = 1
+
+    # TODO need to learn how to compute these things from dfg format
+    # for times, we need to compute r as the maximum possible time between two subsequent events
+    # we can get even better results if:
+    #     1) we have event log instead of dfg
+    #     2) we compute a diffrent epsilon for different edges of dfg
+    # r = ....
+
+    p = (1 - delta) / 2
+    epsilon = - log(p / (1 - p) * (1 / (delta + p) - 1)) / log(exp(1)) * (1 / r)
 
     return epsilon
 
