@@ -16,3 +16,5 @@ from visualizing_dfg import *
 
 # DFG as a counter object
 dfg = read_xes("sample_data/manufacurer.xes")
+print( earth_mover_dist(dfg,dfg))
+
