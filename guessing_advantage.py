@@ -3,6 +3,16 @@ This module will include the guessing advantage implementation.
 """
 from math import log, exp
 
+from enum import Enum
+class AggregateType(Enum):
+    SUM = 1
+    AVG = 2
+    MIN = 3
+    MAX = 4
+
+
+
+
 def calculate_epsilon_from_delta(dfg,delta):
     # we will eventually have different epsilons for frequency and for time
     # we can output two epsilons, or have two different functions
@@ -32,6 +42,11 @@ def calculate_epsilon_freq(dfg,delta):
     return epsilon, sens
 
 
+def calculate_epsilon_time(dfg,delta, aggregate_type):
+    epsilon =0
+    sens=1
+
+    return epsilon , sens
 def calculate_epsilon_from_accuracy(dfg,accuracy):
     epsilon=0
 
