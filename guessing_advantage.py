@@ -23,8 +23,18 @@ def calculate_epsilon_from_delta(dfg,delta):
 
     return epsilon
 
+def calculate_epsilon_freq(dfg,delta):
+    epsilon =0
+    sens=1
+    p=(1-delta)/2
+    R_ij=1
+    epsilon = -(log(  (1-p)/p * (1/(delta*p) -1)  )) /(R_ij)
+    return epsilon, sens
+
 
 def calculate_epsilon_from_accuracy(dfg,accuracy):
     epsilon=0
 
     return epsilon
+
+
