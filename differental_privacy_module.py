@@ -23,8 +23,7 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     epsilon_freq,senstivity_freq=calculate_epsilon_freq(dfg_freq,delta)
     epsilon_time,senstivity_time=calculate_epsilon_time(dfg_time,delta,precision, aggregate_type)
 
-    #TODO fix the sign problem in epsilon values
-    epsilon_freq=abs(epsilon_freq)
+
 
 
     # adding laplace noise to DFG frequencies
@@ -41,12 +40,12 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     dfg_time= calculate_time_dfg(dfg_time,aggregate_type)
     dfg_time_new = dfg_time
     for key in dfg_time_new.keys():
-        #TODO remove abs after fixing the sign of epsilon
-        laplace_mechanism.set_sensitivity(senstivity_time).set_bounds(0, sys.maxsize).set_epsilon(abs(epsilon_time[key]))
+
+        laplace_mechanism.set_sensitivity(senstivity_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
         dfg_time_new[key]= laplace_mechanism.randomise(dfg_time_new[key])
 
 
-    #TODO Calculate accuracy
+    #TODO Calculate earth moving distance
 
     return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, accuracy
 
