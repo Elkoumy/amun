@@ -62,8 +62,9 @@ def get_dfg_time(data):
     dfg_time={}
     for index, value in zip(data['index'], data['data']):
         if index in dfg_time.keys():
-            dfg_time[index].append(value)
+            dfg_time[index].append(value[0])
         else:
-            dfg_time[index]=[value]
+            dfg_time[index]=[value[0]]
+
 
     return dfg_time

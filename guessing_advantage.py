@@ -4,6 +4,8 @@ This module will include the guessing advantage implementation.
 from math import log, exp
 
 from enum import Enum
+from statsmodels.distributions.empirical_distribution import ECDF
+
 class AggregateType(Enum):
     SUM = 1
     AVG = 2
@@ -36,12 +38,14 @@ def calculate_epsilon_freq(dfg,delta):
     sens=1
     p=(1-delta)/2
     R_ij=1  # from the discussion with Alisa
+
+    #TODO something wrong with the following equation. It returns negative numbers
     epsilon = -(log(  (1-p)/p * (1/(delta*p) -1)  )) /(R_ij)
     return epsilon, sens
 
 
-def calculate_epsilon_time(dfg,delta, aggregate_type):
-    epsilon =0
+def calculate_epsilon_time(dfg,delta,precision, aggregate_type):
+    epsilon ={}
     sens=1
     n=1 # length of the database
 
@@ -53,13 +57,22 @@ def calculate_epsilon_time(dfg,delta, aggregate_type):
     else:
         assert "Wrong aggregate type"
 
+    for x in dfg.keys():
+        epsilon[x] = calculate_epsilon_per_pair(dfg[x],delta,precision)
 
     return epsilon , sens
 
-def calculate_epsilon_per_pair(values, R_ij, presision):
+def calculate_epsilon_per_pair(values,delta, precision):
+    values = [0.0, 0.2, .4, .6, .7, 10, 20, 100, 400, 500, 1000, 2000]
+    values = sorted(values)
+    R_ij=max(values)
     epsilon =0
+    r_ij=R_ij*precision
 
 
+    cdf= ECDF(values)
+    temp=calculate_cdf(cdf,20)
+    print(temp)
     return epsilon
 
 def calculate_epsilon_from_accuracy(dfg,accuracy):
@@ -68,3 +81,12 @@ def calculate_epsilon_from_accuracy(dfg,accuracy):
     return epsilon
 
 
+def calculate_cdf(cdf, val):
+
+    cur_idx= 0
+    for  idx,i in enumerate(cdf.x):
+        if val>i :
+            cur_idx+=1
+            if val <cdf.x[idx+1]:
+                cur_idx-=1
+    return cdf.y[cur_idx]
