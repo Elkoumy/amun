@@ -9,7 +9,7 @@
 '''
 
 from differental_privacy_module import *
-from GUI_module import *
+# from GUI_module import *
 from input_module import *
 from measure_accuracy import *
 from visualizing_dfg import *

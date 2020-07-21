@@ -11,8 +11,6 @@ class AggregateType(Enum):
     MAX = 4
 
 
-
-
 def calculate_epsilon_from_delta(dfg,delta):
     # we will eventually have different epsilons for frequency and for time
     # we can output two epsilons, or have two different functions
@@ -37,7 +35,7 @@ def calculate_epsilon_freq(dfg,delta):
     epsilon =0
     sens=1
     p=(1-delta)/2
-    R_ij=1
+    R_ij=1  # from the discussion with Alisa
     epsilon = -(log(  (1-p)/p * (1/(delta*p) -1)  )) /(R_ij)
     return epsilon, sens
 
@@ -45,8 +43,25 @@ def calculate_epsilon_freq(dfg,delta):
 def calculate_epsilon_time(dfg,delta, aggregate_type):
     epsilon =0
     sens=1
+    n=1 # length of the database
+
+    """ calculating sensitivity based on type of aggregate"""
+    if aggregate_type== AggregateType.AVG:
+        sens=1/n
+    elif aggregate_type== AggregateType.MAX or aggregate_type== AggregateType.MIN or aggregate_type== AggregateType.SUM:
+        sens=1
+    else:
+        assert "Wrong aggregate type"
+
 
     return epsilon , sens
+
+def calculate_epsilon_per_pair(values, R_ij, presision):
+    epsilon =0
+
+
+    return epsilon
+
 def calculate_epsilon_from_accuracy(dfg,accuracy):
     epsilon=0
 
