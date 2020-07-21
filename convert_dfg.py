@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from math import sqrt
 from collections import Counter
-
+from differental_privacy_module import AggregateType
 
 def convert_DFG_to_dataframe(out_dir,freq,time):
     event_count =int(sqrt(len(freq)))
@@ -37,3 +37,20 @@ def convert_conter_to_list(counter, col_names):
                 res.append(0)
     return res
     return res
+
+
+def calculate_time_dfg(dfg_time, aggregation_type):
+    dfg_time_counter=Counter()
+    for key in dfg_time.keys():
+        res=0
+        if aggregation_type==AggregateType.SUM:
+            res=sum(dfg_time[key])
+        elif aggregation_type==AggregateType.MIN:
+            res=min(dfg_time[key])
+        elif aggregation_type==AggregateType.MAX:
+            res=max(dfg_time[key])
+        elif aggregation_type==AggregateType.AVG:
+            res=sum(dfg_time[key])/len(dfg_time[key])
+        dfg_time_counter[key]=res
+
+    return dfg_time_counter

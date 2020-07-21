@@ -7,10 +7,11 @@ The module has two main functionalities:
 """
 from guessing_advantage import calculate_epsilon_freq , calculate_epsilon_from_delta, calculate_epsilon_time, AggregateType
 import diffprivlib.mechanisms as privacyMechanisms
+from convert_dfg import calculate_time_dfg
 import sys
 
 
-def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision):
+def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggregate_type=AggregateType.SUM):
     """
     This method adds the differential privacy to the DFG of both time and frequencies.
         * It calculates the epsilon using the guessing advantage technique.
@@ -20,7 +21,7 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision):
     accuracy=1
     # calculate epsilon
     epsilon_freq,senstivity_freq=calculate_epsilon_freq(dfg_freq,delta)
-    epsilon_time,senstivity_time=calculate_epsilon_time(dfg_time,delta,precision, aggregate_type=AggregateType.SUM)
+    epsilon_time,senstivity_time=calculate_epsilon_time(dfg_time,delta,precision, aggregate_type)
 
     #TODO fix the sign problem in epsilon values
     epsilon_freq=abs(epsilon_freq)
@@ -35,9 +36,20 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision):
         dfg_freq_new[key]= laplace_mechanism.randomise(dfg_freq_new[key])
 
     # adding laplace noise to DFG time
+
+    # calculate the DFG for the time
+    dfg_time= calculate_time_dfg(dfg_time,aggregate_type)
+    dfg_time_new = dfg_time
+    for key in dfg_time_new.keys():
+        #TODO remove abs after fixing the sign of epsilon
+        laplace_mechanism.set_sensitivity(senstivity_time).set_bounds(0, sys.maxsize).set_epsilon(abs(epsilon_time[key]))
+        dfg_time_new[key]= laplace_mechanism.randomise(dfg_time_new[key])
+
+
     #TODO Calculate accuracy
 
-    return dfg_freq_new, dfg_time, epsilon_freq,epsilon_time, accuracy
+    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, accuracy
+
 
 
 
