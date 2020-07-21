@@ -16,6 +16,6 @@ from visualizing_dfg import *
 
 # DFG as a counter object
 dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
-dfg_freq, dfg_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.1,precision=0.1)
+dfg_freq, dfg_time, epsilon_freq,epsilon_time, accuracy = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.1,precision=0.1)
 # print( earth_mover_dist(dfg,dfg))
 

@@ -15,7 +15,8 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision):
     #TODO adding laplace noise
 
     #TODO Calculate accuracy
-    return dfg_freq, dfg_time, epsilon, accuracy
+
+    return dfg_freq, dfg_time, epsilon_freq,epsilon_time, accuracy
 
 
 

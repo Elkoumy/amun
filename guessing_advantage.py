@@ -66,13 +66,17 @@ def calculate_epsilon_per_pair(values,delta, precision):
     values = [0.0, 0.2, .4, .6, .7, 10, 20, 100, 400, 500, 1000, 2000]
     values = sorted(values)
     R_ij=max(values)
-    epsilon =0
+    epsilons =[]
     r_ij=R_ij*precision
-
-
     cdf= ECDF(values)
-    temp=calculate_cdf(cdf,20)
-    print(temp)
+
+    for t_k in values:
+        p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
+        eps= -(log(  (1-p_k)/p_k * (1/(delta*p_k) -1)  )) /(R_ij)
+        epsilons.append(eps)
+
+    epsilon=min(epsilons)
+
     return epsilon
 
 def calculate_epsilon_from_accuracy(dfg,accuracy):
@@ -84,9 +88,10 @@ def calculate_epsilon_from_accuracy(dfg,accuracy):
 def calculate_cdf(cdf, val):
 
     cur_idx= 0
-    for  idx,i in enumerate(cdf.x):
+    for  idx,i in enumerate(cdf.x[:-1]):
         if val>i :
             cur_idx+=1
+
             if val <cdf.x[idx+1]:
                 cur_idx-=1
     return cdf.y[cur_idx]
