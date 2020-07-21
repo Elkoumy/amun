@@ -21,11 +21,8 @@ def read_xes(xes_file):
     log = xes_import_factory.apply(xes_file)
     data=get_dataframe_from_event_stream(log)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
-    # from pm4py.visualization.dfg import visualizer as dfg_visualization
-    # gviz = dfg_visualization.apply(dfg, log=log, variant=dfg_visualization.Variants.FREQUENCY)
-    # dfg_visualization.view(gviz)
     dfg_time =get_dfg_time(data)
-    return dfg_freq
+    return dfg_freq,dfg_time
 
 
 def get_dfg_time(data):
