@@ -9,7 +9,8 @@ from guessing_advantage import calculate_epsilon_freq , calculate_epsilon_from_d
 import diffprivlib.mechanisms as privacyMechanisms
 from convert_dfg import calculate_time_dfg
 import sys
-
+from measure_accuracy import earth_mover_dist
+from collections import Counter
 
 def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggregate_type=AggregateType.SUM):
     """
@@ -30,23 +31,24 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     laplace_mechanism = privacyMechanisms.LaplaceBoundedDomain()
     laplace_mechanism.set_sensitivity(senstivity_freq).set_bounds(0, sys.maxsize).set_epsilon(epsilon_freq)
 
-    dfg_freq_new = dfg_freq
-    for key in dfg_freq_new.keys():
-        dfg_freq_new[key]= laplace_mechanism.randomise(dfg_freq_new[key])
+
+    dfg_freq_new = Counter()
+    for key in dfg_freq.keys():
+        dfg_freq_new[key]= laplace_mechanism.randomise(dfg_freq[key])
 
     # adding laplace noise to DFG time
 
     # calculate the DFG for the time
     dfg_time= calculate_time_dfg(dfg_time,aggregate_type)
-    dfg_time_new = dfg_time
-    for key in dfg_time_new.keys():
-
+    dfg_time_new = Counter()
+    for key in dfg_time.keys():
         laplace_mechanism.set_sensitivity(senstivity_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
-        dfg_time_new[key]= laplace_mechanism.randomise(dfg_time_new[key])
+        dfg_time_new[key]= laplace_mechanism.randomise(dfg_time[key])
 
 
-    #TODO Calculate earth moving distance
-
+    # Calculate earth moving distance
+    emd_freq=earth_mover_dist(dfg_freq,dfg_freq_new)
+    emd_time=earth_mover_dist(dfg_time,dfg_time_new)
     return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time
 
 
