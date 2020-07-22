@@ -47,7 +47,7 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
 
     #TODO Calculate earth moving distance
 
-    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, accuracy
+    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time
 
 
 

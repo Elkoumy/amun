@@ -39,8 +39,6 @@ def calculate_epsilon_freq(dfg,delta):
     p=(1.0-delta)/2.0
     R_ij=1.0  # from the discussion with Alisa
 
-    #TODO something wrong with the following equation. It returns negative numbers
-    # epsilon = -(log(  (1-p)/p * (1/(delta*p) -1)  )) /(R_ij)
     epsilon = - log(p / (1.0 - p) * (1.0 / (delta + p) - 1)) / log(exp(1.0)) * (1.0 / R_ij)
     return epsilon, sens
 
@@ -70,16 +68,27 @@ def calculate_epsilon_per_pair(values,delta, precision):
     epsilons =[]
     r_ij=R_ij*precision
     cdf= ECDF(values)
-    #TODO fix the ECDF when all the values are equal.
-    for t_k in values:
-        p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
-        eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))
-        # eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
-        # eps= -(log(  (1-p_k)/p_k * (1/(delta*p_k) -1)  )) /(R_ij)
-        epsilons.append(eps)
 
-    epsilon=min(epsilons)
 
+    flag=1
+    prev=values[0]
+    for i in values:
+        if i != prev:
+            flag=0
+        prev = i
+
+    if not flag:
+        for t_k in values:
+            p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
+            # eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))
+            eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
+            # eps= -(log(  (1-p_k)/p_k * (1/(delta*p_k) -1)  )) /(R_ij)
+            epsilons.append(eps)
+
+        epsilon=min(epsilons)
+    else:
+        # TODO fix the ECDF when all the values are equal.
+        epsilon=1
     return epsilon
 
 def calculate_epsilon_from_accuracy(dfg,accuracy):
