@@ -5,12 +5,13 @@ The module has two main functionalities:
     * Take delta as input, then calculate both epsilon and accuracy correlated with it.
     * Take accuracy as input, then calculate both epsilon and the delta (risk) correlated with it.
 """
-from guessing_advantage import calculate_epsilon_freq , calculate_epsilon_from_delta, calculate_epsilon_time, AggregateType
+from guessing_advantage import calculate_epsilon_freq , calculate_epsilon_from_distance_freq, calculate_epsilon_from_distance_time, calculate_epsilon_time, AggregateType
 import diffprivlib.mechanisms as privacyMechanisms
 from convert_dfg import calculate_time_dfg
 import sys
 from measure_accuracy import earth_mover_dist
 from collections import Counter
+from math import log,exp ,sqrt
 
 def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggregate_type=AggregateType.SUM):
     """
@@ -54,13 +55,10 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
 
 
 
-def differential_privacy_with_accuracy( dfg_freq, dfg_time, accuracy):
-    epsilon=1
-    delta=1
+def differential_privacy_with_accuracy( dfg_freq, dfg_time, distance,aggregate_type=AggregateType.SUM):
 
-    # TODO calculate epsilon
+    epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
+    epsilon_time,  delta_time = calculate_epsilon_from_distance_time( dfg_time, distance, AggregateType.SUM)
 
-    # TODO adding laplace noise
-
-    # TODO Calculate delta ( the risk)
-    return dfg_freq, dfg_time, epsilon, delta
+    # TODO apply laplace noise and return the noisfied version of the DFG.
+    return dfg_freq, dfg_time, epsilon_freq, epsilon_time, delta_freq , delta_time

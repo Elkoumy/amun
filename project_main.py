@@ -15,7 +15,15 @@ from input_module import *
 
 # DFG as a counter object
 dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
-dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.1,precision=0.1)
-print("EMD for frequency is "+ str(emd_freq))
-print("EMD for time is "+ str(emd_time))
+emd_freq_tot=0
+emd_time_tot=0
+for i in range(0,10):
+    dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.05,precision=0.1)
+    # print("EMD for frequency is "+ str(emd_freq))
+    # print("EMD for time is "+ str(emd_time))
+    emd_freq_tot+=emd_freq
+    emd_time_tot+= emd_time
+
+print("avg EMD for freq is " + str(emd_freq_tot/10))
+print("avg EMD for time is " + str(emd_time_tot/10))
 
