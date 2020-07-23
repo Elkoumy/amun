@@ -1,7 +1,7 @@
 """
 This module will include the guessing advantage implementation.
 """
-from math import log, exp,sqrt
+from math import log, exp,sqrt,inf
 
 from enum import Enum
 from statsmodels.distributions.empirical_distribution import ECDF
@@ -94,8 +94,6 @@ def calculate_epsilon_per_pair(values,delta, precision):
     return epsilon
 
 def calculate_epsilon_from_distance_freq(dfg_freq, distance):
-    epsilon = 1
-    delta = 1
     beta = 0.05
     sens_freq = 1
     # for frequencies, we have r = 1
@@ -105,21 +103,22 @@ def calculate_epsilon_from_distance_freq(dfg_freq, distance):
     epsilon_freq = sens_freq / distance * log(1 / beta)
 
     #  Calculate delta ( the risk) from guessing advantage equation
-    delta_freq = (1 - sqrt(exp(r_freq * epsilon_freq))) / (1 + sqrt(exp(r_freq * epsilon_freq)))
+    # TODO check the validity if the following
+    delta_freq = (1 - sqrt(exp(-r_freq * epsilon_freq))) / (1 + sqrt(exp(-r_freq * epsilon_freq)))
 
     return  epsilon_freq, delta_freq
 
 
 def calculate_epsilon_from_distance_time( dfg_time, distance, aggregate_type=AggregateType.SUM):
-    epsilon = 1
-    delta = 1
     beta = 0.05
-    sens_freq = 1
-    sens_time = 1
-    # for frequencies, we have r = 1
-    r_freq = 1
 
-    r_time = 1
+    # TODO check the validity of the following
+    r_time=-inf
+    for x in dfg_time.keys():
+        if r_time<max(dfg_time[x]):
+            r_time=max(dfg_time[x])
+
+    sens_time = 1
     """ calculating sensitivity based on type of aggregate"""
     if aggregate_type == AggregateType.AVG:
         sens_time = 1 / len(dfg_time[0])
@@ -127,16 +126,17 @@ def calculate_epsilon_from_distance_time( dfg_time, distance, aggregate_type=Agg
         sens_time = 1
     else:
         assert "Wrong aggregate type"
+
     #  calculate epsilon
-    epsilon_freq = sens_freq / distance * log(1 / beta)
     # TODO check the write equation for time
     epsilon_time = sens_time / distance * log(1 / beta)
 
     #  Calculate delta ( the risk) from guessing advantage equation
-    delta_freq = (1 - sqrt(exp(r_freq * epsilon_freq))) / (1 + sqrt(exp(r_freq * epsilon_freq)))
 
-    delta_time = (1 - sqrt(exp(r_time * epsilon_time))) / (1 + sqrt(exp(r_time * epsilon_time)))
-    return  epsilon, delta_freq, delta_time
+    delta_time = (1 - sqrt(exp(-r_time * epsilon_time))) / (1 + sqrt(exp(-r_time * epsilon_time)))
+
+
+    return  epsilon_time,  delta_time
 
 
 def calculate_cdf(cdf, val):

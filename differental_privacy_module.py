@@ -59,6 +59,6 @@ def differential_privacy_with_accuracy( dfg_freq, dfg_time, distance,aggregate_t
 
     epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
     epsilon_time,  delta_time = calculate_epsilon_from_distance_time( dfg_time, distance, AggregateType.SUM)
-
     # TODO apply laplace noise and return the noisfied version of the DFG.
+
     return dfg_freq, dfg_time, epsilon_freq, epsilon_time, delta_freq , delta_time
