@@ -21,7 +21,7 @@ def calculate_epsilon_from_delta(dfg,delta):
     #for frequencies, we have r = 1
     r = 1
 
-    # TODO need to learn how to compute these things from dfg format
+    #  need to learn how to compute these things from dfg format
     # for times, we need to compute r as the maximum possible time between two subsequent events
     # we can get even better results if:
     #     1) we have event log instead of dfg
