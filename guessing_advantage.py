@@ -42,6 +42,11 @@ def calculate_epsilon_freq(dfg,delta):
     epsilon = - log(p / (1.0 - p) * (1.0 / (delta + p) - 1)) / log(exp(1.0)) * (1.0 / R_ij)
 
     print("distance from the eq= "+str(sens/epsilon* log(1/0.05)))
+
+    # print("Validation of the delta value")
+    # delta_freq = (1 - sqrt(exp(-R_ij * epsilon))) / (1 + sqrt(exp(-R_ij * epsilon)))
+    # print("for the input delta "+str(delta)+ "   the calculated epsilon is "+str(epsilon)+" the calculated delta  is "+str(delta_freq))
+    # print("")
     return epsilon, sens
 
 
