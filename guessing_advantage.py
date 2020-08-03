@@ -94,7 +94,8 @@ def calculate_epsilon_per_pair(values,delta, precision):
 
         epsilon=min(epsilons)
     else:
-        # TODO fix the ECDF when all the values are equal.
+        #  fix the ECDF when all the values are equal.
+        # after the discussion, we decided to let the user know about that issue and maybe has can handle it on his own.
         epsilon=1
     return epsilon
 
@@ -108,7 +109,7 @@ def calculate_epsilon_from_distance_freq(dfg_freq, distance):
     epsilon_freq = sens_freq / distance * log(1 / beta)
 
     #  Calculate delta ( the risk) from guessing advantage equation
-    # TODO check the validity if the following
+    #  the following equation is validated by calculations
     delta_freq = (1 - sqrt(exp(-r_freq * epsilon_freq))) / (1 + sqrt(exp(-r_freq * epsilon_freq)))
 
     return  epsilon_freq, delta_freq
@@ -117,7 +118,7 @@ def calculate_epsilon_from_distance_freq(dfg_freq, distance):
 def calculate_epsilon_from_distance_time( dfg_time, distance, aggregate_type=AggregateType.SUM):
     beta = 0.05
 
-    # TODO check the validity of the following
+    # TODO update the below to reflect the new equation of delta for the time per time instance. Then take the maximum delta from all the instances.
     r_time=-inf
     for x in dfg_time.keys():
         if r_time<max(dfg_time[x]):
@@ -133,7 +134,7 @@ def calculate_epsilon_from_distance_time( dfg_time, distance, aggregate_type=Agg
         assert "Wrong aggregate type"
 
     #  calculate epsilon
-    # TODO check the write equation for time
+    # TODO update the equation to be calculated per instance first as p is different from frequency.
     epsilon_time = sens_time / distance * log(1 / beta)
 
     #  Calculate delta ( the risk) from guessing advantage equation

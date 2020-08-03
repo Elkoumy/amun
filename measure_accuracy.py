@@ -8,7 +8,8 @@ In this module, we support the following measures:
 from scipy.stats import wasserstein_distance
 
 def earth_mover_dist(dfg1, dfg2):
-    # TODO need to consider for zero frequncies as the counter object don't include it
+    #  need to consider for zero frequncies as the counter object don't include it
+    # after the discussion, we decided to let the user know about that issue and maybe has can handle it on his own.
     v1=list(dfg1.values())
     v2=list(dfg2.values())
 
