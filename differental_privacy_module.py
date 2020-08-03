@@ -11,6 +11,9 @@ from convert_dfg import calculate_time_dfg
 import sys
 from measure_accuracy import earth_mover_dist
 from collections import Counter
+from scipy.stats import laplace
+# from diffprivlib.mechanisms import Laplace
+
 from math import log,exp ,sqrt
 
 def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggregate_type=AggregateType.SUM):
@@ -41,6 +44,7 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
 def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
     laplace_mechanism = privacyMechanisms.LaplaceBoundedDomain()
 
+
     sens_time = 1
     """ calculating sensitivity based on type of aggregate"""
     if aggregate_type == AggregateType.AVG:
@@ -58,11 +62,22 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
         for key in dfg_time.keys():
             laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
             dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+
+            # laplace = Laplace()
+            # laplace.set_epsilon(epsilon_time[key])
+            # laplace.set_sensitivity(sens_time)
+            # dfg_time_new[key]=laplace.randomise(dfg_time[key])
     else:
         # single epsilon value for the entire time dfg
         for key in dfg_time.keys():
             laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time)
             dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+
+            # laplace = Laplace()
+            # laplace.set_epsilon(epsilon_time)
+            # laplace.set_sensitivity(sens_time)
+            # dfg_time_new[key]=laplace.randomise(dfg_time[key])
+
     return dfg_time, dfg_time_new
 
 
@@ -73,7 +88,16 @@ def add_laplace_noise_freq(dfg_freq, epsilon_freq):
     laplace_mechanism.set_sensitivity(senstivity_freq).set_bounds(0, sys.maxsize).set_epsilon(epsilon_freq)
     dfg_freq_new = Counter()
     for key in dfg_freq.keys():
-        dfg_freq_new[key] = laplace_mechanism.randomise(dfg_freq[key])
+        # dfg_freq_new[key] = laplace_mechanism.randomise(dfg_freq[key])
+
+        # laplace = Laplace()
+        # laplace.set_epsilon(epsilon_freq)
+        # laplace.set_sensitivity(senstivity_freq)
+        # dfg_freq_new[key] = laplace.randomise(dfg_freq[key])
+
+        rv = laplace()
+        dfg_freq_new[key] = dfg_freq[key]+laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0]
+
     return dfg_freq_new
 
 

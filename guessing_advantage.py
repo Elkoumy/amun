@@ -100,7 +100,7 @@ def calculate_epsilon_per_pair(values,delta, precision):
     return epsilon
 
 def calculate_epsilon_from_distance_freq(dfg_freq, distance):
-    beta = 0.05
+    beta = 0.01
     sens_freq = 1
     # for frequencies, we have r = 1
     r_freq = 1
