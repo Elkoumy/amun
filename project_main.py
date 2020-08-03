@@ -24,7 +24,7 @@ dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
 
 # dfg_freq=dfg_freq_new
 
-emd_freq_tot=0
+emd_freq_tot=0                                                                                                    
 emd_time_tot=0
 for i in range(0,100):
     dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.05,precision=0.1)
