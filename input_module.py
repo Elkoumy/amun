@@ -30,6 +30,9 @@ def get_dfg_time(data):
     Returns the DFG matrix as a dictionary of lists. The key is the pair of acitivities
     and the value is a list of values
     """
+
+    # taking only the complete event to avoid ambiuoutiy
+    data=data.where(data["lifecycle:transition"]=="complete")
     #moving first row to the last one
     temp_row= data.iloc[0]
     data2=data.copy()
@@ -49,8 +52,8 @@ def get_dfg_time(data):
     data=data[data['case:concept:name'] == data['case:concept:name_2']]
 
     #calculating time difference
-    data['time:timestamp']=pd.to_datetime(data['time:timestamp'])
-    data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'])
+    data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
+    data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
     data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')
 
     #reformating the data to build the dfg

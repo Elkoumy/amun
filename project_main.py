@@ -16,13 +16,6 @@ from input_module import *
 # DFG as a counter object
 dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
 
-# dfg_freq_new = Counter()
-
-# for key in dfg_freq.keys():
-#     dfg_freq_new[key] = dfg_freq[key]
-#     break
-
-# dfg_freq=dfg_freq_new
 
 emd_freq_tot=0                                                                                                    
 emd_time_tot=0
