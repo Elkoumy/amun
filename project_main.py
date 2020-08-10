@@ -34,7 +34,7 @@ for i in range(0,100):
     emd_time_tot+= emd_time
 
 print("avg EMD for freq is " + str(emd_freq_tot/100))
-# print("avg EMD for time is " + str(emd_time_tot/100))
+print("avg EMD for time is " + str(emd_time_tot/100))
 
 
 dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.1, distance=10, aggregate_type=AggregateType.SUM)

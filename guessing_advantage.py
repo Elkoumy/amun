@@ -119,11 +119,6 @@ def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregat
     beta = 0.05
 
     # reflect the new equation of delta for the time per time instance. Then take the maximum delta from all the instances.
-    # r_time=-inf
-    # for x in dfg_time.keys():
-    #     if r_time<max(dfg_time[x]):
-    #         r_time=max(dfg_time[x])
-
     sens_time = 1
     """ calculating sensitivity based on type of aggregate"""
     if aggregate_type == AggregateType.AVG:
@@ -164,9 +159,6 @@ def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregat
             # if current_detla != float.nan:
             if current_detla!=0:
                 delta_time.append(current_detla)
-
-
-
 
     delta_time= max(delta_time)
 
