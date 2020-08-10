@@ -110,19 +110,19 @@ def calculate_epsilon_from_distance_freq(dfg_freq, distance):
 
     #  Calculate delta ( the risk) from guessing advantage equation
     #  the following equation is validated by calculations
-    delta_freq = (1 - sqrt(exp(-r_freq * epsilon_freq))) / (1 + sqrt(exp(-r_freq * epsilon_freq)))
+    delta_freq = (1 - sqrt(exp(- epsilon_freq))) / (1 + sqrt(exp(- epsilon_freq)))
 
     return  epsilon_freq, delta_freq
 
 
-def calculate_epsilon_from_distance_time( dfg_time, distance, aggregate_type=AggregateType.SUM):
+def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregate_type=AggregateType.SUM):
     beta = 0.05
 
     # TODO update the below to reflect the new equation of delta for the time per time instance. Then take the maximum delta from all the instances.
-    r_time=-inf
-    for x in dfg_time.keys():
-        if r_time<max(dfg_time[x]):
-            r_time=max(dfg_time[x])
+    # r_time=-inf
+    # for x in dfg_time.keys():
+    #     if r_time<max(dfg_time[x]):
+    #         r_time=max(dfg_time[x])
 
     sens_time = 1
     """ calculating sensitivity based on type of aggregate"""
@@ -138,9 +138,37 @@ def calculate_epsilon_from_distance_time( dfg_time, distance, aggregate_type=Agg
     epsilon_time = sens_time / distance * log(1 / beta)
 
     #  Calculate delta ( the risk) from guessing advantage equation
+    delta_time=[]
+    for x in dfg_time.keys():
+        R_ij=max(dfg_time[x])
+        r_ij=R_ij*precision
 
-    delta_time = (1 - sqrt(exp(-r_time * epsilon_time))) / (1 + sqrt(exp(-r_time * epsilon_time)))
+        #fix the case of time is fixed
+        flag = 1
+        prev = dfg_time[x][0]
+        for t_k in dfg_time[x]:
 
+            # fix the case of time is fixed
+            if t_k != prev:
+                flag = 0
+            prev = t_k
+
+            cdf = ECDF(dfg_time[x])
+
+            #p_k is calculated for every instance.
+            p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
+            if not flag:
+                current_detla = p_k*(1/((1-p_k) * exp(-R_ij * epsilon_time) +p_k) -1)
+                #we append the deltas and take the maximum delta out of them
+                delta_time.append(current_detla)
+
+
+        # p_k=calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
+        # current_detla= (1-p_k)/(p_k^2 * exp(-R_ij*epsilon_time)  - p_k^2 +p_k)
+        # delta_time.append(current_detla)
+
+
+    delta_time= max(delta_time)
 
     return  epsilon_time,  delta_time
 
