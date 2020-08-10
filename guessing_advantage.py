@@ -88,8 +88,8 @@ def calculate_epsilon_per_pair(values,delta, precision):
         for t_k in values:
             p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
             # eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))
-            # print("p_k="+str(p_k))
-            # print("eps="+str(log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))))
+            print("p_k="+str(p_k))
+            print("eps="+str(log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))))
             eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
             # eps= -(log(  (1-p_k)/p_k * (1/(delta*p_k) -1)  )) /(R_ij)
             epsilons.append(eps)
@@ -161,8 +161,8 @@ def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregat
             # if current_detla != float.nan:
             if current_detla!=0:
                 delta_time.append(current_detla)
-
-    delta_time= max(delta_time)
+    if len(delta_time)>0:
+        delta_time= max(delta_time)
 
     return  epsilon_time,  delta_time
 
