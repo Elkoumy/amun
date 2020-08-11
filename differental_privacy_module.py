@@ -49,7 +49,9 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
     sens_time = 1
     """ calculating sensitivity based on type of aggregate"""
     if aggregate_type == AggregateType.AVG:
-        sens_time = 1 / len(dfg_time[0])
+        # sens_time = 1.0 / len(dfg_time[0])
+        sens_time = 1.0 / len(dfg_time.keys())
+
     elif aggregate_type == AggregateType.MAX or aggregate_type == AggregateType.MIN or aggregate_type == AggregateType.SUM:
         sens_time = 1
     else:
@@ -63,7 +65,7 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
         for key in dfg_time.keys():
 
             # in case epsilon is inf , we don't need to add noise
-            print("epsilon_time"+str(epsilon_time[key]))
+            # print("epsilon_time"+str(epsilon_time[key]))
             # inf in case of risk is bigger than 1-p_k
             # -inf in case of all the values are the same.
             # small epsilon values fail with laplace function

@@ -24,10 +24,10 @@ dfg_freq, dfg_time = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\D
 emd_freq_tot=0
 emd_time_tot=0
 
-no_of_experiments=1
+no_of_experiments=10
 
 for i in range(0,no_of_experiments):
-    dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.05,precision=0.1)
+    dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.05,precision=0.1,aggregate_type=AggregateType.AVG)
     # print("EMD for frequency is "+ str(emd_freq))
     # print("EMD for time is "+ str(emd_time))
     emd_freq_tot+=emd_freq
@@ -37,7 +37,7 @@ print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
 print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
 
 
-dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.1, distance=10, aggregate_type=AggregateType.SUM)
+dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.1, distance=1000, aggregate_type=AggregateType.AVG)
 
 print("delta for the freq is "+ str(delta_freq))
 print("delta for the time is "+ str(delta_time))
