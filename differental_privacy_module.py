@@ -63,7 +63,11 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
         for key in dfg_time.keys():
 
             # in case epsilon is inf , we don't need to add noise
-            if epsilon_time[key]==inf:
+            print("epsilon_time"+str(epsilon_time[key]))
+            # inf in case of risk is bigger than 1-p_k
+            # -inf in case of all the values are the same.
+            # small epsilon values fail with laplace function
+            if epsilon_time[key]==inf or epsilon_time[key]==-inf or epsilon_time[key]<1e-11:
                 dfg_time_new[key] = dfg_time[key]
             else:
                 laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])

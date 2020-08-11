@@ -89,19 +89,25 @@ def calculate_epsilon_per_pair(values,delta, precision):
             p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
             # eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))
             # print("p_k="+str(p_k))
+            # print("delta"+str(delta))
+            # print("1-p_k"+str(1-p_k))
+            # print("1-p_k<=delta"+str(1-p_k<=delta))
             # print("eps="+str(log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0))))
 
-            #covering the case with risk lower than 1-p_k
-            if not(1-p_k<delta):
+            #covering the case with risk less than or equal 1-p_k
+            if not(round(1-p_k,2)<=delta): # the round is for very small differences, like 0.050000000000000044
                 eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
                 # eps= -(log(  (1-p_k)/p_k * (1/(delta*p_k) -1)  )) /(R_ij)
                 epsilons.append(eps)
+            else:
+                epsilons.append(inf)
+
         if len(epsilons)>0:
             epsilon=min(epsilons)
     else:
         #  fix the ECDF when all the values are equal.
         # after the discussion, we decided to let the user know about that issue and maybe has can handle it on his own.
-        epsilon=1
+        epsilon=-inf
     return epsilon
 
 def calculate_epsilon_from_distance_freq(dfg_freq, distance):
