@@ -12,6 +12,7 @@ import sys
 from measure_accuracy import earth_mover_dist
 from collections import Counter
 from scipy.stats import laplace
+from math import inf
 # from diffprivlib.mechanisms import Laplace
 
 from math import log,exp ,sqrt
@@ -60,8 +61,13 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
     if type(epsilon_time) != type(0.1):
         # multiple epsilon values for the time dfg
         for key in dfg_time.keys():
-            laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
-            dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+
+            # in case epsilon is inf , we don't need to add noise
+            if epsilon_time[key]==inf:
+                dfg_time_new[key] = dfg_time[key]
+            else:
+                laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
+                dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
 
             # laplace = Laplace()
             # laplace.set_epsilon(epsilon_time[key])
@@ -70,8 +76,13 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
     else:
         # single epsilon value for the entire time dfg
         for key in dfg_time.keys():
-            laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time)
-            dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+
+            # in case epsilon is inf , we don't need to add noise
+            if epsilon_time == inf:
+                dfg_time_new[key] = dfg_time[key]
+            else:
+                laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time)
+                dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
 
             # laplace = Laplace()
             # laplace.set_epsilon(epsilon_time)
