@@ -107,7 +107,8 @@ def calculate_epsilon_per_pair(values,delta, precision):
     else:
         #  fix the ECDF when all the values are equal.
         # after the discussion, we decided to let the user know about that issue and maybe has can handle it on his own.
-        epsilon=-inf
+        # epsilon=-inf
+        epsilon = inf
     return epsilon
 
 def calculate_epsilon_from_distance_freq(dfg_freq, distance):
