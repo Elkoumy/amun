@@ -26,6 +26,7 @@ import sys
 # sys.exit()
 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
+# datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 datasets=["Sepsis Cases - Event Log"]
 
 for dataset in datasets:
@@ -55,7 +56,7 @@ for dataset in datasets:
             #log the results
             # print(epsilon_time)
             # print(min(epsilon_time.values()))
-            result_log_delta.append([i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
+            result_log_delta.append([dataset,i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
 
         print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
         print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
@@ -64,20 +65,20 @@ for dataset in datasets:
 
     result_log_alpha=[] # holds the alpha or EMD as input exeperiment
     # emd=1000
-    emds=[10,100,1000]
+    emds=[10,50,100,500,1000,5000,10000]
     for emd in emds:
         precision=0.1
 
         dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=emd, aggregate_type=aggregate_type)
 
-        result_log_alpha.append([0,emd,epsilon_freq, epsilon_time, delta_freq , delta_time])
+        result_log_alpha.append([dataset,0,emd,epsilon_freq, epsilon_time, delta_freq , delta_time])
 
         print("delta for the freq is "+ str(delta_freq))
         print("delta for the time is "+ str(delta_time))
 
 
     # transform results into dataframes
-    result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["exp_indx", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
-    result_log_delta.to_csv("result_log_delta_"+dataset+".csv",index=False)
-    result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["exp_indx", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
-    result_log_alpha.to_csv("result_log_alpha_"+dataset+".csv",index=False)
+    result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","exp_indx", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
+    result_log_delta.to_csv("result_log_delta.csv",index=False)
+    result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","exp_indx", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
+    result_log_alpha.to_csv("result_log_alpha.csv",index=False)
