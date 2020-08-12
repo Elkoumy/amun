@@ -27,15 +27,19 @@ import sys
 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
-datasets=["Sepsis Cases - Event Log"]
+datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2"]
+
+result_log_delta = []  # holds the delta as input exeperiment
+# vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
+
+result_log_alpha=[] # holds the alpha or EMD as input exeperiment
 
 for dataset in datasets:
     dfg_freq, dfg_time = read_xes(data_dir+"\\"+dataset+".xes")
     aggregate_type=AggregateType.AVG
 
 
-    result_log_delta=[] # holds the delta as input exeperiment
-    # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
+
 
     # delta=0.05
     deltas=[0.01,0.05, 0.1, 0.5]
@@ -56,14 +60,16 @@ for dataset in datasets:
             #log the results
             # print(epsilon_time)
             # print(min(epsilon_time.values()))
-            result_log_delta.append([dataset,i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
+            # result_log_delta.append([dataset,i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
 
         print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
         print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
+        result_log_delta.append([dataset, i, delta, epsilon_freq, min(epsilon_time.values()), emd_freq_tot/no_of_experiments,
+                                 emd_time_tot/no_of_experiments])  # logging the min epsilon for time as it is the maximum added noise
 
 
 
-    result_log_alpha=[] # holds the alpha or EMD as input exeperiment
+
     # emd=1000
     emds=[10,50,100,500,1000,5000,10000]
     for emd in emds:
