@@ -55,7 +55,14 @@ def get_dfg_time(data):
     #calculating time difference
     data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
     data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
-    data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')
+    data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')/1000.0/60/60
+    #making the time difference in seconds
+    # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[s]')/60/60.0
+    # making the time difference in minutes
+    # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[m]')/60.0
+
+    # making the time difference in hours
+    # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[h]')
 
     #reformating the data to build the dfg
     data=data.set_index(['concept:name', 'concept:name_2'])

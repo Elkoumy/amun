@@ -80,8 +80,8 @@ for dataset in datasets:
             print("delta for the time is "+ str(delta_time))
 
 
-        # transform results into dataframes
-        result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type","exp_indx", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
-        result_log_delta.to_csv("result_log_delta.csv",index=False)
-        result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type","exp_indx", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
-        result_log_alpha.to_csv("result_log_alpha.csv",index=False)
+# transform results into dataframes
+result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type","exp_indx", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
+result_log_delta.to_csv("result_log_delta.csv",index=False)
+result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type","exp_indx", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
+result_log_alpha.to_csv("result_log_alpha.csv",index=False)

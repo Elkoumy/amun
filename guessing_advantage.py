@@ -164,13 +164,17 @@ def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregat
             cdf = ECDF(dfg_time[x])
 
             #p_k is calculated for every instance.
-            p_k =calculate_cdf(cdf,t_k+r_ij)-calculate_cdf(cdf,t_k-r_ij)
+            cdf1=calculate_cdf(cdf,t_k+r_ij)
+            cdf2=calculate_cdf(cdf,t_k-r_ij)
+            p_k =cdf1-cdf2
 
-            current_detla = p_k*(1/((1-p_k) * exp(-R_ij * epsilon_time) +p_k) -1)
+            # current_delta = p_k*( 1/(   (1-p_k) * exp(-R_ij * epsilon_time) +p_k) -1)
+            current_delta= (p_k/ ( (1-p_k) * exp(-R_ij * epsilon_time) +p_k ) ) -p_k
+            # eps = - log(p_k / (1.0 - p_k) * (1.0 / (current_delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
             #we append the deltas and take the maximum delta out of them
-            # if current_detla != float.nan:
-            if current_detla!=0:
-                delta_time.append(current_detla)
+            # if current_delta != float.nan:
+            if current_delta!=0:
+                delta_time.append(current_delta)
     if len(delta_time)>0:
         delta_time= max(delta_time)
 
@@ -186,4 +190,5 @@ def calculate_cdf(cdf, val):
 
             if val <cdf.x[idx+1]:
                 cur_idx-=1
+                break
     return cdf.y[cur_idx]
