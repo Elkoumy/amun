@@ -68,7 +68,7 @@ for dataset in datasets:
 
 
         # emd=1000
-        emds=[10,50,100,500,1000,5000,10000]
+        emds=[0.1,0.3,0.5,0.7,1,2,10,20]
         for emd in emds:
             precision=0.1
 
