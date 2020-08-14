@@ -8,6 +8,7 @@ from differental_privacy_module import *
 from input_module import *
 import pandas as pd
 import sys
+from data_visualization import plot_delta_distributions
 
 
 # DFG as a counter object
@@ -27,12 +28,15 @@ import sys
 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
-datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2"]
+datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
 
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
 
 result_log_alpha=[] # holds the alpha or EMD as input exeperiment
+# delta_per_distance={}
+
+delta_logger=[]
 
 for dataset in datasets:
     dfg_freq, dfg_time = read_xes(data_dir+"\\"+dataset+".xes")
@@ -47,23 +51,23 @@ for dataset in datasets:
             emd_freq_tot=0
             emd_time_tot=0
 
-            for i in range(0,no_of_experiments):
-                dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=delta,precision=precision,aggregate_type=aggregate_type)
-                # print("EMD for frequency is "+ str(emd_freq))
-                # print("EMD for time is "+ str(emd_time))
-                emd_freq_tot+=emd_freq
-                emd_time_tot+= emd_time
-
-                #log the results
-                # print(epsilon_time)
-                # print(min(epsilon_time.values()))
-                # result_log_delta.append([dataset,i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
-
-            print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
-            print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
-            result_log_delta.append([dataset,aggregate_type, i, delta, epsilon_freq, min(epsilon_time.values()), emd_freq_tot/no_of_experiments,
-                                     emd_time_tot/no_of_experiments])  # logging the min epsilon for time as it is the maximum added noise
-
+            # for i in range(0,no_of_experiments):
+            #     dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=delta,precision=precision,aggregate_type=aggregate_type)
+            #     # print("EMD for frequency is "+ str(emd_freq))
+            #     # print("EMD for time is "+ str(emd_time))
+            #     emd_freq_tot+=emd_freq
+            #     emd_time_tot+= emd_time
+            #
+            #     #log the results
+            #     # print(epsilon_time)
+            #     # print(min(epsilon_time.values()))
+            #     # result_log_delta.append([dataset,i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
+            #
+            # print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
+            # print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
+            # result_log_delta.append([dataset,aggregate_type, i, delta, epsilon_freq, min(epsilon_time.values()), emd_freq_tot/no_of_experiments,
+            #                          emd_time_tot/no_of_experiments])  # logging the min epsilon for time as it is the maximum added noise
+            #
 
 
 
@@ -72,7 +76,10 @@ for dataset in datasets:
         for emd in emds:
             precision=0.1
 
-            dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=emd, aggregate_type=aggregate_type)
+            dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=emd, aggregate_type=aggregate_type)
+            # delta_per_distance[emd] = delta_time_dfg
+            for edge in delta_time_dfg.keys():
+                delta_logger.append([dataset, aggregate_type, emd,delta_time_dfg[edge]])
 
             result_log_alpha.append([dataset,aggregate_type,0,emd,epsilon_freq, epsilon_time, delta_freq , delta_time])
 
@@ -80,8 +87,13 @@ for dataset in datasets:
             print("delta for the time is "+ str(delta_time))
 
 
+#plot the delta distribution
+delta_logger=pd.DataFrame(delta_logger, columns=["dataset","aggregate_type","emd","delta"])
+delta_logger.to_csv("delta_logger.csv", index=False)
+plot_delta_distributions(delta_logger)
+
 # transform results into dataframes
-result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type","exp_indx", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
-result_log_delta.to_csv("result_log_delta.csv",index=False)
-result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type","exp_indx", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
-result_log_alpha.to_csv("result_log_alpha.csv",index=False)
+# result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type","exp_indx", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
+# result_log_delta.to_csv("result_log_delta.csv",index=False)
+# result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type","exp_indx", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
+# result_log_alpha.to_csv("result_log_alpha.csv",index=False)

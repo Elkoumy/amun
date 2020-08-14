@@ -3,7 +3,7 @@ This module includes the functions to plot the distribution of the delta with di
 """
 
 import matplotlib.pyplot as plt
-
+import seaborn as sns
 
 def plot_delta_distribution(delta_per_distance):
 
@@ -23,3 +23,9 @@ def plot_delta_distribution(delta_per_distance):
     # show plot
     plt.show()
 
+
+def plot_delta_distributions(delta_logger):
+
+    g = sns.FacetGrid(delta_logger, row="dataset", col="aggregate_type", margin_titles=True)
+    g.map(sns.boxplot, "emd", "delta" )
+    plt.show()
