@@ -146,7 +146,9 @@ def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregat
 
     #  Calculate delta ( the risk) from guessing advantage equation
     delta_time=[]
+    delta_dfg={}
     for x in dfg_time.keys():
+        delta_edge=[]
         R_ij=max(dfg_time[x])
         r_ij=R_ij*precision
 
@@ -173,12 +175,16 @@ def calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregat
             # eps = - log(p_k / (1.0 - p_k) * (1.0 / (current_delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
             #we append the deltas and take the maximum delta out of them
             # if current_delta != float.nan:
+            delta_edge.append(current_delta)
             if current_delta!=0:
                 delta_time.append(current_delta)
+
+        delta_dfg[x] = max(delta_edge)
     if len(delta_time)>0:
         delta_time= max(delta_time)
 
-    return  epsilon_time,  delta_time
+
+    return  epsilon_time,  delta_time, delta_dfg
 
 
 def calculate_cdf(cdf, val):
