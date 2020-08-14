@@ -36,7 +36,7 @@ def plot_delta_distributions(delta_logger):
 
     g = sns.FacetGrid(delta_logger, row="dataset", col="aggregate_type", margin_titles=True)
     g.map(sns.boxplot, "emd", "delta" )
-    g.show()
+    plt.show()
     g.savefig(os.path.join('experiment_figures','Input_emd_time_dfg_delta_distribution.pdf'))
 
 
@@ -117,8 +117,12 @@ def plot_input_EMD(result_log_alpha):
     g.savefig(os.path.join('experiment_figures', 'Input_EMD_freq_dfg_delta_distribution.pdf'))
 
 
+
 # result_log_alpha=pd.read_csv("result_log_alpha.csv")
 # result_log_delta= pd.read_csv("result_log_delta.csv")
+# delta_logger=pd.read_csv("delta_logger.csv")
+#
 #
 # plot_input_delta(result_log_delta)
 # plot_input_EMD(result_log_alpha)
+# plot_delta_distributions(delta_logger)
