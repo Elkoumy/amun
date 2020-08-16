@@ -236,9 +236,11 @@ def calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precis
 
         #  calculate epsilon
         # the equation to be calculated per instance first as p is different from frequency.
+        print("R_ij: " + str(R_ij))
         distance_ij = m * distance * exp(R_ij) / R
-        epsilon_time_ij = sens_time / distance * log(1 / beta)
-
+        print("distance_ij: " + str(distance_ij))
+        epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
+        print("epsilon_time_ij: " + str(epsilon_time_ij))
         epsilon_time[x] = epsilon_time_ij
         # fix the case of time is fixed
         flag = 1
