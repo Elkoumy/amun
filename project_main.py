@@ -13,9 +13,12 @@ from differental_privacy_module import *
 from input_module import *
 from data_visualization import plot_delta_distribution
 
+
+aggregate_type=AggregateType.MAX
+
 # DFG as a counter object
 # dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
-dfg_freq, dfg_time = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES\Sepsis Cases - Event Log.xes")
+dfg_freq, dfg_time, time_units = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES\Sepsis Cases - Event Log.xes", aggregate_type)
 
 emd_freq_tot=0                                                                                                    
 emd_time_tot=0
@@ -32,8 +35,8 @@ emd_time_tot=0
 
 delta_per_distance={}
 
-distance= 0.2
-dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.5, distance=distance, aggregate_type=AggregateType.SUM)
+distance= 0.1
+dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.5, distance=distance, aggregate_type=aggregate_type)
 delta_per_distance[distance]=delta_time_dfg
 
 
