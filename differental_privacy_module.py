@@ -122,9 +122,8 @@ def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,a
     #calculate epsilon and delta for both freq and time
     epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
     # epsilon_time,  delta_time, delta_time_dfg = calculate_epsilon_from_distance_time( dfg_time, distance,precision, AggregateType.SUM)
+    epsilon_time, delta_time, delta_time_dfg = calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precision, AggregateType.SUM)
 
-    epsilon_time, delta_time, delta_time_dfg = calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precision,
-                                                                                    AggregateType.SUM)
     #  apply laplace noise and return the noisfied version of the DFG.
 
     # adding laplace noise to DFG freq

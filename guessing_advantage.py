@@ -2,6 +2,7 @@
 This module will include the guessing advantage implementation.
 """
 from math import log, exp, sqrt, inf
+from statistics import median
 
 from enum import Enum
 from statsmodels.distributions.empirical_distribution import ECDF
@@ -184,8 +185,9 @@ def calculate_epsilon_from_distance_time(dfg_time, distance, precision, aggregat
 
         delta_dfg[x] = max(delta_edge)
     if len(delta_time) > 0:
-        delta_time = max(delta_time)
+        delta_time = median(delta_time)
 
+    delta_time = median(delta_dfg.values())
     return epsilon_time, delta_time, delta_dfg
 
 
@@ -236,11 +238,12 @@ def calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precis
 
         #  calculate epsilon
         # the equation to be calculated per instance first as p is different from frequency.
-        print("R_ij: " + str(R_ij))
+
         distance_ij = m * distance * exp(R_ij) / R
-        print("distance_ij: " + str(distance_ij))
+        # distance_ij = m * distance * R_ij / R
+
         epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
-        print("epsilon_time_ij: " + str(epsilon_time_ij))
+
         epsilon_time[x] = epsilon_time_ij
         # fix the case of time is fixed
         flag = 1
@@ -273,4 +276,5 @@ def calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precis
     if len(delta_time) > 0:
         delta_time = max(delta_time)
 
+    delta_time=median(delta_dfg.values())
     return epsilon_time, delta_time, delta_dfg

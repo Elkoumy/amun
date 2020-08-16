@@ -32,7 +32,7 @@ emd_time_tot=0
 
 delta_per_distance={}
 
-distance= 0.1
+distance= 0.2
 dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.5, distance=distance, aggregate_type=AggregateType.SUM)
 delta_per_distance[distance]=delta_time_dfg
 
