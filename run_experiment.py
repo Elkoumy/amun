@@ -39,10 +39,11 @@ result_log_alpha=[] # holds the alpha or EMD as input exeperiment
 delta_logger=[]
 
 for dataset in datasets:
-    dfg_freq, dfg_time = read_xes(data_dir+"\\"+dataset+".xes")
+
     aggregate_types=[AggregateType.AVG, AggregateType.SUM]
     for aggregate_type in aggregate_types:
         # delta=0.05
+        dfg_freq, dfg_time,time_units = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
         deltas=[0.01,0.05, 0.1, 0.5]
         for delta in deltas:
             precision=0.1
