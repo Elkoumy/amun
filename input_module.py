@@ -21,8 +21,8 @@ def read_xes(xes_file,aggregate_type):
     log = xes_import_factory.apply(xes_file)
     data=get_dataframe_from_event_stream(log)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
-    dfg_time, time_units =get_dfg_time(data,aggregate_type)
-    return dfg_freq,dfg_time, time_units
+    dfg_time =get_dfg_time(data,aggregate_type)
+    return dfg_freq,dfg_time
 
 
 def get_dfg_time(data,aggregate_type):
@@ -56,11 +56,11 @@ def get_dfg_time(data,aggregate_type):
     data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
     data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
 
-    data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')/1000.0 # in seconds
+    # data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')/1000.0 # in seconds
 
     # data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')/1000.0/60/60 # in hours
 
-    # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[ms]') / 1000.0 / 60 / 60/24  # in days
+    data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[ms]') / 1000.0 / 60 / 60/24  # in days
 
     # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[ms]') / 1000.0 / 60 / 60/24 /7  # in weeks
 
@@ -90,8 +90,8 @@ def get_dfg_time(data,aggregate_type):
         else:
             dfg_time[index]=[value[0]]
 
-    dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
-    return dfg_time,units
+    # dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
+    return dfg_time
 
 
 

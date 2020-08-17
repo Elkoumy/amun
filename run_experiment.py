@@ -28,7 +28,8 @@ from data_visualization import plot_results
 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
-datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
+# datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
+datasets=["Sepsis Cases - Event Log"]
 
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
@@ -43,7 +44,7 @@ for dataset in datasets:
     aggregate_types=[AggregateType.AVG, AggregateType.SUM]
     for aggregate_type in aggregate_types:
         # delta=0.05
-        dfg_freq, dfg_time,time_units = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
+        dfg_freq, dfg_time = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
         deltas=[0.01,0.05, 0.1, 0.5]
         for delta in deltas:
             precision=0.1

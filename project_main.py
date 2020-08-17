@@ -18,7 +18,7 @@ aggregate_type=AggregateType.MAX
 
 # DFG as a counter object
 # dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
-dfg_freq, dfg_time, time_units = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES\Sepsis Cases - Event Log.xes", aggregate_type)
+dfg_freq, dfg_time = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES\Sepsis Cases - Event Log.xes", aggregate_type)
 
 emd_freq_tot=0                                                                                                    
 emd_time_tot=0
