@@ -1,3 +1,7 @@
 
 ~$Datasets.xlsx
 *.pyc
+*.pyc
+*.pyc
+__pycache__/input_module.cpython-37.pyc
+__pycache__/differental_privacy_module.cpython-37.pyc

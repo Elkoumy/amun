@@ -13,6 +13,7 @@ from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_fro
 from pm4py.objects.log.exporter.csv import factory as csv_exporter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 from guessing_advantage import AggregateType
+from math import log10
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 
 
@@ -56,11 +57,13 @@ def get_dfg_time(data,aggregate_type):
     data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
     data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
 
+    data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype(
+        'timedelta64[ms]')   # in m seconds
     # data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')/1000.0 # in seconds
 
     # data['difference']= (data['time:timestamp_2']- data['time:timestamp']).astype('timedelta64[ms]')/1000.0/60/60 # in hours
 
-    data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[ms]') / 1000.0 / 60 / 60/24  # in days
+    # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[ms]') / 1000.0 / 60 / 60/24  # in days
 
     # data['difference'] = (data['time:timestamp_2'] - data['time:timestamp']).astype('timedelta64[ms]') / 1000.0 / 60 / 60/24 /7  # in weeks
 
@@ -96,7 +99,7 @@ def get_dfg_time(data,aggregate_type):
 
 
 def converting_time_unit(dfg_time, aggregate_type):
-    unit = ""
+    unit = "mseconds"
     multiplier=1.0
     units={}
     for x in dfg_time.keys():
@@ -111,28 +114,31 @@ def converting_time_unit(dfg_time, aggregate_type):
         elif aggregate_type== AggregateType.MAX:
             accurate_result= max(dfg_time[x])*1.0
 
-
-        if accurate_result%100==0:
-            unit="seconds"
-            multiplier=1.0
-        elif (accurate_result/(60))%100==0:
-            unit="minutes"
-            multiplier=1/60.0
-        elif (accurate_result/(60*60))%100==0:
-            unit="hours"
-            multiplier=1/60/60.0
-        elif (accurate_result/(60*60*24))%100==0:
-            unit="days"
-            multiplier=1/60/60/24.0
-        elif (accurate_result/(60*60*24*7))%100==0:
-            unit="weeks"
-            multiplier=1/60/60/24/7.0
-        elif (accurate_result/(60*60*24*30))%100==0:
-            unit="month"
-            multiplier=1/60/60/24/30.0
-        else:
-            unit="years"
-            multiplier=1/60/60/24/365.0
+        if not(accurate_result==0):
+            if int(log10(accurate_result))+1<=2:
+                unit="mseconds"
+                multiplier = 1.0
+            elif int(log10(accurate_result/(1000)))+1<=2:
+                unit="seconds"
+                multiplier=1/1000.0
+            elif  int(log10(accurate_result/(1000*60)))+1<=2:
+                unit="minutes"
+                multiplier=1/1000.0/60.0
+            elif  int(log10(accurate_result/(1000*60*60)))+1<=2:
+                unit="hours"
+                multiplier=1/1000.0/60/60.0
+            elif  int(log10(accurate_result/(1000*60*60*24)))+1<=2:
+                unit="days"
+                multiplier=1/1000.0/60/60/24.0
+            elif  int(log10(accurate_result/(1000*60*60*24*7)))+1<=2:
+                unit="weeks"
+                multiplier=1/1000.0/60/60/24/7.0
+            elif  int(log10(accurate_result/(1000*60*60*24*30)))+1<=2:
+                unit="month"
+                multiplier=1/1000.0/60/60/24/30.0
+            else:
+                unit="years"
+                multiplier=1/1000.0/60/60/24/365.0
 
         units[x]=unit
 

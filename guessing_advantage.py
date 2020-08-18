@@ -325,9 +325,14 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
         elif aggregate_type== AggregateType.MAX:
             accurate_result= max(dfg_time[x])*1.0
 
-        distance_ij = accurate_result*distance # hence distance is between 0 and 1
-        #  calculate epsilon
-        epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
+        #in case of 
+        if accurate_result==0:
+            epsilon_time_ij=1
+        else:
+            distance_ij = accurate_result*distance # hence distance is between 0 and 1
+            #  calculate epsilon
+
+            epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
 
         epsilon_time[x] = epsilon_time_ij
         # fix the case of time is fixed
