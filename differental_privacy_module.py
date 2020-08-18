@@ -7,7 +7,7 @@ The module has two main functionalities:
 """
 from guessing_advantage import calculate_epsilon_freq, calculate_epsilon_from_distance_freq, \
     calculate_epsilon_from_distance_time, calculate_epsilon_from_distance_time_new_approach, calculate_epsilon_time, \
-    AggregateType, calculate_epsilon_from_distance_time_percentage_distance
+    AggregateType, calculate_epsilon_from_distance_time_percentage_distance, calculate_epsilon_from_distance_freq_percentage_distances
 import diffprivlib.mechanisms as privacyMechanisms
 from convert_dfg import calculate_time_dfg
 import sys
@@ -103,8 +103,8 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
 def add_laplace_noise_freq(dfg_freq, epsilon_freq):
     senstivity_freq=1
     # adding laplace noise to DFG frequencies
-    laplace_mechanism = privacyMechanisms.LaplaceBoundedDomain()
-    laplace_mechanism.set_sensitivity(senstivity_freq).set_bounds(0, sys.maxsize).set_epsilon(epsilon_freq)
+    # laplace_mechanism = privacyMechanisms.LaplaceBoundedDomain()
+    # laplace_mechanism.set_sensitivity(senstivity_freq).set_bounds(0, sys.maxsize).set_epsilon(epsilon_freq)
     dfg_freq_new = Counter()
     for key in dfg_freq.keys():
         # dfg_freq_new[key] = laplace_mechanism.randomise(dfg_freq[key])
@@ -113,16 +113,24 @@ def add_laplace_noise_freq(dfg_freq, epsilon_freq):
         # laplace.set_epsilon(epsilon_freq)
         # laplace.set_sensitivity(senstivity_freq)
         # dfg_freq_new[key] = laplace.randomise(dfg_freq[key])
-
         rv = laplace()
-        dfg_freq_new[key] = dfg_freq[key]+laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0]
+
+        if type(epsilon_freq)==type(0.1):
+            #single epsilon value
+            dfg_freq_new[key] = dfg_freq[key]+laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0]
+        else:
+            #multiple epsilon value
+            dfg_freq_new[key] = dfg_freq[key] + laplace.rvs(loc=0, scale=senstivity_freq / epsilon_freq[key], size=1)[0]
 
     return dfg_freq_new
 
 
 def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,aggregate_type=AggregateType.SUM):
-    #calculate epsilon and delta for both freq and time
-    epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
+    #calculate epsilon and delta for  freq
+    # epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
+    epsilon_freq, delta_freq = calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance)
+
+    # calculate epsilon and delta for  time
     # epsilon_time,  delta_time, delta_time_dfg = calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregate_type)
     # epsilon_time, delta_time, delta_time_dfg = calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precision, aggregate_type)
     epsilon_time, delta_time, delta_time_dfg = calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance, precision,aggregate_type)

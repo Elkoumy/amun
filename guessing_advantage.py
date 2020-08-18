@@ -331,7 +331,6 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
         else:
             distance_ij = accurate_result*distance # hence distance is between 0 and 1
             #  calculate epsilon
-
             epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
 
         epsilon_time[x] = epsilon_time_ij
@@ -368,3 +367,25 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
 
     delta_time=median(delta_dfg.values())
     return epsilon_time, delta_time, delta_dfg
+
+
+def calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance_percentage):
+    beta = 0.01
+    sens_freq = 1
+    # for frequencies, we have r = 1
+    r_freq = 1
+    delta_dfg={}
+    epsilon_dfg={}
+    for x in dfg_freq.keys():
+        #  calculate epsilon
+        temp=dfg_freq[x]
+        distance=distance_percentage* dfg_freq[x]
+        epsilon_freq = sens_freq / distance * log(1 / beta)
+        epsilon_dfg[x]=epsilon_freq
+        #  Calculate delta ( the risk) from guessing advantage equation
+        #  the following equation is validated by calculations
+        delta_freq = (1 - sqrt(exp(- epsilon_freq))) / (1 + sqrt(exp(- epsilon_freq)))
+        delta_dfg[x]=delta_freq
+
+    delta_freq=max(list(delta_dfg.values()))
+    return epsilon_dfg, delta_freq
