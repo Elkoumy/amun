@@ -289,7 +289,7 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
     sens_time = 1
     """ calculating sensitivity based on type of aggregate"""
     if aggregate_type == AggregateType.AVG:
-        sens_time = 1 / len(dfg_time[0])
+        sens_time = 1 / len(dfg_time.keys())
     elif aggregate_type == AggregateType.MAX or aggregate_type == AggregateType.MIN or aggregate_type == AggregateType.SUM:
         sens_time = 1
     else:
