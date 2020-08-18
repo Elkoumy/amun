@@ -90,7 +90,7 @@ def get_dfg_time(data,aggregate_type):
         else:
             dfg_time[index]=[value[0]]
 
-    # dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
+    dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
     return dfg_time
 
 

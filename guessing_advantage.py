@@ -278,3 +278,88 @@ def calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precis
 
     delta_time=median(delta_dfg.values())
     return epsilon_time, delta_time, delta_dfg
+
+
+
+def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance, precision, aggregate_type=AggregateType.SUM):
+    beta = 0.05
+
+    # reflect the new equation of delta for the time per time instance. Then take the maximum delta from all the
+    # instances.
+    sens_time = 1
+    """ calculating sensitivity based on type of aggregate"""
+    if aggregate_type == AggregateType.AVG:
+        sens_time = 1 / len(dfg_time[0])
+    elif aggregate_type == AggregateType.MAX or aggregate_type == AggregateType.MIN or aggregate_type == AggregateType.SUM:
+        sens_time = 1
+    else:
+        assert "Wrong aggregate type"
+
+    # m is the number of edges
+
+    m = len(dfg_time.keys())
+
+    # calculating R among all the edges
+
+    R = 0
+    for x in dfg_time.keys():
+        R = R + max(dfg_time[x])
+
+    #  Calculate delta ( the risk) from guessing advantage equation
+    delta_time = []
+    delta_dfg = {}
+    epsilon_time = {}
+    for x in dfg_time.keys():
+        delta_edge = []
+        R_ij = max(dfg_time[x])
+        r_ij = R_ij * precision
+
+        accurate_result=0
+        #calculating the accurate result
+        if aggregate_type== AggregateType.AVG:
+            accurate_result= sum(dfg_time[x])*1.0 / len(dfg_time[x])
+        elif aggregate_type== AggregateType.SUM:
+            accurate_result= sum(dfg_time[x])*1.0
+        elif aggregate_type== AggregateType.MIN:
+            accurate_result= min(dfg_time[x])*1.0
+        elif aggregate_type== AggregateType.MAX:
+            accurate_result= max(dfg_time[x])*1.0
+
+        distance_ij = accurate_result*distance # hence distance is between 0 and 1
+        #  calculate epsilon
+        epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
+
+        epsilon_time[x] = epsilon_time_ij
+        # fix the case of time is fixed
+        flag = 1
+        prev = dfg_time[x][0]
+        current = dfg_time[x]
+        for t_k in dfg_time[x]:
+
+            # fix the case of time is fixed
+            if t_k != prev:
+                flag = 0
+            prev = t_k
+
+            cdf = ECDF(dfg_time[x])
+
+            # p_k is calculated for every instance.
+            cdf1 = calculate_cdf(cdf, t_k + r_ij)
+            cdf2 = calculate_cdf(cdf, t_k - r_ij)
+            p_k = cdf1 - cdf2
+
+            # current_delta = p_k*( 1/(   (1-p_k) * exp(-R_ij * epsilon_time) +p_k) -1)
+            current_delta = (p_k / ((1 - p_k) * exp(-R_ij * epsilon_time_ij) + p_k)) - p_k
+            # eps = - log(p_k / (1.0 - p_k) * (1.0 / (current_delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
+            # we append the deltas and take the maximum delta out of them
+            # if current_delta != float.nan:
+            delta_edge.append(current_delta)
+            if current_delta != 0:
+                delta_time.append(current_delta)
+
+        delta_dfg[x] = max(delta_edge)
+    if len(delta_time) > 0:
+        delta_time = max(delta_time)
+
+    delta_time=median(delta_dfg.values())
+    return epsilon_time, delta_time, delta_dfg
