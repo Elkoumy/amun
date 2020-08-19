@@ -18,11 +18,13 @@ from math import log10
 
 
 def read_xes(xes_file,aggregate_type):
+    prune_parameter=350
     #read the xes file
     log = xes_import_factory.apply(xes_file)
     data=get_dataframe_from_event_stream(log)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
     dfg_time =get_dfg_time(data,aggregate_type)
+    dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter)
     return dfg_freq,dfg_time
 
 
@@ -94,6 +96,7 @@ def get_dfg_time(data,aggregate_type):
             dfg_time[index]=[value[0]]
 
     dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
+
     return dfg_time
 
 
@@ -148,3 +151,12 @@ def converting_time_unit(dfg_time, aggregate_type):
             dfg_time[x][val]= dfg_time[x][val] * multiplier
 
     return dfg_time, units
+
+
+def frequency_pruning(dfg_freq, dfg_time, prune_parameter):
+    keys=list(dfg_freq.keys())
+    for key in keys:
+        if dfg_freq[key] < prune_parameter:
+            del dfg_freq[key]
+            del dfg_time[key]
+    return dfg_freq, dfg_time
