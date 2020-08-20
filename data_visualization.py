@@ -8,12 +8,13 @@ import pandas as pd
 import os
 
 
-def plot_results(result_log_delta,result_log_alpha,delta_logger):
-    plot_delta_distributions(delta_logger)
+def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logger_time):
+    plot_delta_distributions_time(delta_logger_time)
+    plot_delta_distributions_freq(delta_logger_freq)
     plot_input_delta(result_log_delta)
     plot_input_EMD(result_log_alpha)
 
-def plot_delta_distribution(delta_per_distance):
+def plot_delta_distribution_time(delta_per_distance):
 
     axis= []
     data=[]
@@ -25,14 +26,33 @@ def plot_delta_distribution(delta_per_distance):
     # Creating plot
     plt.boxplot(data)
     plt.xticks(list(range(1,len(data)+1)),labels=axis)
-    plt.title('Delta Distribution with EMD ')
+    plt.title('Delta Distribution with EMD (time) ')
     plt.xlabel('EMD')
     plt.ylabel('Delta')
     # show plot
     plt.show()
 
 
-def plot_delta_distributions(delta_logger):
+
+def plot_delta_distribution_freq(delta_per_distance):
+
+    axis= []
+    data=[]
+    # data=list(delta_per_distance.values())
+    for distance in delta_per_distance.keys():
+        data.append(list(delta_per_distance[distance].values()))
+        axis.append(distance)
+
+    # Creating plot
+    plt.boxplot(data)
+    plt.xticks(list(range(1,len(data)+1)),labels=axis)
+    plt.title('Delta Distribution with EMD (freq) ')
+    plt.xlabel('EMD')
+    plt.ylabel('Delta')
+    # show plot
+    plt.show()
+
+def plot_delta_distributions_time(delta_logger):
 
     g = sns.FacetGrid(delta_logger, row="dataset", col="aggregate_type", margin_titles=True)
     g.map(sns.boxplot, "emd", "delta" )
@@ -40,7 +60,12 @@ def plot_delta_distributions(delta_logger):
     g.savefig(os.path.join('experiment_figures','Input_emd_time_dfg_delta_distribution.pdf'))
 
 
+def plot_delta_distributions_freq(delta_logger):
 
+    g = sns.FacetGrid(delta_logger, row="dataset", col="aggregate_type", margin_titles=True)
+    g.map(sns.boxplot, "emd", "delta" )
+    plt.show()
+    g.savefig(os.path.join('experiment_figures','Input_emd_freq_dfg_delta_distribution.pdf'))
 
 def plot_input_delta(result_log_delta):
 
@@ -125,4 +150,4 @@ def plot_input_EMD(result_log_alpha):
 #
 # plot_input_delta(result_log_delta)
 # plot_input_EMD(result_log_alpha)
-# plot_delta_distributions(delta_logger)
+# plot_delta_distributions_time(delta_logger)

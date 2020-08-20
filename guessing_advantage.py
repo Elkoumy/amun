@@ -388,4 +388,4 @@ def calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance
         delta_dfg[x]=delta_freq
 
     delta_freq=max(list(delta_dfg.values()))
-    return epsilon_dfg, delta_freq
+    return epsilon_dfg, delta_dfg, delta_freq

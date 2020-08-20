@@ -128,7 +128,7 @@ def add_laplace_noise_freq(dfg_freq, epsilon_freq):
 def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,aggregate_type=AggregateType.SUM):
     #calculate epsilon and delta for  freq
     # epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
-    epsilon_freq, delta_freq = calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance)
+    epsilon_freq, delta_freq_dfg , delta_freq = calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance)
 
     # calculate epsilon and delta for  time
     # epsilon_time,  delta_time, delta_time_dfg = calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregate_type)
@@ -142,7 +142,7 @@ def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,a
     # adding laplace noise to DFG time
     dfg_time, dfg_time_new = add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time)
 
-    return dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time , delta_time_dfg
+    return dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time , delta_freq_dfg, delta_time_dfg
 
 
 def risk_pruning(dfg_freq, dfg_time, dfg_delta_freq, dfg_delta_time, risk_pruning):

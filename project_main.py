@@ -11,7 +11,7 @@
 from differental_privacy_module import *
 # from GUI_module import *
 from input_module import *
-from data_visualization import plot_delta_distribution
+from data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
 
 
 aggregate_type=AggregateType.SUM
@@ -33,14 +33,17 @@ emd_time_tot=0
 # print("avg EMD for time is " + str(emd_time_tot/100))
 
 
-delta_per_distance={}
+delta_per_distance_time={}
+delta_per_distance_freq={}
 
 distance= 0.05 # means %
-dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.05, distance=distance, aggregate_type=aggregate_type)
-delta_per_distance[distance]=delta_time_dfg
+dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_freq_dfg, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.05, distance=distance, aggregate_type=aggregate_type)
+delta_per_distance_time[distance]=delta_time_dfg
+delta_per_distance_freq[distance]=delta_freq_dfg
 
 
-plot_delta_distribution(delta_per_distance)
+plot_delta_distribution_time(delta_per_distance_time)
+plot_delta_distribution_freq(delta_per_distance_freq)
 
 print("delta for the freq is "+ str(delta_freq))
 print("delta for the time is "+ str(delta_time))
