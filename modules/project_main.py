@@ -8,10 +8,10 @@
     * export the DFG after applying the differential privacy.
 '''
 
-from differental_privacy_module import *
+from modules.differental_privacy_module import *
 # from GUI_module import *
-from input_module import *
-from data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
+from modules.input_module import *
+from modules.data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
 
 
 aggregate_type=AggregateType.SUM

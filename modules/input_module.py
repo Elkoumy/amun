@@ -3,16 +3,11 @@ This module implements the functionality of reading the input from the user. The
     * DFG
     * XES
 """
-import sys
-import os
 import pandas as pd
-import time
-from datetime import datetime
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
-from pm4py.objects.log.exporter.csv import factory as csv_exporter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
-from guessing_advantage import AggregateType
+from modules.guessing_advantage import AggregateType
 from math import log10
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 

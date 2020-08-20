@@ -5,19 +5,16 @@ The module has two main functionalities:
     * Take delta as input, then calculate both epsilon and accuracy correlated with it.
     * Take accuracy as input, then calculate both epsilon and the delta (risk) correlated with it.
 """
-from guessing_advantage import calculate_epsilon_freq, calculate_epsilon_from_distance_freq, \
-    calculate_epsilon_from_distance_time, calculate_epsilon_from_distance_time_new_approach, calculate_epsilon_time, \
+from modules.guessing_advantage import calculate_epsilon_freq, calculate_epsilon_time, \
     AggregateType, calculate_epsilon_from_distance_time_percentage_distance, calculate_epsilon_from_distance_freq_percentage_distances
 import diffprivlib.mechanisms as privacyMechanisms
-from convert_dfg import calculate_time_dfg
+from modules.convert_dfg import calculate_time_dfg
 import sys
-from measure_accuracy import earth_mover_dist
+from modules.measure_accuracy import earth_mover_dist
 from collections import Counter
 from scipy.stats import laplace
 from math import inf
 # from diffprivlib.mechanisms import Laplace
-
-from math import log,exp ,sqrt
 
 def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggregate_type=AggregateType.SUM):
     """

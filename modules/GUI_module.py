@@ -23,7 +23,7 @@ root = tk.Tk( ) # the object that contains everything
 # canvas = tk.Canvas(root, height= 700, width= 700, bg="#263D42")
 root.config( bg="white")
 root.title("Amun")
-ico = tk.PhotoImage(file=r"GUI_images/amun_logo.png")
+ico = tk.PhotoImage(file=r"../GUI_images/amun_logo.png")
 root.tk.call('wm', 'iconphoto', root._w, ico)
 
 file=[]
@@ -99,14 +99,14 @@ title.pack()
 
 '''open file Button'''
 openFile = tk.Button(root, text = 'Click Me !',    command=add_xes,  bg="white")
-img = tk.PhotoImage(file=r"GUI_images/add_file.png",height = 40, width = 150)
+img = tk.PhotoImage(file=r"../GUI_images/add_file.png", height = 40, width = 150)
 openFile.config(image=img)
 openFile.pack(padx=5, pady=10, side=tk.TOP)
 # openFile.image=img
 
 '''View Model Button'''
 viewModel = tk.Button(root, text = 'Click Me !',    command=view_model,  bg="white",height = 40, width = 170)
-img = tk.PhotoImage(file=r"GUI_images/view_model.png")
+img = tk.PhotoImage(file=r"../GUI_images/view_model.png")
 viewModel.config(image=img)
 viewModel.pack()
 viewModel.image=img
@@ -135,7 +135,7 @@ list_box.pack()
 
 ### University of Tartu Logo
 tartu = tk.Label(root, text="", bg="white")
-img = tk.PhotoImage(file=r"GUI_images/tartu.png")
+img = tk.PhotoImage(file=r"../GUI_images/tartu.png")
 img = img.subsample(2)
 tartu.config(image=img)
 tartu.image = img
@@ -144,7 +144,7 @@ tartu.pack(padx=5, pady=10, side=tk.LEFT)
 
 ### Cyber Logo
 cyber = tk.Label(root, text="", bg="white")
-img = tk.PhotoImage(file=r"GUI_images/cybernetica.png")
+img = tk.PhotoImage(file=r"../GUI_images/cybernetica.png")
 img = img.subsample(2)
 cyber.config(image=img)
 cyber.image = img

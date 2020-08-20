@@ -57,7 +57,7 @@ def plot_delta_distributions_time(delta_logger):
     g = sns.FacetGrid(delta_logger, row="dataset", col="aggregate_type", margin_titles=True)
     g.map(sns.boxplot, "emd", "delta" )
     plt.show()
-    g.savefig(os.path.join('experiment_figures','Input_emd_time_dfg_delta_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_emd_time_dfg_delta_distribution.pdf'))
 
 
 def plot_delta_distributions_freq(delta_logger):
@@ -65,7 +65,7 @@ def plot_delta_distributions_freq(delta_logger):
     g = sns.FacetGrid(delta_logger, row="dataset", col="aggregate_type", margin_titles=True)
     g.map(sns.boxplot, "emd", "delta" )
     plt.show()
-    g.savefig(os.path.join('experiment_figures','Input_emd_freq_dfg_delta_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_emd_freq_dfg_delta_distribution.pdf'))
 
 def plot_input_delta(result_log_delta):
 
@@ -78,7 +78,7 @@ def plot_input_delta(result_log_delta):
     plt.xlabel('Delta')
     plt.ylabel('Epsilon')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_delta_freq_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_delta_freq_dfg_epsilon_distribution.pdf'))
 
     # epsilon for time
     g = sns.FacetGrid(result_log_delta, row="dataset", col="aggregate_type", margin_titles=True)
@@ -88,7 +88,7 @@ def plot_input_delta(result_log_delta):
     plt.xlabel('Delta')
     plt.ylabel('Epsilon')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_delta_time_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_delta_time_dfg_epsilon_distribution.pdf'))
 
     #emd for freq
     g = sns.FacetGrid(result_log_delta, row="dataset", col="aggregate_type", margin_titles=True)
@@ -98,7 +98,7 @@ def plot_input_delta(result_log_delta):
     plt.xlabel('Delta')
     plt.ylabel('EMD')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_delta_freq_dfg_EMD_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_delta_freq_dfg_EMD_distribution.pdf'))
 
     # emd for freq
     g = sns.FacetGrid(result_log_delta, row="dataset", col="aggregate_type", margin_titles=True)
@@ -108,7 +108,7 @@ def plot_input_delta(result_log_delta):
     plt.xlabel('Delta')
     plt.ylabel('EMD')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_delta_time_dfg_EMD_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_delta_time_dfg_EMD_distribution.pdf'))
 
 def plot_input_EMD(result_log_alpha):
     #epsilon for freq
@@ -119,7 +119,7 @@ def plot_input_EMD(result_log_alpha):
     plt.xlabel('Alpha')
     plt.ylabel('Epsilon')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_EMD_freq_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_freq_dfg_epsilon_distribution.pdf'))
 
     #epsilon for time
     g = sns.FacetGrid(result_log_alpha, row="dataset", col="aggregate_type", margin_titles=True)
@@ -129,7 +129,7 @@ def plot_input_EMD(result_log_alpha):
     plt.xlabel('Alpha')
     plt.ylabel('Epsilon')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_EMD_time_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_time_dfg_epsilon_distribution.pdf'))
 
     #Delta for freq
     g = sns.FacetGrid(result_log_alpha, row="dataset", col="aggregate_type", margin_titles=True)
@@ -139,7 +139,7 @@ def plot_input_EMD(result_log_alpha):
     plt.xlabel('Alpha')
     plt.ylabel('Epsilon')
     plt.show()
-    g.savefig(os.path.join('experiment_figures', 'Input_EMD_freq_dfg_delta_distribution.pdf'))
+    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_freq_dfg_delta_distribution.pdf'))
 
 
 

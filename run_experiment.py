@@ -3,12 +3,11 @@ In this file, we run the experiments for different files
 
 """
 
-from differental_privacy_module import *
+from modules.differental_privacy_module import *
 # from GUI_module import *
-from input_module import *
+from modules.input_module import *
 import pandas as pd
-import sys
-from data_visualization import plot_results
+from modules.data_visualization import plot_results
 
 
 # DFG as a counter object
