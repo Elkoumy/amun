@@ -27,7 +27,7 @@ percentage_freq_tot=0
 percentage_time_tot=0
 no_of_experiments=5
 delta=0.2
-precision=0.5
+precision=0.05
 for i in range(0,no_of_experiments):
     dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=delta,precision=precision)
     # print("EMD for frequency is "+ str(emd_freq))
