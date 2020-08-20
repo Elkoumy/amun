@@ -27,7 +27,7 @@ def read_xes(xes_file,aggregate_type):
     dfg_time =get_dfg_time(data,aggregate_type)
 
     # pruning by values of freq and time
-    # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
+    dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
 
     # pruning by 10% freq from apromore
     # dfg_freq,dfg_time=pruning_by_edge_name_freq(dfg_freq,dfg_time)
