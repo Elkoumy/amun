@@ -76,7 +76,7 @@ for dataset in datasets:
 
 
         # emd=1000
-        emds=[0.1,0.3,0.5,0.7,1,2,10,20]
+        emds=[0.01, 0.05, 0.1,0.2]
         for emd in emds:
             precision=0.1
 
@@ -97,16 +97,16 @@ for dataset in datasets:
 
 # transform results into dataframes
 result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type", "delta", "epsilon_freq", "epsilon_time", "emd_freq", "emd_time"])
-result_log_delta.to_csv("result_log_delta.csv",index=False)
+result_log_delta.to_csv(r"experiment_logs/result_log_delta.csv",index=False)
 result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type", "alpha", "epsilon_freq", "epsilon_time", "delta_freq", "delta_time"])
-result_log_alpha.to_csv("result_log_alpha.csv",index=False)
+result_log_alpha.to_csv(r"experiment_logs/result_log_alpha.csv",index=False)
 
 #the delta distribution from emd as input
 delta_logger_time=pd.DataFrame(delta_logger_time, columns=["dataset","aggregate_type","emd","delta"])
-delta_logger_time.to_csv("delta_logger_time.csv", index=False)
+delta_logger_time.to_csv(r"experiment_logs/delta_logger_time.csv", index=False)
 
 delta_logger_freq=pd.DataFrame(delta_logger_freq, columns=["dataset","aggregate_type","emd","delta"])
-delta_logger_freq.to_csv("delta_logger_freq.csv", index=False)
+delta_logger_freq.to_csv(r"experiment_logs/delta_logger_freq.csv", index=False)
 # plot_delta_distribution_times(delta_logger_time)
 
 #plot the results

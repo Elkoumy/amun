@@ -12,7 +12,7 @@ def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logg
     plot_delta_distributions_time(delta_logger_time)
     plot_delta_distributions_freq(delta_logger_freq)
     plot_input_delta(result_log_delta)
-    plot_input_EMD(result_log_alpha)
+    # plot_input_EMD(result_log_alpha)
 
 def plot_delta_distribution_time(delta_per_distance):
 
