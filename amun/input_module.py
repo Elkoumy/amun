@@ -7,7 +7,7 @@ import pandas as pd
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
 from pm4py.algo.discovery.dfg import factory as dfg_factory
-from modules.guessing_advantage import AggregateType
+from amun.guessing_advantage import AggregateType
 from math import log10
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 

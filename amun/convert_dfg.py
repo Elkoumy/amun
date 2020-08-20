@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from math import sqrt
 from collections import Counter
-from modules.differental_privacy_module import AggregateType
+from amun.differental_privacy_module import AggregateType
 
 def convert_DFG_to_dataframe(out_dir,freq,time):
     event_count =int(sqrt(len(freq)))

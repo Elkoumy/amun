@@ -3,11 +3,11 @@ In this file, we run the experiments for different files
 
 """
 
-from modules.differental_privacy_module import *
+from amun.differental_privacy_module import *
 # from GUI_module import *
-from modules.input_module import *
+from amun.input_module import *
 import pandas as pd
-from modules.data_visualization import plot_results
+from amun.data_visualization import plot_results
 
 
 # DFG as a counter object

@@ -6,6 +6,8 @@ In this module, we support the following measures:
 """
 
 from scipy.stats import wasserstein_distance
+from pm4py.algo.discovery.inductive import factory as inductive_miner
+from pm4py.evaluation.replay_fitness import factory as replay_factory
 from math import fabs
 def earth_mover_dist(dfg1, dfg2):
     #  need to consider for zero frequncies as the counter object don't include it
@@ -25,3 +27,14 @@ def percentage_dist(dfg1,dfg2):
         if diff>distance:
             distance=diff
     return distance
+
+
+def f1_score(xes_file,dfg1,dfg2):
+    f1_score_1, f1_score_2=0,0
+    #first we use inductive miner to generate the petric nets of both the DFGs
+    net1, initial_marking1, final_marking1 = inductive_miner.apply(dfg1)
+    net2, initial_marking2, final_marking2 = inductive_miner.apply(dfg2)
+    fitness_1 = replay_factory.apply(xes_file, net1, initial_marking1, final_marking1)
+    fitness_2 = replay_factory.apply(xes_file, net2, initial_marking2, final_marking2)
+
+    return fitness_1, fitness_2

@@ -8,11 +8,11 @@
     * export the DFG after applying the differential privacy.
 '''
 
-from modules.differental_privacy_module import *
+from amun.differental_privacy_module import *
 # from GUI_module import *
-from modules.input_module import *
-from modules.data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
-
+from amun.input_module import *
+from amun.data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
+from amun.measure_accuracy import f1_score
 
 aggregate_type=AggregateType.SUM
 
@@ -25,7 +25,7 @@ emd_time_tot=0
 
 percentage_freq_tot=0
 percentage_time_tot=0
-no_of_experiments=100
+no_of_experiments=5
 delta=0.2
 precision=0.5
 for i in range(0,no_of_experiments):
@@ -38,6 +38,11 @@ for i in range(0,no_of_experiments):
     print("% time :"+str(percent_time))
     percentage_freq_tot+=percent_freq
     percentage_time_tot+=percent_time
+
+    # res1,res2= f1_score(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES\Sepsis Cases - Event Log.xes", dfg_freq, dfg_freq_new)
+    #
+    # print("fitness 1: " + str(res1))
+    # print("fitness 2: " + str(res2))
 
 
 

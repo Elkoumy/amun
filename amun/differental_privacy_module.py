@@ -5,12 +5,12 @@ The module has two main functionalities:
     * Take delta as input, then calculate both epsilon and accuracy correlated with it.
     * Take accuracy as input, then calculate both epsilon and the delta (risk) correlated with it.
 """
-from modules.guessing_advantage import calculate_epsilon_freq, calculate_epsilon_time, \
+from amun.guessing_advantage import calculate_epsilon_freq, calculate_epsilon_time, \
     AggregateType, calculate_epsilon_from_distance_time_percentage_distance, calculate_epsilon_from_distance_freq_percentage_distances
 import diffprivlib.mechanisms as privacyMechanisms
-from modules.convert_dfg import calculate_time_dfg
+from amun.convert_dfg import calculate_time_dfg
 import sys
-from modules.measure_accuracy import earth_mover_dist, percentage_dist
+from amun.measure_accuracy import earth_mover_dist, percentage_dist
 from collections import Counter
 from scipy.stats import laplace
 from math import inf
