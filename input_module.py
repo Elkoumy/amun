@@ -25,7 +25,15 @@ def read_xes(xes_file,aggregate_type):
     data=get_dataframe_from_event_stream(log)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
     dfg_time =get_dfg_time(data,aggregate_type)
+
+    # pruning by values of freq and time
     dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
+
+    # pruning by 10% freq from apromore
+    dfg_freq,dfg_time=pruning_by_edge_name_freq(dfg_freq,dfg_time)
+
+    # pruning by 10% time from apromore
+    dfg_freq, dfg_time = pruning_by_edge_name_time(dfg_freq, dfg_time)
     return dfg_freq,dfg_time
 
 
@@ -168,5 +176,69 @@ def frequency_pruning(dfg_freq, dfg_time, prune_parameter_freq, prune_parameter_
             if len(dfg_time[key])==0:
                 del dfg_freq[key]
                 del dfg_time[key]
+
+    return dfg_freq, dfg_time
+
+
+def pruning_by_edge_name_freq(dfg_freq, dfg_time):
+    #in this method we implement the pruning by edge names kept by apromore
+    #we keep 10% only
+
+    freq_10=[('ER Registration','ER Triage')
+,('ER Triage','ER Sepsis Triage')
+,('ER Sepsis Triage','IV Liquid')
+,('IV Liquid','IV Antibiotics')
+,('IV Antibiotics','Admission NC')
+,('IV Antibiotics','Admission IC')
+,('Admission NC','Leucocytes')
+,('Admission IC','LacticAcid')
+,('LacticAcid','Leucocytes')
+,('Leucocytes','CRP')
+,('CRP','Release A')
+,('CRP','Release B')
+,('CRP','Release C')
+,('CRP','Release D')
+,('CRP','Release E')
+,('Release A','Return ER')]
+
+    keys = list(dfg_freq.keys())
+    for key in keys:
+        if key not in freq_10:
+            del dfg_freq[key]
+            del dfg_time[key]
+
+    return dfg_freq, dfg_time
+
+def pruning_by_edge_name_time(dfg_freq, dfg_time):
+    # in this method we implement the pruning by edge names kept by apromore
+    # we keep 10% only
+
+    time_10 = [('IV Liquid','Release A')
+,('Release A','Return ER')
+,('LacticAcid','Release A')
+,('IV Antibiotics','Release A')
+,('Return ER','CRP')
+,('Release D','Return ER')
+,('Release C','Return ER')
+,('CRP','Release B')
+,('Release B','Admission NC')
+,('Admission NC','Leucocytes')
+,('Admission NC','LacticAcid')
+,('Admission NC','Release C')
+,('Admission NC','IV Antibiotics')
+,('Admission NC','Release D')
+,('Admission NC','ER Triage')
+,('ER Sepsis Triage','Admission NC')
+,('Admission IC','Admission NC')
+,('Admission NC','ER Sepsis Triage')
+,('ER Triage','ER Registration')
+,('Leucocytes','Release E')
+,('ER Registration','Admission IC')]
+
+    keys = list(dfg_freq.keys())
+    for key in keys:
+        if key not in time_10:
+            del dfg_freq[key]
+            del dfg_time[key]
 
     return dfg_freq, dfg_time
