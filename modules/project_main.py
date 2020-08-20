@@ -22,22 +22,37 @@ dfg_freq, dfg_time = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\D
 
 emd_freq_tot=0                                                                                                    
 emd_time_tot=0
-# for i in range(0,100):
-#     dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=0.05,precision=0.1)
-#     # print("EMD for frequency is "+ str(emd_freq))
-#     # print("EMD for time is "+ str(emd_time))
-#     emd_freq_tot+=emd_freq
-#     emd_time_tot+= emd_time
-#
-# print("avg EMD for freq is " + str(emd_freq_tot/100))
-# print("avg EMD for time is " + str(emd_time_tot/100))
 
+percentage_freq_tot=0
+percentage_time_tot=0
+no_of_experiments=100
+delta=0.2
+precision=0.5
+for i in range(0,no_of_experiments):
+    dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=delta,precision=precision)
+    # print("EMD for frequency is "+ str(emd_freq))
+    # print("EMD for time is "+ str(emd_time))
+    emd_freq_tot+=emd_freq
+    emd_time_tot+= emd_time
+
+    print("% time :"+str(percent_time))
+    percentage_freq_tot+=percent_freq
+    percentage_time_tot+=percent_time
+
+
+
+print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
+print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
+
+
+print("avg % for freq is " + str(percentage_freq_tot/no_of_experiments))
+print("avg % for time is " + str(percentage_time_tot/no_of_experiments))
 
 delta_per_distance_time={}
 delta_per_distance_freq={}
 
-distance= 0.05 # means %
-dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_freq_dfg, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=0.05, distance=distance, aggregate_type=aggregate_type)
+distance= 0.1 # means %
+dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_freq_dfg, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=distance, aggregate_type=aggregate_type)
 delta_per_distance_time[distance]=delta_time_dfg
 delta_per_distance_freq[distance]=delta_freq_dfg
 
