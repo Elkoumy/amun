@@ -143,3 +143,15 @@ def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,a
     dfg_time, dfg_time_new = add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time)
 
     return dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time , delta_time_dfg
+
+
+def risk_pruning(dfg_freq, dfg_time, dfg_delta_freq, dfg_delta_time, risk_pruning):
+    keys = list(dfg_freq.keys())
+    for key in keys:
+        if dfg_delta_freq[key]<risk_pruning or dfg_delta_time[key]<risk_pruning:
+            del dfg_freq[key]
+            del dfg_time[key]
+            del dfg_delta_freq[key]
+            del dfg_delta_time[key]
+
+    return dfg_freq, dfg_time, dfg_delta_freq, dfg_delta_time
