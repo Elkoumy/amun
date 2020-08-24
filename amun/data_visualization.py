@@ -66,7 +66,7 @@ def plot_delta_distributions_time(delta_logger):
         ax.set_xlabel("Percenage EMD")  # alpha
         ax.set_ylabel("\u03B4")
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_emd_time_dfg_delta_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_emd_time_dfg_delta_distribution.pdf'))
 
 
 def plot_delta_distributions_freq(delta_logger):
@@ -83,7 +83,7 @@ def plot_delta_distributions_freq(delta_logger):
         ax.set_xlabel("Percenage EMD")  # alpha
         ax.set_ylabel("\u03B4") #delta
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_emd_freq_dfg_delta_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_emd_freq_dfg_delta_distribution.pdf'))
 
 def plot_input_delta(result_log_delta):
 
@@ -103,7 +103,7 @@ def plot_input_delta(result_log_delta):
 
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_delta_freq_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_delta_freq_dfg_epsilon_distribution.pdf'))
 
     # epsilon for time
     g = sns.FacetGrid(result_log_delta, col="aggregate_type", margin_titles=True)
@@ -119,7 +119,7 @@ def plot_input_delta(result_log_delta):
     # plt.ylabel('Epsilon')
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_delta_time_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_delta_time_dfg_epsilon_distribution.pdf'))
 
     #emd for freq
     g = sns.FacetGrid(result_log_delta,  col="aggregate_type", margin_titles=True)
@@ -135,7 +135,7 @@ def plot_input_delta(result_log_delta):
     # plt.ylabel('EMD')
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_delta_freq_dfg_EMD_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_delta_freq_dfg_EMD_distribution.pdf'))
 
     # emd for freq
     g = sns.FacetGrid(result_log_delta,  col="aggregate_type", margin_titles=True)
@@ -151,7 +151,7 @@ def plot_input_delta(result_log_delta):
     # plt.ylabel('EMD')
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_delta_time_dfg_EMD_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_delta_time_dfg_EMD_distribution.pdf'))
 
 def plot_input_EMD(result_log_alpha):
     #epsilon for freq
@@ -167,7 +167,7 @@ def plot_input_EMD(result_log_alpha):
         ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_freq_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_freq_dfg_epsilon_distribution.pdf'))
 
     #epsilon for time
     g = sns.FacetGrid(result_log_alpha,  col="aggregate_type", margin_titles=True)
@@ -182,7 +182,7 @@ def plot_input_EMD(result_log_alpha):
         ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_time_dfg_epsilon_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_time_dfg_epsilon_distribution.pdf'))
 
     #Delta for freq
     g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
@@ -198,7 +198,7 @@ def plot_input_EMD(result_log_alpha):
         ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_freq_dfg_delta_median_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_freq_dfg_delta_median_distribution.pdf'))
 
     #Delta for time
     g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
@@ -213,7 +213,7 @@ def plot_input_EMD(result_log_alpha):
         ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_time_dfg_delta_median_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_time_dfg_delta_median_distribution.pdf'))
 
     #Delta for freq
     g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
@@ -228,7 +228,7 @@ def plot_input_EMD(result_log_alpha):
         ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_freq_dfg_delta_max_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_freq_dfg_delta_max_distribution.pdf'))
 
     #Delta for time
     g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
@@ -243,13 +243,14 @@ def plot_input_EMD(result_log_alpha):
         ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
     plt.show()
-    g.savefig(os.path.join('../experiment_figures', 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
+    g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
 
-# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-#
+result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
+
 # plot_input_delta(result_log_delta)
 # plot_input_EMD(result_log_alpha)
 # plot_delta_distributions_time(delta_logger_time)

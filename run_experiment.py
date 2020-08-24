@@ -27,8 +27,8 @@ from statistics import median
 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
-# datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
-datasets=["Sepsis Cases - Event Log", "CoSeLoG_WABO_2"]
+datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
+# datasets=["Sepsis Cases - Event Log", "CoSeLoG_WABO_2"]
 
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
@@ -40,6 +40,7 @@ delta_logger_time=[]
 delta_logger_freq=[]
 
 
+no_of_experiments=10
 for dataset in datasets:
 
     aggregate_types=[AggregateType.AVG, AggregateType.SUM]
@@ -49,7 +50,6 @@ for dataset in datasets:
         deltas=[0.01,0.05,0.07, 0.1,0.15,0.2, 0.5]
         for delta in deltas:
             precision=0.1
-            no_of_experiments=2
 
             emd_freq_tot=0
             emd_time_tot=0
