@@ -39,11 +39,11 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     emd_time=earth_mover_dist(dfg_time,dfg_time_new)
 
     #calculating the percentage difference
-    percent_freq=percentage_dist(dfg_freq,dfg_freq_new)
-    percent_time=percentage_dist(dfg_time,dfg_time_new)
+    percent_freq, percent_freq_dist=percentage_dist(dfg_freq,dfg_freq_new)
+    percent_time, percent_time_dist=percentage_dist(dfg_time,dfg_time_new)
 
 
-    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time
+    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time,percent_freq_dist,percent_time_dist
 
 
 def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):

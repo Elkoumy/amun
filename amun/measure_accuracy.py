@@ -22,11 +22,13 @@ def earth_mover_dist(dfg1, dfg2):
 def percentage_dist(dfg1,dfg2):
     #returns the maximum percentage difference between the two DFGs
     distance =0
+    distance_dist={}
     for key in dfg1.keys():
         diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
+        distance_dist[key]=diff
         if diff>distance:
             distance=diff
-    return distance
+    return distance, distance_dist
 
 
 def f1_score(xes_file,dfg1,dfg2):
