@@ -41,7 +41,7 @@ delta_logger_time=[]
 delta_logger_freq=[]
 
 
-no_of_experiments=10
+no_of_experiments=100
 precision=0.1
 for dataset in datasets:
 
@@ -52,7 +52,7 @@ for dataset in datasets:
         print("Aggregate Type: "+ str(aggregate_type))
         # delta=0.05
         dfg_freq, dfg_time = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
-        deltas=[0.01,0.05, 0.1,0.2, 0.5,0.7,0.9]
+        deltas=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9]
         for delta in deltas:
 
 
