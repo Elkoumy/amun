@@ -73,11 +73,15 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
             # inf in case of risk is bigger than 1-p_k
             # -inf in case of all the values are the same.
             # small epsilon values fail with laplace function
+
             if epsilon_time[key]==inf or epsilon_time[key]==-inf or epsilon_time[key]<1e-11:
                 dfg_time_new[key] = dfg_time[key]
             else:
-                laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
-                dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+                rv = laplace()
+                # laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
+                # dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+                noise=laplace.rvs(loc=0, scale=sens_time / epsilon_time[key], size=1)[0]
+                dfg_time_new[key]=dfg_time[key]+noise
 
             # laplace = Laplace()
             # laplace.set_epsilon(epsilon_time[key])
@@ -91,8 +95,11 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
             if epsilon_time == inf:
                 dfg_time_new[key] = dfg_time[key]
             else:
-                laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time)
-                dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+                # laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time)
+                # dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+                rv = laplace()
+                noise = laplace.rvs(loc=0, scale=sens_time / epsilon_time, size=1)[0]
+                dfg_time_new[key] = dfg_time[key] + noise
 
             # laplace = Laplace()
             # laplace.set_epsilon(epsilon_time)

@@ -29,7 +29,7 @@ process_model_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
-# datasets=["Sepsis Cases - Event Log", "CoSeLoG_WABO_2"]
+# datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2"]
 
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
@@ -42,15 +42,19 @@ delta_logger_freq=[]
 
 
 no_of_experiments=10
+precision=0.1
 for dataset in datasets:
 
-    aggregate_types=[AggregateType.AVG, AggregateType.SUM]
+    # aggregate_types=[AggregateType.AVG, AggregateType.SUM]
+    aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
     for aggregate_type in aggregate_types:
+        print("Dataset: "+ dataset)
+        print("Aggregate Type: "+ str(aggregate_type))
         # delta=0.05
         dfg_freq, dfg_time = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
-        deltas=[0.01,0.05,0.07, 0.1,0.15,0.2, 0.5]
+        deltas=[0.01,0.05, 0.1,0.2, 0.5,0.7,0.9]
         for delta in deltas:
-            precision=0.1
+
 
             emd_freq_tot=0
             emd_time_tot=0
@@ -61,16 +65,19 @@ for dataset in datasets:
                 # print("EMD for time is "+ str(emd_time))
                 # emd_freq_tot+=emd_freq
                 # emd_time_tot+= emd_time
-                emd_freq_tot+=percent_freq
-                emd_time_tot+= percent_time
+                # emd_freq_tot+=percent_freq
+                # emd_time_tot+= percent_time
+
+                emd_freq_tot+=median(percent_freq_dist.values())
+                emd_time_tot+=median(percent_time_dist.values())
                 epsilon_time_min+=min(epsilon_time.values())
                 #log the results
                 # print(epsilon_time)
                 # print(min(epsilon_time.values()))
                 # result_log_delta.append([dataset,i,delta,epsilon_freq,min(epsilon_time.values()), emd_freq, emd_time]) # logging the min epsilon for time as it is the maximum added noise
                 view_model(dfg_freq_new,process_model_dir+r"/fig_input_delta_"+str(delta)+"_"+dataset+"_"+str(aggregate_type)+"_"+str(i))
-            print("avg EMD for freq is " + str(emd_freq_tot/no_of_experiments))
-            print("avg EMD for time is " + str(emd_time_tot/no_of_experiments))
+            print("avg median EMD for freq is " + str(emd_freq_tot/no_of_experiments))
+            print("avg median EMD for time is " + str(emd_time_tot/no_of_experiments))
             result_log_delta.append([dataset,aggregate_type,  delta, epsilon_freq, epsilon_time_min/no_of_experiments, emd_freq_tot/no_of_experiments,
                                      emd_time_tot/no_of_experiments])  # logging the min epsilon for time as it is the maximum added noise
 
@@ -78,9 +85,9 @@ for dataset in datasets:
 
 
         # emd=1000
-        emds=[0.01, 0.05, 0.1,0.2]
+        emds=[0.01, 0.05, 0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9]
         for emd in emds:
-            precision=0.1
+
 
             dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_freq_dfg, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=emd, aggregate_type=aggregate_type)
             # delta_per_distance[emd] = delta_time_dfg

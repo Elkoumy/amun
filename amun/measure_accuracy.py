@@ -24,7 +24,10 @@ def percentage_dist(dfg1,dfg2):
     distance =0
     distance_dist={}
     for key in dfg1.keys():
-        diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
+        if dfg1[key]!=0: #division by zero
+            diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
+        else:
+            diff = fabs( ((100-dfg1[key]) - (100-dfg2[key])) / (100-dfg1[key]) )
         distance_dist[key]=diff
         if diff>distance:
             distance=diff

@@ -131,6 +131,7 @@ def plot_input_delta(result_log_delta):
     #emd for freq
     temp=result_log_delta[result_log_delta.aggregate_type=='AggregateType.SUM']
     g=sns.lineplot("delta", "emd_freq","dataset",data=temp)
+    # g = sns.lineplot("delta", "emd_freq", "dataset", data=result_log_delta)
     g.set_title('EMD Distribution with Frequency DFG  (\u03B4 input)')
     g.set_xlabel("\u03B4")  # delta
     g.set_ylabel("Percentage EMD")
@@ -141,6 +142,8 @@ def plot_input_delta(result_log_delta):
     # emd for time
     g = sns.FacetGrid(result_log_delta,  col="aggregate_type", margin_titles=True)
     g.map(sns.lineplot, "delta", "emd_time","dataset")
+    # temp = result_log_delta[result_log_delta.aggregate_type == 'AggregateType.SUM']
+    # g = sns.lineplot("delta", "emd_time", "dataset", data=temp)
     axes = g.axes.flatten()
     axes[0].set_title("Aggregate: Average")
     axes[1].set_title("Aggregate: Sum")
@@ -255,11 +258,11 @@ def plot_input_EMD(result_log_alpha):
     plt.show()
     g.savefig(os.path.join(r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures', 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
 
-result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
+# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+# plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
 # plot_input_delta(result_log_delta)
 # plot_input_EMD(result_log_alpha)

@@ -1,56 +1,56 @@
 dataset,aggregate_type,emd,delta
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9994375703037122
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9984101748807631
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9988950276243095
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9960079840319361
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9979550102249489
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9972899728997291
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9993079584775086
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9978165938864629
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9979402677651905
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9982300884955752
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.9926470588235294
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.993103448275862
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.995049504950495
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9994375703037122
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9984101748807631
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9988950276243095
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9960079840319361
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9979550102249489
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9972899702141558
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9993079584775086
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9978165938864629
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9979402677651731
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9982300884955752
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.9926470478032274
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.993103448275862
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.995049504950495
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9994375703037122
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9984101748807631
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9988950276243095
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9960079840319361
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9979550102249489
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.996296831954103
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9993079584775086
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9978164880308776
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9979373657124369
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9982300884955752
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9914288149512082
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.9931034482757576
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.995049504950495
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9994375703037122
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9984101746804757
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9988950276243095
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9960079832734774
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9979550102249489
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9220499942979794
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9993079584742258
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9921751538358363
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9822450999282867
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9982300884901515
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.8959817494861274
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9930995697034216
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.9950494684696727
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9994375703037122
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9984101748807631
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9988950276243095
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9960079840319361
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9979550102249489
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9972899728997291
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9993079584775086
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9978165938864629
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9979402677651905
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9982300884955752
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.9926470588235294
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.993103448275862
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.995049504950495
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9994375703037122
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9984101748807631
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9988950276243095
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9960079840319361
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9979550102249489
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9972899728997291
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9993079584775086
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9978165938864629
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9979402677651905
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9982300884955752
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.9926470588235294
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.993103448275862
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.995049504950495
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9994375701301771
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.998410174819435
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9988950275360283
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9960079840075708
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9979550101772928
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9972899728637915
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.999307958336493
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9978165938418341
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9979402677178761
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.998230088440497
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9926470588103459
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9931034482617995
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.9950495049308661
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.998882566004537
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9982139633872686
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9986126074080206
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9959300213605881
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9978025334776529
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9971749861232084
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.998856912012226
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9976738017789607
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9977888844355728
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9980538695541636
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9926048731032395
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9930584503007709
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.9949866963956574
 Sepsis Cases - Event Log,AggregateType.SUM,0.01,0.9435104686023422
 Sepsis Cases - Event Log,AggregateType.SUM,0.01,0.9946828621834337
 Sepsis Cases - Event Log,AggregateType.SUM,0.01,0.9988950276243095
@@ -103,75 +103,3 @@ Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.09238068124036894
 Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.04622516352705819
 Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.03930699754971467
 Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.0952746380141245
-CoSeLoG_WABO_2,AggregateType.AVG,0.01,0.9976525821596245
-CoSeLoG_WABO_2,AggregateType.AVG,0.01,0.9975609756097561
-CoSeLoG_WABO_2,AggregateType.AVG,0.05,0.9976525821596245
-CoSeLoG_WABO_2,AggregateType.AVG,0.05,0.9975609756097561
-CoSeLoG_WABO_2,AggregateType.AVG,0.1,0.9976525821596245
-CoSeLoG_WABO_2,AggregateType.AVG,0.1,0.9975609756097561
-CoSeLoG_WABO_2,AggregateType.AVG,0.2,0.9976525821596245
-CoSeLoG_WABO_2,AggregateType.AVG,0.2,0.9975609756097561
-CoSeLoG_WABO_2,AggregateType.SUM,0.01,0.9976525821596245
-CoSeLoG_WABO_2,AggregateType.SUM,0.01,0.9975609756097561
-CoSeLoG_WABO_2,AggregateType.SUM,0.05,0.9975741949550209
-CoSeLoG_WABO_2,AggregateType.SUM,0.05,0.9975609756097561
-CoSeLoG_WABO_2,AggregateType.SUM,0.1,0.9358585168319973
-CoSeLoG_WABO_2,AggregateType.SUM,0.1,0.9975609755691424
-CoSeLoG_WABO_2,AggregateType.SUM,0.2,0.24792468086585612
-CoSeLoG_WABO_2,AggregateType.SUM,0.2,0.9974321085032019
-BPIC15_2,AggregateType.AVG,0.01,0.9976851851851852
-BPIC15_2,AggregateType.AVG,0.01,0.9955456570155902
-BPIC15_2,AggregateType.AVG,0.01,0.9751861042183623
-BPIC15_2,AggregateType.AVG,0.01,0.9976580796252927
-BPIC15_2,AggregateType.AVG,0.01,0.9982668977469671
-BPIC15_2,AggregateType.AVG,0.01,0.9981785063752278
-BPIC15_2,AggregateType.AVG,0.01,0.9974160206718347
-BPIC15_2,AggregateType.AVG,0.05,0.9976851851851852
-BPIC15_2,AggregateType.AVG,0.05,0.9955456570155902
-BPIC15_2,AggregateType.AVG,0.05,0.9751861042183623
-BPIC15_2,AggregateType.AVG,0.05,0.9976580796252927
-BPIC15_2,AggregateType.AVG,0.05,0.9982668977469671
-BPIC15_2,AggregateType.AVG,0.05,0.9981785063752278
-BPIC15_2,AggregateType.AVG,0.05,0.9974160206718347
-BPIC15_2,AggregateType.AVG,0.1,0.9976851851851852
-BPIC15_2,AggregateType.AVG,0.1,0.9955456570155902
-BPIC15_2,AggregateType.AVG,0.1,0.9751861042183623
-BPIC15_2,AggregateType.AVG,0.1,0.9976580796252927
-BPIC15_2,AggregateType.AVG,0.1,0.9982668977469671
-BPIC15_2,AggregateType.AVG,0.1,0.9981785063752278
-BPIC15_2,AggregateType.AVG,0.1,0.9974160206718347
-BPIC15_2,AggregateType.AVG,0.2,0.9976851851851852
-BPIC15_2,AggregateType.AVG,0.2,0.9955456570155902
-BPIC15_2,AggregateType.AVG,0.2,0.9751861042183623
-BPIC15_2,AggregateType.AVG,0.2,0.9976580796252927
-BPIC15_2,AggregateType.AVG,0.2,0.9982668977469671
-BPIC15_2,AggregateType.AVG,0.2,0.9981785063752278
-BPIC15_2,AggregateType.AVG,0.2,0.9974160206718347
-BPIC15_2,AggregateType.SUM,0.01,0.9976851821444721
-BPIC15_2,AggregateType.SUM,0.01,0.9955454189718506
-BPIC15_2,AggregateType.SUM,0.01,0.9751861042145243
-BPIC15_2,AggregateType.SUM,0.01,0.9976580796252927
-BPIC15_2,AggregateType.SUM,0.01,0.9982668977469671
-BPIC15_2,AggregateType.SUM,0.01,0.9981785063752278
-BPIC15_2,AggregateType.SUM,0.01,0.9974160206718347
-BPIC15_2,AggregateType.SUM,0.05,0.8563934288344964
-BPIC15_2,AggregateType.SUM,0.05,0.7303553787531585
-BPIC15_2,AggregateType.SUM,0.05,0.8857255988689429
-BPIC15_2,AggregateType.SUM,0.05,0.9975086507346732
-BPIC15_2,AggregateType.SUM,0.05,0.9981606629883615
-BPIC15_2,AggregateType.SUM,0.05,0.9981785063752278
-BPIC15_2,AggregateType.SUM,0.05,0.9974160206710504
-BPIC15_2,AggregateType.SUM,0.1,0.5650565587535453
-BPIC15_2,AggregateType.SUM,0.1,0.26191808897829394
-BPIC15_2,AggregateType.SUM,0.1,0.31245423238025105
-BPIC15_2,AggregateType.SUM,0.1,0.9460467703297881
-BPIC15_2,AggregateType.SUM,0.1,0.9188662898582917
-BPIC15_2,AggregateType.SUM,0.1,0.9981785063208113
-BPIC15_2,AggregateType.SUM,0.1,0.9973986222638017
-BPIC15_2,AggregateType.SUM,0.2,0.2932731354074942
-BPIC15_2,AggregateType.SUM,0.2,0.08643412377993309
-BPIC15_2,AggregateType.SUM,0.2,0.07735466093666382
-BPIC15_2,AggregateType.SUM,0.2,0.3552700427944638
-BPIC15_2,AggregateType.SUM,0.2,0.1962031482812875
-BPIC15_2,AggregateType.SUM,0.2,0.9980058509187583
-BPIC15_2,AggregateType.SUM,0.2,0.9555675949731476

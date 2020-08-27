@@ -8,128 +8,128 @@
  viewBox="0.00 0.00 763.29 479.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 475)">
 <title>%3</title>
-<!-- 118450489566830562 -->
-<g id="node1" class="node"><title>118450489566830562</title>
+<!-- &#45;6760735685208204671 -->
+<g id="node1" class="node"><title>&#45;6760735685208204671</title>
 <polygon fill="#ffffff" stroke="black" points="557.789,-297 438.789,-297 438.789,-261 557.789,-261 557.789,-297"/>
 <text text-anchor="middle" x="498.289" y="-275.3" font-family="Times New Roman,serif" font-size="14.00">Admission NC (1)</text>
 </g>
-<!-- 4941769122289558835 -->
-<g id="node2" class="node"><title>4941769122289558835</title>
+<!-- 7850561497370058999 -->
+<g id="node2" class="node"><title>7850561497370058999</title>
 <polygon fill="#ffffff" stroke="black" points="304.289,-210 240.289,-210 240.289,-174 304.289,-174 304.289,-210"/>
 <text text-anchor="middle" x="272.289" y="-188.3" font-family="Times New Roman,serif" font-size="14.00">CRP (1)</text>
 </g>
-<!-- 118450489566830562&#45;&gt;4941769122289558835 -->
-<g id="edge1" class="edge"><title>118450489566830562&#45;&gt;4941769122289558835</title>
+<!-- &#45;6760735685208204671&#45;&gt;7850561497370058999 -->
+<g id="edge1" class="edge"><title>&#45;6760735685208204671&#45;&gt;7850561497370058999</title>
 <path fill="none" stroke="black" d="M452.827,-260.901C412.307,-245.661 353.486,-223.538 314.112,-208.73"/>
 <polygon fill="black" stroke="black" points="315.136,-205.375 304.544,-205.131 312.671,-211.927 315.136,-205.375"/>
-<text text-anchor="middle" x="455.289" y="-231.8" font-family="Times New Roman,serif" font-size="14.00">369.0332725788411</text>
+<text text-anchor="middle" x="452.289" y="-231.8" font-family="Times New Roman,serif" font-size="14.00">367.172930307056</text>
 </g>
-<!-- 6570115252564267433 -->
-<g id="node9" class="node"><title>6570115252564267433</title>
+<!-- 6179918396602481755 -->
+<g id="node9" class="node"><title>6179918396602481755</title>
 <polygon fill="#ffffff" stroke="black" points="322.789,-36 221.789,-36 221.789,-0 322.789,-0 322.789,-36"/>
 <text text-anchor="middle" x="272.289" y="-14.3" font-family="Times New Roman,serif" font-size="14.00">Leucocytes (1)</text>
 </g>
-<!-- 118450489566830562&#45;&gt;6570115252564267433 -->
-<g id="edge2" class="edge"><title>118450489566830562&#45;&gt;6570115252564267433</title>
-<path fill="none" stroke="black" stroke-width="1.04398" d="M508.038,-260.857C527.182,-224.662 564.479,-139.472 524.289,-87 501.16,-56.8023 399.992,-36.9672 333.086,-26.8902"/>
-<polygon fill="black" stroke="black" stroke-width="1.04398" points="333.471,-23.4093 323.068,-25.4153 332.452,-30.3346 333.471,-23.4093"/>
-<text text-anchor="middle" x="598.289" y="-144.8" font-family="Times New Roman,serif" font-size="14.00">407.7585292970547</text>
+<!-- &#45;6760735685208204671&#45;&gt;6179918396602481755 -->
+<g id="edge2" class="edge"><title>&#45;6760735685208204671&#45;&gt;6179918396602481755</title>
+<path fill="none" stroke="black" stroke-width="1.04519" d="M508.038,-260.857C527.182,-224.662 564.479,-139.472 524.289,-87 501.16,-56.8023 399.992,-36.9672 333.086,-26.8902"/>
+<polygon fill="black" stroke="black" stroke-width="1.04519" points="333.471,-23.4093 323.068,-25.4153 332.452,-30.3346 333.471,-23.4093"/>
+<text text-anchor="middle" x="601.789" y="-144.8" font-family="Times New Roman,serif" font-size="14.00">407.04418812086107</text>
 </g>
-<!-- &#45;5670009864185339888 -->
-<g id="node8" class="node"><title>&#45;5670009864185339888</title>
+<!-- 1152587832168206417 -->
+<g id="node8" class="node"><title>1152587832168206417</title>
 <polygon fill="#ffffff" stroke="black" points="123.289,-123 25.2894,-123 25.2894,-87 123.289,-87 123.289,-123"/>
 <text text-anchor="middle" x="74.2894" y="-101.3" font-family="Times New Roman,serif" font-size="14.00">LacticAcid (1)</text>
 </g>
-<!-- 4941769122289558835&#45;&gt;&#45;5670009864185339888 -->
-<g id="edge3" class="edge"><title>4941769122289558835&#45;&gt;&#45;5670009864185339888</title>
-<path fill="none" stroke="black" stroke-width="1.29635" d="M239.894,-191.7C176.713,-192.296 40.6395,-189.549 11.2894,-156 2.47447,-145.924 9.09845,-136.382 20.8336,-128.388"/>
-<polygon fill="black" stroke="black" stroke-width="1.29635" points="22.8643,-131.252 29.6476,-123.113 19.2695,-125.245 22.8643,-131.252"/>
-<text text-anchor="middle" x="67.2894" y="-144.8" font-family="Times New Roman,serif" font-size="14.00">629.9724960254318</text>
+<!-- 7850561497370058999&#45;&gt;1152587832168206417 -->
+<g id="edge3" class="edge"><title>7850561497370058999&#45;&gt;1152587832168206417</title>
+<path fill="none" stroke="black" stroke-width="1.29538" d="M239.894,-191.7C176.713,-192.296 40.6395,-189.549 11.2894,-156 2.47447,-145.924 9.09845,-136.382 20.8336,-128.388"/>
+<polygon fill="black" stroke="black" stroke-width="1.29538" points="22.8643,-131.252 29.6476,-123.113 19.2695,-125.245 22.8643,-131.252"/>
+<text text-anchor="middle" x="67.2894" y="-144.8" font-family="Times New Roman,serif" font-size="14.00">627.8160668166943</text>
 </g>
-<!-- 4941769122289558835&#45;&gt;6570115252564267433 -->
-<g id="edge4" class="edge"><title>4941769122289558835&#45;&gt;6570115252564267433</title>
-<path fill="none" stroke="black" stroke-width="2.2222" d="M272.289,-173.879C272.289,-144.001 272.289,-82.1129 272.289,-46.2736"/>
-<polygon fill="black" stroke="black" stroke-width="2.2222" points="275.789,-46.0516 272.289,-36.0516 268.789,-46.0516 275.789,-46.0516"/>
-<text text-anchor="middle" x="331.789" y="-101.3" font-family="Times New Roman,serif" font-size="14.00">1445.1899239827555</text>
+<!-- 7850561497370058999&#45;&gt;6179918396602481755 -->
+<g id="edge4" class="edge"><title>7850561497370058999&#45;&gt;6179918396602481755</title>
+<path fill="none" stroke="black" stroke-width="2.22054" d="M272.289,-173.879C272.289,-144.001 272.289,-82.1129 272.289,-46.2736"/>
+<polygon fill="black" stroke="black" stroke-width="2.22054" points="275.789,-46.0516 272.289,-36.0516 268.789,-46.0516 275.789,-46.0516"/>
+<text text-anchor="middle" x="331.789" y="-101.3" font-family="Times New Roman,serif" font-size="14.00">1444.1691942321513</text>
 </g>
-<!-- &#45;1744131764726653331 -->
-<g id="node3" class="node"><title>&#45;1744131764726653331</title>
+<!-- &#45;2410219256766748193 -->
+<g id="node3" class="node"><title>&#45;2410219256766748193</title>
 <polygon fill="#ffffff" stroke="black" points="705.789,-471 580.789,-471 580.789,-435 705.789,-435 705.789,-471"/>
 <text text-anchor="middle" x="643.289" y="-449.3" font-family="Times New Roman,serif" font-size="14.00">ER Registration (1)</text>
 </g>
-<!-- &#45;8305476247514553090 -->
-<g id="node5" class="node"><title>&#45;8305476247514553090</title>
+<!-- &#45;2872325205858232948 -->
+<g id="node5" class="node"><title>&#45;2872325205858232948</title>
 <polygon fill="#ffffff" stroke="black" points="689.789,-384 596.789,-384 596.789,-348 689.789,-348 689.789,-384"/>
 <text text-anchor="middle" x="643.289" y="-362.3" font-family="Times New Roman,serif" font-size="14.00">ER Triage (1)</text>
 </g>
-<!-- &#45;1744131764726653331&#45;&gt;&#45;8305476247514553090 -->
-<g id="edge5" class="edge"><title>&#45;1744131764726653331&#45;&gt;&#45;8305476247514553090</title>
-<path fill="none" stroke="black" stroke-width="1.68348" d="M643.289,-434.799C643.289,-423.163 643.289,-407.548 643.289,-394.237"/>
-<polygon fill="black" stroke="black" stroke-width="1.68348" points="646.789,-394.175 643.289,-384.175 639.789,-394.175 646.789,-394.175"/>
-<text text-anchor="middle" x="699.289" y="-405.8" font-family="Times New Roman,serif" font-size="14.00">970.8441114337512</text>
+<!-- &#45;2410219256766748193&#45;&gt;&#45;2872325205858232948 -->
+<g id="edge5" class="edge"><title>&#45;2410219256766748193&#45;&gt;&#45;2872325205858232948</title>
+<path fill="none" stroke="black" stroke-width="1.68405" d="M643.289,-434.799C643.289,-423.163 643.289,-407.548 643.289,-394.237"/>
+<polygon fill="black" stroke="black" stroke-width="1.68405" points="646.789,-394.175 643.289,-384.175 639.789,-394.175 646.789,-394.175"/>
+<text text-anchor="middle" x="699.289" y="-405.8" font-family="Times New Roman,serif" font-size="14.00">970.7715138672648</text>
 </g>
-<!-- 3296544575651183754 -->
-<g id="node4" class="node"><title>3296544575651183754</title>
+<!-- 8892003065059452103 -->
+<g id="node4" class="node"><title>8892003065059452103</title>
 <polygon fill="#ffffff" stroke="black" points="710.289,-297 576.289,-297 576.289,-261 710.289,-261 710.289,-297"/>
 <text text-anchor="middle" x="643.289" y="-275.3" font-family="Times New Roman,serif" font-size="14.00">ER Sepsis Triage (1)</text>
 </g>
-<!-- &#45;8305476247514553090&#45;&gt;3296544575651183754 -->
-<g id="edge6" class="edge"><title>&#45;8305476247514553090&#45;&gt;3296544575651183754</title>
-<path fill="none" stroke="black" stroke-width="1.60884" d="M643.289,-347.799C643.289,-336.163 643.289,-320.548 643.289,-307.237"/>
-<polygon fill="black" stroke="black" stroke-width="1.60884" points="646.789,-307.175 643.289,-297.175 639.789,-307.175 646.789,-307.175"/>
-<text text-anchor="middle" x="696.289" y="-318.8" font-family="Times New Roman,serif" font-size="14.00">905.123865855359</text>
+<!-- &#45;2872325205858232948&#45;&gt;8892003065059452103 -->
+<g id="edge6" class="edge"><title>&#45;2872325205858232948&#45;&gt;8892003065059452103</title>
+<path fill="none" stroke="black" stroke-width="1.60965" d="M643.289,-347.799C643.289,-336.163 643.289,-320.548 643.289,-307.237"/>
+<polygon fill="black" stroke="black" stroke-width="1.60965" points="646.789,-307.175 643.289,-297.175 639.789,-307.175 646.789,-307.175"/>
+<text text-anchor="middle" x="699.289" y="-318.8" font-family="Times New Roman,serif" font-size="14.00">905.1237957564589</text>
 </g>
-<!-- &#45;8429177058128869877 -->
-<g id="node6" class="node"><title>&#45;8429177058128869877</title>
+<!-- &#45;6564841300794043563 -->
+<g id="node6" class="node"><title>&#45;6564841300794043563</title>
 <polygon fill="#ffffff" stroke="black" points="555.789,-384 440.789,-384 440.789,-348 555.789,-348 555.789,-384"/>
 <text text-anchor="middle" x="498.289" y="-362.3" font-family="Times New Roman,serif" font-size="14.00">IV Antibiotics (1)</text>
 </g>
-<!-- &#45;8429177058128869877&#45;&gt;118450489566830562 -->
-<g id="edge7" class="edge"><title>&#45;8429177058128869877&#45;&gt;118450489566830562</title>
-<path fill="none" stroke="black" stroke-width="1.13578" d="M498.289,-347.799C498.289,-336.163 498.289,-320.548 498.289,-307.237"/>
-<polygon fill="black" stroke="black" stroke-width="1.13578" points="501.789,-307.175 498.289,-297.175 494.789,-307.175 501.789,-307.175"/>
-<text text-anchor="middle" x="551.289" y="-318.8" font-family="Times New Roman,serif" font-size="14.00">488.589123586114</text>
+<!-- &#45;6564841300794043563&#45;&gt;&#45;6760735685208204671 -->
+<g id="edge7" class="edge"><title>&#45;6564841300794043563&#45;&gt;&#45;6760735685208204671</title>
+<path fill="none" stroke="black" stroke-width="1.13857" d="M498.289,-347.799C498.289,-336.163 498.289,-320.548 498.289,-307.237"/>
+<polygon fill="black" stroke="black" stroke-width="1.13857" points="501.789,-307.175 498.289,-297.175 494.789,-307.175 501.789,-307.175"/>
+<text text-anchor="middle" x="557.789" y="-318.8" font-family="Times New Roman,serif" font-size="14.00">489.45013976376066</text>
 </g>
-<!-- 6215314419735287562 -->
-<g id="node7" class="node"><title>6215314419735287562</title>
+<!-- &#45;1926219633770359302 -->
+<g id="node7" class="node"><title>&#45;1926219633770359302</title>
 <polygon fill="#ffffff" stroke="black" points="543.289,-471 453.289,-471 453.289,-435 543.289,-435 543.289,-471"/>
 <text text-anchor="middle" x="498.289" y="-449.3" font-family="Times New Roman,serif" font-size="14.00">IV Liquid (1)</text>
 </g>
-<!-- 6215314419735287562&#45;&gt;&#45;8429177058128869877 -->
-<g id="edge8" class="edge"><title>6215314419735287562&#45;&gt;&#45;8429177058128869877</title>
-<path fill="none" stroke="black" stroke-width="1.15002" d="M498.289,-434.799C498.289,-423.163 498.289,-407.548 498.289,-394.237"/>
-<polygon fill="black" stroke="black" stroke-width="1.15002" points="501.789,-394.175 498.289,-384.175 494.789,-394.175 501.789,-394.175"/>
-<text text-anchor="middle" x="554.289" y="-405.8" font-family="Times New Roman,serif" font-size="14.00">501.1248220358735</text>
+<!-- &#45;1926219633770359302&#45;&gt;&#45;6564841300794043563 -->
+<g id="edge8" class="edge"><title>&#45;1926219633770359302&#45;&gt;&#45;6564841300794043563</title>
+<path fill="none" stroke="black" stroke-width="1.15148" d="M498.289,-434.799C498.289,-423.163 498.289,-407.548 498.289,-394.237"/>
+<polygon fill="black" stroke="black" stroke-width="1.15148" points="501.789,-394.175 498.289,-384.175 494.789,-394.175 501.789,-394.175"/>
+<text text-anchor="middle" x="557.789" y="-405.8" font-family="Times New Roman,serif" font-size="14.00">500.84167738636654</text>
 </g>
-<!-- &#45;5670009864185339888&#45;&gt;4941769122289558835 -->
-<g id="edge9" class="edge"><title>&#45;5670009864185339888&#45;&gt;4941769122289558835</title>
-<path fill="none" stroke="black" stroke-width="1.03994" d="M98.0662,-123.102C116.974,-136.601 141.089,-153.558 146.289,-156 173.021,-168.551 205.119,-177.384 230.227,-183.036"/>
-<polygon fill="black" stroke="black" stroke-width="1.03994" points="229.66,-186.495 240.175,-185.193 231.143,-179.654 229.66,-186.495"/>
-<text text-anchor="middle" x="202.289" y="-144.8" font-family="Times New Roman,serif" font-size="14.00">404.2000787862161</text>
+<!-- 1152587832168206417&#45;&gt;7850561497370058999 -->
+<g id="edge9" class="edge"><title>1152587832168206417&#45;&gt;7850561497370058999</title>
+<path fill="none" stroke="black" stroke-width="1.04336" d="M98.0662,-123.102C116.974,-136.601 141.089,-153.558 146.289,-156 173.021,-168.551 205.119,-177.384 230.227,-183.036"/>
+<polygon fill="black" stroke="black" stroke-width="1.04336" points="229.66,-186.495 240.175,-185.193 231.143,-179.654 229.66,-186.495"/>
+<text text-anchor="middle" x="202.289" y="-144.8" font-family="Times New Roman,serif" font-size="14.00">405.4324618362242</text>
 </g>
-<!-- &#45;5670009864185339888&#45;&gt;6570115252564267433 -->
-<g id="edge10" class="edge"><title>&#45;5670009864185339888&#45;&gt;6570115252564267433</title>
-<path fill="none" stroke="black" stroke-width="1.223" d="M25.0607,-87.6215C6.62712,-78.9013 -7.33701,-67.2435 4.2894,-54 30.6969,-23.9195 140.937,-18.3878 211.542,-18.0442"/>
-<polygon fill="black" stroke="black" stroke-width="1.223" points="211.662,-21.5441 221.657,-18.0289 211.652,-14.5441 211.662,-21.5441"/>
-<text text-anchor="middle" x="60.2894" y="-57.8" font-family="Times New Roman,serif" font-size="14.00">565.3855850345803</text>
+<!-- 1152587832168206417&#45;&gt;6179918396602481755 -->
+<g id="edge10" class="edge"><title>1152587832168206417&#45;&gt;6179918396602481755</title>
+<path fill="none" stroke="black" stroke-width="1.22353" d="M25.0607,-87.6215C6.62712,-78.9013 -7.33701,-67.2435 4.2894,-54 30.6969,-23.9195 140.937,-18.3878 211.542,-18.0442"/>
+<polygon fill="black" stroke="black" stroke-width="1.22353" points="211.662,-21.5441 221.657,-18.0289 211.652,-14.5441 211.662,-21.5441"/>
+<text text-anchor="middle" x="60.2894" y="-57.8" font-family="Times New Roman,serif" font-size="14.00">564.4176187447937</text>
 </g>
-<!-- 6570115252564267433&#45;&gt;4941769122289558835 -->
-<g id="edge11" class="edge"><title>6570115252564267433&#45;&gt;4941769122289558835</title>
+<!-- 6179918396602481755&#45;&gt;7850561497370058999 -->
+<g id="edge11" class="edge"><title>6179918396602481755&#45;&gt;7850561497370058999</title>
 <path fill="none" stroke="black" stroke-width="2.6" d="M322.023,-36.1523C365.291,-54.0524 417.807,-84.8222 395.289,-123 377.881,-152.517 342.554,-170.113 314.209,-179.985"/>
 <polygon fill="black" stroke="black" stroke-width="2.6" points="312.928,-176.721 304.515,-183.161 315.108,-183.373 312.928,-176.721"/>
-<text text-anchor="middle" x="460.789" y="-101.3" font-family="Times New Roman,serif" font-size="14.00">1777.8491185847072</text>
+<text text-anchor="middle" x="460.789" y="-101.3" font-family="Times New Roman,serif" font-size="14.00">1779.0040060100414</text>
 </g>
-<!-- 6570115252564267433&#45;&gt;&#45;5670009864185339888 -->
-<g id="edge12" class="edge"><title>6570115252564267433&#45;&gt;&#45;5670009864185339888</title>
-<path fill="none" stroke="black" stroke-width="1.0749" d="M221.656,-27.3769C196.095,-32.8194 165.114,-41.3172 139.289,-54 131.491,-57.8298 116.355,-69.3723 102.65,-80.4029"/>
-<polygon fill="black" stroke="black" stroke-width="1.0749" points="100.362,-77.7517 94.8119,-86.7763 104.779,-83.1828 100.362,-77.7517"/>
-<text text-anchor="middle" x="198.789" y="-57.8" font-family="Times New Roman,serif" font-size="14.00">434.98166289016785</text>
+<!-- 6179918396602481755&#45;&gt;1152587832168206417 -->
+<g id="edge12" class="edge"><title>6179918396602481755&#45;&gt;1152587832168206417</title>
+<path fill="none" stroke="black" stroke-width="1.07551" d="M221.656,-27.3769C196.095,-32.8194 165.114,-41.3172 139.289,-54 131.491,-57.8298 116.355,-69.3723 102.65,-80.4029"/>
+<polygon fill="black" stroke="black" stroke-width="1.07551" points="100.362,-77.7517 94.8119,-86.7763 104.779,-83.1828 100.362,-77.7517"/>
+<text text-anchor="middle" x="198.789" y="-57.8" font-family="Times New Roman,serif" font-size="14.00">433.79958053155394</text>
 </g>
-<!-- 6570115252564267433&#45;&gt;6570115252564267433 -->
-<g id="edge13" class="edge"><title>6570115252564267433&#45;&gt;6570115252564267433</title>
-<path fill="none" stroke="black" stroke-width="1.10123" d="M323.073,-25.5746C333.397,-24.7495 340.789,-22.2246 340.789,-18 340.789,-15.3596 337.902,-13.3832 333.215,-12.0707"/>
-<polygon fill="black" stroke="black" stroke-width="1.10123" points="333.505,-8.57199 323.073,-10.4254 332.384,-15.4817 333.505,-8.57199"/>
-<text text-anchor="middle" x="400.289" y="-14.3" font-family="Times New Roman,serif" font-size="14.00">458.16381831544635</text>
+<!-- 6179918396602481755&#45;&gt;6179918396602481755 -->
+<g id="edge13" class="edge"><title>6179918396602481755&#45;&gt;6179918396602481755</title>
+<path fill="none" stroke="black" stroke-width="1.10256" d="M323.073,-25.5746C333.397,-24.7495 340.789,-22.2246 340.789,-18 340.789,-15.3596 337.902,-13.3832 333.215,-12.0707"/>
+<polygon fill="black" stroke="black" stroke-width="1.10256" points="333.505,-8.57199 323.073,-10.4254 332.384,-15.4817 333.505,-8.57199"/>
+<text text-anchor="middle" x="396.789" y="-14.3" font-family="Times New Roman,serif" font-size="14.00">457.6747842358277</text>
 </g>
 </g>
 </svg>

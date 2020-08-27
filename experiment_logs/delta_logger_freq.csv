@@ -1,56 +1,56 @@
 dataset,aggregate_type,emd,delta
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.06466176491941172
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.1810183918208571
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.12653279736542183
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.22583752845901228
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.231182286377501
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.30225856670755413
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.07950606147355396
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.24620973089226808
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.11801520490104551
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.2009943903153605
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.2749210975109597
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.2586536194524216
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,0.2775018012699112
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.01294969840724164
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.03659073284788678
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.025437440527862842
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.04592744930677294
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.04705285894953371
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.06231981312198646
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.015933496349720126
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.05023246906220088
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.023709099734041308
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.04073117128982346
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.0563760690311538
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.05288360831330545
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,0.05693304688391807
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.006475120675839135
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.01830149435988488
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.012720778384385248
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.022975846963515206
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.023539465620889453
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.031190219847100634
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.007967253881204776
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.025132098506814995
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.01185621625948317
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.02037403942970864
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.028210467412379564
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.026460317343365125
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,0.028489628550056826
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.0032375942740810247
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.009151513556852415
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.00636064651970009
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.011489439970724526
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.011771363683506564
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.015598904616542085
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.003983690159914542
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.012568034129772752
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.005928316472723587
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.010188077096072896
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.014108041167130676
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.01323247525131462
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,0.01424770593136253
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.06466176491941172
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.1810183918208571
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.12653279736542183
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.22583752845901228
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.231182286377501
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.30225856670755413
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.07950606147355396
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.24620973089226808
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.11801520490104551
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.2009943903153605
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.2749210975109597
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.2586536194524216
+Sepsis Cases - Event Log,AggregateType.MAX,0.01,0.2775018012699112
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.01294969840724164
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.03659073284788678
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.025437440527862842
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.04592744930677294
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.04705285894953371
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.06231981312198646
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.015933496349720126
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.05023246906220088
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.023709099734041308
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.04073117128982346
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.0563760690311538
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.05288360831330545
+Sepsis Cases - Event Log,AggregateType.MAX,0.05,0.05693304688391807
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.006475120675839135
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.01830149435988488
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.012720778384385248
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.022975846963515206
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.023539465620889453
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.031190219847100634
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.007967253881204776
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.025132098506814995
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.01185621625948317
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.02037403942970864
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.028210467412379564
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.026460317343365125
+Sepsis Cases - Event Log,AggregateType.MAX,0.1,0.028489628550056826
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.0032375942740810247
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.009151513556852415
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.00636064651970009
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.011489439970724526
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.011771363683506564
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.015598904616542085
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.003983690159914542
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.012568034129772752
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.005928316472723587
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.010188077096072896
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.014108041167130676
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.01323247525131462
+Sepsis Cases - Event Log,AggregateType.MAX,0.2,0.01424770593136253
 Sepsis Cases - Event Log,AggregateType.SUM,0.01,0.06466176491941172
 Sepsis Cases - Event Log,AggregateType.SUM,0.01,0.1810183918208571
 Sepsis Cases - Event Log,AggregateType.SUM,0.01,0.12653279736542183
@@ -103,75 +103,3 @@ Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.010188077096072896
 Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.014108041167130676
 Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.01323247525131462
 Sepsis Cases - Event Log,AggregateType.SUM,0.2,0.01424770593136253
-CoSeLoG_WABO_2,AggregateType.AVG,0.01,0.2638634617373943
-CoSeLoG_WABO_2,AggregateType.AVG,0.01,0.2736481680145694
-CoSeLoG_WABO_2,AggregateType.AVG,0.05,0.053998716990165015
-CoSeLoG_WABO_2,AggregateType.AVG,0.05,0.05610164262731307
-CoSeLoG_WABO_2,AggregateType.AVG,0.1,0.027019068838949566
-CoSeLoG_WABO_2,AggregateType.AVG,0.1,0.02807292786519887
-CoSeLoG_WABO_2,AggregateType.AVG,0.2,0.01351200091149
-CoSeLoG_WABO_2,AggregateType.AVG,0.2,0.014039230519550467
-CoSeLoG_WABO_2,AggregateType.SUM,0.01,0.2638634617373943
-CoSeLoG_WABO_2,AggregateType.SUM,0.01,0.2736481680145694
-CoSeLoG_WABO_2,AggregateType.SUM,0.05,0.053998716990165015
-CoSeLoG_WABO_2,AggregateType.SUM,0.05,0.05610164262731307
-CoSeLoG_WABO_2,AggregateType.SUM,0.1,0.027019068838949566
-CoSeLoG_WABO_2,AggregateType.SUM,0.1,0.02807292786519887
-CoSeLoG_WABO_2,AggregateType.SUM,0.2,0.01351200091149
-CoSeLoG_WABO_2,AggregateType.SUM,0.2,0.014039230519550467
-BPIC15_2,AggregateType.AVG,0.01,0.2603677916400588
-BPIC15_2,AggregateType.AVG,0.01,0.25093706109072533
-BPIC15_2,AggregateType.AVG,0.01,0.278154349004165
-BPIC15_2,AggregateType.AVG,0.01,0.2632745106484471
-BPIC15_2,AggregateType.AVG,0.01,0.1969243288899749
-BPIC15_2,AggregateType.AVG,0.01,0.20668622810480783
-BPIC15_2,AggregateType.AVG,0.01,0.28901542198815167
-BPIC15_2,AggregateType.AVG,0.05,0.05325016335321599
-BPIC15_2,AggregateType.AVG,0.05,0.051237610106885274
-BPIC15_2,AggregateType.AVG,0.05,0.05707401333992255
-BPIC15_2,AggregateType.AVG,0.05,0.053872501404032005
-BPIC15_2,AggregateType.AVG,0.05,0.03988498407796807
-BPIC15_2,AggregateType.AVG,0.05,0.041916865120580835
-BPIC15_2,AggregateType.AVG,0.05,0.059428213070672774
-BPIC15_2,AggregateType.AVG,0.1,0.026643982870633316
-BPIC15_2,AggregateType.AVG,0.1,0.0256356413762471
-BPIC15_2,AggregateType.AVG,0.1,0.028560284015882797
-BPIC15_2,AggregateType.AVG,0.1,0.02695582302339238
-BPIC15_2,AggregateType.AVG,0.1,0.019950429542464728
-BPIC15_2,AggregateType.AVG,0.1,0.020967646771923486
-BPIC15_2,AggregateType.AVG,0.1,0.029740388386266296
-BPIC15_2,AggregateType.AVG,0.2,0.013324356601411241
-BPIC15_2,AggregateType.AVG,0.2,0.012819927303824958
-BPIC15_2,AggregateType.AVG,0.2,0.014283055237835567
-BPIC15_2,AggregateType.AVG,0.2,0.013480360719462528
-BPIC15_2,AggregateType.AVG,0.2,0.009976207551660619
-BPIC15_2,AggregateType.AVG,0.2,0.010484975922151153
-BPIC15_2,AggregateType.AVG,0.2,0.014873483785223728
-BPIC15_2,AggregateType.SUM,0.01,0.2603677916400588
-BPIC15_2,AggregateType.SUM,0.01,0.25093706109072533
-BPIC15_2,AggregateType.SUM,0.01,0.278154349004165
-BPIC15_2,AggregateType.SUM,0.01,0.2632745106484471
-BPIC15_2,AggregateType.SUM,0.01,0.1969243288899749
-BPIC15_2,AggregateType.SUM,0.01,0.20668622810480783
-BPIC15_2,AggregateType.SUM,0.01,0.28901542198815167
-BPIC15_2,AggregateType.SUM,0.05,0.05325016335321599
-BPIC15_2,AggregateType.SUM,0.05,0.051237610106885274
-BPIC15_2,AggregateType.SUM,0.05,0.05707401333992255
-BPIC15_2,AggregateType.SUM,0.05,0.053872501404032005
-BPIC15_2,AggregateType.SUM,0.05,0.03988498407796807
-BPIC15_2,AggregateType.SUM,0.05,0.041916865120580835
-BPIC15_2,AggregateType.SUM,0.05,0.059428213070672774
-BPIC15_2,AggregateType.SUM,0.1,0.026643982870633316
-BPIC15_2,AggregateType.SUM,0.1,0.0256356413762471
-BPIC15_2,AggregateType.SUM,0.1,0.028560284015882797
-BPIC15_2,AggregateType.SUM,0.1,0.02695582302339238
-BPIC15_2,AggregateType.SUM,0.1,0.019950429542464728
-BPIC15_2,AggregateType.SUM,0.1,0.020967646771923486
-BPIC15_2,AggregateType.SUM,0.1,0.029740388386266296
-BPIC15_2,AggregateType.SUM,0.2,0.013324356601411241
-BPIC15_2,AggregateType.SUM,0.2,0.012819927303824958
-BPIC15_2,AggregateType.SUM,0.2,0.014283055237835567
-BPIC15_2,AggregateType.SUM,0.2,0.013480360719462528
-BPIC15_2,AggregateType.SUM,0.2,0.009976207551660619
-BPIC15_2,AggregateType.SUM,0.2,0.010484975922151153
-BPIC15_2,AggregateType.SUM,0.2,0.014873483785223728
