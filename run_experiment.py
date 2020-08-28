@@ -28,9 +28,9 @@ from amun.model_visualization import view_model
 process_model_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures\process_models"
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
-datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
-# datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2"]
-
+# datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
+datasets=["Sepsis Cases - Event Log"]
+#
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
 
@@ -41,8 +41,8 @@ delta_logger_time=[]
 delta_logger_freq=[]
 
 
-no_of_experiments=100
-precision=0.1
+no_of_experiments=5
+precision=0.5
 for dataset in datasets:
 
     # aggregate_types=[AggregateType.AVG, AggregateType.SUM]
@@ -68,8 +68,8 @@ for dataset in datasets:
                 # emd_freq_tot+=percent_freq
                 # emd_time_tot+= percent_time
 
-                emd_freq_tot+=median(percent_freq_dist.values())
-                emd_time_tot+=median(percent_time_dist.values())
+                emd_freq_tot+=sum(percent_freq_dist.values())/len(percent_freq_dist.values())
+                emd_time_tot+=sum(percent_time_dist.values())/len(percent_time_dist.values())
                 epsilon_time_min+=min(epsilon_time.values())
                 #log the results
                 # print(epsilon_time)

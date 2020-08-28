@@ -20,7 +20,7 @@ aggregate_type=AggregateType.SUM
 # dfg_freq, dfg_time = read_xes("sample_data/manufacurer.xes")
 dfg_freq, dfg_time = read_xes(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES\Sepsis Cases - Event Log.xes", aggregate_type)
 
-emd_freq_tot=0                                                                                                    
+emd_freq_tot=0
 emd_time_tot=0
 
 percentage_freq_tot=0

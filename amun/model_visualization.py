@@ -8,6 +8,9 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF
 
 def view_model(dfg, dir=""):
+    #rounding for better plot
+    for key in dfg.keys():
+        dfg[key]=round(dfg[key])
 
     parameters = {"format": "svg"}
 
