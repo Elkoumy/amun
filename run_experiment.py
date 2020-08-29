@@ -29,8 +29,8 @@ process_model_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential 
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 
-# datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
-datasets=["Sepsis Cases - Event Log"]
+datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
+# datasets=["Sepsis Cases - Event Log"]
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
 
@@ -44,7 +44,7 @@ result_log_APE_freq=[]
 result_log_APE_time=[]
 
 
-no_of_experiments=2
+no_of_experiments=100
 precision=0.5
 for dataset in datasets:
 
