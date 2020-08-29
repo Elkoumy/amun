@@ -86,7 +86,7 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
                 # laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
                 # dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
                 noise=laplace.rvs(loc=0, scale=sens_time / epsilon_time[key], size=1)[0]
-                dfg_time_new[key]=dfg_time[key]+noise
+                dfg_time_new[key]=dfg_time[key]+abs(noise)
 
             # laplace = Laplace()
             # laplace.set_epsilon(epsilon_time[key])
@@ -104,7 +104,7 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
                 # dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
                 rv = laplace()
                 noise = laplace.rvs(loc=0, scale=sens_time / epsilon_time, size=1)[0]
-                dfg_time_new[key] = dfg_time[key] + noise
+                dfg_time_new[key] = dfg_time[key] + abs(noise)
 
             # laplace = Laplace()
             # laplace.set_epsilon(epsilon_time)
@@ -131,10 +131,10 @@ def add_laplace_noise_freq(dfg_freq, epsilon_freq):
 
         if type(epsilon_freq)==type(0.1):
             #single epsilon value
-            dfg_freq_new[key] = dfg_freq[key]+laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0]
+            dfg_freq_new[key] = dfg_freq[key]+abs(laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0])
         else:
             #multiple epsilon value
-            dfg_freq_new[key] = dfg_freq[key] + laplace.rvs(loc=0, scale=senstivity_freq / epsilon_freq[key], size=1)[0]
+            dfg_freq_new[key] = dfg_freq[key] + abs(laplace.rvs(loc=0, scale=senstivity_freq / epsilon_freq[key], size=1)[0])
 
     return dfg_freq_new
 

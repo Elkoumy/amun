@@ -130,7 +130,7 @@ def plot_input_delta(result_log_delta):
 
     #emd for freq
     temp=result_log_delta[result_log_delta.aggregate_type=='AggregateType.SUM']
-    g=sns.lineplot("delta", "emd_freq","dataset",data=temp)
+    g=sns.lineplot("delta", "MAPE_freq","dataset",data=temp)
     # g = sns.lineplot("delta", "emd_freq", "dataset", data=result_log_delta)
     g.set_title('EMD Distribution with Frequency DFG  (\u03B4 input)')
     g.set_xlabel("\u03B4")  # delta
@@ -141,7 +141,7 @@ def plot_input_delta(result_log_delta):
 
     # emd for time
     g = sns.FacetGrid(result_log_delta,  col="aggregate_type", margin_titles=True)
-    g.map(sns.lineplot, "delta", "emd_time","dataset")
+    g.map(sns.lineplot, "delta", "MAPE_time","dataset")
     # temp = result_log_delta[result_log_delta.aggregate_type == 'AggregateType.SUM']
     # g = sns.lineplot("delta", "emd_time", "dataset", data=temp)
     axes = g.axes.flatten()
