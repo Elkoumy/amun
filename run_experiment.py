@@ -28,7 +28,7 @@ from amun.model_visualization import view_model
 process_model_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures\process_models"
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
-# datasets=["Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2"]
+
 datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
 #
 result_log_delta = []  # holds the delta as input exeperiment
@@ -60,16 +60,16 @@ for dataset in datasets:
             emd_time_tot=0
             epsilon_time_min=0
             for i in range(0,no_of_experiments):
-                dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time , percent_freq_dist,percent_time_dist = differential_privacy_with_risk(dfg_freq, dfg_time, delta=delta,precision=precision,aggregate_type=aggregate_type)
+                dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, MAPE_freq, SMAPE_freq, APE_dist_freq, MAPE_time, SMAPE_time, APE_dist_time = differential_privacy_with_risk(dfg_freq, dfg_time, delta=delta,precision=precision,aggregate_type=aggregate_type)
                 # print("EMD for frequency is "+ str(emd_freq))
                 # print("EMD for time is "+ str(emd_time))
                 # emd_freq_tot+=emd_freq
                 # emd_time_tot+= emd_time
                 # emd_freq_tot+=percent_freq
                 # emd_time_tot+= percent_time
-
-                emd_freq_tot+=sum(percent_freq_dist.values())/len(percent_freq_dist.values())
-                emd_time_tot+=sum(percent_time_dist.values())/len(percent_time_dist.values())
+                #
+                # emd_freq_tot+=sum(percent_freq_dist.values())/len(percent_freq_dist.values())
+                # emd_time_tot+=sum(percent_time_dist.values())/len(percent_time_dist.values())
                 epsilon_time_min+=min(epsilon_time.values())
                 #log the results
                 # print(epsilon_time)

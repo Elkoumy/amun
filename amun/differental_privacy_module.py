@@ -10,7 +10,7 @@ from amun.guessing_advantage import calculate_epsilon_freq, calculate_epsilon_ti
 import diffprivlib.mechanisms as privacyMechanisms
 from amun.convert_dfg import calculate_time_dfg
 import sys
-from amun.measure_accuracy import earth_mover_dist, percentage_dist
+from amun.measure_accuracy import earth_mover_dist, percentage_dist, error_calculation
 from collections import Counter
 from scipy.stats import laplace
 from math import inf
@@ -39,11 +39,16 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     emd_time=earth_mover_dist(dfg_time,dfg_time_new)
 
     #calculating the percentage difference
-    percent_freq, percent_freq_dist=percentage_dist(dfg_freq,dfg_freq_new)
-    percent_time, percent_time_dist=percentage_dist(dfg_time,dfg_time_new)
+    # percent_freq, percent_freq_dist=percentage_dist(dfg_freq,dfg_freq_new)
+    # percent_time, percent_time_dist=percentage_dist(dfg_time,dfg_time_new)
 
+    #calculating the APE, MAPE, and SMAPE
+    MAPE_freq, SMAPE_freq, APE_dist_freq=error_calculation(dfg_freq,dfg_freq_new)
+    MAPE_time, SMAPE_time, APE_dist_time = error_calculation(dfg_time,dfg_time_new)
 
-    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time,percent_freq_dist,percent_time_dist
+    # return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, emd_freq, emd_time, percent_freq,percent_time,percent_freq_dist,percent_time_dist
+
+    return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, MAPE_freq, SMAPE_freq, APE_dist_freq, MAPE_time, SMAPE_time, APE_dist_time
 
 
 def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):

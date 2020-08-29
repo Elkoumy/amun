@@ -34,6 +34,27 @@ def percentage_dist(dfg1,dfg2):
     return distance, distance_dist
 
 
+def error_calculation(dfg1,dfg2):
+    #return MAPE, SMAPE, and distribution of APE between two DFGs.
+    total =0
+    smape_acc=0
+    APE_dist={}
+    for key in dfg1.keys():
+        if dfg1[key]!=0: #division by zero
+            diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
+        else:
+            diff = fabs( ((100-dfg1[key]) - (100-dfg2[key])) / (100-dfg1[key]) )
+        APE_dist[key]=diff
+
+        smape_acc+=fabs(dfg1[key]-dfg2[key])/(dfg1[key]-dfg2[key])
+        total+=diff
+
+        MAPE= total/len(dfg1.keys())
+
+        SMAPE=smape_acc/len(dfg1.keys())
+
+    return MAPE, SMAPE, APE_dist
+
 def f1_score(xes_file,dfg1,dfg2):
     f1_score_1, f1_score_2=0,0
     #first we use inductive miner to generate the petric nets of both the DFGs
