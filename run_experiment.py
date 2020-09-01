@@ -27,6 +27,7 @@ from amun.model_visualization import view_model
 
 process_model_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures\process_models"
 data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
+figures_dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 
 # datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
@@ -140,4 +141,4 @@ result_log_APE_freq.to_csv(r"experiment_logs/result_log_APE_freq.csv", index=Fal
 result_log_APE_time= pd.DataFrame.from_records(result_log_APE_time, columns=["dataset","aggregate_type", "delta", "edge", "APE_time"])
 result_log_APE_time.to_csv(r"experiment_logs/result_log_APE_time.csv", index=False)
 #plot the results
-plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
+plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time, figures_dir)
