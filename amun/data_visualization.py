@@ -16,6 +16,7 @@ def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logg
     plot_input_delta(result_log_delta,dir)
     plot_input_EMD(result_log_alpha,dir)
 
+
 def plot_delta_distribution_time(delta_per_distance):
 
     axis= []
@@ -146,8 +147,9 @@ def plot_input_delta(result_log_delta,dir):
     #     ax.set_xlabel("\u03B4") #delta
 
     plt.legend()
-    plt.show()
     plt.savefig(os.path.join(dir, 'Input_delta_freq_dfg_epsilon_distribution.pdf'))
+    plt.show()
+
 
     # epsilon for time
     g = sns.FacetGrid(result_log_delta, col="aggregate_type", margin_titles=True)
@@ -168,15 +170,16 @@ def plot_input_delta(result_log_delta,dir):
     g.savefig(os.path.join(dir, 'Input_delta_time_dfg_epsilon_distribution.pdf'))
 
     #emd for freq
-    temp=result_log_delta[result_log_delta.aggregate_type=='AggregateType.SUM']
-    g=sns.lineplot("delta", "MAPE_freq","dataset",data=temp)
+    # temp=result_log_delta[result_log_delta.aggregate_type=='AggregateType.SUM']
+    g=sns.lineplot("delta", "MAPE_freq","dataset",data=result_log_delta)
     # g = sns.lineplot("delta", "emd_freq", "dataset", data=result_log_delta)
     # g.set_title('EMD Distribution with Frequency DFG  (\u03B4 input)')
     g.set_xlabel("\u03B4")  # delta
     g.set_ylabel("MAPE")
     plt.legend()
-    plt.show()
     plt.savefig(os.path.join(dir, 'Input_delta_freq_dfg_EMD_distribution.pdf'))
+    plt.show()
+
 
     # emd for time
     g = sns.FacetGrid(result_log_delta,  col="aggregate_type", margin_titles=True)
@@ -210,8 +213,9 @@ def plot_input_EMD(result_log_alpha,dir):
 
 
     plt.legend()
-    plt.show()
     plt.savefig(os.path.join(dir, 'Input_EMD_freq_dfg_epsilon_distribution.pdf'))
+    plt.show()
+
     # g.savefig(os.path.join(dir, 'Input_EMD_freq_dfg_epsilon_distribution.pdf'))
 
     #epsilon for time
@@ -247,8 +251,9 @@ def plot_input_EMD(result_log_alpha,dir):
     # for ax in axes:
     #     ax.set_xlabel("Percenage EMD")  # alpha
     plt.legend()
-    plt.show()
     plt.savefig(os.path.join(dir, 'Input_EMD_freq_dfg_delta_median_distribution.pdf'))
+    plt.show()
+
 
     #Delta for time
     g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
@@ -268,25 +273,17 @@ def plot_input_EMD(result_log_alpha,dir):
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_median_distribution.pdf'))
 
     #Delta for freq
-    # g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
-    # g.map(sns.lineplot, "alpha", "delta_freq_max","dataset")
+
     g=sns.lineplot( "alpha", "delta_freq_max","dataset", data=result_log_alpha)
-    plt.subplots_adjust(top=0.2)
-    # g.fig.suptitle('Max \u03B5 for  Frequency DFG  (EMD input)')
-    # g.set_title('Max \u03B5 for  Frequency DFG  (EMD input)')
+    # plt.subplots_adjust(top=0.2)
+
     g.set_ylabel("Max \u03B4")  # delta
     g.set_xlabel("MAPE")  # alpha
-    # axes = g.axes.flatten()
-    # axes[0].set_title("Aggregate: Average")
-    # axes[1].set_title("Aggregate: Sum")
-
-    # axes[0].set_ylabel("Max \u03B4")  # delta
-    # for ax in axes:
-    #     ax.set_xlabel("Percenage EMD")  # alpha
 
     plt.legend()
-    plt.show()
     plt.savefig(os.path.join(dir, 'Input_EMD_freq_dfg_delta_max_distribution.pdf'))
+    plt.show()
+
 
     #Delta for time
     g = sns.FacetGrid(result_log_alpha, col="aggregate_type", margin_titles=True)
@@ -306,11 +303,11 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.show()
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
 
-result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
+# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+# plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
 # plot_input_delta(result_log_delta)
 # plot_input_EMD(result_log_alpha)

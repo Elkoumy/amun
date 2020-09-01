@@ -31,7 +31,7 @@ data_dir =r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Data\Data XES"
 
 # datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
 # datasets=["Sepsis Cases - Event Log","CreditRequirement"]
-datasets=["Road_Traffic_Fine_Management_Process"]
+datasets=["Sepsis Cases - Event Log"]
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
 
@@ -56,6 +56,7 @@ for dataset in datasets:
         print("Aggregate Type: "+ str(aggregate_type))
         # delta=0.05
         dfg_freq, dfg_time = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
+        view_model(dfg_freq, process_model_dir + r"/fig_input_unprotected_" + dataset )
         deltas=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9]
         for delta in deltas:
             SMAPE_freq_tot=0
