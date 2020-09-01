@@ -923,3 +923,47 @@ Sepsis Cases - Event Log,AggregateType.MAX,0.9,0.0
 Sepsis Cases - Event Log,AggregateType.MAX,0.9,0.0
 Sepsis Cases - Event Log,AggregateType.MAX,0.9,0.0
 Sepsis Cases - Event Log,AggregateType.MAX,0.9,0.0
+CreditRequirement,AggregateType.AVG,0.01,0.0
+CreditRequirement,AggregateType.AVG,0.05,0.0
+CreditRequirement,AggregateType.AVG,0.1,0.0
+CreditRequirement,AggregateType.AVG,0.2,0.0
+CreditRequirement,AggregateType.AVG,0.3,0.0
+CreditRequirement,AggregateType.AVG,0.4,0.0
+CreditRequirement,AggregateType.AVG,0.5,0.0
+CreditRequirement,AggregateType.AVG,0.6,0.0
+CreditRequirement,AggregateType.AVG,0.7,0.0
+CreditRequirement,AggregateType.AVG,0.8,0.0
+CreditRequirement,AggregateType.AVG,0.9,0.0
+CreditRequirement,AggregateType.SUM,0.01,0.0
+CreditRequirement,AggregateType.SUM,0.05,0.0
+CreditRequirement,AggregateType.SUM,0.1,0.0
+CreditRequirement,AggregateType.SUM,0.2,0.0
+CreditRequirement,AggregateType.SUM,0.3,0.0
+CreditRequirement,AggregateType.SUM,0.4,0.0
+CreditRequirement,AggregateType.SUM,0.5,0.0
+CreditRequirement,AggregateType.SUM,0.6,0.0
+CreditRequirement,AggregateType.SUM,0.7,0.0
+CreditRequirement,AggregateType.SUM,0.8,0.0
+CreditRequirement,AggregateType.SUM,0.9,0.0
+CreditRequirement,AggregateType.MIN,0.01,0.0
+CreditRequirement,AggregateType.MIN,0.05,0.0
+CreditRequirement,AggregateType.MIN,0.1,0.0
+CreditRequirement,AggregateType.MIN,0.2,0.0
+CreditRequirement,AggregateType.MIN,0.3,0.0
+CreditRequirement,AggregateType.MIN,0.4,0.0
+CreditRequirement,AggregateType.MIN,0.5,0.0
+CreditRequirement,AggregateType.MIN,0.6,0.0
+CreditRequirement,AggregateType.MIN,0.7,0.0
+CreditRequirement,AggregateType.MIN,0.8,0.0
+CreditRequirement,AggregateType.MIN,0.9,0.0
+CreditRequirement,AggregateType.MAX,0.01,0.0
+CreditRequirement,AggregateType.MAX,0.05,0.0
+CreditRequirement,AggregateType.MAX,0.1,0.0
+CreditRequirement,AggregateType.MAX,0.2,0.0
+CreditRequirement,AggregateType.MAX,0.3,0.0
+CreditRequirement,AggregateType.MAX,0.4,0.0
+CreditRequirement,AggregateType.MAX,0.5,0.0
+CreditRequirement,AggregateType.MAX,0.6,0.0
+CreditRequirement,AggregateType.MAX,0.7,0.0
+CreditRequirement,AggregateType.MAX,0.8,0.0
+CreditRequirement,AggregateType.MAX,0.9,0.0

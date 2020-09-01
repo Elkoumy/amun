@@ -42,12 +42,14 @@ def error_calculation(dfg1,dfg2):
     for key in dfg1.keys():
         if dfg1[key]!=0: #division by zero
             diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
+            smape_acc += abs(dfg1[key] - dfg2[key]) / (dfg1[key] + dfg2[key])
         else:
             diff = fabs( ((100-dfg1[key]) - (100-dfg2[key])) / (100-dfg1[key]) )
+            smape_acc += abs((100-dfg1[key] )- (100-dfg2[key])) / ((100-dfg1[key]) + (100-dfg2[key]))
         APE_dist[key]=diff
 
-        temp=(fabs(dfg1[key]-dfg2[key]))/(dfg1[key]+dfg2[key])
-        smape_acc+=abs(dfg1[key]-dfg2[key])/(dfg1[key]+dfg2[key])
+
+        # smape_acc+=abs(dfg1[key]-dfg2[key])/(dfg1[key]+dfg2[key])
         total+=diff
 
     MAPE= total/len(dfg1.keys())

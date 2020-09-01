@@ -25,10 +25,10 @@ def read_xes(xes_file,aggregate_type):
     # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
 
     # pruning by 10% freq from apromore
-    dfg_freq,dfg_time1=pruning_by_edge_name_freq(dfg_freq.copy(),dfg_time.copy(),xes_file)
-
+    # dfg_freq,dfg_time1=pruning_by_edge_name_freq(dfg_freq.copy(),dfg_time.copy(),xes_file)
+    #
     # pruning by 10% time from apromore
-    dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(),xes_file)
+    # dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(),xes_file)
     return dfg_freq,dfg_time
 
 
@@ -186,7 +186,7 @@ def pruning_by_edge_name_freq(dfg_freq, dfg_time,dataset):
     for key in keys:
         if key not in freq_10:
             del dfg_freq[key]
-            del dfg_time[key]
+            # del dfg_time[key]
 
     return dfg_freq, dfg_time
 
@@ -201,7 +201,7 @@ def pruning_by_edge_name_time(dfg_freq, dfg_time,dataset):
     dfg_freq=dfg_freq.copy()
     for key in keys:
         if key not in time_10:
-            del dfg_freq[key]
+            # del dfg_freq[key]
             del dfg_time[key]
 
     return dfg_freq, dfg_time
