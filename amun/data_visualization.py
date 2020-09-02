@@ -74,7 +74,7 @@ def plot_delta_distributions_time(delta_logger,dir):
     g.savefig(os.path.join(dir, 'Input_emd_time_dfg_delta_distribution.pdf'))
 
 
-    for data in delta_logger_time.dataset.unique():
+    for data in delta_logger.dataset.unique():
         subset= delta_logger[delta_logger.dataset == data]
         g = sns.FacetGrid(subset,  col="aggregate_type", margin_titles=True)
         g.map(sns.boxplot, "emd", "delta")
@@ -109,7 +109,7 @@ def plot_delta_distributions_freq(delta_logger,dir):
     g.savefig(os.path.join(dir, 'Input_emd_freq_dfg_delta_distribution.pdf'))
 
 
-    for data in delta_logger_time.dataset.unique():
+    for data in delta_logger.dataset.unique():
         subset= delta_logger[delta_logger.dataset == data]
         g = sns.FacetGrid(subset, row="dataset", margin_titles=True)
         g.map(sns.boxplot, "emd", "delta")
