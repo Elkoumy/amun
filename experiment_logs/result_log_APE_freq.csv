@@ -1,1013 +1,122 @@
 dataset,aggregate_type,delta,edge,APE_freq
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Leucocytes', 'CRP')",0.0068846195029081785
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('ER Triage', 'ER Sepsis Triage')",0.049083385069932706
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.07484054635186196
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('IV Liquid', 'IV Antibiotics')",0.017584892180301057
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('IV Antibiotics', 'Admission NC')",0.008734168548239853
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('ER Registration', 'ER Triage')",0.00631403787312394
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('LacticAcid', 'Leucocytes')",0.01291026073210914
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('CRP', 'Release A')",0.029104207259693288
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'Leucocytes')",0.040244426237432754
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Release A', 'Return ER')",0.05704968089865861
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission IC', 'LacticAcid')",0.2315037900536586
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('CRP', 'Release B')",4.482827417553587
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('IV Antibiotics', 'Admission IC')",0.1291152432539307
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('CRP', 'Release C')",1.472203821958834
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('CRP', 'Release D')",3.4093836011163794
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('CRP', 'Release E')",5.55137468850658
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Leucocytes', 'CRP')",0.0006276092147885652
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('ER Triage', 'ER Sepsis Triage')",0.003910388542260346
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.0399587808572629
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('IV Liquid', 'IV Antibiotics')",0.021292535184340614
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('IV Antibiotics', 'Admission NC')",0.021829469987643138
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('ER Registration', 'ER Triage')",0.0012287292829150042
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('LacticAcid', 'Leucocytes')",0.0019367614230111586
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('CRP', 'Release A')",0.015425718394716934
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'Leucocytes')",0.022609661638630086
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Release A', 'Return ER')",0.009749537563260982
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission IC', 'LacticAcid')",0.3519560732406734
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('CRP', 'Release B')",0.163149366001346
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('IV Antibiotics', 'Admission IC')",0.026733436718475685
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('CRP', 'Release C')",1.7025687469149706
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('CRP', 'Release D')",0.3313863401691828
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('CRP', 'Release E')",2.4746562936075676
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Leucocytes', 'CRP')",0.0013155375556268255
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('ER Triage', 'ER Sepsis Triage')",0.0007981649301823457
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.009140425724412357
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('IV Liquid', 'IV Antibiotics')",0.007520932506173937
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('IV Antibiotics', 'Admission NC')",0.005106791180555718
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('ER Registration', 'ER Triage')",0.0007658833064110803
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('LacticAcid', 'Leucocytes')",0.0008080580211085804
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('CRP', 'Release A')",0.013944742008406489
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'Leucocytes')",0.00030737772429619903
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Release A', 'Return ER')",0.011701444780695128
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission IC', 'LacticAcid')",0.03682568942238496
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('CRP', 'Release B')",0.118555997165487
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('IV Antibiotics', 'Admission IC')",0.0022284451133512623
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('CRP', 'Release C')",0.062210653278424226
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('CRP', 'Release D')",0.053837050878580296
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('CRP', 'Release E')",2.047874482703983
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Leucocytes', 'CRP')",0.0021521218590140304
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('ER Triage', 'ER Sepsis Triage')",0.00014371444327211446
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.0031601525093793627
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('IV Liquid', 'IV Antibiotics')",0.0008901383826741631
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('IV Antibiotics', 'Admission NC')",0.002094817817268215
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('ER Registration', 'ER Triage')",0.00017710645460413286
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('LacticAcid', 'Leucocytes')",0.00012904604297859926
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('CRP', 'Release A')",0.009016091931764104
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'Leucocytes')",0.0055831630813222705
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Release A', 'Return ER')",0.0011599875535416868
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission IC', 'LacticAcid')",0.004374233670580487
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('CRP', 'Release B')",0.05110261086882866
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('IV Antibiotics', 'Admission IC')",0.0031779884581418735
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('CRP', 'Release C')",0.0159268174100791
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('CRP', 'Release D')",0.022808442734681595
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('CRP', 'Release E')",0.3450644268429078
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Leucocytes', 'CRP')",0.000651728023739338
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0009273131476185268
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.006603773932970438
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('IV Liquid', 'IV Antibiotics')",2.5205513647343975e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('IV Antibiotics', 'Admission NC')",0.0004921142818212792
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('ER Registration', 'ER Triage')",0.0003988679001619776
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('LacticAcid', 'Leucocytes')",0.00140050640502925
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('CRP', 'Release A')",0.002076813703562527
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'Leucocytes')",0.002305494790446024
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Release A', 'Return ER')",0.005124792523720662
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission IC', 'LacticAcid')",0.012566036362912661
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('CRP', 'Release B')",0.02676439580006118
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('IV Antibiotics', 'Admission IC')",0.006385016051777741
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('CRP', 'Release C')",0.05345052224849585
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('CRP', 'Release D')",0.04133551013319107
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('CRP', 'Release E')",0.14371036199846884
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Leucocytes', 'CRP')",2.4920817014508868e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('ER Triage', 'ER Sepsis Triage')",1.0152851100353589e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.006242895444875941
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('IV Liquid', 'IV Antibiotics')",0.0013291186452262399
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('IV Antibiotics', 'Admission NC')",0.0017759183700052415
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('ER Registration', 'ER Triage')",0.0001911552991015201
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('LacticAcid', 'Leucocytes')",0.002630926321243938
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('CRP', 'Release A')",0.0008498117052113936
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'Leucocytes')",0.000603045828151884
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Release A', 'Return ER')",0.0009567870808543039
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission IC', 'LacticAcid')",0.02199968981977935
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('CRP', 'Release B')",0.0483030330153655
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('IV Antibiotics', 'Admission IC')",0.00451363541848631
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('CRP', 'Release C')",0.09889621902907632
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('CRP', 'Release D')",0.039500081095855975
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('CRP', 'Release E')",0.052971595142587834
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Leucocytes', 'CRP')",0.0001370818982195999
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0016060860319127505
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.0013655606837611838
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('IV Liquid', 'IV Antibiotics')",0.0008891183696030607
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('IV Antibiotics', 'Admission NC')",0.0007319212923829553
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('ER Registration', 'ER Triage')",0.00022047453870749053
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('LacticAcid', 'Leucocytes')",0.0003574399327290261
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('CRP', 'Release A')",0.00020118404722409096
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'Leucocytes')",0.002098710794065121
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Release A', 'Return ER')",0.0010432303934277095
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission IC', 'LacticAcid')",0.007668476428522154
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('CRP', 'Release B')",0.0077167029867498856
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('IV Antibiotics', 'Admission IC')",0.02425055813670804
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('CRP', 'Release C')",0.056967951281955025
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('CRP', 'Release D')",0.012955964128144704
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('CRP', 'Release E')",0.3408228926809045
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Leucocytes', 'CRP')",0.00013373010556501556
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('ER Triage', 'ER Sepsis Triage')",0.00013854700291719097
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.0004958658429510857
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('IV Liquid', 'IV Antibiotics')",0.0004408822348397077
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('IV Antibiotics', 'Admission NC')",5.383487396095307e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('ER Registration', 'ER Triage')",0.0004206323666573809
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('LacticAcid', 'Leucocytes')",0.0003595824482056186
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('CRP', 'Release A')",0.0006059147172467213
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'Leucocytes')",0.00458283328731554
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Release A', 'Return ER')",0.0031953825221772486
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission IC', 'LacticAcid')",0.005084820495904673
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('CRP', 'Release B')",0.00522400387782328
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('IV Antibiotics', 'Admission IC')",0.0007836275674965274
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('CRP', 'Release C')",0.07854326794101646
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('CRP', 'Release D')",0.010574494576725732
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('CRP', 'Release E')",0.14039161892475663
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Leucocytes', 'CRP')",0.00013570373038740587
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('ER Triage', 'ER Sepsis Triage')",5.0212659026373986e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.0017684771504613101
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('IV Liquid', 'IV Antibiotics')",2.9215406772061966e-06
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('IV Antibiotics', 'Admission NC')",0.00011279667319262841
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('ER Registration', 'ER Triage')",9.672005310488668e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('LacticAcid', 'Leucocytes')",0.00019663727359100255
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('CRP', 'Release A')",0.0004415491005610002
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'Leucocytes')",0.0005917918388723708
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Release A', 'Return ER')",0.0005378200735861626
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission IC', 'LacticAcid')",0.0028988999600169504
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('CRP', 'Release B')",0.003833821985609974
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('IV Antibiotics', 'Admission IC')",0.025279921848615997
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('CRP', 'Release C')",0.06060172628623593
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('CRP', 'Release D')",0.0014689780811020607
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('CRP', 'Release E')",0.07731844116911146
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Leucocytes', 'CRP')",0.00016360323290913353
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('ER Triage', 'ER Sepsis Triage')",0.0001260660374923369
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.0006741862537699473
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('IV Liquid', 'IV Antibiotics')",8.136432347941673e-06
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('IV Antibiotics', 'Admission NC')",0.00044979083647196736
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('ER Registration', 'ER Triage')",0.0004295760611801571
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('LacticAcid', 'Leucocytes')",0.00015933471663830676
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('CRP', 'Release A')",0.00040863400402426834
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'Leucocytes')",0.001316483239172328
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Release A', 'Return ER')",9.010600719847574e-06
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission IC', 'LacticAcid')",0.013024519295515386
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('CRP', 'Release B')",0.009193069216272451
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('IV Antibiotics', 'Admission IC')",0.005946759784854333
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('CRP', 'Release C')",0.04136189709965576
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('CRP', 'Release D')",0.021127037548391996
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('CRP', 'Release E')",0.054805140266906825
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Leucocytes', 'CRP')",5.173994073840478e-06
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('ER Triage', 'ER Sepsis Triage')",0.00016545920687246273
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.00029822100466449946
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('IV Liquid', 'IV Antibiotics')",7.504372955363869e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('IV Antibiotics', 'Admission NC')",0.00015342868061023754
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('ER Registration', 'ER Triage')",0.0004702811219152279
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('LacticAcid', 'Leucocytes')",1.672448435675079e-05
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('CRP', 'Release A')",0.00021316945782457806
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'Leucocytes')",0.0005899656837742077
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Release A', 'Return ER')",0.00010777519216214446
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission IC', 'LacticAcid')",0.013819471973098152
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('CRP', 'Release B')",0.0021370571418545203
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('IV Antibiotics', 'Admission IC')",0.010600356919688945
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('CRP', 'Release C')",0.044492059157306314
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('CRP', 'Release D')",0.0011530030434821665
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('CRP', 'Release E')",0.003216159492796855
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Leucocytes', 'CRP')",0.006165659758524949
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('ER Triage', 'ER Sepsis Triage')",0.042063862007634505
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.06406109353581362
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('IV Liquid', 'IV Antibiotics')",0.08075661777407671
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('IV Antibiotics', 'Admission NC')",0.0570065237960706
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('ER Registration', 'ER Triage')",0.00696628041050766
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('LacticAcid', 'Leucocytes')",0.016865630635763722
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('CRP', 'Release A')",0.07431948031122058
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'Leucocytes')",0.17459158043259554
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Release A', 'Return ER')",0.01717650816348325
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission IC', 'LacticAcid')",1.0926620909076747
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('CRP', 'Release B')",3.538851341481391
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('IV Antibiotics', 'Admission IC')",0.39623443967934724
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('CRP', 'Release C')",0.15539225190474434
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('CRP', 'Release D')",0.7293133695299581
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('CRP', 'Release E')",13.970699867241272
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Leucocytes', 'CRP')",0.0056438341424397175
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('ER Triage', 'ER Sepsis Triage')",0.004985342762624996
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.015259867990233775
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('IV Liquid', 'IV Antibiotics')",0.017523159539459907
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('IV Antibiotics', 'Admission NC')",0.0014159983115963543
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('ER Registration', 'ER Triage')",0.008665168679175788
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('LacticAcid', 'Leucocytes')",0.0005812157627221809
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('CRP', 'Release A')",0.002158010538626581
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'Leucocytes')",0.006865022488315396
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Release A', 'Return ER')",0.012221295889010532
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission IC', 'LacticAcid')",0.3087691222768583
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('CRP', 'Release B')",0.21082547932666604
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('IV Antibiotics', 'Admission IC')",0.20713240772686473
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('CRP', 'Release C')",0.03202508716030158
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('CRP', 'Release D')",1.008621777681676
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('CRP', 'Release E')",0.8982032700174388
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Leucocytes', 'CRP')",0.003908638312174104
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('ER Triage', 'ER Sepsis Triage')",0.004617386041876575
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.00517519661933468
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('IV Liquid', 'IV Antibiotics')",0.01364883597528445
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('IV Antibiotics', 'Admission NC')",0.004598567173604202
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('ER Registration', 'ER Triage')",0.005032031549526704
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('LacticAcid', 'Leucocytes')",0.0013827237717831632
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('CRP', 'Release A')",0.005658163957855181
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'Leucocytes')",0.0017132826958300364
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Release A', 'Return ER')",0.02018297855785101
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission IC', 'LacticAcid')",0.17414187750513213
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('CRP', 'Release B')",0.03192796401394111
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('IV Antibiotics', 'Admission IC')",0.19482560441861096
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('CRP', 'Release C')",0.5957465656357974
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('CRP', 'Release D')",0.06221248558251924
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('CRP', 'Release E')",0.19858984564048812
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Leucocytes', 'CRP')",0.0024538616565133206
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('ER Triage', 'ER Sepsis Triage')",0.00202830996805455
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.026116747313067047
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('IV Liquid', 'IV Antibiotics')",0.0068316490424745815
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('IV Antibiotics', 'Admission NC')",0.001524852613688674
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('ER Registration', 'ER Triage')",0.00040195472126444833
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('LacticAcid', 'Leucocytes')",0.0028607615581677237
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('CRP', 'Release A')",0.001324046799660599
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'Leucocytes')",0.0005405362101741645
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Release A', 'Return ER')",0.00026226161991749853
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission IC', 'LacticAcid')",0.005312282167020009
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('CRP', 'Release B')",0.019158796209939953
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('IV Antibiotics', 'Admission IC')",0.0036841740436348775
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('CRP', 'Release C')",0.01009057946886175
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('CRP', 'Release D')",0.08861477214801239
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('CRP', 'Release E')",0.581482044979003
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Leucocytes', 'CRP')",0.00010830924343133025
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0005114222566552202
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.0062676723570751144
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('IV Liquid', 'IV Antibiotics')",0.0022688626896100626
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('IV Antibiotics', 'Admission NC')",0.00013705429258618342
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('ER Registration', 'ER Triage')",0.00027223860797149157
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('LacticAcid', 'Leucocytes')",0.0001929958350674738
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('CRP', 'Release A')",0.0004792125899005636
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'Leucocytes')",0.00023867859046626283
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Release A', 'Return ER')",0.003414186555311726
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission IC', 'LacticAcid')",0.017622414862146295
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('CRP', 'Release B')",0.10741564801527864
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('IV Antibiotics', 'Admission IC')",0.0009783527353922773
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('CRP', 'Release C')",0.07616396307298409
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('CRP', 'Release D')",0.06301868597004374
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('CRP', 'Release E')",0.1164048359351284
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Leucocytes', 'CRP')",0.0009852358976178797
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('ER Triage', 'ER Sepsis Triage')",0.00014266315028185568
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.00031412334007969994
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('IV Liquid', 'IV Antibiotics')",0.0008845369252452349
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('IV Antibiotics', 'Admission NC')",0.001803719502026584
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('ER Registration', 'ER Triage')",0.0004173292596672991
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('LacticAcid', 'Leucocytes')",1.5765925168447195e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('CRP', 'Release A')",0.002999220862712402
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'Leucocytes')",0.00011607436899331716
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Release A', 'Return ER')",0.0018657883774542815
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission IC', 'LacticAcid')",0.0042943196302765154
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('CRP', 'Release B')",0.04776764219461277
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('IV Antibiotics', 'Admission IC')",0.01208300665888883
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('CRP', 'Release C')",0.040679221306510464
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('CRP', 'Release D')",0.009646024874799005
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('CRP', 'Release E')",0.1513495486967571
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Leucocytes', 'CRP')",7.960528894357413e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0012517581630578025
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.00268185482390787
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('IV Liquid', 'IV Antibiotics')",0.000149944793251249
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('IV Antibiotics', 'Admission NC')",0.0012022799785603886
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('ER Registration', 'ER Triage')",6.729634194555445e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('LacticAcid', 'Leucocytes')",0.0002980343155640531
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('CRP', 'Release A')",0.0002885245673460671
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'Leucocytes')",5.9182039913819195e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Release A', 'Return ER')",0.0027110735106921757
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission IC', 'LacticAcid')",0.007509652480279024
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('CRP', 'Release B')",0.031063945244720476
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('IV Antibiotics', 'Admission IC')",0.0016551770844277212
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('CRP', 'Release C')",0.03866574978684808
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('CRP', 'Release D')",0.0324350752319987
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('CRP', 'Release E')",0.08253561348471668
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Leucocytes', 'CRP')",0.00023992607102694014
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('ER Triage', 'ER Sepsis Triage')",0.0014598221715867927
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.00017109109433321415
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('IV Liquid', 'IV Antibiotics')",0.0008842475297854774
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('IV Antibiotics', 'Admission NC')",0.00044258553287255273
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('ER Registration', 'ER Triage')",0.0002500062994210475
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('LacticAcid', 'Leucocytes')",5.147091846248637e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('CRP', 'Release A')",0.00030466158897887263
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'Leucocytes')",0.0008890770286809896
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Release A', 'Return ER')",0.004467372032386603
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission IC', 'LacticAcid')",0.008937905583582675
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('CRP', 'Release B')",0.005685031957134575
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('IV Antibiotics', 'Admission IC')",0.01684429169491392
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('CRP', 'Release C')",0.003923863303488937
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('CRP', 'Release D')",0.04107697580716311
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('CRP', 'Release E')",0.15810067942206363
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Leucocytes', 'CRP')",2.4378719451973128e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('ER Triage', 'ER Sepsis Triage')",0.00023726111458243957
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.0006795093252983925
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('IV Liquid', 'IV Antibiotics')",0.00048648219458114373
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('IV Antibiotics', 'Admission NC')",0.0005394496397621164
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('ER Registration', 'ER Triage')",0.0007470436456380607
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('LacticAcid', 'Leucocytes')",0.0001909175474304347
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('CRP', 'Release A')",0.00427014936010617
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'Leucocytes')",0.0006651113984341183
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Release A', 'Return ER')",2.4594901418389373e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission IC', 'LacticAcid')",0.0068094572955708955
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('CRP', 'Release B')",0.003757646998225988
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('IV Antibiotics', 'Admission IC')",0.009092170805333078
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('CRP', 'Release C')",0.022350742876097566
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('CRP', 'Release D')",0.006866085352438193
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('CRP', 'Release E')",0.0019530840543458734
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Leucocytes', 'CRP')",1.0516643510220585e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('ER Triage', 'ER Sepsis Triage')",0.0002785876306864675
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.00032930411594530565
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('IV Liquid', 'IV Antibiotics')",0.0009210591724825884
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('IV Antibiotics', 'Admission NC')",2.4566793430725355e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('ER Registration', 'ER Triage')",0.00045651475605329857
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('LacticAcid', 'Leucocytes')",0.0005485391855667878
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('CRP', 'Release A')",0.00022798216621182824
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'Leucocytes')",0.0004019695438033159
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Release A', 'Return ER')",9.212024155083557e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission IC', 'LacticAcid')",0.0006474246920888395
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('CRP', 'Release B')",0.009267139256801582
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('IV Antibiotics', 'Admission IC')",0.0010889296267172547
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('CRP', 'Release C')",0.02119292904301445
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('CRP', 'Release D')",0.02365829373823451
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('CRP', 'Release E')",0.03184153605163879
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Leucocytes', 'CRP')",2.124149290271045e-06
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('ER Triage', 'ER Sepsis Triage')",0.0003882367332475926
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.0005117947853766948
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('IV Liquid', 'IV Antibiotics')",5.492350257741772e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('IV Antibiotics', 'Admission NC')",0.0004681371409060747
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('ER Registration', 'ER Triage')",0.00019907079310947605
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('LacticAcid', 'Leucocytes')",4.553618214332e-05
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('CRP', 'Release A')",0.00043103631603515067
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'Leucocytes')",0.00037433138713106586
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Release A', 'Return ER')",0.00023520125557690395
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission IC', 'LacticAcid')",0.005548735055429553
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('CRP', 'Release B')",0.003470785142005483
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('IV Antibiotics', 'Admission IC')",0.0007249661927335738
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('CRP', 'Release C')",0.0011409845699648603
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('CRP', 'Release D')",0.013733586985887372
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('CRP', 'Release E')",0.1028144225270946
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Leucocytes', 'CRP')",0.01281743723023805
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('ER Triage', 'ER Sepsis Triage')",0.019808250438974752
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.03209139422700075
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('IV Liquid', 'IV Antibiotics')",0.03158429197551976
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('IV Antibiotics', 'Admission NC')",0.061283412042494996
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('ER Registration', 'ER Triage')",0.02085463832276032
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('LacticAcid', 'Leucocytes')",0.09299550584327843
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('CRP', 'Release A')",0.0002395420750205351
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'Leucocytes')",0.09778868679882946
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Release A', 'Return ER')",0.0750603823495916
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission IC', 'LacticAcid')",0.07561632633478363
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('CRP', 'Release B')",0.7347341881079291
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('IV Antibiotics', 'Admission IC')",0.13759749030335885
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('CRP', 'Release C')",1.3387818581520559
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('CRP', 'Release D')",3.337499033138506
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('CRP', 'Release E')",9.762344623954007
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Leucocytes', 'CRP')",0.0009901047497748046
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('ER Triage', 'ER Sepsis Triage')",0.008013043567106483
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.05779562545465109
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('IV Liquid', 'IV Antibiotics')",0.025031916004256225
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('IV Antibiotics', 'Admission NC')",0.005498396845165879
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('ER Registration', 'ER Triage')",0.0029237832624473396
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('LacticAcid', 'Leucocytes')",0.029515681730583665
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('CRP', 'Release A')",0.014995716182135197
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'Leucocytes')",0.010058013159371932
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Release A', 'Return ER')",0.07418984236992986
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission IC', 'LacticAcid')",0.09617347185645286
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('CRP', 'Release B')",0.46306154511268527
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('IV Antibiotics', 'Admission IC')",0.1462073154906763
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('CRP', 'Release C')",0.2819299359143633
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('CRP', 'Release D')",0.6940217007241664
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('CRP', 'Release E')",0.6030884491793623
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Leucocytes', 'CRP')",0.00038381192546078484
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('ER Triage', 'ER Sepsis Triage')",0.0011319167687621223
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.022736786871842055
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('IV Liquid', 'IV Antibiotics')",0.001977803500236807
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('IV Antibiotics', 'Admission NC')",0.008216431374288301
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('ER Registration', 'ER Triage')",0.00045693645902331525
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('LacticAcid', 'Leucocytes')",0.0019181507737802293
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('CRP', 'Release A')",0.001421995718821601
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'Leucocytes')",0.01283811165776497
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Release A', 'Return ER')",0.0005776636494817345
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission IC', 'LacticAcid')",0.009732405753421342
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('CRP', 'Release B')",0.26128101482717064
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('IV Antibiotics', 'Admission IC')",0.0874298441772556
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('CRP', 'Release C')",0.11553024486942057
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('CRP', 'Release D')",0.3220108539346384
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('CRP', 'Release E')",1.1416599825077298
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Leucocytes', 'CRP')",0.00010428853117151484
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('ER Triage', 'ER Sepsis Triage')",0.000382422082286076
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.00032261822718937126
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('IV Liquid', 'IV Antibiotics')",0.002771615920503999
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('IV Antibiotics', 'Admission NC')",0.00010611908869812559
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('ER Registration', 'ER Triage')",0.0001998018402049503
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('LacticAcid', 'Leucocytes')",0.010195574661799454
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('CRP', 'Release A')",0.0007295804959675189
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'Leucocytes')",0.0025985840527479862
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Release A', 'Return ER')",0.0135593179277794
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission IC', 'LacticAcid')",0.04254044509969611
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('CRP', 'Release B')",0.12058360171571293
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('IV Antibiotics', 'Admission IC')",0.004981162586704234
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('CRP', 'Release C')",0.1975690485882867
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('CRP', 'Release D')",0.035446967648348426
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('CRP', 'Release E')",0.10899417954028134
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Leucocytes', 'CRP')",0.00010872488347912806
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0013325801473296984
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.002574935633485135
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('IV Liquid', 'IV Antibiotics')",0.00021422948354895738
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('IV Antibiotics', 'Admission NC')",0.000765352075548529
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('ER Registration', 'ER Triage')",0.0018586442219530178
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('LacticAcid', 'Leucocytes')",0.010683699552190676
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('CRP', 'Release A')",0.0011645210358209475
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'Leucocytes')",0.002391775843171069
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Release A', 'Return ER')",0.0007659307590058952
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission IC', 'LacticAcid')",0.008323966077319875
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('CRP', 'Release B')",0.07730118630958428
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('IV Antibiotics', 'Admission IC')",0.019369776895603076
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('CRP', 'Release C')",0.01253570594962397
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('CRP', 'Release D')",0.0712198744702038
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('CRP', 'Release E')",0.5683137690709863
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Leucocytes', 'CRP')",0.0008900788603516111
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('ER Triage', 'ER Sepsis Triage')",0.0007330413794345821
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.0010026844887990767
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('IV Liquid', 'IV Antibiotics')",0.0008306006581188692
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('IV Antibiotics', 'Admission NC')",0.0019108578048486074
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('ER Registration', 'ER Triage')",0.0009869456420296399
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('LacticAcid', 'Leucocytes')",0.0008847720184167779
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('CRP', 'Release A')",0.001547345699561577
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'Leucocytes')",2.0584795614539354e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Release A', 'Return ER')",0.0007621655393963293
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission IC', 'LacticAcid')",0.007211999739531038
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('CRP', 'Release B')",0.005263636403887817
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('IV Antibiotics', 'Admission IC')",0.01246960791115988
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('CRP', 'Release C')",0.05719878089248782
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('CRP', 'Release D')",0.08004717933859921
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('CRP', 'Release E')",0.47175523269777475
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Leucocytes', 'CRP')",0.00011321624446654322
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0009607388686699577
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('ER Sepsis Triage', 'IV Liquid')",9.402181881182115e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('IV Liquid', 'IV Antibiotics')",0.0009051055673301892
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('IV Antibiotics', 'Admission NC')",0.000687994440615297
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('ER Registration', 'ER Triage')",0.000652468021894305
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('LacticAcid', 'Leucocytes')",0.0013365442863508268
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('CRP', 'Release A')",0.0014634738719814988
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'Leucocytes')",0.001358673841156913
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Release A', 'Return ER')",4.802651624668281e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission IC', 'LacticAcid')",0.006050011377290505
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('CRP', 'Release B')",0.019979218969178186
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('IV Antibiotics', 'Admission IC')",0.005903752478399428
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('CRP', 'Release C')",0.08819852057658076
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('CRP', 'Release D')",0.050998332496130803
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('CRP', 'Release E')",0.3171210399735231
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Leucocytes', 'CRP')",2.413724248682721e-06
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('ER Triage', 'ER Sepsis Triage')",0.00012969614257579362
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.00016754707641503206
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('IV Liquid', 'IV Antibiotics')",0.00016495452423734473
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('IV Antibiotics', 'Admission NC')",0.00017029739932465822
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('ER Registration', 'ER Triage')",9.819175386090288e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('LacticAcid', 'Leucocytes')",0.0004036646004967216
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('CRP', 'Release A')",0.0006991503947399409
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'Leucocytes')",0.000713750080172434
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Release A', 'Return ER')",0.00040541957057719765
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission IC', 'LacticAcid')",0.00266769733449167
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('CRP', 'Release B')",0.0013586000056073327
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('IV Antibiotics', 'Admission IC')",0.005415622211775799
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('CRP', 'Release C')",0.038942666435234724
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('CRP', 'Release D')",0.0088010389502986
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('CRP', 'Release E')",0.09975522279220221
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Leucocytes', 'CRP')",8.91094212262223e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('ER Triage', 'ER Sepsis Triage')",0.00023312353901069628
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.0007725120379835684
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('IV Liquid', 'IV Antibiotics')",0.00011711750662895217
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('IV Antibiotics', 'Admission NC')",0.000325606064229332
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('ER Registration', 'ER Triage')",0.0006515008493570077
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('LacticAcid', 'Leucocytes')",0.001566857565625171
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('CRP', 'Release A')",0.0007282847477684297
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'Leucocytes')",9.876205567319759e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Release A', 'Return ER')",0.0011368937089340238
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission IC', 'LacticAcid')",0.012842741779002707
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('CRP', 'Release B')",0.017770545745948777
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('IV Antibiotics', 'Admission IC')",0.002195104605719647
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('CRP', 'Release C')",0.06774671396929303
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('CRP', 'Release D')",0.09942124771088261
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('CRP', 'Release E')",0.146709488710327
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Leucocytes', 'CRP')",0.00018265255572792787
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('ER Triage', 'ER Sepsis Triage')",0.0008907010944597947
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('ER Sepsis Triage', 'IV Liquid')",1.0128975520130647e-06
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('IV Liquid', 'IV Antibiotics')",0.0006847320903103399
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('IV Antibiotics', 'Admission NC')",0.0002252036225578485
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('ER Registration', 'ER Triage')",5.6027359776768426e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('LacticAcid', 'Leucocytes')",0.00045169351747686813
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('CRP', 'Release A')",0.00014352372009257577
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'Leucocytes')",0.00039547753229733613
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Release A', 'Return ER')",0.0008318347090406023
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission IC', 'LacticAcid')",0.003709605340217389
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('CRP', 'Release B')",0.0085369159253682
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('IV Antibiotics', 'Admission IC')",0.005027304393818942
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('CRP', 'Release C')",0.00845106044896459
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('CRP', 'Release D')",0.007157764319799605
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('CRP', 'Release E')",0.01005692821270173
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Leucocytes', 'CRP')",3.673416414791663e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('ER Triage', 'ER Sepsis Triage')",0.00018250152145469028
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.0003338498415659112
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('IV Liquid', 'IV Antibiotics')",5.4579615619875586e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('IV Antibiotics', 'Admission NC')",0.0003398752865176092
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('ER Registration', 'ER Triage')",7.933672130322341e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('LacticAcid', 'Leucocytes')",5.587805141449199e-06
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('CRP', 'Release A')",5.691587538791333e-05
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'Leucocytes')",0.0012284475820996644
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Release A', 'Return ER')",0.00026916722133637285
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission IC', 'LacticAcid')",0.0006571346831708108
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('CRP', 'Release B')",0.0033729892018964777
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('IV Antibiotics', 'Admission IC')",0.006335697707613325
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('CRP', 'Release C')",0.007250074828426716
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('CRP', 'Release D')",0.024985289367069452
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('CRP', 'Release E')",0.0315994720882952
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Leucocytes', 'CRP')",0.00016853561133267425
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('ER Triage', 'ER Sepsis Triage')",0.0699638127353455
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.1704724520030661
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('IV Liquid', 'IV Antibiotics')",0.1310349288021938
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('IV Antibiotics', 'Admission NC')",0.02394854801861146
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('ER Registration', 'ER Triage')",0.012426140250633311
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('LacticAcid', 'Leucocytes')",0.0352822139104498
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('CRP', 'Release A')",0.047745766567944325
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'Leucocytes')",0.23584481081357703
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Release A', 'Return ER')",0.10457925354172873
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission IC', 'LacticAcid')",1.1390911818454375
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('CRP', 'Release B')",2.5208805000652634
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('IV Antibiotics', 'Admission IC')",0.00046518250891156384
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('CRP', 'Release C')",0.30749953742527525
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('CRP', 'Release D')",1.2851680317322904
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('CRP', 'Release E')",7.7899907163597035
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Leucocytes', 'CRP')",0.00527744690616107
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('ER Triage', 'ER Sepsis Triage')",0.005635069561005808
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.004586148013802278
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('IV Liquid', 'IV Antibiotics')",0.02399385079016559
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('IV Antibiotics', 'Admission NC')",7.274956855629009e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('ER Registration', 'ER Triage')",0.028913958811561166
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('LacticAcid', 'Leucocytes')",0.014391708349899895
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('CRP', 'Release A')",0.02439560283442737
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'Leucocytes')",0.02457721810247583
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Release A', 'Return ER')",0.0288235232211866
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission IC', 'LacticAcid')",0.11633412985688235
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('CRP', 'Release B')",0.7409363837244568
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('IV Antibiotics', 'Admission IC')",0.13520031112632055
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('CRP', 'Release C')",1.4383812568949563
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('CRP', 'Release D')",0.1332259044644261
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('CRP', 'Release E')",0.45488466130911753
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Leucocytes', 'CRP')",0.004375589655223331
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('ER Triage', 'ER Sepsis Triage')",0.00046149714053096545
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.0005293504394560107
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('IV Liquid', 'IV Antibiotics')",0.002451704199290612
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('IV Antibiotics', 'Admission NC')",0.006336095922297959
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('ER Registration', 'ER Triage')",0.0008111587421645764
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('LacticAcid', 'Leucocytes')",0.00478888713714736
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('CRP', 'Release A')",0.008061447288537167
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'Leucocytes')",0.0014841499824364197
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Release A', 'Return ER')",0.029662529658070036
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission IC', 'LacticAcid')",0.04419377928712859
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('CRP', 'Release B')",0.12151686879133605
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('IV Antibiotics', 'Admission IC')",0.06820228712902236
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('CRP', 'Release C')",0.11801893005684765
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('CRP', 'Release D')",0.007453515532220845
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('CRP', 'Release E')",0.006868258264772109
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Leucocytes', 'CRP')",0.0009325369451912373
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('ER Triage', 'ER Sepsis Triage')",0.003429710742043878
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.003915096856071175
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('IV Liquid', 'IV Antibiotics')",0.0022539852497061247
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('IV Antibiotics', 'Admission NC')",0.0029775169845898336
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('ER Registration', 'ER Triage')",0.0026532220277791316
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('LacticAcid', 'Leucocytes')",0.0009913615727953633
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('CRP', 'Release A')",0.000374815438590127
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'Leucocytes')",0.0011599438833983402
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Release A', 'Return ER')",0.002628585079250868
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission IC', 'LacticAcid')",0.016439322062607137
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('CRP', 'Release B')",0.14919675622904324
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('IV Antibiotics', 'Admission IC')",0.020119788175220654
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('CRP', 'Release C')",0.006656092326717309
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('CRP', 'Release D')",0.16986607773110096
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('CRP', 'Release E')",0.1242159034499631
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Leucocytes', 'CRP')",0.0002453425115041555
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0004690312470618725
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.0021079193685213876
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('IV Liquid', 'IV Antibiotics')",0.0008632493156403076
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('IV Antibiotics', 'Admission NC')",0.003700075450358313
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('ER Registration', 'ER Triage')",1.0852958893896176e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('LacticAcid', 'Leucocytes')",0.00035577403523790716
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('CRP', 'Release A')",0.00536562372993877
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'Leucocytes')",0.002780714442575841
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Release A', 'Return ER')",0.0017607542797317978
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission IC', 'LacticAcid')",0.05309387435681128
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('CRP', 'Release B')",0.0012646855113824678
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('IV Antibiotics', 'Admission IC')",0.018335360079132473
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('CRP', 'Release C')",0.19015172691871057
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('CRP', 'Release D')",0.09827917902680457
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('CRP', 'Release E')",0.17506912922747198
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Leucocytes', 'CRP')",0.00015381103782680488
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('ER Triage', 'ER Sepsis Triage')",0.000630616999694478
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.002786533063823626
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('IV Liquid', 'IV Antibiotics')",0.00138287398086035
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('IV Antibiotics', 'Admission NC')",0.0007112893029214279
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('ER Registration', 'ER Triage')",0.0004454435563614019
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('LacticAcid', 'Leucocytes')",0.0011356968744201013
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('CRP', 'Release A')",0.00034823257742492127
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'Leucocytes')",0.0003229994096222569
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Release A', 'Return ER')",0.0038566185907184113
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission IC', 'LacticAcid')",0.01335687821900816
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('CRP', 'Release B')",0.010188946083772708
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('IV Antibiotics', 'Admission IC')",0.00853390630403269
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('CRP', 'Release C')",0.022869720162833465
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('CRP', 'Release D')",0.021881014853006125
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('CRP', 'Release E')",0.05011574967706167
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Leucocytes', 'CRP')",5.5750541176277226e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0002132732397669908
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.003283371757607998
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('IV Liquid', 'IV Antibiotics')",0.00031788895788116507
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('IV Antibiotics', 'Admission NC')",0.0002449864014429174
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('ER Registration', 'ER Triage')",2.8936354506167303e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('LacticAcid', 'Leucocytes')",0.00011030800312669956
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('CRP', 'Release A')",0.0033468801934863693
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'Leucocytes')",0.000745953435898711
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Release A', 'Return ER')",0.0012196541312814704
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission IC', 'LacticAcid')",0.02768429206734775
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('CRP', 'Release B')",0.044552068156989616
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('IV Antibiotics', 'Admission IC')",0.013844229280059843
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('CRP', 'Release C')",0.06697236241455834
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('CRP', 'Release D')",0.015051425029758203
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('CRP', 'Release E')",0.030847897475904922
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Leucocytes', 'CRP')",0.0008355260821985482
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('ER Triage', 'ER Sepsis Triage')",6.917098260636225e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.004038324431558306
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('IV Liquid', 'IV Antibiotics')",0.0025591719359783407
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('IV Antibiotics', 'Admission NC')",0.000943563020096096
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('ER Registration', 'ER Triage')",0.0001912828640805866
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('LacticAcid', 'Leucocytes')",9.994946811323731e-06
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('CRP', 'Release A')",0.0007368666001120207
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'Leucocytes')",0.0003748169867100884
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Release A', 'Return ER')",0.002485717639452861
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission IC', 'LacticAcid')",4.448412469315599e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('CRP', 'Release B')",0.013937052507048938
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('IV Antibiotics', 'Admission IC')",0.0020492811116062503
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('CRP', 'Release C')",0.05004344765886433
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('CRP', 'Release D')",0.011049845540389272
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('CRP', 'Release E')",0.12117238272573427
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Leucocytes', 'CRP')",0.0002132431416929893
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('ER Triage', 'ER Sepsis Triage')",0.00010315091615010721
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.0011823301006669235
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('IV Liquid', 'IV Antibiotics')",0.0021553648358163544
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('IV Antibiotics', 'Admission NC')",4.16767632080956e-06
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('ER Registration', 'ER Triage')",0.000349723119990722
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('LacticAcid', 'Leucocytes')",0.0009603471619095571
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('CRP', 'Release A')",0.00040369522017352674
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'Leucocytes')",0.0005477693613980027
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Release A', 'Return ER')",0.00222609298974563
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission IC', 'LacticAcid')",0.009668312738595865
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('CRP', 'Release B')",0.013498242530736872
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('IV Antibiotics', 'Admission IC')",0.0051728699638039066
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('CRP', 'Release C')",0.05421219285615386
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('CRP', 'Release D')",0.014069424946541028
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('CRP', 'Release E')",0.024077534977503017
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Leucocytes', 'CRP')",1.894230945624951e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('ER Triage', 'ER Sepsis Triage')",1.457661615917037e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.001350983407611725
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('IV Liquid', 'IV Antibiotics')",0.00045261405800582036
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('IV Antibiotics', 'Admission NC')",0.0005482756406274732
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('ER Registration', 'ER Triage')",0.00015759665430744395
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('LacticAcid', 'Leucocytes')",0.00016807460419659842
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('CRP', 'Release A')",0.0007042093743968849
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'Leucocytes')",0.00010704653335710312
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Release A', 'Return ER')",0.0003574363909520976
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission IC', 'LacticAcid')",0.017506364365261866
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('CRP', 'Release B')",0.010940999295883663
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('IV Antibiotics', 'Admission IC')",0.0022561225376977827
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('CRP', 'Release C')",0.004665594582649035
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('CRP', 'Release D')",0.004112485431928696
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('CRP', 'Release E')",0.046973608996728235
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Leucocytes', 'CRP')",1.027899388778889e-06
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('ER Triage', 'ER Sepsis Triage')",0.0002727693604620122
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.0004929491534970734
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('IV Liquid', 'IV Antibiotics')",0.000468982000094667
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('IV Antibiotics', 'Admission NC')",0.0014462935033000962
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('ER Registration', 'ER Triage')",4.419003791678708e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('LacticAcid', 'Leucocytes')",0.0005826562595833885
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('CRP', 'Release A')",0.0005235448212396539
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'Leucocytes')",4.1278789615986684e-05
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Release A', 'Return ER')",0.002921326213477203
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission IC', 'LacticAcid')",0.01279254663514429
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('CRP', 'Release B')",0.01337089066333014
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('IV Antibiotics', 'Admission IC')",0.008405288844475377
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('CRP', 'Release C')",0.03274815813171864
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('CRP', 'Release D')",0.05508940989581065
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('CRP', 'Release E')",0.028348717750599366
-CreditRequirement,AggregateType.AVG,0.01,"('Register', 'Acceptance of requests')",1.4371487478122422e-05
-CreditRequirement,AggregateType.AVG,0.01,"('Acceptance of requests', 'Collection of documents')",0.0018665265245095932
-CreditRequirement,AggregateType.AVG,0.01,"('Collection of documents', 'Completeness check')",0.004006106301297277
-CreditRequirement,AggregateType.AVG,0.01,"('Completeness check', 'Credit worthiness check')",0.005968697366199519
-CreditRequirement,AggregateType.AVG,0.01,"('Credit worthiness check', 'Collateral check')",0.0023302830967976786
-CreditRequirement,AggregateType.AVG,0.01,"('Collateral check', 'Credit committee')",0.0008180613727388276
-CreditRequirement,AggregateType.AVG,0.01,"('Credit committee', 'Requirements review')",0.000762666421648003
-CreditRequirement,AggregateType.AVG,0.05,"('Register', 'Acceptance of requests')",0.00022719444970239344
-CreditRequirement,AggregateType.AVG,0.05,"('Acceptance of requests', 'Collection of documents')",9.90811699562873e-05
-CreditRequirement,AggregateType.AVG,0.05,"('Collection of documents', 'Completeness check')",0.0007081158461280159
-CreditRequirement,AggregateType.AVG,0.05,"('Completeness check', 'Credit worthiness check')",2.1485937100383696e-05
-CreditRequirement,AggregateType.AVG,0.05,"('Credit worthiness check', 'Collateral check')",0.0002423265991742571
-CreditRequirement,AggregateType.AVG,0.05,"('Collateral check', 'Credit committee')",0.0007206060286891786
-CreditRequirement,AggregateType.AVG,0.05,"('Credit committee', 'Requirements review')",0.00038418282212658605
-CreditRequirement,AggregateType.AVG,0.1,"('Register', 'Acceptance of requests')",3.89676179416551e-05
-CreditRequirement,AggregateType.AVG,0.1,"('Acceptance of requests', 'Collection of documents')",0.00012818436419469528
-CreditRequirement,AggregateType.AVG,0.1,"('Collection of documents', 'Completeness check')",0.00016382900727618556
-CreditRequirement,AggregateType.AVG,0.1,"('Completeness check', 'Credit worthiness check')",0.0006235980214089157
-CreditRequirement,AggregateType.AVG,0.1,"('Credit worthiness check', 'Collateral check')",9.326679225687139e-05
-CreditRequirement,AggregateType.AVG,0.1,"('Collateral check', 'Credit committee')",0.00019752495760347896
-CreditRequirement,AggregateType.AVG,0.1,"('Credit committee', 'Requirements review')",1.952222682133154e-05
-CreditRequirement,AggregateType.AVG,0.2,"('Register', 'Acceptance of requests')",4.2626521398096e-05
-CreditRequirement,AggregateType.AVG,0.2,"('Acceptance of requests', 'Collection of documents')",1.4235604003573641e-05
-CreditRequirement,AggregateType.AVG,0.2,"('Collection of documents', 'Completeness check')",0.0002880646154029344
-CreditRequirement,AggregateType.AVG,0.2,"('Completeness check', 'Credit worthiness check')",4.838608496244372e-05
-CreditRequirement,AggregateType.AVG,0.2,"('Credit worthiness check', 'Collateral check')",0.00013758495096564908
-CreditRequirement,AggregateType.AVG,0.2,"('Collateral check', 'Credit committee')",1.5092431445255763e-05
-CreditRequirement,AggregateType.AVG,0.2,"('Credit committee', 'Requirements review')",8.143899040898618e-05
-CreditRequirement,AggregateType.AVG,0.3,"('Register', 'Acceptance of requests')",1.9901980477581627e-05
-CreditRequirement,AggregateType.AVG,0.3,"('Acceptance of requests', 'Collection of documents')",3.7767084415992e-05
-CreditRequirement,AggregateType.AVG,0.3,"('Collection of documents', 'Completeness check')",9.358290278523157e-05
-CreditRequirement,AggregateType.AVG,0.3,"('Completeness check', 'Credit worthiness check')",4.526170917347157e-05
-CreditRequirement,AggregateType.AVG,0.3,"('Credit worthiness check', 'Collateral check')",0.00016429989524456394
-CreditRequirement,AggregateType.AVG,0.3,"('Collateral check', 'Credit committee')",3.2234003189652166e-05
-CreditRequirement,AggregateType.AVG,0.3,"('Credit committee', 'Requirements review')",0.0003273134564639043
-CreditRequirement,AggregateType.AVG,0.4,"('Register', 'Acceptance of requests')",1.2721245898276415e-05
-CreditRequirement,AggregateType.AVG,0.4,"('Acceptance of requests', 'Collection of documents')",1.8846314504494827e-05
-CreditRequirement,AggregateType.AVG,0.4,"('Collection of documents', 'Completeness check')",8.339709909847854e-05
-CreditRequirement,AggregateType.AVG,0.4,"('Completeness check', 'Credit worthiness check')",6.105829249554653e-06
-CreditRequirement,AggregateType.AVG,0.4,"('Credit worthiness check', 'Collateral check')",3.652345242444861e-05
-CreditRequirement,AggregateType.AVG,0.4,"('Collateral check', 'Credit committee')",5.2147339024076317e-05
-CreditRequirement,AggregateType.AVG,0.4,"('Credit committee', 'Requirements review')",3.01324865721113e-05
-CreditRequirement,AggregateType.AVG,0.5,"('Register', 'Acceptance of requests')",1.8368644572520773e-05
-CreditRequirement,AggregateType.AVG,0.5,"('Acceptance of requests', 'Collection of documents')",7.355545983426994e-06
-CreditRequirement,AggregateType.AVG,0.5,"('Collection of documents', 'Completeness check')",1.3620557474659448e-05
-CreditRequirement,AggregateType.AVG,0.5,"('Completeness check', 'Credit worthiness check')",6.831720851841856e-05
-CreditRequirement,AggregateType.AVG,0.5,"('Credit worthiness check', 'Collateral check')",0.00010059387970480668
-CreditRequirement,AggregateType.AVG,0.5,"('Collateral check', 'Credit committee')",7.062404138064727e-06
-CreditRequirement,AggregateType.AVG,0.5,"('Credit committee', 'Requirements review')",3.215231129900897e-05
-CreditRequirement,AggregateType.AVG,0.6,"('Register', 'Acceptance of requests')",5.3870490679458976e-05
-CreditRequirement,AggregateType.AVG,0.6,"('Acceptance of requests', 'Collection of documents')",2.4742833598828716e-05
-CreditRequirement,AggregateType.AVG,0.6,"('Collection of documents', 'Completeness check')",5.207033311985825e-06
-CreditRequirement,AggregateType.AVG,0.6,"('Completeness check', 'Credit worthiness check')",5.3544231217271764e-05
-CreditRequirement,AggregateType.AVG,0.6,"('Credit worthiness check', 'Collateral check')",3.867104251805914e-07
-CreditRequirement,AggregateType.AVG,0.6,"('Collateral check', 'Credit committee')",7.18207826790145e-05
-CreditRequirement,AggregateType.AVG,0.6,"('Credit committee', 'Requirements review')",3.206986835534479e-05
-CreditRequirement,AggregateType.AVG,0.7,"('Register', 'Acceptance of requests')",5.343174293894845e-05
-CreditRequirement,AggregateType.AVG,0.7,"('Acceptance of requests', 'Collection of documents')",6.650112091033073e-06
-CreditRequirement,AggregateType.AVG,0.7,"('Collection of documents', 'Completeness check')",3.492941022883056e-05
-CreditRequirement,AggregateType.AVG,0.7,"('Completeness check', 'Credit worthiness check')",3.958888900771716e-06
-CreditRequirement,AggregateType.AVG,0.7,"('Credit worthiness check', 'Collateral check')",1.3236823014025895e-05
-CreditRequirement,AggregateType.AVG,0.7,"('Collateral check', 'Credit committee')",9.521470767342381e-06
-CreditRequirement,AggregateType.AVG,0.7,"('Credit committee', 'Requirements review')",5.863246373089129e-06
-CreditRequirement,AggregateType.AVG,0.8,"('Register', 'Acceptance of requests')",4.0725204883986174e-05
-CreditRequirement,AggregateType.AVG,0.8,"('Acceptance of requests', 'Collection of documents')",1.3387877589971184e-05
-CreditRequirement,AggregateType.AVG,0.8,"('Collection of documents', 'Completeness check')",2.294462099695581e-05
-CreditRequirement,AggregateType.AVG,0.8,"('Completeness check', 'Credit worthiness check')",1.7255774940914875e-05
-CreditRequirement,AggregateType.AVG,0.8,"('Credit worthiness check', 'Collateral check')",2.4884999279468133e-05
-CreditRequirement,AggregateType.AVG,0.8,"('Collateral check', 'Credit committee')",1.1131968665126164e-05
-CreditRequirement,AggregateType.AVG,0.8,"('Credit committee', 'Requirements review')",6.75058508685605e-05
-CreditRequirement,AggregateType.AVG,0.9,"('Register', 'Acceptance of requests')",3.27609025613499e-05
-CreditRequirement,AggregateType.AVG,0.9,"('Acceptance of requests', 'Collection of documents')",1.130997978344899e-05
-CreditRequirement,AggregateType.AVG,0.9,"('Collection of documents', 'Completeness check')",8.146309547330354e-07
-CreditRequirement,AggregateType.AVG,0.9,"('Completeness check', 'Credit worthiness check')",5.318392324346924e-06
-CreditRequirement,AggregateType.AVG,0.9,"('Credit worthiness check', 'Collateral check')",6.35714184824294e-06
-CreditRequirement,AggregateType.AVG,0.9,"('Collateral check', 'Credit committee')",8.47354745615309e-06
-CreditRequirement,AggregateType.AVG,0.9,"('Credit committee', 'Requirements review')",2.6098485925106606e-05
-CreditRequirement,AggregateType.SUM,0.01,"('Register', 'Acceptance of requests')",0.005571818062297897
-CreditRequirement,AggregateType.SUM,0.01,"('Acceptance of requests', 'Collection of documents')",0.008285318497991925
-CreditRequirement,AggregateType.SUM,0.01,"('Collection of documents', 'Completeness check')",0.002334353135646483
-CreditRequirement,AggregateType.SUM,0.01,"('Completeness check', 'Credit worthiness check')",0.004332452965731182
-CreditRequirement,AggregateType.SUM,0.01,"('Credit worthiness check', 'Collateral check')",0.0017604012198642782
-CreditRequirement,AggregateType.SUM,0.01,"('Collateral check', 'Credit committee')",0.0005463312086398151
-CreditRequirement,AggregateType.SUM,0.01,"('Credit committee', 'Requirements review')",0.009158729605110544
-CreditRequirement,AggregateType.SUM,0.05,"('Register', 'Acceptance of requests')",0.0008046548574123792
-CreditRequirement,AggregateType.SUM,0.05,"('Acceptance of requests', 'Collection of documents')",0.00045693667260040004
-CreditRequirement,AggregateType.SUM,0.05,"('Collection of documents', 'Completeness check')",0.0003649695763337404
-CreditRequirement,AggregateType.SUM,0.05,"('Completeness check', 'Credit worthiness check')",1.589086503727806e-06
-CreditRequirement,AggregateType.SUM,0.05,"('Credit worthiness check', 'Collateral check')",1.1892700274048005e-05
-CreditRequirement,AggregateType.SUM,0.05,"('Collateral check', 'Credit committee')",8.446168339190238e-05
-CreditRequirement,AggregateType.SUM,0.05,"('Credit committee', 'Requirements review')",0.0005252971776676602
-CreditRequirement,AggregateType.SUM,0.1,"('Register', 'Acceptance of requests')",2.4931274119568047e-05
-CreditRequirement,AggregateType.SUM,0.1,"('Acceptance of requests', 'Collection of documents')",0.00040631834614833604
-CreditRequirement,AggregateType.SUM,0.1,"('Collection of documents', 'Completeness check')",0.0007834722189673092
-CreditRequirement,AggregateType.SUM,0.1,"('Completeness check', 'Credit worthiness check')",0.0007088538066025333
-CreditRequirement,AggregateType.SUM,0.1,"('Credit worthiness check', 'Collateral check')",0.00019057689209752132
-CreditRequirement,AggregateType.SUM,0.1,"('Collateral check', 'Credit committee')",0.0005026965579022565
-CreditRequirement,AggregateType.SUM,0.1,"('Credit committee', 'Requirements review')",4.372621468356444e-05
-CreditRequirement,AggregateType.SUM,0.2,"('Register', 'Acceptance of requests')",0.0002118366929128882
-CreditRequirement,AggregateType.SUM,0.2,"('Acceptance of requests', 'Collection of documents')",2.2455768185312647e-05
-CreditRequirement,AggregateType.SUM,0.2,"('Collection of documents', 'Completeness check')",7.427203187641377e-06
-CreditRequirement,AggregateType.SUM,0.2,"('Completeness check', 'Credit worthiness check')",0.00016381100630817187
-CreditRequirement,AggregateType.SUM,0.2,"('Credit worthiness check', 'Collateral check')",4.91038093161576e-05
-CreditRequirement,AggregateType.SUM,0.2,"('Collateral check', 'Credit committee')",4.777780077868551e-06
-CreditRequirement,AggregateType.SUM,0.2,"('Credit committee', 'Requirements review')",0.00020274963901204142
-CreditRequirement,AggregateType.SUM,0.3,"('Register', 'Acceptance of requests')",4.745537706268514e-05
-CreditRequirement,AggregateType.SUM,0.3,"('Acceptance of requests', 'Collection of documents')",3.1814923201646217e-06
-CreditRequirement,AggregateType.SUM,0.3,"('Collection of documents', 'Completeness check')",1.8539317063379945e-05
-CreditRequirement,AggregateType.SUM,0.3,"('Completeness check', 'Credit worthiness check')",0.00019376809311819304
-CreditRequirement,AggregateType.SUM,0.3,"('Credit worthiness check', 'Collateral check')",0.0001795655388072804
-CreditRequirement,AggregateType.SUM,0.3,"('Collateral check', 'Credit committee')",6.389449538710187e-05
-CreditRequirement,AggregateType.SUM,0.3,"('Credit committee', 'Requirements review')",8.844928298196925e-06
-CreditRequirement,AggregateType.SUM,0.4,"('Register', 'Acceptance of requests')",2.348346144189665e-06
-CreditRequirement,AggregateType.SUM,0.4,"('Acceptance of requests', 'Collection of documents')",1.2818089326980859e-05
-CreditRequirement,AggregateType.SUM,0.4,"('Collection of documents', 'Completeness check')",2.291999512633546e-06
-CreditRequirement,AggregateType.SUM,0.4,"('Completeness check', 'Credit worthiness check')",3.023404174402207e-05
-CreditRequirement,AggregateType.SUM,0.4,"('Credit worthiness check', 'Collateral check')",0.0002169016688851286
-CreditRequirement,AggregateType.SUM,0.4,"('Collateral check', 'Credit committee')",1.712204886737382e-05
-CreditRequirement,AggregateType.SUM,0.4,"('Credit committee', 'Requirements review')",2.0615557062173786e-05
-CreditRequirement,AggregateType.SUM,0.5,"('Register', 'Acceptance of requests')",1.0795697608340439e-05
-CreditRequirement,AggregateType.SUM,0.5,"('Acceptance of requests', 'Collection of documents')",7.83242729784713e-05
-CreditRequirement,AggregateType.SUM,0.5,"('Collection of documents', 'Completeness check')",0.0001321651271231491
-CreditRequirement,AggregateType.SUM,0.5,"('Completeness check', 'Credit worthiness check')",6.966064766658985e-05
-CreditRequirement,AggregateType.SUM,0.5,"('Credit worthiness check', 'Collateral check')",1.5513133125304392e-05
-CreditRequirement,AggregateType.SUM,0.5,"('Collateral check', 'Credit committee')",4.2290496463899515e-05
-CreditRequirement,AggregateType.SUM,0.5,"('Credit committee', 'Requirements review')",0.000132439572062765
-CreditRequirement,AggregateType.SUM,0.6,"('Register', 'Acceptance of requests')",3.451393446727277e-07
-CreditRequirement,AggregateType.SUM,0.6,"('Acceptance of requests', 'Collection of documents')",2.0624701242446314e-05
-CreditRequirement,AggregateType.SUM,0.6,"('Collection of documents', 'Completeness check')",3.149947536728803e-05
-CreditRequirement,AggregateType.SUM,0.6,"('Completeness check', 'Credit worthiness check')",2.36490387380638e-06
-CreditRequirement,AggregateType.SUM,0.6,"('Credit worthiness check', 'Collateral check')",1.3596693010889152e-06
-CreditRequirement,AggregateType.SUM,0.6,"('Collateral check', 'Credit committee')",1.678601154175386e-05
-CreditRequirement,AggregateType.SUM,0.6,"('Credit committee', 'Requirements review')",3.911845340523646e-07
-CreditRequirement,AggregateType.SUM,0.7,"('Register', 'Acceptance of requests')",2.261284375865758e-06
-CreditRequirement,AggregateType.SUM,0.7,"('Acceptance of requests', 'Collection of documents')",1.1606196429284975e-06
-CreditRequirement,AggregateType.SUM,0.7,"('Collection of documents', 'Completeness check')",3.462198578199242e-05
-CreditRequirement,AggregateType.SUM,0.7,"('Completeness check', 'Credit worthiness check')",5.046852483227281e-05
-CreditRequirement,AggregateType.SUM,0.7,"('Credit worthiness check', 'Collateral check')",8.473745352593176e-06
-CreditRequirement,AggregateType.SUM,0.7,"('Collateral check', 'Credit committee')",1.688956047958196e-05
-CreditRequirement,AggregateType.SUM,0.7,"('Credit committee', 'Requirements review')",3.810657056328501e-06
-CreditRequirement,AggregateType.SUM,0.8,"('Register', 'Acceptance of requests')",3.7108904497507286e-05
-CreditRequirement,AggregateType.SUM,0.8,"('Acceptance of requests', 'Collection of documents')",6.401922434498394e-06
-CreditRequirement,AggregateType.SUM,0.8,"('Collection of documents', 'Completeness check')",1.556277230113723e-05
-CreditRequirement,AggregateType.SUM,0.8,"('Completeness check', 'Credit worthiness check')",1.203559309819388e-05
-CreditRequirement,AggregateType.SUM,0.8,"('Credit worthiness check', 'Collateral check')",4.330790525191618e-06
-CreditRequirement,AggregateType.SUM,0.8,"('Collateral check', 'Credit committee')",3.532421100571828e-05
-CreditRequirement,AggregateType.SUM,0.8,"('Credit committee', 'Requirements review')",2.9737273914211415e-05
-CreditRequirement,AggregateType.SUM,0.9,"('Register', 'Acceptance of requests')",5.298546567188824e-06
-CreditRequirement,AggregateType.SUM,0.9,"('Acceptance of requests', 'Collection of documents')",4.380078145205269e-06
-CreditRequirement,AggregateType.SUM,0.9,"('Collection of documents', 'Completeness check')",6.767222905407047e-06
-CreditRequirement,AggregateType.SUM,0.9,"('Completeness check', 'Credit worthiness check')",7.377317953930727e-06
-CreditRequirement,AggregateType.SUM,0.9,"('Credit worthiness check', 'Collateral check')",2.5552168378032656e-05
-CreditRequirement,AggregateType.SUM,0.9,"('Collateral check', 'Credit committee')",2.2137130182867814e-05
-CreditRequirement,AggregateType.SUM,0.9,"('Credit committee', 'Requirements review')",3.9791651140231065e-06
-CreditRequirement,AggregateType.MIN,0.01,"('Register', 'Acceptance of requests')",0.004797918852143538
-CreditRequirement,AggregateType.MIN,0.01,"('Acceptance of requests', 'Collection of documents')",0.004537143792740123
-CreditRequirement,AggregateType.MIN,0.01,"('Collection of documents', 'Completeness check')",0.00022935710367019563
-CreditRequirement,AggregateType.MIN,0.01,"('Completeness check', 'Credit worthiness check')",0.002237120382318038
-CreditRequirement,AggregateType.MIN,0.01,"('Credit worthiness check', 'Collateral check')",0.0006391798038905469
-CreditRequirement,AggregateType.MIN,0.01,"('Collateral check', 'Credit committee')",0.0006300739994965441
-CreditRequirement,AggregateType.MIN,0.01,"('Credit committee', 'Requirements review')",0.0007795479436865908
-CreditRequirement,AggregateType.MIN,0.05,"('Register', 'Acceptance of requests')",1.4387319859113906e-05
-CreditRequirement,AggregateType.MIN,0.05,"('Acceptance of requests', 'Collection of documents')",0.00032851376154443743
-CreditRequirement,AggregateType.MIN,0.05,"('Collection of documents', 'Completeness check')",0.0006555623032198796
-CreditRequirement,AggregateType.MIN,0.05,"('Completeness check', 'Credit worthiness check')",0.0001888226835668378
-CreditRequirement,AggregateType.MIN,0.05,"('Credit worthiness check', 'Collateral check')",0.00014392512308417237
-CreditRequirement,AggregateType.MIN,0.05,"('Collateral check', 'Credit committee')",0.0006187832371958448
-CreditRequirement,AggregateType.MIN,0.05,"('Credit committee', 'Requirements review')",4.074939719961509e-06
-CreditRequirement,AggregateType.MIN,0.1,"('Register', 'Acceptance of requests')",0.00010386357838136558
-CreditRequirement,AggregateType.MIN,0.1,"('Acceptance of requests', 'Collection of documents')",0.00046660514018526724
-CreditRequirement,AggregateType.MIN,0.1,"('Collection of documents', 'Completeness check')",0.00024266254693236755
-CreditRequirement,AggregateType.MIN,0.1,"('Completeness check', 'Credit worthiness check')",3.1706065949910806e-05
-CreditRequirement,AggregateType.MIN,0.1,"('Credit worthiness check', 'Collateral check')",0.00043924688485225664
-CreditRequirement,AggregateType.MIN,0.1,"('Collateral check', 'Credit committee')",0.0001334345185428937
-CreditRequirement,AggregateType.MIN,0.1,"('Credit committee', 'Requirements review')",0.0005713462051890758
-CreditRequirement,AggregateType.MIN,0.2,"('Register', 'Acceptance of requests')",7.075754851928235e-05
-CreditRequirement,AggregateType.MIN,0.2,"('Acceptance of requests', 'Collection of documents')",2.1063694612869127e-05
-CreditRequirement,AggregateType.MIN,0.2,"('Collection of documents', 'Completeness check')",0.00029266937703360015
-CreditRequirement,AggregateType.MIN,0.2,"('Completeness check', 'Credit worthiness check')",5.646629560154028e-05
-CreditRequirement,AggregateType.MIN,0.2,"('Credit worthiness check', 'Collateral check')",0.00023935679243111
-CreditRequirement,AggregateType.MIN,0.2,"('Collateral check', 'Credit committee')",1.7997267269304054e-05
-CreditRequirement,AggregateType.MIN,0.2,"('Credit committee', 'Requirements review')",1.4608438383826676e-05
-CreditRequirement,AggregateType.MIN,0.3,"('Register', 'Acceptance of requests')",0.00013145814987706658
-CreditRequirement,AggregateType.MIN,0.3,"('Acceptance of requests', 'Collection of documents')",0.00010096545857416358
-CreditRequirement,AggregateType.MIN,0.3,"('Collection of documents', 'Completeness check')",4.1575728816284315e-05
-CreditRequirement,AggregateType.MIN,0.3,"('Completeness check', 'Credit worthiness check')",9.352804157395632e-05
-CreditRequirement,AggregateType.MIN,0.3,"('Credit worthiness check', 'Collateral check')",0.00026406836836992897
-CreditRequirement,AggregateType.MIN,0.3,"('Collateral check', 'Credit committee')",3.331491982839533e-05
-CreditRequirement,AggregateType.MIN,0.3,"('Credit committee', 'Requirements review')",5.660314444593998e-05
-CreditRequirement,AggregateType.MIN,0.4,"('Register', 'Acceptance of requests')",4.2465971800603714e-05
-CreditRequirement,AggregateType.MIN,0.4,"('Acceptance of requests', 'Collection of documents')",4.1667984952922716e-05
-CreditRequirement,AggregateType.MIN,0.4,"('Collection of documents', 'Completeness check')",2.481621500796313e-06
-CreditRequirement,AggregateType.MIN,0.4,"('Completeness check', 'Credit worthiness check')",0.00012541749739730028
-CreditRequirement,AggregateType.MIN,0.4,"('Credit worthiness check', 'Collateral check')",3.7504170732666063e-06
-CreditRequirement,AggregateType.MIN,0.4,"('Collateral check', 'Credit committee')",8.209661708333923e-05
-CreditRequirement,AggregateType.MIN,0.4,"('Credit committee', 'Requirements review')",1.439344784608062e-06
-CreditRequirement,AggregateType.MIN,0.5,"('Register', 'Acceptance of requests')",5.5833586293623777e-05
-CreditRequirement,AggregateType.MIN,0.5,"('Acceptance of requests', 'Collection of documents')",2.60483733356657e-07
-CreditRequirement,AggregateType.MIN,0.5,"('Collection of documents', 'Completeness check')",1.8155732271405945e-05
-CreditRequirement,AggregateType.MIN,0.5,"('Completeness check', 'Credit worthiness check')",9.01146958914238e-06
-CreditRequirement,AggregateType.MIN,0.5,"('Credit worthiness check', 'Collateral check')",0.0001464382902806363
-CreditRequirement,AggregateType.MIN,0.5,"('Collateral check', 'Credit committee')",7.15045123478583e-05
-CreditRequirement,AggregateType.MIN,0.5,"('Credit committee', 'Requirements review')",7.897890045542321e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Register', 'Acceptance of requests')",3.7422782644612016e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Acceptance of requests', 'Collection of documents')",5.0798501848570266e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Collection of documents', 'Completeness check')",3.115650313432561e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Completeness check', 'Credit worthiness check')",1.5612891586489305e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Credit worthiness check', 'Collateral check')",5.33889329564494e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Collateral check', 'Credit committee')",1.0056355089238588e-05
-CreditRequirement,AggregateType.MIN,0.6,"('Credit committee', 'Requirements review')",4.253749607539267e-05
-CreditRequirement,AggregateType.MIN,0.7,"('Register', 'Acceptance of requests')",8.163660949116357e-05
-CreditRequirement,AggregateType.MIN,0.7,"('Acceptance of requests', 'Collection of documents')",9.078706311591618e-06
-CreditRequirement,AggregateType.MIN,0.7,"('Collection of documents', 'Completeness check')",8.5463925492676e-06
-CreditRequirement,AggregateType.MIN,0.7,"('Completeness check', 'Credit worthiness check')",3.6174544042555685e-05
-CreditRequirement,AggregateType.MIN,0.7,"('Credit worthiness check', 'Collateral check')",0.00012719652380829786
-CreditRequirement,AggregateType.MIN,0.7,"('Collateral check', 'Credit committee')",1.843112567396897e-05
-CreditRequirement,AggregateType.MIN,0.7,"('Credit committee', 'Requirements review')",1.0839053719795164e-05
-CreditRequirement,AggregateType.MIN,0.8,"('Register', 'Acceptance of requests')",2.768557631952944e-05
-CreditRequirement,AggregateType.MIN,0.8,"('Acceptance of requests', 'Collection of documents')",2.465381584971933e-06
-CreditRequirement,AggregateType.MIN,0.8,"('Collection of documents', 'Completeness check')",2.5884800633070395e-05
-CreditRequirement,AggregateType.MIN,0.8,"('Completeness check', 'Credit worthiness check')",3.70091418985973e-06
-CreditRequirement,AggregateType.MIN,0.8,"('Credit worthiness check', 'Collateral check')",2.4105527570191178e-05
-CreditRequirement,AggregateType.MIN,0.8,"('Collateral check', 'Credit committee')",1.77864361826339e-05
-CreditRequirement,AggregateType.MIN,0.8,"('Credit committee', 'Requirements review')",6.316456074500027e-06
-CreditRequirement,AggregateType.MIN,0.9,"('Register', 'Acceptance of requests')",5.511076750924779e-06
-CreditRequirement,AggregateType.MIN,0.9,"('Acceptance of requests', 'Collection of documents')",6.246802664843506e-06
-CreditRequirement,AggregateType.MIN,0.9,"('Collection of documents', 'Completeness check')",2.5334838277504972e-05
-CreditRequirement,AggregateType.MIN,0.9,"('Completeness check', 'Credit worthiness check')",8.292686434777458e-06
-CreditRequirement,AggregateType.MIN,0.9,"('Credit worthiness check', 'Collateral check')",1.6727996302729608e-05
-CreditRequirement,AggregateType.MIN,0.9,"('Collateral check', 'Credit committee')",1.0272896510763681e-05
-CreditRequirement,AggregateType.MIN,0.9,"('Credit committee', 'Requirements review')",2.760828205156472e-05
-CreditRequirement,AggregateType.MAX,0.01,"('Register', 'Acceptance of requests')",0.0002780762682720634
-CreditRequirement,AggregateType.MAX,0.01,"('Acceptance of requests', 'Collection of documents')",0.0009034782687339379
-CreditRequirement,AggregateType.MAX,0.01,"('Collection of documents', 'Completeness check')",0.0011014912775527855
-CreditRequirement,AggregateType.MAX,0.01,"('Completeness check', 'Credit worthiness check')",0.002044802688328911
-CreditRequirement,AggregateType.MAX,0.01,"('Credit worthiness check', 'Collateral check')",0.012740617217436148
-CreditRequirement,AggregateType.MAX,0.01,"('Collateral check', 'Credit committee')",0.000627542856207177
-CreditRequirement,AggregateType.MAX,0.01,"('Credit committee', 'Requirements review')",0.01767415772728542
-CreditRequirement,AggregateType.MAX,0.05,"('Register', 'Acceptance of requests')",0.00037185610202058447
-CreditRequirement,AggregateType.MAX,0.05,"('Acceptance of requests', 'Collection of documents')",0.0014518031450917574
-CreditRequirement,AggregateType.MAX,0.05,"('Collection of documents', 'Completeness check')",0.0002687119637425883
-CreditRequirement,AggregateType.MAX,0.05,"('Completeness check', 'Credit worthiness check')",0.0012176082154139011
-CreditRequirement,AggregateType.MAX,0.05,"('Credit worthiness check', 'Collateral check')",0.0002896013638356183
-CreditRequirement,AggregateType.MAX,0.05,"('Collateral check', 'Credit committee')",0.000924648910186387
-CreditRequirement,AggregateType.MAX,0.05,"('Credit committee', 'Requirements review')",0.00040785341741895434
-CreditRequirement,AggregateType.MAX,0.1,"('Register', 'Acceptance of requests')",0.00034726688691773537
-CreditRequirement,AggregateType.MAX,0.1,"('Acceptance of requests', 'Collection of documents')",0.00014808448386623743
-CreditRequirement,AggregateType.MAX,0.1,"('Collection of documents', 'Completeness check')",0.0007383393261352875
-CreditRequirement,AggregateType.MAX,0.1,"('Completeness check', 'Credit worthiness check')",0.00010574041727765748
-CreditRequirement,AggregateType.MAX,0.1,"('Credit worthiness check', 'Collateral check')",0.0002764891941970661
-CreditRequirement,AggregateType.MAX,0.1,"('Collateral check', 'Credit committee')",0.0005780710704204206
-CreditRequirement,AggregateType.MAX,0.1,"('Credit committee', 'Requirements review')",0.00012255387989851336
-CreditRequirement,AggregateType.MAX,0.2,"('Register', 'Acceptance of requests')",2.0743535388951683e-05
-CreditRequirement,AggregateType.MAX,0.2,"('Acceptance of requests', 'Collection of documents')",6.063880355014378e-05
-CreditRequirement,AggregateType.MAX,0.2,"('Collection of documents', 'Completeness check')",0.0002519291740064669
-CreditRequirement,AggregateType.MAX,0.2,"('Completeness check', 'Credit worthiness check')",7.306197935787794e-05
-CreditRequirement,AggregateType.MAX,0.2,"('Credit worthiness check', 'Collateral check')",0.00010982103696377968
-CreditRequirement,AggregateType.MAX,0.2,"('Collateral check', 'Credit committee')",0.0001908913071764015
-CreditRequirement,AggregateType.MAX,0.2,"('Credit committee', 'Requirements review')",0.00023100214061943665
-CreditRequirement,AggregateType.MAX,0.3,"('Register', 'Acceptance of requests')",8.713903345178832e-05
-CreditRequirement,AggregateType.MAX,0.3,"('Acceptance of requests', 'Collection of documents')",3.411623811755653e-05
-CreditRequirement,AggregateType.MAX,0.3,"('Collection of documents', 'Completeness check')",4.39332218056974e-05
-CreditRequirement,AggregateType.MAX,0.3,"('Completeness check', 'Credit worthiness check')",4.120126259607602e-05
-CreditRequirement,AggregateType.MAX,0.3,"('Credit worthiness check', 'Collateral check')",2.656368051084999e-05
-CreditRequirement,AggregateType.MAX,0.3,"('Collateral check', 'Credit committee')",0.0001473634990665532
-CreditRequirement,AggregateType.MAX,0.3,"('Credit committee', 'Requirements review')",5.352298961640554e-05
-CreditRequirement,AggregateType.MAX,0.4,"('Register', 'Acceptance of requests')",3.173909894430346e-05
-CreditRequirement,AggregateType.MAX,0.4,"('Acceptance of requests', 'Collection of documents')",1.0425674657384468e-07
-CreditRequirement,AggregateType.MAX,0.4,"('Collection of documents', 'Completeness check')",0.00013059268738979283
-CreditRequirement,AggregateType.MAX,0.4,"('Completeness check', 'Credit worthiness check')",2.3226533692343927e-05
-CreditRequirement,AggregateType.MAX,0.4,"('Credit worthiness check', 'Collateral check')",3.086539133515452e-05
-CreditRequirement,AggregateType.MAX,0.4,"('Collateral check', 'Credit committee')",0.00014079666122144993
-CreditRequirement,AggregateType.MAX,0.4,"('Credit committee', 'Requirements review')",5.710051602851421e-05
-CreditRequirement,AggregateType.MAX,0.5,"('Register', 'Acceptance of requests')",3.308316212855624e-05
-CreditRequirement,AggregateType.MAX,0.5,"('Acceptance of requests', 'Collection of documents')",3.6303939439297625e-07
-CreditRequirement,AggregateType.MAX,0.5,"('Collection of documents', 'Completeness check')",6.814265670067036e-05
-CreditRequirement,AggregateType.MAX,0.5,"('Completeness check', 'Credit worthiness check')",4.4651414172061884e-05
-CreditRequirement,AggregateType.MAX,0.5,"('Credit worthiness check', 'Collateral check')",2.0607421851124593e-05
-CreditRequirement,AggregateType.MAX,0.5,"('Collateral check', 'Credit committee')",0.00011437742188335935
-CreditRequirement,AggregateType.MAX,0.5,"('Credit committee', 'Requirements review')",1.2752981327136704e-05
-CreditRequirement,AggregateType.MAX,0.6,"('Register', 'Acceptance of requests')",9.84447027866517e-05
-CreditRequirement,AggregateType.MAX,0.6,"('Acceptance of requests', 'Collection of documents')",0.00010022546076499011
-CreditRequirement,AggregateType.MAX,0.6,"('Collection of documents', 'Completeness check')",2.9817538243300464e-05
-CreditRequirement,AggregateType.MAX,0.6,"('Completeness check', 'Credit worthiness check')",5.012470985580988e-07
-CreditRequirement,AggregateType.MAX,0.6,"('Credit worthiness check', 'Collateral check')",1.3240452391650506e-05
-CreditRequirement,AggregateType.MAX,0.6,"('Collateral check', 'Credit committee')",8.766701581279897e-06
-CreditRequirement,AggregateType.MAX,0.6,"('Credit committee', 'Requirements review')",1.9246377603588376e-05
-CreditRequirement,AggregateType.MAX,0.7,"('Register', 'Acceptance of requests')",1.2388580463675612e-05
-CreditRequirement,AggregateType.MAX,0.7,"('Acceptance of requests', 'Collection of documents')",2.5649419678540727e-05
-CreditRequirement,AggregateType.MAX,0.7,"('Collection of documents', 'Completeness check')",2.5218568813069906e-05
-CreditRequirement,AggregateType.MAX,0.7,"('Completeness check', 'Credit worthiness check')",1.3205874214610331e-05
-CreditRequirement,AggregateType.MAX,0.7,"('Credit worthiness check', 'Collateral check')",9.652484695598929e-06
-CreditRequirement,AggregateType.MAX,0.7,"('Collateral check', 'Credit committee')",2.5846200243943578e-06
-CreditRequirement,AggregateType.MAX,0.7,"('Credit committee', 'Requirements review')",4.790453573222043e-06
-CreditRequirement,AggregateType.MAX,0.8,"('Register', 'Acceptance of requests')",2.5738676544728395e-05
-CreditRequirement,AggregateType.MAX,0.8,"('Acceptance of requests', 'Collection of documents')",2.3776917637448908e-05
-CreditRequirement,AggregateType.MAX,0.8,"('Collection of documents', 'Completeness check')",4.339633813258038e-06
-CreditRequirement,AggregateType.MAX,0.8,"('Completeness check', 'Credit worthiness check')",2.6201543481481633e-05
-CreditRequirement,AggregateType.MAX,0.8,"('Credit worthiness check', 'Collateral check')",9.68806409117306e-06
-CreditRequirement,AggregateType.MAX,0.8,"('Collateral check', 'Credit committee')",2.7136203797788054e-06
-CreditRequirement,AggregateType.MAX,0.8,"('Credit committee', 'Requirements review')",2.4956270484342802e-05
-CreditRequirement,AggregateType.MAX,0.9,"('Register', 'Acceptance of requests')",1.086179351102731e-05
-CreditRequirement,AggregateType.MAX,0.9,"('Acceptance of requests', 'Collection of documents')",8.185097902139563e-07
-CreditRequirement,AggregateType.MAX,0.9,"('Collection of documents', 'Completeness check')",6.614973172035862e-06
-CreditRequirement,AggregateType.MAX,0.9,"('Completeness check', 'Credit worthiness check')",6.985142261343699e-07
-CreditRequirement,AggregateType.MAX,0.9,"('Credit worthiness check', 'Collateral check')",2.3840855751221994e-06
-CreditRequirement,AggregateType.MAX,0.9,"('Collateral check', 'Credit committee')",6.905232597666588e-07
-CreditRequirement,AggregateType.MAX,0.9,"('Credit committee', 'Requirements review')",1.7961978453979063e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Create Fine', 'Send Fine')",0.000291019005952955
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Send Fine', 'Insert Fine Notification')",0.0006677061057676901
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Add penalty', 'Send for Credit Collection')",0.0002565923280582281
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",0.002868115796336699
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.0012897650267136743
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Add penalty', 'Send Appeal to Prefecture')",0.004608541984595003
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.040437619670501704
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.035083787070747906
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Notify Result Appeal to Offender', 'Payment')",0.15579555920233004
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Insert Fine Notification', 'Appeal to Judge')",0.03805760094993757
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Appeal to Judge', 'Add penalty')",0.14483600464932922
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Create Fine', 'Send Fine')",4.026845307435509e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Send Fine', 'Insert Fine Notification')",0.00014766055667861085
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Add penalty', 'Send for Credit Collection')",3.3351652880763734e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",9.499774596800145e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.0023228538677201394
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Add penalty', 'Send Appeal to Prefecture')",0.0014110624356635682
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.003591909933507481
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0007823223056519151
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Notify Result Appeal to Offender', 'Payment')",0.00014144409107976616
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Insert Fine Notification', 'Appeal to Judge')",0.04725205714810429
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Appeal to Judge', 'Add penalty')",0.04158026242708734
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Create Fine', 'Send Fine')",3.372057887288848e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Send Fine', 'Insert Fine Notification')",3.976280621983946e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Add penalty', 'Send for Credit Collection')",3.753019842209404e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",9.659109364656396e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.0010172347084032075
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Add penalty', 'Send Appeal to Prefecture')",0.0014771591092103086
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0002410218208598299
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0002544706390447554
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Notify Result Appeal to Offender', 'Payment')",0.00637643480775975
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Insert Fine Notification', 'Appeal to Judge')",0.006976207664746621
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Appeal to Judge', 'Add penalty')",0.019137878217901576
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Create Fine', 'Send Fine')",1.526678174402196e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Send Fine', 'Insert Fine Notification')",2.946809227381818e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Add penalty', 'Send for Credit Collection')",2.1648526708735766e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",0.00015075226841105175
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.0007264150184515734
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Add penalty', 'Send Appeal to Prefecture')",0.00043542570837483944
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0005836751606635568
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0005686600115663951
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Notify Result Appeal to Offender', 'Payment')",0.0010902910925829588
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Insert Fine Notification', 'Appeal to Judge')",0.00098196800029984
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Appeal to Judge', 'Add penalty')",0.00582950079545823
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Create Fine', 'Send Fine')",1.852509613322338e-07
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Send Fine', 'Insert Fine Notification')",5.636814642001892e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Add penalty', 'Send for Credit Collection')",1.0019303814445585e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",0.00029141414618450996
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.0003022691209774675
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Add penalty', 'Send Appeal to Prefecture')",0.0009424964482163505
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0008540317914673741
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0016627302807652948
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Notify Result Appeal to Offender', 'Payment')",0.003715102321675025
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Insert Fine Notification', 'Appeal to Judge')",2.0818528915846213e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Appeal to Judge', 'Add penalty')",0.0023904377137271733
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Create Fine', 'Send Fine')",1.2237342387157798e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Send Fine', 'Insert Fine Notification')",5.39373105481084e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Add penalty', 'Send for Credit Collection')",2.2268500678665906e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",0.00042995840027913534
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.00026924741306375466
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Add penalty', 'Send Appeal to Prefecture')",0.0006936531690756666
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.000592542974323684
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0011219184758943313
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Notify Result Appeal to Offender', 'Payment')",0.0008212238931151042
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Insert Fine Notification', 'Appeal to Judge')",0.0008413094233358622
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Appeal to Judge', 'Add penalty')",0.0006068646575820601
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Create Fine', 'Send Fine')",7.29420916863808e-07
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Send Fine', 'Insert Fine Notification')",2.7191499366887515e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Add penalty', 'Send for Credit Collection')",5.809729305479741e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",1.0036814964170835e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.00020066720335611653
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Add penalty', 'Send Appeal to Prefecture')",0.0008122415500641355
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0004739429658977117
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0013313262026598974
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Notify Result Appeal to Offender', 'Payment')",0.0011393242424648804
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Insert Fine Notification', 'Appeal to Judge')",0.0036984328216725505
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Appeal to Judge', 'Add penalty')",0.0011377416975023025
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Create Fine', 'Send Fine')",6.8263584086548245e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Send Fine', 'Insert Fine Notification')",3.8654093068361375e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Add penalty', 'Send for Credit Collection')",3.2810761767864487e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",0.00016789172985928112
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Insert Date Appeal to Prefecture', 'Add penalty')",0.0001349059571088609
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Add penalty', 'Send Appeal to Prefecture')",8.170965151899075e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0005957531425114702
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0009295529484574716
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Notify Result Appeal to Offender', 'Payment')",0.0005868188459101863
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Insert Fine Notification', 'Appeal to Judge')",0.0006706811053291027
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Appeal to Judge', 'Add penalty')",0.0014640395696833496
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Create Fine', 'Send Fine')",4.016712839910361e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Send Fine', 'Insert Fine Notification')",2.2626900432107145e-07
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Add penalty', 'Send for Credit Collection')",6.829315571796137e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",2.09255689843673e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Insert Date Appeal to Prefecture', 'Add penalty')",9.761745511923204e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Add penalty', 'Send Appeal to Prefecture')",6.297068916670098e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0006636828574649599
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.00036874483386567747
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Notify Result Appeal to Offender', 'Payment')",0.0004820417023710645
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Insert Fine Notification', 'Appeal to Judge')",0.0012872611993961119
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Appeal to Judge', 'Add penalty')",0.0005903956808128735
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Create Fine', 'Send Fine')",4.1324265317540484e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Send Fine', 'Insert Fine Notification')",8.920861392332966e-07
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Add penalty', 'Send for Credit Collection')",2.4680102424809153e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",4.1203151526759854e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Insert Date Appeal to Prefecture', 'Add penalty')",2.560101245730531e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Add penalty', 'Send Appeal to Prefecture')",0.00019178314768401056
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",0.0017882531855566233
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.0004954407318106845
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Notify Result Appeal to Offender', 'Payment')",0.0004450924764105738
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Insert Fine Notification', 'Appeal to Judge')",0.000887121810131342
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Appeal to Judge', 'Add penalty')",7.784063249551744e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Create Fine', 'Send Fine')",2.4353307892600803e-07
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Send Fine', 'Insert Fine Notification')",1.878726036748537e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Add penalty', 'Send for Credit Collection')",3.5615903390099316e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Insert Fine Notification', 'Insert Date Appeal to Prefecture')",9.882994588303942e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Insert Date Appeal to Prefecture', 'Add penalty')",6.204989516476044e-06
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Add penalty', 'Send Appeal to Prefecture')",1.0880209433934136e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture')",4.153024811558521e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender')",0.00023937880529602238
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Notify Result Appeal to Offender', 'Payment')",9.946189410961744e-05
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Insert Fine Notification', 'Appeal to Judge')",0.0001909111609985177
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Appeal to Judge', 'Add penalty')",0.0006840001529929628

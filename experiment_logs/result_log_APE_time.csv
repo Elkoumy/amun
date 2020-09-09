@@ -1,969 +1,155 @@
 dataset,aggregate_type,delta,edge,APE_time
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'Leucocytes')",4.550810245387822
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Release A', 'Return ER')",13.594466608099584
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission IC', 'Admission NC')",0.6240007054828185
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('CRP', 'Release B')",0.307318041149661
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('ER Sepsis Triage', 'Admission NC')",3.457481789968412
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'LacticAcid')",0.4663617403601228
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('LacticAcid', 'Release A')",4.288558134501311
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Release D', 'Return ER')",4.859790272915121
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('ER Triage', 'ER Registration')",2.6765578432327617
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('IV Liquid', 'Release A')",0.23922477894112315
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'IV Antibiotics')",3.127636535500106
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'Release C')",3.6785027746138543
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Release C', 'Return ER')",3.253624456963641
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Leucocytes', 'Release E')",0.6546046481105089
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'ER Sepsis Triage')",3.51654689778341
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.01,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'Leucocytes')",0.16698408374021262
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Release A', 'Return ER')",3.8255694654110353
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission IC', 'Admission NC')",0.3604624378111311
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('CRP', 'Release B')",1.894811086363451
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('ER Sepsis Triage', 'Admission NC')",0.3470678246382202
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'LacticAcid')",0.06121303271106337
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('LacticAcid', 'Release A')",0.6765186656096254
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Release D', 'Return ER')",0.21468338311474608
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('ER Triage', 'ER Registration')",0.5652552161325606
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('IV Liquid', 'Release A')",0.35792978517711255
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'IV Antibiotics')",1.3241700603260769
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'Release C')",0.017619704655159746
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Release C', 'Return ER')",0.09393478511849364
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Leucocytes', 'Release E')",0.6944883663350213
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'ER Sepsis Triage')",0.05184252962639414
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.05,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'Leucocytes')",1.0413940877555516
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Release A', 'Return ER')",0.07175406207478241
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission IC', 'Admission NC')",0.05839980300570664
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('CRP', 'Release B')",0.016763603901873432
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('ER Sepsis Triage', 'Admission NC')",0.7657535021909901
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'LacticAcid')",1.3852938827746017
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('LacticAcid', 'Release A')",0.09204489636054354
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Release D', 'Return ER')",0.617051871229975
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('ER Triage', 'ER Registration')",0.5056576124514743
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('IV Liquid', 'Release A')",0.04880110115252839
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'IV Antibiotics')",0.16208565060652713
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'Release C')",0.7247841164987725
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Release C', 'Return ER')",0.1753024648734164
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Leucocytes', 'Release E')",0.038085543616314596
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'ER Sepsis Triage')",1.1236261057949959
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.1,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'Leucocytes')",0.2858323192239739
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Release A', 'Return ER')",0.2510207002756251
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission IC', 'Admission NC')",0.06403517239327466
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('CRP', 'Release B')",0.16392699966887264
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('ER Sepsis Triage', 'Admission NC')",0.07402588972220978
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'LacticAcid')",0.027906088319162407
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('LacticAcid', 'Release A')",0.07082359428399325
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Release D', 'Return ER')",0.6819356537500291
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('ER Triage', 'ER Registration')",0.40775609403509555
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('IV Liquid', 'Release A')",0.0023690789121567257
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'IV Antibiotics')",0.01316654485862555
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'Release C')",0.04243688465529372
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Release C', 'Return ER')",0.5657654642005043
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Leucocytes', 'Release E')",0.21723566621838994
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'ER Sepsis Triage')",0.03420368170325246
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.2,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'Leucocytes')",0.0470334183676218
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Release A', 'Return ER')",0.1316734585355348
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission IC', 'Admission NC')",0.047825303120559035
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('CRP', 'Release B')",0.02805943249969685
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('ER Sepsis Triage', 'Admission NC')",0.09190290060540879
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'LacticAcid')",0.15908485875357348
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('LacticAcid', 'Release A')",0.00864741862492823
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Release D', 'Return ER')",0.19899249554910792
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('ER Triage', 'ER Registration')",0.08345550857231221
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('IV Liquid', 'Release A')",0.0027171293118588504
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'IV Antibiotics')",0.022250484896316695
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'Release C')",0.03876668165204189
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Release C', 'Return ER')",0.02093270536106645
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Leucocytes', 'Release E')",0.04840564639923928
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'ER Sepsis Triage')",0.04156825547822625
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.3,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'Leucocytes')",0.17997440784039104
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Release A', 'Return ER')",0.12607243285960226
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission IC', 'Admission NC')",0.030485863054952288
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('CRP', 'Release B')",0.20915078767555273
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('ER Sepsis Triage', 'Admission NC')",0.1065613920325206
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'LacticAcid')",0.11120871088297087
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Release D', 'Return ER')",0.01289895058449583
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('ER Triage', 'ER Registration')",0.016273709032063616
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('IV Liquid', 'Release A')",0.06525548553084756
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'IV Antibiotics')",0.020386065764079517
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'Release C')",0.0014334008362823431
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Release C', 'Return ER')",0.011446826421953321
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Leucocytes', 'Release E')",0.010860965870145557
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'ER Sepsis Triage')",0.05536754970270649
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.4,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'Leucocytes')",0.05603707156839031
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Release A', 'Return ER')",0.6311376012229715
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('CRP', 'Release B')",0.03501675653232217
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('ER Sepsis Triage', 'Admission NC')",0.0056595962952825755
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'LacticAcid')",0.11763626426286698
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Release D', 'Return ER')",0.02601249218668737
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('ER Triage', 'ER Registration')",0.19141547006073126
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'ER Sepsis Triage')",0.054014633181912734
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.5,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'Leucocytes')",0.040070389101676075
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Release A', 'Return ER')",0.08290970805998119
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('CRP', 'Release B')",0.006799742982331115
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('ER Sepsis Triage', 'Admission NC')",0.01852217297880537
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'LacticAcid')",0.077534255860463
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Release D', 'Return ER')",0.005580713926381952
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('ER Triage', 'ER Registration')",0.02171758474055227
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'ER Sepsis Triage')",0.048429971973087474
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.6,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'Leucocytes')",0.030842946823772588
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Release A', 'Return ER')",0.05367065533935864
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('CRP', 'Release B')",0.02005197498596897
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'LacticAcid')",0.012672200557460291
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('ER Triage', 'ER Registration')",0.10065359656523272
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'ER Sepsis Triage')",0.03383621426165201
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.7,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'Leucocytes')",0.032228575434173456
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Release A', 'Return ER')",0.011781722399927516
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('CRP', 'Release B')",0.029519651576514226
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.8,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'Leucocytes')",0.026800698357561638
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Release A', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('CRP', 'Release B')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.AVG,0.9,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'Leucocytes')",0.6326573660293272
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Release A', 'Return ER')",0.015500920196417778
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission IC', 'Admission NC')",7.464620897336169
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('CRP', 'Release B')",1.3704967343645682
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('ER Sepsis Triage', 'Admission NC')",5.78877879556319
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'LacticAcid')",2.2204754603515187
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('LacticAcid', 'Release A')",1.1712263295650713
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Release D', 'Return ER')",15.782066220889858
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('ER Triage', 'ER Registration')",24.988073290125225
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('IV Liquid', 'Release A')",25.916278229133965
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'IV Antibiotics')",16.072293916261433
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'Release C')",13.477064786451177
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Release C', 'Return ER')",10.348882454368757
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Leucocytes', 'Release E')",12.63516800224668
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'ER Sepsis Triage')",15.334268869590646
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.01,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'Leucocytes')",0.0013856338737023538
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Release A', 'Return ER')",0.048886627920868585
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission IC', 'Admission NC')",7.09860241110626
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('CRP', 'Release B')",1.5843115440778393
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('ER Sepsis Triage', 'Admission NC')",1.9507009817879752
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'LacticAcid')",0.36510765259354794
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('LacticAcid', 'Release A')",5.05842034438102
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Release D', 'Return ER')",0.27273631368570533
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('ER Triage', 'ER Registration')",7.89665796009757
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('IV Liquid', 'Release A')",5.929975452591053
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'IV Antibiotics')",0.5531960055192623
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'Release C')",0.7042859570369683
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Release C', 'Return ER')",0.6017899293240601
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Leucocytes', 'Release E')",1.9152745369400392
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'ER Sepsis Triage')",5.019253003609968
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.05,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'Leucocytes')",0.013987478261888045
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Release A', 'Return ER')",0.034539031542233777
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission IC', 'Admission NC')",0.7935715794690495
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('CRP', 'Release B')",0.30273185625717236
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('ER Sepsis Triage', 'Admission NC')",0.3210293255487601
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'LacticAcid')",0.07189718110558614
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('LacticAcid', 'Release A')",1.99983898345675
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Release D', 'Return ER')",0.2812816475285039
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('ER Triage', 'ER Registration')",3.727135827448745
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('IV Liquid', 'Release A')",1.6738029931088725
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'IV Antibiotics')",7.505174398875287
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'Release C')",2.2421413071309204
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Release C', 'Return ER')",1.3700106291958147
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Leucocytes', 'Release E')",1.9873032525694425
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'ER Sepsis Triage')",0.07313487875453435
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.1,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'Leucocytes')",0.024748598577442632
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Release A', 'Return ER')",0.0037438782010524854
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission IC', 'Admission NC')",0.3115035913167552
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('CRP', 'Release B')",0.09612277190285891
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('ER Sepsis Triage', 'Admission NC')",0.17399616146892993
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'LacticAcid')",0.020052044933628173
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('LacticAcid', 'Release A')",0.4724400718452395
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Release D', 'Return ER')",0.44826232508291897
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('ER Triage', 'ER Registration')",0.5330628248245559
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('IV Liquid', 'Release A')",0.3775958272655362
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'IV Antibiotics')",1.008785163080825
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'Release C')",0.23187914608189455
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Release C', 'Return ER')",0.9982520711426104
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Leucocytes', 'Release E')",1.5702747706917142
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'ER Sepsis Triage')",0.5688820899507254
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.2,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'Leucocytes')",0.010288925295680058
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Release A', 'Return ER')",0.00647589684444247
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission IC', 'Admission NC')",0.07188314251919463
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('CRP', 'Release B')",0.04796829791964212
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('ER Sepsis Triage', 'Admission NC')",0.0007833022173418525
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'LacticAcid')",0.08149299431355016
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('LacticAcid', 'Release A')",0.141028626441306
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Release D', 'Return ER')",0.028555176712407898
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('ER Triage', 'ER Registration')",0.7270347381484283
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('IV Liquid', 'Release A')",1.9340035711304562
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'IV Antibiotics')",0.46804041503761634
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'Release C')",0.3418845634894846
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Release C', 'Return ER')",0.2267155542202345
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Leucocytes', 'Release E')",0.07798416399739559
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'ER Sepsis Triage')",0.03887406982144539
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.3,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'Leucocytes')",0.0047269082886032465
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Release A', 'Return ER')",0.04132987076757414
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission IC', 'Admission NC')",0.11076432505604603
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('CRP', 'Release B')",0.03515653357601585
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('ER Sepsis Triage', 'Admission NC')",0.002476009826366347
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'LacticAcid')",0.14478331817505083
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Release D', 'Return ER')",0.3859231492213696
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('ER Triage', 'ER Registration')",0.5495016820574724
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('IV Liquid', 'Release A')",0.2049315687153875
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'IV Antibiotics')",0.9599365101192556
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'Release C')",0.12121962120182427
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Release C', 'Return ER')",0.16713517444788364
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Leucocytes', 'Release E')",0.3293282494360304
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'ER Sepsis Triage')",0.2361116089423035
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.4,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'Leucocytes')",0.0003225706264421521
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Release A', 'Return ER')",0.02164956386995943
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('CRP', 'Release B')",0.11845978765570361
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('ER Sepsis Triage', 'Admission NC')",0.1046599055519373
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'LacticAcid')",0.05981781651144283
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Release D', 'Return ER')",0.08578529914320886
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('ER Triage', 'ER Registration')",0.5538630075407828
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'ER Sepsis Triage')",0.27345448266019523
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.5,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'Leucocytes')",0.002627551149326146
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Release A', 'Return ER')",0.005532629612323632
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('CRP', 'Release B')",0.04388295912363894
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('ER Sepsis Triage', 'Admission NC')",0.02014677455222744
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'LacticAcid')",0.14349217268726205
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Release D', 'Return ER')",0.29233044255896684
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('ER Triage', 'ER Registration')",0.20709785933566563
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'ER Sepsis Triage')",0.1822697413814427
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.6,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'Leucocytes')",0.006013191276213007
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Release A', 'Return ER')",0.01926655966101656
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('CRP', 'Release B')",0.05026458068409556
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'LacticAcid')",0.02373593375521366
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('ER Triage', 'ER Registration')",0.04751730742996349
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'ER Sepsis Triage')",0.593895189533669
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.7,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'Leucocytes')",0.00048706664720886644
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Release A', 'Return ER')",0.014644334703502015
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('CRP', 'Release B')",0.02868026924053949
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.8,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'Leucocytes')",0.0004818810916813042
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Release A', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('CRP', 'Release B')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.SUM,0.9,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'Leucocytes')",80931.69890504553
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Release A', 'Return ER')",28717.136760771322
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission IC', 'Admission NC')",720.7863062987424
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('CRP', 'Release B')",1354.8732104163391
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('ER Sepsis Triage', 'Admission NC')",665.2042904581224
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'LacticAcid')",504.46675548764773
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('LacticAcid', 'Release A')",113.34360921522594
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Release D', 'Return ER')",8265.202106491886
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('ER Triage', 'ER Registration')",1268.2082457910976
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('IV Liquid', 'Release A')",39.353491138535254
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'IV Antibiotics')",5549.856686455428
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'Release C')",812.089784870937
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Release C', 'Return ER')",486.89132660424724
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Leucocytes', 'Release E')",321.4112680445857
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'ER Sepsis Triage')",2383.784478768791
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.01,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'Leucocytes')",43225.20978993448
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Release A', 'Return ER')",3892.5260569477837
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission IC', 'Admission NC')",9.629496149487988
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('CRP', 'Release B')",86.86574908796047
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('ER Sepsis Triage', 'Admission NC')",2623.599591003047
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'LacticAcid')",681.4280675558524
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('LacticAcid', 'Release A')",1.734866091014267
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Release D', 'Return ER')",328.01714615529335
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('ER Triage', 'ER Registration')",42.6109981851149
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('IV Liquid', 'Release A')",0.9217430360931681
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'IV Antibiotics')",4264.781877536907
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'Release C')",16.50235382798749
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Release C', 'Return ER')",73.22219364516339
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Leucocytes', 'Release E')",144.5900274678719
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'ER Sepsis Triage')",2887.6163668762088
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.05,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'Leucocytes')",12624.305278818263
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Release A', 'Return ER')",3255.0536373071586
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission IC', 'Admission NC')",4.056321132757537
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('CRP', 'Release B')",63.63796114606918
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('ER Sepsis Triage', 'Admission NC')",2131.317911392967
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'LacticAcid')",57.21126378402835
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('LacticAcid', 'Release A')",9.285878940977764
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Release D', 'Return ER')",69.5691694866986
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('ER Triage', 'ER Registration')",222.3915575326791
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('IV Liquid', 'Release A')",3.1151988073465366
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'IV Antibiotics')",324.375086777007
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'Release C')",23.191589234464796
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Release C', 'Return ER')",849.9917051466373
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Leucocytes', 'Release E')",2.6165840752566347
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'ER Sepsis Triage')",7152.992530967568
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.1,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'Leucocytes')",4261.356914382365
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Release A', 'Return ER')",745.9065769889972
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission IC', 'Admission NC')",4.410909124006911
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('CRP', 'Release B')",1.5882077358273046
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('ER Sepsis Triage', 'Admission NC')",101.41551474945486
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'LacticAcid')",10.777687708833993
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('LacticAcid', 'Release A')",0.29507755529321084
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Release D', 'Return ER')",44.49447297076234
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('ER Triage', 'ER Registration')",7.589319542836154
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('IV Liquid', 'Release A')",6.102612675331175
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'IV Antibiotics')",436.9013898514132
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'Release C')",9.555276350865467
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Release C', 'Return ER')",84.25691029478227
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Leucocytes', 'Release E')",17.68499590890548
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'ER Sepsis Triage')",358.0322183636694
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.2,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'Leucocytes')",4178.359810866447
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Release A', 'Return ER')",520.061702614649
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission IC', 'Admission NC')",17.98807011461839
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('CRP', 'Release B')",26.729539556477015
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('ER Sepsis Triage', 'Admission NC')",49.544484472486914
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'LacticAcid')",55.54102845004427
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('LacticAcid', 'Release A')",0.18721455950044602
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Release D', 'Return ER')",94.45139372575497
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('ER Triage', 'ER Registration')",54.96478753982135
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('IV Liquid', 'Release A')",7.430446590930365
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'IV Antibiotics')",325.55245489430314
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'Release C')",1.315959539113084
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Release C', 'Return ER')",15.054570913308615
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Leucocytes', 'Release E')",2.3300824374926448
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'ER Sepsis Triage')",166.86225049597437
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.3,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'Leucocytes')",2645.4195701701537
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Release A', 'Return ER')",883.4756180647831
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission IC', 'Admission NC')",14.031532080538696
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('CRP', 'Release B')",17.8645651902526
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('ER Sepsis Triage', 'Admission NC')",158.65384389564792
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'LacticAcid')",37.983451212642606
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Release D', 'Return ER')",37.85377722326093
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('ER Triage', 'ER Registration')",28.863660090861895
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('IV Liquid', 'Release A')",0.3432128188883876
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'IV Antibiotics')",65.72125656258878
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'Release C')",1.6826423477256844
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Release C', 'Return ER')",20.69526256093431
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Leucocytes', 'Release E')",3.4128682687437153
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'ER Sepsis Triage')",1418.8323957464997
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.4,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'Leucocytes')",11270.781459021422
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Release A', 'Return ER')",138.09475193629967
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('CRP', 'Release B')",22.824915560987215
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('ER Sepsis Triage', 'Admission NC')",263.96251905048393
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'LacticAcid')",0.7408487037826951
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Release D', 'Return ER')",179.07535677392835
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('ER Triage', 'ER Registration')",4.493556973880808
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'ER Sepsis Triage')",689.6168739336235
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.5,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'Leucocytes')",1574.1073420534358
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Release A', 'Return ER')",345.07589126177174
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('CRP', 'Release B')",29.007547546277333
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('ER Sepsis Triage', 'Admission NC')",208.43745002058287
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'LacticAcid')",23.654391639897277
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Release D', 'Return ER')",31.721954736839756
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('ER Triage', 'ER Registration')",17.648575790555693
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'ER Sepsis Triage')",1422.326210891268
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.6,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'Leucocytes')",3461.85045781327
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Release A', 'Return ER')",854.8567163570553
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('CRP', 'Release B')",0.9862781624108654
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'LacticAcid')",37.751238155461074
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('ER Triage', 'ER Registration')",21.138972332035074
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'ER Sepsis Triage')",236.8444051709822
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.7,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'Leucocytes')",556.7320332634873
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Release A', 'Return ER')",503.4802952122549
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('CRP', 'Release B')",63.4837533125704
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.8,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'Leucocytes')",1000.856016331545
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Release A', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('CRP', 'Release B')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MIN,0.9,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'Leucocytes')",90.34260129854061
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Release A', 'Return ER')",8.118442004952673
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission IC', 'Admission NC')",19.98222592041812
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('CRP', 'Release B')",108.55572607220823
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('ER Sepsis Triage', 'Admission NC')",5.183423998127049
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'LacticAcid')",10.824963427071056
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('LacticAcid', 'Release A')",28.509009655684178
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Release D', 'Return ER')",9.732308272569554
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('ER Triage', 'ER Registration')",37.144985037650656
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('IV Liquid', 'Release A')",38.819872998628746
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'IV Antibiotics')",22.370452867509016
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'Release C')",10.651699633315712
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Release C', 'Return ER')",54.34920212180493
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Leucocytes', 'Release E')",2.174273615520319
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'ER Sepsis Triage')",70.12382431685401
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.01,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'Leucocytes')",7.838136871719656
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Release A', 'Return ER')",10.780938402807905
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission IC', 'Admission NC')",0.8068558324966894
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('CRP', 'Release B')",0.05047012657084101
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('ER Sepsis Triage', 'Admission NC')",11.2361873517565
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'LacticAcid')",1.2695501544969159
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('LacticAcid', 'Release A')",2.3707824353030498
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Release D', 'Return ER')",1.6950564831688975
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('ER Triage', 'ER Registration')",3.188588033027429
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('IV Liquid', 'Release A')",0.33373118013107933
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'IV Antibiotics')",13.488742776638302
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'Release C')",9.98919159004061
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Release C', 'Return ER')",0.7736735136624316
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Leucocytes', 'Release E')",4.866843138337963
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'ER Sepsis Triage')",2.0552744233055757
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.05,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'Leucocytes')",1.6803535227409294
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Release A', 'Return ER')",4.8545016276292445
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission IC', 'Admission NC')",0.3338339415661247
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('CRP', 'Release B')",2.567569517700598
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('ER Sepsis Triage', 'Admission NC')",2.093357611676189
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'LacticAcid')",4.189258823006695
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('LacticAcid', 'Release A')",8.027835385181026
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Release D', 'Return ER')",0.3542809506276782
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('ER Triage', 'ER Registration')",0.9255276694302365
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('IV Liquid', 'Release A')",6.3624699165992125
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'IV Antibiotics')",5.539277350041406
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'Release C')",0.5946677262074708
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Release C', 'Return ER')",0.045135924896107654
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Leucocytes', 'Release E')",1.0921248499725984
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'ER Sepsis Triage')",0.5026405930258911
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.1,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'Leucocytes')",0.09164003929265604
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Release A', 'Return ER')",1.9603680327011832
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission IC', 'Admission NC')",0.5344895620196818
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('CRP', 'Release B')",1.7262660062729467
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('ER Sepsis Triage', 'Admission NC')",0.0030436810896601143
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'LacticAcid')",0.9403354753537776
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('LacticAcid', 'Release A')",0.04851703542437922
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Release D', 'Return ER')",0.5157983221892254
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('ER Triage', 'ER Registration')",0.03139184475352648
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('IV Liquid', 'Release A')",0.8156158787603377
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'IV Antibiotics')",0.006604884331818369
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'Release C')",0.8033609845436072
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Release C', 'Return ER')",2.1257073894746967
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Leucocytes', 'Release E')",1.3133975972165508
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'ER Sepsis Triage')",0.7866048862968182
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.2,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'Leucocytes')",4.971087957755999
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Release A', 'Return ER')",0.29822099211761743
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission IC', 'Admission NC')",0.06174116326919923
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('CRP', 'Release B')",1.8449614169723771
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('ER Sepsis Triage', 'Admission NC')",0.8998363093410707
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'LacticAcid')",0.9593308796488188
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('LacticAcid', 'Release A')",0.3376948459903781
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Release D', 'Return ER')",0.27011491452506065
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('ER Triage', 'ER Registration')",0.716187870946169
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('IV Liquid', 'Release A')",0.5025736103178889
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'IV Antibiotics')",0.4801986960940507
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'Release C')",0.21390455460252614
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Release C', 'Return ER')",0.341277166486818
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Leucocytes', 'Release E')",0.08739570926797047
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'ER Sepsis Triage')",1.2614841617319796
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.3,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'Leucocytes')",0.20704905790362896
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Release A', 'Return ER')",0.4716814020802397
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission IC', 'Admission NC')",0.11855364524145386
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('CRP', 'Release B')",2.3268354862668774
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('ER Sepsis Triage', 'Admission NC')",0.6151790590888843
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'LacticAcid')",0.46051695497762213
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Release D', 'Return ER')",0.7364509963468564
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('ER Triage', 'ER Registration')",0.4129061982738076
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('IV Liquid', 'Release A')",0.6063328453683302
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'IV Antibiotics')",1.2551106902440194
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'Release C')",0.12293096726540896
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Release C', 'Return ER')",0.14279415632373907
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Leucocytes', 'Release E')",0.07780256206972246
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'ER Sepsis Triage')",0.8938022308420221
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.4,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'Leucocytes')",0.005895339851651664
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Release A', 'Return ER')",0.6292753268829794
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('CRP', 'Release B')",0.04319162738563629
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('ER Sepsis Triage', 'Admission NC')",0.12209798098130725
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'LacticAcid')",0.0060308928015311075
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Release D', 'Return ER')",0.8203593757922573
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('ER Triage', 'ER Registration')",0.4248102434365298
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'ER Sepsis Triage')",0.8755617296948187
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.5,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'Leucocytes')",0.051796462891305656
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Release A', 'Return ER')",0.3918236659587562
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('CRP', 'Release B')",0.6358924425925158
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('ER Sepsis Triage', 'Admission NC')",1.6511512952034693
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'LacticAcid')",0.16288115623196825
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Release D', 'Return ER')",1.999564398577222
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('ER Triage', 'ER Registration')",0.46345972771708116
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'ER Sepsis Triage')",0.0060458593308317845
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.6,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'Leucocytes')",0.1622342933844631
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Release A', 'Return ER')",0.025936452494720732
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('CRP', 'Release B')",0.3069134711447455
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'LacticAcid')",0.1507829803695664
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('ER Triage', 'ER Registration')",0.39477173147512573
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'ER Sepsis Triage')",0.19744101880635534
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.7,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'Leucocytes')",0.04365391522518135
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Release A', 'Return ER')",0.25154797889297387
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('CRP', 'Release B')",0.31232245399360625
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.8,"('Admission NC', 'ER Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'Leucocytes')",0.2449516985487224
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Release A', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission IC', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('CRP', 'Release B')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'LacticAcid')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('LacticAcid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Release D', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('ER Triage', 'ER Registration')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('IV Liquid', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'Release D')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'IV Antibiotics')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'Release C')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Release C', 'Return ER')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Release B', 'Admission NC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Leucocytes', 'Release E')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('IV Antibiotics', 'Release A')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Return ER', 'CRP')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('ER Registration', 'Admission IC')",0.0
-Sepsis Cases - Event Log,AggregateType.MAX,0.9,"('Admission NC', 'ER Triage')",0.0
-CreditRequirement,AggregateType.AVG,0.01,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.05,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.1,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.2,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.3,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.4,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.5,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.6,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.7,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.8,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.AVG,0.9,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.01,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.05,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.1,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.2,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.3,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.4,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.5,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.6,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.7,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.8,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.SUM,0.9,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.01,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.05,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.1,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.2,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.3,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.4,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.5,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.6,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.7,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.8,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MIN,0.9,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.01,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.05,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.1,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.2,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.3,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.4,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.5,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.6,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.7,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.8,"('Register', 'Acceptance of requests')",0.0
-CreditRequirement,AggregateType.MAX,0.9,"('Register', 'Acceptance of requests')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Send Fine', 'Insert Fine Notification')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Add penalty', 'Insert Date Appeal to Prefecture')",2813.8850961355947
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Notify Result Appeal to Offender', 'Payment')",2389.1228862687863
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Insert Fine Notification', 'Appeal to Judge')",6342.744177622385
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Appeal to Judge', 'Add penalty')",112.8309566296163
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Send for Credit Collection', 'Send Appeal to Prefecture')",36.1238625735765
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Appeal to Judge', 'Send for Credit Collection')",134.21107574697282
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",276.448149885198
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Create Fine', 'Appeal to Judge')",755.0975991170629
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Appeal to Judge', 'Send Fine')",168.03694542527816
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",41.99172237797107
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",197.87412857458807
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.01,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Send Fine', 'Insert Fine Notification')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Add penalty', 'Insert Date Appeal to Prefecture')",766.746063762056
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Notify Result Appeal to Offender', 'Payment')",2214.4110277856785
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Insert Fine Notification', 'Appeal to Judge')",173.43229221022565
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Appeal to Judge', 'Add penalty')",545.5881641614362
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Send for Credit Collection', 'Send Appeal to Prefecture')",1.4627302575323404
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Appeal to Judge', 'Send for Credit Collection')",39.89929714103613
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",34.04099142324955
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Create Fine', 'Appeal to Judge')",111.91766378493207
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Appeal to Judge', 'Send Fine')",3.6363730246300285
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",2.4835946274673693
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",771.586181715559
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.05,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Send Fine', 'Insert Fine Notification')",109474401.85978846
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Add penalty', 'Insert Date Appeal to Prefecture')",262.4303073461009
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Notify Result Appeal to Offender', 'Payment')",494.7700749609555
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Insert Fine Notification', 'Appeal to Judge')",57.708255639472604
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Appeal to Judge', 'Add penalty')",335.0516448628789
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Send for Credit Collection', 'Send Appeal to Prefecture')",4.0129285687541545
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Appeal to Judge', 'Send for Credit Collection')",2.6933544303412202
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",551.4100797793493
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Create Fine', 'Appeal to Judge')",19.74568746503083
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Appeal to Judge', 'Send Fine')",0.009304066434372336
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",5.106176471867927
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",925.96658777662
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.1,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Send Fine', 'Insert Fine Notification')",11841618.707628857
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Add penalty', 'Insert Date Appeal to Prefecture')",668.694989073755
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Notify Result Appeal to Offender', 'Payment')",325.57784563111176
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Insert Fine Notification', 'Appeal to Judge')",30.33702409774794
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Appeal to Judge', 'Add penalty')",23.021210755389397
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Send for Credit Collection', 'Send Appeal to Prefecture')",7.283484974597937
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Appeal to Judge', 'Send for Credit Collection')",2.9426349791765327
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",439.8221577160057
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Create Fine', 'Appeal to Judge')",20.676651908614936
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Appeal to Judge', 'Send Fine')",5.112815626063991
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.2675296993726851
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",382.23487553678063
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.2,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Send Fine', 'Insert Fine Notification')",317191033.73160994
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Add penalty', 'Insert Date Appeal to Prefecture')",114.46008265077522
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Notify Result Appeal to Offender', 'Payment')",12.52990586992562
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Insert Fine Notification', 'Appeal to Judge')",9.939378555753594
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Appeal to Judge', 'Add penalty')",47.368579473785296
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Send for Credit Collection', 'Send Appeal to Prefecture')",0.15683152463922798
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Appeal to Judge', 'Send for Credit Collection')",1.679680706331177
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",167.26555871843905
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Create Fine', 'Appeal to Judge')",22.23987008729603
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Appeal to Judge', 'Send Fine')",5.752063905477278
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",6.541493120834339
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",18.96207083885084
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.3,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Send Fine', 'Insert Fine Notification')",13578043.530928653
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Add penalty', 'Insert Date Appeal to Prefecture')",116.2893128247934
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Notify Result Appeal to Offender', 'Payment')",171.1675327641966
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Insert Fine Notification', 'Appeal to Judge')",50.67609856425484
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Appeal to Judge', 'Add penalty')",20.47906103094685
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Send for Credit Collection', 'Send Appeal to Prefecture')",2.651476637518761
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Appeal to Judge', 'Send for Credit Collection')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",28.60356580825578
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Create Fine', 'Appeal to Judge')",6.210268511382149
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Appeal to Judge', 'Send Fine')",0.993002051434986
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.18434601748331522
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",20.285171442190233
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.4,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Send Fine', 'Insert Fine Notification')",176298672.36910263
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Add penalty', 'Insert Date Appeal to Prefecture')",13.770260559137407
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Notify Result Appeal to Offender', 'Payment')",36.760708652735715
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Insert Fine Notification', 'Appeal to Judge')",25.79659495441315
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Appeal to Judge', 'Add penalty')",6.610525792533824
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Send for Credit Collection', 'Send Appeal to Prefecture')",0.463748699897996
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Appeal to Judge', 'Send for Credit Collection')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",19.223015024400237
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Create Fine', 'Appeal to Judge')",10.136745741060286
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Appeal to Judge', 'Send Fine')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",90.5907458279949
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.5,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Send Fine', 'Insert Fine Notification')",86285462.93520752
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Add penalty', 'Insert Date Appeal to Prefecture')",32.95112660856553
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Notify Result Appeal to Offender', 'Payment')",83.03986430385794
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Insert Fine Notification', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Appeal to Judge', 'Add penalty')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Send for Credit Collection', 'Send Appeal to Prefecture')",0.8820416663670649
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Appeal to Judge', 'Send for Credit Collection')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",3.7933874037462805
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Create Fine', 'Appeal to Judge')",1.6001488026496924
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Appeal to Judge', 'Send Fine')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",1.6686068975954098
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.6,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Send Fine', 'Insert Fine Notification')",85982921.31733193
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Add penalty', 'Insert Date Appeal to Prefecture')",20.24547397218436
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Notify Result Appeal to Offender', 'Payment')",183.60356259974859
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Insert Fine Notification', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Appeal to Judge', 'Add penalty')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Send for Credit Collection', 'Send Appeal to Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Appeal to Judge', 'Send for Credit Collection')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Create Fine', 'Appeal to Judge')",3.5335000552815377
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Appeal to Judge', 'Send Fine')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",83.79539498684301
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.7,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Send Fine', 'Insert Fine Notification')",106647318.92106402
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Add penalty', 'Insert Date Appeal to Prefecture')",56.41878800599703
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Notify Result Appeal to Offender', 'Payment')",19.651806086580862
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Insert Fine Notification', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Appeal to Judge', 'Add penalty')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Send for Credit Collection', 'Send Appeal to Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Appeal to Judge', 'Send for Credit Collection')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Create Fine', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Appeal to Judge', 'Send Fine')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",7.921381245745027
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.8,"('Payment', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Send Fine', 'Insert Fine Notification')",52249292.48302949
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Add penalty', 'Insert Date Appeal to Prefecture')",9.505309263386
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Notify Result Appeal to Offender', 'Payment')",64.22822752402958
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Insert Fine Notification', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Appeal to Judge', 'Add penalty')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Send for Credit Collection', 'Send Appeal to Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Appeal to Judge', 'Send for Credit Collection')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Receive Result Appeal from Prefecture', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Appeal to Judge', 'Receive Result Appeal from Prefecture')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Create Fine', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Appeal to Judge', 'Send Fine')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Send Appeal to Prefecture', 'Notify Result Appeal to Offender')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Insert Date Appeal to Prefecture', 'Appeal to Judge')",0.0
+Road_Traffic_Fine_Management_Process,AggregateType.MIN,0.9,"('Payment', 'Appeal to Judge')",0.0

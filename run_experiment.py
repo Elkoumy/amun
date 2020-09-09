@@ -51,7 +51,8 @@ precision=0.5
 for dataset in datasets:
 
     # aggregate_types=[AggregateType.AVG, AggregateType.SUM]
-    aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
+    # aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
+    aggregate_types = [AggregateType.MIN]
     for aggregate_type in aggregate_types:
         print("Dataset: "+ dataset)
         print("Aggregate Type: "+ str(aggregate_type))
