@@ -56,6 +56,6 @@ C = [[ 0, 3, 3, 0, 0, 0 ],  # s
 
 source = 0  # A
 sink = 5    # F
-print ("Dinic's Algorithm")
+print("Dinic's Algorithm")
 max_flow_value = MaxFlow(C, source, sink)
-print ("max_flow_value is", max_flow_value)
+print("max_flow_value is", max_flow_value)

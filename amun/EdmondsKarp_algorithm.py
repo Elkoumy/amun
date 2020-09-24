@@ -30,8 +30,7 @@ def bfs(C, F, s, t):
         for v in range(len(C)):
             if (C[u][v] - F[u][v] > 0) and v not in paths:
                 paths[v] = paths[u] + [(u, v)]
-                print
-                paths
+                print(paths)
                 if v == t:
                     return paths[v]
                 queue.append(v)
