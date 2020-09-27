@@ -11,6 +11,24 @@ from amun.guessing_advantage import AggregateType
 
 
 def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logger_time, dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'):
+    # editing the name of datasets
+    #datasets = ["Sepsis Cases - Event Log", "CreditRequirement", "Road_Traffic_Fine_Management_Process"]
+    result_log_delta.dataset.replace("Sepsis Cases - Event Log","Sepsis" ,inplace=True)
+    result_log_delta.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
+    result_log_delta.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
+
+    result_log_alpha.dataset.replace("Sepsis Cases - Event Log", "Sepsis", inplace=True)
+    result_log_alpha.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
+    result_log_alpha.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
+
+    delta_logger_freq.dataset.replace("Sepsis Cases - Event Log", "Sepsis", inplace=True)
+    delta_logger_freq.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
+    delta_logger_freq.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
+
+    delta_logger_time.dataset.replace("Sepsis Cases - Event Log", "Sepsis", inplace=True)
+    delta_logger_time.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
+    delta_logger_time.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
+
     plot_delta_distributions_time(delta_logger_time,dir)
     plot_delta_distributions_freq(delta_logger_freq,dir)
     plot_input_delta(result_log_delta,dir)
@@ -303,13 +321,9 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.show()
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
 
-# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-# plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
+result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
-# plot_input_delta(result_log_delta)
-# plot_input_EMD(result_log_alpha)
-# plot_delta_distributions_time(delta_logger_time)
-# plot_delta_distributions_freq(delta_logger_freq)
