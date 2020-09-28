@@ -31,8 +31,8 @@ figures_dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privac
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 
 # datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
-# datasets=["Sepsis Cases - Event Log","CreditRequirement"]
-datasets=["Road_Traffic_Fine_Management_Process"]
+datasets=["CreditRequirement"]
+# datasets=["Road_Traffic_Fine_Management_Process"]
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
 
@@ -51,16 +51,16 @@ precision=0.5
 for dataset in datasets:
 
     # aggregate_types=[AggregateType.AVG, AggregateType.SUM]
-    # aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
-    aggregate_types = [AggregateType.MIN]
+    aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
+    # aggregate_types = [AggregateType.MIN]
     for aggregate_type in aggregate_types:
         print("Dataset: "+ dataset)
         print("Aggregate Type: "+ str(aggregate_type))
         # delta=0.05
         dfg_freq, dfg_time = read_xes(data_dir + "\\" + dataset + ".xes", aggregate_type)
         view_model(dfg_freq, process_model_dir + r"/fig_input_unprotected_" + dataset )
-        # deltas=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9]
-        deltas = [ 0.6]
+        deltas=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+        # deltas = [ 0.9]
         for delta in deltas:
             SMAPE_freq_tot=0
             SMAPE_time_tot = 0
@@ -103,22 +103,22 @@ for dataset in datasets:
             for edge in APE_dist_time:
                 result_log_APE_time.append([dataset,aggregate_type,  delta, edge, APE_dist_time[edge] ])
 
-        # # emd=1000
-        # emds=[0.01, 0.05, 0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9]
-        # for emd in emds:
-        #
-        #
-        #     dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_freq_dfg, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=emd, aggregate_type=aggregate_type)
-        #     # delta_per_distance[emd] = delta_time_dfg
-        #     for edge in delta_time_dfg.keys():
-        #         delta_logger_time.append([dataset, aggregate_type, emd,delta_time_dfg[edge]])
-        #
-        #     for edge in delta_freq_dfg.keys():
-        #         delta_logger_freq.append([dataset, aggregate_type, emd,delta_freq_dfg[edge]])
-        #     result_log_alpha.append([dataset,aggregate_type,emd,min(list(epsilon_freq.values())), min(list(epsilon_time.values())) , median(list(delta_freq_dfg.values())), median(list(delta_time_dfg.values())) , max(list(delta_freq_dfg.values())), max(list(delta_time_dfg.values())) ])
-        #     view_model(dfg_freq_new, process_model_dir + r"/fig_input_emd_" + str(emd) + "_" + dataset + "_" + str(aggregate_type))
-        #     print("delta for the freq is "+ str(delta_freq))
-        #     print("delta for the time is "+ str(delta_time))
+        # emd=1000
+        emds=[0.01, 0.05, 0.1,0.2,0.3,0.4,0.5,0.6, 0.7,0.8,0.9]
+        for emd in emds:
+
+
+            dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time, delta_freq_dfg, delta_time_dfg=differential_privacy_with_accuracy(dfg_freq, dfg_time,precision=precision, distance=emd, aggregate_type=aggregate_type)
+            # delta_per_distance[emd] = delta_time_dfg
+            for edge in delta_time_dfg.keys():
+                delta_logger_time.append([dataset, aggregate_type, emd,delta_time_dfg[edge]])
+
+            for edge in delta_freq_dfg.keys():
+                delta_logger_freq.append([dataset, aggregate_type, emd,delta_freq_dfg[edge]])
+            result_log_alpha.append([dataset,aggregate_type,emd,min(list(epsilon_freq.values())), min(list(epsilon_time.values())) , median(list(delta_freq_dfg.values())), median(list(delta_time_dfg.values())) , max(list(delta_freq_dfg.values())), max(list(delta_time_dfg.values())) ])
+            view_model(dfg_freq_new, process_model_dir + r"/fig_input_emd_" + str(emd) + "_" + dataset + "_" + str(aggregate_type))
+            print("delta for the freq is "+ str(delta_freq))
+            print("delta for the time is "+ str(delta_time))
 
 
 
@@ -126,21 +126,21 @@ for dataset in datasets:
 # transform results into dataframes
 result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type", "delta", "epsilon_freq", "epsilon_time", "MAPE_freq","SMAPE_freq", "MAPE_time", "SMAPE_time"])
 result_log_delta.to_csv(r"experiment_logs/result_log_delta.csv",index=False)
-# result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type", "alpha", "epsilon_freq", "epsilon_time", "delta_freq_median", "delta_time_median", "delta_freq_max", "delta_time_max"])
-# result_log_alpha.to_csv(r"experiment_logs/result_log_alpha.csv",index=False)
-#
-# # #the delta distribution from emd as input
-# delta_logger_time=pd.DataFrame(delta_logger_time, columns=["dataset","aggregate_type","emd","delta"])
-# delta_logger_time.to_csv(r"experiment_logs/delta_logger_time.csv", index=False)
-#
-# delta_logger_freq=pd.DataFrame(delta_logger_freq, columns=["dataset","aggregate_type","emd","delta"])
-# delta_logger_freq.to_csv(r"experiment_logs/delta_logger_freq.csv", index=False)
-# # plot_delta_distribution_times(delta_logger_time)
-#
-# result_log_APE_freq= pd.DataFrame.from_records(result_log_APE_freq, columns=["dataset","aggregate_type", "delta", "edge", "APE_freq"])
-# result_log_APE_freq.to_csv(r"experiment_logs/result_log_APE_freq.csv", index=False)
-#
-# result_log_APE_time= pd.DataFrame.from_records(result_log_APE_time, columns=["dataset","aggregate_type", "delta", "edge", "APE_time"])
-# result_log_APE_time.to_csv(r"experiment_logs/result_log_APE_time.csv", index=False)
-# #plot the results
-# plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time, figures_dir)
+result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type", "alpha", "epsilon_freq", "epsilon_time", "delta_freq_median", "delta_time_median", "delta_freq_max", "delta_time_max"])
+result_log_alpha.to_csv(r"experiment_logs/result_log_alpha.csv",index=False)
+
+# #the delta distribution from emd as input
+delta_logger_time=pd.DataFrame(delta_logger_time, columns=["dataset","aggregate_type","emd","delta"])
+delta_logger_time.to_csv(r"experiment_logs/delta_logger_time.csv", index=False)
+
+delta_logger_freq=pd.DataFrame(delta_logger_freq, columns=["dataset","aggregate_type","emd","delta"])
+delta_logger_freq.to_csv(r"experiment_logs/delta_logger_freq.csv", index=False)
+# plot_delta_distribution_times(delta_logger_time)
+
+result_log_APE_freq= pd.DataFrame.from_records(result_log_APE_freq, columns=["dataset","aggregate_type", "delta", "edge", "APE_freq"])
+result_log_APE_freq.to_csv(r"experiment_logs/result_log_APE_freq.csv", index=False)
+
+result_log_APE_time= pd.DataFrame.from_records(result_log_APE_time, columns=["dataset","aggregate_type", "delta", "edge", "APE_time"])
+result_log_APE_time.to_csv(r"experiment_logs/result_log_APE_time.csv", index=False)
+#plot the results
+plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time, figures_dir)

@@ -58,13 +58,13 @@ plt.text(x=7.7, y=-0.02,s="$r_{ij}$", color='k',rotation=-90)
 
 #t_k
 plt.axvline(x=4,ymax=0.25,color='k', linestyle='--')
-plt.text(x=3.7, y=-0.03,s="$t_k-p^k_{ij}  r_{ij}$", color='k',rotation=-90)
+plt.text(x=3.7, y=-0.03,s="$t^k_{ij}-p  r_{ij}$", color='k',rotation=-90)
 
 plt.axvline(x=5,ymax=0.15,color='k', linestyle='--')
-plt.text(x=4.7, y=-0.02,s="$t_k$", color='k',rotation=-90)
+plt.text(x=4.7, y=-0.02,s="$t^k_{ij}$", color='k',rotation=-90)
 
 plt.axvline(x=6,ymax=0.085,color='k', linestyle='--')
-plt.text(x=5.7, y=-0.031,s="$t_k+p^k_{ij}  r_{ij}$", color='k',rotation=-90)
+plt.text(x=5.7, y=-0.031,s="$t^k_{ij}+p  r_{ij}$", color='k',rotation=-90)
 
 
 #fill intersection

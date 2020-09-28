@@ -29,6 +29,7 @@ def read_xes(xes_file,aggregate_type):
     #
     # pruning by 10% time from apromore
     dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(),xes_file)
+
     return dfg_freq,dfg_time
 
 
@@ -53,6 +54,7 @@ def get_dfg_time(data,aggregate_type):
     data2.columns=columns
 
     #combining the two dataframes into one
+    data = data.reset_index()
     data2=data2.reset_index()
     data=pd.concat([data, data2], axis=1)
 

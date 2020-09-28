@@ -80,10 +80,10 @@ def plot_delta_distributions_time(delta_logger,dir):
     # g.fig.suptitle(' \u03B5  Distribution for  Time DFG  (EMD input)')
     plt.subplots_adjust(top=0.7)
     axes = g.axes.flatten()
-    axes[0].set_title("Aggregate: Average")
-    axes[1].set_title("Aggregate: Sum")
-    axes[2].set_title("Aggregate: Min")
-    axes[3].set_title("Aggregate: Max")
+    # axes[0].set_title("Aggregate: Average")
+    # axes[1].set_title("Aggregate: Sum")
+    # axes[2].set_title("Aggregate: Min")
+    # axes[3].set_title("Aggregate: Max")
     # axes[0].set_ylabel("Max \u03B4")  # delta
     for ax in axes:
         ax.set_xlabel("MAPE")  # alpha
@@ -99,10 +99,10 @@ def plot_delta_distributions_time(delta_logger,dir):
         # g.fig.suptitle(' \u03B5  Distribution for  Time DFG  (EMD input)')
         plt.subplots_adjust(top=0.7)
         axes = g.axes.flatten()
-        axes[0].set_title("Aggregate: Average")
-        axes[1].set_title("Aggregate: Sum")
-        axes[2].set_title("Aggregate: Min")
-        axes[3].set_title("Aggregate: Max")
+        # axes[0].set_title("Aggregate: Average")
+        # axes[1].set_title("Aggregate: Sum")
+        # axes[2].set_title("Aggregate: Min")
+        # axes[3].set_title("Aggregate: Max")
         # axes[0].set_ylabel("Max \u03B4")  # delta
         for ax in axes:
             ax.set_xlabel("MAPE")  # alpha
@@ -173,10 +173,10 @@ def plot_input_delta(result_log_delta,dir):
     g = sns.FacetGrid(result_log_delta, col="aggregate_type", margin_titles=True)
     g.map(sns.lineplot, "delta", "epsilon_time","dataset")
     axes = g.axes.flatten()
-    axes[0].set_title("Aggregate: Average")
-    axes[1].set_title("Aggregate: Sum")
-    axes[2].set_title("Aggregate: Min")
-    axes[3].set_title("Aggregate: Max")
+    # axes[0].set_title("Aggregate: Average")
+    # axes[1].set_title("Aggregate: Sum")
+    # axes[2].set_title("Aggregate: Min")
+    # axes[3].set_title("Aggregate: Max")
     plt.subplots_adjust(top=0.2)
     # g.fig.suptitle('\u03B5 Distribution with Time DFG  (\u03B4 input)')
     for ax in axes:
@@ -205,10 +205,10 @@ def plot_input_delta(result_log_delta,dir):
     # temp = result_log_delta[result_log_delta.aggregate_type == 'AggregateType.SUM']
     # g = sns.lineplot("delta", "emd_time", "dataset", data=temp)
     axes = g.axes.flatten()
-    axes[0].set_title("Aggregate: Average")
-    axes[1].set_title("Aggregate: Sum")
-    axes[2].set_title("Aggregate: Min")
-    axes[3].set_title("Aggregate: Max")
+    # axes[0].set_title("Aggregate: Average")
+    # axes[1].set_title("Aggregate: Sum")
+    # axes[2].set_title("Aggregate: Min")
+    # axes[3].set_title("Aggregate: Max")
     plt.subplots_adjust(top=0.2)
     # g.fig.suptitle('EMD Distribution with Time DFG  (\u03B4 input)')
     for ax in axes:
@@ -242,10 +242,10 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.subplots_adjust(top=0.2)
     # g.fig.suptitle('Min \u03B5  for  Time DFG  (EMD input)')
     axes = g.axes.flatten()
-    axes[0].set_title("Aggregate: Average")
-    axes[1].set_title("Aggregate: Sum")
-    axes[2].set_title("Aggregate: Min")
-    axes[3].set_title("Aggregate: Max")
+    # axes[0].set_title("Aggregate: Average")
+    # axes[1].set_title("Aggregate: Sum")
+    # axes[2].set_title("Aggregate: Min")
+    # axes[3].set_title("Aggregate: Max")
     axes[0].set_ylabel("Min \u03B5")#epsilon
     for ax in axes:
         ax.set_xlabel("MAPE")  # alpha
@@ -279,10 +279,10 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.subplots_adjust(top=0.2)
     # g.fig.suptitle('Median \u03B5 for Time DFG  (EMD input)')
     axes = g.axes.flatten()
-    axes[0].set_title("Aggregate: Average")
-    axes[1].set_title("Aggregate: Sum")
-    axes[2].set_title("Aggregate: Min")
-    axes[3].set_title("Aggregate: Max")
+    # axes[0].set_title("Aggregate: Average")
+    # axes[1].set_title("Aggregate: Sum")
+    # axes[2].set_title("Aggregate: Min")
+    # axes[3].set_title("Aggregate: Max")
     axes[0].set_ylabel("Median \u03B4")  # delta
     for ax in axes:
         ax.set_xlabel("MAPE")  # alpha
@@ -309,10 +309,10 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.subplots_adjust(top=0.7)
     # g.fig.suptitle('Max \u03B5 for Time DFG  (EMD input)')
     axes = g.axes.flatten()
-    axes[0].set_title("Aggregate: Average")
-    axes[1].set_title("Aggregate: Sum")
-    axes[2].set_title("Aggregate: Min")
-    axes[3].set_title("Aggregate: Max")
+    # axes[0].set_title("Aggregate: Average")
+    # axes[1].set_title("Aggregate: Sum")
+    # axes[2].set_title("Aggregate: Min")
+    # axes[3].set_title("Aggregate: Max")
 
     axes[0].set_ylabel("Max \u03B4")  # delta
     for ax in axes:
@@ -326,4 +326,4 @@ def plot_input_EMD(result_log_alpha,dir):
 # delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
 # delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
-#
+
