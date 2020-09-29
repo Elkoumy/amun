@@ -46,7 +46,7 @@ result_log_APE_freq=[]
 result_log_APE_time=[]
 
 
-no_of_experiments=1
+no_of_experiments=100
 precision=0.5
 for dataset in datasets:
 

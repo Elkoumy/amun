@@ -1,7 +1,7 @@
 dataset,aggregate_type,parameter,time_diff
-Sepsis Cases - Event Log,AggregateType.MIN,delta,0.19333696365356445
-Sepsis Cases - Event Log,AggregateType.MIN,alpha,0.3210179805755615
-CreditRequirement,AggregateType.MIN,delta,0.008214950561523438
-CreditRequirement,AggregateType.MIN,alpha,0.00701141357421875
+Sepsis Cases - Event Log,AggregateType.MIN,delta,0.2519114017486572
+Sepsis Cases - Event Log,AggregateType.MIN,alpha,0.5103650093078613
+CreditRequirement,AggregateType.MIN,delta,577.9699363708496
+CreditRequirement,AggregateType.MIN,alpha,599.1401207447052
 Road_Traffic_Fine_Management_Process,AggregateType.MIN,delta,3189.7172985076904
 Road_Traffic_Fine_Management_Process,AggregateType.MIN,alpha,4094.1853733062744
