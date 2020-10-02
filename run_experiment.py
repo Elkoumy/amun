@@ -31,7 +31,7 @@ figures_dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privac
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 
 # datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
-datasets=["CreditRequirement"]
+datasets=["Sepsis Cases - Event Log"]
 # datasets=["Road_Traffic_Fine_Management_Process"]
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
