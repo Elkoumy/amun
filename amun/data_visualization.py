@@ -181,7 +181,8 @@ def plot_input_delta(result_log_delta,dir):
     # g.fig.suptitle('\u03B5 Distribution with Time DFG  (\u03B4 input)')
     for ax in axes:
         ax.set_xlabel("\u03B4")  # delta
-    axes[0].set_ylabel("\u03B5") #epsilon
+        ax.set(yscale="log")
+    axes[0].set_ylabel("log(\u03B5)") #epsilon
     # plt.ylabel('Epsilon')
     plt.legend()
     plt.show()
@@ -246,9 +247,10 @@ def plot_input_EMD(result_log_alpha,dir):
     # axes[1].set_title("Aggregate: Sum")
     # axes[2].set_title("Aggregate: Min")
     # axes[3].set_title("Aggregate: Max")
-    axes[0].set_ylabel("Min \u03B5")#epsilon
+    axes[0].set_ylabel("Log(Min \u03B5)")#epsilon
     for ax in axes:
         ax.set_xlabel("MAPE")  # alpha
+        ax.set(yscale="log")
     plt.legend()
     plt.show()
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_epsilon_distribution.pdf'))
@@ -321,9 +323,9 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.show()
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
 
-result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
+# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+# plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 #
