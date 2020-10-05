@@ -10,7 +10,8 @@ from pm4py.algo.discovery.dfg import factory as dfg_factory
 from amun.guessing_advantage import AggregateType
 from math import log10
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
-
+from pm4py.algo.filtering.log.start_activities import start_activities_filter
+from pm4py.algo.filtering.log.end_activities import end_activities_filter
 
 def read_xes(xes_file,aggregate_type):
     prune_parameter_freq=350
@@ -30,6 +31,11 @@ def read_xes(xes_file,aggregate_type):
     # pruning by 10% time from apromore
     dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(),xes_file)
 
+
+    """Getting Start and End activities"""
+    # log = xes_importer.import_log(xes_file)
+    log_start = start_activities_filter.get_start_activities(log)
+    log_end= end_activities_filter.get_end_activities(log)
     return dfg_freq,dfg_time
 
 
