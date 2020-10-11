@@ -17,10 +17,11 @@ def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1"):
     input_dataset=data
     input_alpha_delta=float(parameter)
     '''**********************'''
-    process_model_dir="experiment_figures/process_models"
-    data_dir ="data"
-    figures_dir='experiment_figures'
-    log_dir='experiment_logs'
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    process_model_dir=os.path.join(dir_path,"experiment_figures","process_models")
+    data_dir =os.path.join(dir_path,"data")
+    figures_dir=os.path.join(dir_path,'experiment_figures')
+    log_dir=os.path.join(dir_path,'experiment_logs')
 
     # datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
     datasets=[input_dataset]

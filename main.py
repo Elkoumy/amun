@@ -27,8 +27,8 @@ for data in datasets:
             fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
             fout.write("#SBATCH --partition=amd\n")
             fout.write("#SBATCH --time=%s\n" % (exec_time))
-            fout.write("cd ..\n")
-            fout.write("python -u %s \"%s\" %s\n" % ("run_experiment_slurm.py", data, parameter))  # hyper_param_optim
+            # fout.write("cd ..\n")
+            fout.write("python -u %s \"%s\" %s\n" % (".././run_experiment_slurm.py", data, parameter))  # hyper_param_optim
 
         time.sleep(1)
         subprocess.Popen(("sbatch %s" % job_name).split())
