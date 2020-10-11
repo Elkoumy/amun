@@ -5,3 +5,17 @@
 experiment_figures/process_models/fig_input_delta_0.01_Sepsis Cases - Event Log_AggregateType.MAX_0.svg
 *.pdf
 *.svg
+/data/BPIC12.xes
+/data/BPIC13.xes
+/data/BPIC14.csv
+/data/BPIC15_1.xes
+/data/BPIC17.xes
+/data/BPIC18.xes
+/data/BPIC19.xes
+/data/BPIC20.xes
+/data/CCC19.xes
+/data/CreditRequirement.xes
+/data/Hospital_log.xes
+/data/Road_Traffic_Fine_Management_Process.xes
+/data/Sepsis Cases - Event Log.xes
+/data/Unrineweginfectie.csv
