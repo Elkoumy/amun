@@ -11,7 +11,7 @@ parameters=[0.1]
 for data in datasets:
     if data in ["Hospital", "Traffic", "BPIC17", "BPIC19", "BPIC18"]:
         memory = 15
-        time="8-00"
+        exec_time="8-00"
     else:
         memory = 4
         time="1-00"
@@ -26,7 +26,7 @@ for data in datasets:
             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
             fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
             fout.write("#SBATCH --partition=amd\n")
-            fout.write("#SBATCH --time=%s\n" % (time))
+            fout.write("#SBATCH --time=%s\n" % (exec_time))
             fout.write("cd ..\n")
             fout.write("python -u %s \"%s\" %s\n" % ("run_experiment_slurm.py", data, parameter))  # hyper_param_optim
 
