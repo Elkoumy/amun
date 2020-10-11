@@ -1,0 +1,996 @@
+[
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#d2e5ed",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Refused",
+      "name": "O Refused\n\n3720",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "0",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 4106,
+      "y": 371
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5d8a9c",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Sent (mail and online)",
+      "name": "O Sent (mail and online)\n\n31050",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "1",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2806,
+      "y": 172
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "12px",
+      "borderwidth": "1px",
+      "oriname": "W_Personal Loan collection",
+      "name": "W Personal Loan collection\n\n2",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "2",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 3586,
+      "y": 374
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Created",
+      "name": "O Created\n\n31509",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "3",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2546,
+      "y": 496
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#84a8b7",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Validating",
+      "name": "A Validating\n\n21870",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "4",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2806,
+      "y": 296
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#9fbdca",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Cancelled",
+      "name": "O Cancelled\n\n15682",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "5",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 1766,
+      "y": 317
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e1f1f7",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Assess potential fraud",
+      "name": "W Assess potential fraud\n\n301",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "6",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2546,
+      "y": 376
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#98b8c5",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Accepted",
+      "name": "O Accepted\n\n17228",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "7",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 3066,
+      "y": 374
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#daecf3",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Sent (online only)",
+      "name": "O Sent (online only)\n\n1800",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "8",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2806,
+      "y": 493
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#98b8c5",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Pending",
+      "name": "A Pending\n\n17228",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "9",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 3326,
+      "y": 374
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Concept",
+      "name": "A Concept\n\n31509",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "10",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 726,
+      "y": 323
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5c889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Complete",
+      "name": "A Complete\n\n31362",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "11",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2286,
+      "y": 294
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#638ea0",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Complete application",
+      "name": "W Complete application\n\n29646",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "12",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 1246,
+      "y": 409
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Shortened completion ",
+      "name": "W Shortened completion\n\n74",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "13",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 986,
+      "y": 255
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5c889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Call after offers",
+      "name": "W Call after offers\n\n31362",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "14",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2026,
+      "y": 340
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#a2c0cc",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Call incomplete files",
+      "name": "W Call incomplete files\n\n15003",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "15",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2286,
+      "y": 174
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#85a9b8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Returned",
+      "name": "O Returned\n\n21768",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "16",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2026,
+      "y": 220
+    }
+  },
+  {
+    "data": {
+      "shape": "ellipse",
+      "color": "#C0A3A1",
+      "textsize": "14px",
+      "borderwidth": "3px",
+      "oriname": "[]",
+      "name": "",
+      "textcolor": "black",
+      "width": "25px",
+      "id": "17",
+      "textwidth": "155px",
+      "height": "25px"
+    },
+    "position": {
+      "x": 4298.5,
+      "y": 371
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Create Application",
+      "name": "A Create Application\n\n31509",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "18",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 206,
+      "y": 377
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "O_Create Offer",
+      "name": "O Create Offer\n\n31509",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "19",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2286,
+      "y": 414
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#84a8b7",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Validate application",
+      "name": "W Validate application\n\n21870",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "20",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2546,
+      "y": 256
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#d2e6ed",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "W_Handle leads",
+      "name": "W Handle leads\n\n3643",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "21",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 726,
+      "y": 443
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#a2c0cc",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Incomplete",
+      "name": "A Incomplete\n\n15003",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "22",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2546,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#b5cfd9",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Cancelled",
+      "name": "A Cancelled\n\n10431",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "23",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 1506,
+      "y": 392
+    }
+  },
+  {
+    "data": {
+      "shape": "ellipse",
+      "color": "#C1C9B0",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "|>",
+      "name": "",
+      "textcolor": "black",
+      "width": "25px",
+      "id": "24",
+      "textwidth": "155px",
+      "height": "25px"
+    },
+    "position": {
+      "x": 13.5,
+      "y": 377
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Accepted",
+      "name": "A Accepted\n\n31509",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "25",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 986,
+      "y": 376
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#d2e5ed",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Denied",
+      "name": "A Denied\n\n3752",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "26",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 3846,
+      "y": 374
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#8badbc",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "A_Submitted",
+      "name": "A Submitted\n\n20423",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "27",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 466,
+      "y": 380
+    }
+  },
+  {
+    "data": {
+      "strength": 100,
+      "color": "#466977",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "19",
+      "label": "31509",
+      "point-weights": "0.5",
+      "target": "3",
+      "id": "f451790e-da9e-4272-9bd2-b20400901677"
+    }
+  },
+  {
+    "data": {
+      "strength": 100,
+      "color": "#646464",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "dashed",
+      "source": "24",
+      "label": "31509",
+      "point-weights": "0.5",
+      "target": "18",
+      "id": "9ffe4cfd-4bc2-4956-bfb2-545a13cc94fb"
+    }
+  },
+  {
+    "data": {
+      "strength": 11.803351529770218,
+      "color": "#6396ab",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "26",
+      "label": "3720",
+      "point-weights": "0.5",
+      "target": "0",
+      "id": "349a242f-386d-4c12-a540-0ac424451e64"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.03173797130887394,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "14",
+      "label": "11",
+      "point-weights": "0.5",
+      "target": "19",
+      "id": "b9750262-b9e5-4737-be03-4229904dfc8c"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "5",
+      "label": "1",
+      "point-weights": "0.5",
+      "target": "14",
+      "id": "dfdd1604-648c-4d5f-a3e6-6bb979792d32"
+    }
+  },
+  {
+    "data": {
+      "strength": 3.386441538656849,
+      "color": "#669ab0",
+      "point-distances": "60.33 40.89 21.44",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "4",
+      "label": "1068",
+      "point-weights": "0.25 0.50 0.75",
+      "target": "26",
+      "id": "9b187fea-1f02-44a8-8cdf-8d310e4f3b34"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.36498667005205027,
+      "color": "#679cb2",
+      "point-distances": "-28.86 -54.73 -80.60",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "3",
+      "label": "116",
+      "point-weights": "0.25 0.49 0.74",
+      "target": "23",
+      "id": "f3cb28bd-7efe-41aa-b74d-e606b5862195"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.32055351021962675,
+      "color": "#679cb2",
+      "point-distances": "32.40 32.80 94.20 94.60",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "6",
+      "label": "102",
+      "point-weights": "0.20 0.40 0.60 0.80",
+      "target": "26",
+      "id": "ca71dcf4-e137-49e1-8bba-9f7e6a28b74b"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.012695188523549577,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "12",
+      "label": "5",
+      "point-weights": "0.5",
+      "target": "23",
+      "id": "c0d2f5d9-70d8-4c50-8ac8-2a893ed67309"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.050780754094198306,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "10",
+      "label": "17",
+      "point-weights": "0.5",
+      "target": "13",
+      "id": "353178a6-80fb-4de5-b99f-e45af955bb78"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "9",
+      "label": "1",
+      "point-weights": "0.5",
+      "target": "2",
+      "id": "7ffdfd84-fec6-431f-a529-a74d989bc721"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.01586898565443697,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "22",
+      "label": "6",
+      "point-weights": "0.5",
+      "target": "8",
+      "id": "e8fe06b1-fe57-4ced-8e2a-9bce01d919d9"
+    }
+  },
+  {
+    "data": {
+      "strength": 64.81528500698235,
+      "color": "#527b8c",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "18",
+      "label": "20423",
+      "point-weights": "0.5",
+      "target": "27",
+      "id": "93672b69-cfe4-489b-baad-3b2e5a61585c"
+    }
+  },
+  {
+    "data": {
+      "strength": 58.60416402183573,
+      "color": "#547e8f",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "11",
+      "label": "18466",
+      "point-weights": "0.5",
+      "target": "20",
+      "id": "bc1d21de-92d8-4193-a8e1-92fb42cf990f"
+    }
+  },
+  {
+    "data": {
+      "strength": 69.40776945537641,
+      "color": "#507989",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "20",
+      "label": "21870",
+      "point-weights": "0.5",
+      "target": "4",
+      "id": "86de9a8b-0eed-4870-9e04-285e532ba4f4"
+    }
+  },
+  {
+    "data": {
+      "strength": 10.600482417163896,
+      "color": "#6497ac",
+      "point-distances": "34.93",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "21",
+      "label": "3341",
+      "point-weights": "0.50",
+      "target": "12",
+      "id": "16c1bbc6-d1f8-407f-8f23-41bec73defd6"
+    }
+  },
+  {
+    "data": {
+      "strength": 99.53345182175956,
+      "color": "#466977",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "14",
+      "label": "31362",
+      "point-weights": "0.5",
+      "target": "11",
+      "id": "e1b7be0b-4457-4b25-ba57-1977bb76c06e"
+    }
+  },
+  {
+    "data": {
+      "strength": 47.613304557572675,
+      "color": "#578496",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "15",
+      "label": "15003",
+      "point-weights": "0.5",
+      "target": "22",
+      "id": "c1f41e66-043a-454e-92f7-d033fc6e3cfd"
+    }
+  },
+  {
+    "data": {
+      "strength": 11.80017773263933,
+      "color": "#646464",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "dashed",
+      "source": "0",
+      "label": "3719",
+      "point-weights": "0.5",
+      "target": "17",
+      "id": "489d0f29-2516-45e4-9b51-c93e1c7c179e"
+    }
+  },
+  {
+    "data": {
+      "strength": 43.001777326393295,
+      "color": "#598699",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "16",
+      "label": "13550",
+      "point-weights": "0.5",
+      "target": "15",
+      "id": "e6cce6b6-1444-4e9f-8985-d18d9ec24414"
+    }
+  },
+  {
+    "data": {
+      "strength": 54.67500317379713,
+      "color": "#558092",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "7",
+      "label": "17228",
+      "point-weights": "0.5",
+      "target": "9",
+      "id": "7ca75b46-7732-41ef-b30c-5fcebc7dcd14"
+    }
+  },
+  {
+    "data": {
+      "strength": 32.59172273708265,
+      "color": "#5c8b9f",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "23",
+      "label": "10270",
+      "point-weights": "0.5",
+      "target": "5",
+      "id": "2586ced8-be54-4fc0-8c46-ce598b6edf70"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.009521391392662181,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "22",
+      "label": "4",
+      "point-weights": "0.5",
+      "target": "1",
+      "id": "7d219404-6588-45a7-905c-a43a4750cfa5"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.0476069569633109,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "11",
+      "label": "16",
+      "point-weights": "0.5",
+      "target": "6",
+      "id": "5248d1d6-fc8c-49c2-9d08-16bc446d6f57"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.03173797130887394,
+      "color": "#679cb2",
+      "point-distances": "-1.45",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "13",
+      "label": "11",
+      "point-weights": "0.50",
+      "target": "23",
+      "id": "a3d97bda-e925-49f9-8498-1a3f3cba4276"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "2",
+      "label": "1",
+      "point-weights": "0.5",
+      "target": "26",
+      "id": "8711086c-dd72-4e6c-9851-2ed23de0c7e8"
+    }
+  },
+  {
+    "data": {
+      "strength": 52.983369303034145,
+      "color": "#568193",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "27",
+      "label": "16695",
+      "point-weights": "0.5",
+      "target": "10",
+      "id": "b41ce95b-ec34-4ea7-9a71-d264fccbfef9"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.41894122127713596,
+      "color": "#679cb2",
+      "point-distances": "-107.87 -128.01 -148.15 -168.29",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "8",
+      "label": "133",
+      "point-weights": "0.19 0.39 0.59 0.79",
+      "target": "23",
+      "id": "4026987a-0d24-492e-ba71-54dbd0ad908a"
+    }
+  },
+  {
+    "data": {
+      "strength": 11.498667005205027,
+      "color": "#6396ab",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "27",
+      "label": "3624",
+      "point-weights": "0.5",
+      "target": "21",
+      "id": "93cd3a25-a16f-4d47-9737-12d6321ab403"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.21899200203123015,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "25",
+      "label": "70",
+      "point-weights": "0.5",
+      "target": "12",
+      "id": "7b725965-e340-4415-b541-9fe2fe06679e"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.012695188523549577,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "5",
+      "label": "5",
+      "point-weights": "0.5",
+      "target": "16",
+      "id": "8da72b15-fc0c-4df6-91e5-72cc36a7c041"
+    }
+  },
+  {
+    "data": {
+      "strength": 41.25936270153612,
+      "color": "#59879a",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "10",
+      "label": "13001",
+      "point-weights": "0.5",
+      "target": "25",
+      "id": "5e79d4de-1f07-4f8a-8977-4e67100f1ed8"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.009521391392662181,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "1",
+      "label": "4",
+      "point-weights": "0.5",
+      "target": "7",
+      "id": "501588f1-3cea-45a4-9e76-4925fa35b590"
+    }
+  }
+]
