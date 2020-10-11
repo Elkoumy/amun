@@ -14,7 +14,7 @@ for data in datasets:
         exec_time="8-00"
     else:
         memory = 4
-        time="1-00"
+        exec_time="1-00"
     for parameter in parameters:
         job_name = os.path.join(jobs_dir,"job_%s_%s.sh" % (data, parameter))
         job_log_name =os.path.join(jobs_dir,"log_%s_%s.sh" % (data, parameter))
