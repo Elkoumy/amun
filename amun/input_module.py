@@ -217,7 +217,7 @@ def pruning_by_edge_name_time(dfg_freq, dfg_time,dataset):
 
 def get_pruning_edges(dataset, type):
     result=0
-    if dataset=="Sepsis Cases - Event Log" and type=="freq":
+    if dataset=="Sepsis" and type=="freq":
        result= [('ER Registration', 'ER Triage')
             , ('ER Triage', 'ER Sepsis Triage')
             , ('ER Sepsis Triage', 'IV Liquid')
@@ -235,7 +235,7 @@ def get_pruning_edges(dataset, type):
             , ('CRP', 'Release E')
             , ('Release A', 'Return ER')]
 
-    elif dataset=="Sepsis Cases - Event Log" and type=="time":
+    elif dataset=="Sepsis" and type=="time":
         result=[('IV Liquid','Release A')
                 ,('Release A','Return ER')
                 ,('LacticAcid','Release A')
@@ -258,13 +258,13 @@ def get_pruning_edges(dataset, type):
                 ,('Leucocytes','Release E')
                 ,('ER Registration','Admission IC')]
 
-    elif dataset=="Road_Traffic_Fine_Management_Process" and type== "freq":
+    elif dataset=="Traffic" and type== "freq":
         result=[('Create Fine','Send Fine'),('Send Fine','Insert Fine Notification'),('Insert Fine Notification','Appeal to Judge'),('Insert Fine Notification','Insert Date Appeal to Prefecture'),('Insert Date Appeal to Prefecture','Add penalty'),('Appeal to Judge','Add penalty'),('Add penalty','Send for Credit Collection'),('Add penalty','Send Appeal to Prefecture'),('Send Appeal to Prefecture','Receive Result Appeal from Prefecture'),('Receive Result Appeal from Prefecture','Notify Result Appeal to Offender'),('Notify Result Appeal to Offender','Payment')]
-    elif dataset=="Road_Traffic_Fine_Management_Process" and type=="time":
+    elif dataset=="Traffic" and type=="time":
         result= [('Create Fine','Appeal to Judge'),('Appeal to Judge','Add penalty'),('Appeal to Judge','Send for Credit Collection'),('Appeal to Judge','Send Fine'),('Appeal to Judge','Receive Result Appeal from Prefecture'),('Insert Fine Notification','Appeal to Judge'),('Receive Result Appeal from Prefecture','Appeal to Judge'),('Insert Date Appeal to Prefecture','Appeal to Judge'),('Payment','Appeal to Judge'),('Add penalty','Insert Date Appeal to Prefecture'),('Send Fine','Insert Fine Notification'),('Send for Credit Collection','Send Appeal to Prefecture'),('Send Appeal to Prefecture','Notify Result Appeal to Offender'),('Notify Result Appeal to Offender','Payment')]
-    elif dataset=="CreditRequirement" and type == "freq":
+    elif dataset=="CreditReq" and type == "freq":
         result=[('Register','Acceptance of requests'),('Acceptance of requests','Collection of documents'),('Collection of documents','Completeness check'),('Completeness check','Credit worthiness check'),('Credit worthiness check','Collateral check'),('Collateral check','Credit committee'),('Credit committee','Requirements review')]
-    elif dataset=="CreditRequirement" and type == "time":
+    elif dataset=="CreditReq" and type == "time":
         result=[('Register','Acceptance of requests'),('Acceptance of requests','Collection of documents'),('Collection of documents','Completeness check'),('Completeness check','Credit worthiness check'),('Credit worthiness check','Collateral check'),('Collateral check','Credit committee'),('Credit committee','Requirements review')]
 
     return result
