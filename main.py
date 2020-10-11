@@ -3,6 +3,7 @@ import os
 import subprocess
 import time
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 
 datasets=["Sepsis"]
@@ -28,7 +29,7 @@ for data in datasets:
             fout.write("#SBATCH --partition=amd\n")
             fout.write("#SBATCH --time=%s\n" % (exec_time))
             # fout.write("cd ..\n")
-            fout.write("python -u %s \"%s\" %s\n" % (".././run_experiment_slurm.py", data, parameter))  # hyper_param_optim
+            fout.write("python -u %s \"%s\" %s\n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter))  # hyper_param_optim
 
         time.sleep(1)
         subprocess.Popen(("sbatch %s" % job_name).split())
