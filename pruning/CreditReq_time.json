@@ -1,0 +1,318 @@
+[
+  {
+    "data": {
+      "shape": "ellipse",
+      "color": "#C1C9B0",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "|>",
+      "name": "",
+      "textcolor": "black",
+      "width": "25px",
+      "id": "0",
+      "textwidth": "155px",
+      "height": "25px"
+    },
+    "position": {
+      "x": 13.5,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Acceptance of requests",
+      "name": "Acceptance of requests\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "1",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 466,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Requirements review",
+      "name": "Requirements review\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "2",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 2026,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Register",
+      "name": "Register\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "3",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 206,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Credit worthiness check",
+      "name": "Credit worthiness check\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "4",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 1246,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "ellipse",
+      "color": "#C0A3A1",
+      "textsize": "14px",
+      "borderwidth": "3px",
+      "oriname": "[]",
+      "name": "",
+      "textcolor": "black",
+      "width": "25px",
+      "id": "5",
+      "textwidth": "155px",
+      "height": "25px"
+    },
+    "position": {
+      "x": 2218.5,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Collection of documents",
+      "name": "Collection of documents\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "6",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 726,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Completeness check",
+      "name": "Completeness check\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "7",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 986,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Collateral check",
+      "name": "Collateral check\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "8",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 1506,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Credit committee",
+      "name": "Credit committee\n\n10035",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "9",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 1766,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "3",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "1",
+      "id": "3ed16627-7a75-45f2-98e1-60657b738f8e"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "4",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "8",
+      "id": "cb621b1a-6173-4cea-8f45-a76e8b90670d"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "9",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "2",
+      "id": "d799f50d-a581-4281-a388-a717ceb9d0bf"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "6",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "7",
+      "id": "479b521d-3763-4cf0-851a-f64f2739e434"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#646464",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "dashed",
+      "source": "0",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "3",
+      "id": "9b70c940-00cb-4f82-9232-12235d843667"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#646464",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "dashed",
+      "source": "2",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "5",
+      "id": "2ca6aceb-feff-43cf-bdf1-13bbbfb003e3"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "1",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "6",
+      "id": "c58214ea-cf2a-4233-b332-aae2f341b312"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "8",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "9",
+      "id": "0eefbe98-ed04-43e2-8908-5b9dd1772703"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#88cfed",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "7",
+      "label": "10035",
+      "point-weights": "0.5",
+      "target": "4",
+      "id": "4ab2f1c7-94f7-4415-9110-6ce88a0165f4"
+    }
+  }
+]

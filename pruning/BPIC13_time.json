@@ -1,0 +1,214 @@
+[
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#e2f2f8",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Unmatched",
+      "name": "Unmatched\n\n5",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "0",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 466,
+      "y": 256
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#91b3c0",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Queued",
+      "name": "Queued\n\n4511",
+      "textcolor": "black",
+      "width": "160px",
+      "id": "1",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 466,
+      "y": 136
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Completed",
+      "name": "Completed\n\n7546",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "2",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 206,
+      "y": 256
+    }
+  },
+  {
+    "data": {
+      "shape": "ellipse",
+      "color": "#C0A3A1",
+      "textsize": "14px",
+      "borderwidth": "3px",
+      "oriname": "[]",
+      "name": "",
+      "textcolor": "black",
+      "width": "25px",
+      "id": "3",
+      "textwidth": "155px",
+      "height": "25px"
+    },
+    "position": {
+      "x": 466,
+      "y": 353
+    }
+  },
+  {
+    "data": {
+      "shape": "roundrectangle",
+      "color": "#5b889b",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "Accepted",
+      "name": "Accepted\n\n7552",
+      "textcolor": "white",
+      "width": "160px",
+      "id": "4",
+      "textwidth": "155px",
+      "height": "70px"
+    },
+    "position": {
+      "x": 726,
+      "y": 336
+    }
+  },
+  {
+    "data": {
+      "shape": "ellipse",
+      "color": "#C1C9B0",
+      "textsize": "14px",
+      "borderwidth": "1px",
+      "oriname": "|>",
+      "name": "",
+      "textcolor": "black",
+      "width": "25px",
+      "id": "5",
+      "textwidth": "155px",
+      "height": "25px"
+    },
+    "position": {
+      "x": 13.5,
+      "y": 256
+    }
+  },
+  {
+    "data": {
+      "strength": 0.45080880403076107,
+      "color": "#679cb2",
+      "point-distances": "-17.50",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "1",
+      "label": "38",
+      "point-weights": "0.50",
+      "target": "2",
+      "id": "5151ab39-8696-4d74-bfef-09d9b1bafeb4"
+    }
+  },
+  {
+    "data": {
+      "strength": 1.3391673296207902,
+      "color": "#679bb1",
+      "point-distances": "-17.50",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "2",
+      "label": "105",
+      "point-weights": "0.50",
+      "target": "1",
+      "id": "ffccb9a9-d3a6-4d5f-bf51-e18afe32737d"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.013259082471492973,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "0",
+      "label": "5",
+      "point-weights": "0.5",
+      "target": "4",
+      "id": "5f302830-5cba-458d-a24c-afd35cdb0db9"
+    }
+  },
+  {
+    "data": {
+      "strength": 0,
+      "color": "#646464",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "dashed",
+      "source": "5",
+      "label": "4",
+      "point-weights": "0.5",
+      "target": "2",
+      "id": "d9026512-47e3-4a4a-8045-4fd15210a282"
+    }
+  },
+  {
+    "data": {
+      "strength": 99.50941394855477,
+      "color": "#466977",
+      "point-distances": "-118.60",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "4",
+      "label": "7509",
+      "point-weights": "0.47",
+      "target": "2",
+      "id": "d97d4739-1741-487a-8163-c303c90761c1"
+    }
+  },
+  {
+    "data": {
+      "strength": 0.013259082471492973,
+      "color": "#679cb2",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "solid",
+      "source": "2",
+      "label": "5",
+      "point-weights": "0.5",
+      "target": "0",
+      "id": "9e76ef7e-60c5-4173-b006-8b64e418d249"
+    }
+  },
+  {
+    "data": {
+      "strength": 100,
+      "color": "#646464",
+      "point-distances": "0",
+      "edge-style": "unbundled-bezier",
+      "style": "dashed",
+      "source": "2",
+      "label": "7546",
+      "point-weights": "0.5",
+      "target": "3",
+      "id": "2abc8558-016c-4315-a21b-d4cb8e5ef6c4"
+    }
+  }
+]
