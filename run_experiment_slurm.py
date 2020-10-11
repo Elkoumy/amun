@@ -49,7 +49,7 @@ def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1"):
             print("Dataset: "+ dataset)
             print("Aggregate Type: "+ str(aggregate_type))
             # delta=0.05
-            dfg_freq, dfg_time = read_xes(os.path.join(data_dir, dataset + ".xes"), aggregate_type)
+            dfg_freq, dfg_time = read_xes(data_dir,dataset, aggregate_type)
             # view_model(dfg_freq,os.path.join( process_model_dir , r"/fig_input_unprotected_" + dataset))
 
             # dfg_freq, dfg_time = read_xes( data_dir + "\\" + dataset + ".xes", aggregate_type)

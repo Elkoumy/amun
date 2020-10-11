@@ -1,0 +1,925 @@
+dataset,aggregate_type,delta,edge,APE_time
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'Leucocytes')",0.7962239925609133
+Sepsis,AggregateType.AVG,0.01,"('Release A', 'Return ER')",6.397261953291564
+Sepsis,AggregateType.AVG,0.01,"('Admission IC', 'Admission NC')",0.733808661728301
+Sepsis,AggregateType.AVG,0.01,"('CRP', 'Release B')",3.2340945811495443
+Sepsis,AggregateType.AVG,0.01,"('ER Sepsis Triage', 'Admission NC')",2.433485528753554
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'LacticAcid')",0.9438075385356909
+Sepsis,AggregateType.AVG,0.01,"('LacticAcid', 'Release A')",1.381914673819544
+Sepsis,AggregateType.AVG,0.01,"('Release D', 'Return ER')",0.4132502728743957
+Sepsis,AggregateType.AVG,0.01,"('ER Triage', 'ER Registration')",0.3098968502124716
+Sepsis,AggregateType.AVG,0.01,"('IV Liquid', 'Release A')",0.42528975353197473
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'IV Antibiotics')",7.80965066894429
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'Release C')",0.9577730980391119
+Sepsis,AggregateType.AVG,0.01,"('Release C', 'Return ER')",1.7872881795721933
+Sepsis,AggregateType.AVG,0.01,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.01,"('Leucocytes', 'Release E')",2.6335620137589806
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'ER Sepsis Triage')",0.7747824592960206
+Sepsis,AggregateType.AVG,0.01,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.01,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.01,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'Leucocytes')",4.8114651708520855
+Sepsis,AggregateType.AVG,0.05,"('Release A', 'Return ER')",1.699685972375547
+Sepsis,AggregateType.AVG,0.05,"('Admission IC', 'Admission NC')",0.10846368144524063
+Sepsis,AggregateType.AVG,0.05,"('CRP', 'Release B')",0.4691667256813906
+Sepsis,AggregateType.AVG,0.05,"('ER Sepsis Triage', 'Admission NC')",0.38968935980870534
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'LacticAcid')",0.6569856857013513
+Sepsis,AggregateType.AVG,0.05,"('LacticAcid', 'Release A')",0.3481526670553407
+Sepsis,AggregateType.AVG,0.05,"('Release D', 'Return ER')",0.04001567750463383
+Sepsis,AggregateType.AVG,0.05,"('ER Triage', 'ER Registration')",0.7759208300445526
+Sepsis,AggregateType.AVG,0.05,"('IV Liquid', 'Release A')",0.2610445676813624
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'IV Antibiotics')",0.0031538356867096898
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'Release C')",0.11467064850709006
+Sepsis,AggregateType.AVG,0.05,"('Release C', 'Return ER')",0.1362246282951077
+Sepsis,AggregateType.AVG,0.05,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.05,"('Leucocytes', 'Release E')",0.0748469105584027
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'ER Sepsis Triage')",0.44031583755322434
+Sepsis,AggregateType.AVG,0.05,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.05,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.05,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'Leucocytes')",0.632071182326546
+Sepsis,AggregateType.AVG,0.1,"('Release A', 'Return ER')",1.1133597801798587
+Sepsis,AggregateType.AVG,0.1,"('Admission IC', 'Admission NC')",0.10381015046342029
+Sepsis,AggregateType.AVG,0.1,"('CRP', 'Release B')",0.1216355694375876
+Sepsis,AggregateType.AVG,0.1,"('ER Sepsis Triage', 'Admission NC')",0.30922917765863805
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'LacticAcid')",0.26002302969851193
+Sepsis,AggregateType.AVG,0.1,"('LacticAcid', 'Release A')",0.06384239366892425
+Sepsis,AggregateType.AVG,0.1,"('Release D', 'Return ER')",0.12635692299438653
+Sepsis,AggregateType.AVG,0.1,"('ER Triage', 'ER Registration')",0.15176217455624627
+Sepsis,AggregateType.AVG,0.1,"('IV Liquid', 'Release A')",0.07670952612805307
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'IV Antibiotics')",0.46527923205760735
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'Release C')",0.03314033942130215
+Sepsis,AggregateType.AVG,0.1,"('Release C', 'Return ER')",0.03871183200392069
+Sepsis,AggregateType.AVG,0.1,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.1,"('Leucocytes', 'Release E')",0.27415308435243985
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'ER Sepsis Triage')",0.48089771355370015
+Sepsis,AggregateType.AVG,0.1,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.1,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.1,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'Leucocytes')",0.8626871229636681
+Sepsis,AggregateType.AVG,0.2,"('Release A', 'Return ER')",0.3001476531490862
+Sepsis,AggregateType.AVG,0.2,"('Admission IC', 'Admission NC')",0.010191790893760858
+Sepsis,AggregateType.AVG,0.2,"('CRP', 'Release B')",0.06284554902574915
+Sepsis,AggregateType.AVG,0.2,"('ER Sepsis Triage', 'Admission NC')",0.1069045450717807
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'LacticAcid')",0.12173510920536604
+Sepsis,AggregateType.AVG,0.2,"('LacticAcid', 'Release A')",0.06777580974097534
+Sepsis,AggregateType.AVG,0.2,"('Release D', 'Return ER')",0.06581580672863963
+Sepsis,AggregateType.AVG,0.2,"('ER Triage', 'ER Registration')",0.06154113499900615
+Sepsis,AggregateType.AVG,0.2,"('IV Liquid', 'Release A')",0.016963546059430203
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'IV Antibiotics')",0.31405754021280385
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'Release C')",0.1626072319715726
+Sepsis,AggregateType.AVG,0.2,"('Release C', 'Return ER')",0.03597440934272807
+Sepsis,AggregateType.AVG,0.2,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.2,"('Leucocytes', 'Release E')",0.053156224246807056
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'ER Sepsis Triage')",0.5947708617011837
+Sepsis,AggregateType.AVG,0.2,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.2,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.2,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'Leucocytes')",0.3754909470697139
+Sepsis,AggregateType.AVG,0.3,"('Release A', 'Return ER')",0.13977752646602642
+Sepsis,AggregateType.AVG,0.3,"('Admission IC', 'Admission NC')",0.29729230725343914
+Sepsis,AggregateType.AVG,0.3,"('CRP', 'Release B')",0.05969632420316367
+Sepsis,AggregateType.AVG,0.3,"('ER Sepsis Triage', 'Admission NC')",0.018276894099749696
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'LacticAcid')",0.04047774623294522
+Sepsis,AggregateType.AVG,0.3,"('LacticAcid', 'Release A')",0.010071226458713342
+Sepsis,AggregateType.AVG,0.3,"('Release D', 'Return ER')",0.18091084058066328
+Sepsis,AggregateType.AVG,0.3,"('ER Triage', 'ER Registration')",0.07426513824474416
+Sepsis,AggregateType.AVG,0.3,"('IV Liquid', 'Release A')",0.018567479053451186
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'IV Antibiotics')",0.1367271329663993
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'Release C')",0.007881596494685407
+Sepsis,AggregateType.AVG,0.3,"('Release C', 'Return ER')",0.027301101669360832
+Sepsis,AggregateType.AVG,0.3,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.3,"('Leucocytes', 'Release E')",0.003442841333397793
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'ER Sepsis Triage')",0.053775190492180096
+Sepsis,AggregateType.AVG,0.3,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.3,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.3,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'Leucocytes')",0.031235116584012863
+Sepsis,AggregateType.AVG,0.4,"('Release A', 'Return ER')",0.285690607458273
+Sepsis,AggregateType.AVG,0.4,"('Admission IC', 'Admission NC')",0.0027439286442767145
+Sepsis,AggregateType.AVG,0.4,"('CRP', 'Release B')",0.16775837486309303
+Sepsis,AggregateType.AVG,0.4,"('ER Sepsis Triage', 'Admission NC')",0.0051009895986969065
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'LacticAcid')",0.06312882245560102
+Sepsis,AggregateType.AVG,0.4,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.4,"('Release D', 'Return ER')",0.03660873866635027
+Sepsis,AggregateType.AVG,0.4,"('ER Triage', 'ER Registration')",0.6910499278804946
+Sepsis,AggregateType.AVG,0.4,"('IV Liquid', 'Release A')",0.011894896306999905
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'IV Antibiotics')",0.10621029481373712
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'Release C')",0.033864198534484434
+Sepsis,AggregateType.AVG,0.4,"('Release C', 'Return ER')",0.009205495391200254
+Sepsis,AggregateType.AVG,0.4,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.4,"('Leucocytes', 'Release E')",0.03186360407426324
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'ER Sepsis Triage')",0.0401569509532316
+Sepsis,AggregateType.AVG,0.4,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.4,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.4,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'Leucocytes')",0.021188074379073944
+Sepsis,AggregateType.AVG,0.5,"('Release A', 'Return ER')",0.038140184597852324
+Sepsis,AggregateType.AVG,0.5,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.5,"('CRP', 'Release B')",0.14571566547459933
+Sepsis,AggregateType.AVG,0.5,"('ER Sepsis Triage', 'Admission NC')",0.00798436034637297
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'LacticAcid')",0.09278717571266434
+Sepsis,AggregateType.AVG,0.5,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Release D', 'Return ER')",0.199133047662662
+Sepsis,AggregateType.AVG,0.5,"('ER Triage', 'ER Registration')",0.0313811441877199
+Sepsis,AggregateType.AVG,0.5,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'ER Sepsis Triage')",0.05356140325336664
+Sepsis,AggregateType.AVG,0.5,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.5,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'Leucocytes')",0.022472861807186793
+Sepsis,AggregateType.AVG,0.6,"('Release A', 'Return ER')",0.020099138796240937
+Sepsis,AggregateType.AVG,0.6,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.6,"('CRP', 'Release B')",0.12657767820965618
+Sepsis,AggregateType.AVG,0.6,"('ER Sepsis Triage', 'Admission NC')",0.07411650472149091
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'LacticAcid')",0.059598404133826534
+Sepsis,AggregateType.AVG,0.6,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Release D', 'Return ER')",0.035691809718590845
+Sepsis,AggregateType.AVG,0.6,"('ER Triage', 'ER Registration')",0.0691484402440415
+Sepsis,AggregateType.AVG,0.6,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'ER Sepsis Triage')",0.0739566748212773
+Sepsis,AggregateType.AVG,0.6,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.6,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'Leucocytes')",0.07477843750058899
+Sepsis,AggregateType.AVG,0.7,"('Release A', 'Return ER')",0.03470854518269421
+Sepsis,AggregateType.AVG,0.7,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.7,"('CRP', 'Release B')",0.011544874835330118
+Sepsis,AggregateType.AVG,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'LacticAcid')",0.003576072862890592
+Sepsis,AggregateType.AVG,0.7,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.7,"('ER Triage', 'ER Registration')",0.02358989530099194
+Sepsis,AggregateType.AVG,0.7,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'ER Sepsis Triage')",0.03768601846118468
+Sepsis,AggregateType.AVG,0.7,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.7,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'Leucocytes')",0.09669562126214451
+Sepsis,AggregateType.AVG,0.8,"('Release A', 'Return ER')",0.029540702126010624
+Sepsis,AggregateType.AVG,0.8,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.8,"('CRP', 'Release B')",0.030263394808737302
+Sepsis,AggregateType.AVG,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.AVG,0.8,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.8,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.AVG,0.8,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.AVG,0.8,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.8,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'Leucocytes')",0.0021000204814022546
+Sepsis,AggregateType.AVG,0.9,"('Release A', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.9,"('CRP', 'Release B')",0.0
+Sepsis,AggregateType.AVG,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.AVG,0.9,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.9,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.AVG,0.9,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.AVG,0.9,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.AVG,0.9,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'Leucocytes')",0.745985525297905
+Sepsis,AggregateType.SUM,0.01,"('Release A', 'Return ER')",0.09230328155033597
+Sepsis,AggregateType.SUM,0.01,"('Admission IC', 'Admission NC')",2.758171030832242
+Sepsis,AggregateType.SUM,0.01,"('CRP', 'Release B')",1.9964398612724172
+Sepsis,AggregateType.SUM,0.01,"('ER Sepsis Triage', 'Admission NC')",2.621744872165951
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'LacticAcid')",3.508545648721337
+Sepsis,AggregateType.SUM,0.01,"('LacticAcid', 'Release A')",43.49468631188804
+Sepsis,AggregateType.SUM,0.01,"('Release D', 'Return ER')",6.493388426904326
+Sepsis,AggregateType.SUM,0.01,"('ER Triage', 'ER Registration')",6.46366598160707
+Sepsis,AggregateType.SUM,0.01,"('IV Liquid', 'Release A')",16.11108630595268
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'IV Antibiotics')",14.647916971007222
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'Release C')",24.89261334532447
+Sepsis,AggregateType.SUM,0.01,"('Release C', 'Return ER')",15.048823272754893
+Sepsis,AggregateType.SUM,0.01,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.01,"('Leucocytes', 'Release E')",11.330110732682618
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'ER Sepsis Triage')",2.041071492316943
+Sepsis,AggregateType.SUM,0.01,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.01,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.01,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'Leucocytes')",0.14037013945423762
+Sepsis,AggregateType.SUM,0.05,"('Release A', 'Return ER')",0.04395562337294684
+Sepsis,AggregateType.SUM,0.05,"('Admission IC', 'Admission NC')",1.4733549077449688
+Sepsis,AggregateType.SUM,0.05,"('CRP', 'Release B')",2.9726758835963585
+Sepsis,AggregateType.SUM,0.05,"('ER Sepsis Triage', 'Admission NC')",0.4326863774052038
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'LacticAcid')",0.2642010221208351
+Sepsis,AggregateType.SUM,0.05,"('LacticAcid', 'Release A')",3.855146290504534
+Sepsis,AggregateType.SUM,0.05,"('Release D', 'Return ER')",3.3707967247657002
+Sepsis,AggregateType.SUM,0.05,"('ER Triage', 'ER Registration')",2.1041511665911083
+Sepsis,AggregateType.SUM,0.05,"('IV Liquid', 'Release A')",1.7075349158595678
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'IV Antibiotics')",4.726073054525639
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'Release C')",3.926936839148384
+Sepsis,AggregateType.SUM,0.05,"('Release C', 'Return ER')",4.691307032291876
+Sepsis,AggregateType.SUM,0.05,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.05,"('Leucocytes', 'Release E')",0.8102929542821816
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'ER Sepsis Triage')",1.4924641460848231
+Sepsis,AggregateType.SUM,0.05,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.05,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.05,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'Leucocytes')",0.007202742589008561
+Sepsis,AggregateType.SUM,0.1,"('Release A', 'Return ER')",0.051813297655296894
+Sepsis,AggregateType.SUM,0.1,"('Admission IC', 'Admission NC')",0.834890460871227
+Sepsis,AggregateType.SUM,0.1,"('CRP', 'Release B')",0.1361426507298992
+Sepsis,AggregateType.SUM,0.1,"('ER Sepsis Triage', 'Admission NC')",3.8043999902876147
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'LacticAcid')",0.06142647040759246
+Sepsis,AggregateType.SUM,0.1,"('LacticAcid', 'Release A')",1.410524106277201
+Sepsis,AggregateType.SUM,0.1,"('Release D', 'Return ER')",0.15625849315668877
+Sepsis,AggregateType.SUM,0.1,"('ER Triage', 'ER Registration')",0.4921026604359616
+Sepsis,AggregateType.SUM,0.1,"('IV Liquid', 'Release A')",3.5185488255440878
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'IV Antibiotics')",3.135575582092467
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'Release C')",0.49835665391526085
+Sepsis,AggregateType.SUM,0.1,"('Release C', 'Return ER')",4.655515780983335
+Sepsis,AggregateType.SUM,0.1,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.1,"('Leucocytes', 'Release E')",0.4561732456004351
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'ER Sepsis Triage')",0.691008321521477
+Sepsis,AggregateType.SUM,0.1,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.1,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.1,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'Leucocytes')",0.008704259547925577
+Sepsis,AggregateType.SUM,0.2,"('Release A', 'Return ER')",0.01232973152241683
+Sepsis,AggregateType.SUM,0.2,"('Admission IC', 'Admission NC')",0.9102446058609285
+Sepsis,AggregateType.SUM,0.2,"('CRP', 'Release B')",0.4237572690611426
+Sepsis,AggregateType.SUM,0.2,"('ER Sepsis Triage', 'Admission NC')",0.31694986422341564
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'LacticAcid')",0.11131264729704764
+Sepsis,AggregateType.SUM,0.2,"('LacticAcid', 'Release A')",0.31173831605232644
+Sepsis,AggregateType.SUM,0.2,"('Release D', 'Return ER')",0.3975643082480972
+Sepsis,AggregateType.SUM,0.2,"('ER Triage', 'ER Registration')",0.9187124073349543
+Sepsis,AggregateType.SUM,0.2,"('IV Liquid', 'Release A')",0.5247181964643559
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'IV Antibiotics')",2.269241353438027
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'Release C')",0.45010364809077086
+Sepsis,AggregateType.SUM,0.2,"('Release C', 'Return ER')",0.3973134862156333
+Sepsis,AggregateType.SUM,0.2,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.2,"('Leucocytes', 'Release E')",0.136498065822212
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'ER Sepsis Triage')",0.6126146532857515
+Sepsis,AggregateType.SUM,0.2,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.2,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.2,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'Leucocytes')",0.007277309125371856
+Sepsis,AggregateType.SUM,0.3,"('Release A', 'Return ER')",0.04897710523013957
+Sepsis,AggregateType.SUM,0.3,"('Admission IC', 'Admission NC')",0.06246956706870449
+Sepsis,AggregateType.SUM,0.3,"('CRP', 'Release B')",0.0017706978281931984
+Sepsis,AggregateType.SUM,0.3,"('ER Sepsis Triage', 'Admission NC')",0.35432094319930524
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'LacticAcid')",0.03131873970965756
+Sepsis,AggregateType.SUM,0.3,"('LacticAcid', 'Release A')",0.024785872414623492
+Sepsis,AggregateType.SUM,0.3,"('Release D', 'Return ER')",0.04785092979113381
+Sepsis,AggregateType.SUM,0.3,"('ER Triage', 'ER Registration')",0.26594270055713237
+Sepsis,AggregateType.SUM,0.3,"('IV Liquid', 'Release A')",0.1961615379203501
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'IV Antibiotics')",1.6334296908412036
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'Release C')",0.5205724829921625
+Sepsis,AggregateType.SUM,0.3,"('Release C', 'Return ER')",0.10669986417503595
+Sepsis,AggregateType.SUM,0.3,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.3,"('Leucocytes', 'Release E')",0.03192896542950577
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'ER Sepsis Triage')",0.16437758984798792
+Sepsis,AggregateType.SUM,0.3,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.3,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.3,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'Leucocytes')",0.007875287581009208
+Sepsis,AggregateType.SUM,0.4,"('Release A', 'Return ER')",0.0018038147362196906
+Sepsis,AggregateType.SUM,0.4,"('Admission IC', 'Admission NC')",0.12865649903437376
+Sepsis,AggregateType.SUM,0.4,"('CRP', 'Release B')",0.023439444298749005
+Sepsis,AggregateType.SUM,0.4,"('ER Sepsis Triage', 'Admission NC')",0.21004354259448416
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'LacticAcid')",0.0028227892218654614
+Sepsis,AggregateType.SUM,0.4,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.4,"('Release D', 'Return ER')",0.29030778104629024
+Sepsis,AggregateType.SUM,0.4,"('ER Triage', 'ER Registration')",0.7490755712436208
+Sepsis,AggregateType.SUM,0.4,"('IV Liquid', 'Release A')",0.6263278179100481
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'IV Antibiotics')",0.23895620488206937
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'Release C')",0.1861244483145209
+Sepsis,AggregateType.SUM,0.4,"('Release C', 'Return ER')",0.08685249432135694
+Sepsis,AggregateType.SUM,0.4,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.4,"('Leucocytes', 'Release E')",0.1778607183650939
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'ER Sepsis Triage')",0.5787881507741006
+Sepsis,AggregateType.SUM,0.4,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.4,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.4,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'Leucocytes')",0.001016291628522227
+Sepsis,AggregateType.SUM,0.5,"('Release A', 'Return ER')",0.0031023651015963196
+Sepsis,AggregateType.SUM,0.5,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.5,"('CRP', 'Release B')",0.03252371331804765
+Sepsis,AggregateType.SUM,0.5,"('ER Sepsis Triage', 'Admission NC')",0.022974599008762583
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'LacticAcid')",0.13368199802486394
+Sepsis,AggregateType.SUM,0.5,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Release D', 'Return ER')",0.015287888109643
+Sepsis,AggregateType.SUM,0.5,"('ER Triage', 'ER Registration')",0.07540410464412596
+Sepsis,AggregateType.SUM,0.5,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'ER Sepsis Triage')",0.23880120048075087
+Sepsis,AggregateType.SUM,0.5,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.5,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'Leucocytes')",0.0008377491185197128
+Sepsis,AggregateType.SUM,0.6,"('Release A', 'Return ER')",0.007707668884202978
+Sepsis,AggregateType.SUM,0.6,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.6,"('CRP', 'Release B')",0.12379119109936271
+Sepsis,AggregateType.SUM,0.6,"('ER Sepsis Triage', 'Admission NC')",0.037000660090707564
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'LacticAcid')",0.021301366973151055
+Sepsis,AggregateType.SUM,0.6,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Release D', 'Return ER')",0.05602779730910144
+Sepsis,AggregateType.SUM,0.6,"('ER Triage', 'ER Registration')",0.3680337876101194
+Sepsis,AggregateType.SUM,0.6,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'ER Sepsis Triage')",0.4099884766872764
+Sepsis,AggregateType.SUM,0.6,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.6,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'Leucocytes')",0.0028613573959861394
+Sepsis,AggregateType.SUM,0.7,"('Release A', 'Return ER')",0.0017781244744001497
+Sepsis,AggregateType.SUM,0.7,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.7,"('CRP', 'Release B')",0.0222624852631685
+Sepsis,AggregateType.SUM,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'LacticAcid')",0.06189072129598344
+Sepsis,AggregateType.SUM,0.7,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.7,"('ER Triage', 'ER Registration')",0.23310795304665163
+Sepsis,AggregateType.SUM,0.7,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'ER Sepsis Triage')",0.5613648716768881
+Sepsis,AggregateType.SUM,0.7,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.7,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'Leucocytes')",0.003941538630388077
+Sepsis,AggregateType.SUM,0.8,"('Release A', 'Return ER')",0.0019638896217698512
+Sepsis,AggregateType.SUM,0.8,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.8,"('CRP', 'Release B')",0.052026938483884476
+Sepsis,AggregateType.SUM,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.SUM,0.8,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.8,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.SUM,0.8,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.SUM,0.8,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.8,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'Leucocytes')",0.0064195344331705335
+Sepsis,AggregateType.SUM,0.9,"('Release A', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.9,"('CRP', 'Release B')",0.0
+Sepsis,AggregateType.SUM,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.SUM,0.9,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.9,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.SUM,0.9,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.SUM,0.9,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.SUM,0.9,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'Leucocytes')",222438.0128464679
+Sepsis,AggregateType.MIN,0.01,"('Release A', 'Return ER')",4224.219814616195
+Sepsis,AggregateType.MIN,0.01,"('Admission IC', 'Admission NC')",311.3451816276973
+Sepsis,AggregateType.MIN,0.01,"('CRP', 'Release B')",1305.875667679055
+Sepsis,AggregateType.MIN,0.01,"('ER Sepsis Triage', 'Admission NC')",1150.1137206772853
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'LacticAcid')",1826.274074645288
+Sepsis,AggregateType.MIN,0.01,"('LacticAcid', 'Release A')",8.743537694059365
+Sepsis,AggregateType.MIN,0.01,"('Release D', 'Return ER')",2052.8776633580915
+Sepsis,AggregateType.MIN,0.01,"('ER Triage', 'ER Registration')",456.7720007304966
+Sepsis,AggregateType.MIN,0.01,"('IV Liquid', 'Release A')",308.8231559944419
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'IV Antibiotics')",15829.90541666221
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'Release C')",1191.3763201473291
+Sepsis,AggregateType.MIN,0.01,"('Release C', 'Return ER')",279.0300436677203
+Sepsis,AggregateType.MIN,0.01,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.01,"('Leucocytes', 'Release E')",92.25906406492813
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'ER Sepsis Triage')",94989.2454559928
+Sepsis,AggregateType.MIN,0.01,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.01,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.01,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'Leucocytes')",504.82227536692386
+Sepsis,AggregateType.MIN,0.05,"('Release A', 'Return ER')",3352.9721877784077
+Sepsis,AggregateType.MIN,0.05,"('Admission IC', 'Admission NC')",20.566789332115075
+Sepsis,AggregateType.MIN,0.05,"('CRP', 'Release B')",64.63219925545445
+Sepsis,AggregateType.MIN,0.05,"('ER Sepsis Triage', 'Admission NC')",498.26722428199594
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'LacticAcid')",307.16196428581407
+Sepsis,AggregateType.MIN,0.05,"('LacticAcid', 'Release A')",6.265077671114739
+Sepsis,AggregateType.MIN,0.05,"('Release D', 'Return ER')",381.7521756624257
+Sepsis,AggregateType.MIN,0.05,"('ER Triage', 'ER Registration')",53.17224620327575
+Sepsis,AggregateType.MIN,0.05,"('IV Liquid', 'Release A')",14.522519612546782
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'IV Antibiotics')",495.2313754698294
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'Release C')",52.86326937970495
+Sepsis,AggregateType.MIN,0.05,"('Release C', 'Return ER')",511.3560501706784
+Sepsis,AggregateType.MIN,0.05,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.05,"('Leucocytes', 'Release E')",23.6422846054591
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'ER Sepsis Triage')",1397.3761793133265
+Sepsis,AggregateType.MIN,0.05,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.05,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.05,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'Leucocytes')",17709.38501634516
+Sepsis,AggregateType.MIN,0.1,"('Release A', 'Return ER')",3275.4916608927497
+Sepsis,AggregateType.MIN,0.1,"('Admission IC', 'Admission NC')",31.188713293933777
+Sepsis,AggregateType.MIN,0.1,"('CRP', 'Release B')",330.6340450704746
+Sepsis,AggregateType.MIN,0.1,"('ER Sepsis Triage', 'Admission NC')",383.915883802084
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'LacticAcid')",597.9736569798814
+Sepsis,AggregateType.MIN,0.1,"('LacticAcid', 'Release A')",0.847233530957997
+Sepsis,AggregateType.MIN,0.1,"('Release D', 'Return ER')",514.4323377784693
+Sepsis,AggregateType.MIN,0.1,"('ER Triage', 'ER Registration')",480.4148095968721
+Sepsis,AggregateType.MIN,0.1,"('IV Liquid', 'Release A')",1.667505739518071
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'IV Antibiotics')",1579.9978764144455
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'Release C')",16.787657924534358
+Sepsis,AggregateType.MIN,0.1,"('Release C', 'Return ER')",338.17041175721937
+Sepsis,AggregateType.MIN,0.1,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.1,"('Leucocytes', 'Release E')",13.372275833677564
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'ER Sepsis Triage')",8084.8687590455775
+Sepsis,AggregateType.MIN,0.1,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.1,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.1,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'Leucocytes')",1493.7111647862944
+Sepsis,AggregateType.MIN,0.2,"('Release A', 'Return ER')",1873.1059625516257
+Sepsis,AggregateType.MIN,0.2,"('Admission IC', 'Admission NC')",3.944439069917506
+Sepsis,AggregateType.MIN,0.2,"('CRP', 'Release B')",76.0957457392349
+Sepsis,AggregateType.MIN,0.2,"('ER Sepsis Triage', 'Admission NC')",21.81204074490651
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'LacticAcid')",190.6189997146125
+Sepsis,AggregateType.MIN,0.2,"('LacticAcid', 'Release A')",0.40212074043270274
+Sepsis,AggregateType.MIN,0.2,"('Release D', 'Return ER')",138.0332336971365
+Sepsis,AggregateType.MIN,0.2,"('ER Triage', 'ER Registration')",54.61786892136627
+Sepsis,AggregateType.MIN,0.2,"('IV Liquid', 'Release A')",0.7769314774470658
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'IV Antibiotics')",1129.3529891071182
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'Release C')",19.59415567840776
+Sepsis,AggregateType.MIN,0.2,"('Release C', 'Return ER')",369.5772317957444
+Sepsis,AggregateType.MIN,0.2,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.2,"('Leucocytes', 'Release E')",22.051808059701195
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'ER Sepsis Triage')",1250.1577794843747
+Sepsis,AggregateType.MIN,0.2,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.2,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.2,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'Leucocytes')",1420.1299546318062
+Sepsis,AggregateType.MIN,0.3,"('Release A', 'Return ER')",631.8082169916266
+Sepsis,AggregateType.MIN,0.3,"('Admission IC', 'Admission NC')",1.574250027934343
+Sepsis,AggregateType.MIN,0.3,"('CRP', 'Release B')",5.3226034000690134
+Sepsis,AggregateType.MIN,0.3,"('ER Sepsis Triage', 'Admission NC')",97.53295490678953
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'LacticAcid')",37.51702520373937
+Sepsis,AggregateType.MIN,0.3,"('LacticAcid', 'Release A')",0.5037797313035264
+Sepsis,AggregateType.MIN,0.3,"('Release D', 'Return ER')",270.91377526228155
+Sepsis,AggregateType.MIN,0.3,"('ER Triage', 'ER Registration')",6.177367397799102
+Sepsis,AggregateType.MIN,0.3,"('IV Liquid', 'Release A')",0.23613008328911794
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'IV Antibiotics')",1151.1516675048222
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'Release C')",12.132370434682382
+Sepsis,AggregateType.MIN,0.3,"('Release C', 'Return ER')",108.69838563748328
+Sepsis,AggregateType.MIN,0.3,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.3,"('Leucocytes', 'Release E')",0.8827054511527799
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'ER Sepsis Triage')",191.19115764101093
+Sepsis,AggregateType.MIN,0.3,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.3,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.3,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'Leucocytes')",2173.6219163046453
+Sepsis,AggregateType.MIN,0.4,"('Release A', 'Return ER')",104.73537665581351
+Sepsis,AggregateType.MIN,0.4,"('Admission IC', 'Admission NC')",4.6010872133908585
+Sepsis,AggregateType.MIN,0.4,"('CRP', 'Release B')",13.07614563095985
+Sepsis,AggregateType.MIN,0.4,"('ER Sepsis Triage', 'Admission NC')",99.02039302599846
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'LacticAcid')",53.92685074326045
+Sepsis,AggregateType.MIN,0.4,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.4,"('Release D', 'Return ER')",53.58295814873537
+Sepsis,AggregateType.MIN,0.4,"('ER Triage', 'ER Registration')",2.942604123934576
+Sepsis,AggregateType.MIN,0.4,"('IV Liquid', 'Release A')",0.44070065484184673
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'IV Antibiotics')",109.77273577629235
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'Release C')",0.7702955186860825
+Sepsis,AggregateType.MIN,0.4,"('Release C', 'Return ER')",52.91835841233044
+Sepsis,AggregateType.MIN,0.4,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.4,"('Leucocytes', 'Release E')",2.2230997833132693
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'ER Sepsis Triage')",1012.8226510020455
+Sepsis,AggregateType.MIN,0.4,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.4,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.4,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'Leucocytes')",3043.2507615722557
+Sepsis,AggregateType.MIN,0.5,"('Release A', 'Return ER')",744.2320692182856
+Sepsis,AggregateType.MIN,0.5,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.5,"('CRP', 'Release B')",18.130168761026432
+Sepsis,AggregateType.MIN,0.5,"('ER Sepsis Triage', 'Admission NC')",43.626382699664575
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'LacticAcid')",11.41465374124303
+Sepsis,AggregateType.MIN,0.5,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Release D', 'Return ER')",38.31597851966742
+Sepsis,AggregateType.MIN,0.5,"('ER Triage', 'ER Registration')",0.17746369453563435
+Sepsis,AggregateType.MIN,0.5,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'ER Sepsis Triage')",318.2067235339964
+Sepsis,AggregateType.MIN,0.5,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.5,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'Leucocytes')",1190.2331889971065
+Sepsis,AggregateType.MIN,0.6,"('Release A', 'Return ER')",1664.0005041629406
+Sepsis,AggregateType.MIN,0.6,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.6,"('CRP', 'Release B')",11.383368596723448
+Sepsis,AggregateType.MIN,0.6,"('ER Sepsis Triage', 'Admission NC')",56.29888328925946
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'LacticAcid')",24.541804362934165
+Sepsis,AggregateType.MIN,0.6,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Release D', 'Return ER')",0.8303351797872588
+Sepsis,AggregateType.MIN,0.6,"('ER Triage', 'ER Registration')",38.37816362016273
+Sepsis,AggregateType.MIN,0.6,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'ER Sepsis Triage')",261.8544628727734
+Sepsis,AggregateType.MIN,0.6,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.6,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'Leucocytes')",1506.8716538852514
+Sepsis,AggregateType.MIN,0.7,"('Release A', 'Return ER')",85.37381080837746
+Sepsis,AggregateType.MIN,0.7,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.7,"('CRP', 'Release B')",1.900629964543954
+Sepsis,AggregateType.MIN,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'LacticAcid')",103.10317734054473
+Sepsis,AggregateType.MIN,0.7,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.7,"('ER Triage', 'ER Registration')",15.531384145459112
+Sepsis,AggregateType.MIN,0.7,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'ER Sepsis Triage')",262.27245504080923
+Sepsis,AggregateType.MIN,0.7,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.7,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'Leucocytes')",12.947718010391483
+Sepsis,AggregateType.MIN,0.8,"('Release A', 'Return ER')",140.99569774072262
+Sepsis,AggregateType.MIN,0.8,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.8,"('CRP', 'Release B')",0.5322254085869519
+Sepsis,AggregateType.MIN,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.MIN,0.8,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.8,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.MIN,0.8,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.MIN,0.8,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.8,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'Leucocytes')",1759.6985256726784
+Sepsis,AggregateType.MIN,0.9,"('Release A', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.9,"('CRP', 'Release B')",0.0
+Sepsis,AggregateType.MIN,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.MIN,0.9,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.9,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.MIN,0.9,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.MIN,0.9,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MIN,0.9,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'Leucocytes')",10.07922871978557
+Sepsis,AggregateType.MAX,0.01,"('Release A', 'Return ER')",20.968462571954298
+Sepsis,AggregateType.MAX,0.01,"('Admission IC', 'Admission NC')",5.533032246700667
+Sepsis,AggregateType.MAX,0.01,"('CRP', 'Release B')",3.104139530243099
+Sepsis,AggregateType.MAX,0.01,"('ER Sepsis Triage', 'Admission NC')",44.42613585413779
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'LacticAcid')",21.66783215022563
+Sepsis,AggregateType.MAX,0.01,"('LacticAcid', 'Release A')",67.61039593400729
+Sepsis,AggregateType.MAX,0.01,"('Release D', 'Return ER')",1.3905699376303136
+Sepsis,AggregateType.MAX,0.01,"('ER Triage', 'ER Registration')",10.583200227415963
+Sepsis,AggregateType.MAX,0.01,"('IV Liquid', 'Release A')",2.1109065190494714
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'IV Antibiotics')",10.00420744697189
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'Release C')",0.6496075836731907
+Sepsis,AggregateType.MAX,0.01,"('Release C', 'Return ER')",101.80598890896
+Sepsis,AggregateType.MAX,0.01,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.01,"('Leucocytes', 'Release E')",16.324402034247317
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'ER Sepsis Triage')",35.574985999346936
+Sepsis,AggregateType.MAX,0.01,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.01,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.01,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'Leucocytes')",8.990353231725225
+Sepsis,AggregateType.MAX,0.05,"('Release A', 'Return ER')",4.061690656084438
+Sepsis,AggregateType.MAX,0.05,"('Admission IC', 'Admission NC')",0.9396115966928112
+Sepsis,AggregateType.MAX,0.05,"('CRP', 'Release B')",4.010316051046095
+Sepsis,AggregateType.MAX,0.05,"('ER Sepsis Triage', 'Admission NC')",18.70170342320374
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'LacticAcid')",0.13802938232534606
+Sepsis,AggregateType.MAX,0.05,"('LacticAcid', 'Release A')",3.5169092885778257
+Sepsis,AggregateType.MAX,0.05,"('Release D', 'Return ER')",15.515360024438282
+Sepsis,AggregateType.MAX,0.05,"('ER Triage', 'ER Registration')",3.5329783574196783
+Sepsis,AggregateType.MAX,0.05,"('IV Liquid', 'Release A')",0.0029178798997885097
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'IV Antibiotics')",3.512392454561152
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'Release C')",0.031072528529516426
+Sepsis,AggregateType.MAX,0.05,"('Release C', 'Return ER')",3.876286584950273
+Sepsis,AggregateType.MAX,0.05,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.05,"('Leucocytes', 'Release E')",1.8811962266733242
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'ER Sepsis Triage')",1.4461686934665872
+Sepsis,AggregateType.MAX,0.05,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.05,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.05,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'Leucocytes')",0.63670740945514
+Sepsis,AggregateType.MAX,0.1,"('Release A', 'Return ER')",1.62334790071815
+Sepsis,AggregateType.MAX,0.1,"('Admission IC', 'Admission NC')",4.613331237025062
+Sepsis,AggregateType.MAX,0.1,"('CRP', 'Release B')",3.6539657371137477
+Sepsis,AggregateType.MAX,0.1,"('ER Sepsis Triage', 'Admission NC')",3.2772241209978645
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'LacticAcid')",4.185792779226609
+Sepsis,AggregateType.MAX,0.1,"('LacticAcid', 'Release A')",2.0475610383319416
+Sepsis,AggregateType.MAX,0.1,"('Release D', 'Return ER')",1.2238162278407425
+Sepsis,AggregateType.MAX,0.1,"('ER Triage', 'ER Registration')",4.169365288131977
+Sepsis,AggregateType.MAX,0.1,"('IV Liquid', 'Release A')",7.520205767302611
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'IV Antibiotics')",0.37020586878327155
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'Release C')",1.0497297706161517
+Sepsis,AggregateType.MAX,0.1,"('Release C', 'Return ER')",0.38487283619254514
+Sepsis,AggregateType.MAX,0.1,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.1,"('Leucocytes', 'Release E')",1.6773316429171106
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'ER Sepsis Triage')",0.19486112512285608
+Sepsis,AggregateType.MAX,0.1,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.1,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.1,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'Leucocytes')",1.9061783337274938
+Sepsis,AggregateType.MAX,0.2,"('Release A', 'Return ER')",1.0921068841152621
+Sepsis,AggregateType.MAX,0.2,"('Admission IC', 'Admission NC')",0.9542551730903907
+Sepsis,AggregateType.MAX,0.2,"('CRP', 'Release B')",5.496912241100747
+Sepsis,AggregateType.MAX,0.2,"('ER Sepsis Triage', 'Admission NC')",0.18168111526320352
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'LacticAcid')",0.3548777902292408
+Sepsis,AggregateType.MAX,0.2,"('LacticAcid', 'Release A')",1.0471920813840918
+Sepsis,AggregateType.MAX,0.2,"('Release D', 'Return ER')",0.31088434050012737
+Sepsis,AggregateType.MAX,0.2,"('ER Triage', 'ER Registration')",0.14792620354382083
+Sepsis,AggregateType.MAX,0.2,"('IV Liquid', 'Release A')",0.19218681040218144
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'IV Antibiotics')",0.43953027158584806
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'Release C')",1.8286889562759943
+Sepsis,AggregateType.MAX,0.2,"('Release C', 'Return ER')",4.261443634939688
+Sepsis,AggregateType.MAX,0.2,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.2,"('Leucocytes', 'Release E')",1.3937193321954424
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'ER Sepsis Triage')",1.8285462368083918
+Sepsis,AggregateType.MAX,0.2,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.2,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.2,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'Leucocytes')",0.25589908890411894
+Sepsis,AggregateType.MAX,0.3,"('Release A', 'Return ER')",0.48591257408039745
+Sepsis,AggregateType.MAX,0.3,"('Admission IC', 'Admission NC')",0.04651605097557802
+Sepsis,AggregateType.MAX,0.3,"('CRP', 'Release B')",0.05037847308518147
+Sepsis,AggregateType.MAX,0.3,"('ER Sepsis Triage', 'Admission NC')",1.1021509246550794
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'LacticAcid')",1.620809050025212
+Sepsis,AggregateType.MAX,0.3,"('LacticAcid', 'Release A')",0.98470668622563
+Sepsis,AggregateType.MAX,0.3,"('Release D', 'Return ER')",0.3089663169533119
+Sepsis,AggregateType.MAX,0.3,"('ER Triage', 'ER Registration')",0.3254971323646177
+Sepsis,AggregateType.MAX,0.3,"('IV Liquid', 'Release A')",0.46405410808500325
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'IV Antibiotics')",0.19764850663368003
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'Release C')",0.0611701824779116
+Sepsis,AggregateType.MAX,0.3,"('Release C', 'Return ER')",0.1853825496123075
+Sepsis,AggregateType.MAX,0.3,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.3,"('Leucocytes', 'Release E')",2.3538924343957333
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'ER Sepsis Triage')",0.7761121016580728
+Sepsis,AggregateType.MAX,0.3,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.3,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.3,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'Leucocytes')",3.917192605056189
+Sepsis,AggregateType.MAX,0.4,"('Release A', 'Return ER')",0.34599477123006367
+Sepsis,AggregateType.MAX,0.4,"('Admission IC', 'Admission NC')",0.059426000855050794
+Sepsis,AggregateType.MAX,0.4,"('CRP', 'Release B')",0.7913968967489488
+Sepsis,AggregateType.MAX,0.4,"('ER Sepsis Triage', 'Admission NC')",0.4399542429339271
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'LacticAcid')",0.25400429459355206
+Sepsis,AggregateType.MAX,0.4,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.4,"('Release D', 'Return ER')",1.3116108872574688
+Sepsis,AggregateType.MAX,0.4,"('ER Triage', 'ER Registration')",0.33643444866731037
+Sepsis,AggregateType.MAX,0.4,"('IV Liquid', 'Release A')",0.13468070782638494
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'IV Antibiotics')",0.022204045299814283
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'Release C')",0.0016582481213227329
+Sepsis,AggregateType.MAX,0.4,"('Release C', 'Return ER')",0.5379395534897765
+Sepsis,AggregateType.MAX,0.4,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.4,"('Leucocytes', 'Release E')",0.25206398986127465
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'ER Sepsis Triage')",0.014026404097095305
+Sepsis,AggregateType.MAX,0.4,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.4,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.4,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'Leucocytes')",0.1086196178884673
+Sepsis,AggregateType.MAX,0.5,"('Release A', 'Return ER')",0.17412632594810315
+Sepsis,AggregateType.MAX,0.5,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.5,"('CRP', 'Release B')",0.9589327399907194
+Sepsis,AggregateType.MAX,0.5,"('ER Sepsis Triage', 'Admission NC')",2.3814667743455535
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'LacticAcid')",0.10728409579399337
+Sepsis,AggregateType.MAX,0.5,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Release D', 'Return ER')",0.15177767469568607
+Sepsis,AggregateType.MAX,0.5,"('ER Triage', 'ER Registration')",0.23155885034596319
+Sepsis,AggregateType.MAX,0.5,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'ER Sepsis Triage')",0.5120813668963989
+Sepsis,AggregateType.MAX,0.5,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.5,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'Leucocytes')",0.002103491998525054
+Sepsis,AggregateType.MAX,0.6,"('Release A', 'Return ER')",0.09601676458783176
+Sepsis,AggregateType.MAX,0.6,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.6,"('CRP', 'Release B')",0.42079428049970846
+Sepsis,AggregateType.MAX,0.6,"('ER Sepsis Triage', 'Admission NC')",0.2829685218621676
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'LacticAcid')",0.1407028360599204
+Sepsis,AggregateType.MAX,0.6,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Release D', 'Return ER')",0.43639527196518935
+Sepsis,AggregateType.MAX,0.6,"('ER Triage', 'ER Registration')",0.07936586110583158
+Sepsis,AggregateType.MAX,0.6,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'ER Sepsis Triage')",0.6534897546948923
+Sepsis,AggregateType.MAX,0.6,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.6,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'Leucocytes')",0.012435929463472398
+Sepsis,AggregateType.MAX,0.7,"('Release A', 'Return ER')",0.3132211726938903
+Sepsis,AggregateType.MAX,0.7,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.7,"('CRP', 'Release B')",0.1783871880823364
+Sepsis,AggregateType.MAX,0.7,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'LacticAcid')",0.05533422250384451
+Sepsis,AggregateType.MAX,0.7,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.7,"('ER Triage', 'ER Registration')",0.3610545703470725
+Sepsis,AggregateType.MAX,0.7,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'ER Sepsis Triage')",0.22122847634959925
+Sepsis,AggregateType.MAX,0.7,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.7,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'Leucocytes')",0.13361728653431607
+Sepsis,AggregateType.MAX,0.8,"('Release A', 'Return ER')",0.033872307604541206
+Sepsis,AggregateType.MAX,0.8,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.8,"('CRP', 'Release B')",0.4534760216053986
+Sepsis,AggregateType.MAX,0.8,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.MAX,0.8,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.8,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.MAX,0.8,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.MAX,0.8,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.8,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'ER Triage')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'Leucocytes')",0.2188437065469774
+Sepsis,AggregateType.MAX,0.9,"('Release A', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission IC', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.9,"('CRP', 'Release B')",0.0
+Sepsis,AggregateType.MAX,0.9,"('ER Sepsis Triage', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'LacticAcid')",0.0
+Sepsis,AggregateType.MAX,0.9,"('LacticAcid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Release D', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.9,"('ER Triage', 'ER Registration')",0.0
+Sepsis,AggregateType.MAX,0.9,"('IV Liquid', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'Release D')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'IV Antibiotics')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'Release C')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Release C', 'Return ER')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Release B', 'Admission NC')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Leucocytes', 'Release E')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'ER Sepsis Triage')",0.0
+Sepsis,AggregateType.MAX,0.9,"('IV Antibiotics', 'Release A')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Return ER', 'CRP')",0.0
+Sepsis,AggregateType.MAX,0.9,"('ER Registration', 'Admission IC')",0.0
+Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'ER Triage')",0.0

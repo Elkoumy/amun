@@ -9,15 +9,16 @@ from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_fro
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 from amun.guessing_advantage import AggregateType
 from math import log10
+import os
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.algo.filtering.log.start_activities import start_activities_filter
 from pm4py.algo.filtering.log.end_activities import end_activities_filter
 
-def read_xes(xes_file,aggregate_type):
+def read_xes(data_dir,dataset,aggregate_type):
     prune_parameter_freq=350
     prune_parameter_time=-1 #keep all
     #read the xes file
-    log = xes_import_factory.apply(xes_file)
+    log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
     data=get_dataframe_from_event_stream(log)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
     dfg_time =get_dfg_time(data,aggregate_type)
@@ -26,10 +27,10 @@ def read_xes(xes_file,aggregate_type):
     # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
 
     # pruning by 10% freq from apromore
-    dfg_freq,dfg_time1=pruning_by_edge_name_freq(dfg_freq.copy(),dfg_time.copy(),xes_file)
+    dfg_freq,dfg_time1=pruning_by_edge_name_freq(dfg_freq.copy(),dfg_time.copy(),dataset)
     #
     # pruning by 10% time from apromore
-    dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(),xes_file)
+    dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(),dataset)
 
 
     """Getting Start and End activities"""
@@ -186,7 +187,8 @@ def frequency_pruning(dfg_freq, dfg_time, prune_parameter_freq, prune_parameter_
 def pruning_by_edge_name_freq(dfg_freq, dfg_time,dataset):
     #in this method we implement the pruning by edge names kept by apromore
     #we keep 10% only
-    dataset=dataset.split("\\" )[-1].replace(".xes","")
+    # dataset=dataset.split("\\" )[-1].replace(".xes","")
+    # dataset=dataset.split("/" )[-1].replace(".xes","")
     freq_10= get_pruning_edges(dataset,"freq")
 
     keys = list(dfg_freq.keys())
@@ -201,7 +203,7 @@ def pruning_by_edge_name_freq(dfg_freq, dfg_time,dataset):
 def pruning_by_edge_name_time(dfg_freq, dfg_time,dataset):
     # in this method we implement the pruning by edge names kept by apromore
     # we keep 10% only
-    dataset = dataset.split("\\" )[-1].replace(".xes","")
+    # dataset = dataset.split("\\" )[-1].replace(".xes","")
     time_10 = get_pruning_edges(dataset, "time")
 
 
