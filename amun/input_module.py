@@ -21,7 +21,7 @@ def read_xes(data_dir,dataset,aggregate_type):
     log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
     data=get_dataframe_from_event_stream(log)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
-    dfg_time =get_dfg_time(data,aggregate_type)
+    dfg_time =get_dfg_time(data,aggregate_type,dataset)
 
     # pruning by values of freq and time
     # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
@@ -40,15 +40,16 @@ def read_xes(data_dir,dataset,aggregate_type):
     return dfg_freq,dfg_time
 
 
-def get_dfg_time(data,aggregate_type):
+def get_dfg_time(data,aggregate_type,dataset):
     """
     Returns the DFG matrix as a dictionary of lists. The key is the pair of acitivities
     and the value is a list of values
     """
 
     # taking only the complete event to avoid ambiuoutiy
-    data=data.where(data["lifecycle:transition"].str.upper()=="COMPLETE")
-    data=data.dropna(subset=['lifecycle:transition'])
+    if dataset != "BPIC13":
+        data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
+        data=data.dropna(subset=['lifecycle:transition'])
     #moving first row to the last one
     temp_row= data.iloc[0]
     data2=data.copy()
