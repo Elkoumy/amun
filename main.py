@@ -7,7 +7,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic"]
-datasets=["BPIC12","BPIC13","BPIC19","BPIC20"]
+datasets=["CCC19","BPIC12","BPIC18"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
@@ -21,7 +21,10 @@ for data in datasets:
         exec_time="4-00" # 4 days
     elif data in [ "Traffic", "BPIC17"]:
         memory = 15
-        exec_time="16:00:00" # 16 hours
+        exec_time="4-00" # 4 days
+    elif data in ["BPIC12"]:
+        memory =4
+        exec_time="04:00:00" # 4 hours
     else:
         memory = 4
         exec_time="01:00:00" # 1 hour
