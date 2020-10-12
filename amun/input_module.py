@@ -6,6 +6,7 @@ This module implements the functionality of reading the input from the user. The
 import pandas as pd
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
+from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 
 from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
@@ -25,6 +26,7 @@ def read_xes(data_dir,dataset,aggregate_type):
     #read the xes file
     log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
     data=get_dataframe_from_event_stream(log)
+    # dataframe = log_converter.apply(log, variant=log_converter.Variants.TO_DATA_FRAME)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
     dfg_time =get_dfg_time(data,aggregate_type,dataset)
 
