@@ -1,0 +1,32 @@
+Dataset: CreditReq
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.0026144869505759097
+avg MAPE for time is 50.45795435746896
+avg SMAPE for freq is 0.0013034965140127314
+avg SMAPE for time is 0.8871185888827229
+delta for the freq is 0.01147226742799839
+delta for the time is 0.9825610363726955
+Dataset: CreditReq
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.0025105828537200247
+avg MAPE for time is 0.036772503656091166
+avg SMAPE for freq is 0.001252233976630057
+avg SMAPE for time is 0.01767864791957539
+delta for the freq is 0.01147226742799839
+delta for the time is 0.13552573152933628
+Dataset: CreditReq
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.002387269322766261
+avg MAPE for time is 4596.905756445812
+avg SMAPE for freq is 0.0011912812943992838
+avg SMAPE for time is 0.9952095382743348
+delta for the freq is 0.01147226742799839
+delta for the time is 0.9825610363726955
+Dataset: CreditReq
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.002229580892282855
+avg MAPE for time is 8.602151332765217
+avg SMAPE for freq is 0.0011121826250999622
+avg SMAPE for time is 0.617863771172814
+delta for the freq is 0.01147226742799839
+delta for the time is 0.9825610363726955

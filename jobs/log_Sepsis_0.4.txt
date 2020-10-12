@@ -1,0 +1,32 @@
+Dataset: Sepsis
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.021302773472076163
+avg MAPE for time is 0.049760723030304946
+avg SMAPE for freq is 0.009815770855660955
+avg SMAPE for time is 0.023204535736879875
+delta for the freq is 0.7440137844466425
+delta for the time is 0.16617178094069773
+Dataset: Sepsis
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.02423950346001781
+avg MAPE for time is 0.15444732698598196
+avg SMAPE for freq is 0.010837891104668481
+avg SMAPE for time is 0.06077176026449819
+delta for the freq is 0.7440137844466425
+delta for the time is 0.30651744035290085
+Dataset: Sepsis
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.02485177920515467
+avg MAPE for time is 240.93956086596137
+avg SMAPE for freq is 0.011162249253358847
+avg SMAPE for time is 0.5318255897273547
+delta for the freq is 0.7440137844466425
+delta for the time is 0.5
+Dataset: Sepsis
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.02252603680183725
+avg MAPE for time is 0.36653778622662647
+avg SMAPE for freq is 0.010428946764630988
+avg SMAPE for time is 0.12407357280615412
+delta for the freq is 0.7440137844466425
+delta for the time is 0.49944129533102977

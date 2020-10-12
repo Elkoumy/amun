@@ -1,0 +1,14 @@
+Dataset: Traffic
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.00020396414023832153
+avg MAPE for time is 0.0385502361200656
+avg SMAPE for freq is 0.00010193851388313904
+avg SMAPE for time is 0.017023446930587292
+delta for the freq is 0.00455233133029421
+delta for the time is 0.11763026135103072
+Dataset: Traffic
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.00024085017706331524
+avg MAPE for time is 0.0006705620928351137
+avg SMAPE for freq is 0.00012035541699402562
+avg SMAPE for time is 0.0003335500914837108

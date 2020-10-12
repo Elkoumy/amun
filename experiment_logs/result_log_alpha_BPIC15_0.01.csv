@@ -1,0 +1,5 @@
+dataset,aggregate_type,alpha,epsilon_freq,epsilon_time,delta_freq_median,delta_time_median,delta_freq_max,delta_time_max
+BPIC15,AggregateType.AVG,0.01,0.6325783222511114,0.006355508048103339,1.0,0.0,1.0,0.9968749999390514
+BPIC15,AggregateType.SUM,0.01,0.6325783222511114,1.0,1.0,0.0,1.0,0.996875
+BPIC15,AggregateType.MIN,0.01,0.6325783222511114,1.0,1.0,0.0,1.0,0.9933333333333333
+BPIC15,AggregateType.MAX,0.01,0.6325783222511114,1.0,1.0,0.0,1.0,0.996875

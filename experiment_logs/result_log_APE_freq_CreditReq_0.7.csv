@@ -1,0 +1,29 @@
+dataset,aggregate_type,delta,edge,APE_freq
+CreditReq,AggregateType.AVG,0.7,"('Register', 'Acceptance of requests')",1.471913452907818e-06
+CreditReq,AggregateType.AVG,0.7,"('Acceptance of requests', 'Collection of documents')",3.57803757345372e-05
+CreditReq,AggregateType.AVG,0.7,"('Collection of documents', 'Completeness check')",5.470724290286541e-05
+CreditReq,AggregateType.AVG,0.7,"('Completeness check', 'Credit worthiness check')",1.8025417636813307e-05
+CreditReq,AggregateType.AVG,0.7,"('Credit worthiness check', 'Collateral check')",1.359256482395419e-06
+CreditReq,AggregateType.AVG,0.7,"('Collateral check', 'Credit committee')",1.5897516807998676e-05
+CreditReq,AggregateType.AVG,0.7,"('Credit committee', 'Requirements review')",7.356734790975682e-06
+CreditReq,AggregateType.SUM,0.7,"('Register', 'Acceptance of requests')",8.551398368699253e-05
+CreditReq,AggregateType.SUM,0.7,"('Acceptance of requests', 'Collection of documents')",2.8254519537866254e-05
+CreditReq,AggregateType.SUM,0.7,"('Collection of documents', 'Completeness check')",2.6388953417929328e-05
+CreditReq,AggregateType.SUM,0.7,"('Completeness check', 'Credit worthiness check')",1.830655365454108e-05
+CreditReq,AggregateType.SUM,0.7,"('Credit worthiness check', 'Collateral check')",1.0308920383966363e-05
+CreditReq,AggregateType.SUM,0.7,"('Collateral check', 'Credit committee')",3.4649003198250614e-06
+CreditReq,AggregateType.SUM,0.7,"('Credit committee', 'Requirements review')",3.71407674651676e-05
+CreditReq,AggregateType.MIN,0.7,"('Register', 'Acceptance of requests')",7.344998055153413e-05
+CreditReq,AggregateType.MIN,0.7,"('Acceptance of requests', 'Collection of documents')",9.469375432866631e-06
+CreditReq,AggregateType.MIN,0.7,"('Collection of documents', 'Completeness check')",4.228268950475973e-05
+CreditReq,AggregateType.MIN,0.7,"('Completeness check', 'Credit worthiness check')",2.3383503127883746e-05
+CreditReq,AggregateType.MIN,0.7,"('Credit worthiness check', 'Collateral check')",3.7976992664716936e-05
+CreditReq,AggregateType.MIN,0.7,"('Collateral check', 'Credit committee')",4.3725813302299286e-05
+CreditReq,AggregateType.MIN,0.7,"('Credit committee', 'Requirements review')",7.273251197582638e-06
+CreditReq,AggregateType.MAX,0.7,"('Register', 'Acceptance of requests')",9.430734137106135e-05
+CreditReq,AggregateType.MAX,0.7,"('Acceptance of requests', 'Collection of documents')",2.439945968623974e-05
+CreditReq,AggregateType.MAX,0.7,"('Collection of documents', 'Completeness check')",0.00012317823419783687
+CreditReq,AggregateType.MAX,0.7,"('Completeness check', 'Credit worthiness check')",3.723481081028348e-05
+CreditReq,AggregateType.MAX,0.7,"('Credit worthiness check', 'Collateral check')",0.00012446988721326639
+CreditReq,AggregateType.MAX,0.7,"('Collateral check', 'Credit committee')",4.1225417052617165e-05
+CreditReq,AggregateType.MAX,0.7,"('Credit committee', 'Requirements review')",4.338663176875413e-05

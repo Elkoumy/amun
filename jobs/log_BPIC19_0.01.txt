@@ -1,0 +1,37 @@
+Dataset: BPIC19
+Aggregate Type: AggregateType.AVG
+Traceback (most recent call last):
+  File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3078, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'lifecycle:transition'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/hpc/home/elkoumy/amun/run_experiment_slurm.py", line 149, in <module>
+    run_experiment(data,parameter)
+  File "/gpfs/hpc/home/elkoumy/amun/run_experiment_slurm.py", line 53, in run_experiment
+    dfg_freq, dfg_time = read_xes(data_dir,dataset, aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 24, in read_xes
+    dfg_time =get_dfg_time(data,aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 50, in get_dfg_time
+    data=data.where(data["lifecycle:transition"]=="complete")
+  File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/frame.py", line 2688, in __getitem__
+    return self._getitem_column(key)
+  File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/frame.py", line 2695, in _getitem_column
+    return self._get_item_cache(key)
+  File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/generic.py", line 2489, in _get_item_cache
+    values = self._data.get(item)
+  File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/internals.py", line 4115, in get
+    loc = self.items.get_loc(item)
+  File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3080, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 140, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'lifecycle:transition'

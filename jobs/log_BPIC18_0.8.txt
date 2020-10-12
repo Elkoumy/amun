@@ -1,0 +1,5 @@
+Dataset: BPIC18
+Aggregate Type: AggregateType.AVG
+slurmstepd: error: Job 12718332 exceeded memory limit (15729468 > 15728640), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 12718332 ON ares11 CANCELLED AT 2020-10-11T19:08:20 ***

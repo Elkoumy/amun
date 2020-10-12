@@ -1,0 +1,30 @@
+Dataset: BPIC18
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.053934738234789184
+avg MAPE for time is 0.20475998873900259
+avg SMAPE for freq is 0.01966497006591147
+avg SMAPE for time is 0.07947286115971018
+delta for the freq is 0.9998000199980002
+delta for the time is 0.514130782067729
+Dataset: BPIC18
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.05552765229803972
+avg MAPE for time is 1.1072120006417798
+avg SMAPE for freq is 0.02062126724968514
+avg SMAPE for time is 0.21772088992386512
+delta for the freq is 0.9998000199980002
+delta for the time is 0.5999999999860705
+Dataset: BPIC18
+Aggregate Type: AggregateType.MIN
+Traceback (most recent call last):
+  File "/gpfs/hpc/home/elkoumy/amun/run_experiment_slurm.py", line 149, in <module>
+    run_experiment(data,parameter)
+  File "/gpfs/hpc/home/elkoumy/amun/run_experiment_slurm.py", line 53, in run_experiment
+    dfg_freq, dfg_time = read_xes(data_dir,dataset, aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 24, in read_xes
+    dfg_time =get_dfg_time(data,aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 111, in get_dfg_time
+    dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 134, in converting_time_unit
+    if int(log10(accurate_result))+1<=2:
+ValueError: math domain error

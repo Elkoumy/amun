@@ -1,0 +1,26 @@
+Dataset: BPIC17
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.00934232034178233
+avg MAPE for time is 1.6294911748336751
+avg SMAPE for freq is 0.004507777685274681
+avg SMAPE for time is 0.19088837711027326
+delta for the freq is 0.22627364030628608
+delta for the time is 0.9571964467190888
+Dataset: BPIC17
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.007116949471709095
+avg MAPE for time is 0.17265363964239505
+avg SMAPE for freq is 0.0034623973720928187
+avg SMAPE for time is 0.05724012379871428
+delta for the freq is 0.22627364030628608
+delta for the time is 0.014846228735468162
+Dataset: BPIC17
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.008765912258596756
+avg MAPE for time is 39772.37980688461
+avg SMAPE for freq is 0.004216553354164037
+avg SMAPE for time is 0.775140515172916
+delta for the freq is 0.22627364030628608
+delta for the time is 0.9636363636363636
+Dataset: BPIC17
+Aggregate Type: AggregateType.MAX
