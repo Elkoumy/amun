@@ -10,9 +10,12 @@ datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19"
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
 for data in datasets:
-    if data in ["Hospital", "Traffic", "BPIC17", "BPIC19", "BPIC18"]:
+    if data in ["BPIC19", "BPIC18"]:
+        memory = 32
+        exec_time="24-00"
+    elif data in [ "Traffic", "BPIC17"]:
         memory = 15
-        exec_time="8-00"
+        exec_time="16-00"
     else:
         memory = 4
         exec_time="1-00"
