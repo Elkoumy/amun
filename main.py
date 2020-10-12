@@ -9,16 +9,21 @@ jobs_dir = "jobs"
 datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
+""" A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
+              formats    include    "minutes",    "minutes:seconds",     "hours:minutes:seconds",
+              "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds".
+              """
+
 for data in datasets:
     if data in ["BPIC19", "BPIC18"]:
         memory = 32
-        exec_time="24-00"
+        exec_time="2-00" # 2 days
     elif data in [ "Traffic", "BPIC17"]:
         memory = 15
-        exec_time="16-00"
+        exec_time="16:00:00" # 16 hours
     else:
         memory = 4
-        exec_time="1-00"
+        exec_time="01:00:00" # 1 hor
     for parameter in parameters:
         job_name = os.path.join(jobs_dir,"job_%s_%s.sh" % (data, parameter))
         job_log_name =os.path.join(jobs_dir,"log_%s_%s.sh" % (data, parameter))
