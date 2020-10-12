@@ -110,13 +110,13 @@ def converting_time_unit(dfg_time, aggregate_type):
 
         # if for aggregate_type here
         if aggregate_type== AggregateType.AVG:
-            accurate_result= sum(dfg_time[x])*1.0 / len(dfg_time[x])
+            accurate_result= abs(sum(dfg_time[x])*1.0 / len(dfg_time[x]))
         elif aggregate_type== AggregateType.SUM:
-            accurate_result= sum(dfg_time[x])*1.0
+            accurate_result=  abs(sum(dfg_time[x])*1.0)
         elif aggregate_type== AggregateType.MIN:
-            accurate_result= min(dfg_time[x])*1.0
+            accurate_result=  abs(min(dfg_time[x])*1.0)
         elif aggregate_type== AggregateType.MAX:
-            accurate_result= max(dfg_time[x])*1.0
+            accurate_result= abs( max(dfg_time[x])*1.0)
 
         if not(accurate_result==0):
             if int(log10(accurate_result))+1<=2:
