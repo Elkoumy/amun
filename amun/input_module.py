@@ -47,7 +47,7 @@ def get_dfg_time(data,aggregate_type,dataset):
     """
 
     # taking only the complete event to avoid ambiuoutiy
-    if dataset != "BPIC13":
+    if dataset not in ["BPIC13","BPIC20"]:
         data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
         data=data.dropna(subset=['lifecycle:transition'])
     #moving first row to the last one
