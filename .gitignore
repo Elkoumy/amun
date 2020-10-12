@@ -21,3 +21,4 @@ experiment_figures/process_models/fig_input_delta_0.01_Sepsis Cases - Event Log_
 /data/Unrineweginfectie.csv
 /jobs/job_Sepsis_0.1.sh
 *.xes
+*.sh

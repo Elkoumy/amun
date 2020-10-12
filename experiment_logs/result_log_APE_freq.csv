@@ -1,705 +1,1409 @@
 dataset,aggregate_type,delta,edge,APE_freq
-Sepsis,AggregateType.AVG,0.01,"('Leucocytes', 'CRP')",0.03595909576397036
-Sepsis,AggregateType.AVG,0.01,"('ER Triage', 'ER Sepsis Triage')",0.004853920928421607
-Sepsis,AggregateType.AVG,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.04929486877701608
-Sepsis,AggregateType.AVG,0.01,"('IV Liquid', 'IV Antibiotics')",0.1058171862102963
-Sepsis,AggregateType.AVG,0.01,"('IV Antibiotics', 'Admission NC')",0.009312537189803752
-Sepsis,AggregateType.AVG,0.01,"('ER Registration', 'ER Triage')",0.014511758592687097
-Sepsis,AggregateType.AVG,0.01,"('LacticAcid', 'Leucocytes')",0.02245601178587098
-Sepsis,AggregateType.AVG,0.01,"('CRP', 'Release A')",0.02155603805455709
-Sepsis,AggregateType.AVG,0.01,"('Admission NC', 'Leucocytes')",0.06667669705504575
-Sepsis,AggregateType.AVG,0.01,"('Release A', 'Return ER')",0.1257533140535889
-Sepsis,AggregateType.AVG,0.01,"('Admission IC', 'LacticAcid')",0.5329338843384064
-Sepsis,AggregateType.AVG,0.01,"('CRP', 'Release B')",0.5894627507294246
-Sepsis,AggregateType.AVG,0.01,"('IV Antibiotics', 'Admission IC')",0.23110533114484394
-Sepsis,AggregateType.AVG,0.01,"('CRP', 'Release C')",5.054292755090116
-Sepsis,AggregateType.AVG,0.01,"('CRP', 'Release D')",2.888698333488684
-Sepsis,AggregateType.AVG,0.01,"('CRP', 'Release E')",4.468450188371072
-Sepsis,AggregateType.AVG,0.05,"('Leucocytes', 'CRP')",0.0008231292128259424
-Sepsis,AggregateType.AVG,0.05,"('ER Triage', 'ER Sepsis Triage')",0.003961624473526704
-Sepsis,AggregateType.AVG,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.004039059324673202
-Sepsis,AggregateType.AVG,0.05,"('IV Liquid', 'IV Antibiotics')",0.005135486108378801
-Sepsis,AggregateType.AVG,0.05,"('IV Antibiotics', 'Admission NC')",0.009328803495546245
-Sepsis,AggregateType.AVG,0.05,"('ER Registration', 'ER Triage')",0.005997739541461375
-Sepsis,AggregateType.AVG,0.05,"('LacticAcid', 'Leucocytes')",0.006284102693338902
-Sepsis,AggregateType.AVG,0.05,"('CRP', 'Release A')",0.000717542344950807
-Sepsis,AggregateType.AVG,0.05,"('Admission NC', 'Leucocytes')",0.018529059570468437
-Sepsis,AggregateType.AVG,0.05,"('Release A', 'Return ER')",0.011573193243449964
-Sepsis,AggregateType.AVG,0.05,"('Admission IC', 'LacticAcid')",0.11840689283012955
-Sepsis,AggregateType.AVG,0.05,"('CRP', 'Release B')",0.22268914508382515
-Sepsis,AggregateType.AVG,0.05,"('IV Antibiotics', 'Admission IC')",0.11201287874922781
-Sepsis,AggregateType.AVG,0.05,"('CRP', 'Release C')",0.5407154338187834
-Sepsis,AggregateType.AVG,0.05,"('CRP', 'Release D')",0.4016189499253488
-Sepsis,AggregateType.AVG,0.05,"('CRP', 'Release E')",1.2089165817478964
-Sepsis,AggregateType.AVG,0.1,"('Leucocytes', 'CRP')",0.0028316869386781833
-Sepsis,AggregateType.AVG,0.1,"('ER Triage', 'ER Sepsis Triage')",0.0006191483568355725
-Sepsis,AggregateType.AVG,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.0014289254575760822
-Sepsis,AggregateType.AVG,0.1,"('IV Liquid', 'IV Antibiotics')",8.869448361373925e-05
-Sepsis,AggregateType.AVG,0.1,"('IV Antibiotics', 'Admission NC')",0.0015292171485826835
-Sepsis,AggregateType.AVG,0.1,"('ER Registration', 'ER Triage')",0.00420711520674801
-Sepsis,AggregateType.AVG,0.1,"('LacticAcid', 'Leucocytes')",0.0018898514076140479
-Sepsis,AggregateType.AVG,0.1,"('CRP', 'Release A')",0.010551133703063867
-Sepsis,AggregateType.AVG,0.1,"('Admission NC', 'Leucocytes')",0.004493401509473592
-Sepsis,AggregateType.AVG,0.1,"('Release A', 'Return ER')",0.002839755258361018
-Sepsis,AggregateType.AVG,0.1,"('Admission IC', 'LacticAcid')",0.007606546844706386
-Sepsis,AggregateType.AVG,0.1,"('CRP', 'Release B')",0.041125660437647434
-Sepsis,AggregateType.AVG,0.1,"('IV Antibiotics', 'Admission IC')",0.05798383436516112
-Sepsis,AggregateType.AVG,0.1,"('CRP', 'Release C')",0.021211474187909064
-Sepsis,AggregateType.AVG,0.1,"('CRP', 'Release D')",0.18415813502938416
-Sepsis,AggregateType.AVG,0.1,"('CRP', 'Release E')",0.21377977085645186
-Sepsis,AggregateType.AVG,0.2,"('Leucocytes', 'CRP')",0.0010183629004338346
-Sepsis,AggregateType.AVG,0.2,"('ER Triage', 'ER Sepsis Triage')",0.0007728509746059583
-Sepsis,AggregateType.AVG,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.003226905085112345
-Sepsis,AggregateType.AVG,0.2,"('IV Liquid', 'IV Antibiotics')",0.00044787322901627616
-Sepsis,AggregateType.AVG,0.2,"('IV Antibiotics', 'Admission NC')",0.004951892503239877
-Sepsis,AggregateType.AVG,0.2,"('ER Registration', 'ER Triage')",0.0006600490222172739
-Sepsis,AggregateType.AVG,0.2,"('LacticAcid', 'Leucocytes')",4.364209664457934e-07
-Sepsis,AggregateType.AVG,0.2,"('CRP', 'Release A')",0.0027388726407556042
-Sepsis,AggregateType.AVG,0.2,"('Admission NC', 'Leucocytes')",0.0035032792001293465
-Sepsis,AggregateType.AVG,0.2,"('Release A', 'Return ER')",0.000997224431391698
-Sepsis,AggregateType.AVG,0.2,"('Admission IC', 'LacticAcid')",0.022455504085034137
-Sepsis,AggregateType.AVG,0.2,"('CRP', 'Release B')",0.05815904766321087
-Sepsis,AggregateType.AVG,0.2,"('IV Antibiotics', 'Admission IC')",0.0030508714560229353
-Sepsis,AggregateType.AVG,0.2,"('CRP', 'Release C')",0.10016022535336074
-Sepsis,AggregateType.AVG,0.2,"('CRP', 'Release D')",0.43703263919588764
-Sepsis,AggregateType.AVG,0.2,"('CRP', 'Release E')",1.3985888205908346
-Sepsis,AggregateType.AVG,0.3,"('Leucocytes', 'CRP')",0.000983833287354075
-Sepsis,AggregateType.AVG,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0004940641496766514
-Sepsis,AggregateType.AVG,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.005973416132238534
-Sepsis,AggregateType.AVG,0.3,"('IV Liquid', 'IV Antibiotics')",0.003187799258623391
-Sepsis,AggregateType.AVG,0.3,"('IV Antibiotics', 'Admission NC')",0.003524636974385497
-Sepsis,AggregateType.AVG,0.3,"('ER Registration', 'ER Triage')",0.0020659636386636004
-Sepsis,AggregateType.AVG,0.3,"('LacticAcid', 'Leucocytes')",0.006470064438644035
-Sepsis,AggregateType.AVG,0.3,"('CRP', 'Release A')",0.00031080319861507774
-Sepsis,AggregateType.AVG,0.3,"('Admission NC', 'Leucocytes')",0.0005905802916724472
-Sepsis,AggregateType.AVG,0.3,"('Release A', 'Return ER')",0.007032692486239431
-Sepsis,AggregateType.AVG,0.3,"('Admission IC', 'LacticAcid')",0.011712028880675211
-Sepsis,AggregateType.AVG,0.3,"('CRP', 'Release B')",0.044735197865244054
-Sepsis,AggregateType.AVG,0.3,"('IV Antibiotics', 'Admission IC')",0.01971154500306196
-Sepsis,AggregateType.AVG,0.3,"('CRP', 'Release C')",0.14867980436532974
-Sepsis,AggregateType.AVG,0.3,"('CRP', 'Release D')",0.047097689809652156
-Sepsis,AggregateType.AVG,0.3,"('CRP', 'Release E')",0.13684857200022105
-Sepsis,AggregateType.AVG,0.4,"('Leucocytes', 'CRP')",6.765752108668536e-05
-Sepsis,AggregateType.AVG,0.4,"('ER Triage', 'ER Sepsis Triage')",0.0008441324789590863
-Sepsis,AggregateType.AVG,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.001982107568069455
-Sepsis,AggregateType.AVG,0.4,"('IV Liquid', 'IV Antibiotics')",0.0007474319589080491
-Sepsis,AggregateType.AVG,0.4,"('IV Antibiotics', 'Admission NC')",0.00037544759630572225
-Sepsis,AggregateType.AVG,0.4,"('ER Registration', 'ER Triage')",3.437250185984232e-05
-Sepsis,AggregateType.AVG,0.4,"('LacticAcid', 'Leucocytes')",0.0003453448172546967
-Sepsis,AggregateType.AVG,0.4,"('CRP', 'Release A')",0.0019080531847845102
-Sepsis,AggregateType.AVG,0.4,"('Admission NC', 'Leucocytes')",0.0012510305207987815
-Sepsis,AggregateType.AVG,0.4,"('Release A', 'Return ER')",0.0019003328215238737
-Sepsis,AggregateType.AVG,0.4,"('Admission IC', 'LacticAcid')",0.0017556707308948032
-Sepsis,AggregateType.AVG,0.4,"('CRP', 'Release B')",0.04179977229533543
-Sepsis,AggregateType.AVG,0.4,"('IV Antibiotics', 'Admission IC')",0.0033277452318775827
-Sepsis,AggregateType.AVG,0.4,"('CRP', 'Release C')",0.009306006035598759
-Sepsis,AggregateType.AVG,0.4,"('CRP', 'Release D')",0.13812524044554322
-Sepsis,AggregateType.AVG,0.4,"('CRP', 'Release E')",0.01758759680211656
-Sepsis,AggregateType.AVG,0.5,"('Leucocytes', 'CRP')",5.5471067880757796e-05
-Sepsis,AggregateType.AVG,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0009937405839222898
-Sepsis,AggregateType.AVG,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.0013392120772756132
-Sepsis,AggregateType.AVG,0.5,"('IV Liquid', 'IV Antibiotics')",0.0014583911091936605
-Sepsis,AggregateType.AVG,0.5,"('IV Antibiotics', 'Admission NC')",0.002055787646633842
-Sepsis,AggregateType.AVG,0.5,"('ER Registration', 'ER Triage')",0.00012837281384520864
-Sepsis,AggregateType.AVG,0.5,"('LacticAcid', 'Leucocytes')",0.0020623353393274904
-Sepsis,AggregateType.AVG,0.5,"('CRP', 'Release A')",0.000362864288318232
-Sepsis,AggregateType.AVG,0.5,"('Admission NC', 'Leucocytes')",0.0011647628193098096
-Sepsis,AggregateType.AVG,0.5,"('Release A', 'Return ER')",0.0033774657964512735
-Sepsis,AggregateType.AVG,0.5,"('Admission IC', 'LacticAcid')",0.01635764497311468
-Sepsis,AggregateType.AVG,0.5,"('CRP', 'Release B')",0.0342037185811155
-Sepsis,AggregateType.AVG,0.5,"('IV Antibiotics', 'Admission IC')",0.004281134736946265
-Sepsis,AggregateType.AVG,0.5,"('CRP', 'Release C')",0.08908851323863942
-Sepsis,AggregateType.AVG,0.5,"('CRP', 'Release D')",0.0679689728276105
-Sepsis,AggregateType.AVG,0.5,"('CRP', 'Release E')",0.3495135579461592
-Sepsis,AggregateType.AVG,0.6,"('Leucocytes', 'CRP')",0.00015289876810835407
-Sepsis,AggregateType.AVG,0.6,"('ER Triage', 'ER Sepsis Triage')",0.0002738971802432765
-Sepsis,AggregateType.AVG,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.00012006326744639999
-Sepsis,AggregateType.AVG,0.6,"('IV Liquid', 'IV Antibiotics')",0.00034626666811715304
-Sepsis,AggregateType.AVG,0.6,"('IV Antibiotics', 'Admission NC')",0.0016083925594635863
-Sepsis,AggregateType.AVG,0.6,"('ER Registration', 'ER Triage')",0.0011358629784495883
-Sepsis,AggregateType.AVG,0.6,"('LacticAcid', 'Leucocytes')",0.0004596274257169855
-Sepsis,AggregateType.AVG,0.6,"('CRP', 'Release A')",0.0016871643834229782
-Sepsis,AggregateType.AVG,0.6,"('Admission NC', 'Leucocytes')",0.0012548390499657995
-Sepsis,AggregateType.AVG,0.6,"('Release A', 'Return ER')",0.0009084345945324956
-Sepsis,AggregateType.AVG,0.6,"('Admission IC', 'LacticAcid')",0.003267949424524929
-Sepsis,AggregateType.AVG,0.6,"('CRP', 'Release B')",0.010798014849390188
-Sepsis,AggregateType.AVG,0.6,"('IV Antibiotics', 'Admission IC')",0.0010363568174045297
-Sepsis,AggregateType.AVG,0.6,"('CRP', 'Release C')",0.008747726616994154
-Sepsis,AggregateType.AVG,0.6,"('CRP', 'Release D')",0.019345720234167658
-Sepsis,AggregateType.AVG,0.6,"('CRP', 'Release E')",0.019730170101225426
-Sepsis,AggregateType.AVG,0.7,"('Leucocytes', 'CRP')",8.134591415105988e-05
-Sepsis,AggregateType.AVG,0.7,"('ER Triage', 'ER Sepsis Triage')",0.0001960834189590336
-Sepsis,AggregateType.AVG,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.0004283835059268632
-Sepsis,AggregateType.AVG,0.7,"('IV Liquid', 'IV Antibiotics')",0.0006613540231274917
-Sepsis,AggregateType.AVG,0.7,"('IV Antibiotics', 'Admission NC')",0.0004350241204726671
-Sepsis,AggregateType.AVG,0.7,"('ER Registration', 'ER Triage')",0.0005599128954716164
-Sepsis,AggregateType.AVG,0.7,"('LacticAcid', 'Leucocytes')",0.001009872036080454
-Sepsis,AggregateType.AVG,0.7,"('CRP', 'Release A')",7.97176380358352e-05
-Sepsis,AggregateType.AVG,0.7,"('Admission NC', 'Leucocytes')",0.0005552729181077302
-Sepsis,AggregateType.AVG,0.7,"('Release A', 'Return ER')",0.0005806930018800638
-Sepsis,AggregateType.AVG,0.7,"('Admission IC', 'LacticAcid')",0.00611891158860696
-Sepsis,AggregateType.AVG,0.7,"('CRP', 'Release B')",0.02633737443821061
-Sepsis,AggregateType.AVG,0.7,"('IV Antibiotics', 'Admission IC')",0.018626119692802513
-Sepsis,AggregateType.AVG,0.7,"('CRP', 'Release C')",0.01168728870651738
-Sepsis,AggregateType.AVG,0.7,"('CRP', 'Release D')",0.015269582882256957
-Sepsis,AggregateType.AVG,0.7,"('CRP', 'Release E')",0.11280432604481039
-Sepsis,AggregateType.AVG,0.8,"('Leucocytes', 'CRP')",0.00011454537212561206
-Sepsis,AggregateType.AVG,0.8,"('ER Triage', 'ER Sepsis Triage')",0.0006316878372359567
-Sepsis,AggregateType.AVG,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.00046366473107239297
-Sepsis,AggregateType.AVG,0.8,"('IV Liquid', 'IV Antibiotics')",0.0003054198821795392
-Sepsis,AggregateType.AVG,0.8,"('IV Antibiotics', 'Admission NC')",0.0011777326158975148
-Sepsis,AggregateType.AVG,0.8,"('ER Registration', 'ER Triage')",0.0003636640719594092
-Sepsis,AggregateType.AVG,0.8,"('LacticAcid', 'Leucocytes')",0.00029094759288012277
-Sepsis,AggregateType.AVG,0.8,"('CRP', 'Release A')",0.0006765343260135863
-Sepsis,AggregateType.AVG,0.8,"('Admission NC', 'Leucocytes')",0.001412700598181525
-Sepsis,AggregateType.AVG,0.8,"('Release A', 'Return ER')",0.0012960496365458905
-Sepsis,AggregateType.AVG,0.8,"('Admission IC', 'LacticAcid')",0.0008876352971539036
-Sepsis,AggregateType.AVG,0.8,"('CRP', 'Release B')",0.013284128761363726
-Sepsis,AggregateType.AVG,0.8,"('IV Antibiotics', 'Admission IC')",0.0031148499310010027
-Sepsis,AggregateType.AVG,0.8,"('CRP', 'Release C')",0.03965289545964705
-Sepsis,AggregateType.AVG,0.8,"('CRP', 'Release D')",0.008901326275346566
-Sepsis,AggregateType.AVG,0.8,"('CRP', 'Release E')",0.06338939538403994
-Sepsis,AggregateType.AVG,0.9,"('Leucocytes', 'CRP')",3.076074333354776e-05
-Sepsis,AggregateType.AVG,0.9,"('ER Triage', 'ER Sepsis Triage')",3.174222685041596e-05
-Sepsis,AggregateType.AVG,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.0002278984639424539
-Sepsis,AggregateType.AVG,0.9,"('IV Liquid', 'IV Antibiotics')",0.0005251836144287257
-Sepsis,AggregateType.AVG,0.9,"('IV Antibiotics', 'Admission NC')",0.0012041865093224185
-Sepsis,AggregateType.AVG,0.9,"('ER Registration', 'ER Triage')",0.0003173113262638121
-Sepsis,AggregateType.AVG,0.9,"('LacticAcid', 'Leucocytes')",0.0007015851464077253
-Sepsis,AggregateType.AVG,0.9,"('CRP', 'Release A')",0.0017248584362343723
-Sepsis,AggregateType.AVG,0.9,"('Admission NC', 'Leucocytes')",0.00034444227227156405
-Sepsis,AggregateType.AVG,0.9,"('Release A', 'Return ER')",0.0010197839909679167
-Sepsis,AggregateType.AVG,0.9,"('Admission IC', 'LacticAcid')",0.006581576427993345
-Sepsis,AggregateType.AVG,0.9,"('CRP', 'Release B')",0.006028820740785116
-Sepsis,AggregateType.AVG,0.9,"('IV Antibiotics', 'Admission IC')",0.0030242845391416904
-Sepsis,AggregateType.AVG,0.9,"('CRP', 'Release C')",0.015120482919843999
-Sepsis,AggregateType.AVG,0.9,"('CRP', 'Release D')",0.08615454505812285
-Sepsis,AggregateType.AVG,0.9,"('CRP', 'Release E')",0.0603631904603786
-Sepsis,AggregateType.SUM,0.01,"('Leucocytes', 'CRP')",0.01897625438842848
-Sepsis,AggregateType.SUM,0.01,"('ER Triage', 'ER Sepsis Triage')",0.06517005360672201
-Sepsis,AggregateType.SUM,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.25994905712476424
-Sepsis,AggregateType.SUM,0.01,"('IV Liquid', 'IV Antibiotics')",0.032051484902855594
-Sepsis,AggregateType.SUM,0.01,"('IV Antibiotics', 'Admission NC')",0.18078230494503758
-Sepsis,AggregateType.SUM,0.01,"('ER Registration', 'ER Triage')",0.07353623282168335
-Sepsis,AggregateType.SUM,0.01,"('LacticAcid', 'Leucocytes')",0.007491554451916176
-Sepsis,AggregateType.SUM,0.01,"('CRP', 'Release A')",0.033577480591792656
-Sepsis,AggregateType.SUM,0.01,"('Admission NC', 'Leucocytes')",0.08072015281798939
-Sepsis,AggregateType.SUM,0.01,"('Release A', 'Return ER')",0.005205243401689423
-Sepsis,AggregateType.SUM,0.01,"('Admission IC', 'LacticAcid')",0.04761036224020019
-Sepsis,AggregateType.SUM,0.01,"('CRP', 'Release B')",2.403414535082867
-Sepsis,AggregateType.SUM,0.01,"('IV Antibiotics', 'Admission IC')",0.47090174600818596
-Sepsis,AggregateType.SUM,0.01,"('CRP', 'Release C')",0.13502914427562823
-Sepsis,AggregateType.SUM,0.01,"('CRP', 'Release D')",3.462644253400986
-Sepsis,AggregateType.SUM,0.01,"('CRP', 'Release E')",12.448567662451353
-Sepsis,AggregateType.SUM,0.05,"('Leucocytes', 'CRP')",0.00010723042394272666
-Sepsis,AggregateType.SUM,0.05,"('ER Triage', 'ER Sepsis Triage')",0.004542052018287397
-Sepsis,AggregateType.SUM,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.023201694706989927
-Sepsis,AggregateType.SUM,0.05,"('IV Liquid', 'IV Antibiotics')",0.017527114204896378
-Sepsis,AggregateType.SUM,0.05,"('IV Antibiotics', 'Admission NC')",0.00061915116729615
-Sepsis,AggregateType.SUM,0.05,"('ER Registration', 'ER Triage')",0.005366001407056884
-Sepsis,AggregateType.SUM,0.05,"('LacticAcid', 'Leucocytes')",0.004311992450619523
-Sepsis,AggregateType.SUM,0.05,"('CRP', 'Release A')",0.04191468737712419
-Sepsis,AggregateType.SUM,0.05,"('Admission NC', 'Leucocytes')",0.01180643900232711
-Sepsis,AggregateType.SUM,0.05,"('Release A', 'Return ER')",0.02622859482025752
-Sepsis,AggregateType.SUM,0.05,"('Admission IC', 'LacticAcid')",0.011728141989192824
-Sepsis,AggregateType.SUM,0.05,"('CRP', 'Release B')",0.18816104713708365
-Sepsis,AggregateType.SUM,0.05,"('IV Antibiotics', 'Admission IC')",0.1923454912714817
-Sepsis,AggregateType.SUM,0.05,"('CRP', 'Release C')",0.03932425208972267
-Sepsis,AggregateType.SUM,0.05,"('CRP', 'Release D')",0.8023123718023774
-Sepsis,AggregateType.SUM,0.05,"('CRP', 'Release E')",0.011497658011569841
-Sepsis,AggregateType.SUM,0.1,"('Leucocytes', 'CRP')",0.0024479473513439004
-Sepsis,AggregateType.SUM,0.1,"('ER Triage', 'ER Sepsis Triage')",0.0008402676929927614
-Sepsis,AggregateType.SUM,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.008937700001386698
-Sepsis,AggregateType.SUM,0.1,"('IV Liquid', 'IV Antibiotics')",0.0030197115337434657
-Sepsis,AggregateType.SUM,0.1,"('IV Antibiotics', 'Admission NC')",0.013793400046486257
-Sepsis,AggregateType.SUM,0.1,"('ER Registration', 'ER Triage')",0.0030132320570857166
-Sepsis,AggregateType.SUM,0.1,"('LacticAcid', 'Leucocytes')",0.002483382511451433
-Sepsis,AggregateType.SUM,0.1,"('CRP', 'Release A')",0.015292317693650576
-Sepsis,AggregateType.SUM,0.1,"('Admission NC', 'Leucocytes')",0.0014177874049440722
-Sepsis,AggregateType.SUM,0.1,"('Release A', 'Return ER')",0.009905688287411205
-Sepsis,AggregateType.SUM,0.1,"('Admission IC', 'LacticAcid')",0.18740535410255785
-Sepsis,AggregateType.SUM,0.1,"('CRP', 'Release B')",0.17057919938928678
-Sepsis,AggregateType.SUM,0.1,"('IV Antibiotics', 'Admission IC')",0.053087856309842175
-Sepsis,AggregateType.SUM,0.1,"('CRP', 'Release C')",0.42002998517921597
-Sepsis,AggregateType.SUM,0.1,"('CRP', 'Release D')",0.08256808431273566
-Sepsis,AggregateType.SUM,0.1,"('CRP', 'Release E')",1.384292487727276
-Sepsis,AggregateType.SUM,0.2,"('Leucocytes', 'CRP')",0.0005603417449418127
-Sepsis,AggregateType.SUM,0.2,"('ER Triage', 'ER Sepsis Triage')",0.0011075478244826993
-Sepsis,AggregateType.SUM,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.00612197273503326
-Sepsis,AggregateType.SUM,0.2,"('IV Liquid', 'IV Antibiotics')",0.00698454070031179
-Sepsis,AggregateType.SUM,0.2,"('IV Antibiotics', 'Admission NC')",0.0020363682741859385
-Sepsis,AggregateType.SUM,0.2,"('ER Registration', 'ER Triage')",0.0010576528572552217
-Sepsis,AggregateType.SUM,0.2,"('LacticAcid', 'Leucocytes')",0.0020552635957090115
-Sepsis,AggregateType.SUM,0.2,"('CRP', 'Release A')",0.00037577102348321836
-Sepsis,AggregateType.SUM,0.2,"('Admission NC', 'Leucocytes')",0.00507605364332025
-Sepsis,AggregateType.SUM,0.2,"('Release A', 'Return ER')",0.003453690640469837
-Sepsis,AggregateType.SUM,0.2,"('Admission IC', 'LacticAcid')",0.0006687568640728614
-Sepsis,AggregateType.SUM,0.2,"('CRP', 'Release B')",0.04779458810893731
-Sepsis,AggregateType.SUM,0.2,"('IV Antibiotics', 'Admission IC')",0.041320196776550605
-Sepsis,AggregateType.SUM,0.2,"('CRP', 'Release C')",0.026552839220730134
-Sepsis,AggregateType.SUM,0.2,"('CRP', 'Release D')",0.07947915266179513
-Sepsis,AggregateType.SUM,0.2,"('CRP', 'Release E')",0.019969428852047482
-Sepsis,AggregateType.SUM,0.3,"('Leucocytes', 'CRP')",8.366217959669807e-05
-Sepsis,AggregateType.SUM,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0003604818014843674
-Sepsis,AggregateType.SUM,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.01028796905507418
-Sepsis,AggregateType.SUM,0.3,"('IV Liquid', 'IV Antibiotics')",0.0003100199542920578
-Sepsis,AggregateType.SUM,0.3,"('IV Antibiotics', 'Admission NC')",0.0021704546730489647
-Sepsis,AggregateType.SUM,0.3,"('ER Registration', 'ER Triage')",3.505331594462721e-06
-Sepsis,AggregateType.SUM,0.3,"('LacticAcid', 'Leucocytes')",0.00047913898569904874
-Sepsis,AggregateType.SUM,0.3,"('CRP', 'Release A')",0.0036999246434895076
-Sepsis,AggregateType.SUM,0.3,"('Admission NC', 'Leucocytes')",0.0022430990585651975
-Sepsis,AggregateType.SUM,0.3,"('Release A', 'Return ER')",0.0008683248072417348
-Sepsis,AggregateType.SUM,0.3,"('Admission IC', 'LacticAcid')",0.006207120519252835
-Sepsis,AggregateType.SUM,0.3,"('CRP', 'Release B')",0.013593184638558293
-Sepsis,AggregateType.SUM,0.3,"('IV Antibiotics', 'Admission IC')",0.00889066525543322
-Sepsis,AggregateType.SUM,0.3,"('CRP', 'Release C')",0.05968180539318542
-Sepsis,AggregateType.SUM,0.3,"('CRP', 'Release D')",0.035740558126950685
-Sepsis,AggregateType.SUM,0.3,"('CRP', 'Release E')",0.036073908578144
-Sepsis,AggregateType.SUM,0.4,"('Leucocytes', 'CRP')",0.001445023019466469
-Sepsis,AggregateType.SUM,0.4,"('ER Triage', 'ER Sepsis Triage')",0.0009042016125843761
-Sepsis,AggregateType.SUM,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.0011717129828697213
-Sepsis,AggregateType.SUM,0.4,"('IV Liquid', 'IV Antibiotics')",0.0007372699942321222
-Sepsis,AggregateType.SUM,0.4,"('IV Antibiotics', 'Admission NC')",0.00023879204746413935
-Sepsis,AggregateType.SUM,0.4,"('ER Registration', 'ER Triage')",0.0013576746298968453
-Sepsis,AggregateType.SUM,0.4,"('LacticAcid', 'Leucocytes')",0.002353944261310376
-Sepsis,AggregateType.SUM,0.4,"('CRP', 'Release A')",0.0009172845604550532
-Sepsis,AggregateType.SUM,0.4,"('Admission NC', 'Leucocytes')",0.002890052624090038
-Sepsis,AggregateType.SUM,0.4,"('Release A', 'Return ER')",0.00017638721858841637
-Sepsis,AggregateType.SUM,0.4,"('Admission IC', 'LacticAcid')",0.015063560841273037
-Sepsis,AggregateType.SUM,0.4,"('CRP', 'Release B')",0.03153346158477327
-Sepsis,AggregateType.SUM,0.4,"('IV Antibiotics', 'Admission IC')",0.020458363187866205
-Sepsis,AggregateType.SUM,0.4,"('CRP', 'Release C')",0.020682432119142044
-Sepsis,AggregateType.SUM,0.4,"('CRP', 'Release D')",0.004485013310408921
-Sepsis,AggregateType.SUM,0.4,"('CRP', 'Release E')",0.0015008182165715904
-Sepsis,AggregateType.SUM,0.5,"('Leucocytes', 'CRP')",0.00014855367294023874
-Sepsis,AggregateType.SUM,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0004605789936331147
-Sepsis,AggregateType.SUM,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.0021532479616052625
-Sepsis,AggregateType.SUM,0.5,"('IV Liquid', 'IV Antibiotics')",0.0013257112732235636
-Sepsis,AggregateType.SUM,0.5,"('IV Antibiotics', 'Admission NC')",0.0007891730695347961
-Sepsis,AggregateType.SUM,0.5,"('ER Registration', 'ER Triage')",0.0007789394776982141
-Sepsis,AggregateType.SUM,0.5,"('LacticAcid', 'Leucocytes')",0.00015167071984669908
-Sepsis,AggregateType.SUM,0.5,"('CRP', 'Release A')",0.0015188859387940522
-Sepsis,AggregateType.SUM,0.5,"('Admission NC', 'Leucocytes')",0.003863524959182253
-Sepsis,AggregateType.SUM,0.5,"('Release A', 'Return ER')",0.0006251143265144756
-Sepsis,AggregateType.SUM,0.5,"('Admission IC', 'LacticAcid')",0.004608277775033906
-Sepsis,AggregateType.SUM,0.5,"('CRP', 'Release B')",0.01595729276696738
-Sepsis,AggregateType.SUM,0.5,"('IV Antibiotics', 'Admission IC')",0.001324874337684395
-Sepsis,AggregateType.SUM,0.5,"('CRP', 'Release C')",0.11742902016806547
-Sepsis,AggregateType.SUM,0.5,"('CRP', 'Release D')",0.007475442514605746
-Sepsis,AggregateType.SUM,0.5,"('CRP', 'Release E')",0.14215898085732492
-Sepsis,AggregateType.SUM,0.6,"('Leucocytes', 'CRP')",0.0003286864040041912
-Sepsis,AggregateType.SUM,0.6,"('ER Triage', 'ER Sepsis Triage')",0.00011834557691278323
-Sepsis,AggregateType.SUM,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.0001387437042287849
-Sepsis,AggregateType.SUM,0.6,"('IV Liquid', 'IV Antibiotics')",0.0010641836732475892
-Sepsis,AggregateType.SUM,0.6,"('IV Antibiotics', 'Admission NC')",0.0009286078198568282
-Sepsis,AggregateType.SUM,0.6,"('ER Registration', 'ER Triage')",7.041967274631485e-07
-Sepsis,AggregateType.SUM,0.6,"('LacticAcid', 'Leucocytes')",0.0009807918718062897
-Sepsis,AggregateType.SUM,0.6,"('CRP', 'Release A')",0.0020774131683921927
-Sepsis,AggregateType.SUM,0.6,"('Admission NC', 'Leucocytes')",1.1984596237034433e-05
-Sepsis,AggregateType.SUM,0.6,"('Release A', 'Return ER')",0.002385239962044896
-Sepsis,AggregateType.SUM,0.6,"('Admission IC', 'LacticAcid')",0.013471858504228
-Sepsis,AggregateType.SUM,0.6,"('CRP', 'Release B')",0.00021305658278579717
-Sepsis,AggregateType.SUM,0.6,"('IV Antibiotics', 'Admission IC')",0.005101654216237467
-Sepsis,AggregateType.SUM,0.6,"('CRP', 'Release C')",0.009541476188883936
-Sepsis,AggregateType.SUM,0.6,"('CRP', 'Release D')",0.003262395592086964
-Sepsis,AggregateType.SUM,0.6,"('CRP', 'Release E')",0.12835210857565427
-Sepsis,AggregateType.SUM,0.7,"('Leucocytes', 'CRP')",0.0001342058843181975
-Sepsis,AggregateType.SUM,0.7,"('ER Triage', 'ER Sepsis Triage')",0.00032730045843047103
-Sepsis,AggregateType.SUM,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.00019079992884216105
-Sepsis,AggregateType.SUM,0.7,"('IV Liquid', 'IV Antibiotics')",0.001993689346068685
-Sepsis,AggregateType.SUM,0.7,"('IV Antibiotics', 'Admission NC')",0.0003293303732155591
-Sepsis,AggregateType.SUM,0.7,"('ER Registration', 'ER Triage')",0.0006889871627106447
-Sepsis,AggregateType.SUM,0.7,"('LacticAcid', 'Leucocytes')",0.0003396981828267905
-Sepsis,AggregateType.SUM,0.7,"('CRP', 'Release A')",0.00012189149831393869
-Sepsis,AggregateType.SUM,0.7,"('Admission NC', 'Leucocytes')",0.00032698460573429573
-Sepsis,AggregateType.SUM,0.7,"('Release A', 'Return ER')",0.0001119628388573307
-Sepsis,AggregateType.SUM,0.7,"('Admission IC', 'LacticAcid')",0.012602847532108524
-Sepsis,AggregateType.SUM,0.7,"('CRP', 'Release B')",0.004339063287573976
-Sepsis,AggregateType.SUM,0.7,"('IV Antibiotics', 'Admission IC')",0.010331640925300218
-Sepsis,AggregateType.SUM,0.7,"('CRP', 'Release C')",0.007522279633357916
-Sepsis,AggregateType.SUM,0.7,"('CRP', 'Release D')",0.031038641064515076
-Sepsis,AggregateType.SUM,0.7,"('CRP', 'Release E')",0.4094997453054002
-Sepsis,AggregateType.SUM,0.8,"('Leucocytes', 'CRP')",5.29216083965403e-05
-Sepsis,AggregateType.SUM,0.8,"('ER Triage', 'ER Sepsis Triage')",0.0006694155368800565
-Sepsis,AggregateType.SUM,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.0002802149989398666
-Sepsis,AggregateType.SUM,0.8,"('IV Liquid', 'IV Antibiotics')",0.0011755047460239726
-Sepsis,AggregateType.SUM,0.8,"('IV Antibiotics', 'Admission NC')",0.00038631096043382487
-Sepsis,AggregateType.SUM,0.8,"('ER Registration', 'ER Triage')",0.0003399075738902711
-Sepsis,AggregateType.SUM,0.8,"('LacticAcid', 'Leucocytes')",0.00010952862233883998
-Sepsis,AggregateType.SUM,0.8,"('CRP', 'Release A')",0.0009401185086767893
-Sepsis,AggregateType.SUM,0.8,"('Admission NC', 'Leucocytes')",0.0001723534336967842
-Sepsis,AggregateType.SUM,0.8,"('Release A', 'Return ER')",0.00021206097102651546
-Sepsis,AggregateType.SUM,0.8,"('Admission IC', 'LacticAcid')",0.026279486399138678
-Sepsis,AggregateType.SUM,0.8,"('CRP', 'Release B')",0.010697140536425377
-Sepsis,AggregateType.SUM,0.8,"('IV Antibiotics', 'Admission IC')",0.007243790276400613
-Sepsis,AggregateType.SUM,0.8,"('CRP', 'Release C')",0.01261006247152516
-Sepsis,AggregateType.SUM,0.8,"('CRP', 'Release D')",0.06517529996683209
-Sepsis,AggregateType.SUM,0.8,"('CRP', 'Release E')",0.09716103996186387
-Sepsis,AggregateType.SUM,0.9,"('Leucocytes', 'CRP')",5.5836737546577576e-05
-Sepsis,AggregateType.SUM,0.9,"('ER Triage', 'ER Sepsis Triage')",0.0006274018619417184
-Sepsis,AggregateType.SUM,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.0008164416440813351
-Sepsis,AggregateType.SUM,0.9,"('IV Liquid', 'IV Antibiotics')",0.00013772491023895846
-Sepsis,AggregateType.SUM,0.9,"('IV Antibiotics', 'Admission NC')",0.0002987392875348848
-Sepsis,AggregateType.SUM,0.9,"('ER Registration', 'ER Triage')",0.00014732908175246436
-Sepsis,AggregateType.SUM,0.9,"('LacticAcid', 'Leucocytes')",0.0004051688058993489
-Sepsis,AggregateType.SUM,0.9,"('CRP', 'Release A')",0.0004146998449141322
-Sepsis,AggregateType.SUM,0.9,"('Admission NC', 'Leucocytes')",0.0005175743920308021
-Sepsis,AggregateType.SUM,0.9,"('Release A', 'Return ER')",0.00039072073631778994
-Sepsis,AggregateType.SUM,0.9,"('Admission IC', 'LacticAcid')",0.007673936660765608
-Sepsis,AggregateType.SUM,0.9,"('CRP', 'Release B')",0.025084988819484153
-Sepsis,AggregateType.SUM,0.9,"('IV Antibiotics', 'Admission IC')",0.002509910397363243
-Sepsis,AggregateType.SUM,0.9,"('CRP', 'Release C')",0.0036178822373858456
-Sepsis,AggregateType.SUM,0.9,"('CRP', 'Release D')",0.010200919482906615
-Sepsis,AggregateType.SUM,0.9,"('CRP', 'Release E')",0.06087014695605456
-Sepsis,AggregateType.MIN,0.01,"('Leucocytes', 'CRP')",0.03409304656939277
-Sepsis,AggregateType.MIN,0.01,"('ER Triage', 'ER Sepsis Triage')",0.0026317199954448965
-Sepsis,AggregateType.MIN,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.026335993380552192
-Sepsis,AggregateType.MIN,0.01,"('IV Liquid', 'IV Antibiotics')",0.0001893722417940706
-Sepsis,AggregateType.MIN,0.01,"('IV Antibiotics', 'Admission NC')",0.05084758607886503
-Sepsis,AggregateType.MIN,0.01,"('ER Registration', 'ER Triage')",0.04659966634827928
-Sepsis,AggregateType.MIN,0.01,"('LacticAcid', 'Leucocytes')",0.09375493968236395
-Sepsis,AggregateType.MIN,0.01,"('CRP', 'Release A')",0.19366735846894187
-Sepsis,AggregateType.MIN,0.01,"('Admission NC', 'Leucocytes')",0.04393334951533726
-Sepsis,AggregateType.MIN,0.01,"('Release A', 'Return ER')",0.0005512567976374062
-Sepsis,AggregateType.MIN,0.01,"('Admission IC', 'LacticAcid')",0.7142334345282636
-Sepsis,AggregateType.MIN,0.01,"('CRP', 'Release B')",0.7333350296123263
-Sepsis,AggregateType.MIN,0.01,"('IV Antibiotics', 'Admission IC')",2.753396736387135
-Sepsis,AggregateType.MIN,0.01,"('CRP', 'Release C')",0.8035674952588246
-Sepsis,AggregateType.MIN,0.01,"('CRP', 'Release D')",4.775793155155891
-Sepsis,AggregateType.MIN,0.01,"('CRP', 'Release E')",1.133839443774187
-Sepsis,AggregateType.MIN,0.05,"('Leucocytes', 'CRP')",0.002858201451463951
-Sepsis,AggregateType.MIN,0.05,"('ER Triage', 'ER Sepsis Triage')",0.0031344312212440504
-Sepsis,AggregateType.MIN,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.010387207089037905
-Sepsis,AggregateType.MIN,0.05,"('IV Liquid', 'IV Antibiotics')",0.000526193672785435
-Sepsis,AggregateType.MIN,0.05,"('IV Antibiotics', 'Admission NC')",0.0002030552424658115
-Sepsis,AggregateType.MIN,0.05,"('ER Registration', 'ER Triage')",0.009090096172197082
-Sepsis,AggregateType.MIN,0.05,"('LacticAcid', 'Leucocytes')",0.0003366853801170957
-Sepsis,AggregateType.MIN,0.05,"('CRP', 'Release A')",0.032010148381738934
-Sepsis,AggregateType.MIN,0.05,"('Admission NC', 'Leucocytes')",0.00935496489329403
-Sepsis,AggregateType.MIN,0.05,"('Release A', 'Return ER')",0.0014412673540430683
-Sepsis,AggregateType.MIN,0.05,"('Admission IC', 'LacticAcid')",0.048338347758319376
-Sepsis,AggregateType.MIN,0.05,"('CRP', 'Release B')",0.14840781960389818
-Sepsis,AggregateType.MIN,0.05,"('IV Antibiotics', 'Admission IC')",0.15219020648280707
-Sepsis,AggregateType.MIN,0.05,"('CRP', 'Release C')",0.021358652853485465
-Sepsis,AggregateType.MIN,0.05,"('CRP', 'Release D')",0.11274818854145933
-Sepsis,AggregateType.MIN,0.05,"('CRP', 'Release E')",0.19459067781779296
-Sepsis,AggregateType.MIN,0.1,"('Leucocytes', 'CRP')",0.0003865600500798909
-Sepsis,AggregateType.MIN,0.1,"('ER Triage', 'ER Sepsis Triage')",0.002509768566908192
-Sepsis,AggregateType.MIN,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.012674564358380729
-Sepsis,AggregateType.MIN,0.1,"('IV Liquid', 'IV Antibiotics')",0.008426570079635296
-Sepsis,AggregateType.MIN,0.1,"('IV Antibiotics', 'Admission NC')",0.012818692413420468
-Sepsis,AggregateType.MIN,0.1,"('ER Registration', 'ER Triage')",0.0019619982688388296
-Sepsis,AggregateType.MIN,0.1,"('LacticAcid', 'Leucocytes')",0.0050578814761989485
-Sepsis,AggregateType.MIN,0.1,"('CRP', 'Release A')",0.004248012062842418
-Sepsis,AggregateType.MIN,0.1,"('Admission NC', 'Leucocytes')",0.0072026649272461
-Sepsis,AggregateType.MIN,0.1,"('Release A', 'Return ER')",0.002815162872409111
-Sepsis,AggregateType.MIN,0.1,"('Admission IC', 'LacticAcid')",0.029459888895475357
-Sepsis,AggregateType.MIN,0.1,"('CRP', 'Release B')",0.09180451353662035
-Sepsis,AggregateType.MIN,0.1,"('IV Antibiotics', 'Admission IC')",0.059577357939640085
-Sepsis,AggregateType.MIN,0.1,"('CRP', 'Release C')",0.17871761936916314
-Sepsis,AggregateType.MIN,0.1,"('CRP', 'Release D')",0.1505474327840742
-Sepsis,AggregateType.MIN,0.1,"('CRP', 'Release E')",0.27746171477953946
-Sepsis,AggregateType.MIN,0.2,"('Leucocytes', 'CRP')",0.0009626913756572298
-Sepsis,AggregateType.MIN,0.2,"('ER Triage', 'ER Sepsis Triage')",0.0008985394380195591
-Sepsis,AggregateType.MIN,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.0011402669655904232
-Sepsis,AggregateType.MIN,0.2,"('IV Liquid', 'IV Antibiotics')",0.0013648962547103802
-Sepsis,AggregateType.MIN,0.2,"('IV Antibiotics', 'Admission NC')",0.0014322845037287879
-Sepsis,AggregateType.MIN,0.2,"('ER Registration', 'ER Triage')",0.0018256956808487157
-Sepsis,AggregateType.MIN,0.2,"('LacticAcid', 'Leucocytes')",0.0031854758171943327
-Sepsis,AggregateType.MIN,0.2,"('CRP', 'Release A')",0.0035730846400704886
-Sepsis,AggregateType.MIN,0.2,"('Admission NC', 'Leucocytes')",0.0027727974200035376
-Sepsis,AggregateType.MIN,0.2,"('Release A', 'Return ER')",0.008546122585879695
-Sepsis,AggregateType.MIN,0.2,"('Admission IC', 'LacticAcid')",0.04161861865342903
-Sepsis,AggregateType.MIN,0.2,"('CRP', 'Release B')",0.24505940005698604
-Sepsis,AggregateType.MIN,0.2,"('IV Antibiotics', 'Admission IC')",0.05506159211314269
-Sepsis,AggregateType.MIN,0.2,"('CRP', 'Release C')",0.06436756234893479
-Sepsis,AggregateType.MIN,0.2,"('CRP', 'Release D')",0.09573759147380952
-Sepsis,AggregateType.MIN,0.2,"('CRP', 'Release E')",0.4577595936794297
-Sepsis,AggregateType.MIN,0.3,"('Leucocytes', 'CRP')",0.00023666390788118402
-Sepsis,AggregateType.MIN,0.3,"('ER Triage', 'ER Sepsis Triage')",0.002719355124300311
-Sepsis,AggregateType.MIN,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.0009009763790891954
-Sepsis,AggregateType.MIN,0.3,"('IV Liquid', 'IV Antibiotics')",0.0035602471724288905
-Sepsis,AggregateType.MIN,0.3,"('IV Antibiotics', 'Admission NC')",0.0025146649295152666
-Sepsis,AggregateType.MIN,0.3,"('ER Registration', 'ER Triage')",0.0009879631092885046
-Sepsis,AggregateType.MIN,0.3,"('LacticAcid', 'Leucocytes')",0.00041036271440339684
-Sepsis,AggregateType.MIN,0.3,"('CRP', 'Release A')",0.00019465819575144755
-Sepsis,AggregateType.MIN,0.3,"('Admission NC', 'Leucocytes')",0.0007118311309709241
-Sepsis,AggregateType.MIN,0.3,"('Release A', 'Return ER')",0.006629025662843817
-Sepsis,AggregateType.MIN,0.3,"('Admission IC', 'LacticAcid')",0.013054580766834079
-Sepsis,AggregateType.MIN,0.3,"('CRP', 'Release B')",0.05271044717267795
-Sepsis,AggregateType.MIN,0.3,"('IV Antibiotics', 'Admission IC')",0.0005317004719904802
-Sepsis,AggregateType.MIN,0.3,"('CRP', 'Release C')",0.030034680802389246
-Sepsis,AggregateType.MIN,0.3,"('CRP', 'Release D')",0.0294164901273124
-Sepsis,AggregateType.MIN,0.3,"('CRP', 'Release E')",0.025393324269293267
-Sepsis,AggregateType.MIN,0.4,"('Leucocytes', 'CRP')",0.0001388013694898171
-Sepsis,AggregateType.MIN,0.4,"('ER Triage', 'ER Sepsis Triage')",0.0010537106109073566
-Sepsis,AggregateType.MIN,0.4,"('ER Sepsis Triage', 'IV Liquid')",0.0018354330528629298
-Sepsis,AggregateType.MIN,0.4,"('IV Liquid', 'IV Antibiotics')",0.0010128222120238388
-Sepsis,AggregateType.MIN,0.4,"('IV Antibiotics', 'Admission NC')",0.0017933893953669623
-Sepsis,AggregateType.MIN,0.4,"('ER Registration', 'ER Triage')",0.000485468064875093
-Sepsis,AggregateType.MIN,0.4,"('LacticAcid', 'Leucocytes')",4.885366026621695e-06
-Sepsis,AggregateType.MIN,0.4,"('CRP', 'Release A')",0.0035030266925835164
-Sepsis,AggregateType.MIN,0.4,"('Admission NC', 'Leucocytes')",0.0015044790110235674
-Sepsis,AggregateType.MIN,0.4,"('Release A', 'Return ER')",0.0019657865537077673
-Sepsis,AggregateType.MIN,0.4,"('Admission IC', 'LacticAcid')",0.002969382576513
-Sepsis,AggregateType.MIN,0.4,"('CRP', 'Release B')",0.01873671977810226
-Sepsis,AggregateType.MIN,0.4,"('IV Antibiotics', 'Admission IC')",0.012098161530556139
-Sepsis,AggregateType.MIN,0.4,"('CRP', 'Release C')",0.03402465473682854
-Sepsis,AggregateType.MIN,0.4,"('CRP', 'Release D')",0.0818464928344742
-Sepsis,AggregateType.MIN,0.4,"('CRP', 'Release E')",0.025565703485095053
-Sepsis,AggregateType.MIN,0.5,"('Leucocytes', 'CRP')",0.0001099788101413072
-Sepsis,AggregateType.MIN,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0009520573174023356
-Sepsis,AggregateType.MIN,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.004585663345077943
-Sepsis,AggregateType.MIN,0.5,"('IV Liquid', 'IV Antibiotics')",0.0004922183202454303
-Sepsis,AggregateType.MIN,0.5,"('IV Antibiotics', 'Admission NC')",0.0021658388661394234
-Sepsis,AggregateType.MIN,0.5,"('ER Registration', 'ER Triage')",0.00011456044856505267
-Sepsis,AggregateType.MIN,0.5,"('LacticAcid', 'Leucocytes')",0.0004898270318621289
-Sepsis,AggregateType.MIN,0.5,"('CRP', 'Release A')",0.0007449762980639035
-Sepsis,AggregateType.MIN,0.5,"('Admission NC', 'Leucocytes')",0.0006633853111708277
-Sepsis,AggregateType.MIN,0.5,"('Release A', 'Return ER')",0.0038203242108100976
-Sepsis,AggregateType.MIN,0.5,"('Admission IC', 'LacticAcid')",0.010643795016212343
-Sepsis,AggregateType.MIN,0.5,"('CRP', 'Release B')",0.018166406896434718
-Sepsis,AggregateType.MIN,0.5,"('IV Antibiotics', 'Admission IC')",0.013373029472646953
-Sepsis,AggregateType.MIN,0.5,"('CRP', 'Release C')",0.04504679345118558
-Sepsis,AggregateType.MIN,0.5,"('CRP', 'Release D')",0.0025664718159516355
-Sepsis,AggregateType.MIN,0.5,"('CRP', 'Release E')",0.3777610499329338
-Sepsis,AggregateType.MIN,0.6,"('Leucocytes', 'CRP')",9.525086444648256e-06
-Sepsis,AggregateType.MIN,0.6,"('ER Triage', 'ER Sepsis Triage')",0.0005520807981210412
-Sepsis,AggregateType.MIN,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.0003707651326061224
-Sepsis,AggregateType.MIN,0.6,"('IV Liquid', 'IV Antibiotics')",0.0010077099368604586
-Sepsis,AggregateType.MIN,0.6,"('IV Antibiotics', 'Admission NC')",0.0010875116784717013
-Sepsis,AggregateType.MIN,0.6,"('ER Registration', 'ER Triage')",0.00034443469791648753
-Sepsis,AggregateType.MIN,0.6,"('LacticAcid', 'Leucocytes')",2.1936613407018967e-05
-Sepsis,AggregateType.MIN,0.6,"('CRP', 'Release A')",0.0030091573117999463
-Sepsis,AggregateType.MIN,0.6,"('Admission NC', 'Leucocytes')",0.002721161239627597
-Sepsis,AggregateType.MIN,0.6,"('Release A', 'Return ER')",0.0006113274383984798
-Sepsis,AggregateType.MIN,0.6,"('Admission IC', 'LacticAcid')",0.0017195188859260248
-Sepsis,AggregateType.MIN,0.6,"('CRP', 'Release B')",0.012218166975368996
-Sepsis,AggregateType.MIN,0.6,"('IV Antibiotics', 'Admission IC')",0.0009619551688250963
-Sepsis,AggregateType.MIN,0.6,"('CRP', 'Release C')",0.0009175525357576657
-Sepsis,AggregateType.MIN,0.6,"('CRP', 'Release D')",0.02211932746980283
-Sepsis,AggregateType.MIN,0.6,"('CRP', 'Release E')",0.03252117288094736
-Sepsis,AggregateType.MIN,0.7,"('Leucocytes', 'CRP')",9.366476083122885e-05
-Sepsis,AggregateType.MIN,0.7,"('ER Triage', 'ER Sepsis Triage')",5.625446010765182e-05
-Sepsis,AggregateType.MIN,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.0020386930113657224
-Sepsis,AggregateType.MIN,0.7,"('IV Liquid', 'IV Antibiotics')",0.0007891661443177563
-Sepsis,AggregateType.MIN,0.7,"('IV Antibiotics', 'Admission NC')",0.0011038113428839392
-Sepsis,AggregateType.MIN,0.7,"('ER Registration', 'ER Triage')",0.0006161640829433138
-Sepsis,AggregateType.MIN,0.7,"('LacticAcid', 'Leucocytes')",0.001346093607668258
-Sepsis,AggregateType.MIN,0.7,"('CRP', 'Release A')",0.0013413414237996458
-Sepsis,AggregateType.MIN,0.7,"('Admission NC', 'Leucocytes')",0.0010442998959075901
-Sepsis,AggregateType.MIN,0.7,"('Release A', 'Return ER')",2.0826802595948997e-06
-Sepsis,AggregateType.MIN,0.7,"('Admission IC', 'LacticAcid')",0.00395674906571382
-Sepsis,AggregateType.MIN,0.7,"('CRP', 'Release B')",0.04390840939951365
-Sepsis,AggregateType.MIN,0.7,"('IV Antibiotics', 'Admission IC')",0.002826758622090639
-Sepsis,AggregateType.MIN,0.7,"('CRP', 'Release C')",0.01662922588265153
-Sepsis,AggregateType.MIN,0.7,"('CRP', 'Release D')",0.008438292707810824
-Sepsis,AggregateType.MIN,0.7,"('CRP', 'Release E')",9.946949413253137e-05
-Sepsis,AggregateType.MIN,0.8,"('Leucocytes', 'CRP')",0.0002013371412237173
-Sepsis,AggregateType.MIN,0.8,"('ER Triage', 'ER Sepsis Triage')",0.0001531490254406508
-Sepsis,AggregateType.MIN,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.0012166535299371118
-Sepsis,AggregateType.MIN,0.8,"('IV Liquid', 'IV Antibiotics')",0.00029820267201602655
-Sepsis,AggregateType.MIN,0.8,"('IV Antibiotics', 'Admission NC')",0.00011353264783324141
-Sepsis,AggregateType.MIN,0.8,"('ER Registration', 'ER Triage')",1.0948058158448173e-05
-Sepsis,AggregateType.MIN,0.8,"('LacticAcid', 'Leucocytes')",0.0009507675379414102
-Sepsis,AggregateType.MIN,0.8,"('CRP', 'Release A')",0.0007369021330766714
-Sepsis,AggregateType.MIN,0.8,"('Admission NC', 'Leucocytes')",3.427613217289874e-05
-Sepsis,AggregateType.MIN,0.8,"('Release A', 'Return ER')",0.0013412631491658503
-Sepsis,AggregateType.MIN,0.8,"('Admission IC', 'LacticAcid')",0.000791670212920584
-Sepsis,AggregateType.MIN,0.8,"('CRP', 'Release B')",0.002886608430085895
-Sepsis,AggregateType.MIN,0.8,"('IV Antibiotics', 'Admission IC')",0.009722715492565686
-Sepsis,AggregateType.MIN,0.8,"('CRP', 'Release C')",0.0030827841242910656
-Sepsis,AggregateType.MIN,0.8,"('CRP', 'Release D')",0.00789571958857597
-Sepsis,AggregateType.MIN,0.8,"('CRP', 'Release E')",0.033323061681680276
-Sepsis,AggregateType.MIN,0.9,"('Leucocytes', 'CRP')",0.0002531187880125568
-Sepsis,AggregateType.MIN,0.9,"('ER Triage', 'ER Sepsis Triage')",0.000185266118962986
-Sepsis,AggregateType.MIN,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.0005132970319732123
-Sepsis,AggregateType.MIN,0.9,"('IV Liquid', 'IV Antibiotics')",0.00038665299699757583
-Sepsis,AggregateType.MIN,0.9,"('IV Antibiotics', 'Admission NC')",0.0005222413046547227
-Sepsis,AggregateType.MIN,0.9,"('ER Registration', 'ER Triage')",1.1340151155074185e-05
-Sepsis,AggregateType.MIN,0.9,"('LacticAcid', 'Leucocytes')",2.283271250399972e-05
-Sepsis,AggregateType.MIN,0.9,"('CRP', 'Release A')",0.0003768993718182224
-Sepsis,AggregateType.MIN,0.9,"('Admission NC', 'Leucocytes')",5.0715875448424736e-05
-Sepsis,AggregateType.MIN,0.9,"('Release A', 'Return ER')",0.0007476414653304072
-Sepsis,AggregateType.MIN,0.9,"('Admission IC', 'LacticAcid')",0.002819346577107617
-Sepsis,AggregateType.MIN,0.9,"('CRP', 'Release B')",0.008706561522008783
-Sepsis,AggregateType.MIN,0.9,"('IV Antibiotics', 'Admission IC')",0.0027398750033933825
-Sepsis,AggregateType.MIN,0.9,"('CRP', 'Release C')",0.024719837372086016
-Sepsis,AggregateType.MIN,0.9,"('CRP', 'Release D')",0.04684220037953457
-Sepsis,AggregateType.MIN,0.9,"('CRP', 'Release E')",0.009795031643988613
-Sepsis,AggregateType.MAX,0.01,"('Leucocytes', 'CRP')",0.010755157964819474
-Sepsis,AggregateType.MAX,0.01,"('ER Triage', 'ER Sepsis Triage')",0.02015073639421272
-Sepsis,AggregateType.MAX,0.01,"('ER Sepsis Triage', 'IV Liquid')",0.05147154559781384
-Sepsis,AggregateType.MAX,0.01,"('IV Liquid', 'IV Antibiotics')",0.059129696622598586
-Sepsis,AggregateType.MAX,0.01,"('IV Antibiotics', 'Admission NC')",0.019165682613868213
-Sepsis,AggregateType.MAX,0.01,"('ER Registration', 'ER Triage')",0.0033339922032071235
-Sepsis,AggregateType.MAX,0.01,"('LacticAcid', 'Leucocytes')",0.041043264559713494
-Sepsis,AggregateType.MAX,0.01,"('CRP', 'Release A')",0.0011960906515846885
-Sepsis,AggregateType.MAX,0.01,"('Admission NC', 'Leucocytes')",0.01074101271329583
-Sepsis,AggregateType.MAX,0.01,"('Release A', 'Return ER')",0.09542066008659496
-Sepsis,AggregateType.MAX,0.01,"('Admission IC', 'LacticAcid')",1.127736393619618
-Sepsis,AggregateType.MAX,0.01,"('CRP', 'Release B')",1.3603655880711636
-Sepsis,AggregateType.MAX,0.01,"('IV Antibiotics', 'Admission IC')",0.15121407351696756
-Sepsis,AggregateType.MAX,0.01,"('CRP', 'Release C')",0.01949637053838484
-Sepsis,AggregateType.MAX,0.01,"('CRP', 'Release D')",1.8288599422452414
-Sepsis,AggregateType.MAX,0.01,"('CRP', 'Release E')",3.6574840987982777
-Sepsis,AggregateType.MAX,0.05,"('Leucocytes', 'CRP')",0.005887847303622547
-Sepsis,AggregateType.MAX,0.05,"('ER Triage', 'ER Sepsis Triage')",0.006713469080159107
-Sepsis,AggregateType.MAX,0.05,"('ER Sepsis Triage', 'IV Liquid')",0.04387717274628717
-Sepsis,AggregateType.MAX,0.05,"('IV Liquid', 'IV Antibiotics')",0.03827485179544829
-Sepsis,AggregateType.MAX,0.05,"('IV Antibiotics', 'Admission NC')",0.005987130491075406
-Sepsis,AggregateType.MAX,0.05,"('ER Registration', 'ER Triage')",0.008683037687137187
-Sepsis,AggregateType.MAX,0.05,"('LacticAcid', 'Leucocytes')",0.0053591432385212455
-Sepsis,AggregateType.MAX,0.05,"('CRP', 'Release A')",0.010760272516877823
-Sepsis,AggregateType.MAX,0.05,"('Admission NC', 'Leucocytes')",0.005621708640262568
-Sepsis,AggregateType.MAX,0.05,"('Release A', 'Return ER')",0.06402315228819364
-Sepsis,AggregateType.MAX,0.05,"('Admission IC', 'LacticAcid')",0.013012383250021221
-Sepsis,AggregateType.MAX,0.05,"('CRP', 'Release B')",0.09482544581405475
-Sepsis,AggregateType.MAX,0.05,"('IV Antibiotics', 'Admission IC')",0.07156521978643196
-Sepsis,AggregateType.MAX,0.05,"('CRP', 'Release C')",0.8446400812284346
-Sepsis,AggregateType.MAX,0.05,"('CRP', 'Release D')",0.4672799917546267
-Sepsis,AggregateType.MAX,0.05,"('CRP', 'Release E')",1.2811518844080647
-Sepsis,AggregateType.MAX,0.1,"('Leucocytes', 'CRP')",0.0002740545407654234
-Sepsis,AggregateType.MAX,0.1,"('ER Triage', 'ER Sepsis Triage')",0.0011940798008806936
-Sepsis,AggregateType.MAX,0.1,"('ER Sepsis Triage', 'IV Liquid')",0.004974507745540897
-Sepsis,AggregateType.MAX,0.1,"('IV Liquid', 'IV Antibiotics')",0.003280657073977143
-Sepsis,AggregateType.MAX,0.1,"('IV Antibiotics', 'Admission NC')",0.010197050709038332
-Sepsis,AggregateType.MAX,0.1,"('ER Registration', 'ER Triage')",0.004138740614636721
-Sepsis,AggregateType.MAX,0.1,"('LacticAcid', 'Leucocytes')",0.0004982188002836625
-Sepsis,AggregateType.MAX,0.1,"('CRP', 'Release A')",0.004369469508925434
-Sepsis,AggregateType.MAX,0.1,"('Admission NC', 'Leucocytes')",0.003311645042014463
-Sepsis,AggregateType.MAX,0.1,"('Release A', 'Return ER')",0.009666296740666906
-Sepsis,AggregateType.MAX,0.1,"('Admission IC', 'LacticAcid')",0.023382000285989905
-Sepsis,AggregateType.MAX,0.1,"('CRP', 'Release B')",0.08008006302324776
-Sepsis,AggregateType.MAX,0.1,"('IV Antibiotics', 'Admission IC')",0.05612703464089031
-Sepsis,AggregateType.MAX,0.1,"('CRP', 'Release C')",0.3344474357839248
-Sepsis,AggregateType.MAX,0.1,"('CRP', 'Release D')",0.05963840519908251
-Sepsis,AggregateType.MAX,0.1,"('CRP', 'Release E')",0.5654814030989055
-Sepsis,AggregateType.MAX,0.2,"('Leucocytes', 'CRP')",0.0003206931670858172
-Sepsis,AggregateType.MAX,0.2,"('ER Triage', 'ER Sepsis Triage')",0.00018194616055019984
-Sepsis,AggregateType.MAX,0.2,"('ER Sepsis Triage', 'IV Liquid')",0.00048548533169622985
-Sepsis,AggregateType.MAX,0.2,"('IV Liquid', 'IV Antibiotics')",0.004655652242313649
-Sepsis,AggregateType.MAX,0.2,"('IV Antibiotics', 'Admission NC')",0.004961008333252754
-Sepsis,AggregateType.MAX,0.2,"('ER Registration', 'ER Triage')",0.00025522865514706055
-Sepsis,AggregateType.MAX,0.2,"('LacticAcid', 'Leucocytes')",0.001430899191915417
-Sepsis,AggregateType.MAX,0.2,"('CRP', 'Release A')",0.0017857126632277794
-Sepsis,AggregateType.MAX,0.2,"('Admission NC', 'Leucocytes')",0.000814551797309149
-Sepsis,AggregateType.MAX,0.2,"('Release A', 'Return ER')",0.0015486466820737346
-Sepsis,AggregateType.MAX,0.2,"('Admission IC', 'LacticAcid')",0.005433781059310388
-Sepsis,AggregateType.MAX,0.2,"('CRP', 'Release B')",0.049935818014487855
-Sepsis,AggregateType.MAX,0.2,"('IV Antibiotics', 'Admission IC')",0.02960616717851317
-Sepsis,AggregateType.MAX,0.2,"('CRP', 'Release C')",0.01809955813945626
-Sepsis,AggregateType.MAX,0.2,"('CRP', 'Release D')",0.007990959445597134
-Sepsis,AggregateType.MAX,0.2,"('CRP', 'Release E')",0.3036488577617133
-Sepsis,AggregateType.MAX,0.3,"('Leucocytes', 'CRP')",0.00021169413559319234
-Sepsis,AggregateType.MAX,0.3,"('ER Triage', 'ER Sepsis Triage')",0.0007380436229636143
-Sepsis,AggregateType.MAX,0.3,"('ER Sepsis Triage', 'IV Liquid')",0.0006121083219686066
-Sepsis,AggregateType.MAX,0.3,"('IV Liquid', 'IV Antibiotics')",0.0037155399769423143
-Sepsis,AggregateType.MAX,0.3,"('IV Antibiotics', 'Admission NC')",0.00034608089757409303
-Sepsis,AggregateType.MAX,0.3,"('ER Registration', 'ER Triage')",8.716723834881456e-05
-Sepsis,AggregateType.MAX,0.3,"('LacticAcid', 'Leucocytes')",0.000444564578498682
-Sepsis,AggregateType.MAX,0.3,"('CRP', 'Release A')",0.0005566214423165251
-Sepsis,AggregateType.MAX,0.3,"('Admission NC', 'Leucocytes')",0.001270920133891716
-Sepsis,AggregateType.MAX,0.3,"('Release A', 'Return ER')",0.002780450463537027
-Sepsis,AggregateType.MAX,0.3,"('Admission IC', 'LacticAcid')",0.03777403667218896
-Sepsis,AggregateType.MAX,0.3,"('CRP', 'Release B')",0.007091991329792155
-Sepsis,AggregateType.MAX,0.3,"('IV Antibiotics', 'Admission IC')",0.0059434642856974465
-Sepsis,AggregateType.MAX,0.3,"('CRP', 'Release C')",0.0044865818059528755
-Sepsis,AggregateType.MAX,0.3,"('CRP', 'Release D')",0.0301536752902883
-Sepsis,AggregateType.MAX,0.3,"('CRP', 'Release E')",0.3190711025827624
-Sepsis,AggregateType.MAX,0.4,"('Leucocytes', 'CRP')",4.863452457557205e-05
-Sepsis,AggregateType.MAX,0.4,"('ER Triage', 'ER Sepsis Triage')",0.0005010289371045991
-Sepsis,AggregateType.MAX,0.4,"('ER Sepsis Triage', 'IV Liquid')",3.7335467576220954e-05
-Sepsis,AggregateType.MAX,0.4,"('IV Liquid', 'IV Antibiotics')",0.0002462040550344618
-Sepsis,AggregateType.MAX,0.4,"('IV Antibiotics', 'Admission NC')",0.00046313659225334907
-Sepsis,AggregateType.MAX,0.4,"('ER Registration', 'ER Triage')",8.796359427943111e-05
-Sepsis,AggregateType.MAX,0.4,"('LacticAcid', 'Leucocytes')",0.0018233884560980194
-Sepsis,AggregateType.MAX,0.4,"('CRP', 'Release A')",0.003352455288562525
-Sepsis,AggregateType.MAX,0.4,"('Admission NC', 'Leucocytes')",0.0013555238234831074
-Sepsis,AggregateType.MAX,0.4,"('Release A', 'Return ER')",0.00015001154376195075
-Sepsis,AggregateType.MAX,0.4,"('Admission IC', 'LacticAcid')",0.010689649326144525
-Sepsis,AggregateType.MAX,0.4,"('CRP', 'Release B')",0.0013797671105655912
-Sepsis,AggregateType.MAX,0.4,"('IV Antibiotics', 'Admission IC')",0.0005345999868945205
-Sepsis,AggregateType.MAX,0.4,"('CRP', 'Release C')",0.010555278459688221
-Sepsis,AggregateType.MAX,0.4,"('CRP', 'Release D')",0.04666167242047218
-Sepsis,AggregateType.MAX,0.4,"('CRP', 'Release E')",0.5161069946408251
-Sepsis,AggregateType.MAX,0.5,"('Leucocytes', 'CRP')",0.00035175368245819803
-Sepsis,AggregateType.MAX,0.5,"('ER Triage', 'ER Sepsis Triage')",0.0007395425595445157
-Sepsis,AggregateType.MAX,0.5,"('ER Sepsis Triage', 'IV Liquid')",0.0010400972637500529
-Sepsis,AggregateType.MAX,0.5,"('IV Liquid', 'IV Antibiotics')",0.0005118154054011693
-Sepsis,AggregateType.MAX,0.5,"('IV Antibiotics', 'Admission NC')",0.0011065132754787582
-Sepsis,AggregateType.MAX,0.5,"('ER Registration', 'ER Triage')",0.0006189792085075987
-Sepsis,AggregateType.MAX,0.5,"('LacticAcid', 'Leucocytes')",4.2765110565476115e-05
-Sepsis,AggregateType.MAX,0.5,"('CRP', 'Release A')",0.001307667551677357
-Sepsis,AggregateType.MAX,0.5,"('Admission NC', 'Leucocytes')",0.0009836369694911258
-Sepsis,AggregateType.MAX,0.5,"('Release A', 'Return ER')",0.0010024727293060662
-Sepsis,AggregateType.MAX,0.5,"('Admission IC', 'LacticAcid')",0.0001577812878972079
-Sepsis,AggregateType.MAX,0.5,"('CRP', 'Release B')",0.017558399304393946
-Sepsis,AggregateType.MAX,0.5,"('IV Antibiotics', 'Admission IC')",0.004631837794925592
-Sepsis,AggregateType.MAX,0.5,"('CRP', 'Release C')",0.013091997915609136
-Sepsis,AggregateType.MAX,0.5,"('CRP', 'Release D')",0.0625111092603771
-Sepsis,AggregateType.MAX,0.5,"('CRP', 'Release E')",0.019423367497495143
-Sepsis,AggregateType.MAX,0.6,"('Leucocytes', 'CRP')",8.028965046048355e-05
-Sepsis,AggregateType.MAX,0.6,"('ER Triage', 'ER Sepsis Triage')",0.0001996756574222793
-Sepsis,AggregateType.MAX,0.6,"('ER Sepsis Triage', 'IV Liquid')",0.001714236597768959
-Sepsis,AggregateType.MAX,0.6,"('IV Liquid', 'IV Antibiotics')",0.0007050071541819973
-Sepsis,AggregateType.MAX,0.6,"('IV Antibiotics', 'Admission NC')",0.001058344830875976
-Sepsis,AggregateType.MAX,0.6,"('ER Registration', 'ER Triage')",0.00013038873936425209
-Sepsis,AggregateType.MAX,0.6,"('LacticAcid', 'Leucocytes')",5.134251632424604e-05
-Sepsis,AggregateType.MAX,0.6,"('CRP', 'Release A')",0.00023582929362198218
-Sepsis,AggregateType.MAX,0.6,"('Admission NC', 'Leucocytes')",0.004042785382131509
-Sepsis,AggregateType.MAX,0.6,"('Release A', 'Return ER')",0.00184491710090065
-Sepsis,AggregateType.MAX,0.6,"('Admission IC', 'LacticAcid')",0.010164350007085739
-Sepsis,AggregateType.MAX,0.6,"('CRP', 'Release B')",0.004792850870554588
-Sepsis,AggregateType.MAX,0.6,"('IV Antibiotics', 'Admission IC')",0.0012391281712360108
-Sepsis,AggregateType.MAX,0.6,"('CRP', 'Release C')",0.03635032329690146
-Sepsis,AggregateType.MAX,0.6,"('CRP', 'Release D')",0.12585057846452452
-Sepsis,AggregateType.MAX,0.6,"('CRP', 'Release E')",0.0794547566209074
-Sepsis,AggregateType.MAX,0.7,"('Leucocytes', 'CRP')",0.0003027450509374026
-Sepsis,AggregateType.MAX,0.7,"('ER Triage', 'ER Sepsis Triage')",0.0016026872997332068
-Sepsis,AggregateType.MAX,0.7,"('ER Sepsis Triage', 'IV Liquid')",0.004829538726416335
-Sepsis,AggregateType.MAX,0.7,"('IV Liquid', 'IV Antibiotics')",0.0008030496221224126
-Sepsis,AggregateType.MAX,0.7,"('IV Antibiotics', 'Admission NC')",0.0019004464321588832
-Sepsis,AggregateType.MAX,0.7,"('ER Registration', 'ER Triage')",9.155140104803978e-05
-Sepsis,AggregateType.MAX,0.7,"('LacticAcid', 'Leucocytes')",0.0008218476108899332
-Sepsis,AggregateType.MAX,0.7,"('CRP', 'Release A')",0.0009015193704068233
-Sepsis,AggregateType.MAX,0.7,"('Admission NC', 'Leucocytes')",0.00010441062990488891
-Sepsis,AggregateType.MAX,0.7,"('Release A', 'Return ER')",0.0006425246292719601
-Sepsis,AggregateType.MAX,0.7,"('Admission IC', 'LacticAcid')",0.013511686652082957
-Sepsis,AggregateType.MAX,0.7,"('CRP', 'Release B')",0.03748132728361142
-Sepsis,AggregateType.MAX,0.7,"('IV Antibiotics', 'Admission IC')",0.00016113924087953225
-Sepsis,AggregateType.MAX,0.7,"('CRP', 'Release C')",0.016676772705565803
-Sepsis,AggregateType.MAX,0.7,"('CRP', 'Release D')",0.010411034617651064
-Sepsis,AggregateType.MAX,0.7,"('CRP', 'Release E')",0.026046040067783622
-Sepsis,AggregateType.MAX,0.8,"('Leucocytes', 'CRP')",8.48937641667843e-05
-Sepsis,AggregateType.MAX,0.8,"('ER Triage', 'ER Sepsis Triage')",5.246823191314258e-07
-Sepsis,AggregateType.MAX,0.8,"('ER Sepsis Triage', 'IV Liquid')",0.0008943841206332125
-Sepsis,AggregateType.MAX,0.8,"('IV Liquid', 'IV Antibiotics')",0.0008669560271401023
-Sepsis,AggregateType.MAX,0.8,"('IV Antibiotics', 'Admission NC')",5.793575300926774e-06
-Sepsis,AggregateType.MAX,0.8,"('ER Registration', 'ER Triage')",0.00019115818564358118
-Sepsis,AggregateType.MAX,0.8,"('LacticAcid', 'Leucocytes')",0.0007526419974685703
-Sepsis,AggregateType.MAX,0.8,"('CRP', 'Release A')",0.0010221985398996675
-Sepsis,AggregateType.MAX,0.8,"('Admission NC', 'Leucocytes')",3.536866645568878e-05
-Sepsis,AggregateType.MAX,0.8,"('Release A', 'Return ER')",0.0007296675813388875
-Sepsis,AggregateType.MAX,0.8,"('Admission IC', 'LacticAcid')",0.005204047196325165
-Sepsis,AggregateType.MAX,0.8,"('CRP', 'Release B')",0.02069812099819065
-Sepsis,AggregateType.MAX,0.8,"('IV Antibiotics', 'Admission IC')",0.013583519571399109
-Sepsis,AggregateType.MAX,0.8,"('CRP', 'Release C')",0.011205484524070313
-Sepsis,AggregateType.MAX,0.8,"('CRP', 'Release D')",0.0305861340347177
-Sepsis,AggregateType.MAX,0.8,"('CRP', 'Release E')",0.18777091819256672
-Sepsis,AggregateType.MAX,0.9,"('Leucocytes', 'CRP')",3.1480080847650775e-05
-Sepsis,AggregateType.MAX,0.9,"('ER Triage', 'ER Sepsis Triage')",0.00038483165295997046
-Sepsis,AggregateType.MAX,0.9,"('ER Sepsis Triage', 'IV Liquid')",0.00024107071505943424
-Sepsis,AggregateType.MAX,0.9,"('IV Liquid', 'IV Antibiotics')",0.0003020755121457194
-Sepsis,AggregateType.MAX,0.9,"('IV Antibiotics', 'Admission NC')",0.000608044088409262
-Sepsis,AggregateType.MAX,0.9,"('ER Registration', 'ER Triage')",5.7258304695022745e-05
-Sepsis,AggregateType.MAX,0.9,"('LacticAcid', 'Leucocytes')",0.0006893390128902262
-Sepsis,AggregateType.MAX,0.9,"('CRP', 'Release A')",0.0004992066355291288
-Sepsis,AggregateType.MAX,0.9,"('Admission NC', 'Leucocytes')",0.00020589015674413888
-Sepsis,AggregateType.MAX,0.9,"('Release A', 'Return ER')",6.987004611775701e-05
-Sepsis,AggregateType.MAX,0.9,"('Admission IC', 'LacticAcid')",0.0035711645767604275
-Sepsis,AggregateType.MAX,0.9,"('CRP', 'Release B')",0.004531296212905963
-Sepsis,AggregateType.MAX,0.9,"('IV Antibiotics', 'Admission IC')",0.00027830871309112
-Sepsis,AggregateType.MAX,0.9,"('CRP', 'Release C')",0.017036158765023266
-Sepsis,AggregateType.MAX,0.9,"('CRP', 'Release D')",0.011248321371533976
-Sepsis,AggregateType.MAX,0.9,"('CRP', 'Release E')",0.01650756475317901
+CCC19,AggregateType.AVG,0.01,"('Ultrasound configuration', 'Anatomic identification')",1.3879366575531598
+CCC19,AggregateType.AVG,0.01,"('Anatomic identification', 'Compression identification')",2.037563894924295
+CCC19,AggregateType.AVG,0.01,"('Hand washing', 'Get in sterile clothes')",1.0333290751982842
+CCC19,AggregateType.AVG,0.01,"('Clean puncture area', 'Drap puncture area')",3.5486294441340807
+CCC19,AggregateType.AVG,0.01,"('Cover probe', 'Put sterile gel')",0.9821027525691003
+CCC19,AggregateType.AVG,0.01,"('Puncture', 'Blood return')",0.7932308051896263
+CCC19,AggregateType.AVG,0.01,"('Blood return', 'Drop probe')",0.6860783000895988
+CCC19,AggregateType.AVG,0.01,"('Drop probe', 'Remove syringe')",0.8906021408065532
+CCC19,AggregateType.AVG,0.01,"('Remove syringe', 'Guidewire install')",0.41070934356683325
+CCC19,AggregateType.AVG,0.01,"('Check wire in short axis', 'Check wire in long axis')",0.5687189063964121
+CCC19,AggregateType.AVG,0.01,"('Remove trocar', 'Check wire in short axis')",0.9558677236377965
+CCC19,AggregateType.AVG,0.01,"('Widen pathway', 'Advance catheter')",0.2931688236757128
+CCC19,AggregateType.AVG,0.01,"('Advance catheter', 'Remove guidewire')",0.39601104480910027
+CCC19,AggregateType.AVG,0.01,"('Remove guidewire', 'Check flow and reflow')",0.7722315880863706
+CCC19,AggregateType.AVG,0.01,"('Check flow and reflow', 'Check catheter position')",0.1723280330544097
+CCC19,AggregateType.AVG,0.01,"('Get in sterile clothes', 'Prepare implements')",1.8710054690916198
+CCC19,AggregateType.AVG,0.01,"('Prepare implements', 'Clean puncture area')",0.9561987616378519
+CCC19,AggregateType.AVG,0.01,"('Drap puncture area', 'Prepare implements')",2.9461024339064728
+CCC19,AggregateType.AVG,0.01,"('Prepare implements', 'Cover probe')",0.6871444187849155
+CCC19,AggregateType.AVG,0.01,"('Gel in probe', 'Cover probe')",1.071704318591353
+CCC19,AggregateType.AVG,0.01,"('Put sterile gel', 'Position probe')",1.7428778549797252
+CCC19,AggregateType.AVG,0.01,"('Guidewire install', 'Remove trocar')",3.473398635482351
+CCC19,AggregateType.AVG,0.01,"('Compression identification', 'Doppler identification')",0.40206690930290945
+CCC19,AggregateType.AVG,0.01,"('Doppler identification', 'Anesthetize')",28.915618855435813
+CCC19,AggregateType.AVG,0.01,"('Check wire in long axis', 'Wire in good position')",5.552694179571133
+CCC19,AggregateType.AVG,0.01,"('Prepare implements', 'Ultrasound configuration')",0.28467888894186566
+CCC19,AggregateType.AVG,0.01,"('Wire in good position', 'Widen pathway')",1.7087404677711375
+CCC19,AggregateType.AVG,0.01,"('Cover probe', 'Gel in probe')",2.6908144828258957
+CCC19,AggregateType.AVG,0.01,"('Anesthetize', 'Puncture')",4.666093887628318
+CCC19,AggregateType.AVG,0.01,"('Prepare implements', 'Position patient')",18.609645695676964
+CCC19,AggregateType.AVG,0.01,"('Position probe', 'Anatomic identification')",0.5268208228286445
+CCC19,AggregateType.AVG,0.01,"('Position patient', 'Hand washing')",0.36596107923746457
+CCC19,AggregateType.AVG,0.05,"('Ultrasound configuration', 'Anatomic identification')",0.40058007474714685
+CCC19,AggregateType.AVG,0.05,"('Anatomic identification', 'Compression identification')",0.33453249744393815
+CCC19,AggregateType.AVG,0.05,"('Hand washing', 'Get in sterile clothes')",0.5147480264056464
+CCC19,AggregateType.AVG,0.05,"('Clean puncture area', 'Drap puncture area')",0.41416993963757154
+CCC19,AggregateType.AVG,0.05,"('Cover probe', 'Put sterile gel')",0.40837593636381064
+CCC19,AggregateType.AVG,0.05,"('Puncture', 'Blood return')",0.10556900062378868
+CCC19,AggregateType.AVG,0.05,"('Blood return', 'Drop probe')",0.13487755017927872
+CCC19,AggregateType.AVG,0.05,"('Drop probe', 'Remove syringe')",0.01420069302305389
+CCC19,AggregateType.AVG,0.05,"('Remove syringe', 'Guidewire install')",0.0949847610397498
+CCC19,AggregateType.AVG,0.05,"('Check wire in short axis', 'Check wire in long axis')",0.1346210964660959
+CCC19,AggregateType.AVG,0.05,"('Remove trocar', 'Check wire in short axis')",0.07638042339762639
+CCC19,AggregateType.AVG,0.05,"('Widen pathway', 'Advance catheter')",0.007267880737938947
+CCC19,AggregateType.AVG,0.05,"('Advance catheter', 'Remove guidewire')",0.08299713296707534
+CCC19,AggregateType.AVG,0.05,"('Remove guidewire', 'Check flow and reflow')",0.15289078192049782
+CCC19,AggregateType.AVG,0.05,"('Check flow and reflow', 'Check catheter position')",0.6469976327692397
+CCC19,AggregateType.AVG,0.05,"('Get in sterile clothes', 'Prepare implements')",0.1373286866899617
+CCC19,AggregateType.AVG,0.05,"('Prepare implements', 'Clean puncture area')",0.11257610985160554
+CCC19,AggregateType.AVG,0.05,"('Drap puncture area', 'Prepare implements')",0.5902274989073129
+CCC19,AggregateType.AVG,0.05,"('Prepare implements', 'Cover probe')",0.3988163424150806
+CCC19,AggregateType.AVG,0.05,"('Gel in probe', 'Cover probe')",0.29620629098803697
+CCC19,AggregateType.AVG,0.05,"('Put sterile gel', 'Position probe')",0.9342400590946451
+CCC19,AggregateType.AVG,0.05,"('Guidewire install', 'Remove trocar')",0.49881338867991054
+CCC19,AggregateType.AVG,0.05,"('Compression identification', 'Doppler identification')",0.6816296740726544
+CCC19,AggregateType.AVG,0.05,"('Doppler identification', 'Anesthetize')",0.6801212706875539
+CCC19,AggregateType.AVG,0.05,"('Check wire in long axis', 'Wire in good position')",0.5399157894179969
+CCC19,AggregateType.AVG,0.05,"('Prepare implements', 'Ultrasound configuration')",0.2496685996303789
+CCC19,AggregateType.AVG,0.05,"('Wire in good position', 'Widen pathway')",0.7244739322048814
+CCC19,AggregateType.AVG,0.05,"('Cover probe', 'Gel in probe')",1.0134833086567359
+CCC19,AggregateType.AVG,0.05,"('Anesthetize', 'Puncture')",0.16177263141371453
+CCC19,AggregateType.AVG,0.05,"('Prepare implements', 'Position patient')",1.0666078253426337
+CCC19,AggregateType.AVG,0.05,"('Position probe', 'Anatomic identification')",0.41038261370186646
+CCC19,AggregateType.AVG,0.05,"('Position patient', 'Hand washing')",4.803859490284356
+CCC19,AggregateType.AVG,0.1,"('Ultrasound configuration', 'Anatomic identification')",0.14341314018780177
+CCC19,AggregateType.AVG,0.1,"('Anatomic identification', 'Compression identification')",0.007174385338273452
+CCC19,AggregateType.AVG,0.1,"('Hand washing', 'Get in sterile clothes')",0.24607220836243546
+CCC19,AggregateType.AVG,0.1,"('Clean puncture area', 'Drap puncture area')",0.1421856042279086
+CCC19,AggregateType.AVG,0.1,"('Cover probe', 'Put sterile gel')",0.6381944957800869
+CCC19,AggregateType.AVG,0.1,"('Puncture', 'Blood return')",0.08026365658964918
+CCC19,AggregateType.AVG,0.1,"('Blood return', 'Drop probe')",0.10314207017281861
+CCC19,AggregateType.AVG,0.1,"('Drop probe', 'Remove syringe')",0.10619849427004897
+CCC19,AggregateType.AVG,0.1,"('Remove syringe', 'Guidewire install')",0.1366681545035921
+CCC19,AggregateType.AVG,0.1,"('Check wire in short axis', 'Check wire in long axis')",0.05985355816622828
+CCC19,AggregateType.AVG,0.1,"('Remove trocar', 'Check wire in short axis')",0.02705625851807293
+CCC19,AggregateType.AVG,0.1,"('Widen pathway', 'Advance catheter')",0.015766608962682397
+CCC19,AggregateType.AVG,0.1,"('Advance catheter', 'Remove guidewire')",0.10413376433266333
+CCC19,AggregateType.AVG,0.1,"('Remove guidewire', 'Check flow and reflow')",0.28498241737299246
+CCC19,AggregateType.AVG,0.1,"('Check flow and reflow', 'Check catheter position')",0.3610751552745448
+CCC19,AggregateType.AVG,0.1,"('Get in sterile clothes', 'Prepare implements')",0.028307628949605344
+CCC19,AggregateType.AVG,0.1,"('Prepare implements', 'Clean puncture area')",0.4449004127025542
+CCC19,AggregateType.AVG,0.1,"('Drap puncture area', 'Prepare implements')",0.024727689068945333
+CCC19,AggregateType.AVG,0.1,"('Prepare implements', 'Cover probe')",0.19614666504584388
+CCC19,AggregateType.AVG,0.1,"('Gel in probe', 'Cover probe')",0.4646312881262093
+CCC19,AggregateType.AVG,0.1,"('Put sterile gel', 'Position probe')",0.04067550669148501
+CCC19,AggregateType.AVG,0.1,"('Guidewire install', 'Remove trocar')",0.03263670548261347
+CCC19,AggregateType.AVG,0.1,"('Compression identification', 'Doppler identification')",0.25740192821388064
+CCC19,AggregateType.AVG,0.1,"('Doppler identification', 'Anesthetize')",0.014320809093595566
+CCC19,AggregateType.AVG,0.1,"('Check wire in long axis', 'Wire in good position')",0.11007169465098461
+CCC19,AggregateType.AVG,0.1,"('Prepare implements', 'Ultrasound configuration')",0.03495737289950385
+CCC19,AggregateType.AVG,0.1,"('Wire in good position', 'Widen pathway')",0.37663946984529617
+CCC19,AggregateType.AVG,0.1,"('Cover probe', 'Gel in probe')",0.29679895252297345
+CCC19,AggregateType.AVG,0.1,"('Anesthetize', 'Puncture')",0.04794541770992369
+CCC19,AggregateType.AVG,0.1,"('Prepare implements', 'Position patient')",0.2358293062563983
+CCC19,AggregateType.AVG,0.1,"('Position probe', 'Anatomic identification')",0.1629004396888693
+CCC19,AggregateType.AVG,0.1,"('Position patient', 'Hand washing')",0.12592531453722522
+CCC19,AggregateType.AVG,0.2,"('Ultrasound configuration', 'Anatomic identification')",0.0486128975638227
+CCC19,AggregateType.AVG,0.2,"('Anatomic identification', 'Compression identification')",0.03875956066936226
+CCC19,AggregateType.AVG,0.2,"('Hand washing', 'Get in sterile clothes')",0.02581154296003088
+CCC19,AggregateType.AVG,0.2,"('Clean puncture area', 'Drap puncture area')",0.13467769424503384
+CCC19,AggregateType.AVG,0.2,"('Cover probe', 'Put sterile gel')",0.04511886635628741
+CCC19,AggregateType.AVG,0.2,"('Puncture', 'Blood return')",0.09980905044210601
+CCC19,AggregateType.AVG,0.2,"('Blood return', 'Drop probe')",0.04962186476167166
+CCC19,AggregateType.AVG,0.2,"('Drop probe', 'Remove syringe')",0.0036421033985324794
+CCC19,AggregateType.AVG,0.2,"('Remove syringe', 'Guidewire install')",0.19398430031095487
+CCC19,AggregateType.AVG,0.2,"('Check wire in short axis', 'Check wire in long axis')",0.004823113538349162
+CCC19,AggregateType.AVG,0.2,"('Remove trocar', 'Check wire in short axis')",0.0022081466258773237
+CCC19,AggregateType.AVG,0.2,"('Widen pathway', 'Advance catheter')",0.05707456116356944
+CCC19,AggregateType.AVG,0.2,"('Advance catheter', 'Remove guidewire')",0.11467054836278194
+CCC19,AggregateType.AVG,0.2,"('Remove guidewire', 'Check flow and reflow')",0.036407441759521736
+CCC19,AggregateType.AVG,0.2,"('Check flow and reflow', 'Check catheter position')",0.05096263691071656
+CCC19,AggregateType.AVG,0.2,"('Get in sterile clothes', 'Prepare implements')",0.00501250951993547
+CCC19,AggregateType.AVG,0.2,"('Prepare implements', 'Clean puncture area')",0.07558622502040589
+CCC19,AggregateType.AVG,0.2,"('Drap puncture area', 'Prepare implements')",0.11688639659828717
+CCC19,AggregateType.AVG,0.2,"('Prepare implements', 'Cover probe')",0.12592592437263894
+CCC19,AggregateType.AVG,0.2,"('Gel in probe', 'Cover probe')",0.08005329551138576
+CCC19,AggregateType.AVG,0.2,"('Put sterile gel', 'Position probe')",0.12827691619908244
+CCC19,AggregateType.AVG,0.2,"('Guidewire install', 'Remove trocar')",0.038684684718389976
+CCC19,AggregateType.AVG,0.2,"('Compression identification', 'Doppler identification')",0.16521141869169687
+CCC19,AggregateType.AVG,0.2,"('Doppler identification', 'Anesthetize')",0.6095800879873761
+CCC19,AggregateType.AVG,0.2,"('Check wire in long axis', 'Wire in good position')",0.11159515120335309
+CCC19,AggregateType.AVG,0.2,"('Prepare implements', 'Ultrasound configuration')",0.025896180776453948
+CCC19,AggregateType.AVG,0.2,"('Wire in good position', 'Widen pathway')",0.024589716936338935
+CCC19,AggregateType.AVG,0.2,"('Cover probe', 'Gel in probe')",0.05073567502617863
+CCC19,AggregateType.AVG,0.2,"('Anesthetize', 'Puncture')",0.1616271708950262
+CCC19,AggregateType.AVG,0.2,"('Prepare implements', 'Position patient')",0.894521799717463
+CCC19,AggregateType.AVG,0.2,"('Position probe', 'Anatomic identification')",0.023481537898168387
+CCC19,AggregateType.AVG,0.2,"('Position patient', 'Hand washing')",2.3984389470273775
+CCC19,AggregateType.AVG,0.3,"('Ultrasound configuration', 'Anatomic identification')",0.03265389477895795
+CCC19,AggregateType.AVG,0.3,"('Anatomic identification', 'Compression identification')",0.23951206883369083
+CCC19,AggregateType.AVG,0.3,"('Hand washing', 'Get in sterile clothes')",0.01672406892990876
+CCC19,AggregateType.AVG,0.3,"('Clean puncture area', 'Drap puncture area')",0.062347031537694386
+CCC19,AggregateType.AVG,0.3,"('Cover probe', 'Put sterile gel')",0.0020962685035288567
+CCC19,AggregateType.AVG,0.3,"('Puncture', 'Blood return')",0.009407433600663548
+CCC19,AggregateType.AVG,0.3,"('Blood return', 'Drop probe')",0.016612744630878074
+CCC19,AggregateType.AVG,0.3,"('Drop probe', 'Remove syringe')",0.0271953534224912
+CCC19,AggregateType.AVG,0.3,"('Remove syringe', 'Guidewire install')",0.011679913935617492
+CCC19,AggregateType.AVG,0.3,"('Check wire in short axis', 'Check wire in long axis')",0.0023648597944976755
+CCC19,AggregateType.AVG,0.3,"('Remove trocar', 'Check wire in short axis')",0.06513038614407722
+CCC19,AggregateType.AVG,0.3,"('Widen pathway', 'Advance catheter')",0.03908860579104728
+CCC19,AggregateType.AVG,0.3,"('Advance catheter', 'Remove guidewire')",0.027370962383074016
+CCC19,AggregateType.AVG,0.3,"('Remove guidewire', 'Check flow and reflow')",0.03593376244095382
+CCC19,AggregateType.AVG,0.3,"('Check flow and reflow', 'Check catheter position')",0.1328731721278431
+CCC19,AggregateType.AVG,0.3,"('Get in sterile clothes', 'Prepare implements')",0.029732172599285376
+CCC19,AggregateType.AVG,0.3,"('Prepare implements', 'Clean puncture area')",0.011708092767782738
+CCC19,AggregateType.AVG,0.3,"('Drap puncture area', 'Prepare implements')",0.01715220086687835
+CCC19,AggregateType.AVG,0.3,"('Prepare implements', 'Cover probe')",0.12928980806546223
+CCC19,AggregateType.AVG,0.3,"('Gel in probe', 'Cover probe')",0.009455912918443943
+CCC19,AggregateType.AVG,0.3,"('Put sterile gel', 'Position probe')",0.0016344596602753114
+CCC19,AggregateType.AVG,0.3,"('Guidewire install', 'Remove trocar')",0.02728002163263553
+CCC19,AggregateType.AVG,0.3,"('Compression identification', 'Doppler identification')",0.1224214478676604
+CCC19,AggregateType.AVG,0.3,"('Doppler identification', 'Anesthetize')",0.06562639607016729
+CCC19,AggregateType.AVG,0.3,"('Check wire in long axis', 'Wire in good position')",0.046898362034852425
+CCC19,AggregateType.AVG,0.3,"('Prepare implements', 'Ultrasound configuration')",0.010048219110143863
+CCC19,AggregateType.AVG,0.3,"('Wire in good position', 'Widen pathway')",0.1763323479596388
+CCC19,AggregateType.AVG,0.3,"('Cover probe', 'Gel in probe')",0.14655154758796263
+CCC19,AggregateType.AVG,0.3,"('Anesthetize', 'Puncture')",0.15314452244403634
+CCC19,AggregateType.AVG,0.3,"('Prepare implements', 'Position patient')",0.2808473023400406
+CCC19,AggregateType.AVG,0.3,"('Position probe', 'Anatomic identification')",0.058926537367066184
+CCC19,AggregateType.AVG,0.3,"('Position patient', 'Hand washing')",0.04239371696234029
+CCC19,AggregateType.AVG,0.4,"('Ultrasound configuration', 'Anatomic identification')",0.08762566707890791
+CCC19,AggregateType.AVG,0.4,"('Anatomic identification', 'Compression identification')",0.03751843347691031
+CCC19,AggregateType.AVG,0.4,"('Hand washing', 'Get in sterile clothes')",0.038282729434384176
+CCC19,AggregateType.AVG,0.4,"('Clean puncture area', 'Drap puncture area')",0.02435118192215069
+CCC19,AggregateType.AVG,0.4,"('Cover probe', 'Put sterile gel')",0.012773206402810306
+CCC19,AggregateType.AVG,0.4,"('Puncture', 'Blood return')",0.011491469631776299
+CCC19,AggregateType.AVG,0.4,"('Blood return', 'Drop probe')",0.02603953807067709
+CCC19,AggregateType.AVG,0.4,"('Drop probe', 'Remove syringe')",0.009088801599491539
+CCC19,AggregateType.AVG,0.4,"('Remove syringe', 'Guidewire install')",0.0067926275759865005
+CCC19,AggregateType.AVG,0.4,"('Check wire in short axis', 'Check wire in long axis')",0.013421456788173459
+CCC19,AggregateType.AVG,0.4,"('Remove trocar', 'Check wire in short axis')",0.012196149613321812
+CCC19,AggregateType.AVG,0.4,"('Widen pathway', 'Advance catheter')",0.020368267895500582
+CCC19,AggregateType.AVG,0.4,"('Advance catheter', 'Remove guidewire')",0.029148691528450142
+CCC19,AggregateType.AVG,0.4,"('Remove guidewire', 'Check flow and reflow')",0.009075888545702467
+CCC19,AggregateType.AVG,0.4,"('Check flow and reflow', 'Check catheter position')",0.03414698575223385
+CCC19,AggregateType.AVG,0.4,"('Get in sterile clothes', 'Prepare implements')",0.09161731236624979
+CCC19,AggregateType.AVG,0.4,"('Prepare implements', 'Clean puncture area')",0.020137328081607356
+CCC19,AggregateType.AVG,0.4,"('Drap puncture area', 'Prepare implements')",0.021532371679387714
+CCC19,AggregateType.AVG,0.4,"('Prepare implements', 'Cover probe')",0.17176130407938292
+CCC19,AggregateType.AVG,0.4,"('Gel in probe', 'Cover probe')",0.02466284170361518
+CCC19,AggregateType.AVG,0.4,"('Put sterile gel', 'Position probe')",0.06746506586000245
+CCC19,AggregateType.AVG,0.4,"('Guidewire install', 'Remove trocar')",0.0039354139347350285
+CCC19,AggregateType.AVG,0.4,"('Compression identification', 'Doppler identification')",0.2222815878543467
+CCC19,AggregateType.AVG,0.4,"('Doppler identification', 'Anesthetize')",0.30538323067229856
+CCC19,AggregateType.AVG,0.4,"('Check wire in long axis', 'Wire in good position')",0.015157339942885015
+CCC19,AggregateType.AVG,0.4,"('Prepare implements', 'Ultrasound configuration')",0.022784941873930098
+CCC19,AggregateType.AVG,0.4,"('Wire in good position', 'Widen pathway')",0.04167525050703347
+CCC19,AggregateType.AVG,0.4,"('Cover probe', 'Gel in probe')",0.2310223017446583
+CCC19,AggregateType.AVG,0.4,"('Anesthetize', 'Puncture')",0.0387393000966711
+CCC19,AggregateType.AVG,0.4,"('Prepare implements', 'Position patient')",0.5660130779218209
+CCC19,AggregateType.AVG,0.4,"('Position probe', 'Anatomic identification')",0.0647934392189337
+CCC19,AggregateType.AVG,0.4,"('Position patient', 'Hand washing')",0.2223208869681108
+CCC19,AggregateType.AVG,0.5,"('Ultrasound configuration', 'Anatomic identification')",0.06907708429345583
+CCC19,AggregateType.AVG,0.5,"('Anatomic identification', 'Compression identification')",0.021369196136011848
+CCC19,AggregateType.AVG,0.5,"('Hand washing', 'Get in sterile clothes')",0.0037566744496637895
+CCC19,AggregateType.AVG,0.5,"('Clean puncture area', 'Drap puncture area')",0.08438084401739632
+CCC19,AggregateType.AVG,0.5,"('Cover probe', 'Put sterile gel')",0.029900771048469464
+CCC19,AggregateType.AVG,0.5,"('Puncture', 'Blood return')",0.001138064150401453
+CCC19,AggregateType.AVG,0.5,"('Blood return', 'Drop probe')",0.04383327092963251
+CCC19,AggregateType.AVG,0.5,"('Drop probe', 'Remove syringe')",0.0030689568769654094
+CCC19,AggregateType.AVG,0.5,"('Remove syringe', 'Guidewire install')",0.004933428421725523
+CCC19,AggregateType.AVG,0.5,"('Check wire in short axis', 'Check wire in long axis')",0.007934760153553953
+CCC19,AggregateType.AVG,0.5,"('Remove trocar', 'Check wire in short axis')",0.00823120336031747
+CCC19,AggregateType.AVG,0.5,"('Widen pathway', 'Advance catheter')",0.014090685668129765
+CCC19,AggregateType.AVG,0.5,"('Advance catheter', 'Remove guidewire')",0.027775118376404073
+CCC19,AggregateType.AVG,0.5,"('Remove guidewire', 'Check flow and reflow')",0.006728652081840518
+CCC19,AggregateType.AVG,0.5,"('Check flow and reflow', 'Check catheter position')",0.006756219951157938
+CCC19,AggregateType.AVG,0.5,"('Get in sterile clothes', 'Prepare implements')",0.04000872507363478
+CCC19,AggregateType.AVG,0.5,"('Prepare implements', 'Clean puncture area')",0.02538169264047938
+CCC19,AggregateType.AVG,0.5,"('Drap puncture area', 'Prepare implements')",0.008613036346341474
+CCC19,AggregateType.AVG,0.5,"('Prepare implements', 'Cover probe')",0.10116202372183307
+CCC19,AggregateType.AVG,0.5,"('Gel in probe', 'Cover probe')",0.11473808475050516
+CCC19,AggregateType.AVG,0.5,"('Put sterile gel', 'Position probe')",0.012901884221945048
+CCC19,AggregateType.AVG,0.5,"('Guidewire install', 'Remove trocar')",0.06548248714960575
+CCC19,AggregateType.AVG,0.5,"('Compression identification', 'Doppler identification')",0.007884139349484176
+CCC19,AggregateType.AVG,0.5,"('Doppler identification', 'Anesthetize')",0.02514965755440124
+CCC19,AggregateType.AVG,0.5,"('Check wire in long axis', 'Wire in good position')",0.0005869313176471991
+CCC19,AggregateType.AVG,0.5,"('Prepare implements', 'Ultrasound configuration')",0.021570457072204396
+CCC19,AggregateType.AVG,0.5,"('Wire in good position', 'Widen pathway')",0.051335680488953095
+CCC19,AggregateType.AVG,0.5,"('Cover probe', 'Gel in probe')",0.19628367842698857
+CCC19,AggregateType.AVG,0.5,"('Anesthetize', 'Puncture')",0.0373794841430723
+CCC19,AggregateType.AVG,0.5,"('Prepare implements', 'Position patient')",0.3049302444565183
+CCC19,AggregateType.AVG,0.5,"('Position probe', 'Anatomic identification')",0.00931648607501402
+CCC19,AggregateType.AVG,0.5,"('Position patient', 'Hand washing')",0.2281088202310222
+CCC19,AggregateType.AVG,0.6,"('Ultrasound configuration', 'Anatomic identification')",0.017628525512245474
+CCC19,AggregateType.AVG,0.6,"('Anatomic identification', 'Compression identification')",0.010989035308190806
+CCC19,AggregateType.AVG,0.6,"('Hand washing', 'Get in sterile clothes')",0.005503947138950743
+CCC19,AggregateType.AVG,0.6,"('Clean puncture area', 'Drap puncture area')",0.011280947622526627
+CCC19,AggregateType.AVG,0.6,"('Cover probe', 'Put sterile gel')",0.03997284486496007
+CCC19,AggregateType.AVG,0.6,"('Puncture', 'Blood return')",0.0057086182614265865
+CCC19,AggregateType.AVG,0.6,"('Blood return', 'Drop probe')",0.025880941995562574
+CCC19,AggregateType.AVG,0.6,"('Drop probe', 'Remove syringe')",0.0045028735352660425
+CCC19,AggregateType.AVG,0.6,"('Remove syringe', 'Guidewire install')",0.022667463195340787
+CCC19,AggregateType.AVG,0.6,"('Check wire in short axis', 'Check wire in long axis')",0.0010297928463324979
+CCC19,AggregateType.AVG,0.6,"('Remove trocar', 'Check wire in short axis')",0.014674011723123452
+CCC19,AggregateType.AVG,0.6,"('Widen pathway', 'Advance catheter')",0.004399960402179677
+CCC19,AggregateType.AVG,0.6,"('Advance catheter', 'Remove guidewire')",0.019285613392671052
+CCC19,AggregateType.AVG,0.6,"('Remove guidewire', 'Check flow and reflow')",0.008163245416259061
+CCC19,AggregateType.AVG,0.6,"('Check flow and reflow', 'Check catheter position')",0.00015796531949874293
+CCC19,AggregateType.AVG,0.6,"('Get in sterile clothes', 'Prepare implements')",0.007282730513081346
+CCC19,AggregateType.AVG,0.6,"('Prepare implements', 'Clean puncture area')",5.4026494198730835e-05
+CCC19,AggregateType.AVG,0.6,"('Drap puncture area', 'Prepare implements')",0.02369292959856887
+CCC19,AggregateType.AVG,0.6,"('Prepare implements', 'Cover probe')",0.05833034868525925
+CCC19,AggregateType.AVG,0.6,"('Gel in probe', 'Cover probe')",0.022352961924922532
+CCC19,AggregateType.AVG,0.6,"('Put sterile gel', 'Position probe')",0.0328658117877445
+CCC19,AggregateType.AVG,0.6,"('Guidewire install', 'Remove trocar')",0.06758258076398643
+CCC19,AggregateType.AVG,0.6,"('Compression identification', 'Doppler identification')",0.021915749777653426
+CCC19,AggregateType.AVG,0.6,"('Doppler identification', 'Anesthetize')",0.3939972331279984
+CCC19,AggregateType.AVG,0.6,"('Check wire in long axis', 'Wire in good position')",7.808129810804587e-05
+CCC19,AggregateType.AVG,0.6,"('Prepare implements', 'Ultrasound configuration')",0.12678448533911912
+CCC19,AggregateType.AVG,0.6,"('Wire in good position', 'Widen pathway')",0.04162592823983835
+CCC19,AggregateType.AVG,0.6,"('Cover probe', 'Gel in probe')",0.020650894853804076
+CCC19,AggregateType.AVG,0.6,"('Anesthetize', 'Puncture')",0.0009375743188747441
+CCC19,AggregateType.AVG,0.6,"('Prepare implements', 'Position patient')",0.06123554426822064
+CCC19,AggregateType.AVG,0.6,"('Position probe', 'Anatomic identification')",0.01097250193161988
+CCC19,AggregateType.AVG,0.6,"('Position patient', 'Hand washing')",0.1525720588385302
+CCC19,AggregateType.AVG,0.7,"('Ultrasound configuration', 'Anatomic identification')",0.05628213334391656
+CCC19,AggregateType.AVG,0.7,"('Anatomic identification', 'Compression identification')",0.022010129477226137
+CCC19,AggregateType.AVG,0.7,"('Hand washing', 'Get in sterile clothes')",0.05509859247028864
+CCC19,AggregateType.AVG,0.7,"('Clean puncture area', 'Drap puncture area')",0.014883627637023
+CCC19,AggregateType.AVG,0.7,"('Cover probe', 'Put sterile gel')",0.013559081899952592
+CCC19,AggregateType.AVG,0.7,"('Puncture', 'Blood return')",0.022507623992403185
+CCC19,AggregateType.AVG,0.7,"('Blood return', 'Drop probe')",0.0028411896705701745
+CCC19,AggregateType.AVG,0.7,"('Drop probe', 'Remove syringe')",0.007545346692378274
+CCC19,AggregateType.AVG,0.7,"('Remove syringe', 'Guidewire install')",0.0038079006400438685
+CCC19,AggregateType.AVG,0.7,"('Check wire in short axis', 'Check wire in long axis')",0.014726577285514821
+CCC19,AggregateType.AVG,0.7,"('Remove trocar', 'Check wire in short axis')",0.060691470950886145
+CCC19,AggregateType.AVG,0.7,"('Widen pathway', 'Advance catheter')",0.002058069377290176
+CCC19,AggregateType.AVG,0.7,"('Advance catheter', 'Remove guidewire')",0.01267405961026693
+CCC19,AggregateType.AVG,0.7,"('Remove guidewire', 'Check flow and reflow')",0.00310951654311431
+CCC19,AggregateType.AVG,0.7,"('Check flow and reflow', 'Check catheter position')",0.0015747897533751054
+CCC19,AggregateType.AVG,0.7,"('Get in sterile clothes', 'Prepare implements')",0.009058184449029049
+CCC19,AggregateType.AVG,0.7,"('Prepare implements', 'Clean puncture area')",0.027082116810759952
+CCC19,AggregateType.AVG,0.7,"('Drap puncture area', 'Prepare implements')",0.017943333178462622
+CCC19,AggregateType.AVG,0.7,"('Prepare implements', 'Cover probe')",0.015747293330965178
+CCC19,AggregateType.AVG,0.7,"('Gel in probe', 'Cover probe')",0.03447695606764053
+CCC19,AggregateType.AVG,0.7,"('Put sterile gel', 'Position probe')",0.03656020609619004
+CCC19,AggregateType.AVG,0.7,"('Guidewire install', 'Remove trocar')",0.0131240670419746
+CCC19,AggregateType.AVG,0.7,"('Compression identification', 'Doppler identification')",0.006461289266772585
+CCC19,AggregateType.AVG,0.7,"('Doppler identification', 'Anesthetize')",0.0024492015202326467
+CCC19,AggregateType.AVG,0.7,"('Check wire in long axis', 'Wire in good position')",0.07401330066238801
+CCC19,AggregateType.AVG,0.7,"('Prepare implements', 'Ultrasound configuration')",0.020286840847925314
+CCC19,AggregateType.AVG,0.7,"('Wire in good position', 'Widen pathway')",0.009823218406338485
+CCC19,AggregateType.AVG,0.7,"('Cover probe', 'Gel in probe')",0.010159678861407043
+CCC19,AggregateType.AVG,0.7,"('Anesthetize', 'Puncture')",0.05346544423280145
+CCC19,AggregateType.AVG,0.7,"('Prepare implements', 'Position patient')",0.04347159101050746
+CCC19,AggregateType.AVG,0.7,"('Position probe', 'Anatomic identification')",0.003115106586832105
+CCC19,AggregateType.AVG,0.7,"('Position patient', 'Hand washing')",0.01935179298877454
+CCC19,AggregateType.AVG,0.8,"('Ultrasound configuration', 'Anatomic identification')",0.054168338224251045
+CCC19,AggregateType.AVG,0.8,"('Anatomic identification', 'Compression identification')",0.025923342914084085
+CCC19,AggregateType.AVG,0.8,"('Hand washing', 'Get in sterile clothes')",0.007806213516261283
+CCC19,AggregateType.AVG,0.8,"('Clean puncture area', 'Drap puncture area')",0.002953232913343262
+CCC19,AggregateType.AVG,0.8,"('Cover probe', 'Put sterile gel')",0.003990598753491999
+CCC19,AggregateType.AVG,0.8,"('Puncture', 'Blood return')",0.03429394898087739
+CCC19,AggregateType.AVG,0.8,"('Blood return', 'Drop probe')",0.012469091695364838
+CCC19,AggregateType.AVG,0.8,"('Drop probe', 'Remove syringe')",0.023319250330226502
+CCC19,AggregateType.AVG,0.8,"('Remove syringe', 'Guidewire install')",1.3235586860957938e-05
+CCC19,AggregateType.AVG,0.8,"('Check wire in short axis', 'Check wire in long axis')",0.0028956867137942765
+CCC19,AggregateType.AVG,0.8,"('Remove trocar', 'Check wire in short axis')",0.02676882791883332
+CCC19,AggregateType.AVG,0.8,"('Widen pathway', 'Advance catheter')",0.0014842457602979732
+CCC19,AggregateType.AVG,0.8,"('Advance catheter', 'Remove guidewire')",0.0034145527611855186
+CCC19,AggregateType.AVG,0.8,"('Remove guidewire', 'Check flow and reflow')",0.014813235332488302
+CCC19,AggregateType.AVG,0.8,"('Check flow and reflow', 'Check catheter position')",0.022341834218204015
+CCC19,AggregateType.AVG,0.8,"('Get in sterile clothes', 'Prepare implements')",0.0008597596775853984
+CCC19,AggregateType.AVG,0.8,"('Prepare implements', 'Clean puncture area')",0.03204772954067632
+CCC19,AggregateType.AVG,0.8,"('Drap puncture area', 'Prepare implements')",0.03849738537240008
+CCC19,AggregateType.AVG,0.8,"('Prepare implements', 'Cover probe')",0.06771297710269497
+CCC19,AggregateType.AVG,0.8,"('Gel in probe', 'Cover probe')",0.006842468953280699
+CCC19,AggregateType.AVG,0.8,"('Put sterile gel', 'Position probe')",0.0012489988748201064
+CCC19,AggregateType.AVG,0.8,"('Guidewire install', 'Remove trocar')",0.00931245893186055
+CCC19,AggregateType.AVG,0.8,"('Compression identification', 'Doppler identification')",0.07040624995804357
+CCC19,AggregateType.AVG,0.8,"('Doppler identification', 'Anesthetize')",0.014310729845465442
+CCC19,AggregateType.AVG,0.8,"('Check wire in long axis', 'Wire in good position')",0.030118999388871377
+CCC19,AggregateType.AVG,0.8,"('Prepare implements', 'Ultrasound configuration')",0.006260896480841938
+CCC19,AggregateType.AVG,0.8,"('Wire in good position', 'Widen pathway')",0.019693903171646765
+CCC19,AggregateType.AVG,0.8,"('Cover probe', 'Gel in probe')",0.040760976338126774
+CCC19,AggregateType.AVG,0.8,"('Anesthetize', 'Puncture')",0.089789297303485
+CCC19,AggregateType.AVG,0.8,"('Prepare implements', 'Position patient')",0.2384671618760863
+CCC19,AggregateType.AVG,0.8,"('Position probe', 'Anatomic identification')",0.011649489408997522
+CCC19,AggregateType.AVG,0.8,"('Position patient', 'Hand washing')",0.3430359673582237
+CCC19,AggregateType.AVG,0.9,"('Ultrasound configuration', 'Anatomic identification')",0.05126295513315693
+CCC19,AggregateType.AVG,0.9,"('Anatomic identification', 'Compression identification')",0.0015155630081239064
+CCC19,AggregateType.AVG,0.9,"('Hand washing', 'Get in sterile clothes')",0.012290477010986822
+CCC19,AggregateType.AVG,0.9,"('Clean puncture area', 'Drap puncture area')",0.0008786523580521788
+CCC19,AggregateType.AVG,0.9,"('Cover probe', 'Put sterile gel')",0.01595535206575498
+CCC19,AggregateType.AVG,0.9,"('Puncture', 'Blood return')",0.00405836445124979
+CCC19,AggregateType.AVG,0.9,"('Blood return', 'Drop probe')",0.0102792384188122
+CCC19,AggregateType.AVG,0.9,"('Drop probe', 'Remove syringe')",0.0015076447511602326
+CCC19,AggregateType.AVG,0.9,"('Remove syringe', 'Guidewire install')",0.00903544892098168
+CCC19,AggregateType.AVG,0.9,"('Check wire in short axis', 'Check wire in long axis')",0.009447281587008973
+CCC19,AggregateType.AVG,0.9,"('Remove trocar', 'Check wire in short axis')",0.0032584311862553506
+CCC19,AggregateType.AVG,0.9,"('Widen pathway', 'Advance catheter')",0.00037741010066940007
+CCC19,AggregateType.AVG,0.9,"('Advance catheter', 'Remove guidewire')",0.004490590798563154
+CCC19,AggregateType.AVG,0.9,"('Remove guidewire', 'Check flow and reflow')",0.0027249295542670637
+CCC19,AggregateType.AVG,0.9,"('Check flow and reflow', 'Check catheter position')",0.004597059888301169
+CCC19,AggregateType.AVG,0.9,"('Get in sterile clothes', 'Prepare implements')",9.336837976409779e-05
+CCC19,AggregateType.AVG,0.9,"('Prepare implements', 'Clean puncture area')",0.0040888833092674794
+CCC19,AggregateType.AVG,0.9,"('Drap puncture area', 'Prepare implements')",0.0285669911888186
+CCC19,AggregateType.AVG,0.9,"('Prepare implements', 'Cover probe')",0.0051068740333691425
+CCC19,AggregateType.AVG,0.9,"('Gel in probe', 'Cover probe')",0.009242042006605975
+CCC19,AggregateType.AVG,0.9,"('Put sterile gel', 'Position probe')",0.009629000569373103
+CCC19,AggregateType.AVG,0.9,"('Guidewire install', 'Remove trocar')",0.005667092064168797
+CCC19,AggregateType.AVG,0.9,"('Compression identification', 'Doppler identification')",0.0020913653725682657
+CCC19,AggregateType.AVG,0.9,"('Doppler identification', 'Anesthetize')",0.1895450773544034
+CCC19,AggregateType.AVG,0.9,"('Check wire in long axis', 'Wire in good position')",0.048208680079573005
+CCC19,AggregateType.AVG,0.9,"('Prepare implements', 'Ultrasound configuration')",0.06622451972933252
+CCC19,AggregateType.AVG,0.9,"('Wire in good position', 'Widen pathway')",0.04537098266493267
+CCC19,AggregateType.AVG,0.9,"('Cover probe', 'Gel in probe')",0.005679358311855953
+CCC19,AggregateType.AVG,0.9,"('Anesthetize', 'Puncture')",0.001404909228881479
+CCC19,AggregateType.AVG,0.9,"('Prepare implements', 'Position patient')",0.06194355068050794
+CCC19,AggregateType.AVG,0.9,"('Position probe', 'Anatomic identification')",0.00010490410550959932
+CCC19,AggregateType.AVG,0.9,"('Position patient', 'Hand washing')",0.11621437026904036
+CCC19,AggregateType.SUM,0.01,"('Ultrasound configuration', 'Anatomic identification')",1.2141861469256754
+CCC19,AggregateType.SUM,0.01,"('Anatomic identification', 'Compression identification')",3.9361581166019044
+CCC19,AggregateType.SUM,0.01,"('Hand washing', 'Get in sterile clothes')",1.20831738762029
+CCC19,AggregateType.SUM,0.01,"('Clean puncture area', 'Drap puncture area')",1.2005693526921934
+CCC19,AggregateType.SUM,0.01,"('Cover probe', 'Put sterile gel')",0.9455649379420649
+CCC19,AggregateType.SUM,0.01,"('Puncture', 'Blood return')",0.29253773127959554
+CCC19,AggregateType.SUM,0.01,"('Blood return', 'Drop probe')",1.330027909218984
+CCC19,AggregateType.SUM,0.01,"('Drop probe', 'Remove syringe')",2.3099996383509045
+CCC19,AggregateType.SUM,0.01,"('Remove syringe', 'Guidewire install')",0.39417736160286865
+CCC19,AggregateType.SUM,0.01,"('Check wire in short axis', 'Check wire in long axis')",1.3309355173220507
+CCC19,AggregateType.SUM,0.01,"('Remove trocar', 'Check wire in short axis')",0.18474747770358466
+CCC19,AggregateType.SUM,0.01,"('Widen pathway', 'Advance catheter')",0.2385616347946766
+CCC19,AggregateType.SUM,0.01,"('Advance catheter', 'Remove guidewire')",0.5793477137658852
+CCC19,AggregateType.SUM,0.01,"('Remove guidewire', 'Check flow and reflow')",0.13717154594620024
+CCC19,AggregateType.SUM,0.01,"('Check flow and reflow', 'Check catheter position')",0.9866820826739235
+CCC19,AggregateType.SUM,0.01,"('Get in sterile clothes', 'Prepare implements')",0.6182234876094432
+CCC19,AggregateType.SUM,0.01,"('Prepare implements', 'Clean puncture area')",0.6640407301407746
+CCC19,AggregateType.SUM,0.01,"('Drap puncture area', 'Prepare implements')",2.1972290823467397
+CCC19,AggregateType.SUM,0.01,"('Prepare implements', 'Cover probe')",5.040303442778371
+CCC19,AggregateType.SUM,0.01,"('Gel in probe', 'Cover probe')",0.2028277401124221
+CCC19,AggregateType.SUM,0.01,"('Put sterile gel', 'Position probe')",0.33729904060572724
+CCC19,AggregateType.SUM,0.01,"('Guidewire install', 'Remove trocar')",0.025352283546987583
+CCC19,AggregateType.SUM,0.01,"('Compression identification', 'Doppler identification')",0.5549397463307395
+CCC19,AggregateType.SUM,0.01,"('Doppler identification', 'Anesthetize')",21.987111609466098
+CCC19,AggregateType.SUM,0.01,"('Check wire in long axis', 'Wire in good position')",2.3623156256784044
+CCC19,AggregateType.SUM,0.01,"('Prepare implements', 'Ultrasound configuration')",11.994677550912163
+CCC19,AggregateType.SUM,0.01,"('Wire in good position', 'Widen pathway')",2.8721430674872845
+CCC19,AggregateType.SUM,0.01,"('Cover probe', 'Gel in probe')",10.42231314008105
+CCC19,AggregateType.SUM,0.01,"('Anesthetize', 'Puncture')",2.962409905148915
+CCC19,AggregateType.SUM,0.01,"('Prepare implements', 'Position patient')",8.659258979777606
+CCC19,AggregateType.SUM,0.01,"('Position probe', 'Anatomic identification')",5.306246508371027
+CCC19,AggregateType.SUM,0.01,"('Position patient', 'Hand washing')",26.538401538630676
+CCC19,AggregateType.SUM,0.05,"('Ultrasound configuration', 'Anatomic identification')",0.05843213748935518
+CCC19,AggregateType.SUM,0.05,"('Anatomic identification', 'Compression identification')",0.8811601876478369
+CCC19,AggregateType.SUM,0.05,"('Hand washing', 'Get in sterile clothes')",0.45630200945182287
+CCC19,AggregateType.SUM,0.05,"('Clean puncture area', 'Drap puncture area')",0.21297468154224108
+CCC19,AggregateType.SUM,0.05,"('Cover probe', 'Put sterile gel')",0.46311395296212915
+CCC19,AggregateType.SUM,0.05,"('Puncture', 'Blood return')",0.4566851049919707
+CCC19,AggregateType.SUM,0.05,"('Blood return', 'Drop probe')",0.16901969680362855
+CCC19,AggregateType.SUM,0.05,"('Drop probe', 'Remove syringe')",0.09634670046729177
+CCC19,AggregateType.SUM,0.05,"('Remove syringe', 'Guidewire install')",0.21466631191183325
+CCC19,AggregateType.SUM,0.05,"('Check wire in short axis', 'Check wire in long axis')",0.1464825214402795
+CCC19,AggregateType.SUM,0.05,"('Remove trocar', 'Check wire in short axis')",0.31939864699853
+CCC19,AggregateType.SUM,0.05,"('Widen pathway', 'Advance catheter')",0.29852106728521666
+CCC19,AggregateType.SUM,0.05,"('Advance catheter', 'Remove guidewire')",0.06413886463127252
+CCC19,AggregateType.SUM,0.05,"('Remove guidewire', 'Check flow and reflow')",0.3275465372324447
+CCC19,AggregateType.SUM,0.05,"('Check flow and reflow', 'Check catheter position')",1.1032809615366794
+CCC19,AggregateType.SUM,0.05,"('Get in sterile clothes', 'Prepare implements')",0.22395071959756152
+CCC19,AggregateType.SUM,0.05,"('Prepare implements', 'Clean puncture area')",0.0880628784757204
+CCC19,AggregateType.SUM,0.05,"('Drap puncture area', 'Prepare implements')",0.16603656465306585
+CCC19,AggregateType.SUM,0.05,"('Prepare implements', 'Cover probe')",0.20611954595688328
+CCC19,AggregateType.SUM,0.05,"('Gel in probe', 'Cover probe')",0.1521998637557707
+CCC19,AggregateType.SUM,0.05,"('Put sterile gel', 'Position probe')",0.07465101932663298
+CCC19,AggregateType.SUM,0.05,"('Guidewire install', 'Remove trocar')",0.019399401023068127
+CCC19,AggregateType.SUM,0.05,"('Compression identification', 'Doppler identification')",3.7237594519794293
+CCC19,AggregateType.SUM,0.05,"('Doppler identification', 'Anesthetize')",8.036437382871092
+CCC19,AggregateType.SUM,0.05,"('Check wire in long axis', 'Wire in good position')",0.20623575408021053
+CCC19,AggregateType.SUM,0.05,"('Prepare implements', 'Ultrasound configuration')",0.046827342876760936
+CCC19,AggregateType.SUM,0.05,"('Wire in good position', 'Widen pathway')",0.8360007916536811
+CCC19,AggregateType.SUM,0.05,"('Cover probe', 'Gel in probe')",1.793072263892487
+CCC19,AggregateType.SUM,0.05,"('Anesthetize', 'Puncture')",0.34594979979796453
+CCC19,AggregateType.SUM,0.05,"('Prepare implements', 'Position patient')",2.94820082177353
+CCC19,AggregateType.SUM,0.05,"('Position probe', 'Anatomic identification')",0.9030019676503345
+CCC19,AggregateType.SUM,0.05,"('Position patient', 'Hand washing')",4.017803688698557
+CCC19,AggregateType.SUM,0.1,"('Ultrasound configuration', 'Anatomic identification')",0.2053590762051515
+CCC19,AggregateType.SUM,0.1,"('Anatomic identification', 'Compression identification')",0.24824763160007324
+CCC19,AggregateType.SUM,0.1,"('Hand washing', 'Get in sterile clothes')",0.015168958710786478
+CCC19,AggregateType.SUM,0.1,"('Clean puncture area', 'Drap puncture area')",0.03972891569837955
+CCC19,AggregateType.SUM,0.1,"('Cover probe', 'Put sterile gel')",0.09764097844308779
+CCC19,AggregateType.SUM,0.1,"('Puncture', 'Blood return')",0.0927555346233608
+CCC19,AggregateType.SUM,0.1,"('Blood return', 'Drop probe')",0.027026917799236827
+CCC19,AggregateType.SUM,0.1,"('Drop probe', 'Remove syringe')",0.08574102963501372
+CCC19,AggregateType.SUM,0.1,"('Remove syringe', 'Guidewire install')",0.10227573221999933
+CCC19,AggregateType.SUM,0.1,"('Check wire in short axis', 'Check wire in long axis')",0.07926455049059414
+CCC19,AggregateType.SUM,0.1,"('Remove trocar', 'Check wire in short axis')",0.30805065436470164
+CCC19,AggregateType.SUM,0.1,"('Widen pathway', 'Advance catheter')",0.3707451102234747
+CCC19,AggregateType.SUM,0.1,"('Advance catheter', 'Remove guidewire')",0.1854614262219151
+CCC19,AggregateType.SUM,0.1,"('Remove guidewire', 'Check flow and reflow')",0.05381245299172398
+CCC19,AggregateType.SUM,0.1,"('Check flow and reflow', 'Check catheter position')",0.4761178450251997
+CCC19,AggregateType.SUM,0.1,"('Get in sterile clothes', 'Prepare implements')",0.04925375494800418
+CCC19,AggregateType.SUM,0.1,"('Prepare implements', 'Clean puncture area')",0.030409360618557812
+CCC19,AggregateType.SUM,0.1,"('Drap puncture area', 'Prepare implements')",0.15398516010087335
+CCC19,AggregateType.SUM,0.1,"('Prepare implements', 'Cover probe')",0.030440103459388485
+CCC19,AggregateType.SUM,0.1,"('Gel in probe', 'Cover probe')",0.02026712778467919
+CCC19,AggregateType.SUM,0.1,"('Put sterile gel', 'Position probe')",0.0011530783679221113
+CCC19,AggregateType.SUM,0.1,"('Guidewire install', 'Remove trocar')",0.25250727296430203
+CCC19,AggregateType.SUM,0.1,"('Compression identification', 'Doppler identification')",1.841418809597804
+CCC19,AggregateType.SUM,0.1,"('Doppler identification', 'Anesthetize')",0.5917703441862212
+CCC19,AggregateType.SUM,0.1,"('Check wire in long axis', 'Wire in good position')",0.5688808541731188
+CCC19,AggregateType.SUM,0.1,"('Prepare implements', 'Ultrasound configuration')",0.4424039460318392
+CCC19,AggregateType.SUM,0.1,"('Wire in good position', 'Widen pathway')",0.005503953232533387
+CCC19,AggregateType.SUM,0.1,"('Cover probe', 'Gel in probe')",0.2606922065781938
+CCC19,AggregateType.SUM,0.1,"('Anesthetize', 'Puncture')",0.5558095414364033
+CCC19,AggregateType.SUM,0.1,"('Prepare implements', 'Position patient')",2.9365541158091806
+CCC19,AggregateType.SUM,0.1,"('Position probe', 'Anatomic identification')",0.002026978954882155
+CCC19,AggregateType.SUM,0.1,"('Position patient', 'Hand washing')",0.6547399800456661
+CCC19,AggregateType.SUM,0.2,"('Ultrasound configuration', 'Anatomic identification')",0.18699894083295163
+CCC19,AggregateType.SUM,0.2,"('Anatomic identification', 'Compression identification')",0.171169915192617
+CCC19,AggregateType.SUM,0.2,"('Hand washing', 'Get in sterile clothes')",0.0013669238720405094
+CCC19,AggregateType.SUM,0.2,"('Clean puncture area', 'Drap puncture area')",0.020182733123344843
+CCC19,AggregateType.SUM,0.2,"('Cover probe', 'Put sterile gel')",0.28636405190888703
+CCC19,AggregateType.SUM,0.2,"('Puncture', 'Blood return')",0.010593468455072865
+CCC19,AggregateType.SUM,0.2,"('Blood return', 'Drop probe')",0.03307599683743576
+CCC19,AggregateType.SUM,0.2,"('Drop probe', 'Remove syringe')",0.09779523965181393
+CCC19,AggregateType.SUM,0.2,"('Remove syringe', 'Guidewire install')",0.06195340310529659
+CCC19,AggregateType.SUM,0.2,"('Check wire in short axis', 'Check wire in long axis')",0.014452281064482975
+CCC19,AggregateType.SUM,0.2,"('Remove trocar', 'Check wire in short axis')",0.044188825834910614
+CCC19,AggregateType.SUM,0.2,"('Widen pathway', 'Advance catheter')",0.09854221408094196
+CCC19,AggregateType.SUM,0.2,"('Advance catheter', 'Remove guidewire')",0.0762989133892125
+CCC19,AggregateType.SUM,0.2,"('Remove guidewire', 'Check flow and reflow')",0.03962789183047219
+CCC19,AggregateType.SUM,0.2,"('Check flow and reflow', 'Check catheter position')",0.12783724966603383
+CCC19,AggregateType.SUM,0.2,"('Get in sterile clothes', 'Prepare implements')",0.029348974558762977
+CCC19,AggregateType.SUM,0.2,"('Prepare implements', 'Clean puncture area')",0.047959787077943045
+CCC19,AggregateType.SUM,0.2,"('Drap puncture area', 'Prepare implements')",0.020146724446949912
+CCC19,AggregateType.SUM,0.2,"('Prepare implements', 'Cover probe')",0.434130364050261
+CCC19,AggregateType.SUM,0.2,"('Gel in probe', 'Cover probe')",0.06289715154887635
+CCC19,AggregateType.SUM,0.2,"('Put sterile gel', 'Position probe')",0.10784155771090043
+CCC19,AggregateType.SUM,0.2,"('Guidewire install', 'Remove trocar')",0.026336960647599186
+CCC19,AggregateType.SUM,0.2,"('Compression identification', 'Doppler identification')",0.1376736111144048
+CCC19,AggregateType.SUM,0.2,"('Doppler identification', 'Anesthetize')",0.16057254407364074
+CCC19,AggregateType.SUM,0.2,"('Check wire in long axis', 'Wire in good position')",0.2926688009226286
+CCC19,AggregateType.SUM,0.2,"('Prepare implements', 'Ultrasound configuration')",0.11418732748264193
+CCC19,AggregateType.SUM,0.2,"('Wire in good position', 'Widen pathway')",0.19424818818399392
+CCC19,AggregateType.SUM,0.2,"('Cover probe', 'Gel in probe')",0.06398704060580702
+CCC19,AggregateType.SUM,0.2,"('Anesthetize', 'Puncture')",0.14285905348021466
+CCC19,AggregateType.SUM,0.2,"('Prepare implements', 'Position patient')",0.2959061010074917
+CCC19,AggregateType.SUM,0.2,"('Position probe', 'Anatomic identification')",0.03753002593003312
+CCC19,AggregateType.SUM,0.2,"('Position patient', 'Hand washing')",0.16308530252612052
+CCC19,AggregateType.SUM,0.3,"('Ultrasound configuration', 'Anatomic identification')",0.10157795696794025
+CCC19,AggregateType.SUM,0.3,"('Anatomic identification', 'Compression identification')",0.021843160493016118
+CCC19,AggregateType.SUM,0.3,"('Hand washing', 'Get in sterile clothes')",0.1371982068848613
+CCC19,AggregateType.SUM,0.3,"('Clean puncture area', 'Drap puncture area')",0.016016422640718675
+CCC19,AggregateType.SUM,0.3,"('Cover probe', 'Put sterile gel')",0.06475389104945724
+CCC19,AggregateType.SUM,0.3,"('Puncture', 'Blood return')",0.08864391452537232
+CCC19,AggregateType.SUM,0.3,"('Blood return', 'Drop probe')",0.014718157736959395
+CCC19,AggregateType.SUM,0.3,"('Drop probe', 'Remove syringe')",0.01764664812663706
+CCC19,AggregateType.SUM,0.3,"('Remove syringe', 'Guidewire install')",0.010918123833969985
+CCC19,AggregateType.SUM,0.3,"('Check wire in short axis', 'Check wire in long axis')",0.12420990003671534
+CCC19,AggregateType.SUM,0.3,"('Remove trocar', 'Check wire in short axis')",0.01134941023635001
+CCC19,AggregateType.SUM,0.3,"('Widen pathway', 'Advance catheter')",0.0493650233194228
+CCC19,AggregateType.SUM,0.3,"('Advance catheter', 'Remove guidewire')",0.01962859478169019
+CCC19,AggregateType.SUM,0.3,"('Remove guidewire', 'Check flow and reflow')",0.1355808742787027
+CCC19,AggregateType.SUM,0.3,"('Check flow and reflow', 'Check catheter position')",0.009072384807624179
+CCC19,AggregateType.SUM,0.3,"('Get in sterile clothes', 'Prepare implements')",0.0027604776805798537
+CCC19,AggregateType.SUM,0.3,"('Prepare implements', 'Clean puncture area')",0.029478196594955746
+CCC19,AggregateType.SUM,0.3,"('Drap puncture area', 'Prepare implements')",0.07753013861130374
+CCC19,AggregateType.SUM,0.3,"('Prepare implements', 'Cover probe')",0.3291937027336103
+CCC19,AggregateType.SUM,0.3,"('Gel in probe', 'Cover probe')",0.01009683564476863
+CCC19,AggregateType.SUM,0.3,"('Put sterile gel', 'Position probe')",0.2877014597076304
+CCC19,AggregateType.SUM,0.3,"('Guidewire install', 'Remove trocar')",0.013800999223268877
+CCC19,AggregateType.SUM,0.3,"('Compression identification', 'Doppler identification')",0.06919462727066072
+CCC19,AggregateType.SUM,0.3,"('Doppler identification', 'Anesthetize')",0.19304330581972562
+CCC19,AggregateType.SUM,0.3,"('Check wire in long axis', 'Wire in good position')",0.09943186758293542
+CCC19,AggregateType.SUM,0.3,"('Prepare implements', 'Ultrasound configuration')",0.18129062425172915
+CCC19,AggregateType.SUM,0.3,"('Wire in good position', 'Widen pathway')",0.25357505986553086
+CCC19,AggregateType.SUM,0.3,"('Cover probe', 'Gel in probe')",0.25076059380232874
+CCC19,AggregateType.SUM,0.3,"('Anesthetize', 'Puncture')",0.31739210995470024
+CCC19,AggregateType.SUM,0.3,"('Prepare implements', 'Position patient')",0.602927605074298
+CCC19,AggregateType.SUM,0.3,"('Position probe', 'Anatomic identification')",0.022376648823091747
+CCC19,AggregateType.SUM,0.3,"('Position patient', 'Hand washing')",0.57941521429975
+CCC19,AggregateType.SUM,0.4,"('Ultrasound configuration', 'Anatomic identification')",0.05929204624005866
+CCC19,AggregateType.SUM,0.4,"('Anatomic identification', 'Compression identification')",0.07119800539120942
+CCC19,AggregateType.SUM,0.4,"('Hand washing', 'Get in sterile clothes')",0.05210388405060005
+CCC19,AggregateType.SUM,0.4,"('Clean puncture area', 'Drap puncture area')",0.010139956544666262
+CCC19,AggregateType.SUM,0.4,"('Cover probe', 'Put sterile gel')",0.05020848440576178
+CCC19,AggregateType.SUM,0.4,"('Puncture', 'Blood return')",0.021555572497627757
+CCC19,AggregateType.SUM,0.4,"('Blood return', 'Drop probe')",0.04837817222610707
+CCC19,AggregateType.SUM,0.4,"('Drop probe', 'Remove syringe')",0.03056111682630353
+CCC19,AggregateType.SUM,0.4,"('Remove syringe', 'Guidewire install')",0.006248744778494455
+CCC19,AggregateType.SUM,0.4,"('Check wire in short axis', 'Check wire in long axis')",0.049025565204775606
+CCC19,AggregateType.SUM,0.4,"('Remove trocar', 'Check wire in short axis')",0.02024149937614119
+CCC19,AggregateType.SUM,0.4,"('Widen pathway', 'Advance catheter')",0.026825279414018223
+CCC19,AggregateType.SUM,0.4,"('Advance catheter', 'Remove guidewire')",0.01988328180181522
+CCC19,AggregateType.SUM,0.4,"('Remove guidewire', 'Check flow and reflow')",0.03178000659603164
+CCC19,AggregateType.SUM,0.4,"('Check flow and reflow', 'Check catheter position')",0.04544710068144875
+CCC19,AggregateType.SUM,0.4,"('Get in sterile clothes', 'Prepare implements')",0.04180966374736014
+CCC19,AggregateType.SUM,0.4,"('Prepare implements', 'Clean puncture area')",0.014621714454881304
+CCC19,AggregateType.SUM,0.4,"('Drap puncture area', 'Prepare implements')",0.039977991929650174
+CCC19,AggregateType.SUM,0.4,"('Prepare implements', 'Cover probe')",0.05023158806398609
+CCC19,AggregateType.SUM,0.4,"('Gel in probe', 'Cover probe')",0.010203370086494776
+CCC19,AggregateType.SUM,0.4,"('Put sterile gel', 'Position probe')",7.429292879823635e-05
+CCC19,AggregateType.SUM,0.4,"('Guidewire install', 'Remove trocar')",0.07601622684300935
+CCC19,AggregateType.SUM,0.4,"('Compression identification', 'Doppler identification')",0.19980569512944246
+CCC19,AggregateType.SUM,0.4,"('Doppler identification', 'Anesthetize')",0.05955087627181399
+CCC19,AggregateType.SUM,0.4,"('Check wire in long axis', 'Wire in good position')",0.06744215758422298
+CCC19,AggregateType.SUM,0.4,"('Prepare implements', 'Ultrasound configuration')",0.07506057873360472
+CCC19,AggregateType.SUM,0.4,"('Wire in good position', 'Widen pathway')",0.023579168177948473
+CCC19,AggregateType.SUM,0.4,"('Cover probe', 'Gel in probe')",0.010269325669651774
+CCC19,AggregateType.SUM,0.4,"('Anesthetize', 'Puncture')",0.025890514680965912
+CCC19,AggregateType.SUM,0.4,"('Prepare implements', 'Position patient')",0.009245665069486098
+CCC19,AggregateType.SUM,0.4,"('Position probe', 'Anatomic identification')",0.0144428608878603
+CCC19,AggregateType.SUM,0.4,"('Position patient', 'Hand washing')",0.12623551151523071
+CCC19,AggregateType.SUM,0.5,"('Ultrasound configuration', 'Anatomic identification')",0.00033795521515127546
+CCC19,AggregateType.SUM,0.5,"('Anatomic identification', 'Compression identification')",0.008485863913639147
+CCC19,AggregateType.SUM,0.5,"('Hand washing', 'Get in sterile clothes')",0.005638990563414612
+CCC19,AggregateType.SUM,0.5,"('Clean puncture area', 'Drap puncture area')",0.008557844009666082
+CCC19,AggregateType.SUM,0.5,"('Cover probe', 'Put sterile gel')",0.03551050511228742
+CCC19,AggregateType.SUM,0.5,"('Puncture', 'Blood return')",0.005574394523906113
+CCC19,AggregateType.SUM,0.5,"('Blood return', 'Drop probe')",0.0011790896826141498
+CCC19,AggregateType.SUM,0.5,"('Drop probe', 'Remove syringe')",0.007139770623907702
+CCC19,AggregateType.SUM,0.5,"('Remove syringe', 'Guidewire install')",0.006099945230003243
+CCC19,AggregateType.SUM,0.5,"('Check wire in short axis', 'Check wire in long axis')",6.393718352427413e-05
+CCC19,AggregateType.SUM,0.5,"('Remove trocar', 'Check wire in short axis')",0.028482805830595127
+CCC19,AggregateType.SUM,0.5,"('Widen pathway', 'Advance catheter')",0.012359490548303279
+CCC19,AggregateType.SUM,0.5,"('Advance catheter', 'Remove guidewire')",0.015484321051013338
+CCC19,AggregateType.SUM,0.5,"('Remove guidewire', 'Check flow and reflow')",0.012345044193045298
+CCC19,AggregateType.SUM,0.5,"('Check flow and reflow', 'Check catheter position')",0.022023116343199645
+CCC19,AggregateType.SUM,0.5,"('Get in sterile clothes', 'Prepare implements')",0.048507019561426015
+CCC19,AggregateType.SUM,0.5,"('Prepare implements', 'Clean puncture area')",0.043891122283184675
+CCC19,AggregateType.SUM,0.5,"('Drap puncture area', 'Prepare implements')",0.023749919367657205
+CCC19,AggregateType.SUM,0.5,"('Prepare implements', 'Cover probe')",0.1226490388134726
+CCC19,AggregateType.SUM,0.5,"('Gel in probe', 'Cover probe')",0.06562742364708678
+CCC19,AggregateType.SUM,0.5,"('Put sterile gel', 'Position probe')",0.010964247998154653
+CCC19,AggregateType.SUM,0.5,"('Guidewire install', 'Remove trocar')",0.0050612491177444395
+CCC19,AggregateType.SUM,0.5,"('Compression identification', 'Doppler identification')",0.119785990997751
+CCC19,AggregateType.SUM,0.5,"('Doppler identification', 'Anesthetize')",0.058958107627709255
+CCC19,AggregateType.SUM,0.5,"('Check wire in long axis', 'Wire in good position')",0.02691324657352369
+CCC19,AggregateType.SUM,0.5,"('Prepare implements', 'Ultrasound configuration')",0.08542092452227745
+CCC19,AggregateType.SUM,0.5,"('Wire in good position', 'Widen pathway')",0.0423524494415457
+CCC19,AggregateType.SUM,0.5,"('Cover probe', 'Gel in probe')",0.02246009901241693
+CCC19,AggregateType.SUM,0.5,"('Anesthetize', 'Puncture')",0.021334826685688906
+CCC19,AggregateType.SUM,0.5,"('Prepare implements', 'Position patient')",0.1654403850138495
+CCC19,AggregateType.SUM,0.5,"('Position probe', 'Anatomic identification')",0.010058824536935518
+CCC19,AggregateType.SUM,0.5,"('Position patient', 'Hand washing')",0.31262547454003853
+CCC19,AggregateType.SUM,0.6,"('Ultrasound configuration', 'Anatomic identification')",0.05195298792113938
+CCC19,AggregateType.SUM,0.6,"('Anatomic identification', 'Compression identification')",0.012889042874302703
+CCC19,AggregateType.SUM,0.6,"('Hand washing', 'Get in sterile clothes')",0.029516628194697154
+CCC19,AggregateType.SUM,0.6,"('Clean puncture area', 'Drap puncture area')",0.05698441128001508
+CCC19,AggregateType.SUM,0.6,"('Cover probe', 'Put sterile gel')",0.00304330731411954
+CCC19,AggregateType.SUM,0.6,"('Puncture', 'Blood return')",0.01639929228595507
+CCC19,AggregateType.SUM,0.6,"('Blood return', 'Drop probe')",0.009457170649498128
+CCC19,AggregateType.SUM,0.6,"('Drop probe', 'Remove syringe')",0.000714318381492846
+CCC19,AggregateType.SUM,0.6,"('Remove syringe', 'Guidewire install')",0.026809080471658718
+CCC19,AggregateType.SUM,0.6,"('Check wire in short axis', 'Check wire in long axis')",0.05486368059374584
+CCC19,AggregateType.SUM,0.6,"('Remove trocar', 'Check wire in short axis')",0.019442852827797334
+CCC19,AggregateType.SUM,0.6,"('Widen pathway', 'Advance catheter')",0.020099802407649747
+CCC19,AggregateType.SUM,0.6,"('Advance catheter', 'Remove guidewire')",0.0004783337564548518
+CCC19,AggregateType.SUM,0.6,"('Remove guidewire', 'Check flow and reflow')",0.0036576438012827753
+CCC19,AggregateType.SUM,0.6,"('Check flow and reflow', 'Check catheter position')",0.004681666158504516
+CCC19,AggregateType.SUM,0.6,"('Get in sterile clothes', 'Prepare implements')",0.02651927017688453
+CCC19,AggregateType.SUM,0.6,"('Prepare implements', 'Clean puncture area')",0.08991840851111076
+CCC19,AggregateType.SUM,0.6,"('Drap puncture area', 'Prepare implements')",0.01091141586662631
+CCC19,AggregateType.SUM,0.6,"('Prepare implements', 'Cover probe')",0.0574998231175791
+CCC19,AggregateType.SUM,0.6,"('Gel in probe', 'Cover probe')",0.03437391960228364
+CCC19,AggregateType.SUM,0.6,"('Put sterile gel', 'Position probe')",0.11056430484420199
+CCC19,AggregateType.SUM,0.6,"('Guidewire install', 'Remove trocar')",0.04112657099438878
+CCC19,AggregateType.SUM,0.6,"('Compression identification', 'Doppler identification')",0.008856890582872756
+CCC19,AggregateType.SUM,0.6,"('Doppler identification', 'Anesthetize')",0.04021423393206369
+CCC19,AggregateType.SUM,0.6,"('Check wire in long axis', 'Wire in good position')",0.018012611198678623
+CCC19,AggregateType.SUM,0.6,"('Prepare implements', 'Ultrasound configuration')",0.006426548355803918
+CCC19,AggregateType.SUM,0.6,"('Wire in good position', 'Widen pathway')",0.07525406199019002
+CCC19,AggregateType.SUM,0.6,"('Cover probe', 'Gel in probe')",0.03643744343451457
+CCC19,AggregateType.SUM,0.6,"('Anesthetize', 'Puncture')",0.02540050512306576
+CCC19,AggregateType.SUM,0.6,"('Prepare implements', 'Position patient')",0.12913463856629215
+CCC19,AggregateType.SUM,0.6,"('Position probe', 'Anatomic identification')",0.11562561042495645
+CCC19,AggregateType.SUM,0.6,"('Position patient', 'Hand washing')",0.2305547192266748
+CCC19,AggregateType.SUM,0.7,"('Ultrasound configuration', 'Anatomic identification')",0.029377310042115745
+CCC19,AggregateType.SUM,0.7,"('Anatomic identification', 'Compression identification')",0.01260690289661944
+CCC19,AggregateType.SUM,0.7,"('Hand washing', 'Get in sterile clothes')",0.01686359710527609
+CCC19,AggregateType.SUM,0.7,"('Clean puncture area', 'Drap puncture area')",0.050256140568553986
+CCC19,AggregateType.SUM,0.7,"('Cover probe', 'Put sterile gel')",0.0003525739035380819
+CCC19,AggregateType.SUM,0.7,"('Puncture', 'Blood return')",0.01760618254900737
+CCC19,AggregateType.SUM,0.7,"('Blood return', 'Drop probe')",0.005731162806465885
+CCC19,AggregateType.SUM,0.7,"('Drop probe', 'Remove syringe')",0.006309242922488314
+CCC19,AggregateType.SUM,0.7,"('Remove syringe', 'Guidewire install')",0.0065999848285275674
+CCC19,AggregateType.SUM,0.7,"('Check wire in short axis', 'Check wire in long axis')",0.01065838906156543
+CCC19,AggregateType.SUM,0.7,"('Remove trocar', 'Check wire in short axis')",0.0006396494706776205
+CCC19,AggregateType.SUM,0.7,"('Widen pathway', 'Advance catheter')",0.053125362989876614
+CCC19,AggregateType.SUM,0.7,"('Advance catheter', 'Remove guidewire')",0.03254715047164538
+CCC19,AggregateType.SUM,0.7,"('Remove guidewire', 'Check flow and reflow')",0.002182424010320242
+CCC19,AggregateType.SUM,0.7,"('Check flow and reflow', 'Check catheter position')",0.008312270641305242
+CCC19,AggregateType.SUM,0.7,"('Get in sterile clothes', 'Prepare implements')",0.007330288024842109
+CCC19,AggregateType.SUM,0.7,"('Prepare implements', 'Clean puncture area')",0.041212895001127375
+CCC19,AggregateType.SUM,0.7,"('Drap puncture area', 'Prepare implements')",0.02834879442929519
+CCC19,AggregateType.SUM,0.7,"('Prepare implements', 'Cover probe')",0.013430305341365875
+CCC19,AggregateType.SUM,0.7,"('Gel in probe', 'Cover probe')",0.00941238946371481
+CCC19,AggregateType.SUM,0.7,"('Put sterile gel', 'Position probe')",0.00404363557077958
+CCC19,AggregateType.SUM,0.7,"('Guidewire install', 'Remove trocar')",0.0022380231386676603
+CCC19,AggregateType.SUM,0.7,"('Compression identification', 'Doppler identification')",0.08458105694961926
+CCC19,AggregateType.SUM,0.7,"('Doppler identification', 'Anesthetize')",0.2007409559888622
+CCC19,AggregateType.SUM,0.7,"('Check wire in long axis', 'Wire in good position')",0.032844705479090824
+CCC19,AggregateType.SUM,0.7,"('Prepare implements', 'Ultrasound configuration')",0.0004988757804182953
+CCC19,AggregateType.SUM,0.7,"('Wire in good position', 'Widen pathway')",0.005927760741883503
+CCC19,AggregateType.SUM,0.7,"('Cover probe', 'Gel in probe')",0.00867131372503005
+CCC19,AggregateType.SUM,0.7,"('Anesthetize', 'Puncture')",0.03775518771059616
+CCC19,AggregateType.SUM,0.7,"('Prepare implements', 'Position patient')",0.008551526239762186
+CCC19,AggregateType.SUM,0.7,"('Position probe', 'Anatomic identification')",0.07677415263142685
+CCC19,AggregateType.SUM,0.7,"('Position patient', 'Hand washing')",0.1448244901385698
+CCC19,AggregateType.SUM,0.8,"('Ultrasound configuration', 'Anatomic identification')",0.00387121997301918
+CCC19,AggregateType.SUM,0.8,"('Anatomic identification', 'Compression identification')",0.01743047531802011
+CCC19,AggregateType.SUM,0.8,"('Hand washing', 'Get in sterile clothes')",0.009307451785676298
+CCC19,AggregateType.SUM,0.8,"('Clean puncture area', 'Drap puncture area')",0.013676629154328435
+CCC19,AggregateType.SUM,0.8,"('Cover probe', 'Put sterile gel')",0.022109037027430507
+CCC19,AggregateType.SUM,0.8,"('Puncture', 'Blood return')",0.005340986541010874
+CCC19,AggregateType.SUM,0.8,"('Blood return', 'Drop probe')",0.01783470662638096
+CCC19,AggregateType.SUM,0.8,"('Drop probe', 'Remove syringe')",0.001232483923757991
+CCC19,AggregateType.SUM,0.8,"('Remove syringe', 'Guidewire install')",0.011288160461796792
+CCC19,AggregateType.SUM,0.8,"('Check wire in short axis', 'Check wire in long axis')",0.0022794137263483093
+CCC19,AggregateType.SUM,0.8,"('Remove trocar', 'Check wire in short axis')",0.0052390114332682225
+CCC19,AggregateType.SUM,0.8,"('Widen pathway', 'Advance catheter')",0.009722749862389841
+CCC19,AggregateType.SUM,0.8,"('Advance catheter', 'Remove guidewire')",0.01317875625163314
+CCC19,AggregateType.SUM,0.8,"('Remove guidewire', 'Check flow and reflow')",0.00923997439012404
+CCC19,AggregateType.SUM,0.8,"('Check flow and reflow', 'Check catheter position')",0.02121083308747851
+CCC19,AggregateType.SUM,0.8,"('Get in sterile clothes', 'Prepare implements')",0.019849554371616347
+CCC19,AggregateType.SUM,0.8,"('Prepare implements', 'Clean puncture area')",0.06628219682771348
+CCC19,AggregateType.SUM,0.8,"('Drap puncture area', 'Prepare implements')",0.002096855377113426
+CCC19,AggregateType.SUM,0.8,"('Prepare implements', 'Cover probe')",0.01915897645360139
+CCC19,AggregateType.SUM,0.8,"('Gel in probe', 'Cover probe')",0.061547930207150436
+CCC19,AggregateType.SUM,0.8,"('Put sterile gel', 'Position probe')",0.004727772970001265
+CCC19,AggregateType.SUM,0.8,"('Guidewire install', 'Remove trocar')",0.0004414040348343917
+CCC19,AggregateType.SUM,0.8,"('Compression identification', 'Doppler identification')",0.06500038143706788
+CCC19,AggregateType.SUM,0.8,"('Doppler identification', 'Anesthetize')",0.3429510937564024
+CCC19,AggregateType.SUM,0.8,"('Check wire in long axis', 'Wire in good position')",0.0038575016551152747
+CCC19,AggregateType.SUM,0.8,"('Prepare implements', 'Ultrasound configuration')",0.021612359675364345
+CCC19,AggregateType.SUM,0.8,"('Wire in good position', 'Widen pathway')",0.09106700744715868
+CCC19,AggregateType.SUM,0.8,"('Cover probe', 'Gel in probe')",0.006907682635940067
+CCC19,AggregateType.SUM,0.8,"('Anesthetize', 'Puncture')",0.008606591702678103
+CCC19,AggregateType.SUM,0.8,"('Prepare implements', 'Position patient')",0.025312258974667934
+CCC19,AggregateType.SUM,0.8,"('Position probe', 'Anatomic identification')",0.0326962544095368
+CCC19,AggregateType.SUM,0.8,"('Position patient', 'Hand washing')",0.031200693740044638
+CCC19,AggregateType.SUM,0.9,"('Ultrasound configuration', 'Anatomic identification')",0.005158280996513475
+CCC19,AggregateType.SUM,0.9,"('Anatomic identification', 'Compression identification')",0.010773425412736515
+CCC19,AggregateType.SUM,0.9,"('Hand washing', 'Get in sterile clothes')",0.0034629667916182653
+CCC19,AggregateType.SUM,0.9,"('Clean puncture area', 'Drap puncture area')",0.009122246500606446
+CCC19,AggregateType.SUM,0.9,"('Cover probe', 'Put sterile gel')",0.004508731424195863
+CCC19,AggregateType.SUM,0.9,"('Puncture', 'Blood return')",0.009945928984281528
+CCC19,AggregateType.SUM,0.9,"('Blood return', 'Drop probe')",0.0014012257100951594
+CCC19,AggregateType.SUM,0.9,"('Drop probe', 'Remove syringe')",0.0011148342922862042
+CCC19,AggregateType.SUM,0.9,"('Remove syringe', 'Guidewire install')",0.0023077632000891414
+CCC19,AggregateType.SUM,0.9,"('Check wire in short axis', 'Check wire in long axis')",0.0027095212619940414
+CCC19,AggregateType.SUM,0.9,"('Remove trocar', 'Check wire in short axis')",0.0027899187015009374
+CCC19,AggregateType.SUM,0.9,"('Widen pathway', 'Advance catheter')",0.006301331582007445
+CCC19,AggregateType.SUM,0.9,"('Advance catheter', 'Remove guidewire')",0.0016221220873541497
+CCC19,AggregateType.SUM,0.9,"('Remove guidewire', 'Check flow and reflow')",0.0017964660394681352
+CCC19,AggregateType.SUM,0.9,"('Check flow and reflow', 'Check catheter position')",0.0009399203509039555
+CCC19,AggregateType.SUM,0.9,"('Get in sterile clothes', 'Prepare implements')",0.010093032187067093
+CCC19,AggregateType.SUM,0.9,"('Prepare implements', 'Clean puncture area')",0.02005619265742508
+CCC19,AggregateType.SUM,0.9,"('Drap puncture area', 'Prepare implements')",0.006132128859026382
+CCC19,AggregateType.SUM,0.9,"('Prepare implements', 'Cover probe')",0.22501267546001089
+CCC19,AggregateType.SUM,0.9,"('Gel in probe', 'Cover probe')",0.006718836050373663
+CCC19,AggregateType.SUM,0.9,"('Put sterile gel', 'Position probe')",0.005072733501032545
+CCC19,AggregateType.SUM,0.9,"('Guidewire install', 'Remove trocar')",0.0034761319699667423
+CCC19,AggregateType.SUM,0.9,"('Compression identification', 'Doppler identification')",0.032763091509244724
+CCC19,AggregateType.SUM,0.9,"('Doppler identification', 'Anesthetize')",0.513554319486365
+CCC19,AggregateType.SUM,0.9,"('Check wire in long axis', 'Wire in good position')",0.026327058284745537
+CCC19,AggregateType.SUM,0.9,"('Prepare implements', 'Ultrasound configuration')",0.022015724233702016
+CCC19,AggregateType.SUM,0.9,"('Wire in good position', 'Widen pathway')",0.0026373011695386417
+CCC19,AggregateType.SUM,0.9,"('Cover probe', 'Gel in probe')",0.09112914047277758
+CCC19,AggregateType.SUM,0.9,"('Anesthetize', 'Puncture')",0.009090160407935718
+CCC19,AggregateType.SUM,0.9,"('Prepare implements', 'Position patient')",0.06384539591822547
+CCC19,AggregateType.SUM,0.9,"('Position probe', 'Anatomic identification')",0.0043382672197302226
+CCC19,AggregateType.SUM,0.9,"('Position patient', 'Hand washing')",0.03828981667456377
+CCC19,AggregateType.MIN,0.01,"('Ultrasound configuration', 'Anatomic identification')",9.53155922046318
+CCC19,AggregateType.MIN,0.01,"('Anatomic identification', 'Compression identification')",0.7185243882042881
+CCC19,AggregateType.MIN,0.01,"('Hand washing', 'Get in sterile clothes')",4.8708554012046665
+CCC19,AggregateType.MIN,0.01,"('Clean puncture area', 'Drap puncture area')",3.066972631793119
+CCC19,AggregateType.MIN,0.01,"('Cover probe', 'Put sterile gel')",0.18272481556347653
+CCC19,AggregateType.MIN,0.01,"('Puncture', 'Blood return')",1.7326668101319602
+CCC19,AggregateType.MIN,0.01,"('Blood return', 'Drop probe')",1.3709854203261058
+CCC19,AggregateType.MIN,0.01,"('Drop probe', 'Remove syringe')",0.3574376944809654
+CCC19,AggregateType.MIN,0.01,"('Remove syringe', 'Guidewire install')",1.6081373515296662
+CCC19,AggregateType.MIN,0.01,"('Check wire in short axis', 'Check wire in long axis')",0.5990381264149448
+CCC19,AggregateType.MIN,0.01,"('Remove trocar', 'Check wire in short axis')",1.3414887115642007
+CCC19,AggregateType.MIN,0.01,"('Widen pathway', 'Advance catheter')",0.8657943474747727
+CCC19,AggregateType.MIN,0.01,"('Advance catheter', 'Remove guidewire')",0.42055028330802846
+CCC19,AggregateType.MIN,0.01,"('Remove guidewire', 'Check flow and reflow')",3.846856163973864
+CCC19,AggregateType.MIN,0.01,"('Check flow and reflow', 'Check catheter position')",3.998683368096245
+CCC19,AggregateType.MIN,0.01,"('Get in sterile clothes', 'Prepare implements')",1.9146130086857223
+CCC19,AggregateType.MIN,0.01,"('Prepare implements', 'Clean puncture area')",2.2876528470346997
+CCC19,AggregateType.MIN,0.01,"('Drap puncture area', 'Prepare implements')",3.1226042177612756
+CCC19,AggregateType.MIN,0.01,"('Prepare implements', 'Cover probe')",2.2727963241523312
+CCC19,AggregateType.MIN,0.01,"('Gel in probe', 'Cover probe')",0.6003565383807187
+CCC19,AggregateType.MIN,0.01,"('Put sterile gel', 'Position probe')",2.2130565151628447
+CCC19,AggregateType.MIN,0.01,"('Guidewire install', 'Remove trocar')",1.0148559338716092
+CCC19,AggregateType.MIN,0.01,"('Compression identification', 'Doppler identification')",1.966013285369498
+CCC19,AggregateType.MIN,0.01,"('Doppler identification', 'Anesthetize')",8.506400590444612
+CCC19,AggregateType.MIN,0.01,"('Check wire in long axis', 'Wire in good position')",1.6116587481026226
+CCC19,AggregateType.MIN,0.01,"('Prepare implements', 'Ultrasound configuration')",2.290068287289376
+CCC19,AggregateType.MIN,0.01,"('Wire in good position', 'Widen pathway')",1.121256632974343
+CCC19,AggregateType.MIN,0.01,"('Cover probe', 'Gel in probe')",0.31726137822421974
+CCC19,AggregateType.MIN,0.01,"('Anesthetize', 'Puncture')",9.639892565254932
+CCC19,AggregateType.MIN,0.01,"('Prepare implements', 'Position patient')",10.396440672173991
+CCC19,AggregateType.MIN,0.01,"('Position probe', 'Anatomic identification')",0.8011749067477728
+CCC19,AggregateType.MIN,0.01,"('Position patient', 'Hand washing')",6.901677540165196
+CCC19,AggregateType.MIN,0.05,"('Ultrasound configuration', 'Anatomic identification')",1.6940899684821105
+CCC19,AggregateType.MIN,0.05,"('Anatomic identification', 'Compression identification')",0.06125934078294574
+CCC19,AggregateType.MIN,0.05,"('Hand washing', 'Get in sterile clothes')",0.1702863347627486
+CCC19,AggregateType.MIN,0.05,"('Clean puncture area', 'Drap puncture area')",0.2894732285814796
+CCC19,AggregateType.MIN,0.05,"('Cover probe', 'Put sterile gel')",0.04389579767745318
+CCC19,AggregateType.MIN,0.05,"('Puncture', 'Blood return')",0.09854399025764987
+CCC19,AggregateType.MIN,0.05,"('Blood return', 'Drop probe')",0.12164837588079483
+CCC19,AggregateType.MIN,0.05,"('Drop probe', 'Remove syringe')",0.04831285256318715
+CCC19,AggregateType.MIN,0.05,"('Remove syringe', 'Guidewire install')",0.38893408066160956
+CCC19,AggregateType.MIN,0.05,"('Check wire in short axis', 'Check wire in long axis')",0.40649261809251525
+CCC19,AggregateType.MIN,0.05,"('Remove trocar', 'Check wire in short axis')",0.24274986110639935
+CCC19,AggregateType.MIN,0.05,"('Widen pathway', 'Advance catheter')",0.2926701467120401
+CCC19,AggregateType.MIN,0.05,"('Advance catheter', 'Remove guidewire')",0.0004779512629207616
+CCC19,AggregateType.MIN,0.05,"('Remove guidewire', 'Check flow and reflow')",0.08649853007450699
+CCC19,AggregateType.MIN,0.05,"('Check flow and reflow', 'Check catheter position')",1.0573548731557763
+CCC19,AggregateType.MIN,0.05,"('Get in sterile clothes', 'Prepare implements')",0.3863066002954329
+CCC19,AggregateType.MIN,0.05,"('Prepare implements', 'Clean puncture area')",0.5671704115242465
+CCC19,AggregateType.MIN,0.05,"('Drap puncture area', 'Prepare implements')",0.18660569998786392
+CCC19,AggregateType.MIN,0.05,"('Prepare implements', 'Cover probe')",0.20778904105787474
+CCC19,AggregateType.MIN,0.05,"('Gel in probe', 'Cover probe')",0.09334194544302628
+CCC19,AggregateType.MIN,0.05,"('Put sterile gel', 'Position probe')",1.4658704767289836
+CCC19,AggregateType.MIN,0.05,"('Guidewire install', 'Remove trocar')",0.0530614137745054
+CCC19,AggregateType.MIN,0.05,"('Compression identification', 'Doppler identification')",2.8040568686299028
+CCC19,AggregateType.MIN,0.05,"('Doppler identification', 'Anesthetize')",0.9591112365731824
+CCC19,AggregateType.MIN,0.05,"('Check wire in long axis', 'Wire in good position')",1.672900409782437
+CCC19,AggregateType.MIN,0.05,"('Prepare implements', 'Ultrasound configuration')",0.3129367055117085
+CCC19,AggregateType.MIN,0.05,"('Wire in good position', 'Widen pathway')",0.19985023617801811
+CCC19,AggregateType.MIN,0.05,"('Cover probe', 'Gel in probe')",0.00560827315977767
+CCC19,AggregateType.MIN,0.05,"('Anesthetize', 'Puncture')",0.21281797901014146
+CCC19,AggregateType.MIN,0.05,"('Prepare implements', 'Position patient')",0.275430932147003
+CCC19,AggregateType.MIN,0.05,"('Position probe', 'Anatomic identification')",0.15380464092196394
+CCC19,AggregateType.MIN,0.05,"('Position patient', 'Hand washing')",3.362735403315665
+CCC19,AggregateType.MIN,0.1,"('Ultrasound configuration', 'Anatomic identification')",0.1445677709300881
+CCC19,AggregateType.MIN,0.1,"('Anatomic identification', 'Compression identification')",0.09731074777890643
+CCC19,AggregateType.MIN,0.1,"('Hand washing', 'Get in sterile clothes')",0.5826997037761722
+CCC19,AggregateType.MIN,0.1,"('Clean puncture area', 'Drap puncture area')",0.05530575023303275
+CCC19,AggregateType.MIN,0.1,"('Cover probe', 'Put sterile gel')",0.14461802961466574
+CCC19,AggregateType.MIN,0.1,"('Puncture', 'Blood return')",0.0032058327798833585
+CCC19,AggregateType.MIN,0.1,"('Blood return', 'Drop probe')",0.03349278636068628
+CCC19,AggregateType.MIN,0.1,"('Drop probe', 'Remove syringe')",0.02030917991982884
+CCC19,AggregateType.MIN,0.1,"('Remove syringe', 'Guidewire install')",0.19704092145124932
+CCC19,AggregateType.MIN,0.1,"('Check wire in short axis', 'Check wire in long axis')",0.20308994676281544
+CCC19,AggregateType.MIN,0.1,"('Remove trocar', 'Check wire in short axis')",0.12365548866266493
+CCC19,AggregateType.MIN,0.1,"('Widen pathway', 'Advance catheter')",0.03852394390555332
+CCC19,AggregateType.MIN,0.1,"('Advance catheter', 'Remove guidewire')",0.10693163962649219
+CCC19,AggregateType.MIN,0.1,"('Remove guidewire', 'Check flow and reflow')",0.03575008681395511
+CCC19,AggregateType.MIN,0.1,"('Check flow and reflow', 'Check catheter position')",0.9174052642491486
+CCC19,AggregateType.MIN,0.1,"('Get in sterile clothes', 'Prepare implements')",0.00863517701581963
+CCC19,AggregateType.MIN,0.1,"('Prepare implements', 'Clean puncture area')",0.13204786204706132
+CCC19,AggregateType.MIN,0.1,"('Drap puncture area', 'Prepare implements')",0.1083428710635675
+CCC19,AggregateType.MIN,0.1,"('Prepare implements', 'Cover probe')",0.496762225832331
+CCC19,AggregateType.MIN,0.1,"('Gel in probe', 'Cover probe')",0.2217909229870784
+CCC19,AggregateType.MIN,0.1,"('Put sterile gel', 'Position probe')",0.37561558760975045
+CCC19,AggregateType.MIN,0.1,"('Guidewire install', 'Remove trocar')",0.15743783816201706
+CCC19,AggregateType.MIN,0.1,"('Compression identification', 'Doppler identification')",0.10774082869406132
+CCC19,AggregateType.MIN,0.1,"('Doppler identification', 'Anesthetize')",1.6523268051959579
+CCC19,AggregateType.MIN,0.1,"('Check wire in long axis', 'Wire in good position')",0.0244052863009083
+CCC19,AggregateType.MIN,0.1,"('Prepare implements', 'Ultrasound configuration')",0.41192313142565906
+CCC19,AggregateType.MIN,0.1,"('Wire in good position', 'Widen pathway')",0.3918675469199515
+CCC19,AggregateType.MIN,0.1,"('Cover probe', 'Gel in probe')",0.24205212173017765
+CCC19,AggregateType.MIN,0.1,"('Anesthetize', 'Puncture')",0.1620509833670957
+CCC19,AggregateType.MIN,0.1,"('Prepare implements', 'Position patient')",0.25235500522926335
+CCC19,AggregateType.MIN,0.1,"('Position probe', 'Anatomic identification')",0.6930919124515209
+CCC19,AggregateType.MIN,0.1,"('Position patient', 'Hand washing')",0.21951569569451346
+CCC19,AggregateType.MIN,0.2,"('Ultrasound configuration', 'Anatomic identification')",0.07459050560422505
+CCC19,AggregateType.MIN,0.2,"('Anatomic identification', 'Compression identification')",0.5498916980204219
+CCC19,AggregateType.MIN,0.2,"('Hand washing', 'Get in sterile clothes')",0.04563833408610232
+CCC19,AggregateType.MIN,0.2,"('Clean puncture area', 'Drap puncture area')",0.028399947846917906
+CCC19,AggregateType.MIN,0.2,"('Cover probe', 'Put sterile gel')",0.15103717652774287
+CCC19,AggregateType.MIN,0.2,"('Puncture', 'Blood return')",0.1010060540665056
+CCC19,AggregateType.MIN,0.2,"('Blood return', 'Drop probe')",0.06498824019322155
+CCC19,AggregateType.MIN,0.2,"('Drop probe', 'Remove syringe')",0.017355761440041643
+CCC19,AggregateType.MIN,0.2,"('Remove syringe', 'Guidewire install')",0.07593337813494927
+CCC19,AggregateType.MIN,0.2,"('Check wire in short axis', 'Check wire in long axis')",0.06099930026469551
+CCC19,AggregateType.MIN,0.2,"('Remove trocar', 'Check wire in short axis')",0.06246906278017856
+CCC19,AggregateType.MIN,0.2,"('Widen pathway', 'Advance catheter')",0.015403765815750467
+CCC19,AggregateType.MIN,0.2,"('Advance catheter', 'Remove guidewire')",0.007092791590967628
+CCC19,AggregateType.MIN,0.2,"('Remove guidewire', 'Check flow and reflow')",0.10297140510856215
+CCC19,AggregateType.MIN,0.2,"('Check flow and reflow', 'Check catheter position')",0.33618176532563493
+CCC19,AggregateType.MIN,0.2,"('Get in sterile clothes', 'Prepare implements')",0.044051452815144804
+CCC19,AggregateType.MIN,0.2,"('Prepare implements', 'Clean puncture area')",0.08795389636489254
+CCC19,AggregateType.MIN,0.2,"('Drap puncture area', 'Prepare implements')",0.08088379782073847
+CCC19,AggregateType.MIN,0.2,"('Prepare implements', 'Cover probe')",0.48973020540582546
+CCC19,AggregateType.MIN,0.2,"('Gel in probe', 'Cover probe')",0.09898766468869928
+CCC19,AggregateType.MIN,0.2,"('Put sterile gel', 'Position probe')",0.09124510434385291
+CCC19,AggregateType.MIN,0.2,"('Guidewire install', 'Remove trocar')",0.03801648972733772
+CCC19,AggregateType.MIN,0.2,"('Compression identification', 'Doppler identification')",0.1267776132061591
+CCC19,AggregateType.MIN,0.2,"('Doppler identification', 'Anesthetize')",0.36852867341458895
+CCC19,AggregateType.MIN,0.2,"('Check wire in long axis', 'Wire in good position')",0.04052656372083144
+CCC19,AggregateType.MIN,0.2,"('Prepare implements', 'Ultrasound configuration')",0.14414728001201116
+CCC19,AggregateType.MIN,0.2,"('Wire in good position', 'Widen pathway')",0.12685335413242416
+CCC19,AggregateType.MIN,0.2,"('Cover probe', 'Gel in probe')",0.10570557826620523
+CCC19,AggregateType.MIN,0.2,"('Anesthetize', 'Puncture')",0.07091140066448985
+CCC19,AggregateType.MIN,0.2,"('Prepare implements', 'Position patient')",0.30802201059215895
+CCC19,AggregateType.MIN,0.2,"('Position probe', 'Anatomic identification')",0.32474980565703543
+CCC19,AggregateType.MIN,0.2,"('Position patient', 'Hand washing')",0.0837536828858143
+CCC19,AggregateType.MIN,0.3,"('Ultrasound configuration', 'Anatomic identification')",0.26438211794068317
+CCC19,AggregateType.MIN,0.3,"('Anatomic identification', 'Compression identification')",0.17409347524736565
+CCC19,AggregateType.MIN,0.3,"('Hand washing', 'Get in sterile clothes')",0.1541086965164932
+CCC19,AggregateType.MIN,0.3,"('Clean puncture area', 'Drap puncture area')",0.013157715562129635
+CCC19,AggregateType.MIN,0.3,"('Cover probe', 'Put sterile gel')",0.12252737782671588
+CCC19,AggregateType.MIN,0.3,"('Puncture', 'Blood return')",0.029287969606652413
+CCC19,AggregateType.MIN,0.3,"('Blood return', 'Drop probe')",0.02842147941939459
+CCC19,AggregateType.MIN,0.3,"('Drop probe', 'Remove syringe')",0.010466742366666483
+CCC19,AggregateType.MIN,0.3,"('Remove syringe', 'Guidewire install')",0.05186195618913828
+CCC19,AggregateType.MIN,0.3,"('Check wire in short axis', 'Check wire in long axis')",0.015582949544211005
+CCC19,AggregateType.MIN,0.3,"('Remove trocar', 'Check wire in short axis')",0.012670884112021477
+CCC19,AggregateType.MIN,0.3,"('Widen pathway', 'Advance catheter')",0.04685998142810582
+CCC19,AggregateType.MIN,0.3,"('Advance catheter', 'Remove guidewire')",0.04018196502428602
+CCC19,AggregateType.MIN,0.3,"('Remove guidewire', 'Check flow and reflow')",0.1966797842966158
+CCC19,AggregateType.MIN,0.3,"('Check flow and reflow', 'Check catheter position')",0.0020601941719671224
+CCC19,AggregateType.MIN,0.3,"('Get in sterile clothes', 'Prepare implements')",0.03687960442499754
+CCC19,AggregateType.MIN,0.3,"('Prepare implements', 'Clean puncture area')",0.12877427882272377
+CCC19,AggregateType.MIN,0.3,"('Drap puncture area', 'Prepare implements')",0.0508680238050616
+CCC19,AggregateType.MIN,0.3,"('Prepare implements', 'Cover probe')",0.03325010168269967
+CCC19,AggregateType.MIN,0.3,"('Gel in probe', 'Cover probe')",0.047513552892141576
+CCC19,AggregateType.MIN,0.3,"('Put sterile gel', 'Position probe')",0.01187849264516827
+CCC19,AggregateType.MIN,0.3,"('Guidewire install', 'Remove trocar')",0.01620890618219227
+CCC19,AggregateType.MIN,0.3,"('Compression identification', 'Doppler identification')",0.1750260685967273
+CCC19,AggregateType.MIN,0.3,"('Doppler identification', 'Anesthetize')",0.9091751660510607
+CCC19,AggregateType.MIN,0.3,"('Check wire in long axis', 'Wire in good position')",0.1160073312807754
+CCC19,AggregateType.MIN,0.3,"('Prepare implements', 'Ultrasound configuration')",0.11717634382796738
+CCC19,AggregateType.MIN,0.3,"('Wire in good position', 'Widen pathway')",0.0029608534866649716
+CCC19,AggregateType.MIN,0.3,"('Cover probe', 'Gel in probe')",0.004111249355400008
+CCC19,AggregateType.MIN,0.3,"('Anesthetize', 'Puncture')",0.10726352439745865
+CCC19,AggregateType.MIN,0.3,"('Prepare implements', 'Position patient')",0.7611466376931262
+CCC19,AggregateType.MIN,0.3,"('Position probe', 'Anatomic identification')",0.2722023633601369
+CCC19,AggregateType.MIN,0.3,"('Position patient', 'Hand washing')",0.08763447909633593
+CCC19,AggregateType.MIN,0.4,"('Ultrasound configuration', 'Anatomic identification')",0.00220711279762007
+CCC19,AggregateType.MIN,0.4,"('Anatomic identification', 'Compression identification')",0.017366233453456264
+CCC19,AggregateType.MIN,0.4,"('Hand washing', 'Get in sterile clothes')",0.015643972250968193
+CCC19,AggregateType.MIN,0.4,"('Clean puncture area', 'Drap puncture area')",0.015366286494144177
+CCC19,AggregateType.MIN,0.4,"('Cover probe', 'Put sterile gel')",0.06901401461766146
+CCC19,AggregateType.MIN,0.4,"('Puncture', 'Blood return')",0.04908250100769712
+CCC19,AggregateType.MIN,0.4,"('Blood return', 'Drop probe')",0.03117990003163629
+CCC19,AggregateType.MIN,0.4,"('Drop probe', 'Remove syringe')",0.005339512547659426
+CCC19,AggregateType.MIN,0.4,"('Remove syringe', 'Guidewire install')",0.00019280787836947866
+CCC19,AggregateType.MIN,0.4,"('Check wire in short axis', 'Check wire in long axis')",0.050171491115532235
+CCC19,AggregateType.MIN,0.4,"('Remove trocar', 'Check wire in short axis')",0.06122720918335602
+CCC19,AggregateType.MIN,0.4,"('Widen pathway', 'Advance catheter')",0.0016999099032485362
+CCC19,AggregateType.MIN,0.4,"('Advance catheter', 'Remove guidewire')",0.021151480207888085
+CCC19,AggregateType.MIN,0.4,"('Remove guidewire', 'Check flow and reflow')",0.02327144013394664
+CCC19,AggregateType.MIN,0.4,"('Check flow and reflow', 'Check catheter position')",0.05276484508092727
+CCC19,AggregateType.MIN,0.4,"('Get in sterile clothes', 'Prepare implements')",0.04787317918701343
+CCC19,AggregateType.MIN,0.4,"('Prepare implements', 'Clean puncture area')",0.037214425408138234
+CCC19,AggregateType.MIN,0.4,"('Drap puncture area', 'Prepare implements')",0.05303906780797769
+CCC19,AggregateType.MIN,0.4,"('Prepare implements', 'Cover probe')",0.04684690975640171
+CCC19,AggregateType.MIN,0.4,"('Gel in probe', 'Cover probe')",0.0007372796107558699
+CCC19,AggregateType.MIN,0.4,"('Put sterile gel', 'Position probe')",0.048170886199813134
+CCC19,AggregateType.MIN,0.4,"('Guidewire install', 'Remove trocar')",0.013254293652291891
+CCC19,AggregateType.MIN,0.4,"('Compression identification', 'Doppler identification')",0.12347802776833916
+CCC19,AggregateType.MIN,0.4,"('Doppler identification', 'Anesthetize')",0.2080749217603488
+CCC19,AggregateType.MIN,0.4,"('Check wire in long axis', 'Wire in good position')",0.03185853011497327
+CCC19,AggregateType.MIN,0.4,"('Prepare implements', 'Ultrasound configuration')",0.003010187704601597
+CCC19,AggregateType.MIN,0.4,"('Wire in good position', 'Widen pathway')",0.00557409670841702
+CCC19,AggregateType.MIN,0.4,"('Cover probe', 'Gel in probe')",0.18943473668960684
+CCC19,AggregateType.MIN,0.4,"('Anesthetize', 'Puncture')",0.009610080611597936
+CCC19,AggregateType.MIN,0.4,"('Prepare implements', 'Position patient')",0.11724655843319431
+CCC19,AggregateType.MIN,0.4,"('Position probe', 'Anatomic identification')",0.21439436014919722
+CCC19,AggregateType.MIN,0.4,"('Position patient', 'Hand washing')",0.22007306455990516
+CCC19,AggregateType.MIN,0.5,"('Ultrasound configuration', 'Anatomic identification')",0.018950078455543817
+CCC19,AggregateType.MIN,0.5,"('Anatomic identification', 'Compression identification')",0.008557231086017284
+CCC19,AggregateType.MIN,0.5,"('Hand washing', 'Get in sterile clothes')",0.0036952089100336736
+CCC19,AggregateType.MIN,0.5,"('Clean puncture area', 'Drap puncture area')",0.03220166480940523
+CCC19,AggregateType.MIN,0.5,"('Cover probe', 'Put sterile gel')",0.047194920533115574
+CCC19,AggregateType.MIN,0.5,"('Puncture', 'Blood return')",0.0004122953625095828
+CCC19,AggregateType.MIN,0.5,"('Blood return', 'Drop probe')",0.02541133277187321
+CCC19,AggregateType.MIN,0.5,"('Drop probe', 'Remove syringe')",0.00481500740123832
+CCC19,AggregateType.MIN,0.5,"('Remove syringe', 'Guidewire install')",0.013101221115191351
+CCC19,AggregateType.MIN,0.5,"('Check wire in short axis', 'Check wire in long axis')",0.025447346458601458
+CCC19,AggregateType.MIN,0.5,"('Remove trocar', 'Check wire in short axis')",0.02102466856295943
+CCC19,AggregateType.MIN,0.5,"('Widen pathway', 'Advance catheter')",0.008179692062606915
+CCC19,AggregateType.MIN,0.5,"('Advance catheter', 'Remove guidewire')",0.040046047486787376
+CCC19,AggregateType.MIN,0.5,"('Remove guidewire', 'Check flow and reflow')",0.062451644001272816
+CCC19,AggregateType.MIN,0.5,"('Check flow and reflow', 'Check catheter position')",0.002923253766317524
+CCC19,AggregateType.MIN,0.5,"('Get in sterile clothes', 'Prepare implements')",0.13394987967682503
+CCC19,AggregateType.MIN,0.5,"('Prepare implements', 'Clean puncture area')",0.009391788176763099
+CCC19,AggregateType.MIN,0.5,"('Drap puncture area', 'Prepare implements')",0.007091285199214972
+CCC19,AggregateType.MIN,0.5,"('Prepare implements', 'Cover probe')",0.06765378123361183
+CCC19,AggregateType.MIN,0.5,"('Gel in probe', 'Cover probe')",0.00012210380741795035
+CCC19,AggregateType.MIN,0.5,"('Put sterile gel', 'Position probe')",0.004659555804558346
+CCC19,AggregateType.MIN,0.5,"('Guidewire install', 'Remove trocar')",0.011001214881466758
+CCC19,AggregateType.MIN,0.5,"('Compression identification', 'Doppler identification')",0.11977139097906475
+CCC19,AggregateType.MIN,0.5,"('Doppler identification', 'Anesthetize')",0.09946790101571579
+CCC19,AggregateType.MIN,0.5,"('Check wire in long axis', 'Wire in good position')",0.08441585492581577
+CCC19,AggregateType.MIN,0.5,"('Prepare implements', 'Ultrasound configuration')",0.013649053096174812
+CCC19,AggregateType.MIN,0.5,"('Wire in good position', 'Widen pathway')",0.001144977097504496
+CCC19,AggregateType.MIN,0.5,"('Cover probe', 'Gel in probe')",0.0364839709813937
+CCC19,AggregateType.MIN,0.5,"('Anesthetize', 'Puncture')",0.04584859345678143
+CCC19,AggregateType.MIN,0.5,"('Prepare implements', 'Position patient')",0.018438352379443135
+CCC19,AggregateType.MIN,0.5,"('Position probe', 'Anatomic identification')",0.023952163301806766
+CCC19,AggregateType.MIN,0.5,"('Position patient', 'Hand washing')",0.41439409612286204
+CCC19,AggregateType.MIN,0.6,"('Ultrasound configuration', 'Anatomic identification')",0.053155341749660856
+CCC19,AggregateType.MIN,0.6,"('Anatomic identification', 'Compression identification')",0.01303862628256732
+CCC19,AggregateType.MIN,0.6,"('Hand washing', 'Get in sterile clothes')",0.00038049009335426235
+CCC19,AggregateType.MIN,0.6,"('Clean puncture area', 'Drap puncture area')",0.016684712955480574
+CCC19,AggregateType.MIN,0.6,"('Cover probe', 'Put sterile gel')",0.1141523785370109
+CCC19,AggregateType.MIN,0.6,"('Puncture', 'Blood return')",0.0024583259029198087
+CCC19,AggregateType.MIN,0.6,"('Blood return', 'Drop probe')",0.021662080793157946
+CCC19,AggregateType.MIN,0.6,"('Drop probe', 'Remove syringe')",0.003467407604442376
+CCC19,AggregateType.MIN,0.6,"('Remove syringe', 'Guidewire install')",0.004011029844126029
+CCC19,AggregateType.MIN,0.6,"('Check wire in short axis', 'Check wire in long axis')",0.0203817349285913
+CCC19,AggregateType.MIN,0.6,"('Remove trocar', 'Check wire in short axis')",0.05062776204559612
+CCC19,AggregateType.MIN,0.6,"('Widen pathway', 'Advance catheter')",0.011183327533524775
+CCC19,AggregateType.MIN,0.6,"('Advance catheter', 'Remove guidewire')",0.006856855063536926
+CCC19,AggregateType.MIN,0.6,"('Remove guidewire', 'Check flow and reflow')",0.004813360554572081
+CCC19,AggregateType.MIN,0.6,"('Check flow and reflow', 'Check catheter position')",0.039373642134679754
+CCC19,AggregateType.MIN,0.6,"('Get in sterile clothes', 'Prepare implements')",0.010565862182820851
+CCC19,AggregateType.MIN,0.6,"('Prepare implements', 'Clean puncture area')",0.09221724972420635
+CCC19,AggregateType.MIN,0.6,"('Drap puncture area', 'Prepare implements')",0.034155316094680574
+CCC19,AggregateType.MIN,0.6,"('Prepare implements', 'Cover probe')",0.044562766790233375
+CCC19,AggregateType.MIN,0.6,"('Gel in probe', 'Cover probe')",0.09941690195050626
+CCC19,AggregateType.MIN,0.6,"('Put sterile gel', 'Position probe')",0.0022358931819539407
+CCC19,AggregateType.MIN,0.6,"('Guidewire install', 'Remove trocar')",0.08826159154368006
+CCC19,AggregateType.MIN,0.6,"('Compression identification', 'Doppler identification')",0.09341536154778107
+CCC19,AggregateType.MIN,0.6,"('Doppler identification', 'Anesthetize')",0.34290373270564434
+CCC19,AggregateType.MIN,0.6,"('Check wire in long axis', 'Wire in good position')",0.1355185401431584
+CCC19,AggregateType.MIN,0.6,"('Prepare implements', 'Ultrasound configuration')",0.05117331509305467
+CCC19,AggregateType.MIN,0.6,"('Wire in good position', 'Widen pathway')",0.02882223234120973
+CCC19,AggregateType.MIN,0.6,"('Cover probe', 'Gel in probe')",0.017038066444315714
+CCC19,AggregateType.MIN,0.6,"('Anesthetize', 'Puncture')",0.026251947526989658
+CCC19,AggregateType.MIN,0.6,"('Prepare implements', 'Position patient')",0.46950880929604355
+CCC19,AggregateType.MIN,0.6,"('Position probe', 'Anatomic identification')",0.002241160442555549
+CCC19,AggregateType.MIN,0.6,"('Position patient', 'Hand washing')",0.05684375190903901
+CCC19,AggregateType.MIN,0.7,"('Ultrasound configuration', 'Anatomic identification')",0.02462083205075185
+CCC19,AggregateType.MIN,0.7,"('Anatomic identification', 'Compression identification')",0.05010577145925099
+CCC19,AggregateType.MIN,0.7,"('Hand washing', 'Get in sterile clothes')",0.002915605564598385
+CCC19,AggregateType.MIN,0.7,"('Clean puncture area', 'Drap puncture area')",0.004426039999043896
+CCC19,AggregateType.MIN,0.7,"('Cover probe', 'Put sterile gel')",0.009060283798869525
+CCC19,AggregateType.MIN,0.7,"('Puncture', 'Blood return')",0.012639290622781742
+CCC19,AggregateType.MIN,0.7,"('Blood return', 'Drop probe')",0.07490932783093543
+CCC19,AggregateType.MIN,0.7,"('Drop probe', 'Remove syringe')",0.0010807590793828416
+CCC19,AggregateType.MIN,0.7,"('Remove syringe', 'Guidewire install')",0.003423907705477376
+CCC19,AggregateType.MIN,0.7,"('Check wire in short axis', 'Check wire in long axis')",0.010188411648715742
+CCC19,AggregateType.MIN,0.7,"('Remove trocar', 'Check wire in short axis')",0.055639922006924775
+CCC19,AggregateType.MIN,0.7,"('Widen pathway', 'Advance catheter')",0.05953218222596203
+CCC19,AggregateType.MIN,0.7,"('Advance catheter', 'Remove guidewire')",0.0006066984532361985
+CCC19,AggregateType.MIN,0.7,"('Remove guidewire', 'Check flow and reflow')",0.016014549845465353
+CCC19,AggregateType.MIN,0.7,"('Check flow and reflow', 'Check catheter position')",0.01318962378069366
+CCC19,AggregateType.MIN,0.7,"('Get in sterile clothes', 'Prepare implements')",0.03229078241098588
+CCC19,AggregateType.MIN,0.7,"('Prepare implements', 'Clean puncture area')",0.034915007206280234
+CCC19,AggregateType.MIN,0.7,"('Drap puncture area', 'Prepare implements')",0.0028964323034836015
+CCC19,AggregateType.MIN,0.7,"('Prepare implements', 'Cover probe')",0.008910614930998761
+CCC19,AggregateType.MIN,0.7,"('Gel in probe', 'Cover probe')",0.02274930050014731
+CCC19,AggregateType.MIN,0.7,"('Put sterile gel', 'Position probe')",0.025937332350626008
+CCC19,AggregateType.MIN,0.7,"('Guidewire install', 'Remove trocar')",0.0006750739908690425
+CCC19,AggregateType.MIN,0.7,"('Compression identification', 'Doppler identification')",0.13705892151353138
+CCC19,AggregateType.MIN,0.7,"('Doppler identification', 'Anesthetize')",0.08196905232589335
+CCC19,AggregateType.MIN,0.7,"('Check wire in long axis', 'Wire in good position')",0.024674947098891745
+CCC19,AggregateType.MIN,0.7,"('Prepare implements', 'Ultrasound configuration')",0.005058938616536723
+CCC19,AggregateType.MIN,0.7,"('Wire in good position', 'Widen pathway')",0.0009375291427187182
+CCC19,AggregateType.MIN,0.7,"('Cover probe', 'Gel in probe')",0.014119332498084317
+CCC19,AggregateType.MIN,0.7,"('Anesthetize', 'Puncture')",0.04523807730218484
+CCC19,AggregateType.MIN,0.7,"('Prepare implements', 'Position patient')",0.12960350920277364
+CCC19,AggregateType.MIN,0.7,"('Position probe', 'Anatomic identification')",0.004829952296099431
+CCC19,AggregateType.MIN,0.7,"('Position patient', 'Hand washing')",0.03536509738417126
+CCC19,AggregateType.MIN,0.8,"('Ultrasound configuration', 'Anatomic identification')",0.028521313392741377
+CCC19,AggregateType.MIN,0.8,"('Anatomic identification', 'Compression identification')",0.007191977278401929
+CCC19,AggregateType.MIN,0.8,"('Hand washing', 'Get in sterile clothes')",0.005560122036433132
+CCC19,AggregateType.MIN,0.8,"('Clean puncture area', 'Drap puncture area')",0.022298065776039655
+CCC19,AggregateType.MIN,0.8,"('Cover probe', 'Put sterile gel')",0.020914714301269535
+CCC19,AggregateType.MIN,0.8,"('Puncture', 'Blood return')",0.0011122804936713204
+CCC19,AggregateType.MIN,0.8,"('Blood return', 'Drop probe')",0.0006738289541935408
+CCC19,AggregateType.MIN,0.8,"('Drop probe', 'Remove syringe')",0.020968931675697425
+CCC19,AggregateType.MIN,0.8,"('Remove syringe', 'Guidewire install')",0.0053336770664206765
+CCC19,AggregateType.MIN,0.8,"('Check wire in short axis', 'Check wire in long axis')",0.0012551933859400323
+CCC19,AggregateType.MIN,0.8,"('Remove trocar', 'Check wire in short axis')",0.028323990884409157
+CCC19,AggregateType.MIN,0.8,"('Widen pathway', 'Advance catheter')",0.00944559370059699
+CCC19,AggregateType.MIN,0.8,"('Advance catheter', 'Remove guidewire')",0.014884056557153257
+CCC19,AggregateType.MIN,0.8,"('Remove guidewire', 'Check flow and reflow')",0.0041499413536511855
+CCC19,AggregateType.MIN,0.8,"('Check flow and reflow', 'Check catheter position')",0.057147138922367224
+CCC19,AggregateType.MIN,0.8,"('Get in sterile clothes', 'Prepare implements')",0.02228607605851529
+CCC19,AggregateType.MIN,0.8,"('Prepare implements', 'Clean puncture area')",0.0015411858622934678
+CCC19,AggregateType.MIN,0.8,"('Drap puncture area', 'Prepare implements')",0.015574845743403013
+CCC19,AggregateType.MIN,0.8,"('Prepare implements', 'Cover probe')",0.0479226266169781
+CCC19,AggregateType.MIN,0.8,"('Gel in probe', 'Cover probe')",0.032312180230720626
+CCC19,AggregateType.MIN,0.8,"('Put sterile gel', 'Position probe')",0.0219883289990217
+CCC19,AggregateType.MIN,0.8,"('Guidewire install', 'Remove trocar')",0.00203348465668935
+CCC19,AggregateType.MIN,0.8,"('Compression identification', 'Doppler identification')",0.017164133531212045
+CCC19,AggregateType.MIN,0.8,"('Doppler identification', 'Anesthetize')",0.15705537748458354
+CCC19,AggregateType.MIN,0.8,"('Check wire in long axis', 'Wire in good position')",0.012335574412689867
+CCC19,AggregateType.MIN,0.8,"('Prepare implements', 'Ultrasound configuration')",0.06846533011310063
+CCC19,AggregateType.MIN,0.8,"('Wire in good position', 'Widen pathway')",0.0908854430689161
+CCC19,AggregateType.MIN,0.8,"('Cover probe', 'Gel in probe')",0.0017259859803518591
+CCC19,AggregateType.MIN,0.8,"('Anesthetize', 'Puncture')",0.01727190319822351
+CCC19,AggregateType.MIN,0.8,"('Prepare implements', 'Position patient')",0.10090389368447994
+CCC19,AggregateType.MIN,0.8,"('Position probe', 'Anatomic identification')",0.06130521157203282
+CCC19,AggregateType.MIN,0.8,"('Position patient', 'Hand washing')",0.056996549525950124
+CCC19,AggregateType.MIN,0.9,"('Ultrasound configuration', 'Anatomic identification')",0.017483698601276566
+CCC19,AggregateType.MIN,0.9,"('Anatomic identification', 'Compression identification')",0.010430356655880916
+CCC19,AggregateType.MIN,0.9,"('Hand washing', 'Get in sterile clothes')",0.004823211441379795
+CCC19,AggregateType.MIN,0.9,"('Clean puncture area', 'Drap puncture area')",0.008434417372777725
+CCC19,AggregateType.MIN,0.9,"('Cover probe', 'Put sterile gel')",0.013445413112567077
+CCC19,AggregateType.MIN,0.9,"('Puncture', 'Blood return')",0.0003326688205483998
+CCC19,AggregateType.MIN,0.9,"('Blood return', 'Drop probe')",0.008889046715917249
+CCC19,AggregateType.MIN,0.9,"('Drop probe', 'Remove syringe')",0.0022815937421877008
+CCC19,AggregateType.MIN,0.9,"('Remove syringe', 'Guidewire install')",0.014622055041185434
+CCC19,AggregateType.MIN,0.9,"('Check wire in short axis', 'Check wire in long axis')",0.00994571059852717
+CCC19,AggregateType.MIN,0.9,"('Remove trocar', 'Check wire in short axis')",0.000800545477269902
+CCC19,AggregateType.MIN,0.9,"('Widen pathway', 'Advance catheter')",0.007278656582706385
+CCC19,AggregateType.MIN,0.9,"('Advance catheter', 'Remove guidewire')",0.01983210436445848
+CCC19,AggregateType.MIN,0.9,"('Remove guidewire', 'Check flow and reflow')",0.012757533815180879
+CCC19,AggregateType.MIN,0.9,"('Check flow and reflow', 'Check catheter position')",0.007297229643010716
+CCC19,AggregateType.MIN,0.9,"('Get in sterile clothes', 'Prepare implements')",0.005218956890976006
+CCC19,AggregateType.MIN,0.9,"('Prepare implements', 'Clean puncture area')",0.002998076437139119
+CCC19,AggregateType.MIN,0.9,"('Drap puncture area', 'Prepare implements')",0.005648659948991945
+CCC19,AggregateType.MIN,0.9,"('Prepare implements', 'Cover probe')",0.017739250609561275
+CCC19,AggregateType.MIN,0.9,"('Gel in probe', 'Cover probe')",0.028764905664883322
+CCC19,AggregateType.MIN,0.9,"('Put sterile gel', 'Position probe')",0.00262443220100117
+CCC19,AggregateType.MIN,0.9,"('Guidewire install', 'Remove trocar')",0.007640748843533866
+CCC19,AggregateType.MIN,0.9,"('Compression identification', 'Doppler identification')",0.03696936785951954
+CCC19,AggregateType.MIN,0.9,"('Doppler identification', 'Anesthetize')",0.0748949876918874
+CCC19,AggregateType.MIN,0.9,"('Check wire in long axis', 'Wire in good position')",0.0075220851120685085
+CCC19,AggregateType.MIN,0.9,"('Prepare implements', 'Ultrasound configuration')",0.03719580850950055
+CCC19,AggregateType.MIN,0.9,"('Wire in good position', 'Widen pathway')",0.00907651398796605
+CCC19,AggregateType.MIN,0.9,"('Cover probe', 'Gel in probe')",0.015934031687763046
+CCC19,AggregateType.MIN,0.9,"('Anesthetize', 'Puncture')",0.007752398242074163
+CCC19,AggregateType.MIN,0.9,"('Prepare implements', 'Position patient')",0.035096948356734714
+CCC19,AggregateType.MIN,0.9,"('Position probe', 'Anatomic identification')",0.012389387493753685
+CCC19,AggregateType.MIN,0.9,"('Position patient', 'Hand washing')",0.11226878229403714
+CCC19,AggregateType.MAX,0.01,"('Ultrasound configuration', 'Anatomic identification')",0.8767427491931343
+CCC19,AggregateType.MAX,0.01,"('Anatomic identification', 'Compression identification')",0.028128190807124327
+CCC19,AggregateType.MAX,0.01,"('Hand washing', 'Get in sterile clothes')",1.5349376405470188
+CCC19,AggregateType.MAX,0.01,"('Clean puncture area', 'Drap puncture area')",1.9324387856905654
+CCC19,AggregateType.MAX,0.01,"('Cover probe', 'Put sterile gel')",1.0031657383892574
+CCC19,AggregateType.MAX,0.01,"('Puncture', 'Blood return')",0.7408219974893787
+CCC19,AggregateType.MAX,0.01,"('Blood return', 'Drop probe')",0.029957410540252687
+CCC19,AggregateType.MAX,0.01,"('Drop probe', 'Remove syringe')",7.2513658056452215
+CCC19,AggregateType.MAX,0.01,"('Remove syringe', 'Guidewire install')",0.10111150391713622
+CCC19,AggregateType.MAX,0.01,"('Check wire in short axis', 'Check wire in long axis')",0.5929955788519666
+CCC19,AggregateType.MAX,0.01,"('Remove trocar', 'Check wire in short axis')",2.600836316384031
+CCC19,AggregateType.MAX,0.01,"('Widen pathway', 'Advance catheter')",1.2662935612049107
+CCC19,AggregateType.MAX,0.01,"('Advance catheter', 'Remove guidewire')",0.29852876315659727
+CCC19,AggregateType.MAX,0.01,"('Remove guidewire', 'Check flow and reflow')",0.06837370323743623
+CCC19,AggregateType.MAX,0.01,"('Check flow and reflow', 'Check catheter position')",0.06380563374226433
+CCC19,AggregateType.MAX,0.01,"('Get in sterile clothes', 'Prepare implements')",1.0146000440096472
+CCC19,AggregateType.MAX,0.01,"('Prepare implements', 'Clean puncture area')",0.1584288693317732
+CCC19,AggregateType.MAX,0.01,"('Drap puncture area', 'Prepare implements')",1.707717098338071
+CCC19,AggregateType.MAX,0.01,"('Prepare implements', 'Cover probe')",0.6811253367094222
+CCC19,AggregateType.MAX,0.01,"('Gel in probe', 'Cover probe')",0.9034680685255039
+CCC19,AggregateType.MAX,0.01,"('Put sterile gel', 'Position probe')",0.8477700134601911
+CCC19,AggregateType.MAX,0.01,"('Guidewire install', 'Remove trocar')",1.0250342001293973
+CCC19,AggregateType.MAX,0.01,"('Compression identification', 'Doppler identification')",1.8649503729598598
+CCC19,AggregateType.MAX,0.01,"('Doppler identification', 'Anesthetize')",5.813088519457999
+CCC19,AggregateType.MAX,0.01,"('Check wire in long axis', 'Wire in good position')",13.005395207931691
+CCC19,AggregateType.MAX,0.01,"('Prepare implements', 'Ultrasound configuration')",2.9829849971682667
+CCC19,AggregateType.MAX,0.01,"('Wire in good position', 'Widen pathway')",7.717974686513074
+CCC19,AggregateType.MAX,0.01,"('Cover probe', 'Gel in probe')",0.44011271916974337
+CCC19,AggregateType.MAX,0.01,"('Anesthetize', 'Puncture')",0.600468704059138
+CCC19,AggregateType.MAX,0.01,"('Prepare implements', 'Position patient')",2.259667661439525
+CCC19,AggregateType.MAX,0.01,"('Position probe', 'Anatomic identification')",1.0897622306891155
+CCC19,AggregateType.MAX,0.01,"('Position patient', 'Hand washing')",27.287321597746082
+CCC19,AggregateType.MAX,0.05,"('Ultrasound configuration', 'Anatomic identification')",0.03211724791405342
+CCC19,AggregateType.MAX,0.05,"('Anatomic identification', 'Compression identification')",0.031719996392713945
+CCC19,AggregateType.MAX,0.05,"('Hand washing', 'Get in sterile clothes')",0.17602188821274206
+CCC19,AggregateType.MAX,0.05,"('Clean puncture area', 'Drap puncture area')",0.3788275571473132
+CCC19,AggregateType.MAX,0.05,"('Cover probe', 'Put sterile gel')",0.3038893590606451
+CCC19,AggregateType.MAX,0.05,"('Puncture', 'Blood return')",0.6067036138603696
+CCC19,AggregateType.MAX,0.05,"('Blood return', 'Drop probe')",0.030422527547491574
+CCC19,AggregateType.MAX,0.05,"('Drop probe', 'Remove syringe')",0.17402363852428115
+CCC19,AggregateType.MAX,0.05,"('Remove syringe', 'Guidewire install')",0.028112871283871643
+CCC19,AggregateType.MAX,0.05,"('Check wire in short axis', 'Check wire in long axis')",0.0028031992024816076
+CCC19,AggregateType.MAX,0.05,"('Remove trocar', 'Check wire in short axis')",0.1588460707553563
+CCC19,AggregateType.MAX,0.05,"('Widen pathway', 'Advance catheter')",0.030990021567831996
+CCC19,AggregateType.MAX,0.05,"('Advance catheter', 'Remove guidewire')",0.09671762967507096
+CCC19,AggregateType.MAX,0.05,"('Remove guidewire', 'Check flow and reflow')",0.6351174732583884
+CCC19,AggregateType.MAX,0.05,"('Check flow and reflow', 'Check catheter position')",0.0291742769037453
+CCC19,AggregateType.MAX,0.05,"('Get in sterile clothes', 'Prepare implements')",0.4764710432118725
+CCC19,AggregateType.MAX,0.05,"('Prepare implements', 'Clean puncture area')",1.5299599045347567
+CCC19,AggregateType.MAX,0.05,"('Drap puncture area', 'Prepare implements')",0.5581823624012767
+CCC19,AggregateType.MAX,0.05,"('Prepare implements', 'Cover probe')",0.71863318518644
+CCC19,AggregateType.MAX,0.05,"('Gel in probe', 'Cover probe')",0.8725355437500782
+CCC19,AggregateType.MAX,0.05,"('Put sterile gel', 'Position probe')",0.05010137542815496
+CCC19,AggregateType.MAX,0.05,"('Guidewire install', 'Remove trocar')",0.3194333631864613
+CCC19,AggregateType.MAX,0.05,"('Compression identification', 'Doppler identification')",1.8145085730326107
+CCC19,AggregateType.MAX,0.05,"('Doppler identification', 'Anesthetize')",0.9935322869434955
+CCC19,AggregateType.MAX,0.05,"('Check wire in long axis', 'Wire in good position')",0.003952684583671286
+CCC19,AggregateType.MAX,0.05,"('Prepare implements', 'Ultrasound configuration')",0.06753979765320373
+CCC19,AggregateType.MAX,0.05,"('Wire in good position', 'Widen pathway')",0.24113801503337284
+CCC19,AggregateType.MAX,0.05,"('Cover probe', 'Gel in probe')",0.015053975755205359
+CCC19,AggregateType.MAX,0.05,"('Anesthetize', 'Puncture')",0.5946612354957606
+CCC19,AggregateType.MAX,0.05,"('Prepare implements', 'Position patient')",4.492281854807345
+CCC19,AggregateType.MAX,0.05,"('Position probe', 'Anatomic identification')",0.515993668571149
+CCC19,AggregateType.MAX,0.05,"('Position patient', 'Hand washing')",1.0455169618738247
+CCC19,AggregateType.MAX,0.1,"('Ultrasound configuration', 'Anatomic identification')",0.0007612137567305055
+CCC19,AggregateType.MAX,0.1,"('Anatomic identification', 'Compression identification')",0.024051409427804742
+CCC19,AggregateType.MAX,0.1,"('Hand washing', 'Get in sterile clothes')",0.3564864017111534
+CCC19,AggregateType.MAX,0.1,"('Clean puncture area', 'Drap puncture area')",0.21782880199197074
+CCC19,AggregateType.MAX,0.1,"('Cover probe', 'Put sterile gel')",0.08925122376981089
+CCC19,AggregateType.MAX,0.1,"('Puncture', 'Blood return')",0.10277672394768603
+CCC19,AggregateType.MAX,0.1,"('Blood return', 'Drop probe')",0.05693434240102056
+CCC19,AggregateType.MAX,0.1,"('Drop probe', 'Remove syringe')",0.07916919796105527
+CCC19,AggregateType.MAX,0.1,"('Remove syringe', 'Guidewire install')",0.17133235943756886
+CCC19,AggregateType.MAX,0.1,"('Check wire in short axis', 'Check wire in long axis')",0.07164017047358712
+CCC19,AggregateType.MAX,0.1,"('Remove trocar', 'Check wire in short axis')",0.0772198439982759
+CCC19,AggregateType.MAX,0.1,"('Widen pathway', 'Advance catheter')",0.010330662356725131
+CCC19,AggregateType.MAX,0.1,"('Advance catheter', 'Remove guidewire')",0.16242921112512204
+CCC19,AggregateType.MAX,0.1,"('Remove guidewire', 'Check flow and reflow')",0.08202989110374581
+CCC19,AggregateType.MAX,0.1,"('Check flow and reflow', 'Check catheter position')",0.01728780697338106
+CCC19,AggregateType.MAX,0.1,"('Get in sterile clothes', 'Prepare implements')",0.463056862819075
+CCC19,AggregateType.MAX,0.1,"('Prepare implements', 'Clean puncture area')",0.11456989169835907
+CCC19,AggregateType.MAX,0.1,"('Drap puncture area', 'Prepare implements')",0.4443164010259156
+CCC19,AggregateType.MAX,0.1,"('Prepare implements', 'Cover probe')",0.49591303218083294
+CCC19,AggregateType.MAX,0.1,"('Gel in probe', 'Cover probe')",0.5739307726732434
+CCC19,AggregateType.MAX,0.1,"('Put sterile gel', 'Position probe')",0.6088753232758071
+CCC19,AggregateType.MAX,0.1,"('Guidewire install', 'Remove trocar')",0.1659857252459016
+CCC19,AggregateType.MAX,0.1,"('Compression identification', 'Doppler identification')",0.5676104148798289
+CCC19,AggregateType.MAX,0.1,"('Doppler identification', 'Anesthetize')",1.3173113224087096
+CCC19,AggregateType.MAX,0.1,"('Check wire in long axis', 'Wire in good position')",0.02302869253618134
+CCC19,AggregateType.MAX,0.1,"('Prepare implements', 'Ultrasound configuration')",0.3491959123635049
+CCC19,AggregateType.MAX,0.1,"('Wire in good position', 'Widen pathway')",0.730510364248735
+CCC19,AggregateType.MAX,0.1,"('Cover probe', 'Gel in probe')",1.7227636735693406
+CCC19,AggregateType.MAX,0.1,"('Anesthetize', 'Puncture')",0.007825565135160615
+CCC19,AggregateType.MAX,0.1,"('Prepare implements', 'Position patient')",0.4289087999913439
+CCC19,AggregateType.MAX,0.1,"('Position probe', 'Anatomic identification')",0.07608378086560978
+CCC19,AggregateType.MAX,0.1,"('Position patient', 'Hand washing')",0.047544454320903595
+CCC19,AggregateType.MAX,0.2,"('Ultrasound configuration', 'Anatomic identification')",0.16347989217068903
+CCC19,AggregateType.MAX,0.2,"('Anatomic identification', 'Compression identification')",0.120956097137487
+CCC19,AggregateType.MAX,0.2,"('Hand washing', 'Get in sterile clothes')",0.16205624532793195
+CCC19,AggregateType.MAX,0.2,"('Clean puncture area', 'Drap puncture area')",0.04359163118751108
+CCC19,AggregateType.MAX,0.2,"('Cover probe', 'Put sterile gel')",0.07216660789684846
+CCC19,AggregateType.MAX,0.2,"('Puncture', 'Blood return')",0.023851323289322605
+CCC19,AggregateType.MAX,0.2,"('Blood return', 'Drop probe')",0.041306760429976025
+CCC19,AggregateType.MAX,0.2,"('Drop probe', 'Remove syringe')",0.008691834703195166
+CCC19,AggregateType.MAX,0.2,"('Remove syringe', 'Guidewire install')",0.051966113272877264
+CCC19,AggregateType.MAX,0.2,"('Check wire in short axis', 'Check wire in long axis')",0.010106280048944712
+CCC19,AggregateType.MAX,0.2,"('Remove trocar', 'Check wire in short axis')",0.21290552155433815
+CCC19,AggregateType.MAX,0.2,"('Widen pathway', 'Advance catheter')",0.018829790534420607
+CCC19,AggregateType.MAX,0.2,"('Advance catheter', 'Remove guidewire')",0.026305858114469595
+CCC19,AggregateType.MAX,0.2,"('Remove guidewire', 'Check flow and reflow')",0.16265429349887325
+CCC19,AggregateType.MAX,0.2,"('Check flow and reflow', 'Check catheter position')",0.009703756111025363
+CCC19,AggregateType.MAX,0.2,"('Get in sterile clothes', 'Prepare implements')",0.10983566233306677
+CCC19,AggregateType.MAX,0.2,"('Prepare implements', 'Clean puncture area')",0.04295661202273097
+CCC19,AggregateType.MAX,0.2,"('Drap puncture area', 'Prepare implements')",0.02456292463158942
+CCC19,AggregateType.MAX,0.2,"('Prepare implements', 'Cover probe')",0.35664193787584725
+CCC19,AggregateType.MAX,0.2,"('Gel in probe', 'Cover probe')",0.02403791576782626
+CCC19,AggregateType.MAX,0.2,"('Put sterile gel', 'Position probe')",0.08337441064809359
+CCC19,AggregateType.MAX,0.2,"('Guidewire install', 'Remove trocar')",0.015461112361388708
+CCC19,AggregateType.MAX,0.2,"('Compression identification', 'Doppler identification')",0.08829075701747668
+CCC19,AggregateType.MAX,0.2,"('Doppler identification', 'Anesthetize')",0.12791041094203992
+CCC19,AggregateType.MAX,0.2,"('Check wire in long axis', 'Wire in good position')",0.006527836312872953
+CCC19,AggregateType.MAX,0.2,"('Prepare implements', 'Ultrasound configuration')",0.5553782752884664
+CCC19,AggregateType.MAX,0.2,"('Wire in good position', 'Widen pathway')",0.04138576118521886
+CCC19,AggregateType.MAX,0.2,"('Cover probe', 'Gel in probe')",0.012251400699440603
+CCC19,AggregateType.MAX,0.2,"('Anesthetize', 'Puncture')",0.1829195329925659
+CCC19,AggregateType.MAX,0.2,"('Prepare implements', 'Position patient')",0.019784884235515054
+CCC19,AggregateType.MAX,0.2,"('Position probe', 'Anatomic identification')",0.059309188017426746
+CCC19,AggregateType.MAX,0.2,"('Position patient', 'Hand washing')",1.6537728823914177
+CCC19,AggregateType.MAX,0.3,"('Ultrasound configuration', 'Anatomic identification')",0.02293323213806513
+CCC19,AggregateType.MAX,0.3,"('Anatomic identification', 'Compression identification')",0.03303688842997321
+CCC19,AggregateType.MAX,0.3,"('Hand washing', 'Get in sterile clothes')",0.060981290185062084
+CCC19,AggregateType.MAX,0.3,"('Clean puncture area', 'Drap puncture area')",0.10302275020670404
+CCC19,AggregateType.MAX,0.3,"('Cover probe', 'Put sterile gel')",0.0003333852103400166
+CCC19,AggregateType.MAX,0.3,"('Puncture', 'Blood return')",0.018463283377504542
+CCC19,AggregateType.MAX,0.3,"('Blood return', 'Drop probe')",0.015276799997082376
+CCC19,AggregateType.MAX,0.3,"('Drop probe', 'Remove syringe')",0.03557298878593042
+CCC19,AggregateType.MAX,0.3,"('Remove syringe', 'Guidewire install')",0.008474338965267378
+CCC19,AggregateType.MAX,0.3,"('Check wire in short axis', 'Check wire in long axis')",0.008040219548770296
+CCC19,AggregateType.MAX,0.3,"('Remove trocar', 'Check wire in short axis')",0.14525473597104793
+CCC19,AggregateType.MAX,0.3,"('Widen pathway', 'Advance catheter')",0.047885838549473835
+CCC19,AggregateType.MAX,0.3,"('Advance catheter', 'Remove guidewire')",0.055468850983130126
+CCC19,AggregateType.MAX,0.3,"('Remove guidewire', 'Check flow and reflow')",0.15724586760318993
+CCC19,AggregateType.MAX,0.3,"('Check flow and reflow', 'Check catheter position')",0.22427788881636657
+CCC19,AggregateType.MAX,0.3,"('Get in sterile clothes', 'Prepare implements')",0.028978907862721295
+CCC19,AggregateType.MAX,0.3,"('Prepare implements', 'Clean puncture area')",0.005461445470476616
+CCC19,AggregateType.MAX,0.3,"('Drap puncture area', 'Prepare implements')",0.0031382356237712973
+CCC19,AggregateType.MAX,0.3,"('Prepare implements', 'Cover probe')",0.06455975370095457
+CCC19,AggregateType.MAX,0.3,"('Gel in probe', 'Cover probe')",0.038218285130912424
+CCC19,AggregateType.MAX,0.3,"('Put sterile gel', 'Position probe')",0.01755558709027838
+CCC19,AggregateType.MAX,0.3,"('Guidewire install', 'Remove trocar')",0.0054065828101078255
+CCC19,AggregateType.MAX,0.3,"('Compression identification', 'Doppler identification')",0.0036357522292649325
+CCC19,AggregateType.MAX,0.3,"('Doppler identification', 'Anesthetize')",0.19224917496499438
+CCC19,AggregateType.MAX,0.3,"('Check wire in long axis', 'Wire in good position')",0.1207115947031535
+CCC19,AggregateType.MAX,0.3,"('Prepare implements', 'Ultrasound configuration')",0.09006647036481441
+CCC19,AggregateType.MAX,0.3,"('Wire in good position', 'Widen pathway')",0.07231669335028457
+CCC19,AggregateType.MAX,0.3,"('Cover probe', 'Gel in probe')",0.007682714135876179
+CCC19,AggregateType.MAX,0.3,"('Anesthetize', 'Puncture')",0.0446934151468784
+CCC19,AggregateType.MAX,0.3,"('Prepare implements', 'Position patient')",0.3674872044062809
+CCC19,AggregateType.MAX,0.3,"('Position probe', 'Anatomic identification')",0.2665286968648856
+CCC19,AggregateType.MAX,0.3,"('Position patient', 'Hand washing')",0.19042225560872672
+CCC19,AggregateType.MAX,0.4,"('Ultrasound configuration', 'Anatomic identification')",0.04358067983438563
+CCC19,AggregateType.MAX,0.4,"('Anatomic identification', 'Compression identification')",0.0016666472164200326
+CCC19,AggregateType.MAX,0.4,"('Hand washing', 'Get in sterile clothes')",0.051312859809873
+CCC19,AggregateType.MAX,0.4,"('Clean puncture area', 'Drap puncture area')",5.303809387191549e-05
+CCC19,AggregateType.MAX,0.4,"('Cover probe', 'Put sterile gel')",0.02294087822974736
+CCC19,AggregateType.MAX,0.4,"('Puncture', 'Blood return')",0.007904607913234395
+CCC19,AggregateType.MAX,0.4,"('Blood return', 'Drop probe')",0.009723376915793046
+CCC19,AggregateType.MAX,0.4,"('Drop probe', 'Remove syringe')",0.00950084787659136
+CCC19,AggregateType.MAX,0.4,"('Remove syringe', 'Guidewire install')",0.006732290349611532
+CCC19,AggregateType.MAX,0.4,"('Check wire in short axis', 'Check wire in long axis')",0.009223728723520565
+CCC19,AggregateType.MAX,0.4,"('Remove trocar', 'Check wire in short axis')",0.0016585137410602376
+CCC19,AggregateType.MAX,0.4,"('Widen pathway', 'Advance catheter')",0.0005577159841761516
+CCC19,AggregateType.MAX,0.4,"('Advance catheter', 'Remove guidewire')",0.0073497332845912314
+CCC19,AggregateType.MAX,0.4,"('Remove guidewire', 'Check flow and reflow')",0.0329389630100017
+CCC19,AggregateType.MAX,0.4,"('Check flow and reflow', 'Check catheter position')",0.06036581322572521
+CCC19,AggregateType.MAX,0.4,"('Get in sterile clothes', 'Prepare implements')",0.031631381212465705
+CCC19,AggregateType.MAX,0.4,"('Prepare implements', 'Clean puncture area')",0.06397233576779125
+CCC19,AggregateType.MAX,0.4,"('Drap puncture area', 'Prepare implements')",0.06686145201705265
+CCC19,AggregateType.MAX,0.4,"('Prepare implements', 'Cover probe')",0.026216063556796804
+CCC19,AggregateType.MAX,0.4,"('Gel in probe', 'Cover probe')",0.0031497019230272627
+CCC19,AggregateType.MAX,0.4,"('Put sterile gel', 'Position probe')",0.03953608922577656
+CCC19,AggregateType.MAX,0.4,"('Guidewire install', 'Remove trocar')",0.00919245765412254
+CCC19,AggregateType.MAX,0.4,"('Compression identification', 'Doppler identification')",0.03940044259069864
+CCC19,AggregateType.MAX,0.4,"('Doppler identification', 'Anesthetize')",0.39157744895898783
+CCC19,AggregateType.MAX,0.4,"('Check wire in long axis', 'Wire in good position')",0.14072193915131967
+CCC19,AggregateType.MAX,0.4,"('Prepare implements', 'Ultrasound configuration')",0.0007116244544416173
+CCC19,AggregateType.MAX,0.4,"('Wire in good position', 'Widen pathway')",0.05519513885106431
+CCC19,AggregateType.MAX,0.4,"('Cover probe', 'Gel in probe')",0.09452903121628282
+CCC19,AggregateType.MAX,0.4,"('Anesthetize', 'Puncture')",0.013781602883814395
+CCC19,AggregateType.MAX,0.4,"('Prepare implements', 'Position patient')",0.2965602809914043
+CCC19,AggregateType.MAX,0.4,"('Position probe', 'Anatomic identification')",0.03564531606565661
+CCC19,AggregateType.MAX,0.4,"('Position patient', 'Hand washing')",0.08843631432211296
+CCC19,AggregateType.MAX,0.5,"('Ultrasound configuration', 'Anatomic identification')",0.017192373566913232
+CCC19,AggregateType.MAX,0.5,"('Anatomic identification', 'Compression identification')",0.05984340528401747
+CCC19,AggregateType.MAX,0.5,"('Hand washing', 'Get in sterile clothes')",0.05058880467398982
+CCC19,AggregateType.MAX,0.5,"('Clean puncture area', 'Drap puncture area')",0.04641998927900293
+CCC19,AggregateType.MAX,0.5,"('Cover probe', 'Put sterile gel')",0.0015248364914777805
+CCC19,AggregateType.MAX,0.5,"('Puncture', 'Blood return')",0.01704049439290145
+CCC19,AggregateType.MAX,0.5,"('Blood return', 'Drop probe')",0.013477910669131966
+CCC19,AggregateType.MAX,0.5,"('Drop probe', 'Remove syringe')",0.013878455459072224
+CCC19,AggregateType.MAX,0.5,"('Remove syringe', 'Guidewire install')",0.003579448277953219
+CCC19,AggregateType.MAX,0.5,"('Check wire in short axis', 'Check wire in long axis')",0.00427894707564164
+CCC19,AggregateType.MAX,0.5,"('Remove trocar', 'Check wire in short axis')",0.0009434552937307217
+CCC19,AggregateType.MAX,0.5,"('Widen pathway', 'Advance catheter')",0.010561394403942817
+CCC19,AggregateType.MAX,0.5,"('Advance catheter', 'Remove guidewire')",0.01546197202351518
+CCC19,AggregateType.MAX,0.5,"('Remove guidewire', 'Check flow and reflow')",0.0009717290590503956
+CCC19,AggregateType.MAX,0.5,"('Check flow and reflow', 'Check catheter position')",0.03280750466920379
+CCC19,AggregateType.MAX,0.5,"('Get in sterile clothes', 'Prepare implements')",0.037001932880019024
+CCC19,AggregateType.MAX,0.5,"('Prepare implements', 'Clean puncture area')",0.017074551237647357
+CCC19,AggregateType.MAX,0.5,"('Drap puncture area', 'Prepare implements')",0.0718870935236237
+CCC19,AggregateType.MAX,0.5,"('Prepare implements', 'Cover probe')",0.07605658215817461
+CCC19,AggregateType.MAX,0.5,"('Gel in probe', 'Cover probe')",0.059628811547967
+CCC19,AggregateType.MAX,0.5,"('Put sterile gel', 'Position probe')",0.05647236225075347
+CCC19,AggregateType.MAX,0.5,"('Guidewire install', 'Remove trocar')",0.019771237823278734
+CCC19,AggregateType.MAX,0.5,"('Compression identification', 'Doppler identification')",0.1262900439206689
+CCC19,AggregateType.MAX,0.5,"('Doppler identification', 'Anesthetize')",0.006835788932937126
+CCC19,AggregateType.MAX,0.5,"('Check wire in long axis', 'Wire in good position')",0.0563893177065279
+CCC19,AggregateType.MAX,0.5,"('Prepare implements', 'Ultrasound configuration')",0.0994490258865548
+CCC19,AggregateType.MAX,0.5,"('Wire in good position', 'Widen pathway')",0.016920207356198702
+CCC19,AggregateType.MAX,0.5,"('Cover probe', 'Gel in probe')",0.017010384487627483
+CCC19,AggregateType.MAX,0.5,"('Anesthetize', 'Puncture')",0.01031862283282672
+CCC19,AggregateType.MAX,0.5,"('Prepare implements', 'Position patient')",0.3858897302175759
+CCC19,AggregateType.MAX,0.5,"('Position probe', 'Anatomic identification')",0.016050242400051137
+CCC19,AggregateType.MAX,0.5,"('Position patient', 'Hand washing')",0.07440278175814141
+CCC19,AggregateType.MAX,0.6,"('Ultrasound configuration', 'Anatomic identification')",0.04050263319787532
+CCC19,AggregateType.MAX,0.6,"('Anatomic identification', 'Compression identification')",0.059681174678688866
+CCC19,AggregateType.MAX,0.6,"('Hand washing', 'Get in sterile clothes')",0.005777708241641851
+CCC19,AggregateType.MAX,0.6,"('Clean puncture area', 'Drap puncture area')",0.013090715815912368
+CCC19,AggregateType.MAX,0.6,"('Cover probe', 'Put sterile gel')",0.006581148997090599
+CCC19,AggregateType.MAX,0.6,"('Puncture', 'Blood return')",0.0037858204573061123
+CCC19,AggregateType.MAX,0.6,"('Blood return', 'Drop probe')",0.016791651571036154
+CCC19,AggregateType.MAX,0.6,"('Drop probe', 'Remove syringe')",0.004792037554699173
+CCC19,AggregateType.MAX,0.6,"('Remove syringe', 'Guidewire install')",0.03316700736869151
+CCC19,AggregateType.MAX,0.6,"('Check wire in short axis', 'Check wire in long axis')",0.0023097871992479213
+CCC19,AggregateType.MAX,0.6,"('Remove trocar', 'Check wire in short axis')",0.05803574183737368
+CCC19,AggregateType.MAX,0.6,"('Widen pathway', 'Advance catheter')",0.01367560765277379
+CCC19,AggregateType.MAX,0.6,"('Advance catheter', 'Remove guidewire')",0.017338212060564295
+CCC19,AggregateType.MAX,0.6,"('Remove guidewire', 'Check flow and reflow')",0.0029215308442223334
+CCC19,AggregateType.MAX,0.6,"('Check flow and reflow', 'Check catheter position')",0.01120050328505795
+CCC19,AggregateType.MAX,0.6,"('Get in sterile clothes', 'Prepare implements')",0.013204366555959504
+CCC19,AggregateType.MAX,0.6,"('Prepare implements', 'Clean puncture area')",0.02819660861431818
+CCC19,AggregateType.MAX,0.6,"('Drap puncture area', 'Prepare implements')",0.002127608641564266
+CCC19,AggregateType.MAX,0.6,"('Prepare implements', 'Cover probe')",0.012688417085857218
+CCC19,AggregateType.MAX,0.6,"('Gel in probe', 'Cover probe')",0.006755273170311961
+CCC19,AggregateType.MAX,0.6,"('Put sterile gel', 'Position probe')",0.021996844447195407
+CCC19,AggregateType.MAX,0.6,"('Guidewire install', 'Remove trocar')",0.006586897678629139
+CCC19,AggregateType.MAX,0.6,"('Compression identification', 'Doppler identification')",0.17731859983715825
+CCC19,AggregateType.MAX,0.6,"('Doppler identification', 'Anesthetize')",0.002025616079456949
+CCC19,AggregateType.MAX,0.6,"('Check wire in long axis', 'Wire in good position')",0.021230997024993117
+CCC19,AggregateType.MAX,0.6,"('Prepare implements', 'Ultrasound configuration')",0.00844863436900245
+CCC19,AggregateType.MAX,0.6,"('Wire in good position', 'Widen pathway')",0.022171709632196945
+CCC19,AggregateType.MAX,0.6,"('Cover probe', 'Gel in probe')",0.0012267221026556936
+CCC19,AggregateType.MAX,0.6,"('Anesthetize', 'Puncture')",0.02208103179010242
+CCC19,AggregateType.MAX,0.6,"('Prepare implements', 'Position patient')",0.46661154817541894
+CCC19,AggregateType.MAX,0.6,"('Position probe', 'Anatomic identification')",0.025321058935704046
+CCC19,AggregateType.MAX,0.6,"('Position patient', 'Hand washing')",0.5306225223575554
+CCC19,AggregateType.MAX,0.7,"('Ultrasound configuration', 'Anatomic identification')",0.07126723684930188
+CCC19,AggregateType.MAX,0.7,"('Anatomic identification', 'Compression identification')",0.021204557135822217
+CCC19,AggregateType.MAX,0.7,"('Hand washing', 'Get in sterile clothes')",0.018063016328694465
+CCC19,AggregateType.MAX,0.7,"('Clean puncture area', 'Drap puncture area')",0.019538424582139946
+CCC19,AggregateType.MAX,0.7,"('Cover probe', 'Put sterile gel')",0.053209349510206394
+CCC19,AggregateType.MAX,0.7,"('Puncture', 'Blood return')",0.003276807934106916
+CCC19,AggregateType.MAX,0.7,"('Blood return', 'Drop probe')",0.0017481456799125618
+CCC19,AggregateType.MAX,0.7,"('Drop probe', 'Remove syringe')",0.018550499814238626
+CCC19,AggregateType.MAX,0.7,"('Remove syringe', 'Guidewire install')",0.013272661435383241
+CCC19,AggregateType.MAX,0.7,"('Check wire in short axis', 'Check wire in long axis')",0.00033054806648337377
+CCC19,AggregateType.MAX,0.7,"('Remove trocar', 'Check wire in short axis')",0.0025103126848963577
+CCC19,AggregateType.MAX,0.7,"('Widen pathway', 'Advance catheter')",0.0016807047451130703
+CCC19,AggregateType.MAX,0.7,"('Advance catheter', 'Remove guidewire')",0.0004121553366225328
+CCC19,AggregateType.MAX,0.7,"('Remove guidewire', 'Check flow and reflow')",0.002429567444215408
+CCC19,AggregateType.MAX,0.7,"('Check flow and reflow', 'Check catheter position')",0.007650884658954027
+CCC19,AggregateType.MAX,0.7,"('Get in sterile clothes', 'Prepare implements')",0.0011304063845543055
+CCC19,AggregateType.MAX,0.7,"('Prepare implements', 'Clean puncture area')",0.032153116662036234
+CCC19,AggregateType.MAX,0.7,"('Drap puncture area', 'Prepare implements')",0.001487549173009511
+CCC19,AggregateType.MAX,0.7,"('Prepare implements', 'Cover probe')",0.02575295484194366
+CCC19,AggregateType.MAX,0.7,"('Gel in probe', 'Cover probe')",0.0074863223467041
+CCC19,AggregateType.MAX,0.7,"('Put sterile gel', 'Position probe')",0.05058236764575641
+CCC19,AggregateType.MAX,0.7,"('Guidewire install', 'Remove trocar')",0.029267016737095492
+CCC19,AggregateType.MAX,0.7,"('Compression identification', 'Doppler identification')",0.035784580192772975
+CCC19,AggregateType.MAX,0.7,"('Doppler identification', 'Anesthetize')",0.010871689115028449
+CCC19,AggregateType.MAX,0.7,"('Check wire in long axis', 'Wire in good position')",0.15465175947239096
+CCC19,AggregateType.MAX,0.7,"('Prepare implements', 'Ultrasound configuration')",0.01055093720663769
+CCC19,AggregateType.MAX,0.7,"('Wire in good position', 'Widen pathway')",0.00975592537552128
+CCC19,AggregateType.MAX,0.7,"('Cover probe', 'Gel in probe')",0.0821495584550509
+CCC19,AggregateType.MAX,0.7,"('Anesthetize', 'Puncture')",0.015398219136298193
+CCC19,AggregateType.MAX,0.7,"('Prepare implements', 'Position patient')",0.1809599691596795
+CCC19,AggregateType.MAX,0.7,"('Position probe', 'Anatomic identification')",0.010266964312369866
+CCC19,AggregateType.MAX,0.7,"('Position patient', 'Hand washing')",0.05082674726962
+CCC19,AggregateType.MAX,0.8,"('Ultrasound configuration', 'Anatomic identification')",0.03376972688201665
+CCC19,AggregateType.MAX,0.8,"('Anatomic identification', 'Compression identification')",0.04287413031467876
+CCC19,AggregateType.MAX,0.8,"('Hand washing', 'Get in sterile clothes')",0.0072388748293682765
+CCC19,AggregateType.MAX,0.8,"('Clean puncture area', 'Drap puncture area')",0.01060446048934427
+CCC19,AggregateType.MAX,0.8,"('Cover probe', 'Put sterile gel')",0.011803367273140353
+CCC19,AggregateType.MAX,0.8,"('Puncture', 'Blood return')",0.0026395897627107833
+CCC19,AggregateType.MAX,0.8,"('Blood return', 'Drop probe')",0.008257896542043642
+CCC19,AggregateType.MAX,0.8,"('Drop probe', 'Remove syringe')",0.002893054995256332
+CCC19,AggregateType.MAX,0.8,"('Remove syringe', 'Guidewire install')",0.00014518732625589336
+CCC19,AggregateType.MAX,0.8,"('Check wire in short axis', 'Check wire in long axis')",0.00246369916950286
+CCC19,AggregateType.MAX,0.8,"('Remove trocar', 'Check wire in short axis')",0.0311793881341611
+CCC19,AggregateType.MAX,0.8,"('Widen pathway', 'Advance catheter')",0.008241861973138904
+CCC19,AggregateType.MAX,0.8,"('Advance catheter', 'Remove guidewire')",0.0003425495194292694
+CCC19,AggregateType.MAX,0.8,"('Remove guidewire', 'Check flow and reflow')",0.0054392282621436765
+CCC19,AggregateType.MAX,0.8,"('Check flow and reflow', 'Check catheter position')",0.004809694837471845
+CCC19,AggregateType.MAX,0.8,"('Get in sterile clothes', 'Prepare implements')",0.02205006744732844
+CCC19,AggregateType.MAX,0.8,"('Prepare implements', 'Clean puncture area')",0.017515522063919393
+CCC19,AggregateType.MAX,0.8,"('Drap puncture area', 'Prepare implements')",0.005235054649024398
+CCC19,AggregateType.MAX,0.8,"('Prepare implements', 'Cover probe')",0.052547430006798436
+CCC19,AggregateType.MAX,0.8,"('Gel in probe', 'Cover probe')",0.0005172982766497977
+CCC19,AggregateType.MAX,0.8,"('Put sterile gel', 'Position probe')",0.03847452593513645
+CCC19,AggregateType.MAX,0.8,"('Guidewire install', 'Remove trocar')",0.027577219685890084
+CCC19,AggregateType.MAX,0.8,"('Compression identification', 'Doppler identification')",0.02436819601857776
+CCC19,AggregateType.MAX,0.8,"('Doppler identification', 'Anesthetize')",0.11313798543641695
+CCC19,AggregateType.MAX,0.8,"('Check wire in long axis', 'Wire in good position')",0.02356388618033694
+CCC19,AggregateType.MAX,0.8,"('Prepare implements', 'Ultrasound configuration')",0.0007455867480405942
+CCC19,AggregateType.MAX,0.8,"('Wire in good position', 'Widen pathway')",0.022285946263776557
+CCC19,AggregateType.MAX,0.8,"('Cover probe', 'Gel in probe')",0.07982476772593176
+CCC19,AggregateType.MAX,0.8,"('Anesthetize', 'Puncture')",0.0005531534485177206
+CCC19,AggregateType.MAX,0.8,"('Prepare implements', 'Position patient')",0.23132777460440956
+CCC19,AggregateType.MAX,0.8,"('Position probe', 'Anatomic identification')",0.00900899243449713
+CCC19,AggregateType.MAX,0.8,"('Position patient', 'Hand washing')",0.01835750459097385
+CCC19,AggregateType.MAX,0.9,"('Ultrasound configuration', 'Anatomic identification')",0.04527668866048913
+CCC19,AggregateType.MAX,0.9,"('Anatomic identification', 'Compression identification')",0.005056369341312668
+CCC19,AggregateType.MAX,0.9,"('Hand washing', 'Get in sterile clothes')",0.0022085629526222604
+CCC19,AggregateType.MAX,0.9,"('Clean puncture area', 'Drap puncture area')",0.008556737764767508
+CCC19,AggregateType.MAX,0.9,"('Cover probe', 'Put sterile gel')",0.0012190641149453303
+CCC19,AggregateType.MAX,0.9,"('Puncture', 'Blood return')",0.0019041228107681192
+CCC19,AggregateType.MAX,0.9,"('Blood return', 'Drop probe')",0.010209232232599655
+CCC19,AggregateType.MAX,0.9,"('Drop probe', 'Remove syringe')",0.021249863119217813
+CCC19,AggregateType.MAX,0.9,"('Remove syringe', 'Guidewire install')",0.003983920969761385
+CCC19,AggregateType.MAX,0.9,"('Check wire in short axis', 'Check wire in long axis')",0.006492777951961841
+CCC19,AggregateType.MAX,0.9,"('Remove trocar', 'Check wire in short axis')",0.014718359476138688
+CCC19,AggregateType.MAX,0.9,"('Widen pathway', 'Advance catheter')",0.004393860113129139
+CCC19,AggregateType.MAX,0.9,"('Advance catheter', 'Remove guidewire')",0.00284526373220384
+CCC19,AggregateType.MAX,0.9,"('Remove guidewire', 'Check flow and reflow')",0.004500514380433134
+CCC19,AggregateType.MAX,0.9,"('Check flow and reflow', 'Check catheter position')",0.005308154773142837
+CCC19,AggregateType.MAX,0.9,"('Get in sterile clothes', 'Prepare implements')",0.006373456572005054
+CCC19,AggregateType.MAX,0.9,"('Prepare implements', 'Clean puncture area')",0.0008977418868908033
+CCC19,AggregateType.MAX,0.9,"('Drap puncture area', 'Prepare implements')",0.0012807259877511967
+CCC19,AggregateType.MAX,0.9,"('Prepare implements', 'Cover probe')",0.0034189445141220944
+CCC19,AggregateType.MAX,0.9,"('Gel in probe', 'Cover probe')",0.011613624917422476
+CCC19,AggregateType.MAX,0.9,"('Put sterile gel', 'Position probe')",8.319284172175756e-05
+CCC19,AggregateType.MAX,0.9,"('Guidewire install', 'Remove trocar')",0.005160955832894369
+CCC19,AggregateType.MAX,0.9,"('Compression identification', 'Doppler identification')",0.17218539794187704
+CCC19,AggregateType.MAX,0.9,"('Doppler identification', 'Anesthetize')",0.005527385881196167
+CCC19,AggregateType.MAX,0.9,"('Check wire in long axis', 'Wire in good position')",0.010386948374244179
+CCC19,AggregateType.MAX,0.9,"('Prepare implements', 'Ultrasound configuration')",0.02309418148935749
+CCC19,AggregateType.MAX,0.9,"('Wire in good position', 'Widen pathway')",0.019489407054668284
+CCC19,AggregateType.MAX,0.9,"('Cover probe', 'Gel in probe')",0.015881080839220907
+CCC19,AggregateType.MAX,0.9,"('Anesthetize', 'Puncture')",0.005682283687382513
+CCC19,AggregateType.MAX,0.9,"('Prepare implements', 'Position patient')",0.07512575043282022
+CCC19,AggregateType.MAX,0.9,"('Position probe', 'Anatomic identification')",0.01324149287832219
+CCC19,AggregateType.MAX,0.9,"('Position patient', 'Hand washing')",0.009481287255658222

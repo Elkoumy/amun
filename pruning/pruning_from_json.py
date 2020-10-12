@@ -3,7 +3,7 @@ import os
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 # pruning_dir="pruning"
-files=["Unrineweginfectie_time","Hospital_freq","CreditReq_freq","BPIC20_time","CreditReq_time","BPIC15_freq","BPIC13_time","BPIC13_freq","BPIC17_time","BPIC15_time","BPIC17_freq","BPIC12_freq","BPIC12_time","BPIC18_time","BPIC20_freq","Sepsis_freq","CCC19_freq","BPIC14_time","BPIC14_freq","BPIC19_time","Traffic_freq","Sepsis_time","CCC19_time","Traffic_time","BPIC18_freq","Unrineweginfectie_freq","Hospital_time"]
+files=["Unrineweginfectie_time","Hospital_freq","CreditReq_freq","BPIC20_time","CreditReq_time","BPIC15_freq","BPIC13_time","BPIC13_freq","BPIC17_time","BPIC15_time","BPIC17_freq","BPIC12_freq","BPIC12_time","BPIC18_time","BPIC20_freq","Sepsis_freq","CCC19_freq","BPIC14_time","BPIC14_freq","BPIC19_freq","BPIC19_time","Traffic_freq","Sepsis_time","CCC19_time","Traffic_time","BPIC18_freq","Unrineweginfectie_freq","Hospital_time"]
 output=""
 for file in files:
     nodes={}
