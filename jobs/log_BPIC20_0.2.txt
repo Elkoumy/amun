@@ -35,3 +35,35 @@ Traceback (most recent call last):
   File "pandas/_libs/hashtable_class_helper.pxi", line 1492, in pandas._libs.hashtable.PyObjectHashTable.get_item
   File "pandas/_libs/hashtable_class_helper.pxi", line 1500, in pandas._libs.hashtable.PyObjectHashTable.get_item
 KeyError: 'lifecycle:transition'
+Dataset: BPIC20
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.1590220077392548
+avg MAPE for time is 0.04352797368930185
+avg SMAPE for freq is 0.04901343543269173
+avg SMAPE for time is 0.019091898922308177
+delta for the freq is 0.999980000199998
+delta for the time is 0.08711855905657662
+Dataset: BPIC20
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.13051234664462924
+avg MAPE for time is 0.28803584783295555
+avg SMAPE for freq is 0.044363536265063744
+avg SMAPE for time is 0.09351481531064927
+delta for the freq is 0.999980000199998
+delta for the time is 0.3963079699586046
+Dataset: BPIC20
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.13533380934251243
+avg MAPE for time is 6391.166731996904
+avg SMAPE for freq is 0.045116840194923714
+avg SMAPE for time is 0.5136007959059804
+delta for the freq is 0.999980000199998
+delta for the time is 0.5
+Dataset: BPIC20
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.12187372327669004
+avg MAPE for time is 0.6345108049313888
+avg SMAPE for freq is 0.04314785963221413
+avg SMAPE for time is 0.1685710931890419
+delta for the freq is 0.999980000199998
+delta for the time is 0.4999996875000976

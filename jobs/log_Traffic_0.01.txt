@@ -12,3 +12,7 @@ avg MAPE for freq is 0.03447831712816711
 avg MAPE for time is 3.130055394639977
 avg SMAPE for freq is 0.016146467094486312
 avg SMAPE for time is 0.3325678063106198
+delta for the freq is 0.3882286672658292
+delta for the time is 0.5
+Dataset: Traffic
+Aggregate Type: AggregateType.MIN

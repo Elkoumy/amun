@@ -16,3 +16,35 @@ Traceback (most recent call last):
   File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/indexing.py", line 2009, in _validate_integer
     raise IndexError("single positional indexer is out-of-bounds")
 IndexError: single positional indexer is out-of-bounds
+Dataset: BPIC13
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.30174453371678583
+avg MAPE for time is 8.597299625148455
+avg SMAPE for freq is 0.09544810251155776
+avg SMAPE for time is 0.618087899472075
+delta for the freq is 0.9998000199980002
+delta for the time is 0.9210526315789475
+Dataset: BPIC13
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.3373703230495074
+avg MAPE for time is 1.0176853941761705
+avg SMAPE for freq is 0.10293492510088409
+avg SMAPE for time is 0.21748817976392926
+delta for the freq is 0.9998000199980002
+delta for the time is 0.7808437954578882
+Dataset: BPIC13
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.4694732014929093
+avg MAPE for time is 3571385.3859546324
+avg SMAPE for freq is 0.1257490076512464
+avg SMAPE for time is 0.990529470108138
+delta for the freq is 0.9998000199980002
+delta for the time is 0.9210526315789475
+Dataset: BPIC13
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.31014037324689364
+avg MAPE for time is 3.5546498584880837
+avg SMAPE for freq is 0.09186516813909404
+avg SMAPE for time is 0.4883454512642563
+delta for the freq is 0.9998000199980002
+delta for the time is 0.9210526315789475

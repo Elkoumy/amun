@@ -16,3 +16,14 @@ Traceback (most recent call last):
   File "/gpfs/hpc/home/elkoumy/.conda/envs/amun-env/lib/python3.7/site-packages/pandas/core/indexing.py", line 2009, in _validate_integer
     raise IndexError("single positional indexer is out-of-bounds")
 IndexError: single positional indexer is out-of-bounds
+Dataset: BPIC12
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.0033246220682311826
+avg MAPE for time is 1.2736209963483418
+avg SMAPE for freq is 0.0016306627650058102
+avg SMAPE for time is 0.23223662459083347
+delta for the freq is 0.1006486316649278
+delta for the time is 0.9675324456540406
+Dataset: BPIC12
+Aggregate Type: AggregateType.SUM
+slurmstepd: error: *** JOB 12722155 ON stage61 CANCELLED AT 2020-10-12T16:43:03 DUE TO TIME LIMIT ***
