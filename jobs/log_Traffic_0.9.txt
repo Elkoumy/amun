@@ -16,3 +16,11 @@ delta for the freq is 0.00455233133029421
 delta for the time is 0.028307559281829847
 Dataset: Traffic
 Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.00021744288228693064
+avg MAPE for time is 3587907.5692722476
+avg SMAPE for freq is 0.00010867049774405092
+avg SMAPE for time is 0.2572576673737328
+delta for the freq is 0.00455233133029421
+delta for the time is 0.5692581439912401
+Dataset: Traffic
+Aggregate Type: AggregateType.MAX

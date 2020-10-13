@@ -28,3 +28,35 @@ Traceback (most recent call last):
   File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 134, in converting_time_unit
     if int(log10(accurate_result))+1<=2:
 ValueError: math domain error
+Dataset: BPIC18
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.011084895205794889
+avg MAPE for time is 0.05681483194653293
+avg SMAPE for freq is 0.0050022764185641755
+avg SMAPE for time is 0.02350210834683101
+delta for the freq is 0.6454899392731475
+delta for the time is 0.0933955779976896
+Dataset: BPIC18
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.010389436543443832
+avg MAPE for time is 0.2316194005812001
+avg SMAPE for freq is 0.004718955105673791
+avg SMAPE for time is 0.08069813412889758
+delta for the freq is 0.6454899392731475
+delta for the time is 0.4861884692323607
+Dataset: BPIC18
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.010908828700688735
+avg MAPE for time is 157530.08946572806
+avg SMAPE for freq is 0.005005265001007335
+avg SMAPE for time is 0.7474521036666355
+delta for the freq is 0.6454899392731475
+delta for the time is 0.75
+Dataset: BPIC18
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.009292411372542584
+avg MAPE for time is 0.5935922862079399
+avg SMAPE for freq is 0.00439328799508565
+avg SMAPE for time is 0.17867620081276267
+delta for the freq is 0.6454899392731475
+delta for the time is 0.7498618679019134

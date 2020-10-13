@@ -24,3 +24,9 @@ delta for the freq is 0.9998000199980002
 delta for the time is 0.9636363636363636
 Dataset: BPIC17
 Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.18739167197774095
+avg MAPE for time is 12.960921082560526
+avg SMAPE for freq is 0.05750829561281179
+avg SMAPE for time is 0.5082884641625143
+delta for the freq is 0.9998000199980002
+delta for the time is 0.9636363636363636

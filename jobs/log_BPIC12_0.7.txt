@@ -27,3 +27,35 @@ delta for the time is 0.5698497956649748
 Dataset: BPIC12
 Aggregate Type: AggregateType.SUM
 slurmstepd: error: *** JOB 12722161 ON sfr9 CANCELLED AT 2020-10-12T16:43:03 DUE TO TIME LIMIT ***
+Dataset: BPIC12
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.0007143063466624474
+avg MAPE for time is 0.6956615189242362
+avg SMAPE for freq is 0.00035544421152203525
+avg SMAPE for time is 0.1400304464419678
+delta for the freq is 0.02884644458059907
+delta for the time is 0.5698497956649748
+Dataset: BPIC12
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.0006224670300886551
+avg MAPE for time is 0.04692047673056393
+avg SMAPE for freq is 0.0003103405012276996
+avg SMAPE for time is 0.020902036086495816
+delta for the freq is 0.02884644458059907
+delta for the time is 0.020635163117371468
+Dataset: BPIC12
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.0005907547971171006
+avg MAPE for time is 3359.842025444866
+avg SMAPE for freq is 0.0002942870901226438
+avg SMAPE for time is 0.8896890540267096
+delta for the freq is 0.02884644458059907
+delta for the time is 0.9798246293362641
+Dataset: BPIC12
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.0005344910256396917
+avg MAPE for time is 0.21097224870864686
+avg SMAPE for freq is 0.00026660945829293746
+avg SMAPE for time is 0.08555732605126179
+delta for the freq is 0.02884644458059907
+delta for the time is 0.7154978416725966

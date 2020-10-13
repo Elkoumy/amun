@@ -3,3 +3,29 @@ Aggregate Type: AggregateType.AVG
 slurmstepd: error: Job 12718333 exceeded memory limit (15732024 > 15728640), being killed
 slurmstepd: error: Exceeded job memory limit
 slurmstepd: error: *** JOB 12718333 ON ares11 CANCELLED AT 2020-10-11T19:08:20 ***
+Dataset: BPIC18
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.0019815724473476815
+avg MAPE for time is 0.016534369814771528
+avg SMAPE for freq is 0.0009781276502736779
+avg SMAPE for time is 0.007106311047550476
+delta for the freq is 0.25040305936191315
+delta for the time is 0.029015797591308012
+Dataset: BPIC18
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.0021289080738165446
+avg MAPE for time is 0.013925547216833608
+avg SMAPE for freq is 0.0010393872395733756
+avg SMAPE for time is 0.006194138006127667
+delta for the freq is 0.25040305936191315
+delta for the time is 0.15119092877845192
+Dataset: BPIC18
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.0026224440355580034
+avg MAPE for time is 23544.53731539756
+avg SMAPE for freq is 0.0012803437685146052
+avg SMAPE for time is 0.18646073517163173
+delta for the freq is 0.25040305936191315
+delta for the time is 0.7499998319941983
+Dataset: BPIC18
+Aggregate Type: AggregateType.MAX

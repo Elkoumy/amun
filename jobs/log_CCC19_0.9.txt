@@ -12,3 +12,17 @@ Traceback (most recent call last):
   File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 134, in converting_time_unit
     if int(log10(accurate_result))+1<=2:
 ValueError: cannot convert float NaN to integer
+Dataset: CCC19
+Aggregate Type: AggregateType.AVG
+Traceback (most recent call last):
+  File "/gpfs/hpc/home/elkoumy/amun/run_experiment_slurm.py", line 149, in <module>
+    run_experiment(data,parameter)
+  File "/gpfs/hpc/home/elkoumy/amun/run_experiment_slurm.py", line 53, in run_experiment
+    dfg_freq, dfg_time = read_xes(data_dir,dataset, aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 31, in read_xes
+    dfg_time =get_dfg_time(data,aggregate_type,dataset)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 99, in get_dfg_time
+    dfg_time,units=converting_time_unit(dfg_time,aggregate_type)
+  File "/gpfs/hpc/home/elkoumy/amun/amun/input_module.py", line 122, in converting_time_unit
+    if int(log10(accurate_result))+1<=2:
+ValueError: cannot convert float NaN to integer

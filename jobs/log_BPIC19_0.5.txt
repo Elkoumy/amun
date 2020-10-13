@@ -37,3 +37,27 @@ Traceback (most recent call last):
 KeyError: 'lifecycle:transition'
 Dataset: BPIC19
 Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.03746954893631884
+avg MAPE for time is 0.04980505210195081
+avg SMAPE for freq is 0.015714963602390157
+avg SMAPE for time is 0.01698855909374928
+delta for the freq is 0.9801980198019802
+delta for the time is 0.0037952943680380083
+Dataset: BPIC19
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.04178956579170864
+avg MAPE for time is 0.04936290105551917
+avg SMAPE for freq is 0.01693980420021384
+avg SMAPE for time is 0.02069357193098078
+delta for the freq is 0.9801980198019802
+delta for the time is 9.692013085749185e-05
+Dataset: BPIC19
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.03625033989248144
+avg MAPE for time is 54766.664727740186
+avg SMAPE for freq is 0.01497129759660864
+avg SMAPE for time is 0.3617716793837974
+delta for the freq is 0.9801980198019802
+delta for the time is 0.01798115985938467
+Dataset: BPIC19
+Aggregate Type: AggregateType.MAX
