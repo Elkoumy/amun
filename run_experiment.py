@@ -33,7 +33,7 @@ log_dir = 'experiment_logs'
 # datasets=["CCC19","Sepsis Cases - Event Log","CoSeLoG_WABO_2","BPIC15_2","CreditRequirement","BPIC15_1","Hospital_log","Road_Traffic_Fine_Management_Process"]
 
 # datasets=["Sepsis Cases - Event Log","CreditRequirement","Road_Traffic_Fine_Management_Process"]
-datasets=["BPIC18"]
+datasets=["Unrineweginfectie"]
 # datasets=["Road_Traffic_Fine_Management_Process"]
 result_log_delta = []  # holds the delta as input exeperiment
 # vales is exp_index, delta, epsilon_freq, epsilon_time, emd_freq, emd_time
@@ -53,7 +53,7 @@ precision=0.5
 for dataset in datasets:
 
     # aggregate_types=[AggregateType.AVG, AggregateType.SUM]
-    aggregate_types = [AggregateType.MIN, AggregateType.AVG, AggregateType.SUM,AggregateType.MAX]
+    aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MAX,AggregateType.MIN]
     # aggregate_types = [AggregateType.MIN]
     for aggregate_type in aggregate_types:
         print("Dataset: "+ dataset)

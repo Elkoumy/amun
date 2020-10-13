@@ -17,6 +17,10 @@ import os
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.algo.filtering.log.start_activities import start_activities_filter
 from pm4py.algo.filtering.log.end_activities import end_activities_filter
+from pm4py.objects.log.importer.csv import factory as csv_importer
+from pm4py.objects.conversion.log import factory as conversion_factory
+from pm4py.objects.log.adapters.pandas import csv_import_adapter
+
 # from pruning_edges import get_pruning_edges
 
 
@@ -24,8 +28,26 @@ def read_xes(data_dir,dataset,aggregate_type):
     prune_parameter_freq=350
     prune_parameter_time=-1 #keep all
     #read the xes file
-    log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
-    data=get_dataframe_from_event_stream(log)
+    if dataset in "BPIC14":
+        # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
+        data['case:concept:name']=data['Incident ID']
+        data['time:timestamp']= data['DateStamp']
+        data['concept:name']= data['IncidentActivity_Type']
+        log = conversion_factory.apply(data)
+    elif dataset=="Unrineweginfectie":
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+        data['case:concept:name'] = data['Patientnummer']
+        data['time:timestamp'] = data['Starttijd']
+        data['concept:name'] = data['Aciviteit']
+        log = conversion_factory.apply(data)
+    else:
+        log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
+        data = get_dataframe_from_event_stream(log)
+
+
+
+
     # dataframe = log_converter.apply(log, variant=log_converter.Variants.TO_DATA_FRAME)
     dfg_freq = dfg_factory.apply(log,variant="frequency")
     dfg_time =get_dfg_time(data,aggregate_type,dataset)
@@ -54,7 +76,7 @@ def get_dfg_time(data,aggregate_type,dataset):
     """
 
     # taking only the complete event to avoid ambiuoutiy
-    if dataset not in ["BPIC13","BPIC20","BPIC19"]:
+    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie"]:
         data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
         data=data.dropna(subset=['lifecycle:transition'])
     #moving first row to the last one
