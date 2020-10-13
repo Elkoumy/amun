@@ -7,7 +7,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
-datasets=["Unrineweginfectie"]
+datasets=["Unrineweginfectie","BPIC14"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
