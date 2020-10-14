@@ -13,21 +13,7 @@ from amun.guessing_advantage import AggregateType
 def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logger_time, dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'):
     # editing the name of datasets
     #datasets = ["Sepsis Cases - Event Log", "CreditRequirement", "Road_Traffic_Fine_Management_Process"]
-    result_log_delta.dataset.replace("Sepsis Cases - Event Log","Sepsis" ,inplace=True)
-    result_log_delta.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
-    result_log_delta.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
-
-    result_log_alpha.dataset.replace("Sepsis Cases - Event Log", "Sepsis", inplace=True)
-    result_log_alpha.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
-    result_log_alpha.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
-
-    delta_logger_freq.dataset.replace("Sepsis Cases - Event Log", "Sepsis", inplace=True)
-    delta_logger_freq.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
-    delta_logger_freq.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
-
-    delta_logger_time.dataset.replace("Sepsis Cases - Event Log", "Sepsis", inplace=True)
-    delta_logger_time.dataset.replace("CreditRequirement", "Credit Req.", inplace=True)
-    delta_logger_time.dataset.replace("Road_Traffic_Fine_Management_Process", "Road Traffic", inplace=True)
+    # result_log_delta.dataset.replace("Sepsis Cases - Event Log","Sepsis" ,inplace=True)
 
     plot_delta_distributions_time(delta_logger_time,dir)
     plot_delta_distributions_freq(delta_logger_freq,dir)
@@ -123,6 +109,13 @@ def plot_delta_distributions_freq(delta_logger,dir):
     for ax in axes:
         ax.set_xlabel("MAPE")  # alpha
         ax.set_ylabel("\u03B4") #delta
+        fmt = '{:0.3f}'
+        yticklabels = []
+        for item in ax.get_yticklabels():
+            item.set_text(fmt.format(float(item.get_text())))
+            yticklabels += [item]
+
+        ax.set_yticklabels(yticklabels)
     plt.show()
     g.savefig(os.path.join(dir, 'Input_emd_freq_dfg_delta_distribution.pdf'))
 
@@ -251,6 +244,7 @@ def plot_input_EMD(result_log_alpha,dir):
     for ax in axes:
         ax.set_xlabel("MAPE")  # alpha
         ax.set(yscale="log")
+
     plt.legend()
     plt.show()
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_epsilon_distribution.pdf'))
@@ -323,9 +317,98 @@ def plot_input_EMD(result_log_alpha,dir):
     plt.show()
     g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_max_distribution.pdf'))
 
-# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+def bubble_heatmap(log_delta, log_alpha):
+    log_delta.delta=log_delta.delta.astype(str)
+    log_alpha.alpha = log_alpha.alpha.astype(str)
+
+
+    log_delta.dataset.replace("Unrineweginfectie", "Unrin..", inplace=True)
+    log_delta_filtered=log_delta.where(log_delta.aggregate_type=="AggregateType.AVG")
+    log_delta_filtered.dropna(inplace=True)
+    sns.scatterplot(
+        data=log_delta_filtered, x="dataset", y="delta", size="MAPE_freq", hue="epsilon_freq",
+        sizes=(20, 400) )
+    plt.legend( title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left',labelspacing=1.1)
+    plt.xticks(rotation=-90)
+    plt.ylabel("\u03B4") # delta
+    plt.xlabel("Event Log")
+    fig=plt.gcf()
+    plt.show()
+
+    loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+    fig.savefig(os.path.join(loc, 'bubble_heatmap_delta_freq.pdf'))
+
+
+    g = sns.FacetGrid(log_delta, col="aggregate_type", margin_titles=True)
+    g.map(sns.scatterplot, data=log_delta, x="dataset", y="delta", size="SMAPE_time", hue="epsilon_time",
+        sizes=(10, 100) )
+    plt.subplots_adjust(top=0.7)
+    g.set_xticklabels(rotation=-90)
+    # g.fig.suptitle('Max \u03B5 for Time DFG  (EMD input)')
+    axes = g.axes.flatten()
+    axes[0].set_title("Average")
+    axes[1].set_title("Sum")
+    axes[2].set_title("Min")
+    axes[3].set_title("Max")
+
+    axes[0].set_ylabel("\u03B4")
+    for ax in axes:
+        ax.set_xlabel("Event Log")
+        # ax.set_xticks(rotation=-90)
+    plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=0.6)
+    # plt.xticks(rotation=-90)
+    plt.show()
+    loc=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+    g.savefig(os.path.join(loc, 'bubble_heatmap_delta_time.pdf'))
+
+
+    """ For Alpha"""
+    log_alpha.dataset.replace("Unrineweginfectie", "Unrin..", inplace=True)
+    log_alpha_filtered = log_alpha.where(log_alpha.aggregate_type == "AggregateType.AVG")
+    log_alpha_filtered.dropna(inplace=True)
+    sns.scatterplot(
+        data=log_alpha_filtered, x="dataset", y="alpha", size="delta_freq_median", hue="epsilon_freq",
+        sizes=(20, 400))
+    plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=1.1)
+    plt.xticks(rotation=-90)
+    plt.ylabel("MAPE")  # alpha
+    plt.xlabel("Event Log")
+    fig = plt.gcf()
+    plt.show()
+
+    loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+    fig.savefig(os.path.join(loc, 'bubble_heatmap_MAPE_freq.pdf'))
+
+    g = sns.FacetGrid(log_alpha, col="aggregate_type", margin_titles=True)
+    g.map(sns.scatterplot, data=log_alpha, x="dataset", y="alpha", size="delta_time_median", hue="epsilon_time",
+          sizes=(10, 100))
+    plt.subplots_adjust(top=0.7)
+    g.set_xticklabels(rotation=-90)
+    # g.fig.suptitle('Max \u03B5 for Time DFG  (EMD input)')
+    axes = g.axes.flatten()
+    axes[0].set_title("Average")
+    axes[1].set_title("Sum")
+    axes[2].set_title("Min")
+    axes[3].set_title("Max")
+
+    axes[0].set_ylabel("MAPE")
+    for ax in axes:
+        ax.set_xlabel("Event Log")
+        # ax.set_xticks(rotation=-90)
+    plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=0.6)
+    # plt.xticks(rotation=-90)
+    plt.show()
+    loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+    g.savefig(os.path.join(loc, 'bubble_heatmap_MAPE_time.pdf'))
+
+
+
+
+
+result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+bubble_heatmap(result_log_delta,result_log_alpha)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
-#
+
