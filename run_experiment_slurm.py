@@ -12,7 +12,7 @@ from statistics import median
 from amun.model_visualization import view_model
 import os
 
-def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1"):
+def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1", mode="pruning"):
     """Parameters to the script"""
     input_dataset=data
     input_alpha_delta=float(parameter)
@@ -50,7 +50,7 @@ def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1"):
             print("Dataset: "+ dataset)
             print("Aggregate Type: "+ str(aggregate_type))
             # delta=0.05
-            dfg_freq, dfg_time = read_xes(data_dir,dataset, aggregate_type)
+            dfg_freq, dfg_time = read_xes(data_dir,dataset, aggregate_type,mode)
             # view_model(dfg_freq,os.path.join( process_model_dir , r"/fig_input_unprotected_" + dataset))
 
             # dfg_freq, dfg_time = read_xes( data_dir + "\\" + dataset + ".xes", aggregate_type)
@@ -122,23 +122,23 @@ def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1"):
 
     # transform results into dataframes
     result_log_delta=pd.DataFrame.from_records(result_log_delta,columns=["dataset","aggregate_type", "delta", "epsilon_freq", "epsilon_time", "MAPE_freq","SMAPE_freq", "MAPE_time", "SMAPE_time"])
-    result_log_delta.to_csv(os.path.join(log_dir,"result_log_delta_"+input_dataset+"_"+str(input_alpha_delta)+".csv"),index=False)
+    result_log_delta.to_csv(os.path.join(log_dir,"result_log_delta_"+input_dataset+"_"+str(input_alpha_delta)+"_"+mode+".csv"),index=False)
     result_log_alpha=pd.DataFrame.from_records(result_log_alpha, columns =["dataset","aggregate_type", "alpha", "epsilon_freq", "epsilon_time", "delta_freq_median", "delta_time_median", "delta_freq_max", "delta_time_max"])
-    result_log_alpha.to_csv(os.path.join(log_dir,"result_log_alpha_"+input_dataset+"_"+str(input_alpha_delta)+".csv"),index=False)
+    result_log_alpha.to_csv(os.path.join(log_dir,"result_log_alpha_"+input_dataset+"_"+str(input_alpha_delta)+"_"+mode+".csv"),index=False)
 
     # #the delta distribution from emd as input
     delta_logger_time=pd.DataFrame(delta_logger_time, columns=["dataset","aggregate_type","emd","delta"])
-    delta_logger_time.to_csv(os.path.join(log_dir,"delta_logger_time_"+input_dataset+"_"+str(input_alpha_delta)+".csv"), index=False)
+    delta_logger_time.to_csv(os.path.join(log_dir,"delta_logger_time_"+input_dataset+"_"+str(input_alpha_delta)+"_"+mode+".csv"), index=False)
 
     delta_logger_freq=pd.DataFrame(delta_logger_freq, columns=["dataset","aggregate_type","emd","delta"])
-    delta_logger_freq.to_csv(os.path.join(log_dir,"delta_logger_freq_"+input_dataset+"_"+str(input_alpha_delta)+".csv"), index=False)
+    delta_logger_freq.to_csv(os.path.join(log_dir,"delta_logger_freq_"+input_dataset+"_"+str(input_alpha_delta)+"_"+mode+".csv"), index=False)
     # plot_delta_distribution_times(delta_logger_time)
 
     result_log_APE_freq= pd.DataFrame.from_records(result_log_APE_freq, columns=["dataset","aggregate_type", "delta", "edge", "APE_freq"])
-    result_log_APE_freq.to_csv(os.path.join(log_dir,"result_log_APE_freq_"+input_dataset+"_"+str(input_alpha_delta)+".csv"), index=False)
+    result_log_APE_freq.to_csv(os.path.join(log_dir,"result_log_APE_freq_"+input_dataset+"_"+str(input_alpha_delta)+"_"+mode+".csv"), index=False)
 
     result_log_APE_time= pd.DataFrame.from_records(result_log_APE_time, columns=["dataset","aggregate_type", "delta", "edge", "APE_time"])
-    result_log_APE_time.to_csv(os.path.join(log_dir,"result_log_APE_time_"+input_dataset+"_"+str(input_alpha_delta)+".csv"), index=False)
+    result_log_APE_time.to_csv(os.path.join(log_dir,"result_log_APE_time_"+input_dataset+"_"+str(input_alpha_delta)+"_"+mode+".csv"), index=False)
     #plot the results
     # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time, figures_dir)
 
@@ -146,4 +146,5 @@ def run_experiment(data="Sepsis Cases - Event Log",parameter="0.1"):
 if __name__ == "__main__":
     data=os.sys.argv[1]
     parameter=os.sys.argv[2]
-    run_experiment(data,parameter)
+    mode = os.sys.argv[3]
+    run_experiment(data,parameter,mode)

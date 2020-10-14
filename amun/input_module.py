@@ -24,7 +24,7 @@ from pm4py.objects.log.adapters.pandas import csv_import_adapter
 # from pruning_edges import get_pruning_edges
 
 
-def read_xes(data_dir,dataset,aggregate_type):
+def read_xes(data_dir,dataset,aggregate_type,mode="pruning"):
     prune_parameter_freq=350
     prune_parameter_time=-1 #keep all
     #read the xes file
@@ -54,12 +54,12 @@ def read_xes(data_dir,dataset,aggregate_type):
 
     # pruning by values of freq and time
     # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
-
-    # # pruning by 10% freq from apromore
-    # dfg_freq,dfg_time1= pruning_by_edge_name_freq(dfg_freq.copy(), dfg_time.copy(), dataset)
-    # #
-    # # pruning by 10% time from apromore
-    # dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(), dataset)
+    if mode=="pruning":
+        # pruning by 10% freq from apromore
+        dfg_freq,dfg_time1= pruning_by_edge_name_freq(dfg_freq.copy(), dfg_time.copy(), dataset)
+        #
+        # pruning by 10% time from apromore
+        dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(), dataset)
 
 
     """Getting Start and End activities"""
