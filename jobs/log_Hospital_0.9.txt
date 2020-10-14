@@ -30,3 +30,35 @@ avg SMAPE for freq is 0.04406361649450615
 avg SMAPE for time is 0.0
 delta for the freq is 0.8562753417803016
 delta for the time is 0.0
+Dataset: Hospital
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.09725460968666841
+avg MAPE for time is 3.364696043251625e-05
+avg SMAPE for freq is 0.042838533837312356
+avg SMAPE for time is 1.6592908292955188e-05
+delta for the freq is 0.8562753417803016
+delta for the time is 0.0
+Dataset: Hospital
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.09743861526970854
+avg MAPE for time is 0.0013378116244290277
+avg SMAPE for freq is 0.04287920699692746
+avg SMAPE for time is 0.0006048161530004322
+delta for the freq is 0.8562753417803016
+delta for the time is 0.0
+Dataset: Hospital
+Aggregate Type: AggregateType.MIN
+avg MAPE for freq is 0.0977445109149988
+avg MAPE for time is 0.31287029477558176
+avg SMAPE for freq is 0.04299318957856148
+avg SMAPE for time is 0.03921072035599111
+delta for the freq is 0.8562753417803016
+delta for the time is 0.0
+Dataset: Hospital
+Aggregate Type: AggregateType.MAX
+avg MAPE for freq is 0.09783264693028514
+avg MAPE for time is 0.0035163656225846267
+avg SMAPE for freq is 0.04300576239631534
+avg SMAPE for time is 0.0015204314127770676
+delta for the freq is 0.8562753417803016
+delta for the time is 0.0

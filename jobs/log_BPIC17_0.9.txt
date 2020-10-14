@@ -30,3 +30,13 @@ avg SMAPE for freq is 0.0005164688545615922
 avg SMAPE for time is 0.03150640275104199
 delta for the freq is 0.05112394747223844
 delta for the time is 0.4653967455439175
+Dataset: BPIC17
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.023226985408228967
+avg MAPE for time is 0.10589496166688608
+avg SMAPE for freq is 0.010506510781447771
+avg SMAPE for time is 0.026570387669470397
+delta for the freq is 0.8562753417803016
+delta for the time is 0.015402519599395093
+Dataset: BPIC17
+Aggregate Type: AggregateType.SUM

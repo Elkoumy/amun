@@ -30,3 +30,6 @@ avg SMAPE for freq is 2.6364259668927477e-05
 avg SMAPE for time is 0.13565892830942544
 delta for the freq is 0.00022945541131877482
 delta for the time is 0.8903115702944034
+Dataset: CreditReq
+Aggregate Type: AggregateType.AVG
+slurmstepd: error: *** JOB 12729087 ON stage61 CANCELLED AT 2020-10-13T19:36:14 DUE TO TIME LIMIT ***

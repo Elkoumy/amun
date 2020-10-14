@@ -30,3 +30,5 @@ avg SMAPE for freq is 0.0006807967942179505
 avg SMAPE for time is 0.24228359358354506
 delta for the freq is 0.020482767306288095
 delta for the time is 0.5692577225828417
+Dataset: Traffic
+Aggregate Type: AggregateType.AVG

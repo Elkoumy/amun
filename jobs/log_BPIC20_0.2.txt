@@ -67,3 +67,18 @@ avg SMAPE for freq is 0.04314785963221413
 avg SMAPE for time is 0.1685710931890419
 delta for the freq is 0.999980000199998
 delta for the time is 0.4999996875000976
+Dataset: BPIC20
+Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.5259784108096002
+avg MAPE for time is 0.008210732219713314
+avg SMAPE for freq is 0.15015335400610857
+avg SMAPE for time is 0.003948181275677369
+delta for the freq is 0.999980000199998
+delta for the time is 0.012173669653935626
+Dataset: BPIC20
+Aggregate Type: AggregateType.SUM
+avg MAPE for freq is 0.5194248046825691
+avg MAPE for time is 0.2629445878032327
+avg SMAPE for freq is 0.14988006954750682
+avg SMAPE for time is 0.08523782640541204
+slurmstepd: error: *** JOB 12729062 ON stage97 CANCELLED AT 2020-10-13T17:12:43 DUE TO TIME LIMIT ***
