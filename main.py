@@ -6,35 +6,58 @@ import time
 dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 
-datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
-# datasets=["Unrineweginfectie","BPIC14"]
+# datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
+datasets=["BPIC12","BPIC13","BPIC20","CreditReq"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
               formats    include    "minutes",    "minutes:seconds",     "hours:minutes:seconds",
               "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds".
               """
-
+# modes = ["pruning", "nonpruning"]
+modes =["nonpruning"]
 for data in datasets:
-    if data in ["BPIC19", "BPIC18"]:
-        memory = 32
-        exec_time="4-00" # 4 days
-    elif data in [ "Traffic", "BPIC17"]:
-        memory = 15
-        exec_time="4-00" # 4 days
-    elif data in ["BPIC12"]:
-        memory =4
-        exec_time="04:00:00" # 4 hours
-    else:
-        memory = 4
-        exec_time="01:00:00" # 1 hour
+    for mode in modes:
+        if mode == "pruning":
+            if data in ["BPIC19", "BPIC18"]:
+                memory = 32
+                exec_time="4-00" # 4 days
+            elif data in [ "Traffic", "BPIC17"]:
+                memory = 15
+                exec_time="4-00" # 4 days
+            elif data in ["BPIC12"]:
+                memory =4
+                exec_time="04:00:00" # 4 hours
+            else:
+                memory = 4
+                exec_time="01:00:00" # 1 hour
+        elif mode =="nonpruning":
+            if data in ["BPIC19", "BPIC18"]:
+                memory = 32
+                exec_time="4-00" # 4 days
+            elif data in [ "Traffic", "BPIC17"]:
+                memory = 15
+                exec_time="4-00" # 4 days
+            elif data in ["CreditReq", ""]:
+                memory =8
+                exec_time="1-00" # 1 days
+            elif data in ["BPIC12", "BPIC13"]:
+                memory =4
+                exec_time="08:00:00" # 8 hours
+            elif data in ["BPIC20"]:
+                memory = 4
+                exec_time = "04:00:00"  # 4 hours
+            else:
+                memory = 4
+                exec_time="01:00:00" # 1 hour
+
     for parameter in parameters:
-        job_name = os.path.join(jobs_dir,"job_%s_%s.sh" % (data, parameter))
-        job_log_name =os.path.join(jobs_dir,"log_%s_%s.sh" % (data, parameter))
+        job_name = os.path.join(jobs_dir,"job_%s_%s_%s.sh" % (data, parameter,mode))
+        job_log_name =os.path.join(jobs_dir,"log_%s_%s_%s.sh" % (data, parameter,mode))
 
         with open(job_name, "w") as fout:
             fout.write("#!/bin/bash\n")
-            fout.write("#SBATCH --output=jobs/log_%s_%s.txt\n" % (data, parameter))
+            fout.write("#SBATCH --output=jobs/log_%s_%s_%s.txt\n" % (data, parameter,mode))
             fout.write("#SBATCH --mem=%sGB\n" % memory)
             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
             fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
