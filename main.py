@@ -73,5 +73,5 @@ for data in datasets:
                         # fout.write("cd ..\n")
                         fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter,mode, aggregate_type,input_value))  # hyper_param_optim
 
-                    # time.sleep(1)
-                    # subprocess.Popen(("sbatch %s" % job_name).split())
+                    time.sleep(1)
+                    subprocess.Popen(("sbatch %s" % job_name).split())
