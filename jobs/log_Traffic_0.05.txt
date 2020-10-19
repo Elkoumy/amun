@@ -32,3 +32,12 @@ delta for the freq is 0.08175961807882698
 delta for the time is 0.5692581439912401
 Dataset: Traffic
 Aggregate Type: AggregateType.AVG
+avg MAPE for freq is 0.7813994715290661
+avg MAPE for time is 0.31296911943800776
+avg SMAPE for freq is 0.1538579498002174
+avg SMAPE for time is 0.09535939273480884
+delta for the freq is 1.0
+delta for the time is 0.5048838374420492
+Dataset: Traffic
+Aggregate Type: AggregateType.SUM
+slurmstepd: error: *** JOB 12729115 ON stage13 CANCELLED AT 2020-10-17T19:49:33 DUE TO TIME LIMIT ***

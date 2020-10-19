@@ -69,3 +69,4 @@ delta for the freq is 0.9936953816334796
 delta for the time is 0.12490684785881417
 Dataset: BPIC19
 Aggregate Type: AggregateType.AVG
+slurmstepd: error: *** JOB 12729052 ON stage34 CANCELLED AT 2020-10-17T15:36:33 DUE TO TIME LIMIT ***
