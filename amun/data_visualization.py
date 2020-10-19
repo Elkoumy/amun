@@ -19,6 +19,7 @@ def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logg
     plot_delta_distributions_freq(delta_logger_freq,dir)
     plot_input_delta(result_log_delta,dir)
     plot_input_EMD(result_log_alpha,dir)
+    bubble_heatmap(result_log_delta, result_log_alpha)
 
 
 def plot_delta_distribution_time(delta_per_distance):
@@ -112,7 +113,8 @@ def plot_delta_distributions_freq(delta_logger,dir):
         fmt = '{:0.3f}'
         yticklabels = []
         for item in ax.get_yticklabels():
-            item.set_text(fmt.format(float(item.get_text())))
+            # item.set_text(fmt.format(float(item.get_text())))
+            item.set_text(fmt.format(float(item.get_text().replace('−','-'))))
             yticklabels += [item]
 
         ax.set_yticklabels(yticklabels)
@@ -405,10 +407,10 @@ def bubble_heatmap(log_delta, log_alpha):
 
 
 
-result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
-result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
-delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
-delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-bubble_heatmap(result_log_delta,result_log_alpha)
+# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "result_log_alpha.csv"))
+# result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
+# delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
+# delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
+# # bubble_heatmap(result_log_delta,result_log_alpha)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 

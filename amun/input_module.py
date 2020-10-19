@@ -49,25 +49,30 @@ def read_xes(data_dir,dataset,aggregate_type,mode="pruning"):
 
 
     # dataframe = log_converter.apply(log, variant=log_converter.Variants.TO_DATA_FRAME)
-    dfg_freq = dfg_factory.apply(log,variant="frequency")
-    dfg_time =get_dfg_time(data,aggregate_type,dataset)
+    # dfg_freq = dfg_factory.apply(log,variant="frequency")
+    # dfg_time =get_dfg_time(data,aggregate_type,dataset)
+
+    if aggregate_type==AggregateType.FREQ:
+        dfg=dfg_factory.apply(log,variant="frequency")
+    else:
+        dfg = get_dfg_time(data, aggregate_type, dataset)
 
     # pruning by values of freq and time
     # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
-    if mode=="pruning":
-        # pruning by 10% freq from apromore
-        dfg_freq,dfg_time1= pruning_by_edge_name_freq(dfg_freq.copy(), dfg_time.copy(), dataset)
-        #
-        # pruning by 10% time from apromore
-        dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(), dataset)
+    # if mode=="pruning":
+    #     # pruning by 10% freq from apromore
+    #     dfg_freq,dfg_time1= pruning_by_edge_name_freq(dfg_freq.copy(), dfg_time.copy(), dataset)
+    #     #
+    #     # pruning by 10% time from apromore
+    #     dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(), dataset)
 
 
     """Getting Start and End activities"""
     # log = xes_importer.import_log(xes_file)
     log_start = start_activities_filter.get_start_activities(log)
     log_end= end_activities_filter.get_end_activities(log)
-    return dfg_freq,dfg_time
-
+    # return dfg_freq,dfg_time
+    return dfg
 
 def get_dfg_time(data,aggregate_type,dataset):
     """
