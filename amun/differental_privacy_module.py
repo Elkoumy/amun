@@ -51,6 +51,38 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, MAPE_freq, SMAPE_freq, APE_dist_freq, MAPE_time, SMAPE_time, APE_dist_time
 
 
+def differential_privacy_with_risk( dfg,  delta, precision, aggregate_type=AggregateType.FREQ):
+    """
+    This method adds the differential privacy to the DFG
+        * It takes the aggregate type as input including the frequency
+        * It calculates the epsilon using the guessing advantage technique.
+        * It adds laplace noise to the DFGs.
+        * It calculates the distance resulted from the noise
+    """
+    accuracy=1
+    # calculate epsilon
+    if aggregate_type==AggregateType.FREQ:
+        epsilon, senstivity_freq = calculate_epsilon_freq(dfg, delta)
+        # adding laplace noise to DFG freq
+        dfg_new = add_laplace_noise_freq(dfg, epsilon)
+        # Calculate earth moving distance
+        # emd_freq = earth_mover_dist(dfg, dfg_freq_new)
+        # calculating the APE, MAPE, and SMAPE
+        MAPE, SMAPE, APE_dist = error_calculation(dfg, dfg_new)
+    else:
+        epsilon, senstivity = calculate_epsilon_time(dfg, delta, precision, aggregate_type)
+        # adding laplace noise to DFG time
+        dfg, dfg_new = add_laplace_noise_time(aggregate_type, dfg, epsilon)
+        # emd_time = earth_mover_dist(dfg_time, dfg_time_new)
+        MAPE, SMAPE, APE_dist = error_calculation(dfg, dfg_new)
+
+
+
+    # return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, MAPE_freq, SMAPE_freq, APE_dist_freq, MAPE_time, SMAPE_time, APE_dist_time
+
+    return dfg_new, dfg_new, epsilon,  MAPE, SMAPE, APE_dist
+
+
 def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
     laplace_mechanism = privacyMechanisms.LaplaceBoundedDomain()
 
@@ -157,6 +189,25 @@ def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,a
     dfg_time, dfg_time_new = add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time)
 
     return dfg_freq_new, dfg_time_new, epsilon_freq, epsilon_time, delta_freq , delta_time , delta_freq_dfg, delta_time_dfg
+
+def differential_privacy_with_accuracy( dfg,precision, distance,aggregate_type=AggregateType.FREQ):
+    #calculate epsilon and delta for  freq
+    # epsilon_freq, delta_freq=calculate_epsilon_from_distance_freq(dfg_freq,  distance)
+
+    if aggregate_type==AggregateType.FREQ:
+
+        epsilon, delta_dfg , delta = calculate_epsilon_from_distance_freq_percentage_distances(dfg, distance)
+        # adding laplace noise to DFG freq
+        dfg_new = add_laplace_noise_freq(dfg, epsilon)
+
+    else:
+
+        epsilon, delta, delta_dfg = calculate_epsilon_from_distance_time_percentage_distance(dfg,distance,precision,aggregate_type)
+
+        # adding laplace noise to DFG time
+        dfg, dfg_new = add_laplace_noise_time(aggregate_type, dfg, epsilon)
+
+    return dfg_new, epsilon, delta , delta_dfg
 
 
 def risk_pruning(dfg_freq, dfg_time, dfg_delta_freq, dfg_delta_time, risk_pruning):

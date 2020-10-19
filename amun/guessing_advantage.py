@@ -13,6 +13,7 @@ class AggregateType(Enum):
     AVG = 2
     MIN = 3
     MAX = 4
+    FREQ= 5
 
 
 def calculate_epsilon_from_delta(dfg, delta):

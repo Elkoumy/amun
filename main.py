@@ -2,13 +2,16 @@
 import os
 import subprocess
 import time
-
+from amun.guessing_advantage import  AggregateType
 dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 
-# datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
-datasets=["BPIC12","BPIC13","BPIC20","CreditReq"]
+datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
+# datasets=["BPIC12","BPIC13","BPIC20","CreditReq"]
+# datasets=["Sepsis"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
+input_values=["delta","alpha"]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
               formats    include    "minutes",    "minutes:seconds",     "hours:minutes:seconds",
@@ -16,55 +19,59 @@ parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
               """
 # modes = ["pruning", "nonpruning"]
 modes =["nonpruning"]
+memory = 4
+exec_time="01:00:00" # 1 hour
 for data in datasets:
     for mode in modes:
-        if mode == "pruning":
-            if data in ["BPIC19", "BPIC18"]:
-                memory = 32
-                exec_time="4-00" # 4 days
-            elif data in [ "Traffic", "BPIC17"]:
-                memory = 15
-                exec_time="4-00" # 4 days
-            elif data in ["BPIC12"]:
-                memory =4
-                exec_time="04:00:00" # 4 hours
-            else:
-                memory = 4
-                exec_time="01:00:00" # 1 hour
-        elif mode =="nonpruning":
-            if data in ["BPIC19", "BPIC18"]:
-                memory = 32
-                exec_time="4-00" # 4 days
-            elif data in [ "Traffic", "BPIC17"]:
-                memory = 15
-                exec_time="4-00" # 4 days
-            elif data in ["CreditReq", ""]:
-                memory =8
-                exec_time="1-00" # 1 days
-            elif data in ["BPIC12", "BPIC13"]:
-                memory =4
-                exec_time="08:00:00" # 8 hours
-            elif data in ["BPIC20"]:
-                memory = 4
-                exec_time = "04:00:00"  # 4 hours
-            else:
-                memory = 4
-                exec_time="01:00:00" # 1 hour
+        for aggregate_type in aggregate_types:
+            for input_value in input_values:
+                if mode == "pruning":
+                    if data in ["BPIC19", "BPIC18"]:
+                        memory = 32
+                        exec_time="4-00" # 4 days
+                    elif data in [ "Traffic", "BPIC17"]:
+                        memory = 15
+                        exec_time="4-00" # 4 days
+                    elif data in ["BPIC12"]:
+                        memory =4
+                        exec_time="04:00:00" # 4 hours
+                    else:
+                        memory = 4
+                        exec_time="01:00:00" # 1 hour
+                elif mode =="nonpruning":
+                    if data in ["BPIC19", "BPIC18"]:
+                        memory = 32
+                        exec_time="4-00" # 4 days
+                    elif data in [ "Traffic", "BPIC17"]:
+                        memory = 15
+                        exec_time="4-00" # 4 days
+                    elif data in ["CreditReq", ""]:
+                        memory =8
+                        exec_time="1-00" # 1 days
+                    elif data in ["BPIC12", "BPIC13"]:
+                        memory =4
+                        exec_time="08:00:00" # 8 hours
+                    elif data in ["BPIC20"]:
+                        memory = 4
+                        exec_time = "04:00:00"  # 4 hours
+                    else:
+                        memory = 4
+                        exec_time="01:00:00" # 1 hour
 
-    for parameter in parameters:
-        job_name = os.path.join(jobs_dir,"job_%s_%s_%s.sh" % (data, parameter,mode))
-        job_log_name =os.path.join(jobs_dir,"log_%s_%s_%s.sh" % (data, parameter,mode))
+                for parameter in parameters:
+                    job_name = os.path.join(jobs_dir,"job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
+                    job_log_name =os.path.join(jobs_dir,"log_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
 
-        with open(job_name, "w") as fout:
-            fout.write("#!/bin/bash\n")
-            fout.write("#SBATCH --output=jobs/log_%s_%s_%s.txt\n" % (data, parameter,mode))
-            fout.write("#SBATCH --mem=%sGB\n" % memory)
-            fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-            fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-            fout.write("#SBATCH --partition=main\n")
-            fout.write("#SBATCH --time=%s\n" % (exec_time))
-            # fout.write("cd ..\n")
-            fout.write("python -u %s \"%s\" %s\n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter))  # hyper_param_optim
+                    with open(job_name, "w") as fout:
+                        fout.write("#!/bin/bash\n")
+                        fout.write("#SBATCH --output=jobs/log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
+                        fout.write("#SBATCH --mem=%sGB\n" % memory)
+                        fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
+                        fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
+                        fout.write("#SBATCH --partition=main\n")
+                        fout.write("#SBATCH --time=%s\n" % (exec_time))
+                        # fout.write("cd ..\n")
+                        fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter,mode, aggregate_type,input_value))  # hyper_param_optim
 
-        time.sleep(1)
-        subprocess.Popen(("sbatch %s" % job_name).split())
+                    # time.sleep(1)
+                    # subprocess.Popen(("sbatch %s" % job_name).split())
