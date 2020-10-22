@@ -20,6 +20,7 @@ def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logg
     plot_input_delta(result_log_delta,dir)
     plot_input_EMD(result_log_alpha,dir)
     bubble_heatmap(result_log_delta, result_log_alpha)
+    plot_execution_time(execution_time_log, dir)
 
 
 def plot_delta_distribution_time(delta_per_distance):
@@ -426,8 +427,8 @@ def plot_execution_time(execution_time_log,dir):
 # delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
 # # bubble_heatmap(result_log_delta,result_log_alpha)
 
-dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_log.csv"), header=None)
-plot_execution_time(execution_time_log,dir)
+# dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+# execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_log.csv"), header=None)
+# plot_execution_time(execution_time_log,dir)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
