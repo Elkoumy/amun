@@ -404,6 +404,19 @@ def bubble_heatmap(log_delta, log_alpha):
     g.savefig(os.path.join(loc, 'bubble_heatmap_MAPE_time.pdf'))
 
 
+def plot_execution_time(execution_time_log,dir):
+    execution_time_log.columns =["dataset", "parameter", "mode", "aggregate_type", "input_val", "time_diff"]
+    execution_time_log.input_val.replace("delta", "\u03B4", inplace=True) # delta
+    execution_time_log.input_val.replace("alpha", "MAPE", inplace=True)
+    g = sns.barplot(x="dataset", y="time_diff", hue="input_val", data=execution_time_log)
+    g.set_ylabel("Execution Time Log(Seconds)")  # epsilon
+    g.set_xlabel("Dataset")  # delta
+
+    g.set(yscale="log")
+    plt.legend()
+
+    plt.savefig(os.path.join(dir, 'execution_time.pdf'))
+    plt.show()
 
 
 
@@ -412,5 +425,9 @@ def bubble_heatmap(log_delta, log_alpha):
 # delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
 # delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
 # # bubble_heatmap(result_log_delta,result_log_alpha)
+
+dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_log.csv"), header=None)
+plot_execution_time(execution_time_log,dir)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
