@@ -60,8 +60,8 @@ for data in datasets:
                         exec_time="00:20:00" # 20 minutes
 
                 for parameter in parameters:
-                    job_name = os.path.join(jobs_dir,"job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
-                    job_log_name =os.path.join(jobs_dir,"log_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
+                    job_name = os.path.join(jobs_dir,"t_job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
+                    job_log_name =os.path.join(jobs_dir,"time_log_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
 
                     with open(job_name, "w") as fout:
                         fout.write("#!/bin/bash\n")
