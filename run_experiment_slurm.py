@@ -144,18 +144,32 @@ def run_experiment(data="Sepsis",parameter="0.1", mode="nonpruning",aggregate_ty
         result_log_SMAPE.to_csv(os.path.join(log_dir, "result_log_SMAPE_%s_%s_%s_%s_%s_%s.csv" % (
             input_dataset, str(input_alpha_delta), mode, aggregate_type, input_val, str(iteration))), index=False)
     else:
-
+        epsilon_logger=[]
         emd=input_alpha_delta
-
-        dfg_new, epsilon, delta, delta_dfg = differential_privacy_with_accuracy(dfg, precision=precision,
+        if aggregate_type== AggregateType.FREQ:
+            dfg_new, epsilon, delta, delta_dfg = differential_privacy_with_accuracy(dfg, precision=precision,
                                                                                     distance=emd,
                                                                                     aggregate_type=aggregate_type)
+        else:
+            dfg_new, epsilon, delta, delta_dfg, delta_per_event = differential_privacy_with_accuracy(dfg, precision=precision,
+                                                                                    distance=emd,
+
+                                                                                    aggregate_type=aggregate_type)
+            delta_per_event_logger= []
+            for item in delta_per_event:
+                delta_per_event_logger.append([dataset, aggregate_type, emd,item[0],item[1]])
+
+            delta_per_event_logger=pd.DataFrame.from_records(delta_per_event_logger,columns=["dataset", "aggregate_type", "emd","edge", "risk"])
+            delta_per_event_logger.to_csv(os.path.join(log_dir, "delta_per_event_logger_%s_%s_%s_%s_%s.csv" % (
+                input_dataset, str(input_alpha_delta), mode, aggregate_type, input_val)), index=False)
+
         # delta_per_distance[emd] = delta_time_dfg
         for edge in delta_dfg.keys():
-            delta_logger.append([dataset, aggregate_type, emd,delta_dfg[edge]])
+            delta_logger.append([dataset, aggregate_type, emd,edge,delta_dfg[edge]])
+        for edge in epsilon.key():
+            epsilon_logger.append([dataset, aggregate_type, emd,edge,epsilon[edge]])
 
-
-        result_log_alpha.append([dataset,aggregate_type,emd,min(list(epsilon.values())) , median(list(delta_dfg.values())) , max(list(delta_dfg.values())) ])
+        result_log_alpha.append([dataset,aggregate_type,emd,min(list(epsilon.values())), median(list(epsilon.values())) , median(list(delta_dfg.values())) , max(list(delta_dfg.values())) ])
         # view_model(dfg_freq_new, process_model_dir + r"/fig_input_emd_" + str(emd) + "_" + dataset + "_" + str(aggregate_type))
         print("delta for the freq is "+ str(delta))
 
@@ -163,14 +177,17 @@ def run_experiment(data="Sepsis",parameter="0.1", mode="nonpruning",aggregate_ty
 
         """logging results in output files"""
         result_log_alpha = pd.DataFrame.from_records(result_log_alpha,
-                                                     columns=["dataset", "aggregate_type", "alpha", "epsilon",
+                                                     columns=["dataset", "aggregate_type", "alpha", "epsilon", "median_epsilon",
                                                                "delta_median", "delta_max"])
         result_log_alpha.to_csv(os.path.join(log_dir, "result_log_alpha_%s_%s_%s_%s_%s.csv" % (
         input_dataset, str(input_alpha_delta), mode, aggregate_type, input_val)), index=False)
 
 
+        epsilon_logger=pd.DataFrame(epsilon_logger, columns=["dataset", "aggregate_type", "emd","edge", "epsilon"])
+        epsilon_logger.to_csv(os.path.join(log_dir, "epsilon_logger_%s_%s_%s_%s_%s.csv" % (
+            input_dataset, str(input_alpha_delta), mode, aggregate_type, input_val)), index=False)
 
-        delta_logger = pd.DataFrame(delta_logger, columns=["dataset", "aggregate_type", "emd", "delta"])
+        delta_logger = pd.DataFrame(delta_logger, columns=["dataset", "aggregate_type", "emd","edge", "delta"])
         delta_logger.to_csv(os.path.join(log_dir, "delta_logger_%s_%s_%s_%s_%s.csv" % (
             input_dataset, str(input_alpha_delta), mode, aggregate_type, input_val)), index=False)
 

@@ -199,15 +199,17 @@ def differential_privacy_with_accuracy( dfg,precision, distance,aggregate_type=A
         epsilon, delta_dfg , delta = calculate_epsilon_from_distance_freq_percentage_distances(dfg, distance)
         # adding laplace noise to DFG freq
         dfg_new = add_laplace_noise_freq(dfg, epsilon)
-
+        return dfg_new, epsilon, delta, delta_dfg
     else:
 
-        epsilon, delta, delta_dfg = calculate_epsilon_from_distance_time_percentage_distance(dfg,distance,precision,aggregate_type)
+        epsilon, delta, delta_dfg,delta_per_event = calculate_epsilon_from_distance_time_percentage_distance(dfg,distance,precision,aggregate_type)
 
         # adding laplace noise to DFG time
         dfg, dfg_new = add_laplace_noise_time(aggregate_type, dfg, epsilon)
 
-    return dfg_new, epsilon, delta , delta_dfg
+        return dfg_new, epsilon, delta , delta_dfg, delta_per_event
+
+    return dfg_new, epsilon, delta, delta_dfg
 
 
 def risk_pruning(dfg_freq, dfg_time, dfg_delta_freq, dfg_delta_time, risk_pruning):
