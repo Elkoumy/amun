@@ -1,5 +1,0 @@
-dataset,aggregate_type,alpha,epsilon_freq,epsilon_time,delta_freq_median,delta_time_median,delta_freq_max,delta_time_max
-Hospital,AggregateType.AVG,0.01,0.05372967198679374,0.0007095373159621248,1.0,0.0,1.0,0.9996687644915535
-Hospital,AggregateType.SUM,0.01,0.05372967198679374,0.9984588860201111,1.0,0.0,1.0,0.9996687644915535
-Hospital,AggregateType.MIN,0.01,0.05372967198679374,1.0,1.0,0.0,1.0,0.9996687644915535
-Hospital,AggregateType.MAX,0.01,0.05372967198679374,1.0,1.0,0.0,1.0,0.9996687644915535
