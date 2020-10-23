@@ -132,8 +132,6 @@ def run_experiment(data="Sepsis",parameter="0.1", mode="nonpruning",aggregate_ty
 
 
 
-        result_log_SMAPE.to_csv(os.path.join(log_dir, "result_log_SMAPE_%s_%s_%s_%s_%s_%s.csv"%(input_dataset,str(input_alpha_delta), mode, aggregate_type,input_val,str(iteration))), index=False)
-
 
         result_log_SMAPE = pd.DataFrame.from_records(result_log_SMAPE,
                                                    columns=["dataset", "aggregate_type", "delta", "edge", "SMAPE"])
@@ -166,7 +164,9 @@ def run_experiment(data="Sepsis",parameter="0.1", mode="nonpruning",aggregate_ty
         # delta_per_distance[emd] = delta_time_dfg
         for edge in delta_dfg.keys():
             delta_logger.append([dataset, aggregate_type, emd,edge,delta_dfg[edge]])
-        for edge in epsilon.key():
+
+
+        for edge in epsilon.keys():
             epsilon_logger.append([dataset, aggregate_type, emd,edge,epsilon[edge]])
 
         result_log_alpha.append([dataset,aggregate_type,emd,min(list(epsilon.values())), median(list(epsilon.values())) , median(list(delta_dfg.values())) , max(list(delta_dfg.values())) ])
