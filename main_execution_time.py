@@ -61,11 +61,11 @@ for data in datasets:
 
                 for parameter in parameters:
                     job_name = os.path.join(jobs_dir,"t_job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
-                    job_log_name =os.path.join(jobs_dir,"time_log_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
+                    job_log_name =os.path.join(jobs_dir,"time_log_%s_%s_%s_%s_%s.txt" % (data, parameter,mode,aggregate_type,input_value))
 
                     with open(job_name, "w") as fout:
                         fout.write("#!/bin/bash\n")
-                        fout.write("#SBATCH --output=jobs/log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
+                        fout.write("#SBATCH --output=jobs/time_log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
                         fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                         fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu

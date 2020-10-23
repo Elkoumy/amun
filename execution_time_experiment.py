@@ -35,20 +35,18 @@ def run_experiment(data="Sepsis", parameter="0.1", mode="nonpruning", aggregate_
     dfg = read_xes(data_dir, dataset, aggregate_type, mode)
 
     if input_val == "delta":
-        delta = input_alpha_delta
+        delta = float(input_alpha_delta)
 
-        dfg_new, dfg_new, epsilon, MAPE, SMAPE, APE_dist = differential_privacy_with_risk(dfg, delta=delta,
-                                                                                          precision=precision,
-                                                                                          aggregate_type=aggregate_type)
+        dfg_new, dfg_new, epsilon,  MAPE, SMAPE, APE_dist, SMAPE_dist = differential_privacy_with_risk(dfg, delta=delta,precision=precision,aggregate_type=aggregate_type)
         end_time = time.time()
 
 
 
     else:
 
-        emd = input_alpha_delta
+        emd = float(input_alpha_delta)
 
-        dfg_new, epsilon, delta, delta_dfg = differential_privacy_with_accuracy(dfg, precision=precision,
+        dfg_new, epsilon, delta , delta_dfg, delta_per_event = differential_privacy_with_accuracy(dfg, precision=precision,
                                                                                 distance=emd,
                                                                                 aggregate_type=aggregate_type)
         end_time = time.time()
@@ -57,6 +55,7 @@ def run_experiment(data="Sepsis", parameter="0.1", mode="nonpruning", aggregate_
     time_diff_alpha = end_time - start_time
     log = []
     log.append([dataset, parameter, mode, aggregate_type, input_val, time_diff_alpha])
+    log = pd.DataFrame.from_records(log)
     log.to_csv(os.path.join(log_dir, "execution_time_%s_%s_%s_%s_%s.csv" % (
         input_dataset, str(input_alpha_delta), mode, aggregate_type, input_val)), index=False)
 

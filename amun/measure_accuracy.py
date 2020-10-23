@@ -39,14 +39,19 @@ def error_calculation(dfg1,dfg2):
     total =0
     smape_acc=0
     APE_dist={}
+    MAPE_dist={}
+    SMAPE_dist={}
     for key in dfg1.keys():
         if dfg1[key]!=0: #division by zero
             diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
-            smape_acc += abs(dfg1[key] - dfg2[key]) / abs(dfg1[key] + dfg2[key])
+            smape= abs(dfg1[key] - dfg2[key]) / abs(dfg1[key] + dfg2[key])
         else:
             diff = fabs( ((100-dfg1[key]) - (100-dfg2[key])) / (100-dfg1[key]) )
-            smape_acc += abs((100-dfg1[key] )- (100-dfg2[key])) / abs((100-dfg1[key]) + (100-dfg2[key]))
+            smape= abs((100-dfg1[key] )- (100-dfg2[key])) / abs((100-dfg1[key]) + (100-dfg2[key]))
+
         APE_dist[key]=diff
+        smape_acc +=smape
+        SMAPE_dist[key]=smape
 
 
         # smape_acc+=abs(dfg1[key]-dfg2[key])/(dfg1[key]+dfg2[key])
@@ -56,7 +61,7 @@ def error_calculation(dfg1,dfg2):
 
     SMAPE=smape_acc/len(dfg1.keys())
 
-    return MAPE, SMAPE, APE_dist
+    return MAPE, SMAPE, APE_dist, SMAPE_dist
 
 def f1_score(xes_file,dfg1,dfg2):
     f1_score_1, f1_score_2=0,0

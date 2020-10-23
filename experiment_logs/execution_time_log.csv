@@ -1,8 +1,6 @@
-"dataset", "parameter", "mode", "aggregate_type", "input_val", "time_diff_alpha"
 SEPSIS,0.01,"nonpruning",AggregateType.MIN,"delta",0.2519114017486572
 SEPSIS,0.01,"nonpruning",AggregateType.MIN,"alpha",0.5103650093078613
 CredReq,0.01,"nonpruning",AggregateType.MIN,"delta",577.9699363708496
 CredReq,0.01,"nonpruning",AggregateType.MIN,"alpha",599.1401207447052
 Traffic,0.01,"nonpruning",AggregateType.MIN,"delta",3189.7172985076904
 Traffic,0.01,"nonpruning",AggregateType.MIN,"alpha",4094.1853733062744
-

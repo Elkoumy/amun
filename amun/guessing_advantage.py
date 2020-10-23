@@ -310,6 +310,7 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
     delta_time = []
     delta_dfg = {}
     epsilon_time = {}
+    delta_per_event=[]
     for x in dfg_time.keys():
         delta_edge = []
         R_ij = max(dfg_time[x])
@@ -359,15 +360,15 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
             # we append the deltas and take the maximum delta out of them
             # if current_delta != float.nan:
             delta_edge.append(current_delta)
+            delta_per_event.append([x,current_delta])
             if current_delta != 0:
                 delta_time.append(current_delta)
-
         delta_dfg[x] = max(delta_edge)
     if len(delta_time) > 0:
         delta_time = max(delta_time)
 
     delta_time=median(delta_dfg.values())
-    return epsilon_time, delta_time, delta_dfg
+    return epsilon_time, delta_time, delta_dfg,delta_per_event
 
 
 def calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance_percentage):

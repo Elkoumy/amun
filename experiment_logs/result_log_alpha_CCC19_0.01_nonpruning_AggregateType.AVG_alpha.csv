@@ -1,0 +1,2 @@
+dataset,aggregate_type,alpha,epsilon,median_epsilon,delta_median,delta_max
+CCC19,AggregateType.AVG,0.01,0.024296287701167808,0.09111107887937929,0.0,0.962962962962963
