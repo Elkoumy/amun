@@ -69,7 +69,10 @@ for data in datasets:
                         fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                         fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                        fout.write("#SBATCH --partition=amd\n")
+                        if data=="Traffic":
+                            fout.write("#SBATCH --partition=amd\n")
+                        else:
+                            fout.write("#SBATCH --partition=main\n")
                         fout.write("#SBATCH --time=%s\n" % (exec_time))
                         # fout.write("cd ..\n")
                         fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"execution_time_experiment.py")+'"', data, parameter,mode, aggregate_type,input_value))  # hyper_param_optim
