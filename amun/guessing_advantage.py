@@ -74,6 +74,7 @@ def calculate_epsilon_time(dfg, delta, precision, aggregate_type):
 
 def calculate_epsilon_per_pair(values, delta, precision):
     # values = [0.0, 0.2, .4, .6, .7, 10, 20, 100, 400, 500, 1000, 2000]
+    values =list(map(abs, values))
     values = sorted(values)
     R_ij = max(values)
     epsilons = []

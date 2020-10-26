@@ -43,10 +43,10 @@ def error_calculation(dfg1,dfg2):
     SMAPE_dist={}
     for key in dfg1.keys():
         if dfg1[key]!=0: #division by zero
-            diff = fabs(dfg1[key]-dfg2[key])/dfg1[key]
+            diff = fabs(dfg1[key]-dfg2[key])/fabs(dfg1[key])
             smape= abs(dfg1[key] - dfg2[key]) / abs(dfg1[key] + dfg2[key])
         else:
-            diff = fabs( ((100-dfg1[key]) - (100-dfg2[key])) / (100-dfg1[key]) )
+            diff = fabs( ((100-dfg1[key]) - (100-dfg2[key])) / fabs(100-dfg1[key]) )
             smape= abs((100-dfg1[key] )- (100-dfg2[key])) / abs((100-dfg1[key]) + (100-dfg2[key]))
 
         APE_dist[key]=diff
