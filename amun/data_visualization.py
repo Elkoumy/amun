@@ -409,10 +409,12 @@ def plot_execution_time(execution_time_log,dir):
     execution_time_log.columns =["dataset", "parameter", "mode", "aggregate_type", "input_val", "time_diff"]
     execution_time_log.input_val.replace("delta", "\u03B4", inplace=True) # delta
     execution_time_log.input_val.replace("alpha", "MAPE", inplace=True)
+    execution_time_log.dataset.replace("Unrineweginfectie", "Unrine.", inplace=True)
+    execution_time_log.sort_values('time_diff', inplace=True)
     g = sns.barplot(x="dataset", y="time_diff", hue="input_val", data=execution_time_log)
     g.set_ylabel("Execution Time Log(Seconds)")  # epsilon
     g.set_xlabel("Dataset")  # delta
-
+    plt.xticks(rotation='vertical')
     g.set(yscale="log")
     plt.legend()
 
@@ -428,7 +430,7 @@ def plot_execution_time(execution_time_log,dir):
 # # bubble_heatmap(result_log_delta,result_log_alpha)
 
 # dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-# execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_log.csv"), header=None)
+# execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_combined.csv"), header=None)
 # plot_execution_time(execution_time_log,dir)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
