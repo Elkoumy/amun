@@ -91,7 +91,7 @@ for data in datasets:
                         iterations =1
                     for iteration in range(0,iterations):
                         job_name = os.path.join(jobs_dir,"job_%s_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value,str(iteration)))
-                        job_log_name =os.path.join(jobs_dir,"log_%s_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value,str(iteration)))
+                        job_log_name =os.path.join(jobs_dir,"log_%s_%s_%s_%s_%s_%s.txt" % (data, parameter,mode,aggregate_type,input_value,str(iteration)))
 
                         with open(job_name, "w") as fout:
                             fout.write("#!/bin/bash\n")
@@ -99,7 +99,7 @@ for data in datasets:
                             fout.write("#SBATCH --mem=%sGB\n" % memory)
                             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                             fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                            fout.write("#SBATCH --partition=main\n")
+                            fout.write("#SBATCH --partition=amd\n")
                             fout.write("#SBATCH --time=%s\n" % (exec_time))
                             # fout.write("cd ..\n")
                             fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter,mode, aggregate_type,input_value,str(iteration)))  # hyper_param_optim
