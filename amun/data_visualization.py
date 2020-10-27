@@ -333,10 +333,10 @@ def plot_execution_time(execution_time_log,dir):
 # execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_combined.csv"), header=None)
 # # bubble_heatmap(result_log_delta,result_log_alpha)
 
-dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-
-result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
-plot_input_delta(result_log_delta,dir)
+# dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+#
+# result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
+# plot_input_delta(result_log_delta,dir)
 # plot_execution_time(execution_time_log,dir)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
