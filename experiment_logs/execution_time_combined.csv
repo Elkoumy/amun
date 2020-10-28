@@ -6,11 +6,9 @@ BPIC15,0.01,nonpruning,AggregateType.AVG,alpha,16.182076692581177
 BPIC15,0.01,nonpruning,AggregateType.AVG,delta,12.228174686431885
 BPIC17,0.01,nonpruning,AggregateType.AVG,alpha,5538.776530265808
 BPIC17,0.01,nonpruning,AggregateType.AVG,delta,4881.876351118088
-BPIC19,0.01,nonpruning,AggregateType.AVG,delta,58033.45308113098
+BPIC19,0.01,nonpruning,AggregateType.AVG,delta,55094.32890415192
 BPIC20,0.01,nonpruning,AggregateType.AVG,alpha,167.37209105491638
 BPIC20,0.01,nonpruning,AggregateType.AVG,delta,143.85485768318176
-CCC19,0.01,nonpruning,AggregateType.AVG,alpha,0.6031579971313477
-CCC19,0.01,nonpruning,AggregateType.AVG,delta,0.46514296531677246
 CreditReq,0.01,nonpruning,AggregateType.AVG,alpha,447.49493503570557
 CreditReq,0.01,nonpruning,AggregateType.AVG,delta,387.20497965812683
 Hospital,0.01,nonpruning,AggregateType.AVG,alpha,171.38773131370544
@@ -21,3 +19,5 @@ Traffic,0.01,nonpruning,AggregateType.AVG,alpha,19407.16144824028
 Traffic,0.01,nonpruning,AggregateType.AVG,delta,17073.589626550674
 Unrineweginfectie,0.01,nonpruning,AggregateType.AVG,alpha,4.76505184173584
 Unrineweginfectie,0.01,nonpruning,AggregateType.AVG,delta,2.647669792175293
+CCC19,0.01,nonpruning,AggregateType.AVG,alpha,0.6031579971313477
+CCC19,0.01,nonpruning,AggregateType.AVG,delta,0.46514296531677246

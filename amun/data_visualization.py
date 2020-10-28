@@ -226,86 +226,91 @@ def plot_input_alpha(result_log_alpha,dir):
 def bubble_heatmap(log_delta, log_alpha):
     log_delta.delta=log_delta.delta.astype(str)
     log_alpha.alpha = log_alpha.alpha.astype(str)
-
-
+    import numpy as np
+    log_delta.median_epsilon.replace(np.inf,log_delta.median_epsilon.quantile(0.7),inplace=True)
+    # log_delta.median_epsilon=log_delta.median_epsilon*(10**7)
     log_delta.dataset.replace("Unrineweginfectie", "Unrin..", inplace=True)
-    log_delta_filtered=log_delta.where(log_delta.aggregate_type=="AggregateType.AVG")
-    log_delta_filtered.dropna(inplace=True)
-    sns.scatterplot(
-        data=log_delta_filtered, x="dataset", y="delta", size="MAPE_freq", hue="epsilon_freq",
-        sizes=(20, 400) )
-    plt.legend( title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left',labelspacing=1.1)
-    plt.xticks(rotation=-90)
-    plt.ylabel("\u03B4") # delta
-    plt.xlabel("Event Log")
-    fig=plt.gcf()
-    plt.show()
+    log_delta.aggregate_type.replace("AggregateType.AVG", "AVG", inplace=True)
+    log_delta.aggregate_type.replace("AggregateType.MIN", "MIN", inplace=True)
+    log_delta.aggregate_type.replace("AggregateType.MAX", "MAX", inplace=True)
+    log_delta.aggregate_type.replace("AggregateType.SUM", "SUM", inplace=True)
+    log_delta.aggregate_type.replace("AggregateType.FREQ", "FREQ", inplace=True)
+    log_delta.columns = ['dataset', 'aggregate_type', 'delta', '\u03B5', 'MAPE','SMAPE']
+    log_delta.loc[log_delta.SMAPE > 0.9,"SMAPE"] = 0.9
+    log_delta.SMAPE=log_delta.SMAPE.round(2)
+    result_log_delta.SMAPE=result_log_delta.SMAPE.astype('float')
 
-    loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-    fig.savefig(os.path.join(loc, 'bubble_heatmap_delta_freq.pdf'))
+    for agg in ["FREQ","AVG", "MIN", "MAX","SUM"]:
+        log_delta_filtered=log_delta.where(log_delta.aggregate_type == agg)
 
-
-    g = sns.FacetGrid(log_delta, col="aggregate_type", margin_titles=True)
-    g.map(sns.scatterplot, data=log_delta, x="dataset", y="delta", size="SMAPE_time", hue="epsilon_time",
-        sizes=(10, 100) )
-    plt.subplots_adjust(top=0.7)
-    g.set_xticklabels(rotation=-90)
-    # g.fig.suptitle('Max \u03B5 for Time DFG  (EMD input)')
-    axes = g.axes.flatten()
-    axes[0].set_title("Average")
-    axes[1].set_title("Sum")
-    axes[2].set_title("Min")
-    axes[3].set_title("Max")
-
-    axes[0].set_ylabel("\u03B4")
-    for ax in axes:
-        ax.set_xlabel("Event Log")
-        # ax.set_xticks(rotation=-90)
-    plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=0.6)
-    # plt.xticks(rotation=-90)
-    plt.show()
-    loc=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-    g.savefig(os.path.join(loc, 'bubble_heatmap_delta_time.pdf'))
+        log_delta_filtered.dropna(inplace=True)
 
 
-    """ For Alpha"""
+        sns.scatterplot(
+            data=log_delta_filtered, x="dataset", y="delta", size="SMAPE", hue="\u03B5",palette="ch:s=.25,rot=-.25",
+            sizes=(20, 400) )
+
+        leg=plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=1.1)
+
+        for t in leg.texts:
+            # truncate label text to 4 characters
+            t.set_text(t.get_text()[:5])
+
+
+        plt.xticks(rotation=-90)
+        plt.ylabel("\u03B4") # delta
+        plt.xlabel("Event Log")
+        fig=plt.gcf()
+        plt.title("Distribution of \u03B4, \u03B5 and SMAPE for %s" %(agg))
+        plt.show()
+
+        loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+        fig.savefig(os.path.join(loc, 'bubble_heatmap_delta_%s.pdf'%(agg)))
+
+
+    """************************* for ALPHA *************"""
+
+    log_alpha.median_epsilon.replace(np.inf, log_alpha.median_epsilon.quantile(0.7), inplace=True)
+    # log_delta.median_epsilon=log_delta.median_epsilon*(10**7)
     log_alpha.dataset.replace("Unrineweginfectie", "Unrin..", inplace=True)
-    log_alpha_filtered = log_alpha.where(log_alpha.aggregate_type == "AggregateType.AVG")
-    log_alpha_filtered.dropna(inplace=True)
-    sns.scatterplot(
-        data=log_alpha_filtered, x="dataset", y="alpha", size="delta_freq_median", hue="epsilon_freq",
-        sizes=(20, 400))
-    plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=1.1)
-    plt.xticks(rotation=-90)
-    plt.ylabel("MAPE")  # alpha
-    plt.xlabel("Event Log")
-    fig = plt.gcf()
-    plt.show()
+    log_alpha.aggregate_type.replace("AggregateType.AVG", "AVG", inplace=True)
+    log_alpha.aggregate_type.replace("AggregateType.MIN", "MIN", inplace=True)
+    log_alpha.aggregate_type.replace("AggregateType.MAX", "MAX", inplace=True)
+    log_alpha.aggregate_type.replace("AggregateType.SUM", "SUM", inplace=True)
+    log_alpha.aggregate_type.replace("AggregateType.FREQ", "FREQ", inplace=True)
 
-    loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-    fig.savefig(os.path.join(loc, 'bubble_heatmap_MAPE_freq.pdf'))
 
-    g = sns.FacetGrid(log_alpha, col="aggregate_type", margin_titles=True)
-    g.map(sns.scatterplot, data=log_alpha, x="dataset", y="alpha", size="delta_time_median", hue="epsilon_time",
-          sizes=(10, 100))
-    plt.subplots_adjust(top=0.7)
-    g.set_xticklabels(rotation=-90)
-    # g.fig.suptitle('Max \u03B5 for Time DFG  (EMD input)')
-    axes = g.axes.flatten()
-    axes[0].set_title("Average")
-    axes[1].set_title("Sum")
-    axes[2].set_title("Min")
-    axes[3].set_title("Max")
+    log_alpha.loc[log_alpha.delta_median > 0.9, "delta_median"] = 0.9
+    # log_delta.SMAPE = log_delta.SMAPE.round(2)
+    # log_alpha.delta_median = log_alpha.delta_median.astype('float')
 
-    axes[0].set_ylabel("MAPE")
-    for ax in axes:
-        ax.set_xlabel("Event Log")
-        # ax.set_xticks(rotation=-90)
-    plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=0.6)
-    # plt.xticks(rotation=-90)
-    plt.show()
-    loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-    g.savefig(os.path.join(loc, 'bubble_heatmap_MAPE_time.pdf'))
+    log_alpha.columns = ['dataset', 'aggregate_type', 'alpha', 'epsilon', '\u03B5', '\u03B4', 'delta_max']
+    for agg in ["FREQ", "AVG", "MIN", "MAX", "SUM"]:
+        log_alpha_filtered = log_alpha.where(log_alpha.aggregate_type == agg)
+
+        log_alpha_filtered.dropna(inplace=True)
+
+        sns.scatterplot(
+            data=log_alpha_filtered, x="dataset", y="alpha", size="\u03B4", hue="\u03B5", palette="ch:s=.25,rot=-.25",
+            sizes=(20, 400))
+
+        leg = plt.legend(title='Legend', bbox_to_anchor=(1.01, 1), loc='upper left', labelspacing=1.1)
+
+        for t in leg.texts:
+            # truncate label text to 4 characters
+            t.set_text(t.get_text()[:5])
+
+        plt.xticks(rotation=-90)
+        plt.ylabel("MAPE")  # delta
+        plt.xlabel("Event Log")
+        fig = plt.gcf()
+        plt.title("Distribution of MAPE, \u03B5 and \u03B4 for %s" % (agg))
+        plt.show()
+
+        loc = r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+        fig.savefig(os.path.join(loc, 'bubble_heatmap_alpha_%s.pdf' % (agg)))
+
+
 
 
 def plot_execution_time(execution_time_log,dir):
@@ -320,9 +325,12 @@ def plot_execution_time(execution_time_log,dir):
     plt.xticks(rotation='vertical')
     g.set(yscale="log")
     plt.legend()
-
-    plt.savefig(os.path.join(dir, 'execution_time.pdf'))
+    g = plt.gcf()
     plt.show()
+
+    g.savefig(os.path.join(dir, 'execution_time.pdf'))
+
+
 
 
 
@@ -330,14 +338,17 @@ def plot_execution_time(execution_time_log,dir):
 # result_log_delta= pd.read_csv(os.path.join('../experiment_logs', "result_log_delta.csv"))
 # delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
 # delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
-# execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_combined.csv"), header=None)
-# # bubble_heatmap(result_log_delta,result_log_alpha)
-
-# dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-#
+execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_combined.csv"), header=None)
 # result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
+
+
+dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+# result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
+# result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_alpha.csv"))
+# bubble_heatmap(result_log_delta,result_log_alpha)
+
 # plot_input_delta(result_log_delta,dir)
-# plot_execution_time(execution_time_log,dir)
+plot_execution_time(execution_time_log,dir)
 # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 
 # plot_input_alpha(result_log_alpha,dir)
