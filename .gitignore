@@ -45,3 +45,4 @@ experiment_logs/combined_result_log_alpha.csv
 experiment_logs/combined_epsilon_logger_alpha.csv
 experiment_logs/combined_delta_per_event_logger_alpha.csv
 experiment_logs/combined_delta_logger_alpha.csv
+experiment_logs/combined_result_log_delta_delta.csv
