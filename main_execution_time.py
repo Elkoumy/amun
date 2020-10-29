@@ -8,8 +8,8 @@ jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
 # datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-datasets=["BPIC18","BPIC19"]
-# datasets=["BPIC14"]
+# datasets=["BPIC18","BPIC19"]
+datasets=["BPIC14"]
 # datasets=["Sepsis"]
 parameters=[0.01]
 aggregate_types = [AggregateType.AVG]
@@ -43,10 +43,10 @@ for data in datasets:
                 elif mode =="nonpruning":
                     if data in ["BPIC18"]:
                         memory = 32
-                        exec_time = "7-01"  # 2 days
+                        exec_time = "2-01"  # 2 days
                     elif data in ["BPIC19"]:
                         memory = 32
-                        exec_time = "7-01"  # 25 hours
+                        exec_time = "1-01"  # 25 hours
                     elif data in ["Traffic", "BPIC17"]:
                         memory = 15
                         exec_time = "20:00:00"  # 20 hours
