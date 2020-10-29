@@ -43,10 +43,10 @@ for data in datasets:
                 elif mode =="nonpruning":
                     if data in ["BPIC18"]:
                         memory = 32
-                        exec_time = "2-00"  # 2 days
+                        exec_time = "7-01"  # 2 days
                     elif data in ["BPIC19"]:
                         memory = 32
-                        exec_time = "1-01"  # 25 hours
+                        exec_time = "7-01"  # 25 hours
                     elif data in ["Traffic", "BPIC17"]:
                         memory = 15
                         exec_time = "20:00:00"  # 20 hours
@@ -73,6 +73,7 @@ for data in datasets:
                         fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                         fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
+                        # the long cluster has minimum 7 days limit
                         # if data=="Traffic":
                         #     fout.write("#SBATCH --partition=main\n")
                         # else:
