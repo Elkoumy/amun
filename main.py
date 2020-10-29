@@ -11,10 +11,11 @@ jobs_dir = "jobs"
 # datasets=["Sepsis","Unrineweginfectie","Hospital","BPIC20","BPIC12"]
 # datasets=["BPIC13","BPIC15"]
 # datasets=["BPIC14"]
-datasets = ["BPIC18"]
+datasets = ["BPIC14"]
 # datasets=["BPIC18","BPIC19"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
+# aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
+aggregate_types = [ AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
 input_values=["delta","alpha"]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
@@ -53,7 +54,7 @@ for data in datasets:
                     elif data in ["CreditReq", ""]:
                         memory = 8
                         exec_time = "04:00:00"  # 1 days
-                    elif data in ["BPIC12", "BPIC13"]:
+                    elif data in ["BPIC12", "BPIC13","BPIC14"]:
                         memory = 4
                         exec_time = "01:00:00"  # 1 hour
                     elif data in ["BPIC20"]:
