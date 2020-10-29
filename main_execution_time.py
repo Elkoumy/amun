@@ -8,8 +8,8 @@ jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
 # datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-# datasets=["BPIC18","BPIC19"]
-datasets=["BPIC14"]
+datasets=["BPIC18","BPIC19"]
+# datasets=["BPIC14"]
 # datasets=["Sepsis"]
 parameters=[0.01]
 aggregate_types = [AggregateType.AVG]
@@ -41,24 +41,27 @@ for data in datasets:
                         memory = 4
                         exec_time="01:00:00" # 1 hour
                 elif mode =="nonpruning":
-                    if data in ["BPIC19", "BPIC18"]:
+                    if data in ["BPIC18"]:
                         memory = 32
-                        exec_time="20:00:00" # 20 hours
-                    elif data in [ "Traffic", "BPIC17"]:
+                        exec_time = "2-00"  # 2 days
+                    elif data in ["BPIC19"]:
+                        memory = 32
+                        exec_time = "1-01"  # 25 hours
+                    elif data in ["Traffic", "BPIC17"]:
                         memory = 15
-                        exec_time="20:00:00" # 20 hours
+                        exec_time = "20:00:00"  # 20 hours
                     elif data in ["CreditReq", ""]:
-                        memory =8
-                        exec_time="04:00:00" # 1 days
-                    elif data in ["BPIC12", "BPIC13"]:
-                        memory =4
-                        exec_time="01:00:00" # 1 hour
+                        memory = 8
+                        exec_time = "04:00:00"  # 1 days
+                    elif data in ["BPIC12", "BPIC13", "BPIC14"]:
+                        memory = 4
+                        exec_time = "01:00:00"  # 1 hour
                     elif data in ["BPIC20"]:
                         memory = 4
                         exec_time = "00:30:00"  # 30 minutes
                     else:
                         memory = 4
-                        exec_time="00:20:00" # 20 minutes
+                        exec_time = "00:20:00"  # 20 minutes
 
                 for parameter in parameters:
                     job_name = os.path.join(jobs_dir,"t_job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
@@ -71,7 +74,7 @@ for data in datasets:
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                         fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
                         if data=="Traffic":
-                            fout.write("#SBATCH --partition=amd\n")
+                            fout.write("#SBATCH --partition=long\n")
                         else:
                             fout.write("#SBATCH --partition=amd\n")
                         fout.write("#SBATCH --time=%s\n" % (exec_time))
