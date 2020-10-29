@@ -8,8 +8,8 @@ jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
 # datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-# datasets=["BPIC18","BPIC19"]
-datasets=["BPIC14"]
+datasets=["BPIC18","BPIC19"]
+# datasets=["BPIC14"]
 # datasets=["Sepsis"]
 parameters=[0.01]
 aggregate_types = [AggregateType.AVG]
@@ -77,7 +77,7 @@ for data in datasets:
                         # if data=="Traffic":
                         #     fout.write("#SBATCH --partition=main\n")
                         # else:
-                        fout.write("#SBATCH --partition=amd\n")
+                        fout.write("#SBATCH --partition=main\n")
                         fout.write("#SBATCH --time=%s\n" % (exec_time))
                         # fout.write("cd ..\n")
                         fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"execution_time_experiment.py")+'"', data, parameter,mode, aggregate_type,input_value))  # hyper_param_optim
