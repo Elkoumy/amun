@@ -42,25 +42,25 @@ for data in datasets:
                         exec_time="01:00:00" # 1 hour
                 elif mode =="nonpruning":
                     if data in ["BPIC18"]:
-                        memory = 32
+                        memory = 64
                         exec_time = "20:00:00"  # 20 hours
                     elif data in ["BPIC19"]:
-                        memory = 32
+                        memory = 64
                         exec_time = "20:00:00"  # 6 hours
                     elif data in ["Traffic", "BPIC17"]:
-                        memory = 15
+                        memory = 64
                         exec_time = "02:00:00"  # 1 hour
                     elif data in ["CreditReq"]:
-                        memory = 8
+                        memory = 32
                         exec_time = "00:30:00"  # 30 minutes
                     elif data in ["BPIC12", "BPIC13", "BPIC14"]:
-                        memory = 4
+                        memory = 32
                         exec_time = "01:00:00"  # 15 minutes
                     elif data in ["BPIC20"]:
-                        memory = 4
+                        memory = 32
                         exec_time = "00:30:00"  # 20 minutes
                     else:
-                        memory = 4
+                        memory = 32
                         exec_time = "00:20:00"  # 10 minutes
 
                 for parameter in parameters:
