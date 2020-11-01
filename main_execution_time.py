@@ -72,7 +72,8 @@ for data in datasets:
                         fout.write("#SBATCH --output=jobs/time_log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
                         fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-                        fout.write("#SBATCH --cpus-per-task=16\n")  # 16 cores per cpu
+                        fout.write("#SBATCH --cpus-per-task=10\n")  # 10 cores per cpu
+                        fout.write("#SBATCH --cpu-bind=cores\n")  # bind to the same
                         # the long cluster has minimum 7 days limit
                         # if data=="Traffic":
                         #     fout.write("#SBATCH --partition=main\n")
