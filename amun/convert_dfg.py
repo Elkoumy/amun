@@ -4,6 +4,7 @@ import pandas as pd
 from math import sqrt
 from collections import Counter
 from amun.differental_privacy_module import AggregateType
+import concurrent.futures
 
 def convert_DFG_to_dataframe(out_dir,freq,time):
     event_count =int(sqrt(len(freq)))
@@ -41,16 +42,29 @@ def convert_conter_to_list(counter, col_names):
 
 def calculate_time_dfg(dfg_time, aggregation_type):
     dfg_time_counter=Counter()
-    for key in dfg_time.keys():
-        res=0
-        if aggregation_type==AggregateType.SUM:
-            res=sum(dfg_time[key])
-        elif aggregation_type==AggregateType.MIN:
-            res=min(dfg_time[key])
-        elif aggregation_type==AggregateType.MAX:
-            res=max(dfg_time[key])
-        elif aggregation_type==AggregateType.AVG:
-            res=sum(dfg_time[key])/len(dfg_time[key])
-        dfg_time_counter[key]=res
+    # for key in dfg_time.keys():
+    #     key,res=perform_aggregate_parallel(key,aggregation_type, dfg_time)
+    #     dfg_time_counter[key] = res
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        results=[executor.submit(perform_aggregate_parallel,key,aggregation_type,dfg_time[key]) for key in dfg_time.keys()]
 
+        for f in concurrent.futures.as_completed(results):
+            dfg_time_counter[f.result()[0]]=f.result()[1]
     return dfg_time_counter
+
+
+def perform_aggregate_parallel(key,aggregation_type, dfg_time_inner):
+    res = 0
+    if aggregation_type == AggregateType.SUM:
+        res = sum(dfg_time_inner)
+    elif aggregation_type == AggregateType.MIN:
+        res = min(dfg_time_inner)
+    elif aggregation_type == AggregateType.MAX:
+        res = max(dfg_time_inner)
+    elif aggregation_type == AggregateType.AVG:
+        res = sum(dfg_time_inner) / len(dfg_time_inner)
+    return key, res
+
+
+
+

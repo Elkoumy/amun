@@ -43,25 +43,25 @@ for data in datasets:
                 elif mode =="nonpruning":
                     if data in ["BPIC18"]:
                         memory = 32
-                        exec_time = "2-01"  # 2 days
+                        exec_time = "20:00:00"  # 20 hours
                     elif data in ["BPIC19"]:
                         memory = 32
-                        exec_time = "1-01"  # 25 hours
+                        exec_time = "06:00:00"  # 6 hours
                     elif data in ["Traffic", "BPIC17"]:
                         memory = 15
-                        exec_time = "20:00:00"  # 20 hours
-                    elif data in ["CreditReq", ""]:
+                        exec_time = "01:00:00"  # 1 hour
+                    elif data in ["CreditReq"]:
                         memory = 8
-                        exec_time = "04:00:00"  # 1 days
+                        exec_time = "00:30:00"  # 30 minutes
                     elif data in ["BPIC12", "BPIC13", "BPIC14"]:
                         memory = 4
-                        exec_time = "01:00:00"  # 1 hour
+                        exec_time = "00:15:00"  # 15 minutes
                     elif data in ["BPIC20"]:
                         memory = 4
-                        exec_time = "00:30:00"  # 30 minutes
+                        exec_time = "00:20:00"  # 20 minutes
                     else:
                         memory = 4
-                        exec_time = "00:20:00"  # 20 minutes
+                        exec_time = "00:10:00"  # 10 minutes
 
                 for parameter in parameters:
                     job_name = os.path.join(jobs_dir,"t_job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
@@ -72,7 +72,7 @@ for data in datasets:
                         fout.write("#SBATCH --output=jobs/time_log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
                         fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-                        fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
+                        fout.write("#SBATCH --cpus-per-task=24\n")  # 24 cores per cpu
                         # the long cluster has minimum 7 days limit
                         # if data=="Traffic":
                         #     fout.write("#SBATCH --partition=main\n")
