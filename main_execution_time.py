@@ -46,22 +46,22 @@ for data in datasets:
                         exec_time = "20:00:00"  # 20 hours
                     elif data in ["BPIC19"]:
                         memory = 32
-                        exec_time = "06:00:00"  # 6 hours
+                        exec_time = "20:00:00"  # 6 hours
                     elif data in ["Traffic", "BPIC17"]:
                         memory = 15
-                        exec_time = "01:00:00"  # 1 hour
+                        exec_time = "02:00:00"  # 1 hour
                     elif data in ["CreditReq"]:
                         memory = 8
                         exec_time = "00:30:00"  # 30 minutes
                     elif data in ["BPIC12", "BPIC13", "BPIC14"]:
                         memory = 4
-                        exec_time = "00:15:00"  # 15 minutes
+                        exec_time = "01:00:00"  # 15 minutes
                     elif data in ["BPIC20"]:
                         memory = 4
-                        exec_time = "00:20:00"  # 20 minutes
+                        exec_time = "00:30:00"  # 20 minutes
                     else:
                         memory = 4
-                        exec_time = "00:10:00"  # 10 minutes
+                        exec_time = "00:20:00"  # 10 minutes
 
                 for parameter in parameters:
                     job_name = os.path.join(jobs_dir,"t_job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
