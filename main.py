@@ -103,7 +103,7 @@ for data in datasets:
                             fout.write("#SBATCH --mem=%sGB\n" % memory)
                             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                             fout.write("#SBATCH --cpus-per-task=10\n")  # 10 cores per cpu
-                            fout.write("#SBATCH --cpu-bind=cores\n")  # bind to the same
+                            # fout.write("#SBATCH --cpu-bind=cores\n")  # bind to the same
                             fout.write("#SBATCH --partition=main\n")
                             fout.write("#SBATCH --time=%s\n" % (exec_time))
                             # fout.write("cd ..\n")
