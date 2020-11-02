@@ -11,6 +11,7 @@ import pandas as pd
 from statistics import median
 # from amun.model_visualization import view_model
 import os
+from amun.multiprocessing_helper_functions import init
 
 def run_experiment(data="Sepsis",parameter="0.1", mode="nonpruning",aggregate_type=AggregateType.FREQ, input_val="delta",iteration=0):
     """Parameters to the script"""
@@ -339,8 +340,10 @@ def run_experiment_old(data="Sepsis Cases - Event Log",parameter="0.1", mode="no
 
 
 if __name__ == "__main__":
+    # number of tasks
+    init(8)
     # data='CCC19'
-    data='BPIC17'
+    data='CreditReq'
     # parameters = [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
     parameters = [0.01]
     # aggregate_types = [AggregateType.FREQ, AggregateType.AVG, AggregateType.SUM, AggregateType.MIN, AggregateType.MAX]

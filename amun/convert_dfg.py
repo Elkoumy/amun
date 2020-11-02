@@ -6,6 +6,9 @@ from collections import Counter
 from amun.differental_privacy_module import AggregateType
 import concurrent.futures
 
+import amun.multiprocessing_helper_functions
+
+
 def convert_DFG_to_dataframe(out_dir,freq,time):
     event_count =int(sqrt(len(freq)))
     freq=pd.DataFrame( np.array(freq).reshape(event_count, event_count))
@@ -45,15 +48,33 @@ def calculate_time_dfg(dfg_time, aggregation_type):
     # for key in dfg_time.keys():
     #     key,res=perform_aggregate_parallel(key,aggregation_type, dfg_time)
     #     dfg_time_counter[key] = res
-    with concurrent.futures.ProcessPoolExecutor() as executor:
-        results=[executor.submit(perform_aggregate_parallel,key,aggregation_type,dfg_time[key]) for key in dfg_time.keys()]
+    TASKS_AT_ONCE=amun.multiprocessing_helper_functions.TASKS_AT_ONCE
+    tasks_to_do = dfg_time.values()
+    result = {}
+    id = 0
+    keys = list(dfg_time.keys())
+    for task_set in amun.multiprocessing_helper_functions.chunked_iterable(tasks_to_do, TASKS_AT_ONCE):
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            futures = {
+                executor.submit(perform_aggregate_parallel,aggregation_type,task)
+                for task in task_set
+            }
 
-        for f in concurrent.futures.as_completed(results):
-            dfg_time_counter[f.result()[0]]=f.result()[1]
+            for fut in concurrent.futures.as_completed(futures):
+                key=keys[id]
+                dfg_time_counter[key] = fut.result()
+
+                id += 1
+
+    # with concurrent.futures.ProcessPoolExecutor() as executor:
+    #     results=[executor.submit(perform_aggregate_parallel,key,aggregation_type,dfg_time[key]) for key in dfg_time.keys()]
+    #
+    #     for f in concurrent.futures.as_completed(results):
+    #         dfg_time_counter[f.result()[0]]=f.result()[1]
     return dfg_time_counter
 
 
-def perform_aggregate_parallel(key,aggregation_type, dfg_time_inner):
+def perform_aggregate_parallel(aggregation_type, dfg_time_inner):
     res = 0
     if aggregation_type == AggregateType.SUM:
         res = sum(dfg_time_inner)
@@ -63,7 +84,7 @@ def perform_aggregate_parallel(key,aggregation_type, dfg_time_inner):
         res = max(dfg_time_inner)
     elif aggregation_type == AggregateType.AVG:
         res = sum(dfg_time_inner) / len(dfg_time_inner)
-    return key, res
+    return  res
 
 
 
