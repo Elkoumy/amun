@@ -342,7 +342,7 @@ def run_experiment_old(data="Sepsis Cases - Event Log",parameter="0.1", mode="no
 
 
 if __name__ == "__main__":
-    init(6)
+    init(4)
     data=os.sys.argv[1]
     parameter=os.sys.argv[2]
     mode = os.sys.argv[3]
