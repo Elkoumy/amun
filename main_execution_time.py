@@ -8,7 +8,7 @@ jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
 datasets=["Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-# datasets=["BPIC18","BPIC19"]
+datasets=["BPIC18","BPIC19","BPIC17"]
 # datasets=["BPIC14"]
 # datasets=["Sepsis"]
 parameters=[0.01]
