@@ -63,7 +63,7 @@ def run_experiment(data="Sepsis", parameter="0.1", mode="nonpruning", aggregate_
 
 
 if __name__ == "__main__":
-    init(4)
+    init(2)
     data = os.sys.argv[1]
     parameter = os.sys.argv[2]
     mode = os.sys.argv[3]
