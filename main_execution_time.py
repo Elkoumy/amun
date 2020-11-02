@@ -75,7 +75,7 @@ for data in datasets:
                         # fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --mem-per-cpu=%sGB\n" % int(memory))
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-                        fout.write("#SBATCH --cpus-per-task=2\n")  # 4 cores per cpu
+                        fout.write("#SBATCH --cpus-per-task=1\n")  # 4 cores per cpu
 
                         # the long cluster has minimum 7 days limit
                         # if data=="Traffic":
