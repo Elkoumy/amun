@@ -8,12 +8,13 @@ jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
 # datasets=["Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-datasets=["BPIC18","BPIC19","BPIC17"]
+datasets=["BPIC19"]
 # datasets=["BPIC14"]
 # datasets=["BPIC19"]
 # datasets=["Sepsis"]
 parameters=[0.01]
 aggregate_types = [AggregateType.AVG]
+aggregate_types = [AggregateType.MIN]
 input_values=["delta","alpha"]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
@@ -71,8 +72,8 @@ for data in datasets:
                     with open(job_name, "w") as fout:
                         fout.write("#!/bin/bash\n")
                         fout.write("#SBATCH --output=jobs/time_log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
-                        # fout.write("#SBATCH --mem=%sGB\n" % memory)
-                        fout.write("#SBATCH --mem-per-cpu=%sGB\n" % int(memory))
+                        fout.write("#SBATCH --mem=%sGB\n" % memory)
+                        # fout.write("#SBATCH --mem-per-cpu=%sGB\n" % int(memory))
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                         fout.write("#SBATCH --cpus-per-task=4\n")  # 10 cores per cpu
 
