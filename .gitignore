@@ -98,3 +98,6 @@ experiment_logs/delta_logger_Sepsis_0.01_nonpruning_AggregateType.MAX_alpha.csv
 experiment_logs/delta_per_event_logger_Sepsis_0.01_nonpruning_AggregateType.MAX_alpha.csv
 experiment_logs/epsilon_logger_Sepsis_0.01_nonpruning_AggregateType.MAX_alpha.csv
 experiment_logs/result_log_alpha_Sepsis_0.01_nonpruning_AggregateType.MAX_alpha.csv
+amun/multiprocessing_helper_functions.py
+amun/guessing_advantage_parallel.py
+amun/convert_dfg_parallel.py
