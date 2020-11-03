@@ -103,15 +103,11 @@ for data in datasets:
                             # fout.write("#SBATCH --mem=%sGB\n" % memory)
                             fout.write("#SBATCH --mem-per-cpu=%sGB\n" % int(memory / 2))
                             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-<<<<<<< HEAD
+
                             fout.write("#SBATCH --cpus-per-task=1\n")  # 1 cores per cpu
 
                             fout.write("#SBATCH --partition=main\n")
 
-=======
-                            fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                            fout.write("#SBATCH --partition=amd\n")
->>>>>>> parent of a4f0ddd... run 19 sum
                             fout.write("#SBATCH --time=%s\n" % (exec_time))
                             # fout.write("cd ..\n")
                             fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter,mode, aggregate_type,input_value,str(iteration)))  # hyper_param_optim
