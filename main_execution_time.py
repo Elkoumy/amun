@@ -7,12 +7,14 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
-# datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-datasets=["BPIC18","BPIC19"]
+# datasets=["Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
+datasets=["BPIC17"]
 # datasets=["BPIC14"]
+# datasets=["BPIC19"]
 # datasets=["Sepsis"]
 parameters=[0.01]
-aggregate_types = [AggregateType.AVG]
+# aggregate_types = [AggregateType.AVG]
+aggregate_types = [AggregateType.MIN]
 input_values=["delta","alpha"]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
@@ -42,26 +44,26 @@ for data in datasets:
                         exec_time="01:00:00" # 1 hour
                 elif mode =="nonpruning":
                     if data in ["BPIC18"]:
-                        memory = 32
-                        exec_time = "2-01"  # 2 days
-                    elif data in ["BPIC19"]:
-                        memory = 32
-                        exec_time = "1-01"  # 25 hours
-                    elif data in ["Traffic", "BPIC17"]:
-                        memory = 15
+                        memory = 64
                         exec_time = "20:00:00"  # 20 hours
-                    elif data in ["CreditReq", ""]:
-                        memory = 8
-                        exec_time = "04:00:00"  # 1 days
-                    elif data in ["BPIC12", "BPIC13", "BPIC14"]:
-                        memory = 4
-                        exec_time = "01:00:00"  # 1 hour
-                    elif data in ["BPIC20"]:
-                        memory = 4
+                    elif data in ["BPIC19"]:
+                        memory = 64
+                        exec_time = "20:00:00"  # 6 hours
+                    elif data in ["Traffic", "BPIC17"]:
+                        memory = 64
+                        exec_time = "02:00:00"  # 1 hour
+                    elif data in ["CreditReq"]:
+                        memory = 32
                         exec_time = "00:30:00"  # 30 minutes
+                    elif data in ["BPIC12", "BPIC13", "BPIC14"]:
+                        memory = 32
+                        exec_time = "01:00:00"  # 15 minutes
+                    elif data in ["BPIC20"]:
+                        memory = 32
+                        exec_time = "00:30:00"  # 20 minutes
                     else:
-                        memory = 4
-                        exec_time = "00:20:00"  # 20 minutes
+                        memory = 32
+                        exec_time = "00:20:00"  # 10 minutes
 
                 for parameter in parameters:
                     job_name = os.path.join(jobs_dir,"t_job_%s_%s_%s_%s_%s.sh" % (data, parameter,mode,aggregate_type,input_value))
@@ -70,9 +72,11 @@ for data in datasets:
                     with open(job_name, "w") as fout:
                         fout.write("#!/bin/bash\n")
                         fout.write("#SBATCH --output=jobs/time_log_%s_%s_%s_%s_%s.txt\n" % (data, parameter,mode,aggregate_type,input_value))
-                        fout.write("#SBATCH --mem=%sGB\n" % memory)
+                        # fout.write("#SBATCH --mem=%sGB\n" % memory)
+                        fout.write("#SBATCH --mem-per-cpu=%sGB\n" % int(memory))
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-                        fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
+                        fout.write("#SBATCH --cpus-per-task=4\n")  # 4 cores per cpu
+
                         # the long cluster has minimum 7 days limit
                         # if data=="Traffic":
                         #     fout.write("#SBATCH --partition=main\n")
