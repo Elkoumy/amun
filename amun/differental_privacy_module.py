@@ -6,7 +6,7 @@ The module has two main functionalities:
     * Take accuracy as input, then calculate both epsilon and the delta (risk) correlated with it.
 """
 from amun.guessing_advantage import calculate_epsilon_freq, calculate_epsilon_time, \
-    AggregateType, calculate_epsilon_from_distance_time_percentage_distance, calculate_epsilon_from_distance_freq_percentage_distances,calculate_epsilon_time_parallel
+    AggregateType, calculate_epsilon_from_distance_time_percentage_distance, calculate_epsilon_from_distance_freq_percentage_distances
 import diffprivlib.mechanisms as privacyMechanisms
 from amun.convert_dfg import calculate_time_dfg
 import sys
@@ -70,8 +70,7 @@ def differential_privacy_with_risk( dfg,  delta, precision, aggregate_type=Aggre
         # calculating the APE, MAPE, and SMAPE
         MAPE, SMAPE, APE_dist, SMAPE_dist = error_calculation(dfg, dfg_new)
     else:
-        # epsilon, senstivity = calculate_epsilon_time(dfg, delta, precision, aggregate_type)
-        epsilon, senstivity = calculate_epsilon_time_parallel(dfg, delta, precision, aggregate_type)
+        epsilon, senstivity = calculate_epsilon_time(dfg, delta, precision, aggregate_type)
         # adding laplace noise to DFG time
         dfg, dfg_new = add_laplace_noise_time(aggregate_type, dfg, epsilon)
         # emd_time = earth_mover_dist(dfg_time, dfg_time_new)
@@ -104,7 +103,6 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
 
     if type(epsilon_time) != type(0.1):
         # multiple epsilon values for the time dfg
-        """************parallel by edge******************"""
         for key in dfg_time.keys():
 
             # in case epsilon is inf , we don't need to add noise
@@ -162,15 +160,14 @@ def add_laplace_noise_freq(dfg_freq, epsilon_freq):
         # laplace.set_sensitivity(senstivity_freq)
         # dfg_freq_new[key] = laplace.randomise(dfg_freq[key])
         rv = laplace()
-        res=0
+
         if type(epsilon_freq)==type(0.1):
             #single epsilon value
-            res = dfg_freq[key]+abs(laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0])
+            dfg_freq_new[key] = dfg_freq[key]+abs(laplace.rvs(loc=0,scale=senstivity_freq/epsilon_freq,size=1)[0])
         else:
             #multiple epsilon value
-            res = dfg_freq[key] + abs(laplace.rvs(loc=0, scale=senstivity_freq / epsilon_freq[key], size=1)[0])
+            dfg_freq_new[key] = dfg_freq[key] + abs(laplace.rvs(loc=0, scale=senstivity_freq / epsilon_freq[key], size=1)[0])
 
-        dfg_freq_new[key]=res
     return dfg_freq_new
 
 
