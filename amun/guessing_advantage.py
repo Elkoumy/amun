@@ -8,6 +8,9 @@ from enum import Enum
 from statsmodels.distributions.empirical_distribution import ECDF
 import concurrent.futures
 
+import multiprocessing as mp
+from itertools import repeat
+
 class AggregateType(Enum):
     SUM = 1
     AVG = 2
@@ -67,8 +70,16 @@ def calculate_epsilon_time(dfg, delta, precision, aggregate_type):
         assert "Wrong aggregate type"
 
     """************parallel by edge******************"""
-    for x in dfg.keys():
-        epsilon[x] = calculate_epsilon_per_pair(dfg[x], delta, precision)
+    # for x in dfg.keys():
+    #     epsilon[x] = calculate_epsilon_per_pair(dfg[x], delta, precision)
+
+    p = mp.Pool(mp.cpu_count())
+    result = p.starmap(calculate_epsilon_per_pair, zip(dfg.values(), repeat(delta), repeat(precision)))
+
+    p.close()
+    p.join()
+
+    epsilon = dict(zip(list(dfg.keys()),  result) )
 
     return epsilon, sens
 
@@ -86,22 +97,28 @@ def calculate_epsilon_time_parallel(dfg, delta, precision, aggregate_type):
         assert "Wrong aggregate type"
 
     """************parallel by edge******************"""
-    TASKS_AT_ONCE = amun.multiprocessing_helper_functions.TASKS_AT_ONCE
-    tasks_to_do = dfg.values()
-    keys=list(dfg.keys())
-    epsilon = {}
-    id=0
-    for task_set in amun.multiprocessing_helper_functions.chunked_iterable(tasks_to_do, TASKS_AT_ONCE):
-        with concurrent.futures.ProcessPoolExecutor() as executor:
-            futures = {
-                executor.submit(calculate_epsilon_per_pair_parallel,task,delta, precision)
-                for task in task_set
-            }
+    # TASKS_AT_ONCE = amun.multiprocessing_helper_functions.TASKS_AT_ONCE
+    # tasks_to_do = dfg.values()
+    # keys=list(dfg.keys())
+    # epsilon = {}
+    # id=0
+    # for task_set in amun.multiprocessing_helper_functions.chunked_iterable(tasks_to_do, TASKS_AT_ONCE):
+    #     with concurrent.futures.ProcessPoolExecutor() as executor:
+    #         futures = {
+    #             executor.submit(calculate_epsilon_per_pair_parallel,task,delta, precision)
+    #             for task in task_set
+    #         }
+    #
+    #         for fut in concurrent.futures.as_completed(futures):
+    #             epsilon[keys[id]]=fut.result()
+    #             id+=1
 
-            for fut in concurrent.futures.as_completed(futures):
-                epsilon[keys[id]]=fut.result()
-                id+=1
 
+    p=mp.Pool(mp.cpu_count())
+    result=p.starmap(calculate_epsilon_per_pair_parallel,zip(dfg.values(),repeat(delta), repeat( precision)))
+    epsilon=dict(zip(list(dfg.keys()) , list(result) ) )
+    p.close()
+    p.join()
 
 
 
@@ -401,28 +418,47 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
     epsilon_time = {}
     delta_per_event=[]
     """************parallel by edge******************"""
-    TASKS_AT_ONCE=amun.multiprocessing_helper_functions.TASKS_AT_ONCE
-    tasks_to_do = dfg_time.values()
-    keys=list(dfg_time.keys())
-    idx=0
-    for task_set in amun.multiprocessing_helper_functions.chunked_iterable(tasks_to_do, TASKS_AT_ONCE):
-        with concurrent.futures.ProcessPoolExecutor() as executor:
-            futures = {
-                executor.submit(epsilon_time_from_distance,aggregate_type, beta,  task, distance,
-                                    precision, sens_time)
-                for task in task_set
-            }
+    # TASKS_AT_ONCE=amun.multiprocessing_helper_functions.TASKS_AT_ONCE
+    # tasks_to_do = dfg_time.values()
+    # keys=list(dfg_time.keys())
+    # idx=0
+    # for task_set in amun.multiprocessing_helper_functions.chunked_iterable(tasks_to_do, TASKS_AT_ONCE):
+    #     with concurrent.futures.ProcessPoolExecutor() as executor:
+    #         futures = {
+    #             executor.submit(epsilon_time_from_distance,task, aggregate_type, beta,   distance,
+    #                                 precision, sens_time)
+    #             for task in task_set
+    #         }
+    #
+    #         for fut in concurrent.futures.as_completed(futures):
+    #             delta_edge, delta_per_event_inner, delta_time_inner, epsilon_time_inner=fut.result()
+    #             key=keys[idx]
+    #             epsilon_time[key] = epsilon_time_inner
+    #             delta_time = delta_time + delta_time_inner
+    #             delta_per_event_inner=list(map(lambda i:[key,i],delta_per_event_inner))
+    #             delta_per_event = delta_per_event + delta_per_event_inner
+    #             delta_dfg[key] = max(delta_edge)
+    #             idx+=1
 
-            for fut in concurrent.futures.as_completed(futures):
-                delta_edge, delta_per_event_inner, delta_time_inner, epsilon_time_inner=fut.result()
-                key=keys[idx]
-                epsilon_time[key] = epsilon_time_inner
-                delta_time = delta_time + delta_time_inner
-                delta_per_event_inner=list(map(lambda i:[key,i],delta_per_event_inner))
-                delta_per_event = delta_per_event + delta_per_event_inner
-                delta_dfg[key] = max(delta_edge)
-                idx+=1
+    """ Current Bottleneck"""
+    p = mp.Pool(mp.cpu_count())
+    result = p.starmap(epsilon_time_from_distance, zip( dfg_time.values(), repeat(aggregate_type), repeat(beta), repeat(distance),  repeat(precision), repeat(sens_time) )  )
 
+    p.close()
+    p.join()
+
+    delta_dfg = dict(zip(list(dfg_time.keys()), [x[0] for x in result]))
+
+
+    keys = list(dfg_time.keys())
+    for idx,res in enumerate(result):
+        delta_edge, delta_per_event_inner, delta_time_inner, epsilon_time_inner=res
+        key = keys[idx]
+        epsilon_time[key] = epsilon_time_inner
+        delta_time = delta_time + delta_time_inner
+        delta_per_event_inner = list(map(lambda i: [key, i], delta_per_event_inner))
+        delta_per_event = delta_per_event + delta_per_event_inner
+        delta_dfg[key] = max(delta_edge)
 
     # with concurrent.futures.ProcessPoolExecutor() as executor:
     #     results=[executor.submit(epsilon_time_from_distance,key,aggregate_type, beta,  dfg_time[key], distance,
@@ -443,7 +479,7 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
     return epsilon_time, delta_time, delta_dfg,delta_per_event
 
 
-def epsilon_time_from_distance(aggregate_type, beta,  dfg_time_inner, distance,
+def epsilon_time_from_distance(dfg_time_inner,aggregate_type, beta,   distance,
                                 precision, sens_time):
     delta_time_inner=[]
     delta_edge = []
@@ -509,24 +545,33 @@ def calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance
     delta_dfg={}
     epsilon_dfg={}
 
-    TASKS_AT_ONCE=amun.multiprocessing_helper_functions.TASKS_AT_ONCE
+    # TASKS_AT_ONCE=amun.multiprocessing_helper_functions.TASKS_AT_ONCE
+    #
+    # id = 0
+    # keys = list(dfg_freq.keys())
+    # for task_set in amun.multiprocessing_helper_functions.chunked_iterable(dfg_freq.values(), TASKS_AT_ONCE):
+    #     with concurrent.futures.ProcessPoolExecutor() as executor:
+    #         futures = {
+    #             executor.submit(epsilon_freq_from_distance, task, beta, distance_percentage, sens_freq)
+    #             for task in task_set
+    #         }
+    #
+    #         for fut in concurrent.futures.as_completed(futures):
+    #
+    #             delta_freq_inner, epsilon_dfg_inner = fut.result()
+    #             key=keys[id]
+    #             delta_dfg[key] = delta_freq_inner
+    #             epsilon_dfg[key] = epsilon_dfg_inner
+    #             id += 1
 
-    id = 0
-    keys = list(dfg_freq.keys())
-    for task_set in amun.multiprocessing_helper_functions.chunked_iterable(dfg_freq.values(), TASKS_AT_ONCE):
-        with concurrent.futures.ProcessPoolExecutor() as executor:
-            futures = {
-                executor.submit(epsilon_freq_from_distance,beta, task, distance_percentage, sens_freq)
-                for task in task_set
-            }
+    p = mp.Pool(mp.cpu_count())
+    result = p.starmap(epsilon_freq_from_distance, zip(dfg_freq.values(), repeat(beta), repeat(distance_percentage) , repeat(sens_freq) )  )
+    p.close()
+    p.join()
 
-            for fut in concurrent.futures.as_completed(futures):
+    delta_dfg= dict(zip(list(dfg_freq.keys()) , [ x[0] for x in result] ) )
+    epsilon_dfg = dict(zip(list(dfg_freq.keys()), [x[1] for x in result]))
 
-                delta_freq_inner, epsilon_dfg_inner = fut.result()
-                key=keys[id]
-                delta_dfg[key] = delta_freq_inner
-                epsilon_dfg[key] = epsilon_dfg_inner
-                id += 1
 
     # with concurrent.futures.ProcessPoolExecutor() as executor:
     #     results=[executor.submit(epsilon_freq_from_distance,key,beta, dfg_freq[key], distance_percentage, sens_freq) for key in dfg_freq.keys()]
@@ -546,7 +591,7 @@ def calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance
     return epsilon_dfg, delta_dfg, delta_freq
 
 
-def epsilon_freq_from_distance(beta, dfg_freq_inner, distance_percentage,  sens_freq):
+def epsilon_freq_from_distance(dfg_freq_inner,beta,  distance_percentage,  sens_freq):
     distance = distance_percentage * dfg_freq_inner
     epsilon_freq = sens_freq / distance * log(1 / beta)
     epsilon_dfg_inner = epsilon_freq
