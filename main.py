@@ -15,7 +15,7 @@ datasets = ["BPIC19"]
 # datasets=["BPIC18","BPIC19"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 # aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
-aggregate_types = [ AggregateType.SUM]
+aggregate_types = [ AggregateType.AVG]
 input_values=["delta","alpha"]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
@@ -103,9 +103,14 @@ for data in datasets:
                             # fout.write("#SBATCH --mem=%sGB\n" % memory)
                             fout.write("#SBATCH --mem-per-cpu=%sGB\n" % int(memory / 2))
                             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
+<<<<<<< HEAD
                             fout.write("#SBATCH --cpus-per-task=4\n")  # 10 cores per cpu
 
                             fout.write("#SBATCH --partition=main\n")
+=======
+                            fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
+                            fout.write("#SBATCH --partition=amd\n")
+>>>>>>> parent of a4f0ddd... run 19 sum
                             fout.write("#SBATCH --time=%s\n" % (exec_time))
                             # fout.write("cd ..\n")
                             fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter,mode, aggregate_type,input_value,str(iteration)))  # hyper_param_optim
