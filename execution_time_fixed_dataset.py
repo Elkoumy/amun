@@ -67,8 +67,10 @@ def run_experiment(data="Sepsis", parameter="0.1", mode="nonpruning", aggregate_
 if __name__ == "__main__":
     # number of tasks
     datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
+    datasets = ["CCC19", "Sepsis", "Unrineweginfectie", "BPIC14", "Traffic", "Hospital", "CreditReq", "BPIC20",
+                "BPIC12", "BPIC13", "BPIC15", "BPIC17", "BPIC18", "BPIC19"]
     # data='CCC19'
-    data = 'CreditReq'
+    # datasets = 'CreditReq'
     # parameters = [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
     parameters = [0.01]
     # aggregate_types = [AggregateType.FREQ, AggregateType.AVG, AggregateType.SUM, AggregateType.MIN, AggregateType.MAX]
@@ -76,19 +78,20 @@ if __name__ == "__main__":
     input_values = ["delta", "alpha"]
     input_values = ["alpha"]
     mode = "nonpruning"
-    for input_val in input_values:
-        if input_val == "delta":
-            # for iteration in range(0,10):
-            for iteration in range(0, 1):
+    for data in datasets:
+        for input_val in input_values:
+            if input_val == "delta":
+                # for iteration in range(0,10):
+                for iteration in range(0, 1):
+                    for aggregate_type in aggregate_types:
+                        for parameter in parameters:
+
+                            run_experiment(data=data, parameter=parameter, mode=mode, aggregate_type=aggregate_type,
+                                           input_val=input_val)
+
+            else:
                 for aggregate_type in aggregate_types:
                     for parameter in parameters:
-                        iteration=0
+
                         run_experiment(data=data, parameter=parameter, mode=mode, aggregate_type=aggregate_type,
                                        input_val=input_val)
-
-        else:
-            for aggregate_type in aggregate_types:
-                for parameter in parameters:
-
-                    run_experiment(data=data, parameter=parameter, mode=mode, aggregate_type=aggregate_type,
-                                   input_val=input_val)
