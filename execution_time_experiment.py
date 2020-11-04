@@ -38,8 +38,9 @@ def run_experiment(data="Sepsis", parameter="0.1", mode="nonpruning", aggregate_
 
     if input_val == "delta":
         delta = float(input_alpha_delta)
-
+        print("before differential privacy")
         dfg_new, dfg_new, epsilon,  MAPE, SMAPE, APE_dist, SMAPE_dist = differential_privacy_with_risk(dfg, delta=delta,precision=precision,aggregate_type=aggregate_type)
+        print("after differential privacy")
         end_time = time.time()
 
 
@@ -47,10 +48,11 @@ def run_experiment(data="Sepsis", parameter="0.1", mode="nonpruning", aggregate_
     else:
 
         emd = float(input_alpha_delta)
-
+        print("before differential privacy")
         dfg_new, epsilon, delta , delta_dfg, delta_per_event = differential_privacy_with_accuracy(dfg, precision=precision,
                                                                                 distance=emd,
                                                                                 aggregate_type=aggregate_type)
+        print("before differential privacy")
         end_time = time.time()
 
     print("time = " + str(end_time - start_time))
