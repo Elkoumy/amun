@@ -82,11 +82,13 @@ if __name__ == "__main__":
             for iteration in range(0, 1):
                 for aggregate_type in aggregate_types:
                     for parameter in parameters:
+                        iteration=0
                         run_experiment(data=data, parameter=parameter, mode=mode, aggregate_type=aggregate_type,
                                        input_val=input_val, iteration=iteration)
 
         else:
             for aggregate_type in aggregate_types:
                 for parameter in parameters:
+                    
                     run_experiment(data=data, parameter=parameter, mode=mode, aggregate_type=aggregate_type,
                                    input_val=input_val, iteration=0)
