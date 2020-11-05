@@ -134,8 +134,8 @@ def calculate_epsilon_time_parallel(dfg, delta, precision, aggregate_type):
     #     for f in concurrent.futures.as_completed(results):
     #         epsilon[f.result()[0]]=f.result()[1]
 
-    # for x in dfg.keys():
-    #     epsilon[x] = calculate_epsilon_per_pair(dfg[x], delta, precision)
+    for x in dfg.keys():
+        epsilon[x] = calculate_epsilon_per_pair(dfg[x], delta, precision)
 
     return epsilon, sens
 
