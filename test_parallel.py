@@ -13,7 +13,7 @@ if __name__ == "__main__":
     l=[1,2,3,4,4]
     l=list(range(0,10000000))
     print("before map")
-    result = p.map(multiply, l)
+    result = p.starmap(multiply, zip(l) )
 
     p.close()
     print("before join")
