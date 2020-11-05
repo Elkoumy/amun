@@ -8,11 +8,11 @@ jobs_dir = "jobs"
 
 # datasets=["BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19","BPIC20","CCC19","CreditReq","Hospital","Sepsis","Traffic","Unrineweginfectie", "BPIC14"]
 # datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
-datasets=["BPIC18","BPIC19"]
+datasets=["BPIC19"]
 # datasets=["BPIC14"]
 # datasets=["Sepsis"]
 parameters=[0.01]
-aggregate_types = [AggregateType.AVG]
+aggregate_types = [AggregateType.SUM]
 input_values=["delta","alpha"]
 
 """ A  time  limit  of  zero  requests  that no time limit be imposed.  Acceptable time
