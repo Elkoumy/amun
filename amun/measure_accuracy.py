@@ -41,7 +41,6 @@ def error_calculation(dfg1,dfg2):
     APE_dist={}
     MAPE_dist={}
     SMAPE_dist={}
-    """************parallel by edge******************"""
     for key in dfg1.keys():
         if dfg1[key]!=0: #division by zero
             diff = fabs(dfg1[key]-dfg2[key])/fabs(dfg1[key])

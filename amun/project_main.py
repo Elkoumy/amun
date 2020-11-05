@@ -11,7 +11,7 @@
 from amun.differental_privacy_module import *
 # from GUI_module import *
 from amun.input_module import *
-# from amun.data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
+from amun.data_visualization import plot_delta_distribution_time,plot_delta_distribution_freq
 from amun.measure_accuracy import f1_score
 
 aggregate_type=AggregateType.SUM
