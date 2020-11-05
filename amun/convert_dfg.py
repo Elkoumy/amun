@@ -68,11 +68,12 @@ def calculate_time_dfg(dfg_time, aggregation_type):
     #             id += 1
 
     p = mp.Pool(mp.cpu_count())
+    print("convert dfg before starmap")
     result = p.starmap(perform_aggregate_parallel, zip(dfg_time.values(), repeat(aggregation_type) )  )
 
     p.close()
     p.join()
-
+    print("convert dfg aftr join")
     dfg_time_counter = Counter(  dict(zip(list(dfg_time.keys()), result))  )
 
 

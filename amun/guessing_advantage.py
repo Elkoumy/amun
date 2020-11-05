@@ -74,10 +74,12 @@ def calculate_epsilon_time(dfg, delta, precision, aggregate_type):
     #     epsilon[x] = calculate_epsilon_per_pair(dfg[x], delta, precision)
 
     p = mp.Pool(mp.cpu_count())
+    print("calculate epsilon time before starmap")
     result = p.starmap(calculate_epsilon_per_pair, zip(dfg.values(), repeat(delta), repeat(precision)))
 
     p.close()
     p.join()
+    print("calculate epsilon time after  join")
 
     epsilon = dict(zip(list(dfg.keys()),  result) )
 
@@ -115,10 +117,12 @@ def calculate_epsilon_time_parallel(dfg, delta, precision, aggregate_type):
 
 
     p=mp.Pool(mp.cpu_count())
+    print("calculate_epsilon_time_parallel before  starmap")
     result=p.starmap(calculate_epsilon_per_pair_parallel,zip(dfg.values(),repeat(delta), repeat( precision)))
     epsilon=dict(zip(list(dfg.keys()) , list(result) ) )
     p.close()
     p.join()
+    print("calculate_epsilon_time_parallel after  join")
 
 
 
@@ -442,8 +446,9 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
 
     """ Current Bottleneck"""
     p = mp.Pool(mp.cpu_count())
+    print("epsilon_time_from_distance before  starmap")
     result = p.starmap(epsilon_time_from_distance, zip( dfg_time.values(), repeat(aggregate_type), repeat(beta), repeat(distance),  repeat(precision), repeat(sens_time) )  )
-
+    print("epsilon_time_from_distance after  starmap")
     p.close()
     p.join()
 
@@ -565,9 +570,11 @@ def calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance
     #             id += 1
 
     p = mp.Pool(mp.cpu_count())
+    print(" epsilon_freq_from_distance before starmap")
     result = p.starmap(epsilon_freq_from_distance, zip(dfg_freq.values(), repeat(beta), repeat(distance_percentage) , repeat(sens_freq) )  )
     p.close()
     p.join()
+    print(" epsilon_freq_from_distance after join")
 
     delta_dfg= dict(zip(list(dfg_freq.keys()) , [ x[0] for x in result] ) )
     epsilon_dfg = dict(zip(list(dfg_freq.keys()), [x[1] for x in result]))
