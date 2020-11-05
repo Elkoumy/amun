@@ -115,15 +115,17 @@ def calculate_epsilon_time_parallel(dfg, delta, precision, aggregate_type):
     #             epsilon[keys[id]]=fut.result()
     #             id+=1
 
-
-    p=mp.Pool(mp.cpu_count())
-    print("calculate_epsilon_time_parallel before  starmap")
-    result=p.starmap(calculate_epsilon_per_pair_parallel,zip(dfg.values(),repeat(delta), repeat( precision)))
-    epsilon=dict(zip(list(dfg.keys()) , list(result) ) )
-    p.close()
-    p.join()
-    print("calculate_epsilon_time_parallel after  join")
-
+    # for x in dfg.keys():
+    #     epsilon[x] = calculate_epsilon_per_pair(dfg[x], delta, precision)
+    #
+    # p=mp.Pool(mp.cpu_count())
+    # print("calculate_epsilon_time_parallel before  starmap")
+    # result=p.starmap(calculate_epsilon_per_pair_parallel,zip(dfg.values(),repeat(delta), repeat( precision)))
+    # epsilon=dict(zip(list(dfg.keys()) , list(result) ) )
+    # p.close()
+    # p.join()
+    # print("calculate_epsilon_time_parallel after  join")
+    #
 
 
     # with concurrent.futures.ProcessPoolExecutor() as executor:
