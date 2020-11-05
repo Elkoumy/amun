@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --output=test_parallel_log.txt
-#SBATCH --mem=16GB
+#SBATCH --mem-per-cpu=8GB
 #SBATCH --ntasks=4
 #SBATCH --partition=main
 #SBATCH --time=02:00:00
