@@ -343,11 +343,13 @@ if __name__ == "__main__":
     # number of tasks
     init(8)
     # data='CCC19'
-    data='CreditReq'
+    datasets = ['BPIC14']
+    data='BPIC14'
+    # datasets = 'CreditReq'
     # parameters = [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-    parameters = [0.01]
+    parameters = [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
     # aggregate_types = [AggregateType.FREQ, AggregateType.AVG, AggregateType.SUM, AggregateType.MIN, AggregateType.MAX]
-    aggregate_types = [ AggregateType.MAX]
+    aggregate_types = [AggregateType.SUM]
     input_values = ["delta", "alpha"]
     input_values = ["alpha"]
     mode = "nonpruning"

@@ -50,7 +50,7 @@ for data in datasets:
                         memory = 64
                         exec_time = "20:00:00"  # 6 hours
                     elif data in ["Traffic", "BPIC17"]:
-                        memory = 16
+                        memory = 50
                         exec_time = "02:00:00"  # 1 hour
                     elif data in ["CreditReq"]:
                         memory = 32
@@ -81,8 +81,9 @@ for data in datasets:
                         # if data=="Traffic":
                         #     fout.write("#SBATCH --partition=main\n")
                         # else:
-                        fout.write("#SBATCH --partition=main\n")
+                        fout.write("#SBATCH --partition=amd\n")
                         fout.write("#SBATCH --time=%s\n" % (exec_time))
+                        fout.write("module load python-3.7.1\n")
                         # fout.write("cd ..\n")
                         fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"execution_time_experiment.py")+'"', data, parameter,mode, aggregate_type,input_value))  # hyper_param_optim
 
