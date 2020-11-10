@@ -13,10 +13,10 @@ jobs_dir = "jobs"
 # datasets=["BPIC14"]
 datasets = ["BPIC19"]
 # datasets=["BPIC18","BPIC19"]
-parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-# parameters=[0.3,0.4,0.5]
+# parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+parameters=[0.01,0.05, 0.1,0.2,0.3,0.7]
 # aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
-aggregate_types = [ AggregateType.MAX,AggregateType.SUM]
+aggregate_types = [ AggregateType.AVG]
 # input_values=["delta","alpha"]
 input_values=["alpha"]
 
