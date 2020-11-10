@@ -10,13 +10,13 @@ jobs_dir = "jobs"
 # datasets=["CCC19","Sepsis","Unrineweginfectie", "BPIC14","Traffic","Hospital","CreditReq","BPIC20","BPIC12","BPIC13","BPIC15","BPIC17","BPIC18","BPIC19"]
 # datasets=["Sepsis","Unrineweginfectie","Hospital","BPIC20","BPIC12"]
 # datasets=["BPIC13","BPIC15"]
-# datasets=["BPIC14"]
-datasets = ["BPIC19"]
+datasets=["BPIC14"]
+# datasets = ["BPIC19"]
 # datasets=["BPIC18","BPIC19"]
-parameters=[0.01,0.05, 0.1,0.2,0.3,0.7,0.8,0.9]
-parameters=[0.9]
+parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6]
 # aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
-aggregate_types = [ AggregateType.MIN]
+aggregate_types = [ AggregateType.SUM]
 # input_values=["delta","alpha"]
 input_values=["alpha"]
 
@@ -108,7 +108,7 @@ for data in datasets:
                             #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
                             fout.write("#SBATCH --partition=main\n")
                             fout.write("#SBATCH --time=%s\n" % (exec_time))
-                            fout.write("load python-3.7.1\n")
+                            fout.write("module load python-3.7.1\n")
                             # fout.write("cd ..\n")
                             fout.write("python -u %s \"%s\" %s \"%s\" \"%s\" \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_experiment_slurm.py")+'"', data, parameter,mode, aggregate_type,input_value,str(iteration)))  # hyper_param_optim
 

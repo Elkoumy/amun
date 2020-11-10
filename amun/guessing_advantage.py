@@ -336,6 +336,8 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
             #  calculate epsilon
             epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
 
+        """Fix the error"""
+        epsilon_time_ij=abs(epsilon_time_ij)
         epsilon_time[x] = epsilon_time_ij
         # fix the case of time is fixed
         flag = 1
@@ -354,7 +356,14 @@ def calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance,
             cdf1 = calculate_cdf(cdf, t_k + r_ij)
             cdf2 = calculate_cdf(cdf, t_k - r_ij)
             p_k = cdf1 - cdf2
-
+            # print("*****")
+            # print(p_k)
+            # print("p_k %s" % p_k)
+            # print("R_ji %s" % R_ij)
+            # print("epsilon_time_ij %s" % epsilon_time_ij)
+            # print("(1 - p_k) %s" % (1 - p_k))
+            # print("exp(-R_ij * epsilon_time_ij) %s" % exp(-R_ij * epsilon_time_ij))
+            # """Take absolute epsilon"""
             # current_delta = p_k*( 1/(   (1-p_k) * exp(-R_ij * epsilon_time) +p_k) -1)
             current_delta = (p_k / ((1 - p_k) * exp(-R_ij * epsilon_time_ij) + p_k)) - p_k
             # eps = - log(p_k / (1.0 - p_k) * (1.0 / (current_delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
