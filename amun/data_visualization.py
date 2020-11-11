@@ -141,44 +141,58 @@ def plot_delta_distributions_freq(delta_logger,dir):
 
 def plot_input_delta(result_log_delta,dir):
 
-
+    # result_log_delta=result_log_delta[result_log_delta.dataset.isin(['Traffic','CreditReq'])]
+    result_log_delta = result_log_delta[result_log_delta.dataset.isin(['CreditReq'])]
+    result_log_delta.aggregate_type.replace("AggregateType.AVG", "AVG", inplace=True)
+    result_log_delta.aggregate_type.replace("AggregateType.MIN", "MIN", inplace=True)
+    result_log_delta.aggregate_type.replace("AggregateType.MAX", "MAX", inplace=True)
+    result_log_delta.aggregate_type.replace("AggregateType.SUM", "SUM", inplace=True)
+    result_log_delta.aggregate_type.replace("AggregateType.FREQ", "FREQ", inplace=True)
     """"************************************************"""
     #epsilon
-    g = sns.FacetGrid(result_log_delta, col="dataset",col_wrap=4, margin_titles=True)
-    g.map(sns.lineplot, "delta", "median_epsilon", "aggregate_type")
-    plt.subplots_adjust(top=0.2)
+    # g = sns.FacetGrid(result_log_delta, col="dataset", margin_titles=True)
+    # g.map(sns.lineplot, "delta", "median_epsilon", "aggregate_type")
+    g=sns.lineplot("delta", "median_epsilon", "aggregate_type",data=result_log_delta)
+    # plt.subplots_adjust(top=0.2)
     # g.fig.suptitle('Min \u03B5  for  Time DFG  (EMD input)')
-    axes = g.axes.flatten()
+    # axes = g.axes.flatten()
     # axes[0].set_title("Aggregate: Average")
     # axes[1].set_title("Aggregate: Sum")
     # axes[2].set_title("Aggregate: Min")
     # axes[3].set_title("Aggregate: Max")
-    axes[0].set_xlabel("\u03B4") #delta
-    for ax in axes:
-        ax.set_ylabel("Log(Min \u03B5)")#epsilon
-        ax.set(yscale="log")
-    plt.legend()
+    # axes[0].set_xlabel("\u03B4") #delta
+    # for ax in axes:
+    #     ax.set_ylabel("Median \u03B5")#epsilon
+    #     ax.set(yscale="log")
+
+    plt.yscale("log")
+    plt.ylabel("Median \u03B5") #epsilon
+    plt.xlabel("\u03B4") #delta
+    # plt.legend(title="Aggregate Type")
+    fig = plt.gcf()
+    plt.legend(loc='upper left', bbox_to_anchor=(0.99, 0.5))
     plt.show()
-    g.savefig(os.path.join(dir, 'Input_delta_freq_dfg_epsilon_distribution.pdf'))
 
-    #Delta
-    g = sns.FacetGrid(result_log_delta, col="dataset",col_wrap=4, margin_titles=True)
-    g.map(sns.lineplot, "delta", "SMAPE", "aggregate_type")
-    plt.subplots_adjust(top=0.2)
+    fig.savefig(os.path.join(dir, 'epsilon_distribution_for_delta_input_CreditReq.pdf'))
 
-
-    # g.fig.suptitle('Median \u03B5 for Time DFG  (EMD input)')
-    axes = g.axes.flatten()
-    # axes[0].set_title("Aggregate: Average")
-    # axes[1].set_title("Aggregate: Sum")
-    # axes[2].set_title("Aggregate: Min")
-    # axes[3].set_title("Aggregate: Max")
-    axes[0].set_xlabel("\u03B4") #delta
-    for ax in axes:
-        ax.set_ylabel("SMAPE")  # alpha
-    plt.legend()
-    plt.show()
-    g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_median_distribution.pdf'))
+    # #Delta
+    # g = sns.FacetGrid(result_log_delta, col="dataset",col_wrap=4, margin_titles=True)
+    # g.map(sns.lineplot, "delta", "SMAPE", "aggregate_type")
+    # plt.subplots_adjust(top=0.2)
+    #
+    #
+    # # g.fig.suptitle('Median \u03B5 for Time DFG  (EMD input)')
+    # axes = g.axes.flatten()
+    # # axes[0].set_title("Aggregate: Average")
+    # # axes[1].set_title("Aggregate: Sum")
+    # # axes[2].set_title("Aggregate: Min")
+    # # axes[3].set_title("Aggregate: Max")
+    # axes[0].set_xlabel("\u03B4") #delta
+    # for ax in axes:
+    #     ax.set_ylabel("SMAPE")  # alpha
+    # plt.legend()
+    # plt.show()
+    # g.savefig(os.path.join(dir, 'Input_EMD_time_dfg_delta_median_distribution.pdf'))
 
 
 
@@ -374,12 +388,12 @@ def paper_distributions(delta_logger,dir):
 # # result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
 #
 #
-# dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-# result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
+dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
 # result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_alpha.csv"))
 # bubble_heatmap(result_log_delta,result_log_alpha)
 # paper_distributions(combined_delta_logger,dir)
-# # plot_input_delta(result_log_delta,dir)
+plot_input_delta(result_log_delta,dir)
 # # plot_execution_time(execution_time_log,dir)
 # # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 #
