@@ -23,11 +23,14 @@ plt.text(x=3, y=-0.05,s="\u03B1", color='r')
 plt.text(x=-3, y=-0.05,s="-\u03B1", color='r')
 
 #beta
-plt.axhline(y=0.06,xmin=0.666,xmax=0.95, color="k", linestyle="-.")
-plt.text(x=5.7, y=0.07,s="\u03B2", color='k',fontsize=8)
+# plt.axhline(y=0.06,xmin=0.666,xmax=0.95, color="k", linestyle="-.")
+# plt.text(x=5.7, y=0.07,s="\u03B2", color='k',fontsize=8)
+#
+# plt.axhline(y=0.06,xmin=0.05,xmax=0.33, color="k", linestyle="-.")
+# plt.text(x=-5.7, y=0.07,s="\u03B2", color='k',fontsize=8)
 
-plt.axhline(y=0.06,xmin=0.05,xmax=0.33, color="k", linestyle="-.")
-plt.text(x=-5.7, y=0.07,s="\u03B2", color='k',fontsize=8)
+plt.axhline(y=0.06,xmin=0.33,xmax=0.666, color="k", linestyle="--")
+plt.text(x=-1.0, y=0.07,s="1 - \u03B2", color='k',fontsize=8)
 
 #fill intersection
 x_intersection=x[ np.logical_and(x<3.0, x>-3.0)]
