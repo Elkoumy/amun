@@ -387,13 +387,13 @@ def paper_distributions(delta_logger,dir):
 # combined_delta_logger=pd.read_csv(os.path.join('../experiment_logs', "combined_delta_logger_alpha.csv"))
 # # result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
 #
-#
-dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
-result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
+# #
+# dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
+# result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
 # result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_alpha.csv"))
 # bubble_heatmap(result_log_delta,result_log_alpha)
 # paper_distributions(combined_delta_logger,dir)
-plot_input_delta(result_log_delta,dir)
+# plot_input_delta(result_log_delta,dir)
 # # plot_execution_time(execution_time_log,dir)
 # # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
 #
