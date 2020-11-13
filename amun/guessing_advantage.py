@@ -510,6 +510,7 @@ def epsilon_time_from_distance(dfg_time_inner,aggregate_type, beta,   distance,
         distance_ij = accurate_result * distance  # hence distance is between 0 and 1
         #  calculate epsilon
         epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
+    epsilon_time_ij=abs(epsilon_time_ij)    
     epsilon_time_inner = epsilon_time_ij
     # fix the case of time is fixed
     flag = 1
