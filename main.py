@@ -16,7 +16,7 @@ datasets=["BPIC19"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 parameters=[0.01,0.05, 0.1,0.2,0.4]
 # aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
-aggregate_types = [ AggregateType.AVG]
+aggregate_types = [ AggregateType.MAX]
 # input_values=["delta","alpha"]
 input_values=["alpha"]
 
@@ -53,7 +53,7 @@ for data in datasets:
                         exec_time = "2-00"  # 2 days
                     elif data in ["BPIC19"]:
                         memory = 16
-                        exec_time = "2-09"  # 25 hours
+                        exec_time = "3-00"  # 25 hours
                     elif data in ["Traffic", "BPIC17"]:
                         memory = 15
                         exec_time = "20:00:00"  # 20 hours
