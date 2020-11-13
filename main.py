@@ -14,9 +14,9 @@ datasets=["BPIC19"]
 # datasets = ["BPIC19"]
 # datasets=["BPIC18","BPIC19"]
 parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-parameters=[0.01,0.05, 0.1,0.2,0.4]
+parameters=[0.1,0.2,0.3,0.4,0.5]
 # aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
-aggregate_types = [ AggregateType.MAX]
+aggregate_types = [ AggregateType.SUM]
 # input_values=["delta","alpha"]
 input_values=["alpha"]
 
@@ -106,7 +106,7 @@ for data in datasets:
                             fout.write("#SBATCH --mem=%sGB\n" % memory)
                             fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                             #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                            fout.write("#SBATCH --partition=main\n")
+                            fout.write("#SBATCH --partition=amd\n")
                             fout.write("#SBATCH --time=%s\n" % (exec_time))
                             fout.write("module load python-3.7.1\n")
                             # fout.write("cd ..\n")
