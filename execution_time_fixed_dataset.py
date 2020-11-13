@@ -70,34 +70,20 @@ if __name__ == "__main__":
     datasets = ["CCC19", "Sepsis", "Unrineweginfectie", "BPIC14", "Traffic", "Hospital", "CreditReq", "BPIC20",
                 "BPIC12", "BPIC13", "BPIC15", "BPIC17", "BPIC18", "BPIC19"]
 
-<<<<<<< HEAD
     datasets=["BPIC14", "Hospital", "CreditReq", "BPIC20", "BPIC12", "BPIC13", "BPIC15"]
-=======
-<<<<<<< HEAD
-    datasets=[ 'BPIC19' ]
-=======
-    datasets=['BPIC14']
->>>>>>> 0577f463f50569daaa459c01191389612a7fd891
->>>>>>> 4b156d0fcde014d0b9ee35631425baab4333904e
+
     # data='CCC19'
     # datasets = 'CreditReq'
     # parameters = [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
     parameters = [0.01]
     # aggregate_types = [AggregateType.FREQ, AggregateType.AVG, AggregateType.SUM, AggregateType.MIN, AggregateType.MAX]
-<<<<<<< HEAD
+
     aggregate_types = [AggregateType.AVG]
     input_values = ["delta", "alpha"]
     # input_values = ["alpha"]
-=======
-<<<<<<< HEAD
-    aggregate_types = [AggregateType.AVG]
+
     #input_values = ["delta", "alpha"]
-=======
-    aggregate_types = [AggregateType.SUM]
-    input_values = ["delta", "alpha"]
->>>>>>> 0577f463f50569daaa459c01191389612a7fd891
-    input_values = ["alpha"]
->>>>>>> 4b156d0fcde014d0b9ee35631425baab4333904e
+
     mode = "nonpruning"
     for data in datasets:
         for input_val in input_values:
