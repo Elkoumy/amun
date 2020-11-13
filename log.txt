@@ -1,0 +1,2 @@
+Dataset: BPIC19
+Aggregate Type: AggregateType.AVG
