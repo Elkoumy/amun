@@ -11,9 +11,10 @@ jobs_dir = "jobs"
 # datasets=["Sepsis","Unrineweginfectie","Hospital","BPIC20","BPIC12"]
 # datasets=["BPIC13","BPIC15"]
 # datasets=["BPIC14"]
-datasets = ["BPIC19"]
+datasets = ["BPIC17"]
 # datasets=["BPIC18","BPIC19"]
-parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+# parameters=[0.01,0.05, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+parameters=[0.01]
 # aggregate_types = [ AggregateType.FREQ,AggregateType.AVG, AggregateType.SUM,AggregateType.MIN,AggregateType.MAX]
 aggregate_types = [ AggregateType.SUM]
 input_values=["delta","alpha"]
@@ -26,7 +27,7 @@ input_values=["delta","alpha"]
 modes =["nonpruning"]
 memory = 4
 exec_time="01:00:00" # 1 hour
-number_of_experiments =10
+number_of_experiments =1
 for data in datasets:
     for mode in modes:
         for aggregate_type in aggregate_types:
