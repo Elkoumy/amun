@@ -1,0 +1,21 @@
+The description of files contents:
+* execution_time_combined.csv --> 
+This file contains the execution time experiment of various event logs in seconds.
+* combined_result_log_alpha.csv --> 
+This file contains the values of both epsilon and delta (risk measure) with the MAPE as input.
+* combined_result_log_delta_subsetted.csv --> 
+This file contains the values of both epsilon and SMAPE ( utility measure) with the delta as input.
+* combined_result_log_APE_delta.csv --> 
+This file contains the distribution of APE over edges with input delta.
+* combined_delta_logger_alpha.csv --> 
+This file contains the distribution of delta across edges with input MAPE.
+* combined_result_log_SMAPE_delta.csv --> 
+This file contains the SMAPE distribution across edges with input delta.
+* combined_delta_per_event_logger_alpha.csv --> 
+This file contains the delta distribution per event with input MAPE.
+* combined_epsilon_logger_alpha.csv --> 
+This file contains the epsilon distribution across edges with input MAPE.
+* combined_result_log_epsilon_delta.csv --> 
+This file contains the epsilon distribution per edges with input delta
+
+* combined_result_log_delta.csv --> delete
