@@ -5,3 +5,6 @@
 experiment_figures/process_models/fig_input_delta_0.01_Sepsis Cases - Event Log_AggregateType.MAX_0.svg
 *.pdf
 *.svg
+*.xes
+*.csv
+*.sh
