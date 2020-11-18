@@ -177,20 +177,6 @@ def calculate_epsilon_per_pair_parallel(values, delta, precision):
         epsilon = inf
     return epsilon
 
-# def calculate_epsilon_from_distance_freq(dfg_freq, distance):
-#     beta = 0.01
-#     sens_freq = 1
-#     # for frequencies, we have r = 1
-#     r_freq = 1
-#
-#     #  calculate epsilon
-#     epsilon_freq = sens_freq / distance * log(1 / beta)
-#
-#     #  Calculate delta ( the risk) from guessing advantage equation
-#     #  the following equation is validated by calculations
-#     delta_freq = (1 - sqrt(exp(- epsilon_freq))) / (1 + sqrt(exp(- epsilon_freq)))
-#
-#     return epsilon_freq, delta_freq
 
 
 def calculate_epsilon_from_distance_time(dfg_time, distance, precision, aggregate_type=AggregateType.SUM):
@@ -263,83 +249,6 @@ def calculate_cdf(cdf, val):
                 cur_idx -= 1
                 break
     return cdf.y[cur_idx]
-
-
-# def calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precision, aggregate_type=AggregateType.SUM):
-#     beta = 0.05
-#
-#     # reflect the new equation of delta for the time per time instance. Then take the maximum delta from all the
-#     # instances.
-#     sens_time = 1
-#     """ calculating sensitivity based on type of aggregate"""
-#     if aggregate_type == AggregateType.AVG:
-#         sens_time = 1 / len(dfg_time[0])
-#     elif aggregate_type == AggregateType.MAX or aggregate_type == AggregateType.MIN or aggregate_type == AggregateType.SUM:
-#         sens_time = 1
-#     else:
-#         assert "Wrong aggregate type"
-#
-#     # m is the number of edges
-#
-#     m = len(dfg_time.keys())
-#
-#     # calculating R among all the edges
-#
-#     R = 0
-#     for x in dfg_time.keys():
-#         R = R + max(dfg_time[x])
-#
-#     #  Calculate delta ( the risk) from guessing advantage equation
-#     delta_time = []
-#     delta_dfg = {}
-#     epsilon_time = {}
-#     for x in dfg_time.keys():
-#         delta_edge = []
-#         R_ij = max(dfg_time[x])
-#         r_ij = R_ij * precision
-#
-#         #  calculate epsilon
-#         # the equation to be calculated per instance first as p is different from frequency.
-#
-#         distance_ij = m * distance * exp(R_ij) / R
-#         # distance_ij = m * distance * R_ij / R
-#
-#         epsilon_time_ij = sens_time / distance_ij * log(1 / beta)
-#
-#         epsilon_time[x] = epsilon_time_ij
-#         # fix the case of time is fixed
-#         flag = 1
-#         prev = dfg_time[x][0]
-#         current = dfg_time[x]
-#         for t_k in dfg_time[x]:
-#
-#             # fix the case of time is fixed
-#             if t_k != prev:
-#                 flag = 0
-#             prev = t_k
-#
-#             cdf = ECDF(dfg_time[x])
-#
-#             # p_k is calculated for every instance.
-#             cdf1 = calculate_cdf(cdf, t_k + r_ij)
-#             cdf2 = calculate_cdf(cdf, t_k - r_ij)
-#             p_k = cdf1 - cdf2
-#
-#             # current_delta = p_k*( 1/(   (1-p_k) * exp(-R_ij * epsilon_time) +p_k) -1)
-#             current_delta = (p_k / ((1 - p_k) * exp(-R_ij * epsilon_time_ij) + p_k)) - p_k
-#             # eps = - log(p_k / (1.0 - p_k) * (1.0 / (current_delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
-#             # we append the deltas and take the maximum delta out of them
-#             # if current_delta != float.nan:
-#             delta_edge.append(current_delta)
-#             if current_delta != 0:
-#                 delta_time.append(current_delta)
-#
-#         delta_dfg[x] = max(delta_edge)
-#     if len(delta_time) > 0:
-#         delta_time = max(delta_time)
-#
-#     delta_time=median(delta_dfg.values())
-#     return epsilon_time, delta_time, delta_dfg
 
 
 

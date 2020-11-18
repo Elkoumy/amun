@@ -5,7 +5,7 @@ from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 from reportlab import xrange
 
-from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
+# from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
 from amun.guessing_advantage import AggregateType
 from math import log10
 import os
@@ -121,11 +121,7 @@ def plot(data="Traffic"):
 
 
 temp=plot()
-# temp.difference.astype('timedelta64[D]').hist()
-# temp.difference=abs(temp.difference.astype('timedelta64[D]'))
-# data_distribution=list(temp.difference)
-# (temp.difference.astype('timedelta64[D]')/pd.Timedelta(days=3)).hist()
-# fig=temp.difference.hist()
+
 data_distribution = list(temp.values())
 data_distribution = [item for sublist in data_distribution for item in sublist]
 ax=sns.distplot(data_distribution,kde=False)

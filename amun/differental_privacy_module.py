@@ -38,9 +38,6 @@ def differential_privacy_with_risk( dfg_freq, dfg_time, delta, precision, aggreg
     emd_freq=earth_mover_dist(dfg_freq,dfg_freq_new)
     emd_time=earth_mover_dist(dfg_time,dfg_time_new)
 
-    #calculating the percentage difference
-    # percent_freq, percent_freq_dist=percentage_dist(dfg_freq,dfg_freq_new)
-    # percent_time, percent_time_dist=percentage_dist(dfg_time,dfg_time_new)
 
     #calculating the APE, MAPE, and SMAPE
     MAPE_freq, SMAPE_freq, APE_dist_freq,SMAPE_dist_freq=error_calculation(dfg_freq,dfg_freq_new)
@@ -78,7 +75,7 @@ def differential_privacy_with_risk( dfg,  delta, precision, aggregate_type=Aggre
 
 
 
-    # return dfg_freq_new, dfg_time_new, epsilon_freq,epsilon_time, MAPE_freq, SMAPE_freq, APE_dist_freq, MAPE_time, SMAPE_time, APE_dist_time
+
 
     return dfg_new, dfg_new, epsilon,  MAPE, SMAPE, APE_dist, SMAPE_dist
 
@@ -105,25 +102,16 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
         # multiple epsilon values for the time dfg
         for key in dfg_time.keys():
 
-            # in case epsilon is inf , we don't need to add noise
-            # print("epsilon_time"+str(epsilon_time[key]))
-            # inf in case of risk is bigger than 1-p_k
-            # -inf in case of all the values are the same.
-            # small epsilon values fail with laplace function
 
             if epsilon_time[key]==inf or epsilon_time[key]==-inf or epsilon_time[key]<1e-11:
                 dfg_time_new[key] = dfg_time[key]
             else:
                 rv = laplace()
-                # laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time[key])
-                # dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+
                 noise=laplace.rvs(loc=0, scale=sens_time / epsilon_time[key], size=1)[0]
                 dfg_time_new[key]=dfg_time[key]+abs(noise)
 
-            # laplace = Laplace()
-            # laplace.set_epsilon(epsilon_time[key])
-            # laplace.set_sensitivity(sens_time)
-            # dfg_time_new[key]=laplace.randomise(dfg_time[key])
+
     else:
         # single epsilon value for the entire time dfg
         for key in dfg_time.keys():
@@ -132,33 +120,22 @@ def add_laplace_noise_time(aggregate_type, dfg_time, epsilon_time):
             if epsilon_time == inf:
                 dfg_time_new[key] = dfg_time[key]
             else:
-                # laplace_mechanism.set_sensitivity(sens_time).set_bounds(0, sys.maxsize).set_epsilon(epsilon_time)
-                # dfg_time_new[key] = laplace_mechanism.randomise(dfg_time[key])
+
                 rv = laplace()
                 noise = laplace.rvs(loc=0, scale=sens_time / epsilon_time, size=1)[0]
                 dfg_time_new[key] = dfg_time[key] + abs(noise)
 
-            # laplace = Laplace()
-            # laplace.set_epsilon(epsilon_time)
-            # laplace.set_sensitivity(sens_time)
-            # dfg_time_new[key]=laplace.randomise(dfg_time[key])
+
 
     return dfg_time, dfg_time_new
 
 
 def add_laplace_noise_freq(dfg_freq, epsilon_freq):
     senstivity_freq=1
-    # adding laplace noise to DFG frequencies
-    # laplace_mechanism = privacyMechanisms.LaplaceBoundedDomain()
-    # laplace_mechanism.set_sensitivity(senstivity_freq).set_bounds(0, sys.maxsize).set_epsilon(epsilon_freq)
+
     dfg_freq_new = Counter()
     for key in dfg_freq.keys():
-        # dfg_freq_new[key] = laplace_mechanism.randomise(dfg_freq[key])
 
-        # laplace = Laplace()
-        # laplace.set_epsilon(epsilon_freq)
-        # laplace.set_sensitivity(senstivity_freq)
-        # dfg_freq_new[key] = laplace.randomise(dfg_freq[key])
         rv = laplace()
 
         if type(epsilon_freq)==type(0.1):
@@ -177,8 +154,7 @@ def differential_privacy_with_accuracy( dfg_freq, dfg_time,precision, distance,a
     epsilon_freq, delta_freq_dfg , delta_freq = calculate_epsilon_from_distance_freq_percentage_distances(dfg_freq, distance)
 
     # calculate epsilon and delta for  time
-    # epsilon_time,  delta_time, delta_time_dfg = calculate_epsilon_from_distance_time( dfg_time, distance,precision, aggregate_type)
-    # epsilon_time, delta_time, delta_time_dfg = calculate_epsilon_from_distance_time_new_approach(dfg_time, distance, precision, aggregate_type)
+
     epsilon_time, delta_time, delta_time_dfg = calculate_epsilon_from_distance_time_percentage_distance(dfg_time, distance, precision,aggregate_type)
     #  apply laplace noise and return the noisfied version of the DFG.
 

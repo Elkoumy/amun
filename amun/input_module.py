@@ -9,7 +9,7 @@ from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_fro
 from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 
-from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
+# from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
 from amun.guessing_advantage import AggregateType
 from math import log10
 import os
@@ -57,14 +57,6 @@ def read_xes(data_dir,dataset,aggregate_type,mode="pruning"):
     else:
         dfg = get_dfg_time(data, aggregate_type, dataset)
 
-    # pruning by values of freq and time
-    # dfg_freq,dfg_time = frequency_pruning(dfg_freq,dfg_time, prune_parameter_freq, prune_parameter_time)
-    # if mode=="pruning":
-    #     # pruning by 10% freq from apromore
-    #     dfg_freq,dfg_time1= pruning_by_edge_name_freq(dfg_freq.copy(), dfg_time.copy(), dataset)
-    #     #
-    #     # pruning by 10% time from apromore
-    #     dfg_freq2, dfg_time = pruning_by_edge_name_time(dfg_freq.copy(), dfg_time.copy(), dataset)
 
 
     """Getting Start and End activities"""
