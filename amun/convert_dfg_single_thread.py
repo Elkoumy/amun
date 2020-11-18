@@ -4,8 +4,6 @@ import pandas as pd
 from math import sqrt
 from collections import Counter
 from amun.differental_privacy_module import AggregateType
-import multiprocessing as mp
-from itertools import repeat
 
 def convert_DFG_to_dataframe(out_dir,freq,time):
     event_count =int(sqrt(len(freq)))
@@ -22,9 +20,9 @@ def convert_DFG_to_counter(df,col_names):
     for col in df.columns:
         for ix,val in enumerate(df[col]):
             if int(val) !=0:
-
+                # dfg[(str(col),str(df.index.values[ix]))]=float(val)
                 dfg[(str(col), str(df.columns[ix]))] = float(val)
-
+                # print("("+str(col) +","+str(df.index.values[ix])+") ="+str(val))
 
     return Counter(dfg)
 
@@ -42,30 +40,17 @@ def convert_conter_to_list(counter, col_names):
 
 
 def calculate_time_dfg(dfg_time, aggregation_type):
-    p = mp.Pool(mp.cpu_count())
-    result = p.starmap(perform_aggregate_parallel, zip(dfg_time.values(), repeat(aggregation_type)))
-
-    p.close()
-    p.join()
-
-    dfg_time_counter = Counter(dict(zip(list(dfg_time.keys()), result)))
-
+    dfg_time_counter=Counter()
+    for key in dfg_time.keys():
+        res=0
+        if aggregation_type==AggregateType.SUM:
+            res=sum(dfg_time[key])
+        elif aggregation_type==AggregateType.MIN:
+            res=min(dfg_time[key])
+        elif aggregation_type==AggregateType.MAX:
+            res=max(dfg_time[key])
+        elif aggregation_type==AggregateType.AVG:
+            res=sum(dfg_time[key])/len(dfg_time[key])
+        dfg_time_counter[key]=res
 
     return dfg_time_counter
-
-
-def perform_aggregate_parallel(dfg_time_inner, aggregation_type):
-    res = 0
-    if aggregation_type == AggregateType.SUM:
-        res = sum(dfg_time_inner)
-    elif aggregation_type == AggregateType.MIN:
-        res = min(dfg_time_inner)
-    elif aggregation_type == AggregateType.MAX:
-        res = max(dfg_time_inner)
-    elif aggregation_type == AggregateType.AVG:
-        res = sum(dfg_time_inner) / len(dfg_time_inner)
-    return res
-
-
-
-
