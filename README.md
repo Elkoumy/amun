@@ -4,7 +4,7 @@ organizations publish anonymized process models.
 Amun uses a mathematically proven privacy model to 
 balance the risk correlated with publishing process models and the utility after anonymization. 
 Amun keeps all the traces and all the activities of a DFG. 
-An emperical evaluation of Amun could be found our recent [paper](addlinkhere).
+An emperical evaluation of Amun using 13 real-world event logs could be found our recent [paper](addlinkhere).
 ### Prerequisite
 
 Installation of pm4py library for the support of XES files.
