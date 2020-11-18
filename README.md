@@ -1,5 +1,10 @@
 # Amun
-
+Amun is a framework that leverage recently developed Privacy-Enhancing Technologies (PETs) to help 
+organizations publish anonymized process models. 
+Amun uses a mathematically proven privacy model to 
+balance the risk correlated with publishing process models and the utility after anonymization. 
+Amun keeps all the traces and all the activities of a DFG. 
+An emperical evaluation of Amun could be found our recent [paper](addlinkhere).
 ### Prerequisite
 
 Installation of pm4py library for the support of XES files.
@@ -27,3 +32,7 @@ pip install statistics
 An example of the usage of Amun can be found in the file ```run_example.py```.
 To perform the execution time experiment, you can use the file ```run_example_execution_time.py```. 
 An implementation of Amun with a single thread could be found in the branch ```amun-model```.
+
+
+### Cite the Project
+Add citation here.
