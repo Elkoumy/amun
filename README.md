@@ -3,7 +3,7 @@ Amun is a framework that leverage recently developed Privacy-Enhancing Technolog
 organizations publish anonymized process models. 
 Amun uses a mathematically proven privacy model to 
 balance the risk correlated with publishing process models and the utility after anonymization.
-It uses an ε-differential-privacy mechanism to anonymize event logs.
+It uses an ε-differential-privacy mechanism to anonymize Directly-Follows Graphs (DFGs).
 It provides a mathematical approach to calculate the value of ε that represents the amount of noise 
 injected a process mining model that optimizes the risk and utility measures. 
 Amun keeps all the traces and all the activities of a DFG. 
