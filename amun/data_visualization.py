@@ -352,7 +352,7 @@ def paper_distributions(delta_logger,dir):
     subset= delta_logger[delta_logger.dataset == "Sepsis"]
     subset = subset[subset.aggregate_type == "AggregateType.FREQ"]
     # g = sns.FacetGrid(subset, row="dataset", margin_titles=True)
-    g=sns.boxplot(data= subset,x="emd", y="delta")
+    g=sns.boxplot(data= subset,x="MAPE", y="delta")
     # g.fig.suptitle(' \u03B5  Distribution for  Freq DFG  (EMD input)')
 
 
@@ -367,13 +367,13 @@ def paper_distributions(delta_logger,dir):
     subset= delta_logger[delta_logger.dataset == "BPIC20"]
     subset = subset[subset.aggregate_type == "AggregateType.FREQ"]
     # g = sns.FacetGrid(subset, row="dataset", margin_titles=True)
-    g=sns.boxplot(data= subset,x="emd", y="delta")
+    g=sns.boxplot(data= subset,x="MAPE", y="delta")
     # g.fig.suptitle(' \u03B5  Distribution for  Freq DFG  (EMD input)')
 
 
     g.set_ylabel(" \u03B4")  # delta
     g.set_xlabel("MAPE")  # alpha
-    plt.title("Sepsis Cases with Sum Query")
+    plt.title("BPIC20 with Sum Query")
     fig = plt.gcf()
     plt.show()
     fig.savefig(os.path.join(dir, 'Input_alpha_freq_delta_distribution_BPIC20.pdf'))
@@ -384,15 +384,15 @@ def paper_distributions(delta_logger,dir):
 # delta_logger_time=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_time.csv"))
 # delta_logger_freq=pd.read_csv(os.path.join('../experiment_logs', "delta_logger_freq.csv"))
 execution_time_log=pd.read_csv(os.path.join('../experiment_logs', "execution_time_combined.csv"), header=None)
-# combined_delta_logger=pd.read_csv(os.path.join('../experiment_logs', "combined_delta_logger_alpha.csv"))
+combined_delta_logger=pd.read_csv(os.path.join('../experiment_logs', "combined_delta_logger_alpha.csv"))
 # # result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
 #
 # #
 dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'
 result_log_delta=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_delta_subsetted.csv"))
 result_log_alpha=pd.read_csv(os.path.join('../experiment_logs', "combined_result_log_alpha.csv"))
-bubble_heatmap(result_log_delta,result_log_alpha)
-# paper_distributions(combined_delta_logger,dir)
+# bubble_heatmap(result_log_delta,result_log_alpha)
+paper_distributions(combined_delta_logger,dir)
 # plot_input_delta(result_log_delta,dir)
 # plot_execution_time(execution_time_log,dir)
 # # plot_results(result_log_delta,result_log_alpha,delta_logger_freq,delta_logger_time)
