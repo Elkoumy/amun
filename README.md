@@ -11,7 +11,8 @@ An emperical evaluation of Amun using 13 real-world event logs could be found in
 
 ### Cite the Project
 ```
-Elkoumy, Gamal, Alisa Pankova, and Marlon Dumas. "Privacy-Preserving Directly-Follows Graphs: Balancing Risk and Utility in Process Mining". arXiv preprint arXiv:2012.01119 (2020)
+Elkoumy, Gamal, Alisa Pankova, and Marlon Dumas. "Privacy-Preserving Directly-Follows Graphs: 
+Balancing Risk and Utility in Process Mining". arXiv preprint arXiv:2012.01119 (2020)
 ```
 
 
