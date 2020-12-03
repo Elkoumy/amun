@@ -7,11 +7,11 @@ It uses an ε-differential-privacy mechanism to anonymize Directly-Follows Graph
 It provides a mathematical approach to calculate the value of ε that represents the amount of noise 
 injected a process mining model that optimizes the risk and utility measures. 
 Amun keeps all the traces and all the activities of a DFG. 
-An emperical evaluation of Amun using 13 real-world event logs could be found in our recent [paper](addlinkhere).
+An emperical evaluation of Amun using 13 real-world event logs could be found in our recent [paper](https://arxiv.org/pdf/2012.01119.pdf).
 
 ### Cite the Project
 ```
-Add citation here.
+Elkoumy, Gamal, Alisa Pankova, and Marlon Dumas. "Privacy-Preserving Directly-Follows Graphs: Balancing Risk and Utility in Process Mining". arXiv preprint arXiv:2012.01119 (2020)
 ```
 
 
