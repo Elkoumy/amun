@@ -17,7 +17,7 @@ Balancing Risk and Utility in Process Mining". arXiv preprint arXiv:2012.01119 (
 
 
 ### Prerequisite
-The main dependencies are [pm4py](https://pm4py.fit.fraunhofer.de/), [diffprivlib](https://github.com/IBM/differential-privacy-library), [multiprocessing](https://pypi.org/project/multiprocess/) and [statistics](https://pypi.org/project/statistics/)
+The main dependencies are: [pm4py](https://pm4py.fit.fraunhofer.de/), [diffprivlib](https://github.com/IBM/differential-privacy-library), [multiprocessing](https://pypi.org/project/multiprocess/) and [statistics](https://pypi.org/project/statistics/)
 You can install all the requirements with:
 ```
 pip install -r requirements.txt
