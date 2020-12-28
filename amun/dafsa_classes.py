@@ -398,6 +398,7 @@ class DAFSA:
         # as `"delimiter"`) or in an in-method variable (such as
         # `"minimize"`)
         self._delimiter = kwargs.get("delimiter", " ")
+        # self._delimiter = kwargs.get("delimiter")
         minimize = kwargs.get("minimize", True)
 
         # Initializes an internal counter iterator, which is used to
@@ -427,6 +428,14 @@ class DAFSA:
         # edges.
         self._num_sequences = None
 
+        """Splitting the sequences by the delimter"""
+        if self._delimiter!="":
+            seqs=[]
+            for seq in sequences:
+                seq= seq.split(self._delimiter)
+                seqs.append(seq)
+            """ ********** """
+            sequences=seqs
         # Initiate sequence insertion: 1. takes a sorted set of the
         # sequences and store its length
         sequences = sorted(sequences)
@@ -983,5 +992,3 @@ class DAFSA:
         nx.readwrite.gml.write_gml(self.to_graph(), filename)
 
 
-if __name__ == "__main__":
-    d = DAFSA(["BDE", "CBDE", "BDE", "CBDF", "BDF"])
