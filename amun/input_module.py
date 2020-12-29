@@ -4,7 +4,9 @@ This module implements the functionality of reading the input from the user. The
     * XES
 """
 import pandas as pd
+import numpy as np
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
+from pm4py.statistics.traces.log.case_statistics import get_variant_statistics
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
 from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
@@ -13,6 +15,7 @@ from pm4py.algo.discovery.dfg import factory as dfg_factory
 from amun.guessing_advantage import AggregateType
 from math import log10
 import os
+from dafsa_classes import DAFSA
 
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.algo.filtering.log.start_activities import start_activities_filter
@@ -65,6 +68,138 @@ def read_xes(data_dir,dataset,aggregate_type,mode="pruning"):
     log_end= end_activities_filter.get_end_activities(log)
     # return dfg_freq,dfg_time
     return dfg
+
+
+
+def xes_to_DAFSA(data_dir,dataset):
+    """
+     This function takes the XES file and returns:
+        * DAFSA automata.
+        * Event log as a dataframe annotated with states and contains the relative time.
+    """
+    #read the xes file
+    if dataset in "BPIC14":
+        # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
+        data['case:concept:name']=data['Incident ID']
+        data['time:timestamp']= data['DateStamp']
+        data['concept:name']= data['IncidentActivity_Type']
+        log = conversion_factory.apply(data)
+    elif dataset=="Unrineweginfectie":
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+        data['case:concept:name'] = data['Patientnummer']
+        data['time:timestamp'] = data['Starttijd']
+        data['concept:name'] = data['Aciviteit']
+        log = conversion_factory.apply(data)
+    else:
+        log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
+        data = get_dataframe_from_event_stream(log)
+
+
+    ### Calculate relative time
+    data=get_relative_time(data,dataset)
+    ### Calculate DAFSA
+    dafsa_log=get_DAFSA(log)
+
+    ### Anotate Event Log with DAFSA states
+    data=annotate_eventlog_with_states(data,dafsa_log)
+
+    # if aggregate_type==AggregateType.FREQ:
+    #     dfg=dfg_factory.apply(log,variant="frequency")
+    # else:
+    #     dfg = get_dfg_time(data, aggregate_type, dataset)
+
+
+
+
+    return data
+
+
+def get_relative_time(data, dataset):
+    """
+    Returns the event log with the relative time difference of every activity
+    """
+    # taking only the complete event to avoid ambiguoutiy
+    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie"]:
+        data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
+        data=data.dropna(subset=['lifecycle:transition'])
+
+    #moving first row to the last one
+    temp_row= data.iloc[0]
+    data2=data.copy()
+    # data2.drop(data2.index[0], inplace=True)
+    # data2=data2.append(temp_row)
+    # data2=pd.concat([pd.DataFrame(temp_row), data2], axis=1 ,ignore_index=True)
+    # data2.reset_index(inplace=True)
+    data2.loc[-1]=temp_row
+    data2.index = data2.index + 1  # shifting index
+    data2.sort_index(inplace=True)
+
+    #changing column names
+    columns= data2.columns
+    columns= [i+"_2" for i in columns]
+    data2.columns=columns
+
+    #combining the two dataframes into one
+    data = data[['case:concept:name', 'concept:name', 'time:timestamp']]
+    data2 = data2[['case:concept:name_2', 'concept:name_2', 'time:timestamp_2']]
+
+    data = data.reset_index()
+    data2=data2.reset_index()
+    data=pd.concat([data, data2], axis=1)
+
+
+
+    #calculating time difference
+    data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
+    data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
+
+    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
+        'timedelta64[ms]')   # in m seconds
+
+    #set the relative time of the first activity of each case to zero
+    data.loc[data['case:concept:name'] != data['case:concept:name_2'],'relative_time']=0
+    # pd.Timedelta(np.timedelta64(0, "ms"))
+    #delete the last row as it is meaningless because data2 is longer by 1
+    data.drop(data.tail(1).index, inplace=True)
+
+    data=data[['case:concept:name','concept:name','time:timestamp','relative_time']]
+
+    return data
+
+def get_DAFSA(log):
+    result = get_variant_statistics(log)
+    traces = []
+    for trace in result:
+        current = trace['variant']  # separated by commas ','
+        # current=current.replace(',',';')
+        traces.append(current)
+
+    # d= DAFSA(["tap", "taps", "top", "tops", "dibs"])
+
+    dafsa_log = DAFSA(traces, delimiter=',')
+
+    return dafsa_log
+
+def annotate_eventlog_with_states(data,dafsa_log):
+    states = []
+    prev_state = 0
+    curr_trace = -1
+    for idx, row in data.iterrows():
+        if curr_trace != row['case:concept:name']:
+            prev_state = 0
+            curr_trace = row['case:concept:name']
+
+        else:
+            prev_state = curr_state
+
+        curr_state = dafsa_log.lookup_nodes[prev_state].edges[row['concept:name']].node.node_id
+        states.append(curr_state)
+
+    data['state'] = states
+    data.state = data.state.astype(int)
+
+    return data
 
 def get_dfg_time(data,aggregate_type,dataset):
     """
