@@ -154,9 +154,11 @@ def get_relative_time(data, dataset):
     data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
     data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
 
-    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
-        'timedelta64[ms]')   # in m seconds
+    # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
+    #     'timedelta64[ms]')   # in m seconds
 
+    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
+        'timedelta64[h]')   # in  hours
     #set the relative time of the first activity of each case to zero
     data.loc[data['case:concept:name'] != data['case:concept:name_2'],'relative_time']=0
     # pd.Timedelta(np.timedelta64(0, "ms"))

@@ -398,3 +398,34 @@ def epsilon_freq_from_distance(dfg_freq_inner, beta, distance_percentage, sens_f
     #  the following equation is validated by calculations
     delta_freq = (1 - sqrt(exp(- epsilon_freq))) / (1 + sqrt(exp(- epsilon_freq)))
     return delta_freq, epsilon_dfg_inner
+
+
+def estimate_epsilon_risk_dataframe(val,cdf,R_ij,delta,precision):
+    if cdf == 0:
+        # case of a single item
+        sens = 1.0
+        p = (1.0 - delta) / 2.0
+        R_ij = 1.0  # from the discussion with Alisa
+        eps = - log(p / (1.0 - p) * (1.0 / (delta + p) - 1)) / log(exp(1.0)) * (1.0 / R_ij)
+
+    else:
+        if R_ij!=0:
+            r_ij = R_ij * precision
+            p_k = calculate_cdf(cdf, val + r_ij) - calculate_cdf(cdf, val - r_ij)
+            if p_k + delta <1:
+                eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
+            else:
+                eps= inf
+        else:
+            eps=-inf
+
+    return eps
+
+
+def calculate_cdf_dataframe(val):
+    if val.size>1:
+        return ECDF(val)
+    else:
+        # in case of a single item
+        return 0
+
