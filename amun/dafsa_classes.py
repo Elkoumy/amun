@@ -54,6 +54,11 @@ class DAFSANode:
         self.edges = {}
         self.final = False
         self.weight = 0
+        #keep trake of input edges
+        self.input_edges={}
+
+        #marking the start node
+        self.start=False
 
         # Set values node_id value
         self.node_id = node_id
@@ -280,7 +285,7 @@ class DAFSAEdge(dict):
         Edge weight as collected from training data. Defaults to 0.
     """
 
-    def __init__(self, node, weight=0):
+    def __init__(self, node, parent, weight=0):
         """
         Initializes a DAFSA edge.
         """
@@ -295,6 +300,11 @@ class DAFSAEdge(dict):
             )
         self.node = node
         self.weight = weight
+        self.parent=parent #adding the parent node to make it easier to traverse backward to the start.
+        self.target_noise=-1
+        self.added_noise=-1
+        self.state_id=-1
+        self.activity_name=""
 
     def __str__(self):
         """
@@ -469,6 +479,9 @@ class DAFSA:
         if kwargs.get("condense", False):
             self.condense()
 
+        #marking the fist node as the start node
+        self.nodes[0].start=True
+
     def _insert_single_seq(self, seq, previous_seq, minimize):
         """
         Internal method for single sequence insertion.
@@ -509,7 +522,10 @@ class DAFSA:
             # list of unchecked nodes (there might be duplicates in the
             # future) and proceed until the end of the sequence
             child = DAFSANode(next(self._iditer))
-            node.edges[token] = DAFSAEdge(child)
+            node.edges[token] = DAFSAEdge(child, node) #node is the input node.
+
+            #adding a reference to the input edge to enable backward traversal
+            child.input_edges[token]=DAFSAEdge(child, node)
             self._unchecked_nodes.append(
                 {"parent": node, "token": token, "child": child}
             )
@@ -697,9 +713,20 @@ class DAFSA:
                 .edges[transition["label_to"]]
                 .node,
                 self.nodes[transition["edge"]["target"]]
-                .edges[transition["label_to"]]
+                .edges[transition["label_to"]],
+                self.nodes[transition["edge"]["source"]] # parent node to the edge
                 .weight,
             )
+
+            """
+                updating the input edge for the child node
+            """
+            self.nodes[transition["edge"]["target"]] .edges[transition["label_to"]].node.input_edges[new_label]=\
+                self.nodes[transition["edge"]["source"]].edges[
+                new_label
+            ]
+
+
             self.nodes[transition["edge"]["source"]].edges.pop(
                 transition["label_from"]
             )

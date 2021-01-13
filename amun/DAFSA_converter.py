@@ -16,13 +16,13 @@ data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\a
 dataset="Sepsis"
 
 from input_module import xes_to_DAFSA
-from guessing_advantage import estimate_epsilon_risk, estimate_epsilon_risk_dataframe, calculate_cdf_dataframe
+from guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe
 from statsmodels.distributions.empirical_distribution import ECDF
 
-data= xes_to_DAFSA(data_dir, dataset)
+data, dafsa, dafsa_edges= xes_to_DAFSA(data_dir, dataset)
 
 delta=0.2
-precision =0.1
+precision =0.00000000001
 
 data_cdf = data.groupby('state').relative_time.apply(calculate_cdf_dataframe)
 data_cdf['state']=data_cdf.index
@@ -33,10 +33,12 @@ data_state_max['state']=data_state_max.index
 data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
 
 data= pd.merge(data, data_state_max, on=['state'], suffixes=("","_max"))
-
+# temp=data.apply(lambda x: estimate_epsilon_risk_dataframe(x['relative_time'],x['relative_time_ecdf'],x['relative_time_max'], delta, precision), axis=1)
 data['eps']=data.apply(lambda x: estimate_epsilon_risk_dataframe(x['relative_time'],x['relative_time_ecdf'],x['relative_time_max'], delta, precision), axis=1)
 
-values=[3,2,5]
+temp=dafsa_edges[0].node.node_id
+
+print(data.eps)
 
 
 # result=estimate_epsilon_risk(values, 0.2, 0.05)

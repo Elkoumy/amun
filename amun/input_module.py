@@ -109,11 +109,22 @@ def xes_to_DAFSA(data_dir,dataset):
     # else:
     #     dfg = get_dfg_time(data, aggregate_type, dataset)
 
+    dafsa_edges=get_edges(dafsa_log)
 
 
+    return data,dafsa_log,dafsa_edges
 
-    return data
+def get_edges(dafsa):
+    edges=[]
+    for idx in dafsa.nodes:
+        node=dafsa.nodes[idx]
 
+        for edg_name in node.edges:
+            #node.edges[edg_name].activity_name=edg_name
+            node.edges[edg_name].state_id=idx
+            edges.append(node.edges[edg_name])
+
+    return edges
 
 def get_relative_time(data, dataset):
     """
@@ -159,8 +170,28 @@ def get_relative_time(data, dataset):
 
     data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
         'timedelta64[h]')   # in  hours
+
+    ''' In case of the first activity, we set the relative time to the unix epoch time
+        to make it an integer. The anonymization of the start time of each trace       
+    '''
+
     #set the relative time of the first activity of each case to zero
-    data.loc[data['case:concept:name'] != data['case:concept:name_2'],'relative_time']=0
+    # data.loc[data['case:concept:name'] != data['case:concept:name_2'],'relative_time']=0
+
+    data.loc[0,'relative_time']= (data.loc[0]['time:timestamp'] - pd.Timestamp(
+        "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
+
+    data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
+        (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - pd.Timestamp(
+        "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
+
+
+
+
+    # data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
+    #     (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - data['time:timestamp'].min()
+    #      ) / pd.Timedelta('1s')
+
     # pd.Timedelta(np.timedelta64(0, "ms"))
     #delete the last row as it is meaningless because data2 is longer by 1
     data.drop(data.tail(1).index, inplace=True)
