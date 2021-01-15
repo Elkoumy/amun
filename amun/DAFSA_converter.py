@@ -13,13 +13,59 @@ import numpy as np
 
 #
 data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
-dataset="Sepsis"
+dataset="temp"
 
 from input_module import xes_to_DAFSA
 from guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe
 from statsmodels.distributions.empirical_distribution import ECDF
 
-data, dafsa, dafsa_edges= xes_to_DAFSA(data_dir, dataset)
+def propagate_DAFSA_noise(edges, edges_df,noise):
+
+    not_anonymized= edges_df[edges_df.added_noise<noise]
+    while not_anonymized.shape[0]>0:
+
+        #try to make it weighted regarding the needed noise
+        picked_edge_idx=not_anonymized.sample()['idx'].iloc[0]
+        picked_edge= edges[picked_edge_idx]
+        path,edges_df=get_path(picked_edge,edges_df, noise)
+
+        not_anonymized = edges_df[edges_df.added_noise < noise]
+    return edges
+
+def get_path(picked_edge,edges_df, noise):
+    path=[]
+    x=picked_edge
+
+    parent_state= picked_edge.parent
+    target_state= picked_edge.node
+    path.append([picked_edge.activity_name, picked_edge.node.node_id])
+    #backward till start
+    parent_state.input_edges
+
+    current_state= picked_edge.parent
+    while not current_state.start:
+        prev_state=current_state
+        current_edge = list(current_state.input_edges.keys())[0]
+        path.append([current_edge,current_state.node_id])
+        current_state = list(current_state.input_edges.values())[0].parent
+
+    path=list(reversed(path))
+
+    #forward till end
+    current_state = picked_edge.node
+    while not current_state.final:
+        prev_state = current_state
+        current_edge = list(current_state.edges.keys())[0]
+        path.append([current_edge, current_state.node_id])
+        # if current_state.start:
+        #     return
+        current_state = list(current_state.edges.values())[0].node
+
+    target_state.edges
+
+    return path,edges_df
+
+data, dafsa, dafsa_edges, dafsa_edges_df= xes_to_DAFSA(data_dir, dataset)
 
 delta=0.2
 precision =0.00000000001
@@ -33,10 +79,12 @@ data_state_max['state']=data_state_max.index
 data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
 
 data= pd.merge(data, data_state_max, on=['state'], suffixes=("","_max"))
-# temp=data.apply(lambda x: estimate_epsilon_risk_dataframe(x['relative_time'],x['relative_time_ecdf'],x['relative_time_max'], delta, precision), axis=1)
+
 data['eps']=data.apply(lambda x: estimate_epsilon_risk_dataframe(x['relative_time'],x['relative_time_ecdf'],x['relative_time_max'], delta, precision), axis=1)
 
-temp=dafsa_edges[0].node.node_id
+""" propagating the noise across the DAFSA graph for the frequency"""
+noise=3
+dafsa_edges=propagate_DAFSA_noise(dafsa_edges,dafsa_edges_df,noise)
 
 print(data.eps)
 

@@ -305,6 +305,7 @@ class DAFSAEdge(dict):
         self.added_noise=-1
         self.state_id=-1
         self.activity_name=""
+        self.lookup_idx=0 #to hold the index in the lookup table
 
     def __str__(self):
         """

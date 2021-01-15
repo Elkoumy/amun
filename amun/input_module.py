@@ -91,15 +91,25 @@ def xes_to_DAFSA(data_dir,dataset):
         data['time:timestamp'] = data['Starttijd']
         data['concept:name'] = data['Aciviteit']
         log = conversion_factory.apply(data)
+    elif dataset=="temp":
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+        log = conversion_factory.apply(data)
     else:
         log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
         data = get_dataframe_from_event_stream(log)
+
+    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"]:
+        data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
+        data=data.dropna(subset=['lifecycle:transition'])
+
+    log = conversion_factory.apply(data)
 
 
     ### Calculate relative time
     data=get_relative_time(data,dataset)
     ### Calculate DAFSA
-    dafsa_log=get_DAFSA(log)
+
+    dafsa_log=get_DAFSA(log) # we pass the data as it is filtered from the lifecycle
 
     ### Anotate Event Log with DAFSA states
     data=annotate_eventlog_with_states(data,dafsa_log)
@@ -109,29 +119,37 @@ def xes_to_DAFSA(data_dir,dataset):
     # else:
     #     dfg = get_dfg_time(data, aggregate_type, dataset)
 
-    dafsa_edges=get_edges(dafsa_log)
+    dafsa_edges,edges_df=get_edges(dafsa_log)
 
 
-    return data,dafsa_log,dafsa_edges
+    return data,dafsa_log,dafsa_edges, edges_df
 
 def get_edges(dafsa):
     edges=[]
+    edges_df=[]
+    edge_idx=0 #location within the lookup of edges (edges)
     for idx in dafsa.nodes:
         node=dafsa.nodes[idx]
 
         for edg_name in node.edges:
             #node.edges[edg_name].activity_name=edg_name
             node.edges[edg_name].state_id=idx
+            node.edges[edg_name].lookup_idx=edge_idx
+            node.edges[edg_name].activity_name=edg_name
             edges.append(node.edges[edg_name])
 
-    return edges
+            edges_df.append([edge_idx,node.edges[edg_name].added_noise])
+            edge_idx+=1
+
+    edges_df=pd.DataFrame(edges_df,columns=['idx','added_noise'])
+    return edges,edges_df
 
 def get_relative_time(data, dataset):
     """
     Returns the event log with the relative time difference of every activity
     """
     # taking only the complete event to avoid ambiguoutiy
-    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie"]:
+    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"]:
         data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
         data=data.dropna(subset=['lifecycle:transition'])
 
@@ -218,6 +236,7 @@ def annotate_eventlog_with_states(data,dafsa_log):
     states = []
     prev_state = 0
     curr_trace = -1
+    curr_state=-1
     for idx, row in data.iterrows():
         if curr_trace != row['case:concept:name']:
             prev_state = 0
@@ -225,7 +244,10 @@ def annotate_eventlog_with_states(data,dafsa_log):
 
         else:
             prev_state = curr_state
-
+        temp=dafsa_log.lookup_nodes[prev_state]
+        str='Acceptance of requests'
+        str1=row['concept:name']
+        t=str==str1
         curr_state = dafsa_log.lookup_nodes[prev_state].edges[row['concept:name']].node.node_id
         states.append(curr_state)
 
