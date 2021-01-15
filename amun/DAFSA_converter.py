@@ -39,15 +39,33 @@ def get_path(picked_edge,edges_df, noise):
     parent_state= picked_edge.parent
     target_state= picked_edge.node
     path.append([picked_edge.activity_name, picked_edge.node.node_id])
+
+    #adding noise to the edge
+    if picked_edge.added_noise==-1:
+        picked_edge.added_noise+=noise+1
+        edges_df.loc[edges_df.idx==picked_edge.lookup_idx,"added_noise"]+=noise+1
+    else:
+        noise=noise-picked_edge.added_noise
+        picked_edge.added_noise += noise
+        edges_df.loc[edges_df.idx == picked_edge.lookup_idx, "added_noise"] += noise
+
+
     #backward till start
     parent_state.input_edges
-
     current_state= picked_edge.parent
     while not current_state.start:
         prev_state=current_state
         current_edge = list(current_state.input_edges.keys())[0]
+        edge= list(current_state.input_edges.values())[0]
         path.append([current_edge,current_state.node_id])
         current_state = list(current_state.input_edges.values())[0].parent
+
+        if edge.added_noise == -1:
+            edge.added_noise += noise + 1
+            edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise + 1
+        else:
+            edge.added_noise += noise
+            edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise
 
     path=list(reversed(path))
 
@@ -56,11 +74,16 @@ def get_path(picked_edge,edges_df, noise):
     while not current_state.final:
         prev_state = current_state
         current_edge = list(current_state.edges.keys())[0]
+        edge = list(current_state.edges.values())[0]
         path.append([current_edge, current_state.node_id])
-        # if current_state.start:
-        #     return
         current_state = list(current_state.edges.values())[0].node
 
+        if edge.added_noise == -1:
+            edge.added_noise += noise + 1
+            edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise + 1
+        else:
+            edge.added_noise += noise
+            edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise
     target_state.edges
 
     return path,edges_df
