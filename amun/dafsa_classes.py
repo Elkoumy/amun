@@ -526,7 +526,11 @@ class DAFSA:
             node.edges[token] = DAFSAEdge(child, node) #node is the input node.
 
             #adding a reference to the input edge to enable backward traversal
-            child.input_edges[token]=DAFSAEdge(child, node)
+            if token not in child.input_edges.keys():
+                child.input_edges[token]=DAFSAEdge(child, node)
+            else:
+                child.input_edges[token+str(len(child.input_edges))] = DAFSAEdge(child, node)
+
             self._unchecked_nodes.append(
                 {"parent": node, "token": token, "child": child}
             )
@@ -605,6 +609,12 @@ class DAFSA:
                         if parent.edges[token].node.final:
                             self.nodes[child_idx].final = True
                         parent.edges[token].node = self.nodes[child_idx]
+
+                        """Linke the parent to the child as an input edge"""
+                        if token not in self.nodes[child_idx].input_edges.keys():
+                            self.nodes[child_idx].input_edges[token]=parent.edges[token]
+                        else:
+                            self.nodes[child_idx].input_edges[token+str(len(self.nodes[child_idx].input_edges.keys()))] = parent.edges[token]
 
                         # Mark the graph as changed, so we restart the loop
                         graph_changed = True

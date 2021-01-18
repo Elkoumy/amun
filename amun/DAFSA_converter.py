@@ -42,6 +42,7 @@ def get_path(picked_edge,edges_df, noise):
 
     #adding noise to the edge
     if picked_edge.added_noise==-1:
+        ttt=1
         picked_edge.added_noise+=noise+1
         edges_df.loc[edges_df.idx==picked_edge.lookup_idx,"added_noise"]+=noise+1
     else:
@@ -55,17 +56,33 @@ def get_path(picked_edge,edges_df, noise):
     current_state= picked_edge.parent
     while not current_state.start:
         prev_state=current_state
-        current_edge = list(current_state.input_edges.keys())[0]
-        edge= list(current_state.input_edges.values())[0]
-        path.append([current_edge,current_state.node_id])
-        current_state = list(current_state.input_edges.values())[0].parent
 
-        if edge.added_noise == -1:
-            edge.added_noise += noise + 1
-            edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise + 1
+        #finding next state that needs noise
+        idx=0
+        for edge in list(current_state.input_edges.values()):
+            if edge.added_noise<noise:
+                break
+            else:
+                idx+=1
+        if idx >= len(list(current_state.input_edges.values())):
+            idx=0
+
+        current_edge = list(current_state.input_edges.keys())[idx]
+
+        # edge= list(current_state.input_edges.values())[idx]
+
+
+        if current_state.input_edges[current_edge].added_noise == -1:
+            current_state.input_edges[current_edge].added_noise += noise + 1
+            # edge.added_noise += noise + 1
+            edges_df.loc[edges_df.idx == current_state.input_edges[current_edge].lookup_idx, "added_noise"] += noise + 1
         else:
-            edge.added_noise += noise
-            edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise
+            # edge.added_noise += noise
+            current_state.input_edges[current_edge].added_noise += noise
+            edges_df.loc[edges_df.idx == current_state.input_edges[current_edge].lookup_idx, "added_noise"] += noise
+
+        path.append([current_edge, current_state.node_id])
+        current_state = list(current_state.input_edges.values())[idx].parent
 
     path=list(reversed(path))
 
@@ -73,10 +90,22 @@ def get_path(picked_edge,edges_df, noise):
     current_state = picked_edge.node
     while not current_state.final:
         prev_state = current_state
-        current_edge = list(current_state.edges.keys())[0]
-        edge = list(current_state.edges.values())[0]
-        path.append([current_edge, current_state.node_id])
-        current_state = list(current_state.edges.values())[0].node
+
+        #finding next state that needs noise
+        idx=0
+        for edge in list(current_state.edges.values()):
+            if edge.added_noise<noise:
+                break
+            else:
+                idx+=1
+        if idx >= len(list(current_state.edges.values())):
+            idx=0
+
+        current_edge = list(current_state.edges.keys())[idx]
+
+        edge = list(current_state.edges.values())[idx]
+
+
 
         if edge.added_noise == -1:
             edge.added_noise += noise + 1
@@ -84,9 +113,13 @@ def get_path(picked_edge,edges_df, noise):
         else:
             edge.added_noise += noise
             edges_df.loc[edges_df.idx == edge.lookup_idx, "added_noise"] += noise
+
+        path.append([current_edge, current_state.node_id])
+        current_state = list(current_state.edges.values())[idx].node
     target_state.edges
 
     return path,edges_df
+
 
 data, dafsa, dafsa_edges, dafsa_edges_df= xes_to_DAFSA(data_dir, dataset)
 

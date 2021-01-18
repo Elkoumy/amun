@@ -136,6 +136,12 @@ def get_edges(dafsa):
             node.edges[edg_name].state_id=idx
             node.edges[edg_name].lookup_idx=edge_idx
             node.edges[edg_name].activity_name=edg_name
+
+            #some lookup index are taken from the lookup nodes
+            dafsa.lookup_nodes[idx].edges[edg_name].state_id=idx
+            dafsa.lookup_nodes[idx].edges[edg_name].lookup_idx=edge_idx
+            dafsa.lookup_nodes[idx].edges[edg_name].activity_name=edg_name
+
             edges.append(node.edges[edg_name])
 
             edges_df.append([edge_idx,node.edges[edg_name].added_noise])
@@ -244,11 +250,11 @@ def annotate_eventlog_with_states(data,dafsa_log):
 
         else:
             prev_state = curr_state
-        temp=dafsa_log.lookup_nodes[prev_state]
+        temp=dafsa_log.nodes[prev_state]
         str='Acceptance of requests'
         str1=row['concept:name']
         t=str==str1
-        curr_state = dafsa_log.lookup_nodes[prev_state].edges[row['concept:name']].node.node_id
+        curr_state = dafsa_log.nodes[prev_state].edges[row['concept:name']].node.node_id
         states.append(curr_state)
 
     data['state'] = states
