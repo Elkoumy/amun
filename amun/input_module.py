@@ -15,7 +15,7 @@ from pm4py.algo.discovery.dfg import factory as dfg_factory
 from amun.guessing_advantage import AggregateType
 from math import log10
 import os
-from dafsa_classes import DAFSA
+from amun.dafsa_classes import DAFSA
 
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.algo.filtering.log.start_activities import start_activities_filter
@@ -23,6 +23,7 @@ from pm4py.algo.filtering.log.end_activities import end_activities_filter
 from pm4py.objects.log.importer.csv import factory as csv_importer
 from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.adapters.pandas import csv_import_adapter
+from pm4py.algo.filtering.log.variants import variants_filter
 
 # from pruning_edges import get_pruning_edges
 
@@ -104,7 +105,7 @@ def xes_to_DAFSA(data_dir,dataset):
 
     log = conversion_factory.apply(data)
 
-
+    data['case:concept:name'] = data['case:concept:name'].astype(int)
     ### Calculate relative time
     data=get_relative_time(data,dataset)
     ### Calculate DAFSA
@@ -114,6 +115,7 @@ def xes_to_DAFSA(data_dir,dataset):
     ### Anotate Event Log with DAFSA states
     data=annotate_eventlog_with_states(data,dafsa_log)
 
+    data,trace_variants=annotate_eventlog_with_trace_variants(data, log)
     # if aggregate_type==AggregateType.FREQ:
     #     dfg=dfg_factory.apply(log,variant="frequency")
     # else:
@@ -122,7 +124,24 @@ def xes_to_DAFSA(data_dir,dataset):
     dafsa_edges,edges_df=get_edges(dafsa_log)
 
 
-    return data,dafsa_log,dafsa_edges, edges_df
+    return data,dafsa_log,dafsa_edges, edges_df, trace_variants
+
+def annotate_eventlog_with_trace_variants(data, log):
+
+    variants = variants_filter.get_variants(log)
+    case_variant_link=[]
+    trace_variant_index=list(variants.keys())
+    for idx, key in enumerate(trace_variant_index):
+
+       for trace in variants[key]:
+           case_variant_link.append([trace.attributes["concept:name"],idx])
+
+    case_variant_link=pd.DataFrame(case_variant_link,columns=['case:concept:name','trace_variant'])
+
+    data = pd.merge(left=data, right=case_variant_link, left_on='case:concept:name', right_on='case:concept:name')
+    # data= data.join(case_variant_link, on='case:concept:name', lsuffix='', rsuffix='_linker')
+    # data.drop('case:concept:name_linker',inplace=True,axis=1)
+    return data, trace_variant_index
 
 def get_edges(dafsa):
     edges=[]
@@ -239,7 +258,8 @@ def get_DAFSA(log):
     return dafsa_log
 
 def annotate_eventlog_with_states(data,dafsa_log):
-    states = []
+    states = [] # holds the end state of the dafsa edge
+    prev_states=[] #holds the start state of the dafsa edge
     prev_state = 0
     curr_trace = -1
     curr_state=-1
@@ -251,14 +271,17 @@ def annotate_eventlog_with_states(data,dafsa_log):
         else:
             prev_state = curr_state
         temp=dafsa_log.nodes[prev_state]
-        str='Acceptance of requests'
-        str1=row['concept:name']
-        t=str==str1
+        # str='Acceptance of requests'
+        # str1=row['concept:name']
+        # t=str==str1
         curr_state = dafsa_log.nodes[prev_state].edges[row['concept:name']].node.node_id
         states.append(curr_state)
+        prev_states.append(dafsa_log.nodes[prev_state].node_id)
 
     data['state'] = states
+    data['prev_state']=prev_states
     data.state = data.state.astype(int)
+    data.prev_state = data.prev_state.astype(int)
 
     return data
 

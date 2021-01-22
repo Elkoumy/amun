@@ -14,7 +14,7 @@ import numpy as np
 #
 data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
 dataset="temp"
-
+# dataset="CCC19"
 from input_module import xes_to_DAFSA
 from guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe
 from statsmodels.distributions.empirical_distribution import ECDF
@@ -22,15 +22,17 @@ from statsmodels.distributions.empirical_distribution import ECDF
 def propagate_DAFSA_noise(edges, edges_df,noise):
 
     not_anonymized= edges_df[edges_df.added_noise<noise]
+    traces=[]
     while not_anonymized.shape[0]>0:
 
         #try to make it weighted regarding the needed noise
         picked_edge_idx=not_anonymized.sample()['idx'].iloc[0]
         picked_edge= edges[picked_edge_idx]
         path,edges_df=get_path(picked_edge,edges_df, noise)
-
+        traces.append(path)
+        #TODO: write code here to take the path and make duplication in the event log
         not_anonymized = edges_df[edges_df.added_noise < noise]
-    return edges
+    return edges, traces
 
 def get_path(picked_edge,edges_df, noise):
     path=[]
@@ -140,7 +142,7 @@ data['eps']=data.apply(lambda x: estimate_epsilon_risk_dataframe(x['relative_tim
 
 """ propagating the noise across the DAFSA graph for the frequency"""
 noise=3
-dafsa_edges=propagate_DAFSA_noise(dafsa_edges,dafsa_edges_df,noise)
+dafsa_edges, traces_to_duplicate=propagate_DAFSA_noise(dafsa_edges,dafsa_edges_df,noise)
 
 print(data.eps)
 
