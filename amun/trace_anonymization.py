@@ -4,6 +4,7 @@ the DAFSA automata and using differential privacy
 """
 import pandas as pd
 import numpy as np
+import random as r
 def build_DAFSA_bit_vector(data):
     #calculate the bit vector dataframe from the trace and state anotated event log
 
@@ -53,8 +54,26 @@ def pick_random_edge_trace(bit_vector_df,noise):
 
 
 def execute_oversampling(data,duplicated_traces):
+    #count per trace variant
+    duplicated_traces=pd.Series(duplicated_traces).value_counts()
+    #sampling from event log based on the count of each trace variant
+    duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant']).apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
+    duplicated_cases=duplicated_cases.drop(['trace_variant'],axis=1)
+    duplicated_cases=duplicated_cases.rename(columns={'case:concept:name':'duplicated_case_ids'})
+    duplicated_cases = duplicated_cases.merge(data, how='left', left_on='duplicated_case_ids', right_on='case:concept:name').drop('duplicated_case_ids',axis=1)
 
 
+    #  replace the case id in the sample
+    case_ids= duplicated_cases['case:concept:name'].unique()
+    randomlist = r.sample(range(len(case_ids), len(case_ids)*2), len(case_ids))
+    mapping=pd.Series(randomlist,index=case_ids).to_dict()
+    duplicated_cases['case:concept:name'].replace(mapping, inplace=True)
+    #TODO fix the problem when same case duplicated
+    #you can use the duplicated case id to filter them and treat them separately
+
+
+    # append data + duplicated_cases
+    data = data.append(duplicated_cases, ignore_index=True)
     return data
 
 def anonymize_traces(data, noise):
@@ -76,7 +95,7 @@ def anonymize_traces(data, noise):
 
 
 
-    #TODO execute the oversampling
+    # execute the oversampling
     data=execute_oversampling(data,duplicated_traces)
 
 

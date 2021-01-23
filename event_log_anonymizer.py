@@ -6,15 +6,16 @@ This module implements the main module for the event log anonymizer
 import pandas as pd
 import numpy as np
 
-#
-data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
-dataset="temp"
-# dataset="CCC19"
-
 from amun.input_module import xes_to_DAFSA
 from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe
 from amun.trace_anonymization import  anonymize_traces
 from statsmodels.distributions.empirical_distribution import ECDF
+#
+data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
+dataset="temp"
+# dataset="CCC19"
+# dataset="Sepsis"
+# dataset="CreditReq"
 
 
 

@@ -105,7 +105,7 @@ def xes_to_DAFSA(data_dir,dataset):
 
     log = conversion_factory.apply(data)
 
-    data['case:concept:name'] = data['case:concept:name'].astype(int)
+    # data['case:concept:name'] = data['case:concept:name'].astype(int)
     ### Calculate relative time
     data=get_relative_time(data,dataset)
     ### Calculate DAFSA
