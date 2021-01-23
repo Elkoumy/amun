@@ -13,7 +13,7 @@ dataset="temp"
 
 from amun.input_module import xes_to_DAFSA
 from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe
-from amun.trace_anonymization import  build_DAFSA_bit_vector
+from amun.trace_anonymization import  anonymize_traces
 from statsmodels.distributions.empirical_distribution import ECDF
 
 
@@ -24,7 +24,9 @@ delta=0.2
 precision =0.00000000001
 #TODO: calculate noise here
 noise=3
-temp=build_DAFSA_bit_vector(data)
+
+
+data=anonymize_traces(data,noise)
 data_cdf = data.groupby('state').relative_time.apply(calculate_cdf_dataframe)
 data_cdf['state']=data_cdf.index
 
