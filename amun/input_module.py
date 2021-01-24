@@ -110,10 +110,10 @@ def xes_to_DAFSA(data_dir,dataset):
     data=get_relative_time(data,dataset)
     ### Calculate DAFSA
 
-    dafsa_log=get_DAFSA(log) # we pass the data as it is filtered from the lifecycle
+    # dafsa_log=get_DAFSA(log) # we pass the data as it is filtered from the lifecycle
 
     ### Anotate Event Log with DAFSA states
-    data=annotate_eventlog_with_states(data,dafsa_log)
+    data=annotate_eventlog_with_states(data,log)
 
     data,trace_variants=annotate_eventlog_with_trace_variants(data, log)
     # if aggregate_type==AggregateType.FREQ:
@@ -121,10 +121,10 @@ def xes_to_DAFSA(data_dir,dataset):
     # else:
     #     dfg = get_dfg_time(data, aggregate_type, dataset)
 
-    dafsa_edges,edges_df=get_edges(dafsa_log)
+    # dafsa_edges,edges_df=get_edges(dafsa_log)
+    # return data,dafsa_log,dafsa_edges, edges_df, trace_variants
 
-
-    return data,dafsa_log,dafsa_edges, edges_df, trace_variants
+    return data, trace_variants
 
 def annotate_eventlog_with_trace_variants(data, log):
 
@@ -257,7 +257,8 @@ def get_DAFSA(log):
 
     return dafsa_log
 
-def annotate_eventlog_with_states(data,dafsa_log):
+def annotate_eventlog_with_states(data,log):
+    dafsa_log = get_DAFSA(log)
     states = [] # holds the end state of the dafsa edge
     prev_states=[] #holds the start state of the dafsa edge
     prev_state = 0

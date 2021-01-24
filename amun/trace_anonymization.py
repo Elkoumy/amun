@@ -11,7 +11,7 @@ def build_DAFSA_bit_vector(data):
     #getting unique dafsa edges and trace variant
     # data=data.groupby(['prev_state', 'concept:name','state','trace_variant']).size().reset_index().rename(columns={0: 'count'})
     # data.drop('count',axis=1, inplace=True)
-    bit_vector_df= pd.pivot_table(data=data, values= 'case:concept:name',  index=['prev_state', 'concept:name','state'],columns=['trace_variant'], aggfunc=np.sum, fill_value=0).reset_index()
+    bit_vector_df= pd.pivot_table(data=data, values= 'case:concept:name',  index=['prev_state', 'concept:name','state'],columns=['trace_variant'], aggfunc='count', fill_value=0).reset_index()
     bit_vector_df['added_noise']= [0]* bit_vector_df.shape[0]
 
     return bit_vector_df
@@ -43,6 +43,7 @@ def pick_random_edge_trace(bit_vector_df,noise):
     traces=picked_edge.drop(['prev_state','concept:name','state','added_noise'],axis=1)
     traces=traces.T.reset_index() #transpose the traces
     traces.columns=['trace_variant','trace_count']
+    traces.trace_count=traces.trace_count.astype(int)
     trace_sampling_weights=traces.trace_count/traces.trace_count.sum()
     picked_trace= traces.sample(weights=trace_sampling_weights)
     picked_trace=picked_trace.trace_variant.iloc[0]

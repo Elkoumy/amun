@@ -12,14 +12,14 @@ from amun.trace_anonymization import  anonymize_traces
 from statsmodels.distributions.empirical_distribution import ECDF
 #
 data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
-dataset="temp"
-# dataset="CCC19"
+# dataset="temp"
+dataset="CCC19"
 # dataset="Sepsis"
 # dataset="CreditReq"
 
 
 
-data, dafsa, dafsa_edges, dafsa_edges_df, trace_variants= xes_to_DAFSA(data_dir, dataset)
+data, trace_variants= xes_to_DAFSA(data_dir, dataset)
 
 delta=0.2
 precision =0.00000000001
