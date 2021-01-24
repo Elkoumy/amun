@@ -32,7 +32,7 @@ def read_xes(data_dir,dataset,aggregate_type,mode="pruning"):
     prune_parameter_freq=350
     prune_parameter_time=-1 #keep all
     #read the xes file
-    if dataset in "BPIC14":
+    if dataset == "BPIC14":
         # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
         data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
         data['case:concept:name']=data['Incident ID']
@@ -45,6 +45,7 @@ def read_xes(data_dir,dataset,aggregate_type,mode="pruning"):
         data['time:timestamp'] = data['Starttijd']
         data['concept:name'] = data['Aciviteit']
         log = conversion_factory.apply(data)
+
     else:
         log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
         data = get_dataframe_from_event_stream(log)
@@ -79,7 +80,7 @@ def xes_to_DAFSA(data_dir,dataset):
         * Event log as a dataframe annotated with states and contains the relative time.
     """
     #read the xes file
-    if dataset in "BPIC14":
+    if dataset == "BPIC14":
         # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
         data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
         data['case:concept:name']=data['Incident ID']
@@ -92,6 +93,9 @@ def xes_to_DAFSA(data_dir,dataset):
         data['time:timestamp'] = data['Starttijd']
         data['concept:name'] = data['Aciviteit']
         log = conversion_factory.apply(data)
+        result = get_variant_statistics(log)
+        data = get_dataframe_from_event_stream(log) # because pm4py drops one trace for a value in an event column
+
     elif dataset=="temp":
         data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
         log = conversion_factory.apply(data)
@@ -272,10 +276,10 @@ def annotate_eventlog_with_states(data,log):
         else:
             prev_state = curr_state
         temp=dafsa_log.nodes[prev_state]
-        # str='Acceptance of requests'
-        # str1=row['concept:name']
-        # t=str==str1
+
+
         curr_state = dafsa_log.nodes[prev_state].edges[row['concept:name']].node.node_id
+
         states.append(curr_state)
         prev_states.append(dafsa_log.nodes[prev_state].node_id)
 

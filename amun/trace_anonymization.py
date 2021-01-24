@@ -43,7 +43,7 @@ def pick_random_edge_trace(bit_vector_df,noise):
     traces=picked_edge.drop(['prev_state','concept:name','state','added_noise'],axis=1)
     traces=traces.T.reset_index() #transpose the traces
     traces.columns=['trace_variant','trace_count']
-    traces.trace_count=traces.trace_count.astype(int)
+    # traces.trace_count=traces.trace_count.astype(int)
     trace_sampling_weights=traces.trace_count/traces.trace_count.sum()
     picked_trace= traces.sample(weights=trace_sampling_weights)
     picked_trace=picked_trace.trace_variant.iloc[0]
@@ -57,6 +57,10 @@ def pick_random_edge_trace(bit_vector_df,noise):
 def execute_oversampling(data,duplicated_traces):
     #count per trace variant
     duplicated_traces=pd.Series(duplicated_traces).value_counts()
+    all_traces=pd.Series(data.trace_variant.unique())
+    non_duplicated=all_traces[~all_traces.isin(list(duplicated_traces.index))]
+    non_duplicated[:]=0
+    duplicated_traces=duplicated_traces.append(non_duplicated) #all the sampling ratios should exist
     #sampling from event log based on the count of each trace variant
     duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant']).apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
     duplicated_cases=duplicated_cases.drop(['trace_variant'],axis=1)
@@ -106,8 +110,13 @@ def duplicate_cases(data, duplicated_cases):
 
 
 def anonymize_traces(data, noise):
+
     bit_vector_df= build_DAFSA_bit_vector(data)
+
+
     duplicated_traces=[] # to keep track of the duplicated trace ids
+
+
 
     #  check if there is an edge that needs anonymization
     cnt=bit_vector_df.where(bit_vector_df.added_noise<noise).added_noise.count()
@@ -119,13 +128,8 @@ def anonymize_traces(data, noise):
 
         cnt=bit_vector_df.where(bit_vector_df.added_noise<noise).added_noise.count()
 
-
-
-
-
-
     # execute the oversampling
-    data=execute_oversampling(data,duplicated_traces)
 
+    data=execute_oversampling(data,duplicated_traces)
 
     return data
