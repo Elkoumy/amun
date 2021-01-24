@@ -59,22 +59,50 @@ def execute_oversampling(data,duplicated_traces):
     #sampling from event log based on the count of each trace variant
     duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant']).apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
     duplicated_cases=duplicated_cases.drop(['trace_variant'],axis=1)
-    duplicated_cases=duplicated_cases.rename(columns={'case:concept:name':'duplicated_case_ids'})
-    duplicated_cases = duplicated_cases.merge(data, how='left', left_on='duplicated_case_ids', right_on='case:concept:name').drop('duplicated_case_ids',axis=1)
+
+    #  fix the problem when same case duplicated
+    # take out the duplicated case id
+    cases_more_than_once = duplicated_cases.groupby(['case:concept:name'])['case:concept:name'].count()
+
+    # all the cases only once
+    duplicated_cases=duplicated_cases['case:concept:name'].unique()
+    duplicated_cases=pd.DataFrame(duplicated_cases,columns=['case:concept:name'])
+    data = duplicate_cases(data, duplicated_cases)
+
+    cases_more_than_once = cases_more_than_once-1 # already duplicated once
+    cases_more_than_once=cases_more_than_once[cases_more_than_once>0]
+
+    # loop for the duplicated case ids and every time add only one duplication
+    while len(cases_more_than_once>0):
+        duplicated_cases=cases_more_than_once.to_frame()
+        duplicated_cases.columns = ['cnt']
+        duplicated_cases=duplicated_cases.reset_index()
+        duplicated_cases.drop(['cnt'],axis=1, inplace=True)
+        data = duplicate_cases(data, duplicated_cases)
+
+        cases_more_than_once = cases_more_than_once-1  #  duplicated once
+        cases_more_than_once = cases_more_than_once[cases_more_than_once > 0]
 
 
+    return data
+
+
+def duplicate_cases(data, duplicated_cases):
+    #this function duplicate the cases only once and append them to the event log
+
+    duplicated_cases = duplicated_cases.rename(columns={'case:concept:name': 'duplicated_case_ids'})
+    duplicated_cases = duplicated_cases.merge(data, how='left', left_on='duplicated_case_ids',
+                                              right_on='case:concept:name').drop('duplicated_case_ids', axis=1)
     #  replace the case id in the sample
-    case_ids= duplicated_cases['case:concept:name'].unique()
-    randomlist = r.sample(range(len(case_ids), len(case_ids)*2), len(case_ids))
-    mapping=pd.Series(randomlist,index=case_ids).to_dict()
+    case_ids = duplicated_cases['case:concept:name'].unique()
+    randomlist = r.sample(range(data.shape[0]+1, data.shape[0]+1+len(case_ids) * 2), len(case_ids))
+    mapping = pd.Series(randomlist, index=case_ids).to_dict()
     duplicated_cases['case:concept:name'].replace(mapping, inplace=True)
-    #TODO fix the problem when same case duplicated
-    #you can use the duplicated case id to filter them and treat them separately
-
-
+    # you can use the duplicated case id to filter them and treat them separately
     # append data + duplicated_cases
     data = data.append(duplicated_cases, ignore_index=True)
     return data
+
 
 def anonymize_traces(data, noise):
     bit_vector_df= build_DAFSA_bit_vector(data)
