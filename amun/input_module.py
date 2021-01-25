@@ -5,6 +5,7 @@ This module implements the functionality of reading the input from the user. The
 """
 import pandas as pd
 import numpy as np
+from amun.trie import PrefixTree
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
 from pm4py.statistics.traces.log.case_statistics import get_variant_statistics
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
@@ -119,6 +120,7 @@ def xes_to_DAFSA(data_dir,dataset):
     ### Anotate Event Log with DAFSA states
     data=annotate_eventlog_with_states(data,log)
 
+
     data,trace_variants=annotate_eventlog_with_trace_variants(data, log)
     # if aggregate_type==AggregateType.FREQ:
     #     dfg=dfg_factory.apply(log,variant="frequency")
@@ -129,6 +131,65 @@ def xes_to_DAFSA(data_dir,dataset):
     # return data,dafsa_log,dafsa_edges, edges_df, trace_variants
 
     return data, trace_variants
+
+
+def xes_to_prefix_tree(data_dir, dataset):
+    """
+     This function takes the XES file and returns:
+        * DAFSA automata.
+        * Event log as a dataframe annotated with states and contains the relative time.
+    """
+    # read the xes file
+    if dataset == "BPIC14":
+        # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
+        data['case:concept:name'] = data['Incident ID']
+        data['time:timestamp'] = data['DateStamp']
+        data['concept:name'] = data['IncidentActivity_Type']
+        log = conversion_factory.apply(data)
+    elif dataset == "Unrineweginfectie":
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+        data['case:concept:name'] = data['Patientnummer']
+        data['time:timestamp'] = data['Starttijd']
+        data['concept:name'] = data['Aciviteit']
+        log = conversion_factory.apply(data)
+        result = get_variant_statistics(log)
+        data = get_dataframe_from_event_stream(log)  # because pm4py drops one trace for a value in an event column
+
+    elif dataset == "temp":
+        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+        log = conversion_factory.apply(data)
+    else:
+        log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
+        data = get_dataframe_from_event_stream(log)
+
+    if dataset not in ["BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"]:
+        data = data.where((data["lifecycle:transition"].str.upper() == "COMPLETE"))
+        data = data.dropna(subset=['lifecycle:transition'])
+
+    log = conversion_factory.apply(data)
+
+    # data['case:concept:name'] = data['case:concept:name'].astype(int)
+    ### Calculate relative time
+    data = get_relative_time(data, dataset)
+    ### Calculate DAFSA
+
+    # dafsa_log=get_DAFSA(log) # we pass the data as it is filtered from the lifecycle
+
+    ### Anotate Event Log with DAFSA states
+    data = annotate_eventlog_with_prefix_tree(data, log)
+
+    data, trace_variants = annotate_eventlog_with_trace_variants(data, log)
+    # if aggregate_type==AggregateType.FREQ:
+    #     dfg=dfg_factory.apply(log,variant="frequency")
+    # else:
+    #     dfg = get_dfg_time(data, aggregate_type, dataset)
+
+    # dafsa_edges,edges_df=get_edges(dafsa_log)
+    # return data,dafsa_log,dafsa_edges, edges_df, trace_variants
+
+    return data, trace_variants
+
 
 def annotate_eventlog_with_trace_variants(data, log):
 
@@ -343,6 +404,50 @@ def get_dfg_time(data,aggregate_type,dataset):
 
     return dfg_time
 
+def get_prefix_tree(log):
+    # takes the trace variant from log and builds the tree
+    result = get_variant_statistics(log)
+    traces = []
+    for trace in result:
+        current = trace['variant'].split(',')  # separated by commas ','
+        # current=current.replace(',',';')
+        traces.append(current)
+
+    trie= PrefixTree()
+    trie.insert_list(traces)
+
+    return trie
+
+def annotate_eventlog_with_prefix_tree(data,log):
+    prefix_tree = get_prefix_tree(log)
+    states = [] # holds the end state of the dafsa edge
+    prev_states=[] #holds the start state of the dafsa edge
+    prev_node = prefix_tree.root
+    curr_trace = -1
+    curr_node=-1
+    for idx, row in data.iterrows():
+        if curr_trace != row['case:concept:name']:
+            prev_node = prefix_tree.root
+            curr_trace = row['case:concept:name']
+
+        else:
+            prev_node = curr_node
+
+        # temp=prefix_tree.nodes[prev_state]
+
+        # traverse the tree here
+        curr_node=prev_node.children[row['concept:name']]
+        # curr_state = prefix_tree.nodes[prev_state].edges[row['concept:name']].node.node_id
+
+        states.append(curr_node.index)
+        prev_states.append(prev_node.index)
+
+    data['state'] = states
+    data['prev_state']=prev_states
+    data.state = data.state.astype(int)
+    data.prev_state = data.prev_state.astype(int)
+
+    return data
 
 
 def converting_time_unit(dfg_time, aggregate_type):
