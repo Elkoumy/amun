@@ -1,3 +1,8 @@
+"""
+Initial class copied from
+https://github.com/AleksandrHovhannisyan/Python-Trie-Implementation
+"""
+
 from typing import Dict
 
 class TrieNode:

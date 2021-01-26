@@ -7,6 +7,9 @@ import time
 from enum import Enum
 from statsmodels.distributions.empirical_distribution import ECDF
 import multiprocessing as mp
+import swifter
+import numpy as np
+import pandas as pd
 from itertools import repeat
 # import amun.multiprocessing_helper_functions
 # import concurrent.futures
@@ -400,9 +403,127 @@ def epsilon_freq_from_distance(dfg_freq_inner, beta, distance_percentage, sens_f
     return delta_freq, epsilon_dfg_inner
 
 
+def calculate_cdf_vectorized(data):
+    cdf, val=data.relative_time_ecdf,data.val_plus
+    cur_idx = 0
+    for idx, i in enumerate(cdf.x[:-1]):
+        if val > i:
+            cur_idx += 1
+
+            if val < cdf.x[idx + 1]:
+                cur_idx -= 1
+                break
+    return cdf.y[cur_idx]
+def estimate_epsilon_risk_vectorized(data, delta, precision):
+    # NOTE: in the current version, there are no fixed time values.
+    # Becuase the starting time now is being anonymized.
+
+    data_state_max = data.groupby('state').relative_time.max()
+    data_state_max['state'] = data_state_max.index
+
+    # data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
+
+    data = pd.merge(data, data_state_max, on=['state'], suffixes=("", "_max"))
+    #calculate cdfs in vectorized manner
+    data['r_ij']=data['relative_time_max']*precision
+    data['val_plus']=data['relative_time'] + data['r_ij']
+    data['val_minus'] = data['relative_time'] - data['r_ij']
+
+    # data['cdf_plus']=np.vectorize(calculate_cdf)(data.relative_time_ecdf,data.val_plus)
+    # data['cdf_minus'] = np.vectorize(calculate_cdf)(data.relative_time_ecdf, data.val_minus)
+
+    #TODO: optimize  calculate cdf function
+
+    # data['cdf_plus'] = data[['relative_time_ecdf','val_plus']].swifter.apply(lambda x: calculate_cdf(x.relative_time_ecdf,x.val_plus),axis=1)
+    # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(
+    #     lambda x: calculate_cdf(x.relative_time_ecdf, x.val_minus), axis=1)
+
+    #state, relative_time
+    stats_df = data.groupby(['state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
+        columns={'relative_time': 'frequency'})
+    # PDF
+    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['state']).frequency.sum()
+    # CDF
+    stats_df['cdf'] = stats_df['pdf'].groupby(['state']).cumsum()
+    stats_df = stats_df.reset_index()
+
+    #the plus_and_minus works like a value lookup
+    plus_and_minus=data.groupby(['state', 'relative_time','val_plus','val_minus']).state.agg('count').pipe(pd.DataFrame)\
+        .drop('state',axis=1)\
+        .reset_index()
+
+
+    #calculating CDF of the value + r_ij
+    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='cross',
+                                                    suffixes=("", "_right"))
+    temp = temp.loc[
+        (temp.state == temp.state_right) & (temp.val_plus >= temp.relative_time), ['state','relative_time', 'val_plus', 'cdf']]\
+        .groupby(['state', 'val_plus']).cdf.max().reset_index()
+
+
+    cdf_lookup=temp.merge(plus_and_minus[['state','relative_time', 'val_plus']], how='inner', on='state', suffixes=("","_right"))
+    # print(cdf_lookup)
+    cdf_lookup=cdf_lookup.loc[cdf_lookup.val_plus==cdf_lookup.val_plus_right,['state','relative_time','cdf']]
+
+    cdf=cdf_lookup.rename(columns={'cdf':'cdf_plus'}) #holds the result
+    # add the values to the dataframe
+    data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+
+    #calculate the CDF of the value - r_ij
+    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='cross',
+                                                             suffixes=("", "_right"))
+    temp = temp.loc[
+        (temp.state == temp.state_right) & (temp.val_minus >= temp.relative_time), ['state', 'relative_time', 'val_minus',
+                                                                                   'cdf']] \
+        .groupby(['state', 'val_minus']).cdf.max().reset_index()
+
+
+    cdf_lookup = plus_and_minus[['state', 'relative_time', 'val_minus']].merge(temp, how='left', on='state',
+                            suffixes=("", "_right"))
+
+    cdf_lookup = cdf_lookup.loc[cdf_lookup.val_minus == cdf_lookup.val_minus_right, ['state', 'relative_time', 'cdf']]
+    cdf_lookup=cdf_lookup.rename(columns={'cdf':'cdf_minus'})
+
+    cdf = cdf_lookup.rename(columns={'cdf': 'cdf_minus'})  # holds the result
+
+    # add the values to the dataframe
+    data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+
+    # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
+    # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
+    # the minimum is zero
+    data.cdf_minus=data.cdf_minus.fillna(0)
+
+
+    # data= data.merge(cdf, how='left', on=['state','relative_time'], suffixes=("","_right"))
+    # print(cdf[['state','relative_time']])
+    # print(data.loc[data.cdf_plus.isna(), ['state','relative_time']])
+    # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(calculate_cdf_vectorized,axis=1)
+
+
+    #calculate p_k in a vectorized manner
+    data['p_k'] = data.cdf_plus - data.cdf_minus
+
+    #calculate epsilon in a vectorized manner
+
+
+    # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))/ log(exp(1.0))* (1.0 / data.relative_time_max)
+
+    data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))
+    data['eps']=data['eps']/ log(exp(1.0))
+    data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
+
+    #drop unused columns
+    data.drop(['p_k','cdf_plus','cdf_minus','val_plus','val_minus','r_ij','relative_time_max'], inplace=True, axis=1)
+    # data.drop('case:concept:name_linker',inplace=True,axis=1)
+
+    # data['eps'] = data.swifter.apply(
+    #     lambda x: estimate_epsilon_risk_dataframe(x['relative_time'], x['relative_time_ecdf'], x['relative_time_max'],
+    #                                               delta, precision), axis=1)
+
+    return data
+
 def estimate_epsilon_risk_dataframe(val,cdf,R_ij,delta,precision):
-
-
 
     if cdf == 0:
         # case of a single item
@@ -424,6 +545,28 @@ def estimate_epsilon_risk_dataframe(val,cdf,R_ij,delta,precision):
 
     return eps
 
+def estimate_epsilon_risk_dataframe2(x):
+
+    val, cdf, R_ij, delta, precision=x['relative_time'],x['relative_time_ecdf'],x['relative_time_max'], 0.2, 0.00000000001
+    if cdf == 0:
+        # case of a single item
+        sens = 1.0
+        p = (1.0 - delta) / 2.0
+        R_ij = 1.0  # from the discussion with Alisa
+        eps = - log(p / (1.0 - p) * (1.0 / (delta + p) - 1)) / log(exp(1.0)) * (1.0 / R_ij)
+
+    else:
+        if R_ij!=0:
+            r_ij = R_ij * precision
+            p_k = calculate_cdf(cdf, val + r_ij) - calculate_cdf(cdf, val - r_ij)
+            if p_k + delta <1:
+                eps = - log(p_k / (1.0 - p_k) * (1.0 / (delta + p_k) - 1.0)) / log(exp(1.0)) * (1.0 / R_ij)
+            else:
+                eps= inf
+        else:
+            eps=-inf
+
+    return eps
 
 def calculate_cdf_dataframe(val):
     if val.size>1:
