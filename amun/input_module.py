@@ -4,6 +4,7 @@ This module implements the functionality of reading the input from the user. The
     * XES
 """
 import pandas as pd
+import time
 import numpy as np
 from amun.trie import PrefixTree
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
@@ -110,9 +111,24 @@ def xes_to_DAFSA(data_dir,dataset):
 
     log = conversion_factory.apply(data)
 
-    # data['case:concept:name'] = data['case:concept:name'].astype(int)
+
+
     ### Calculate relative time
-    data=get_relative_time(data,dataset)
+    start = time.time()
+    data = get_relative_time(data, dataset)
+    end = time.time()
+    print("get relative time %s" % (end - start))
+
+    """
+         The focus of the following analysis is for the three columns:
+         * case:concept:name
+         * time:timestamp
+         * concept:name
+
+         We keep only the above three column in order to reduce the memory usage
+        """
+    data = data[['case:concept:name', 'concept:name', 'time:timestamp','relative_time']]
+
     ### Calculate DAFSA
 
     # dafsa_log=get_DAFSA(log) # we pass the data as it is filtered from the lifecycle
@@ -120,8 +136,11 @@ def xes_to_DAFSA(data_dir,dataset):
     ### Anotate Event Log with DAFSA states
     data=annotate_eventlog_with_states(data,log)
 
-
+    start = time.time()
     data,trace_variants=annotate_eventlog_with_trace_variants(data, log)
+    end = time.time()
+    print("annotate_eventlog_with_trace_variants %s" % (end - start))
+
     # if aggregate_type==AggregateType.FREQ:
     #     dfg=dfg_factory.apply(log,variant="frequency")
     # else:
@@ -308,11 +327,16 @@ def get_relative_time(data, dataset):
 
     return data
 
-def get_DAFSA(log):
+def get_DAFSA(log,activity_dict):
     result = get_variant_statistics(log)
     traces = []
     for trace in result:
         current = trace['variant']  # separated by commas ','
+        current=current.split(',') #list of activities
+        current=[str(activity_dict[i]) for i in current]
+        current=','.join(current)
+        #replace activities with numbers
+
         # current=current.replace(',',';')
         traces.append(current)
 
@@ -323,7 +347,19 @@ def get_DAFSA(log):
     return dafsa_log
 
 def annotate_eventlog_with_states(data,log):
-    dafsa_log = get_DAFSA(log)
+
+    # Replacing activity names with numbers
+    activity_names = data['concept:name'].unique()
+    nums= [str(i) for i in list(range(len(activity_names)))]
+    activity_dict = dict(zip(activity_names, nums ))
+    data['concept:name'] = data['concept:name'].replace(activity_dict)
+
+    start = time.time()
+    dafsa_log = get_DAFSA(log,activity_dict)
+    end = time.time()
+    print("building dafsa %s" % (end - start))
+
+    start = time.time()
     states = [] # holds the end state of the dafsa edge
     prev_states=[] #holds the start state of the dafsa edge
     prev_state = 0
@@ -348,7 +384,12 @@ def annotate_eventlog_with_states(data,log):
     data['prev_state']=prev_states
     data.state = data.state.astype(int)
     data.prev_state = data.prev_state.astype(int)
+    end = time.time()
+    print("sequential dafsa annotation %s" % (end - start))
 
+    #remaping the original activity names
+    activity_dict = dict(zip(activity_dict.values(), activity_dict.keys() ))
+    data['concept:name'] = data['concept:name'].replace(activity_dict)
     return data
 
 def get_dfg_time(data,aggregate_type,dataset):

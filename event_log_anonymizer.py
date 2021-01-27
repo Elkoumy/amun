@@ -15,12 +15,15 @@ import swifter
 from statsmodels.distributions.empirical_distribution import ECDF
 #
 data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
-# dataset="temp"
+dataset="temp"
 # dataset="CCC19"
-# dataset="Sepsis"
-dataset="CreditReq"
-# dataset="BPIC14"
+dataset="Sepsis"
+# dataset="CreditReq"
+# dataset="BPIC12"
+# dataset="BPIC19"
 # dataset="Unrineweginfectie"
+# dataset="Hospital"
+# dataset="Traffic"
 
 print("Running .....")
 start = time.time()
@@ -43,7 +46,7 @@ print("epsilon estimation %s" %(end - start))
 
 
 start = time.time()
-data=anonymize_traces(data,noise)
+# data=anonymize_traces(data,noise)
 end = time.time()
 print("anonymize traces %s" %(end - start))
 

@@ -428,12 +428,15 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     data['r_ij']=data['relative_time_max']*precision
     data['val_plus']=data['relative_time'] + data['r_ij']
     data['val_minus'] = data['relative_time'] - data['r_ij']
-
+    data.drop(['r_ij'], inplace=True, axis=1)
     # data['cdf_plus']=np.vectorize(calculate_cdf)(data.relative_time_ecdf,data.val_plus)
     # data['cdf_minus'] = np.vectorize(calculate_cdf)(data.relative_time_ecdf, data.val_minus)
 
-    #TODO: optimize  calculate cdf function
-
+    #optimize  calculate cdf function
+    """
+    CDF calculation using pandas 
+    https://stackoverflow.com/questions/25577352/plotting-cdf-of-a-pandas-series-in-python
+    """
     # data['cdf_plus'] = data[['relative_time_ecdf','val_plus']].swifter.apply(lambda x: calculate_cdf(x.relative_time_ecdf,x.val_plus),axis=1)
     # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(
     #     lambda x: calculate_cdf(x.relative_time_ecdf, x.val_minus), axis=1)
@@ -446,6 +449,8 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     # CDF
     stats_df['cdf'] = stats_df['pdf'].groupby(['state']).cumsum()
     stats_df = stats_df.reset_index()
+    stats_df.drop(['pdf'], inplace=True, axis=1)
+
 
     #the plus_and_minus works like a value lookup
     plus_and_minus=data.groupby(['state', 'relative_time','val_plus','val_minus']).state.agg('count').pipe(pd.DataFrame)\
@@ -454,12 +459,17 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
 
 
     #calculating CDF of the value + r_ij
-    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='cross',
-                                                    suffixes=("", "_right"))
-    temp = temp.loc[
-        (temp.state == temp.state_right) & (temp.val_plus >= temp.relative_time), ['state','relative_time', 'val_plus', 'cdf']]\
-        .groupby(['state', 'val_plus']).cdf.max().reset_index()
+    # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='cross',
+    #                                                 suffixes=("", "_right"))
+    # temp = temp.loc[
+    #     (temp.state == temp.state_right) & (temp.val_plus >= temp.relative_time), ['state','relative_time', 'val_plus', 'cdf']]\
+    #     .groupby(['state', 'val_plus']).cdf.max().reset_index()
 
+    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
+                                                             suffixes=("", "_right"))
+    temp = temp.loc[(temp.val_plus >= temp.relative_time), ['state', 'relative_time', 'val_plus',
+                                                                                   'cdf']] \
+        .groupby(['state', 'val_plus']).cdf.max().reset_index()
 
     cdf_lookup=temp.merge(plus_and_minus[['state','relative_time', 'val_plus']], how='inner', on='state', suffixes=("","_right"))
     # print(cdf_lookup)
@@ -468,15 +478,22 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     cdf=cdf_lookup.rename(columns={'cdf':'cdf_plus'}) #holds the result
     # add the values to the dataframe
     data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    data.drop(['val_plus'], inplace=True, axis=1)
 
     #calculate the CDF of the value - r_ij
-    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='cross',
-                                                             suffixes=("", "_right"))
-    temp = temp.loc[
-        (temp.state == temp.state_right) & (temp.val_minus >= temp.relative_time), ['state', 'relative_time', 'val_minus',
-                                                                                   'cdf']] \
-        .groupby(['state', 'val_minus']).cdf.max().reset_index()
+    # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='cross',
+    #                                                          suffixes=("", "_right"))
+    # temp = temp.loc[
+    #     (temp.state == temp.state_right) & (temp.val_minus >= temp.relative_time), ['state', 'relative_time', 'val_minus',
+    #                                                                                'cdf']] \
+    #     .groupby(['state', 'val_minus']).cdf.max().reset_index()
 
+    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
+                                                             suffixes=("", "_right"))
+    temp = temp.loc[(temp.val_minus >= temp.relative_time), ['state', 'relative_time',
+                                                                                    'val_minus',
+                                                                                    'cdf']] \
+        .groupby(['state', 'val_minus']).cdf.max().reset_index()
 
     cdf_lookup = plus_and_minus[['state', 'relative_time', 'val_minus']].merge(temp, how='left', on='state',
                             suffixes=("", "_right"))
@@ -514,7 +531,7 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
 
     #drop unused columns
-    data.drop(['p_k','cdf_plus','cdf_minus','val_plus','val_minus','r_ij','relative_time_max'], inplace=True, axis=1)
+    data.drop(['p_k','cdf_plus','cdf_minus','val_minus','relative_time_max'], inplace=True, axis=1)
     # data.drop('case:concept:name_linker',inplace=True,axis=1)
 
     # data['eps'] = data.swifter.apply(

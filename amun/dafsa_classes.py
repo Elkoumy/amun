@@ -16,8 +16,8 @@ import itertools
 import networkx as nx
 
 # Import other modules from the library
-import amun.dafsa_output as output
-import amun.dafsa_utils as utils
+from amun import dafsa_output as output
+from amun import dafsa_utils as utils
 
 # comment on internal node_id, meaningless
 class DAFSANode:
@@ -54,11 +54,6 @@ class DAFSANode:
         self.edges = {}
         self.final = False
         self.weight = 0
-        #keep trake of input edges
-        self.input_edges={}
-
-        #marking the start node
-        self.start=False
 
         # Set values node_id value
         self.node_id = node_id
@@ -285,7 +280,7 @@ class DAFSAEdge(dict):
         Edge weight as collected from training data. Defaults to 0.
     """
 
-    def __init__(self, node, parent, weight=0):
+    def __init__(self, node, weight=0):
         """
         Initializes a DAFSA edge.
         """
@@ -300,12 +295,6 @@ class DAFSAEdge(dict):
             )
         self.node = node
         self.weight = weight
-        self.parent=parent #adding the parent node to make it easier to traverse backward to the start.
-        self.target_noise=-1
-        self.added_noise=-1
-        self.state_id=-1
-        self.activity_name=""
-        self.lookup_idx=0 #to hold the index in the lookup table
 
     def __str__(self):
         """
@@ -408,8 +397,7 @@ class DAFSA:
         # Store arguments either internally in the object for reuse (such
         # as `"delimiter"`) or in an in-method variable (such as
         # `"minimize"`)
-        self._delimiter = kwargs.get("delimiter", " ")
-        # self._delimiter = kwargs.get("delimiter")
+        self._delimiter = kwargs.get("delimiter", "")
         minimize = kwargs.get("minimize", True)
 
         # Initializes an internal counter iterator, which is used to
@@ -440,13 +428,14 @@ class DAFSA:
         self._num_sequences = None
 
         """Splitting the sequences by the delimter"""
-        if self._delimiter!="":
-            seqs=[]
+        if self._delimiter != "":
+            seqs = []
             for seq in sequences:
-                seq= seq.split(self._delimiter)
+                seq = seq.split(self._delimiter)
                 seqs.append(seq)
             """ ********** """
-            sequences=seqs
+            sequences = seqs
+
         # Initiate sequence insertion: 1. takes a sorted set of the
         # sequences and store its length
         sequences = sorted(sequences)
@@ -454,6 +443,7 @@ class DAFSA:
 
         # Make sure the words are sorted, adding a dummy empty `previous`
         # sequence for the pairwise loop
+
         for previous_seq, seq in utils.pairwise([""] + sequences):
             self._insert_single_seq(seq, previous_seq, minimize)
 
@@ -479,9 +469,6 @@ class DAFSA:
         self.lookup_nodes = copy.deepcopy(self.nodes)
         if kwargs.get("condense", False):
             self.condense()
-
-        #marking the fist node as the start node
-        self.nodes[0].start=True
 
     def _insert_single_seq(self, seq, previous_seq, minimize):
         """
@@ -523,14 +510,7 @@ class DAFSA:
             # list of unchecked nodes (there might be duplicates in the
             # future) and proceed until the end of the sequence
             child = DAFSANode(next(self._iditer))
-            node.edges[token] = DAFSAEdge(child, node) #node is the input node.
-
-            #adding a reference to the input edge to enable backward traversal
-            if token not in child.input_edges.keys():
-                child.input_edges[token]=DAFSAEdge(child, node)
-            else:
-                child.input_edges[token+str(len(child.input_edges))] = DAFSAEdge(child, node)
-
+            node.edges[token] = DAFSAEdge(child)
             self._unchecked_nodes.append(
                 {"parent": node, "token": token, "child": child}
             )
@@ -609,12 +589,6 @@ class DAFSA:
                         if parent.edges[token].node.final:
                             self.nodes[child_idx].final = True
                         parent.edges[token].node = self.nodes[child_idx]
-
-                        """Linke the parent to the child as an input edge"""
-                        if token not in self.nodes[child_idx].input_edges.keys():
-                            self.nodes[child_idx].input_edges[token]=parent.edges[token]
-                        else:
-                            self.nodes[child_idx].input_edges[token+str(len(self.nodes[child_idx].input_edges.keys()))] = parent.edges[token]
 
                         # Mark the graph as changed, so we restart the loop
                         graph_changed = True
@@ -724,20 +698,9 @@ class DAFSA:
                 .edges[transition["label_to"]]
                 .node,
                 self.nodes[transition["edge"]["target"]]
-                .edges[transition["label_to"]],
-                self.nodes[transition["edge"]["source"]] # parent node to the edge
+                .edges[transition["label_to"]]
                 .weight,
             )
-
-            """
-                updating the input edge for the child node
-            """
-            self.nodes[transition["edge"]["target"]] .edges[transition["label_to"]].node.input_edges[new_label]=\
-                self.nodes[transition["edge"]["source"]].edges[
-                new_label
-            ]
-
-
             self.nodes[transition["edge"]["source"]].edges.pop(
                 transition["label_from"]
             )
@@ -986,7 +949,7 @@ class DAFSA:
 
         return graph
 
-    def write_figure(self, output_file,working_dir="", dpi=300, **kwargs):
+    def write_figure(self, output_file, dpi=300, **kwargs):
         """
         Generate a figure visualization through a ``graphviz`` call.
 
@@ -1014,7 +977,7 @@ class DAFSA:
         dot_source = dot_source.encode("utf-8")
 
         # Write with `subprocess`
-        output.graphviz_output(dot_source, output_file, dpi,working_dir)
+        output.graphviz_output(dot_source, output_file, dpi)
 
     def write_gml(self, filename):
         """
@@ -1028,5 +991,3 @@ class DAFSA:
         """
 
         nx.readwrite.gml.write_gml(self.to_graph(), filename)
-
-
