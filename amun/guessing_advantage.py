@@ -465,7 +465,10 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     #     (temp.state == temp.state_right) & (temp.val_plus >= temp.relative_time), ['state','relative_time', 'val_plus', 'cdf']]\
     #     .groupby(['state', 'val_plus']).cdf.max().reset_index()
 
-    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
+
+    stats_df=stats_df[['state', 'relative_time', 'cdf']]
+
+    temp = stats_df.merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
                                                              suffixes=("", "_right"))
     temp = temp.loc[(temp.val_plus >= temp.relative_time), ['state', 'relative_time', 'val_plus',
                                                                                    'cdf']] \
@@ -488,7 +491,7 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     #                                                                                'cdf']] \
     #     .groupby(['state', 'val_minus']).cdf.max().reset_index()
 
-    temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
+    temp = stats_df.merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
                                                              suffixes=("", "_right"))
     temp = temp.loc[(temp.val_minus >= temp.relative_time), ['state', 'relative_time',
                                                                                     'val_minus',

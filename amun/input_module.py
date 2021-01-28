@@ -18,7 +18,7 @@ from amun.guessing_advantage import AggregateType
 from math import log10
 import os
 from amun.dafsa_classes import DAFSA
-
+import swifter
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.algo.filtering.log.start_activities import start_activities_filter
 from pm4py.algo.filtering.log.end_activities import end_activities_filter
@@ -129,17 +129,21 @@ def xes_to_DAFSA(data_dir,dataset):
         """
     data = data[['case:concept:name', 'concept:name', 'time:timestamp','relative_time']]
 
+
+    start = time.time()
+    data, trace_variants = annotate_eventlog_with_trace_variants(data, log)
+    end = time.time()
+    print("annotate_eventlog_with_trace_variants %s" % (end - start))
+
     ### Calculate DAFSA
 
     # dafsa_log=get_DAFSA(log) # we pass the data as it is filtered from the lifecycle
 
     ### Anotate Event Log with DAFSA states
-    data=annotate_eventlog_with_states(data,log)
+    # data=annotate_eventlog_with_states(data,log)
+    data = annotate_eventlog_with_state_vectorized(data, data_dir, dataset, trace_variants)
 
-    start = time.time()
-    data,trace_variants=annotate_eventlog_with_trace_variants(data, log)
-    end = time.time()
-    print("annotate_eventlog_with_trace_variants %s" % (end - start))
+
 
     # if aggregate_type==AggregateType.FREQ:
     #     dfg=dfg_factory.apply(log,variant="frequency")
@@ -346,33 +350,6 @@ def get_DAFSA(log,activity_dict):
 
     return dafsa_log
 
-def get_DAFSA_Dictionary():
-    dataset = "CCC19"
-    data_dir = r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
-
-    #TODO: call the jar file and send the parameters to it
-
-    dafsa={}
-    path=os.path.join(data_dir,dataset+".xes.txt")
-    f=open(path)
-    transitions=f.read()
-
-    #transforming transitions into dictionary
-    transitions=transitions.split('\n')
-    for tran in transitions:
-
-        res= tran.split(';')
-        if len(res)<3:
-            break
-        from_state, event, to_state=res[0],res[1],res[2]
-        if from_state not in dafsa.keys():
-            dafsa[from_state]={event:to_state}
-        else:
-            dafsa[from_state][event] = to_state
-
-
-
-    return dafsa
 
 def annotate_eventlog_with_states(data,log):
 
@@ -419,6 +396,120 @@ def annotate_eventlog_with_states(data,log):
     activity_dict = dict(zip(activity_dict.values(), activity_dict.keys() ))
     data['concept:name'] = data['concept:name'].replace(activity_dict)
     return data
+
+def get_DAFSA_Dictionary(data_dir,dataset):
+    # dataset = "temp"
+    # data_dir = r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
+
+    #TODO: call the jar file and send the parameters to it
+
+    dafsa={}
+    path=os.path.join(data_dir,dataset+".xes.txt")
+    f=open(path)
+    transitions=f.read()
+    from_state, event, to_state=0,0,0
+    #transforming transitions into dictionary
+    transitions=transitions.split('\n')
+    for ix,tran in enumerate(transitions):
+
+        res= tran.split(';')
+        if len(res)<3:
+            break
+
+
+        # if dataset in ["BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"] :
+        #     from_state, event, to_state=res[0],res[1],res[2]
+        # else:
+        #     if ix == 0 and transitions[ix + 1].split(';')[1] != res[1]:
+        #         from_state, event, to_state = res[0], res[1], res[2]
+        #     elif ix>=len(transitions)-2 and transitions[ix - 1].split(';')[1] != res[1]:
+        #         from_state, event, to_state = res[0], res[1], res[2]
+        #     elif transitions[ix-1].split(';')[1]== res[1]:
+        #         continue
+        #
+        #     elif transitions[ix+1].split(';')[1]== res[1]:
+        #         from_state, event, to_state = res[0], res[1], transitions[ix+1].split(';')[2]
+        #     elif transitions[ix+1].split(';')[1]!= res[1] and transitions[ix-1].split(';')[1]!= res[1]:
+        #         from_state, event, to_state = res[0], res[1], res[2]
+
+        from_state, event, to_state = res[0], res[1], res[2]
+
+        if from_state not in dafsa.keys():
+            dafsa[from_state]={event:to_state}
+        else:
+            dafsa[from_state][event] = to_state
+
+    #TODO: handle the duplicates in the dictionary here
+    states_to_delete=[]
+    for k in list(dafsa.keys()):
+        for activity in list(dafsa[k].keys()):
+            next_state= dafsa[k][activity]
+            if next_state in list(dafsa.keys())  and activity in list(dafsa[next_state].keys()):
+                    #take the next state from the subone
+                    dafsa[k][activity]=dafsa[next_state][activity]
+                    states_to_delete.append(next_state)
+
+    # for state in states_to_delete:
+    #     del dafsa[state]
+    return dafsa
+
+def annotate_state_per_case(data,dafsa_states):
+    # dafsa_states = get_DAFSA_Dictionary()
+
+    prev_state = '0'
+    curr_state = '0'
+
+    for idx, row in data.iterrows():
+        print(idx)
+        curr_state= dafsa_states[prev_state][row['concept:name']]
+        data.loc[idx,"prev_state"]= prev_state
+        data.loc[idx,"state"]=curr_state
+
+        #for next iteration
+        prev_state=curr_state
+
+
+    return data
+
+
+def annotate_eventlog_with_state_vectorized(data,data_dir,dataset,trace_variants):
+    dafsa_states=get_DAFSA_Dictionary(data_dir,dataset)
+    # data['prev_state']=pd.Series()
+    # data['state']=pd.Series()
+    # Annotate per trace variant
+    activities=[]
+    trace_idx=[]
+    activity_index=[]
+
+    start=time.time()
+    for idx,trace in enumerate(trace_variants):
+        act= trace.split(',')
+        activities+=act
+        trace_idx+=[idx]*len(act)
+        activity_index+=list(range(0, len(act)))
+
+    trace_variants_df= pd.DataFrame({'trace_variant':trace_idx, 'concept:name':activities, 'activity_index':activity_index})
+
+    trace_variants_df = trace_variants_df.groupby(['trace_variant']).apply(annotate_state_per_case, dafsa_states=dafsa_states).reset_index()
+    trace_variants_df.drop(columns=['index'],axis=1, inplace=True)
+    end=time.time()
+    print("trace variant annotation: %s"%(end-start))
+
+    # event location per trace
+    #use cumsum
+    start=time.time()
+    activity_index_log= data.groupby('case:concept:name').cumcount()
+    data['activity_index']=activity_index_log
+    end=time.time()
+    print("cumsum of entire event log : %s"%(end-start))
+
+    # Join annotation with event log
+    start=time.time()
+    data=data.merge(trace_variants_df, how='inner', on=['trace_variant','concept:name','activity_index'])
+    end=time.time()
+    print("annotating using join : %s"%(end-start))
+    return data
+
 
 def get_dfg_time(data,aggregate_type,dataset):
     """
