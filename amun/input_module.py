@@ -346,6 +346,34 @@ def get_DAFSA(log,activity_dict):
 
     return dafsa_log
 
+def get_DAFSA_Dictionary():
+    dataset = "CCC19"
+    data_dir = r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
+
+    #TODO: call the jar file and send the parameters to it
+
+    dafsa={}
+    path=os.path.join(data_dir,dataset+".xes.txt")
+    f=open(path)
+    transitions=f.read()
+
+    #transforming transitions into dictionary
+    transitions=transitions.split('\n')
+    for tran in transitions:
+
+        res= tran.split(';')
+        if len(res)<3:
+            break
+        from_state, event, to_state=res[0],res[1],res[2]
+        if from_state not in dafsa.keys():
+            dafsa[from_state]={event:to_state}
+        else:
+            dafsa[from_state][event] = to_state
+
+
+
+    return dafsa
+
 def annotate_eventlog_with_states(data,log):
 
     # Replacing activity names with numbers
