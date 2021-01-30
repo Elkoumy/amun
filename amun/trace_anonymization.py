@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 import random as r
 import time
+import swifter
+
 def build_DAFSA_bit_vector(data):
     #calculate the bit vector dataframe from the trace and state anotated event log
 
@@ -60,19 +62,30 @@ def pick_random_edge_trace(bit_vector_df,noise):
     return bit_vector_df, picked_trace
 
 
+def sampling(row,duplicated_traces):
+
+    row=row.sample(n=duplicated_traces[row.trace_variant])
+
+    return row
 def execute_oversampling(data,duplicated_traces):
     #count per trace variant
     duplicated_traces=pd.Series(duplicated_traces).value_counts()
     all_traces=pd.Series(data.trace_variant.unique())
-    non_duplicated=all_traces[~all_traces.isin(list(duplicated_traces.index))]
-    non_duplicated[:]=0
+    non_duplicated=(set(list(data.trace_variant.unique())) - set(list(duplicated_traces.index)))
+    # non_duplicated=all_traces[~all_traces.isin(list(duplicated_traces.index))]
+    # non_duplicated[:]=0
+    non_duplicated= pd.Series([0]*len(non_duplicated),index=non_duplicated)
+
     duplicated_traces=duplicated_traces.append(non_duplicated) #all the sampling ratios should exist
 
 
 
     #sampling from event log based on the count of each trace variant
-    duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant'])
-    duplicated_cases=duplicated_cases.apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
+    duplicated_cases=data[['trace_variant','case:concept:name']].reset_index(drop=True)
+    duplicated_cases=duplicated_cases.groupby(['case:concept:name','trace_variant']).size().reset_index()
+
+    # duplicated_cases=duplicated_cases.apply(lambda x:x.sample(n=duplicated_traces[x.trace_variant]), axis=1)#.reset_index(drop=True)
+    duplicated_cases = duplicated_cases.swifter.apply(sampling,duplicated_traces=duplicated_traces, axis=1)  # .reset_index(drop=True)
     duplicated_cases=duplicated_cases.drop(['trace_variant'],axis=1)
 
     #  fix the problem when same case duplicated

@@ -44,11 +44,12 @@ precision =0.00000000001
 #TODO: calculate noise here
 noise=3
 start = time.time()
+
 #move epsilon estimation before the trace anonymization
-# data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
-# data=estimate_epsilon_risk_vectorized(data,delta, precision)
-# end = time.time()
-# print("epsilon estimation %s" %(end - start))
+data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
+data=estimate_epsilon_risk_vectorized(data,delta, precision)
+end = time.time()
+print("epsilon estimation %s" %(end - start))
 
 
 
