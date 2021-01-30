@@ -17,14 +17,15 @@ from statsmodels.distributions.empirical_distribution import ECDF
 #
 data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
 # dataset="temp"
-# dataset="CCC19"
-# dataset="Sepsis"
-# dataset="CreditReq"
-dataset="BPIC12"
+# dataset="CCC19_t"
+# dataset="Sepsis_t"
+# dataset="CreditReq_t"
+dataset="BPIC13_t"
 # dataset="BPIC19"
 # dataset="Unrineweginfectie"
 # dataset="Hospital"
-# dataset="Traffic"
+# dataset="Traffic_t"
+# dataset="Sepsis"
 #event logs without lifecycle.
 #"BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"
 
@@ -36,8 +37,7 @@ data, trace_variants= xes_to_DAFSA(data_dir, dataset)
 end = time.time()
 print("reading to DAFSA annotation %s" %(end - start))
 
-#forcing grbbage collection
-gc.collect()
+
 
 delta=0.2
 precision =0.00000000001
@@ -45,16 +45,16 @@ precision =0.00000000001
 noise=3
 start = time.time()
 #move epsilon estimation before the trace anonymization
-data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
-data=estimate_epsilon_risk_vectorized(data,delta, precision)
-end = time.time()
-print("epsilon estimation %s" %(end - start))
+# data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
+# data=estimate_epsilon_risk_vectorized(data,delta, precision)
+# end = time.time()
+# print("epsilon estimation %s" %(end - start))
 
 
 
 
 start = time.time()
-# data=anonymize_traces(data,noise)
+data=anonymize_traces(data,noise)
 end = time.time()
 print("anonymize traces %s" %(end - start))
 

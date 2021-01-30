@@ -5,6 +5,7 @@ the DAFSA automata and using differential privacy
 import pandas as pd
 import numpy as np
 import random as r
+import time
 def build_DAFSA_bit_vector(data):
     #calculate the bit vector dataframe from the trace and state anotated event log
 
@@ -32,11 +33,16 @@ def pick_random_edge_trace(bit_vector_df,noise):
     #picks a random edge, then picks a random trace variant of that edge. It adds the noise
     #to the column added noise
 
-    need_noise = bit_vector_df.where(bit_vector_df.added_noise < noise).dropna()
+
+    need_noise = bit_vector_df.loc[bit_vector_df.added_noise < noise,:].dropna()
+
+
     #performing weighted random sampling
 
     # perform reverse weight
     edge_sampling_weights=reversed_normalization(need_noise.added_noise)
+
+
     picked_edge =need_noise.sample(weights=edge_sampling_weights)
 
     # pick random trace variant
@@ -62,7 +68,8 @@ def execute_oversampling(data,duplicated_traces):
     non_duplicated[:]=0
     duplicated_traces=duplicated_traces.append(non_duplicated) #all the sampling ratios should exist
     #sampling from event log based on the count of each trace variant
-    duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant']).apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
+    duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant'])
+    duplicated_cases=duplicated_cases.apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
     duplicated_cases=duplicated_cases.drop(['trace_variant'],axis=1)
 
     #  fix the problem when same case duplicated
@@ -110,26 +117,34 @@ def duplicate_cases(data, duplicated_cases):
 
 
 def anonymize_traces(data, noise):
-
+    start=time.time()
     bit_vector_df= build_DAFSA_bit_vector(data)
-
+    end = time.time()
+    print("build bit vector: %s" % (end - start))
 
     duplicated_traces=[] # to keep track of the duplicated trace ids
 
 
-
+    start = time.time()
     #  check if there is an edge that needs anonymization
-    cnt=bit_vector_df.where(bit_vector_df.added_noise<noise).added_noise.count()
+    cnt=bit_vector_df.loc[bit_vector_df.added_noise<noise,"added_noise"].count()
 
     while cnt>0:
         #  pick a random edge and a random trace
         bit_vector_df, duplicated_trace= pick_random_edge_trace(bit_vector_df,noise)
         duplicated_traces.append(duplicated_trace)
 
-        cnt=bit_vector_df.where(bit_vector_df.added_noise<noise).added_noise.count()
+        #TODO: compare with performance of shape
+        cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].count()
+
+
+
+    end = time.time()
+    print("finding duplicated traces: %s"%(end-start))
 
     # execute the oversampling
-
+    start=time.time()
     data=execute_oversampling(data,duplicated_traces)
-
+    end=time.time()
+    print("execute oversampoling %s:"%(end-start))
     return data

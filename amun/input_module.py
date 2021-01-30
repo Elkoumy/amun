@@ -105,7 +105,7 @@ def xes_to_DAFSA(data_dir,dataset):
         log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
         data = get_dataframe_from_event_stream(log)
 
-    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"]:
+    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"] and dataset[-2:]!="_t":
         data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
         data=data.dropna(subset=['lifecycle:transition'])
 
@@ -262,7 +262,7 @@ def get_relative_time(data, dataset):
     Returns the event log with the relative time difference of every activity
     """
     # taking only the complete event to avoid ambiguoutiy
-    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"]:
+    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"] and dataset[-2:]!='_t':
         data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
         data=data.dropna(subset=['lifecycle:transition'])
 
@@ -416,22 +416,6 @@ def get_DAFSA_Dictionary(data_dir,dataset):
         if len(res)<3:
             break
 
-
-        # if dataset in ["BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"] :
-        #     from_state, event, to_state=res[0],res[1],res[2]
-        # else:
-        #     if ix == 0 and transitions[ix + 1].split(';')[1] != res[1]:
-        #         from_state, event, to_state = res[0], res[1], res[2]
-        #     elif ix>=len(transitions)-2 and transitions[ix - 1].split(';')[1] != res[1]:
-        #         from_state, event, to_state = res[0], res[1], res[2]
-        #     elif transitions[ix-1].split(';')[1]== res[1]:
-        #         continue
-        #
-        #     elif transitions[ix+1].split(';')[1]== res[1]:
-        #         from_state, event, to_state = res[0], res[1], transitions[ix+1].split(';')[2]
-        #     elif transitions[ix+1].split(';')[1]!= res[1] and transitions[ix-1].split(';')[1]!= res[1]:
-        #         from_state, event, to_state = res[0], res[1], res[2]
-
         from_state, event, to_state = res[0], res[1], res[2]
 
         if from_state not in dafsa.keys():
@@ -439,18 +423,7 @@ def get_DAFSA_Dictionary(data_dir,dataset):
         else:
             dafsa[from_state][event] = to_state
 
-    #TODO: handle the duplicates in the dictionary here
-    states_to_delete=[]
-    for k in list(dafsa.keys()):
-        for activity in list(dafsa[k].keys()):
-            next_state= dafsa[k][activity]
-            if next_state in list(dafsa.keys())  and activity in list(dafsa[next_state].keys()):
-                    #take the next state from the subone
-                    dafsa[k][activity]=dafsa[next_state][activity]
-                    states_to_delete.append(next_state)
 
-    # for state in states_to_delete:
-    #     del dafsa[state]
     return dafsa
 
 def annotate_state_per_case(data,dafsa_states):
@@ -460,7 +433,7 @@ def annotate_state_per_case(data,dafsa_states):
     curr_state = '0'
 
     for idx, row in data.iterrows():
-        print(idx)
+        # print(idx)
         curr_state= dafsa_states[prev_state][row['concept:name']]
         data.loc[idx,"prev_state"]= prev_state
         data.loc[idx,"state"]=curr_state
