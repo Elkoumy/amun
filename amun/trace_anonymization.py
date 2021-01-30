@@ -67,6 +67,9 @@ def execute_oversampling(data,duplicated_traces):
     non_duplicated=all_traces[~all_traces.isin(list(duplicated_traces.index))]
     non_duplicated[:]=0
     duplicated_traces=duplicated_traces.append(non_duplicated) #all the sampling ratios should exist
+
+
+
     #sampling from event log based on the count of each trace variant
     duplicated_cases=data[['trace_variant','case:concept:name']].groupby(['trace_variant'])
     duplicated_cases=duplicated_cases.apply(lambda x:x.sample(n=duplicated_traces[x.name])).reset_index(drop=True)
