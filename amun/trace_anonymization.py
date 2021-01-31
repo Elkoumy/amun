@@ -166,15 +166,15 @@ def duplicate_cases(data, duplicated_cases):
 
 
 def anonymize_traces(data, noise):
-    start=time.time()
+    # start=time.time()
     bit_vector_df= build_DAFSA_bit_vector(data)
-    end = time.time()
-    print("build bit vector: %s" % (end - start))
+    # end = time.time()
+    # print("build bit vector: %s" % (end - start))
 
     duplicated_traces=[] # to keep track of the duplicated trace ids
 
 
-    start = time.time()
+    # start = time.time()
     #  check if there is an edge that needs anonymization
     cnt=bit_vector_df.loc[bit_vector_df.added_noise<noise,"added_noise"].shape[0]
     iter=0
@@ -193,12 +193,11 @@ def anonymize_traces(data, noise):
 
 
 
-    end = time.time()
-    print("loop duplicated traces: %s"%(end-start))
-    print("no of iteration = %s"%(iter))
+
+    # print("no of iteration = %s"%(iter))
     # execute the oversampling
-    start=time.time()
+    # start=time.time()
     data=execute_oversampling(data,duplicated_traces)
-    end=time.time()
-    print("execute oversampoling %s:"%(end-start))
+    # end=time.time()
+    # print("execute oversampoling %s:"%(end-start))
     return data
