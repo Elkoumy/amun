@@ -53,18 +53,30 @@ def pick_random_edge_trace(bit_vector_df,noise):
     traces.columns=['trace_variant','trace_count']
     # traces.trace_count=traces.trace_count.astype(int)
     trace_sampling_weights=traces.trace_count/traces.trace_count.sum()
-    picked_trace= traces.sample(weights=trace_sampling_weights)
-    picked_trace=picked_trace.trace_variant.iloc[0]
+    #picking traces as the noise size
+    picked_trace= traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
+    # picked_trace=picked_trace.trace_variant.iloc[0]
+    # picked_trace = picked_trace.trace_variant
 
     # update the noise of all edges of that trace
-    bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]=bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]+1
-
+    # bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]=bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]+1
+    trace= picked_trace.trace_variant.iloc[0]
+    bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
+                                                                     bit_vector_df[trace] > 0] + 1
+    trace = picked_trace.trace_variant.iloc[1]
+    bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
+                                                              bit_vector_df[trace] > 0] + 1
+    trace = picked_trace.trace_variant.iloc[2]
+    bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
+                                                              bit_vector_df[trace] > 0] + 1
+    picked_trace=list(picked_trace.trace_variant)
     return bit_vector_df, picked_trace
 
 
 def sampling(row,duplicated_traces):
-
-    row=row.sample(n=duplicated_traces[row.trace_variant])
+    trace_variant= row.trace_variant.iloc[0]
+    sample_size=duplicated_traces[trace_variant]
+    row=row.sample(n=sample_size, replace=True)
 
     return row
 def execute_oversampling(data,duplicated_traces):
@@ -85,7 +97,8 @@ def execute_oversampling(data,duplicated_traces):
     duplicated_cases=duplicated_cases.groupby(['case:concept:name','trace_variant']).size().reset_index()
 
     # duplicated_cases=duplicated_cases.apply(lambda x:x.sample(n=duplicated_traces[x.trace_variant]), axis=1)#.reset_index(drop=True)
-    duplicated_cases = duplicated_cases.swifter.apply(sampling,duplicated_traces=duplicated_traces, axis=1)  # .reset_index(drop=True)
+    # duplicated_cases = duplicated_cases.swifter.apply(sampling,duplicated_traces=duplicated_traces, axis=1)  # .reset_index(drop=True)
+    duplicated_cases = duplicated_cases.groupby(['trace_variant']).apply(sampling, duplicated_traces=duplicated_traces)  # .reset_index(drop=True)
     duplicated_cases=duplicated_cases.drop(['trace_variant'],axis=1)
 
     #  fix the problem when same case duplicated
@@ -143,21 +156,22 @@ def anonymize_traces(data, noise):
 
     start = time.time()
     #  check if there is an edge that needs anonymization
-    cnt=bit_vector_df.loc[bit_vector_df.added_noise<noise,"added_noise"].count()
-
+    cnt=bit_vector_df.loc[bit_vector_df.added_noise<noise,"added_noise"].shape[0]
+    iter=0
     while cnt>0:
         #  pick a random edge and a random trace
         bit_vector_df, duplicated_trace= pick_random_edge_trace(bit_vector_df,noise)
-        duplicated_traces.append(duplicated_trace)
-
+        # duplicated_traces.append(duplicated_trace)
+        duplicated_traces.extend(duplicated_trace)
         #TODO: compare with performance of shape
-        cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].count()
+        cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].shape[0]
+        iter+=1
 
 
 
     end = time.time()
     print("finding duplicated traces: %s"%(end-start))
-
+    print("no of iteration = %s"%(iter))
     # execute the oversampling
     start=time.time()
     data=execute_oversampling(data,duplicated_traces)

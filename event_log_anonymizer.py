@@ -18,14 +18,14 @@ from statsmodels.distributions.empirical_distribution import ECDF
 data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
 # dataset="temp"
 # dataset="CCC19_t"
-dataset="Sepsis_t"
+# dataset="Sepsis_t"
 # dataset="CreditReq_t"
-# dataset="BPIC13_t"
+dataset="BPIC12_t"
 # dataset="BPIC19"
 # dataset="Unrineweginfectie_t"
-# dataset="Hospital"
+# dataset="Hospital_t"
 # dataset="Traffic_t"
-# dataset="Sepsis"
+# dataset="Sepsis_t"
 #event logs without lifecycle.
 #"BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"
 
