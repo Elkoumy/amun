@@ -47,6 +47,7 @@ noise=3
 #move epsilon estimation before the trace anonymization
 data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
 start=time.time()
+#TODO: optimize epsilon estimation
 data=estimate_epsilon_risk_vectorized(data,delta, precision)
 end=time.time()
 print("estimate epsilon :  %s"%(end-start))
