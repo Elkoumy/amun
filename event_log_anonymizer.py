@@ -20,9 +20,9 @@ data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\a
 # dataset="CCC19_t"
 # dataset="Sepsis_t"
 # dataset="CreditReq_t"
-# dataset="BPIC13_t"
+dataset="BPIC12_t"
 # dataset="BPIC19"
-dataset="Unrineweginfectie_t"
+# dataset="Unrineweginfectie_t"
 # dataset="Hospital_t"
 # dataset="Traffic_t"
 # dataset="Sepsis_t"
@@ -30,7 +30,7 @@ dataset="Unrineweginfectie_t"
 #"BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"
 
 start_all = time.time()
-print("Running .....")
+
 start = time.time()
 data, trace_variants= xes_to_DAFSA(data_dir, dataset)
 # data, trace_variants= xes_to_prefix_tree(data_dir, dataset)
@@ -43,13 +43,12 @@ delta=0.2
 precision =0.00000000001
 #TODO: calculate noise here
 noise=3
-start = time.time()
 
 #move epsilon estimation before the trace anonymization
 data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
-data=estimate_epsilon_risk_vectorized(data,delta, precision)
-end = time.time()
-print("epsilon estimation %s" %(end - start))
+#TODO: UNCOMMENT the following line
+# data=estimate_epsilon_risk_vectorized(data,delta, precision)
+
 
 
 

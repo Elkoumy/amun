@@ -114,10 +114,9 @@ def xes_to_DAFSA(data_dir,dataset):
 
 
     ### Calculate relative time
-    start = time.time()
+
     data = get_relative_time(data, dataset)
-    end = time.time()
-    print("get relative time %s" % (end - start))
+
 
     """
          The focus of the following analysis is for the three columns:
@@ -130,10 +129,9 @@ def xes_to_DAFSA(data_dir,dataset):
     data = data[['case:concept:name', 'concept:name', 'time:timestamp','relative_time']]
 
 
-    start = time.time()
+
     data, trace_variants = annotate_eventlog_with_trace_variants(data, log)
-    end = time.time()
-    print("annotate_eventlog_with_trace_variants %s" % (end - start))
+
 
     ### Calculate DAFSA
 
@@ -454,7 +452,7 @@ def annotate_eventlog_with_state_vectorized(data,data_dir,dataset,trace_variants
     trace_idx=[]
     activity_index=[]
 
-    start=time.time()
+
     for idx,trace in enumerate(trace_variants):
         act= trace.split(',')
         activities+=act
@@ -468,22 +466,19 @@ def annotate_eventlog_with_state_vectorized(data,data_dir,dataset,trace_variants
     # Then, swifter.apply.
     trace_variants_df = trace_variants_df.groupby(['trace_variant']).apply(annotate_state_per_case, dafsa_states=dafsa_states).reset_index()
     trace_variants_df.drop(columns=['index'],axis=1, inplace=True)
-    end=time.time()
-    print("trace variant annotation: %s"%(end-start))
+
 
     # event location per trace
     #use cumsum
-    start=time.time()
+
     activity_index_log= data.groupby('case:concept:name').cumcount()
     data['activity_index']=activity_index_log
-    end=time.time()
-    print("cumsum of entire event log : %s"%(end-start))
+
 
     # Join annotation with event log
-    start=time.time()
+
     data=data.merge(trace_variants_df, how='inner', on=['trace_variant','concept:name','activity_index'])
-    end=time.time()
-    print("annotating using join : %s"%(end-start))
+
     return data
 
 

@@ -19,23 +19,23 @@ def build_DAFSA_bit_vector(data):
 
     return bit_vector_df
 
-def reversed_normalization(need_noise):
+def reversed_normalization(a):
     # where 0 has the largest weight.
-    m = max(need_noise.added_noise)
-
+    m = max(a)
+    a = a
+    a = m - a
 
     #if all edges need the same noise
-    if need_noise.added_noise.max()==need_noise.added_noise.min():
-        #make the weight for the one that is common between most traces
-        s=need_noise.iloc[:,3:-1].sum(axis=1)
-        a=s/s.sum()
+    # if need_noise.added_noise.max()==need_noise.added_noise.min():
+    #     #make the weight for the one that is common between most traces
+    #     s=need_noise.iloc[:,3:-1].sum(axis=1)
+    #     a=s/s.sum()
 
-        # if sum(a)==0:
-        #     #if all the items are zeros
-        #     a=(a+1)/a.shape[0]
+    if sum(a)==0:
+        #if all the items are zeros
+        a=(a+1)/a.shape[0]
     else:
-        a = need_noise.added_noise
-        a = m - a
+
         a=a/sum(a)
 
     return a
@@ -45,34 +45,42 @@ def pick_random_edge_trace(bit_vector_df,noise):
     #to the column added noise
 
 
-    need_noise = bit_vector_df.loc[bit_vector_df.added_noise < noise,:].dropna()
+    # need_noise = bit_vector_df.loc[bit_vector_df.added_noise < noise, :].dropna()
+    added_noise=bit_vector_df.added_noise
+    need_noise=added_noise[added_noise<noise]
 
 
     #performing weighted random sampling
 
     # perform reverse weight
     # make the weight of the edge that is part of a lot of trace variants to be larger
+
     edge_sampling_weights=reversed_normalization(need_noise)
 
 
-    picked_edge =need_noise.sample(weights=edge_sampling_weights)
-
+    picked_edge_index =need_noise.sample(weights=edge_sampling_weights).index[0]
     # pick random trace variant
-    traces=picked_edge.drop(['prev_state','concept:name','state','added_noise'],axis=1)
+    # traces=picked_edge.drop(['prev_state','concept:name','state','added_noise'],axis=1)
+    traces=bit_vector_df.iloc[picked_edge_index,3:-1]
     traces=traces.T.reset_index() #transpose the traces
     traces.columns=['trace_variant','trace_count']
     # traces.trace_count=traces.trace_count.astype(int)
+
+
     trace_sampling_weights=traces.trace_count/traces.trace_count.sum()
     #picking traces as the noise size
     # picked_trace= traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
 
-    #TODO: fix the case when only one trace with sampling weight >0, and make replace=False
+
     picked_trace = traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
+
+
     # picked_trace=picked_trace.trace_variant.iloc[0]
     # picked_trace = picked_trace.trace_variant
 
     # update the noise of all edges of that trace
     # bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]=bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]+1
+
     for trace_index in range(0,noise):
         trace= picked_trace.trace_variant.iloc[trace_index]
         bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
@@ -171,13 +179,17 @@ def anonymize_traces(data, noise):
     cnt=bit_vector_df.loc[bit_vector_df.added_noise<noise,"added_noise"].shape[0]
     iter=0
     while cnt>0:
+
         #  pick a random edge and a random trace
+
         bit_vector_df, duplicated_trace= pick_random_edge_trace(bit_vector_df,noise)
         # duplicated_traces.append(duplicated_trace)
         duplicated_traces.extend(duplicated_trace)
-        #TODO: compare with performance of shape
+
         cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].shape[0]
         iter+=1
+
+
 
 
 
