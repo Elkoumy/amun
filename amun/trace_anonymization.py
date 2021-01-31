@@ -19,14 +19,23 @@ def build_DAFSA_bit_vector(data):
 
     return bit_vector_df
 
-def reversed_normalization(a):
+def reversed_normalization(need_noise):
     # where 0 has the largest weight.
-    m = max(a)
-    a = m - a
-    if sum(a)==0:
-        #if all the items are zeros
-        a=a+1
+    m = max(need_noise.added_noise)
+
+
+    #if all edges need the same noise
+    if need_noise.added_noise.max()==need_noise.added_noise.min():
+        #make the weight for the one that is common between most traces
+        s=need_noise.iloc[:,3:-1].sum(axis=1)
+        a=s/s.sum()
+
+        # if sum(a)==0:
+        #     #if all the items are zeros
+        #     a=(a+1)/a.shape[0]
     else:
+        a = need_noise.added_noise
+        a = m - a
         a=a/sum(a)
 
     return a
@@ -42,7 +51,8 @@ def pick_random_edge_trace(bit_vector_df,noise):
     #performing weighted random sampling
 
     # perform reverse weight
-    edge_sampling_weights=reversed_normalization(need_noise.added_noise)
+    # make the weight of the edge that is part of a lot of trace variants to be larger
+    edge_sampling_weights=reversed_normalization(need_noise)
 
 
     picked_edge =need_noise.sample(weights=edge_sampling_weights)
@@ -54,22 +64,20 @@ def pick_random_edge_trace(bit_vector_df,noise):
     # traces.trace_count=traces.trace_count.astype(int)
     trace_sampling_weights=traces.trace_count/traces.trace_count.sum()
     #picking traces as the noise size
-    picked_trace= traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
+    # picked_trace= traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
+
+    #TODO: fix the case when only one trace with sampling weight >0, and make replace=False
+    picked_trace = traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
     # picked_trace=picked_trace.trace_variant.iloc[0]
     # picked_trace = picked_trace.trace_variant
 
     # update the noise of all edges of that trace
     # bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]=bit_vector_df.added_noise[bit_vector_df[picked_trace]>0]+1
-    trace= picked_trace.trace_variant.iloc[0]
-    bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
-                                                                     bit_vector_df[trace] > 0] + 1
-    trace = picked_trace.trace_variant.iloc[1]
-    bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
-                                                              bit_vector_df[trace] > 0] + 1
-    trace = picked_trace.trace_variant.iloc[2]
-    bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
-                                                              bit_vector_df[trace] > 0] + 1
-    picked_trace=list(picked_trace.trace_variant)
+    for trace_index in range(0,noise):
+        trace= picked_trace.trace_variant.iloc[trace_index]
+        bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
+                                                                         bit_vector_df[trace] > 0] + 1
+
     return bit_vector_df, picked_trace
 
 
@@ -95,7 +103,7 @@ def execute_oversampling(data,duplicated_traces):
     #sampling from event log based on the count of each trace variant
     duplicated_cases=data[['trace_variant','case:concept:name']].reset_index(drop=True)
     duplicated_cases=duplicated_cases.groupby(['case:concept:name','trace_variant']).size().reset_index()
-
+    start=time.time()
     # duplicated_cases=duplicated_cases.apply(lambda x:x.sample(n=duplicated_traces[x.trace_variant]), axis=1)#.reset_index(drop=True)
     # duplicated_cases = duplicated_cases.swifter.apply(sampling,duplicated_traces=duplicated_traces, axis=1)  # .reset_index(drop=True)
     duplicated_cases = duplicated_cases.groupby(['trace_variant']).apply(sampling, duplicated_traces=duplicated_traces)  # .reset_index(drop=True)
@@ -104,6 +112,8 @@ def execute_oversampling(data,duplicated_traces):
     #  fix the problem when same case duplicated
     # take out the duplicated case id
     cases_more_than_once = duplicated_cases.groupby(['case:concept:name'])['case:concept:name'].count()
+    end=time.time()
+    print("sampling time: %s" %(end-start))
 
     # all the cases only once
     duplicated_cases=duplicated_cases['case:concept:name'].unique()
@@ -114,6 +124,7 @@ def execute_oversampling(data,duplicated_traces):
     cases_more_than_once=cases_more_than_once[cases_more_than_once>0]
 
     # loop for the duplicated case ids and every time add only one duplication
+    start=time.time()
     while len(cases_more_than_once>0):
         duplicated_cases=cases_more_than_once.to_frame()
         duplicated_cases.columns = ['cnt']
@@ -124,7 +135,8 @@ def execute_oversampling(data,duplicated_traces):
         cases_more_than_once = cases_more_than_once-1  #  duplicated once
         cases_more_than_once = cases_more_than_once[cases_more_than_once > 0]
 
-
+    end = time.time()
+    print("loop of duplication: %s" % (end - start))
     return data
 
 
@@ -170,7 +182,7 @@ def anonymize_traces(data, noise):
 
 
     end = time.time()
-    print("finding duplicated traces: %s"%(end-start))
+    print("loop duplicated traces: %s"%(end-start))
     print("no of iteration = %s"%(iter))
     # execute the oversampling
     start=time.time()

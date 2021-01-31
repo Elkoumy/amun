@@ -467,7 +467,7 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
 
 
     stats_df=stats_df[['state', 'relative_time', 'cdf']]
-
+    #TODO: fixing memory issues
     temp = stats_df.merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
                                                              suffixes=("", "_right"))
     temp = temp.loc[(temp.val_plus >= temp.relative_time), ['state', 'relative_time', 'val_plus',
