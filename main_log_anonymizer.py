@@ -16,7 +16,7 @@ jobs_dir = "jobs"
 datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-datasets = ['Unrineweginfectie_t']
+datasets = ["BPIC17_t", "BPIC19_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 number_of_experiments =10
