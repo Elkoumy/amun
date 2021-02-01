@@ -12,7 +12,7 @@ from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_
 from amun.trace_anonymization import  anonymize_traces
 import time
 import gc
-import swifter
+#import swifter
 from statsmodels.distributions.empirical_distribution import ECDF
 import sys
 import warnings
@@ -89,7 +89,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 if __name__ == "__main__":
     if not sys.warnoptions:
         warnings.simplefilter("ignore")
-        
+
     datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
