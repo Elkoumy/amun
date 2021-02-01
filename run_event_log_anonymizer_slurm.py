@@ -16,7 +16,7 @@ import gc
 from statsmodels.distributions.empirical_distribution import ECDF
 import sys
 import warnings
-
+import os
 
 def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data",
                         dataset="BPIC13_t"):
@@ -93,11 +93,10 @@ if __name__ == "__main__":
     datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-    #TODO: make the dataset to come from the arguments
-    datasets = ['Unrineweginfectie_t']
-    data_dir="data"
+    # make the dataset to come from the arguments
 
-    for dataset in datasets:
-        anonymize_event_log(data_dir,dataset)
+    data_dir = os.sys.argv[1]
+    dataset = os.sys.argv[2]
+    anonymize_event_log(data_dir,dataset)
 
 
