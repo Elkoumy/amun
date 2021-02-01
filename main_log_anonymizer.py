@@ -50,7 +50,7 @@ for data in datasets:
         fout.write("#SBATCH --time=%s\n" % (exec_time))
         fout.write("module load python-3.7.1\n")
         # fout.write("cd ..\n")
-        fout.write("python -u %s \"%s\" %s\" \n" % ('"'+os.path.join(dir_path,"run_event_log_anonymizer_slurm.py")+'"', "data",data))
+        fout.write("python -u %s \"%s\" \"%s\" \n" % ('"'+os.path.join(dir_path,"run_event_log_anonymizer_slurm.py")+'"', "data",data))
 
     time.sleep(1)
     subprocess.Popen(("sbatch %s" % job_name).split())
