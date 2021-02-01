@@ -7,7 +7,7 @@ import time
 from enum import Enum
 from statsmodels.distributions.empirical_distribution import ECDF
 import multiprocessing as mp
-import swifter
+# import swifter
 import numpy as np
 import pandas as pd
 from itertools import repeat

@@ -3,3 +3,5 @@ diffprivlib==0.2.0
 more-itertools==7.2.0
 multiprocess==0.70.11.1
 statistics==1.0.3.5
+statsmodels==0.12.1
+swifter==1.0.7
