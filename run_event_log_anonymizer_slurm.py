@@ -95,8 +95,8 @@ if __name__ == "__main__":
 
     # make the dataset to come from the arguments
 
-    data_dir = os.sys.argv[1]
-    dataset = os.sys.argv[2]
+    data_dir = "data"
+    dataset = os.sys.argv[1]
     anonymize_event_log(data_dir,dataset)
 
 
