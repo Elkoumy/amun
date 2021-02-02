@@ -16,7 +16,7 @@ import gc
 from statsmodels.distributions.empirical_distribution import ECDF
 import sys
 import warnings
-
+import os
 
 def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data",
                         dataset="BPIC13_t"):
@@ -71,9 +71,8 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     #TODO: fix export error
 
-    # log = conversion_factory.apply(data[['case:concept:name','time:timestamp','concept:name']])
-    # #
-    # xes_exporter.export_log(log, dataset+"_anonymized.xes")
+    log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
+    xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
 
     # start = time.time()
 
@@ -94,7 +93,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
     #TODO: make the dataset to come from the arguments
-    datasets = ['Unrineweginfectie_t']
+    datasets = ['BPIC12_t']
     data_dir="data"
 
     for dataset in datasets:
