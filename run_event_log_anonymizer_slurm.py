@@ -69,7 +69,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     end_all = time.time()
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
-    #TODO: fix export error
+    #export
 
     # log = conversion_factory.apply(data[['case:concept:name','time:timestamp','concept:name']])
     # #

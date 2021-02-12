@@ -53,7 +53,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     #move epsilon estimation before the trace anonymization
     data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
     start=time.time()
-    #TODO: optimize epsilon estimation
+    #TODO: optimize epsilon estimation (memory issues)
     data=estimate_epsilon_risk_vectorized(data,delta, precision)
     end=time.time()
     print("estimate epsilon :  %s"%(end-start))
@@ -61,18 +61,18 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
 
 
-    start = time.time()
-    data=anonymize_traces(data,noise)
-    end = time.time()
-    print("anonymize traces %s" %(end - start))
+    # start = time.time()
+    # data=anonymize_traces(data,noise)
+    # end = time.time()
+    # print("anonymize traces %s" %(end - start))
+    #
+    # end_all = time.time()
+    # print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
-    end_all = time.time()
-    print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
-    #TODO: fix export error
 
-    log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
-    xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
+    # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
+    # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
 
     # start = time.time()
 
@@ -92,8 +92,8 @@ if __name__ == "__main__":
     datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-    #TODO: make the dataset to come from the arguments
-    datasets = ['BPIC12_t']
+
+    datasets = ['paper_example']
     data_dir="data"
 
     for dataset in datasets:
