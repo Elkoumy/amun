@@ -141,7 +141,8 @@ def xes_to_DAFSA(data_dir,dataset):
     # data=annotate_eventlog_with_states(data,log)
     data = annotate_eventlog_with_state_vectorized(data, data_dir, dataset, trace_variants)
 
-
+    data.prev_state= data.prev_state.astype(int)
+    data.state = data.state.astype(int)
 
     # if aggregate_type==AggregateType.FREQ:
     #     dfg=dfg_factory.apply(log,variant="frequency")

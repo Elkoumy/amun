@@ -11,6 +11,10 @@ import multiprocessing as mp
 import numpy as np
 import pandas as pd
 from itertools import repeat
+import os
+import glob
+import pickle
+import gc
 # import amun.multiprocessing_helper_functions
 # import concurrent.futures
 
@@ -414,6 +418,8 @@ def calculate_cdf_vectorized(data):
                 cur_idx -= 1
                 break
     return cdf.y[cur_idx]
+
+
 def estimate_epsilon_risk_vectorized(data, delta, precision):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
@@ -467,54 +473,50 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
 
 
     stats_df=stats_df[['state', 'relative_time', 'cdf']]
-    #TODO: fixing memory issues
-    temp = stats_df.merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
-                                                             suffixes=("", "_right"))
-    temp = temp.loc[(temp.val_plus >= temp.relative_time), ['state', 'relative_time', 'val_plus',
-                                                                                   'cdf']] \
-        .groupby(['state', 'val_plus']).cdf.max().reset_index()
+    # print("fix memory part")
+    #fixing memory issues
+    data.to_pickle('data.p')
+    del(data)
+    # stats_df.to_pickle('stats_df.p')
 
-    cdf_lookup=temp.merge(plus_and_minus[['state','relative_time', 'val_plus']], how='inner', on='state', suffixes=("","_right"))
-    # print(cdf_lookup)
-    cdf_lookup=cdf_lookup.loc[cdf_lookup.val_plus==cdf_lookup.val_plus_right,['state','relative_time','cdf']]
+    """   ********* Performing chunking join **********"""
+    # we use chunks to avoid running out of memory for large event logs
 
-    cdf=cdf_lookup.rename(columns={'cdf':'cdf_plus'}) #holds the result
-    # add the values to the dataframe
+    # stats_df.to_csv('stats_df.csv',index=False, header=True, float_format='%.15f', compression='gzip', encoding='utf-8')
+    # stats_df_cols=stats_df.columns
+    chunk_size=10000 # number of states per chunk
+    #the problem is the first state all cases go through it.
+
+    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,chunk_size)
+    print("Partitioning Done")
+    del(stats_df)
+    del(plus_and_minus)
+
+    gc.collect()
+
+    chunck_join(no_of_chunks,max_large_state)
+    # del(plus_and_minus)
+    #loading data back from hard disk
+    data=pd.read_pickle('data.p')
+    #appending cdf
+    cdf=append_cdf(1)
+
+    # add the first cdf values to the dataframe
     data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
     data.drop(['val_plus'], inplace=True, axis=1)
+    del(cdf)
 
-    #calculate the CDF of the value - r_ij
-    # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='cross',
-    #                                                          suffixes=("", "_right"))
-    # temp = temp.loc[
-    #     (temp.state == temp.state_right) & (temp.val_minus >= temp.relative_time), ['state', 'relative_time', 'val_minus',
-    #                                                                                'cdf']] \
-    #     .groupby(['state', 'val_minus']).cdf.max().reset_index()
-
-    temp = stats_df.merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
-                                                             suffixes=("", "_right"))
-    temp = temp.loc[(temp.val_minus >= temp.relative_time), ['state', 'relative_time',
-                                                                                    'val_minus',
-                                                                                    'cdf']] \
-        .groupby(['state', 'val_minus']).cdf.max().reset_index()
-
-    cdf_lookup = plus_and_minus[['state', 'relative_time', 'val_minus']].merge(temp, how='left', on='state',
-                            suffixes=("", "_right"))
-
-    cdf_lookup = cdf_lookup.loc[cdf_lookup.val_minus == cdf_lookup.val_minus_right, ['state', 'relative_time', 'cdf']]
-    cdf_lookup=cdf_lookup.rename(columns={'cdf':'cdf_minus'})
-
-    cdf = cdf_lookup.rename(columns={'cdf': 'cdf_minus'})  # holds the result
-
+    #appending cdf2
+    cdf2=append_cdf(2)
     # add the values to the dataframe
-    data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
-
+    data = data.merge(cdf2, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    del(cdf2)
     # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
     # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
     # the minimum is zero
     data.cdf_minus=data.cdf_minus.fillna(0)
 
-
+    # print("Second CDF done")
     # data= data.merge(cdf, how='left', on=['state','relative_time'], suffixes=("","_right"))
     # print(cdf[['state','relative_time']])
     # print(data.loc[data.cdf_plus.isna(), ['state','relative_time']])
@@ -542,6 +544,301 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     #                                               delta, precision), axis=1)
 
     return data
+
+def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
+    """ the first state for large files is very large. We split the first state in a separate file.
+     Then all the other states are splitted into several files.
+    """
+
+
+    # stats_df.to_csv('stats_df.csv', index=False, header=True, float_format='%.15f', compression='gzip',
+    #                 encoding='utf-8')
+
+    stats_df.sort_values('state', ascending=True, inplace=True)
+    plus_and_minus.sort_values('state', ascending=True, inplace=True)
+    unique_states = stats_df.state.unique()
+    large_states=stats_df.groupby(['state']).relative_time.count()
+
+    #separating large states from the others
+    large_states=large_states[large_states>1000].reset_index().state
+
+    curr_dir = os.getcwd()
+    idx=0
+
+
+    """large state separately"""
+    for current_state in large_states:
+        res = stats_df.loc[stats_df.state==current_state, :]
+        res.to_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (idx)))
+        plus_and_minus.loc[plus_and_minus.state==current_state, :] \
+            .to_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (idx)))
+        unique_states=unique_states[unique_states!=current_state]
+
+        idx += 1
+
+    """ splitting other states regularly"""
+
+    max_index_of_large_states=idx
+    print("partition of large states is %s"%(max_index_of_large_states-1))
+    for i in range(0, unique_states.shape[0], chunk_size):
+        # print("Current Chunck is: %s" % (i))
+        current_states = unique_states[i:i + chunk_size]
+        res = stats_df.loc[stats_df.state.isin(current_states), :]
+
+        res.to_pickle(os.path.join(curr_dir, 'tmp','stats_df_%s'%(idx)))
+        plus_and_minus.loc[plus_and_minus.state.isin(current_states), :]\
+            .to_pickle(os.path.join(curr_dir, 'tmp','plus_and_minus_%s'%(idx)))
+        idx+=1
+
+    # return len(list(range(0, unique_states.shape[0], chunk_size)))  #number of chunks
+    return idx , max_index_of_large_states # number of chunks , max largest state
+
+def append_cdf(num=1):
+    cdf_name=0
+    if num==1:
+        cdf_name='cdf_*'
+    else:
+        cdf_name='cdf2_*'
+    curr_dir = os.getcwd()
+    # dir_path=os.path.join(curr_dir, 'tmp',cdf_name)
+
+    list_of_files = glob.glob(os.path.join(curr_dir, 'tmp',cdf_name))
+
+    cdf=[]
+    for i in list_of_files:
+        with open(i,'rb') as handle:
+            cdf.append(pickle.load(handle))
+
+    cdf=pd.concat(cdf)
+
+    return cdf
+
+
+def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx):
+
+
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on='state',
+                              suffixes=("", "_right"))
+
+    # plus_and_minus.columns = plus_and_minus.columns.map(lambda x: str(x) + '_right')
+    # stats_df_chunk = stats_df_chunk.join(plus_and_minus, how='inner', rsuffix ="_right" )
+
+    # df2=pd.merge(df1,x, left_on = "Colname1", right_on = "Colname2")
+    # stats_df_chunk.to_csv("stats_df_chunk_merge.csv",mode="a",index=False,float_format='%.15f', compression='gzip', encoding='utf-8')
+
+    #val_plus is from plus minus
+    #relative_time is from stats_df
+    stats_df_chunk = stats_df_chunk.loc[(stats_df_chunk.val_plus >= stats_df_chunk.relative_time), ['state', 'relative_time', 'val_plus',
+                                                                            'cdf']] \
+        .groupby(['state', 'val_plus']).cdf.max().reset_index()
+    # print("performing second merge ")
+    # stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on='state',
+    #                             suffixes=("", "_right"))
+    # # print(stats_df_chunk)
+    # stats_df_chunk = stats_df_chunk.loc[stats_df_chunk.val_plus == stats_df_chunk.val_plus_right, ['state', 'relative_time', 'cdf']]
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state', 'val_plus'],
+                                          suffixes=("", "_right"))
+    stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
+    cdf = stats_df_chunk.rename(columns={'cdf': 'cdf_plus'})  # holds the result
+    curr_dir=os.getcwd()
+    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
+
+    with open(os.path.join(curr_dir,'tmp','cdf_%s.p'%(idx)), 'wb') as handle:
+        pickle.dump(cdf, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+
+def chunk_merge_minus(stats_df_chunk, plus_and_minus,idx):
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
+                              suffixes=("", "_right"))
+    # df2=pd.merge(df1,x, left_on = "Colname1", right_on = "Colname2")
+    # stats_df_chunk.to_csv("stats_df_chunk_merge.csv",mode="a",index=False,float_format='%.15f', compression='gzip', encoding='utf-8')
+    stats_df_chunk = stats_df_chunk.loc[(stats_df_chunk.val_minus >= stats_df_chunk.relative_time), ['state', 'relative_time', 'val_minus',
+                                                                            'cdf']] \
+        .groupby(['state', 'val_minus']).cdf.max().reset_index()
+    # print("performing second merge ")
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state', 'val_minus'],
+                                          suffixes=("", "_right"))
+    stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
+
+    # stats_df_chunk = stats_df_chunk.merge(plus_and_minus[['state', 'relative_time', 'val_minus']], how='inner', on='state',
+    #                             suffixes=("", "_right"))
+    # # print(stats_df_chunk)
+    # stats_df_chunk = stats_df_chunk.loc[stats_df_chunk.val_minus == stats_df_chunk.val_minus_right, ['state', 'relative_time', 'cdf']]
+    cdf2 = stats_df_chunk.rename(columns={'cdf': 'cdf_minus'})  # holds the result
+    curr_dir=os.getcwd()
+    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
+    # stats_df_chunk.to_pickle(os.path.join(curr_dir,'tmp','new%s'%(idx),'stats_df_chunk_merge_%s.p'%(idx)))
+
+    with open(os.path.join(curr_dir, 'tmp', 'cdf2_%s.p' % (idx)), 'wb') as handle:
+        pickle.dump(cdf2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+def chunk_merge_plus_single_large_state(stats_df_chunk, plus_and_minus,idx):
+    # print("idx is :%s"%(idx))
+    # print("plus_and_minus.val_plus: %s"%(plus_and_minus.val_plus))
+    # print("plus_and_minus.val_plus[0]: %s"%(plus_and_minus.val_plus.iloc[0]) )
+    # print("plus_and_minus.relative_time[0]: %s" % (plus_and_minus.relative_time.iloc[0]))
+    t = plus_and_minus.val_plus.iloc[0] - plus_and_minus.relative_time.iloc[0]  # the precision* max is the same for the same state
+
+    stats_df_chunk.sort_values('relative_time', inplace=True)
+    plus_and_minus.sort_values('val_plus', inplace=True)
+
+    stats_df_chunk = pd.merge_asof(plus_and_minus, stats_df_chunk, left_on='val_plus', right_on='relative_time', by='state',
+                         direction="backward", tolerance=t,
+                         suffixes=("_right", ""))
+    stats_df_chunk = stats_df_chunk[['state', 'relative_time', 'val_plus', 'cdf']].groupby(['state', 'val_plus']).cdf.max().reset_index()
+    print("*** first state done ***")
+
+
+    # print("performing second merge ")
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state','val_plus'],
+                                          suffixes=("", "_right"))
+    stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
+    print("second merge done")
+
+    cdf = stats_df_chunk.rename(columns={'cdf': 'cdf_plus'})  # holds the result
+    curr_dir=os.getcwd()
+    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
+
+    with open(os.path.join(curr_dir,'tmp','cdf_%s.p'%(idx)), 'wb') as handle:
+        pickle.dump(cdf, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+
+def chunk_merge_minus_single_large_state(stats_df_chunk, plus_and_minus,idx):
+
+    t = plus_and_minus.val_plus.iloc[0] - plus_and_minus.relative_time.iloc[0]  # the precision* max is the same for the same state
+
+    stats_df_chunk.sort_values('relative_time', inplace=True)
+    plus_and_minus.sort_values('val_minus', inplace=True)
+
+    stats_df_chunk = pd.merge_asof(plus_and_minus, stats_df_chunk, left_on='val_minus', right_on='relative_time', by='state',
+                         direction="backward", tolerance=t,
+                         suffixes=("_right", ""))
+    stats_df_chunk = stats_df_chunk[['state', 'relative_time', 'val_minus', 'cdf']].groupby(['state', 'val_minus']).cdf.max().reset_index()
+    # print("*** first state done ***")
+
+
+    # print("performing second merge ")
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state','val_minus'],
+                                          suffixes=("", "_right"))
+    stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
+    # print("second merge done")
+
+    cdf2 = stats_df_chunk.rename(columns={'cdf': 'cdf_minus'})  # holds the result
+    curr_dir = os.getcwd()
+    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
+    # stats_df_chunk.to_pickle(os.path.join(curr_dir,'tmp','new%s'%(idx),'stats_df_chunk_merge_%s.p'%(idx)))
+
+    with open(os.path.join(curr_dir, 'tmp', 'cdf2_%s.p' % (idx)), 'wb') as handle:
+        pickle.dump(cdf2, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+def chunck_join(num_of_chunks,max_large_state):
+
+    # print("performing first merge ")
+    # stats_df = pd.read_csv('stats_df.csv', chunksize=chunksize, compression='gzip', encoding='utf-8')
+    # [chunk_merge_plus(r, plus_and_minus, idx) for idx, r in enumerate(stats_df)]
+    # with open('cdf.p','wb') as handle:
+    #     pickle.dump(cdf, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    # del(cdf)
+
+    curr_dir = os.getcwd()
+
+
+    for i in range(0,num_of_chunks):
+        stats_df=pd.read_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (i)))
+        plus_and_minus = pd.read_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (i)))
+
+        #the first state is large, so we separate it from the others
+        if i<max_large_state:
+            chunk_merge_plus_single_large_state(stats_df,plus_and_minus,i)
+        else:
+            chunk_merge_plus(stats_df,plus_and_minus,i)
+
+    # print("plus merge done")
+
+    # stats_df = pd.read_csv('stats_df.csv', chunksize=chunksize, compression='gzip', encoding='utf-8')
+    # [chunk_merge_minus(r, plus_and_minus, idx) for idx, r in enumerate(stats_df)]
+
+    for i in range(0,num_of_chunks):
+        print("current chunk id: %s"%(i))
+        stats_df=pd.read_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (i)))
+        plus_and_minus = pd.read_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (i)))
+        if i<max_large_state:
+            chunk_merge_minus_single_large_state(stats_df,plus_and_minus,i)
+        else:
+            chunk_merge_minus(stats_df,plus_and_minus,i)
+
+
+
+    # with open('cdf.p','rb') as handle:
+    #     cdf=pickle.load(handle)
+    # cdf=pd.concat(cdf)
+    # cdf2=pd.concat(cdf2)
+
+
+    # #removing temporary files
+    # curr_dir = os.getcwd()
+    # if os.path.exists(os.path.join(curr_dir,'tmp')):
+    #     # os.rmdir(os.path.join(curr_dir,'tmp') )
+    #     shutil.rmtree(os.path.join(curr_dir,'tmp'), ignore_errors=True)
+    # # if os.path.exists("stats_df_chunk_merge.csv"):
+    # #     os.remove("stats_df_chunk_merge.csv")
+    # os.makedirs('tmp')
+
+    # stats_df = stats_df.merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
+    #                                                          suffixes=("", "_right"))
+
+    # stats_df = pd.read_csv('stats_df_chunk_merge.csv', compression='gzip', encoding='utf-8')
+    # stats_df.columns=['state', 'relative_time','cdf','val_plus']
+    # stats_df.state=stats_df.state.astype(int)
+    # stats_df.relative_time = stats_df.relative_time.astype(float)
+    # stats_df.cdf = stats_df.cdf.astype(float)
+    # stats_df.val_plus = stats_df.val_plus.astype(float)
+
+    #
+    # stats_df = stats_df.loc[(stats_df.val_plus >= stats_df.relative_time), ['state', 'relative_time', 'val_plus',
+    #                                                                         'cdf']] \
+    #     .groupby(['state', 'val_plus']).cdf.max().reset_index()
+    # print("performing second merge ")
+    # cdf_lookup = stats_df.merge(plus_and_minus[['state', 'relative_time', 'val_plus']], how='inner', on='state',
+    #                             suffixes=("", "_right"))
+    # # print(cdf_lookup)
+    # cdf_lookup = cdf_lookup.loc[cdf_lookup.val_plus == cdf_lookup.val_plus_right, ['state', 'relative_time', 'cdf']]
+    # cdf = cdf_lookup.rename(columns={'cdf': 'cdf_plus'})  # holds the result
+    # del (cdf_lookup)
+    # del (stats_df)
+    '''***********************'''
+
+    # add the values to the dataframe
+    # data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    # data.drop(['val_plus'], inplace=True, axis=1)
+    # calculate the CDF of the value - r_ij
+    # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_minus']], how='cross',
+    #                                                          suffixes=("", "_right"))
+    # temp = temp.loc[
+    #     (temp.state == temp.state_right) & (temp.val_minus >= temp.relative_time), ['state', 'relative_time', 'val_minus',
+    #                                                                                'cdf']] \
+    #     .groupby(['state', 'val_minus']).cdf.max().reset_index()
+    # stats_df = pd.read_csv('stats_df.csv')
+    # # stats_df=pd.read_pickle('stats_df.p')
+    # stats_df = stats_df.merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
+    #                           suffixes=("", "_right"))
+    # stats_df = stats_df.loc[(stats_df.val_minus >= stats_df.relative_time), ['state', 'relative_time',
+    #                                                                          'val_minus',
+    #                                                                          'cdf']] \
+    #     .groupby(['state', 'val_minus']).cdf.max().reset_index()
+    # cdf_lookup = plus_and_minus[['state', 'relative_time', 'val_minus']].merge(stats_df, how='left', on='state',
+    #                                                                            suffixes=("", "_right"))
+    # cdf_lookup = cdf_lookup.loc[cdf_lookup.val_minus == cdf_lookup.val_minus_right, ['state', 'relative_time', 'cdf']]
+    # cdf_lookup = cdf_lookup.rename(columns={'cdf': 'cdf_minus'})
+    # cdf2 = cdf_lookup.rename(columns={'cdf': 'cdf_minus'})  # holds the result
+    # del (cdf_lookup)
+    # del (stats_df)
+
+
+
 
 def estimate_epsilon_risk_dataframe(val,cdf,R_ij,delta,precision):
 
