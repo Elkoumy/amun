@@ -9,7 +9,7 @@ from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.exporter.xes import factory as xes_exporter
 from amun.input_module import xes_to_DAFSA, xes_to_prefix_tree
 from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe,estimate_epsilon_risk_dataframe2,estimate_epsilon_risk_vectorized
-from amun.trace_anonymization import  anonymize_traces
+from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
 import time
 import gc
 #import swifter
@@ -47,27 +47,32 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     delta=0.2
     precision =0.00000000001
-    #TODO: calculate noise here
-    noise=3
+
 
     #move epsilon estimation before the trace anonymization
     data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
     start=time.time()
-    #TODO: optimize epsilon estimation (memory issues)
+    #optimize epsilon estimation (memory issues)
     data=estimate_epsilon_risk_vectorized(data,delta, precision)
     end=time.time()
     print("estimate epsilon :  %s"%(end-start))
 
 
 
+    del(trace_variants)
 
-    # start = time.time()
+    gc.collect()
+    # TODO: calculate frequency noise here
+    noise = 3
+
+    start = time.time()
     # data=anonymize_traces(data,noise)
-    # end = time.time()
-    # print("anonymize traces %s" %(end - start))
-    #
-    # end_all = time.time()
-    # print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
+    data = anonymize_traces_compacted(data, noise)
+    end = time.time()
+    print("anonymize traces %s" %(end - start))
+
+    end_all = time.time()
+    print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
 
 
@@ -93,7 +98,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['BPIC19_t']
+    datasets = ['BPIC18_t']
     data_dir="data"
 
     for dataset in datasets:

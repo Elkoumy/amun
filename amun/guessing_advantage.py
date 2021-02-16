@@ -488,7 +488,7 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     #the problem is the first state all cases go through it.
 
     no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,chunk_size)
-    print("Partitioning Done")
+    # print("Partitioning Done")
     del(stats_df)
     del(plus_and_minus)
 
@@ -579,7 +579,7 @@ def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     """ splitting other states regularly"""
 
     max_index_of_large_states=idx
-    print("partition of large states is %s"%(max_index_of_large_states-1))
+    # print("partition of large states is %s"%(max_index_of_large_states-1))
     for i in range(0, unique_states.shape[0], chunk_size):
         # print("Current Chunck is: %s" % (i))
         current_states = unique_states[i:i + chunk_size]
@@ -688,14 +688,14 @@ def chunk_merge_plus_single_large_state(stats_df_chunk, plus_and_minus,idx):
                          direction="backward", tolerance=t,
                          suffixes=("_right", ""))
     stats_df_chunk = stats_df_chunk[['state', 'relative_time', 'val_plus', 'cdf']].groupby(['state', 'val_plus']).cdf.max().reset_index()
-    print("*** first state done ***")
+    # print("*** first state done ***")
 
 
     # print("performing second merge ")
     stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state','val_plus'],
                                           suffixes=("", "_right"))
     stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
-    print("second merge done")
+    # print("second merge done")
 
     cdf = stats_df_chunk.rename(columns={'cdf': 'cdf_plus'})  # holds the result
     curr_dir=os.getcwd()
@@ -762,7 +762,7 @@ def chunck_join(num_of_chunks,max_large_state):
     # [chunk_merge_minus(r, plus_and_minus, idx) for idx, r in enumerate(stats_df)]
 
     for i in range(0,num_of_chunks):
-        print("current chunk id: %s"%(i))
+        # print("current chunk id: %s"%(i))
         stats_df=pd.read_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (i)))
         plus_and_minus = pd.read_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (i)))
         if i<max_large_state:
