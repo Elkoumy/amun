@@ -43,7 +43,7 @@ def build_DAFSA_bit_vector(data):
     bit_vector_df['added_noise']= [0]* bit_vector_df.shape[0]
 
     # bit_vector_df.drop('case:concept:name', axis=1, inplace=True)
-    print("*********** yay ***************&&")
+
     return bit_vector_df
 
 
@@ -148,6 +148,7 @@ def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant,noi
     #picks a random edge, then picks a random trace variant of that edge. It adds the noise
     #to the column added noise
 
+    func_start=time.time()
 
     # need_noise = bit_vector_df.loc[bit_vector_df.added_noise < noise, :].dropna()
     added_noise=bit_vector_df.added_noise
@@ -158,17 +159,22 @@ def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant,noi
 
     # perform reverse weight
     # make the weight of the edge that is part of a lot of trace variants to be larger
-
+    start=time.time()
     edge_sampling_weights=reversed_normalization(need_noise)
-
+    end=time.time()
+    # print("reversed_normalization : %s" %(end-start))
 
     picked_edge_index =need_noise.sample(weights=edge_sampling_weights).index[0]
     # pick random trace variant
     # traces=picked_edge.drop(['prev_state','concept:name','state','added_noise'],axis=1)
+    start=time.time()
     traces=pd.Series(bit_vector_df.loc[picked_edge_index,'trace_variant'])
     traces=traces.value_counts().to_frame().reset_index()
 
     traces.columns=['trace_variant','trace_count']
+    end = time.time()
+    # print("counting : %s" % (end - start))
+
     # traces.trace_count=traces.trace_count.astype(int)
 
     """*** Compare here"""
@@ -191,12 +197,15 @@ def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant,noi
     #     trace= picked_trace.trace_variant.iloc[trace_index]
     #     bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
     #                                                                      bit_vector_df[trace] > 0] + 1
-
+    start=time.time()
     for trace_index in picked_trace.trace_variant:
-        trace_edges= bit_vector_trace_variant.loc[trace_index]
-        bit_vector_df.loc[trace_edges,'added_noise'] = bit_vector_df.loc[trace_edges,'added_noise'] + 1
+        trace_edges= bit_vector_trace_variant.iloc[trace_index]
+        bit_vector_df.added_noise.loc[trace_edges] = bit_vector_df.added_noise.loc[trace_edges] + 1
+    end = time.time()
+    # print("trace index loop : %s" % (end - start))
 
-
+    func_end=time.time()
+    # print("pick_random_edge_trace_compacted time : %s"%(func_end-func_start))
     return bit_vector_df, picked_trace
 
 def sampling(row,duplicated_traces):
@@ -303,10 +312,10 @@ def anonymize_traces(data, noise):
 
 
 
-    print("******** end of loop ****")
-    print("iter=:%s"%(iter))
+    # print("******** end of loop ****")
+    # print("iter=:%s"%(iter))
 
-    # print("no of iteration = %s"%(iter))
+    print("no of iteration = %s"%(iter))
     # execute the oversampling
     # start=time.time()
     data=execute_oversampling(data,duplicated_traces)
@@ -330,16 +339,22 @@ def anonymize_traces_compacted(data, noise):
 
     iter=0
     while cnt>0:
-
+        loop_start=time.time()
         #  pick a random edge and a random trace
-
+        start=time.time()
         bit_vector_df, duplicated_trace= pick_random_edge_trace_compacted(bit_vector_df,bit_vector_trace_variant,noise)
+        end=time.time()
+        # print("pick_random_edge_trace_compacted: %s"%(end-start))
         # duplicated_traces.append(duplicated_trace)
         duplicated_traces.extend(duplicated_trace)
 
+        start = time.time()
         cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].shape[0]
+        end = time.time()
+        # print("counting time: %s" % (end - start))
         iter+=1
-        # print("iter=:%s" % (iter))
+        loop_end=time.time()
+        # print("loop time: %s" %(loop_end-loop_start))
 
 
 

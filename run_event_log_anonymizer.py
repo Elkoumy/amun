@@ -98,7 +98,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['BPIC18_t']
+    datasets = ['BPIC19_t']
     data_dir="data"
 
     for dataset in datasets:
