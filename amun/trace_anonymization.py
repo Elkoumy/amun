@@ -225,7 +225,7 @@ def execute_oversampling(data,duplicated_traces):
 
     duplicated_traces=duplicated_traces.append(non_duplicated) #all the sampling ratios should exist
 
-
+    #  duplicated traces
 
     #sampling from event log based on the count of each trace variant
     duplicated_cases=data[['trace_variant','case:concept:name']].reset_index(drop=True)
@@ -346,7 +346,7 @@ def anonymize_traces_compacted(data, noise):
         end=time.time()
         # print("pick_random_edge_trace_compacted: %s"%(end-start))
         # duplicated_traces.append(duplicated_trace)
-        duplicated_traces.extend(duplicated_trace)
+        duplicated_traces.extend(duplicated_trace.trace_variant)
 
         start = time.time()
         cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].shape[0]

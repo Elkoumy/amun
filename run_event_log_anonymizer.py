@@ -17,6 +17,7 @@ from statsmodels.distributions.empirical_distribution import ECDF
 import sys
 import warnings
 import os
+import shutil
 
 def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data",
                         dataset="BPIC13_t"):
@@ -43,7 +44,15 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     end = time.time()
     print("reading to DAFSA annotation %s" %(end - start))
 
+    """ Clearing tmp folder"""
+    curr_dir = os.getcwd()
+    if os.path.isdir(os.path.join(curr_dir, 'tmp')):
+        #delete tmp
+        # os.remove(os.path.join(curr_dir, 'tmp'))
+        shutil.rmtree(os.path.join(curr_dir, 'tmp'))
 
+    #create tmp
+    os.mkdir(os.path.join(curr_dir, 'tmp'))
 
     delta=0.2
     precision =0.00000000001
@@ -67,6 +76,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     start = time.time()
     # data=anonymize_traces(data,noise)
+    # TODO: fix duplicated traces
     data = anonymize_traces_compacted(data, noise)
     end = time.time()
     print("anonymize traces %s" %(end - start))
@@ -98,7 +108,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['BPIC19_t']
+    datasets = ['temp']
     data_dir="data"
 
     for dataset in datasets:
