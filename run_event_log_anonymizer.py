@@ -56,7 +56,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     os.mkdir(os.path.join(curr_dir, 'tmp'))
 
     delta=0.1
-    precision =0.1
+    precision =0.5
 
 
     #move epsilon estimation before the trace anonymization

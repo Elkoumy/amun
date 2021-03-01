@@ -685,10 +685,11 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
 
     #calculate epsilon in a vectorized manner
     # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))/ log(exp(1.0))* (1.0 / data.relative_time_max)
-
-    data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))
-    data['eps']=data['eps']/ log(exp(1.0))
-    # r =1 because of normalization
+    # handle p_k+delta >1
+    data['eps'] =data.apply(epsilon_vectorized_internal,delta=delta, axis=1)
+    # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))
+    # data['eps']=data['eps']/ log(exp(1.0))
+    # # r =1 because of normalization
     # data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
 
 
@@ -712,6 +713,15 @@ def estimate_P_k_vectorized(data,delta):
         return (1-delta)/2
 
     return data.cdf_plus - data.cdf_minus
+
+
+def epsilon_vectorized_internal(data, delta):
+    if data.p_k+delta >=1:
+        #in case p_k+delta>1, set epsilon = 0.1
+        return 0.1
+
+    # r =1 because of normalization
+    return (- np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0)))
 
 def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     """ the first state for large files is very large. We split the first state in a separate file.
