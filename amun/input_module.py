@@ -465,7 +465,7 @@ def annotate_eventlog_with_state_vectorized(data,data_dir,dataset,trace_variants
 
     trace_variants_df= pd.DataFrame({'trace_variant':trace_idx, 'concept:name':activities, 'activity_index':activity_index})
 
-    #TODO: you can enahce the following.
+    #you can enahce the following.
     # First take the unique trace_variants for the combination trace_variant','concept:name','activity_index.
     # Then, swifter.apply.
     trace_variants_df = trace_variants_df.groupby(['trace_variant']).apply(annotate_state_per_case, dafsa_states=dafsa_states).reset_index()

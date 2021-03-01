@@ -515,6 +515,8 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
     # the minimum is zero
     data.cdf_minus=data.cdf_minus.fillna(0)
+    # and the maximum is 1
+    data.cdf_plus = data.cdf_plus.fillna(1)
 
     # print("Second CDF done")
     # data= data.merge(cdf, how='left', on=['state','relative_time'], suffixes=("","_right"))
@@ -580,12 +582,28 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     #calculate cdfs in vectorized manner
 
     #data['r_ij']=data['relative_time_max']*precision
-    """for the normalized input, the r_ij equals the precision"""
-    data['r_ij'] =  precision
+    """for the normalized input, the r_ij equals 1"""
+    # data['r_ij'] =  precision * max value
 
-    data['val_plus']=data['relative_time'] + data['r_ij']
-    data['val_minus'] = data['relative_time'] - data['r_ij']
-    data.drop(['r_ij'], inplace=True, axis=1)
+    # data['val_plus']=data['relative_time'] + data['r_ij']
+    # data['val_minus'] = data['relative_time'] - data['r_ij']
+    # data.drop(['r_ij'], inplace=True, axis=1)
+
+
+    #The range became +/- precision as r_ij =1
+    data['val_plus']=data['relative_time'] + precision
+    data['val_minus'] = data['relative_time'] - precision
+
+    # #no cdf below zero, so we replace -ve values with zeros
+    # data.val_minus[data.val_minus<0]=0
+    #
+    # # no cdf greater than 1, so we replace  values >1 with 1
+    # data.val_minus.loc[data.val_minus >1] = 1.0
+
+
+
+
+
     # data['cdf_plus']=np.vectorize(calculate_cdf)(data.relative_time_ecdf,data.val_plus)
     # data['cdf_minus'] = np.vectorize(calculate_cdf)(data.relative_time_ecdf, data.val_minus)
 
@@ -669,6 +687,8 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
     # the minimum is zero
     data.cdf_minus=data.cdf_minus.fillna(0)
+    #and the maximum is 1
+    data.cdf_plus = data.cdf_plus.fillna(1)
 
     # print("Second CDF done")
     # data= data.merge(cdf, how='left', on=['state','relative_time'], suffixes=("","_right"))

@@ -55,7 +55,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     #create tmp
     os.mkdir(os.path.join(curr_dir, 'tmp'))
 
-    delta=0.1
+    delta=0.2
     precision =0.5
 
 

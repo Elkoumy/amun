@@ -30,7 +30,7 @@ def propagate_DAFSA_noise(edges, edges_df,noise):
         picked_edge= edges[picked_edge_idx]
         path,edges_df=get_path(picked_edge,edges_df, noise)
         traces.append(path)
-        #TODO: write code here to take the path and make duplication in the event log
+        # write code here to take the path and make duplication in the event log
         not_anonymized = edges_df[edges_df.added_noise < noise]
     return edges, traces
 
