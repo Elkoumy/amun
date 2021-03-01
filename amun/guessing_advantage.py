@@ -545,6 +545,153 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
 
     return data
 
+def normalize_relative_time(data):
+    if data['relative_time_min']==data['relative_time_max']:
+        #return 1 in case of equal values, that will help to extract the noise value later
+        return 1
+
+    return (data['relative_time']-data['relative_time_min'])/(data['relative_time_max']-data['relative_time_min'])
+def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
+    # NOTE: in the current version, there are no fixed time values.
+    # Becuase the starting time now is being anonymized.
+
+    # We estimate the min and max values for the normalization
+    data_state_max = data.groupby('state').relative_time.max()
+    data_state_max['state'] = data_state_max.index
+
+    data_state_min = data.groupby('state').relative_time.min()
+    data_state_min['state'] = data_state_min.index
+    # data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
+
+    data = pd.merge(data, data_state_max, on=['state'], suffixes=("", "_max"))
+    data = pd.merge(data, data_state_min, on=['state'], suffixes=("", "_min"))
+
+    #TODO: perform normalization (scaling the values between 0 and 1, we use min max method
+    data['relative_time_original']=data['relative_time']
+    data['relative_time']= data[['relative_time','relative_time_min', 'relative_time_max']].apply(normalize_relative_time, axis=1)
+
+    #calculate cdfs in vectorized manner
+
+    #data['r_ij']=data['relative_time_max']*precision
+    """for the normalized input, the r_ij equals the precision"""
+    data['r_ij'] =  precision
+
+    data['val_plus']=data['relative_time'] + data['r_ij']
+    data['val_minus'] = data['relative_time'] - data['r_ij']
+    data.drop(['r_ij'], inplace=True, axis=1)
+    # data['cdf_plus']=np.vectorize(calculate_cdf)(data.relative_time_ecdf,data.val_plus)
+    # data['cdf_minus'] = np.vectorize(calculate_cdf)(data.relative_time_ecdf, data.val_minus)
+
+    #optimize  calculate cdf function
+    """
+    CDF calculation using pandas 
+    https://stackoverflow.com/questions/25577352/plotting-cdf-of-a-pandas-series-in-python
+    """
+    # data['cdf_plus'] = data[['relative_time_ecdf','val_plus']].swifter.apply(lambda x: calculate_cdf(x.relative_time_ecdf,x.val_plus),axis=1)
+    # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(
+    #     lambda x: calculate_cdf(x.relative_time_ecdf, x.val_minus), axis=1)
+
+    #state, relative_time
+    stats_df = data.groupby(['state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
+        columns={'relative_time': 'frequency'})
+    # PDF
+    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['state']).frequency.sum()
+    # CDF
+    stats_df['cdf'] = stats_df['pdf'].groupby(['state']).cumsum()
+    stats_df = stats_df.reset_index()
+    stats_df.drop(['pdf'], inplace=True, axis=1)
+
+
+    #the plus_and_minus works like a value lookup
+    plus_and_minus=data.groupby(['state', 'relative_time','val_plus','val_minus']).state.agg('count').pipe(pd.DataFrame)\
+        .drop('state',axis=1)\
+        .reset_index()
+
+
+    #calculating CDF of the value + r_ij
+    # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='cross',
+    #                                                 suffixes=("", "_right"))
+    # temp = temp.loc[
+    #     (temp.state == temp.state_right) & (temp.val_plus >= temp.relative_time), ['state','relative_time', 'val_plus', 'cdf']]\
+    #     .groupby(['state', 'val_plus']).cdf.max().reset_index()
+
+
+    stats_df=stats_df[['state', 'relative_time', 'cdf']]
+    # print("fix memory part")
+    #fixing memory issues
+    data.to_pickle('data.p')
+    del(data)
+    # stats_df.to_pickle('stats_df.p')
+
+    """   ********* Performing chunking join **********"""
+    # we use chunks to avoid running out of memory for large event logs
+
+    # stats_df.to_csv('stats_df.csv',index=False, header=True, float_format='%.15f', compression='gzip', encoding='utf-8')
+    # stats_df_cols=stats_df.columns
+    chunk_size=10000 # number of states per chunk
+    #the problem is the first state all cases go through it.
+
+    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,chunk_size)
+    # print("Partitioning Done")
+    del(stats_df)
+    del(plus_and_minus)
+
+    gc.collect()
+
+    chunck_join(no_of_chunks,max_large_state)
+    # del(plus_and_minus)
+    #loading data back from hard disk
+    data=pd.read_pickle('data.p')
+    #appending cdf
+    cdf=append_cdf(1)
+
+    # add the first cdf values to the dataframe
+    data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    data.drop(['val_plus'], inplace=True, axis=1)
+    del(cdf)
+
+    #appending cdf2
+    cdf2=append_cdf(2)
+    # add the values to the dataframe
+    data = data.merge(cdf2, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    del(cdf2)
+    # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
+    # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
+    # the minimum is zero
+    data.cdf_minus=data.cdf_minus.fillna(0)
+
+    # print("Second CDF done")
+    # data= data.merge(cdf, how='left', on=['state','relative_time'], suffixes=("","_right"))
+    # print(cdf[['state','relative_time']])
+    # print(data.loc[data.cdf_plus.isna(), ['state','relative_time']])
+    # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(calculate_cdf_vectorized,axis=1)
+
+
+    #calculate p_k in a vectorized manner
+    data['p_k'] = data.cdf_plus - data.cdf_minus
+
+    #calculate epsilon in a vectorized manner
+
+
+    # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))/ log(exp(1.0))* (1.0 / data.relative_time_max)
+
+    data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))
+    data['eps']=data['eps']/ log(exp(1.0))
+    data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
+
+    #drop unused columns
+    # data.drop(['p_k','cdf_plus','cdf_minus','val_minus','relative_time_max'], inplace=True, axis=1)
+    # we keep the max and min to denormalize the values
+    # data.drop(['p_k', 'cdf_plus', 'cdf_minus', 'val_minus'], inplace=True, axis=1)
+    data.drop([ 'cdf_plus', 'cdf_minus', 'val_minus'], inplace=True, axis=1)
+    # data.drop('case:concept:name_linker',inplace=True,axis=1)
+
+    # data['eps'] = data.swifter.apply(
+    #     lambda x: estimate_epsilon_risk_dataframe(x['relative_time'], x['relative_time_ecdf'], x['relative_time_max'],
+    #                                               delta, precision), axis=1)
+
+    return data
+
 def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     """ the first state for large files is very large. We split the first state in a separate file.
      Then all the other states are splitted into several files.

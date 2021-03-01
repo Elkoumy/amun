@@ -9,6 +9,7 @@ from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.exporter.xes import factory as xes_exporter
 from amun.input_module import xes_to_DAFSA, xes_to_prefix_tree
 from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe,estimate_epsilon_risk_dataframe2,estimate_epsilon_risk_vectorized
+from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization
 from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
 import time
 import gc
@@ -55,14 +56,16 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     os.mkdir(os.path.join(curr_dir, 'tmp'))
 
     delta=0.2
-    precision =0.00000000001
+    precision =0.2
 
 
     #move epsilon estimation before the trace anonymization
     data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
     start=time.time()
     #optimize epsilon estimation (memory issues)
-    data=estimate_epsilon_risk_vectorized(data,delta, precision)
+    #TODO: Fix tmp directory for concurrent runs
+    data=estimate_epsilon_risk_vectorized_with_normalization(data,delta, precision)
+    print(data.relative_time_original)
     end=time.time()
     print("estimate epsilon :  %s"%(end-start))
 
@@ -76,7 +79,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     start = time.time()
     # data=anonymize_traces(data,noise)
-    # TODO: fix duplicated traces
+
     data = anonymize_traces_compacted(data, noise)
     end = time.time()
     print("anonymize traces %s" %(end - start))
