@@ -678,16 +678,19 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
 
 
     #calculate p_k in a vectorized manner
-    data['p_k'] = data.cdf_plus - data.cdf_minus
+    # data['p_k'] = data.cdf_plus - data.cdf_minus
+    data['p_k'] = 0
+    #  adding a fix to the case of fixed distrubtion
+    data['p_k']=data.apply(estimate_P_k_vectorized, delta=delta,axis=1)
 
     #calculate epsilon in a vectorized manner
-
-
     # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))/ log(exp(1.0))* (1.0 / data.relative_time_max)
 
     data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))
     data['eps']=data['eps']/ log(exp(1.0))
-    data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
+    # r =1 because of normalization
+    # data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
+
 
     #drop unused columns
     # data.drop(['p_k','cdf_plus','cdf_minus','val_minus','relative_time_max'], inplace=True, axis=1)
@@ -701,6 +704,14 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     #                                               delta, precision), axis=1)
 
     return data
+
+def estimate_P_k_vectorized(data,delta):
+
+    if data.relative_time_max==data.relative_time_min:
+        #in case of fixed distribution, use the worst case scenario
+        return (1-delta)/2
+
+    return data.cdf_plus - data.cdf_minus
 
 def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     """ the first state for large files is very large. We split the first state in a separate file.
