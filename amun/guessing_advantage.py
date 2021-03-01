@@ -556,17 +556,24 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     # Becuase the starting time now is being anonymized.
 
     # We estimate the min and max values for the normalization
-    data_state_max = data.groupby('state').relative_time.max()
-    data_state_max['state'] = data_state_max.index
 
-    data_state_min = data.groupby('state').relative_time.min()
-    data_state_min['state'] = data_state_min.index
-    # data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
 
-    data = pd.merge(data, data_state_max, on=['state'], suffixes=("", "_max"))
-    data = pd.merge(data, data_state_min, on=['state'], suffixes=("", "_min"))
+    # data_state_max = data.groupby(['prev_state','concept:name','state']).relative_time.max()
+    # # data_state_max = data.groupby('state').relative_time.max()
+    # data_state_max['state'] = data_state_max.index
+    #
+    # data_state_min = data.groupby('state').relative_time.min()
+    # data_state_min['state'] = data_state_min.index
+    # # data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
+    #
+    # data = pd.merge(data, data_state_max, on=['state'], suffixes=("", "_max"))
+    # data = pd.merge(data, data_state_min, on=['state'], suffixes=("", "_min"))
 
-    #TODO: perform normalization (scaling the values between 0 and 1, we use min max method
+    data['relative_time_max'] = data.groupby(['prev_state','concept:name','state'])['relative_time'].transform('max')
+
+    data['relative_time_min'] = data.groupby(['prev_state','concept:name','state'])['relative_time'].transform('min')
+
+    # perform normalization (scaling the values between 0 and 1, we use min max method
     data['relative_time_original']=data['relative_time']
     data['relative_time']= data[['relative_time','relative_time_min', 'relative_time_max']].apply(normalize_relative_time, axis=1)
 
@@ -591,22 +598,25 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(
     #     lambda x: calculate_cdf(x.relative_time_ecdf, x.val_minus), axis=1)
 
-    #state, relative_time
-    stats_df = data.groupby(['state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
+    # 'prev_state','concept:name', state, relative_time 'prev_state','concept:name'
+    stats_df = data.groupby(['prev_state','concept:name','state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
         columns={'relative_time': 'frequency'})
     # PDF
-    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['state']).frequency.sum()
+    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state','concept:name','state']).frequency.sum()
     # CDF
-    stats_df['cdf'] = stats_df['pdf'].groupby(['state']).cumsum()
+    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state','concept:name','state']).cumsum()
     stats_df = stats_df.reset_index()
     stats_df.drop(['pdf'], inplace=True, axis=1)
 
 
     #the plus_and_minus works like a value lookup
-    plus_and_minus=data.groupby(['state', 'relative_time','val_plus','val_minus']).state.agg('count').pipe(pd.DataFrame)\
-        .drop('state',axis=1)\
-        .reset_index()
+    # plus_and_minus=data.groupby(['prev_state','concept:name','state', 'relative_time','val_plus','val_minus']).state.agg('count').pipe(pd.DataFrame)\
+    #     .drop(['prev_state','concept:name','state'],axis=1)\
+    #     .reset_index()
 
+    plus_and_minus=data.groupby(['prev_state','concept:name','state', 'relative_time','val_plus','val_minus'])['prev_state','concept:name','state'].agg('count').pipe(pd.DataFrame)\
+        .drop(['prev_state','concept:name','state'],axis=1)\
+        .reset_index()
 
     #calculating CDF of the value + r_ij
     # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='cross',
@@ -616,7 +626,7 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     #     .groupby(['state', 'val_plus']).cdf.max().reset_index()
 
 
-    stats_df=stats_df[['state', 'relative_time', 'cdf']]
+    stats_df=stats_df[['prev_state','concept:name','state', 'relative_time', 'cdf']]
     # print("fix memory part")
     #fixing memory issues
     data.to_pickle('data.p')
@@ -646,14 +656,14 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     cdf=append_cdf(1)
 
     # add the first cdf values to the dataframe
-    data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    data = data.merge(cdf, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
     data.drop(['val_plus'], inplace=True, axis=1)
     del(cdf)
 
     #appending cdf2
     cdf2=append_cdf(2)
     # add the values to the dataframe
-    data = data.merge(cdf2, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
+    data = data.merge(cdf2, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
     del(cdf2)
     # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
     # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
@@ -701,25 +711,30 @@ def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     # stats_df.to_csv('stats_df.csv', index=False, header=True, float_format='%.15f', compression='gzip',
     #                 encoding='utf-8')
 
-    stats_df.sort_values('state', ascending=True, inplace=True)
-    plus_and_minus.sort_values('state', ascending=True, inplace=True)
-    unique_states = stats_df.state.unique()
-    large_states=stats_df.groupby(['state']).relative_time.count()
+    stats_df.sort_values(['prev_state','concept:name','state'], ascending=True, inplace=True)
+    plus_and_minus.sort_values(['prev_state','concept:name','state'], ascending=True, inplace=True)
+    # unique_states = stats_df.state.unique()
+    unique_states = stats_df.groupby(['prev_state','concept:name','state']).size().reset_index().rename(columns={0:'count'}).drop('count',axis=1)
+    large_states=stats_df.groupby(['prev_state','concept:name','state']).relative_time.count()
 
     #separating large states from the others
-    large_states=large_states[large_states>1000].reset_index().state
+    large_states=large_states[large_states>1000].reset_index()
 
+    #['prev_state', 'concept:name', 'state']
     curr_dir = os.getcwd()
     idx=0
 
 
     """large state separately"""
-    for current_state in large_states:
-        res = stats_df.loc[stats_df.state==current_state, :]
+    for index,row in large_states.iterrows():
+        res = stats_df.loc[(stats_df.state==row['state']) & (stats_df.prev_state==row['prev_state']) & (stats_df['concept:name']==row['concept:name']), :]
         res.to_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (idx)))
-        plus_and_minus.loc[plus_and_minus.state==current_state, :] \
+        plus_and_minus.loc[ (plus_and_minus.state==row['state']) & (plus_and_minus.prev_state==row['prev_state']) & (plus_and_minus['concept:name']==row['concept:name']), :] \
             .to_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (idx)))
-        unique_states=unique_states[unique_states!=current_state]
+        # unique_states=unique_states[unique_states!=current_state]
+        row_id=unique_states.index[ (unique_states.state==row['state'] )& (unique_states.prev_state==row['prev_state']) & (unique_states['concept:name']==row['concept:name'])].tolist()[0]
+        unique_states.drop(row_id, axis=0,inplace=True)
+
 
         idx += 1
 
@@ -730,11 +745,13 @@ def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     for i in range(0, unique_states.shape[0], chunk_size):
         # print("Current Chunck is: %s" % (i))
         current_states = unique_states[i:i + chunk_size]
-        res = stats_df.loc[stats_df.state.isin(current_states), :]
-
+        # res = stats_df.loc[stats_df.state.isin(current_states), :]
+        res = stats_df.iloc[current_states.index]
         res.to_pickle(os.path.join(curr_dir, 'tmp','stats_df_%s'%(idx)))
-        plus_and_minus.loc[plus_and_minus.state.isin(current_states), :]\
-            .to_pickle(os.path.join(curr_dir, 'tmp','plus_and_minus_%s'%(idx)))
+        # plus_and_minus.loc[plus_and_minus.state.isin(current_states), :]\
+        #     .to_pickle(os.path.join(curr_dir, 'tmp','plus_and_minus_%s'%(idx)))
+        plus_and_minus.iloc[current_states.index] \
+            .to_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (idx)))
         idx+=1
 
     # return len(list(range(0, unique_states.shape[0], chunk_size)))  #number of chunks
@@ -764,7 +781,7 @@ def append_cdf(num=1):
 def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx):
 
 
-    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on='state',
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['prev_state','concept:name','state'],
                               suffixes=("", "_right"))
 
     # plus_and_minus.columns = plus_and_minus.columns.map(lambda x: str(x) + '_right')
@@ -775,17 +792,17 @@ def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx):
 
     #val_plus is from plus minus
     #relative_time is from stats_df
-    stats_df_chunk = stats_df_chunk.loc[(stats_df_chunk.val_plus >= stats_df_chunk.relative_time), ['state', 'relative_time', 'val_plus',
+    stats_df_chunk = stats_df_chunk.loc[(stats_df_chunk.val_plus >= stats_df_chunk.relative_time), ['prev_state','concept:name','state', 'relative_time', 'val_plus',
                                                                             'cdf']] \
-        .groupby(['state', 'val_plus']).cdf.max().reset_index()
+        .groupby(['prev_state','concept:name','state', 'val_plus']).cdf.max().reset_index()
     # print("performing second merge ")
     # stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on='state',
     #                             suffixes=("", "_right"))
     # # print(stats_df_chunk)
     # stats_df_chunk = stats_df_chunk.loc[stats_df_chunk.val_plus == stats_df_chunk.val_plus_right, ['state', 'relative_time', 'cdf']]
-    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state', 'val_plus'],
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['prev_state','concept:name','state', 'val_plus'],
                                           suffixes=("", "_right"))
-    stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
+    stats_df_chunk = stats_df_chunk.loc[:, ['prev_state','concept:name','state', 'relative_time', 'cdf']]
     cdf = stats_df_chunk.rename(columns={'cdf': 'cdf_plus'})  # holds the result
     curr_dir=os.getcwd()
     # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
@@ -796,17 +813,17 @@ def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx):
 
 
 def chunk_merge_minus(stats_df_chunk, plus_and_minus,idx):
-    stats_df_chunk = stats_df_chunk.merge(plus_and_minus[['state', 'val_minus']], how='inner', on='state',
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus[['prev_state','concept:name','state', 'val_minus']], how='inner', on=['prev_state','concept:name','state'],
                               suffixes=("", "_right"))
     # df2=pd.merge(df1,x, left_on = "Colname1", right_on = "Colname2")
     # stats_df_chunk.to_csv("stats_df_chunk_merge.csv",mode="a",index=False,float_format='%.15f', compression='gzip', encoding='utf-8')
-    stats_df_chunk = stats_df_chunk.loc[(stats_df_chunk.val_minus >= stats_df_chunk.relative_time), ['state', 'relative_time', 'val_minus',
+    stats_df_chunk = stats_df_chunk.loc[(stats_df_chunk.val_minus >= stats_df_chunk.relative_time), ['prev_state','concept:name','state', 'relative_time', 'val_minus',
                                                                             'cdf']] \
-        .groupby(['state', 'val_minus']).cdf.max().reset_index()
+        .groupby(['prev_state','concept:name','state', 'val_minus']).cdf.max().reset_index()
     # print("performing second merge ")
-    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['state', 'val_minus'],
+    stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['prev_state','concept:name','state', 'val_minus'],
                                           suffixes=("", "_right"))
-    stats_df_chunk = stats_df_chunk.loc[:, ['state', 'relative_time', 'cdf']]
+    stats_df_chunk = stats_df_chunk.loc[:, ['prev_state','concept:name','state', 'relative_time', 'cdf']]
 
     # stats_df_chunk = stats_df_chunk.merge(plus_and_minus[['state', 'relative_time', 'val_minus']], how='inner', on='state',
     #                             suffixes=("", "_right"))
