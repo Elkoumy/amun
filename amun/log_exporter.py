@@ -9,10 +9,26 @@ def relative_time_to_XES(data,out_dir):
     """
 
     #TODO: get the timestamp of the first event
+    #(minimum per case) or (maximum double representation, and convert it back to timestamp)
+
+
+    #TODO: make first relative zero per group
+
+    #TODO: CUMSUM relative time per group
+
+    # stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state','concept:name','state']).cumsum()
+    # stats_df = stats_df.reset_index()
+
+    #TODO: relative +time per group
+
+
 
     #TODO: event_timestamp= prev+relative ===> accumulation per case
+
+
 
     # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
     # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
 
-    return
+
+    return data

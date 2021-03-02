@@ -68,7 +68,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     #optimize epsilon estimation (memory issues)
     #TODO: Fix tmp directory for concurrent runs
     data=estimate_epsilon_risk_vectorized_with_normalization(data,delta, precision)
-    print(data.relative_time_original)
+
     end=time.time()
     print("estimate epsilon :  %s"%(end-start))
 
@@ -94,12 +94,14 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     end_all = time.time()
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
+    #TODO: return from relative time to original timestamps
+    out_dir=""
+    data=relative_time_to_XES(data,out_dir)
+
     #TODO: calculate the accuracy here
     data,mape=relative_time_MAPE(data)
 
-    #TODO: return from relative time to original timestamps
-    out_dir=""
-    relative_time_to_XES(data,out_dir)
+
     # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
     # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
 
