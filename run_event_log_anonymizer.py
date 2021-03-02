@@ -11,6 +11,7 @@ from amun.input_module import xes_to_DAFSA, xes_to_prefix_tree
 from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe,estimate_epsilon_risk_dataframe2,estimate_epsilon_risk_vectorized
 from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization
 from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
+from amun.noise_injection import laplace_noise_injection
 import time
 import gc
 #import swifter
@@ -84,10 +85,16 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     end = time.time()
     print("anonymize traces %s" %(end - start))
 
+
+    #Laplace Noise Injection
+    data= laplace_noise_injection(data)
+
     end_all = time.time()
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
+    #TODO: calculate the accuracy here
 
+    #TODO: return from relative time to original timestamps
 
     # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
     # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
@@ -111,7 +118,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['Sepsis_t']
+    datasets = ['temp']
     data_dir="data"
 
     for dataset in datasets:

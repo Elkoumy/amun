@@ -215,6 +215,10 @@ def sampling(row,duplicated_traces):
 
     return row
 def execute_oversampling(data,duplicated_traces):
+    #duplicating the original case id to know which case is original and which is a copy.
+    # that is needed to estimate to scale the epsilon of the duplicated cases.
+    data['original_case:concept:name']=data['case:concept:name']
+
     #count per trace variant
     duplicated_traces=pd.Series(duplicated_traces).value_counts()
     all_traces=pd.Series(data.trace_variant.unique())
