@@ -12,8 +12,9 @@ from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_
 from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization
 from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
 from amun.noise_injection import laplace_noise_injection
-from amun.measure_accuracy import relative_time_MAPE
+from amun.measure_accuracy import relative_time_SMAPE
 from amun.log_exporter import relative_time_to_XES
+from amun.guessing_advantage import  get_noise_case_variant
 import time
 import gc
 #import swifter
@@ -59,8 +60,8 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     #create tmp
     os.mkdir(os.path.join(curr_dir, 'tmp'))
 
-    delta=0.5
-    precision =0.1
+    delta=0.1
+    precision =0.5
 
 
     #move epsilon estimation before the trace anonymization
@@ -78,8 +79,8 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     del(trace_variants)
 
     gc.collect()
-    # TODO: calculate frequency noise here
-    noise = 3
+    # calculate case variant frequency noise here
+    noise = get_noise_case_variant(delta)
 
     start = time.time()
     # data=anonymize_traces(data,noise)
@@ -97,10 +98,10 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
 
 
-    #TODO: calculate the accuracy here
-    data,mape=relative_time_MAPE(data)
-
-    #TODO: return from relative time to original timestamps
+    # calculate the SMAPE
+    data, smape=relative_time_SMAPE(data)
+    print("SMAPE: %s %%"%(smape))
+    # return from relative time to original timestamps
     data=relative_time_to_XES(data,dataset,out_dir)
     data.to_csv("temp_anonymized.csv",index=0)
     # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
@@ -125,7 +126,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['BPIC14_t']
+    datasets = ['Sepsis_t']
 
     data_dir="data"
     out_dir="anonymized_logs"

@@ -15,6 +15,7 @@ import os
 import glob
 import pickle
 import gc
+from scipy.stats import laplace
 # import amun.multiprocessing_helper_functions
 # import concurrent.futures
 
@@ -546,6 +547,17 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     #                                               delta, precision), axis=1)
 
     return data
+
+
+def get_noise_case_variant(delta):
+    p=(1-delta)/2.0
+    eps=- np.log(p / (1.0 - p) * (1.0 / (delta + p) - 1.0))
+
+    sens_time = 1
+    noise = laplace.rvs(loc=0, scale=sens_time / eps, size=1)[0]
+    noise = round(abs(noise))
+
+    return noise
 
 def normalize_relative_time(data):
     if data['relative_time_min']==data['relative_time_max']:

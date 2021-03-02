@@ -74,7 +74,8 @@ def f1_score(xes_file,dfg1,dfg2):
     return fitness_1, fitness_2
 
 
-def relative_time_MAPE(data):
+def relative_time_SMAPE(data):
     mape=0.0
-
-    return data, mape
+    # mape=((data['relative_time_original']-data["relative_time_anonymized"])/data['relative_time_original']).abs().mean()*100 #percentage
+    smape=((data['relative_time_original']-data["relative_time_anonymized"])/(data['relative_time_original']+data["relative_time_anonymized"])).abs().mean()*100
+    return data,  smape
