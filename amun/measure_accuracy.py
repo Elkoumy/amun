@@ -72,3 +72,9 @@ def f1_score(xes_file,dfg1,dfg2):
     fitness_2 = replay_factory.apply(xes_file, net2, initial_marking2, final_marking2)
 
     return fitness_1, fitness_2
+
+
+def relative_time_MAPE(data):
+    mape=0.0
+
+    return data, mape

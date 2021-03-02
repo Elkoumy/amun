@@ -12,6 +12,8 @@ from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_
 from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization
 from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
 from amun.noise_injection import laplace_noise_injection
+from amun.measure_accuracy import relative_time_MAPE
+from amun.log_exporter import relative_time_to_XES
 import time
 import gc
 #import swifter
@@ -93,9 +95,11 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
     #TODO: calculate the accuracy here
+    data,mape=relative_time_MAPE(data)
 
     #TODO: return from relative time to original timestamps
-
+    out_dir=""
+    relative_time_to_XES(data,out_dir)
     # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
     # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
 
