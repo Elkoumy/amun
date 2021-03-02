@@ -9,6 +9,7 @@ from scipy.stats import wasserstein_distance
 from pm4py.algo.discovery.inductive import factory as inductive_miner
 from pm4py.evaluation.replay_fitness import factory as replay_factory
 from math import fabs
+import pandas as pd
 def earth_mover_dist(dfg1, dfg2):
     #  need to consider for zero frequncies as the counter object don't include it
     # after the discussion, we decided to let the user know about that issue and maybe has can handle it on his own.
@@ -74,8 +75,15 @@ def f1_score(xes_file,dfg1,dfg2):
     return fitness_1, fitness_2
 
 
-def relative_time_SMAPE(data):
-    mape=0.0
+def estimate_SMAPE_variant_and_time(data, variant_counts):
+
+    smape_variant=0
     # mape=((data['relative_time_original']-data["relative_time_anonymized"])/data['relative_time_original']).abs().mean()*100 #percentage
-    smape=((data['relative_time_original']-data["relative_time_anonymized"])/(data['relative_time_original']+data["relative_time_anonymized"])).abs().mean()*100
-    return data,  smape
+    #$
+    smape_time=((data['relative_time_original']-data["relative_time_anonymized"])/(data['relative_time_original']+data["relative_time_anonymized"])).abs().mean()*100
+
+    variant_freq=pd.Series([ x['count'] for x in variant_counts])
+
+    variant_freq_anonymized= data.groupby(['trace_variant']).size()
+    smape_variant=((variant_freq-variant_freq_anonymized)/(variant_freq+variant_freq_anonymized)).abs().mean()*100
+    return data,  smape_time, smape_variant

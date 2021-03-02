@@ -26,7 +26,7 @@ from pm4py.objects.log.importer.csv import factory as csv_importer
 from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.adapters.pandas import csv_import_adapter
 from pm4py.algo.filtering.log.variants import variants_filter
-
+from pm4py.statistics.traces.log import case_statistics
 # from pruning_edges import get_pruning_edges
 
 
@@ -112,6 +112,7 @@ def xes_to_DAFSA(data_dir,dataset):
     log = conversion_factory.apply(data)
 
 
+    variants_count = case_statistics.get_variant_statistics(log)
 
     ### Calculate relative time
 
@@ -152,7 +153,7 @@ def xes_to_DAFSA(data_dir,dataset):
     # dafsa_edges,edges_df=get_edges(dafsa_log)
     # return data,dafsa_log,dafsa_edges, edges_df, trace_variants
 
-    return data, trace_variants
+    return data, variants_count
 
 
 def xes_to_prefix_tree(data_dir, dataset):
@@ -216,6 +217,7 @@ def xes_to_prefix_tree(data_dir, dataset):
 def annotate_eventlog_with_trace_variants(data, log):
 
     variants = variants_filter.get_variants(log)
+
     case_variant_link=[]
     trace_variant_index=list(variants.keys())
     for idx, key in enumerate(trace_variant_index):

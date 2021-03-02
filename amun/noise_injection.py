@@ -16,7 +16,7 @@ def laplace_noise_injection(data):
     data['relative_time_anonymized']=data['relative_time']+data['noise']
 
     # data.drop(['original_case:concept:name','relative_time_max', 'relative_time_min','p_k','eps','counts','noise'], inplace=True, axis=1)
-    data=data[['case:concept:name','time:timestamp','concept:name','relative_time_original','relative_time_anonymized']]#,'eps','noise','p_k']]
+    data=data[['case:concept:name','time:timestamp','concept:name','relative_time_original','relative_time_anonymized','trace_variant']]#,'eps','noise','p_k']]
     return data
 
 def add_noise(data):

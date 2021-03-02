@@ -12,7 +12,7 @@ from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_
 from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization
 from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
 from amun.noise_injection import laplace_noise_injection
-from amun.measure_accuracy import relative_time_SMAPE
+from amun.measure_accuracy import estimate_SMAPE_variant_and_time
 from amun.log_exporter import relative_time_to_XES
 from amun.guessing_advantage import  get_noise_case_variant
 import time
@@ -41,27 +41,31 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     #event logs without lifecycle.
     #"BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"
 
+    delta=0.8
+    precision =0.5
+    temp_dir='tmp'
+
+
+
     print("Processing the dataset: %s"%(dataset))
     start_all = time.time()
 
     start = time.time()
-    data, trace_variants= xes_to_DAFSA(data_dir, dataset)
+    data, variants_count= xes_to_DAFSA(data_dir, dataset)
     # data, trace_variants= xes_to_prefix_tree(data_dir, dataset)
     end = time.time()
     print("reading to DAFSA annotation %s" %(end - start))
 
     """ Clearing tmp folder"""
     curr_dir = os.getcwd()
-    if os.path.isdir(os.path.join(curr_dir, 'tmp')):
+    if os.path.isdir(os.path.join(curr_dir, temp_dir)):
         #delete tmp
         # os.remove(os.path.join(curr_dir, 'tmp'))
-        shutil.rmtree(os.path.join(curr_dir, 'tmp'))
+        shutil.rmtree(os.path.join(curr_dir, temp_dir))
 
     #create tmp
-    os.mkdir(os.path.join(curr_dir, 'tmp'))
+    os.mkdir(os.path.join(curr_dir, temp_dir))
 
-    delta=0.1
-    precision =0.5
 
 
     #move epsilon estimation before the trace anonymization
@@ -73,11 +77,6 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     end=time.time()
     print("estimate epsilon :  %s"%(end-start))
-
-
-
-    del(trace_variants)
-
     gc.collect()
     # calculate case variant frequency noise here
     noise = get_noise_case_variant(delta)
@@ -99,8 +98,9 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
 
     # calculate the SMAPE
-    data, smape=relative_time_SMAPE(data)
-    print("SMAPE: %s %%"%(smape))
+    data, smape_time, smape_variant=estimate_SMAPE_variant_and_time(data, variants_count)
+    print("SMAPE time: %s %%"%(smape_time))
+    print("SMAPE case variant: %s %%" % (smape_variant))
     # return from relative time to original timestamps
     data=relative_time_to_XES(data,dataset,out_dir)
     data.to_csv("temp_anonymized.csv",index=0)
@@ -126,7 +126,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['Sepsis_t']
+    datasets = ['temp']
 
     data_dir="data"
     out_dir="anonymized_logs"
