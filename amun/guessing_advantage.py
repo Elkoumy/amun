@@ -737,8 +737,8 @@ def estimate_P_k_vectorized(data,delta):
 
 def epsilon_vectorized_internal(data, delta):
     if data.p_k+delta >=1:
-        #in case p_k+delta>1, set epsilon = 0.1
-        return 0.1
+        #in case p_k+delta>1, set epsilon = 0.5
+        return 0.5
 
     # r =1 because of normalization
     return (- np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0)))

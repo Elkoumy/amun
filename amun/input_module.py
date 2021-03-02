@@ -311,14 +311,19 @@ def get_relative_time(data, dataset):
 
 
     #set the relative time to the Unix Epoch time
+    # data.loc[0,'relative_time']= (data.loc[0]['time:timestamp'] - pd.Timestamp(
+    #     "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
+    #
+    # data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
+    #     (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - pd.Timestamp(
+    #     "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
+
     data.loc[0,'relative_time']= (data.loc[0]['time:timestamp'] - pd.Timestamp(
-        "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
+        "1970-01-01T00:00:00Z")) / pd.Timedelta('1D')
 
     data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
         (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - pd.Timestamp(
-        "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
-
-
+        "1970-01-01T00:00:00Z")) / pd.Timedelta('1D')
 
 
     # data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \

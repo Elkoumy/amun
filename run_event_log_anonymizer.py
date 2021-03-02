@@ -24,6 +24,7 @@ import os
 import shutil
 
 def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data",
+                        out_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs",
                         dataset="BPIC13_t"):
     # data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
     # dataset="temp"
@@ -58,8 +59,8 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     #create tmp
     os.mkdir(os.path.join(curr_dir, 'tmp'))
 
-    delta=0.2
-    precision =0.5
+    delta=0.5
+    precision =0.1
 
 
     #move epsilon estimation before the trace anonymization
@@ -94,14 +95,14 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     end_all = time.time()
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
-    #TODO: return from relative time to original timestamps
-    out_dir=""
-    data=relative_time_to_XES(data,out_dir)
+
 
     #TODO: calculate the accuracy here
     data,mape=relative_time_MAPE(data)
 
-
+    #TODO: return from relative time to original timestamps
+    data=relative_time_to_XES(data,dataset,out_dir)
+    data.to_csv("temp_anonymized.csv",index=0)
     # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
     # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
 
@@ -124,10 +125,13 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['temp']
+    datasets = ['BPIC14_t']
+
     data_dir="data"
+    out_dir="anonymized_logs"
+
 
     for dataset in datasets:
-        anonymize_event_log(data_dir,dataset)
+        anonymize_event_log(data_dir,out_dir,dataset)
 
 
