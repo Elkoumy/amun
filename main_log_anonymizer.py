@@ -16,11 +16,18 @@ jobs_dir = "jobs"
 datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
+<<<<<<< HEAD
 #datasets = ["BPIC20_t"]
+=======
+datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
+                "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t"]
+
+# datasets = ["temp"]
+>>>>>>> 87a93599e31a18dba8d0aa7c42b1df6d13cce4eb
 memory = 4
 exec_time="01:00:00" # 1 hour
-# no_of_iterations =10
-no_of_iterations =1
+no_of_iterations =10
+# no_of_iterations =1
 # number_of_experiments =70
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 deltas=[0.5]
@@ -33,20 +40,30 @@ for precision in precisions:
             for iteration in range(0, no_of_iterations):
                 if data in ["CCC19_t","Unrineweginfectie_t"]:
                     memory = 4
-                    exec_time = "00:5:00"  # 5 minutes
-                elif data in ["Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t"]:
+                    exec_time = "00:1:00"  # 1 minutes
+                elif data in ["Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t"]:
                     memory = 16
-                    exec_time = "00:20:00"  # 20 minutes
-                elif data in ["BPIC14_t","BPIC20_t","BPIC12_t", "BPIC13_t", "BPIC15_t"]:
+                    exec_time = "00:07:00"  # 7 minutes
+                elif data in ["BPIC20_t", "BPIC13_t"]:
+                    memory = 16
+                    exec_time = "00:08:00"  # 8 minutes
+                elif data in ["BPIC12_t", ]:
+                    memory = 16
+                    exec_time = "00:32:00"  # 32 minutes
+
+                elif data in ["BPIC17_t"]:
                     memory = 16
                     exec_time = "00:40:00"  # 40 minutes
-                elif data in ["BPIC17_t",  "BPIC19_t"]:
+                elif data in ["BPIC14_t"]:
                     memory = 16
-                    exec_time = "04:00:00"  # 4 hours
+                    exec_time = "03:00:00"  # 3 hours
+                elif data in [  "BPIC19_t"]:
+                    memory = 16
+                    exec_time = "03:00:00"  # 4 hours
 
                 elif data in ["BPIC18_t"]:
                     memory = 32
-                    exec_time = "06:00:00"  # 6 hours
+                    exec_time = "05:00:00"  # 5 hours
 
 
                 job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
