@@ -66,12 +66,11 @@ def relative_time_to_XES(data,out_dir,file_name):
         data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd']  # in m seconds
     except:
 
-        data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] /24).astype(
-            'timedelta64[D]')
+        data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] /24).astype('timedelta64[D]')
         # data['cumm_relative_time_anymzd'] = data['cumm_relative_time_anymzd'].astype('timedelta64[s]')
         # data['time:timestamp']=data.apply(lambda e:(e['case_start_time_anmzd']+ e['cumm_relative_time_anymzd'] ) ,axis=1)
 
-        data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd']  # in m seconds
+        data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd'].astype('timedelta64[D]')  # in m seconds
 
 
     data['case:concept:name']= data['case:concept:name'].astype('str')
