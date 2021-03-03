@@ -58,17 +58,6 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
                   header=False
                   )
 
-    slurm_end_all = time.time()
-    print("slurm wall-to-wall execution time is: %s  seconds"  %(slurm_end_all - start_all))
-
-    # preparing the output logging
-    result = [[dataset, precision, delta, iteration, (slurm_end_all - start_all)]]
-    result = pd.DataFrame(result)
-    result.to_csv(os.path.join(experiment_log_dir, 'slurm_time',
-                               'slurm_time_%s_%s_%s_%s.csv' % (dataset, precision, delta, iteration)),
-                  index=False,
-                  header=False
-                  )
 
 
     #creating separate folder for each delta and for each precision
@@ -90,6 +79,18 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     # return from relative time to original timestamps
     data=relative_time_to_XES(data,out_dir,file_name)
 
+    slurm_end_all = time.time()
+    print("slurm wall-to-wall execution time is: %s  seconds" % (slurm_end_all - start_all))
+
+    # preparing the output logging
+    result = [[dataset, precision, delta, iteration, (slurm_end_all - start_all)]]
+    result = pd.DataFrame(result)
+    result.to_csv(os.path.join(experiment_log_dir, 'slurm_time',
+                               'slurm_time_%s_%s_%s_%s.csv' % (dataset, precision, delta, iteration)),
+                  index=False,
+                  header=False
+                  )
+
 
 if __name__ == "__main__":
     if not sys.warnoptions:
@@ -100,8 +101,8 @@ if __name__ == "__main__":
 
     deltas=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
     precisions=[0.5]
-
-    datasets = ['temp']
+    deltas=[0.5]
+    datasets = ['BPIC12_t']
 
 
     # cur_dir=os.getcwd()
@@ -111,6 +112,8 @@ if __name__ == "__main__":
     experiment_log_dir=os.path.join(cur_dir,'experiment_event_anonymizer_log')
 
     no_of_iterations=10
+    no_of_iterations = 1
+
     for precision in precisions:
 
         for delta in deltas:
