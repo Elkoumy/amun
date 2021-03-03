@@ -16,7 +16,7 @@ def relative_time_to_XES(data,out_dir,file_name):
 
     # data[['case_start_time','case_start_time_anmzd','original_start']] = data.groupby(['case:concept:name'])['relative_time_original','relative_time_anonymized','time:timestamp'].transform('max')
 
-    data[['original_start']] = data.groupby(['case:concept:name'])[ 'time:timestamp'].transform('min')
+    data['original_start'] = data.groupby(['case:concept:name'])[ 'time:timestamp'].transform('min')
     data['case_start_time']=0.0
     data['case_start_time_anmzd'] = 0.0
 
