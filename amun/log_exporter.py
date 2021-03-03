@@ -27,10 +27,10 @@ def relative_time_to_XES(data,out_dir,file_name):
 
     # case start time to the entire case
 
-    data[['case_start_time' ]] = data.groupby(['case:concept:name'])[
+    data['case_start_time' ] = data.groupby(['case:concept:name'])[
         'case_start_time'].transform('max')
 
-    data[[ 'case_start_time_anmzd' ]] = data.groupby(['case:concept:name'])[
+    data[ 'case_start_time_anmzd' ] = data.groupby(['case:concept:name'])[
          'case_start_time_anmzd'].transform('max')
 
 
