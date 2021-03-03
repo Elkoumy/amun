@@ -38,9 +38,13 @@ for precision in precisions:
                 elif data in ["BPIC14_t","BPIC20_t","BPIC12_t", "BPIC13_t", "BPIC15_t"]:
                     memory = 16
                     exec_time = "00:40:00"  # 40 minutes
-                elif data in ["BPIC17_t", "BPIC18_t", "BPIC19_t"]:
+                elif data in ["BPIC17_t",  "BPIC19_t"]:
+                    memory = 16
+                    exec_time = "04:00:00"  # 3 hours
+
+                elif data in ["BPIC18_t"]:
                     memory = 32
-                    exec_time = "03:00:00"  # 3 hours
+                    exec_time = "06:00:00"  # 3 hours
 
 
                 job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
