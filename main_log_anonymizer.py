@@ -16,7 +16,7 @@ jobs_dir = "jobs"
 datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-datasets = ["Sepsis_t"]
+# datasets = ["Sepsis_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 # no_of_iterations =10
@@ -42,11 +42,11 @@ for precision in precisions:
                     exec_time = "00:40:00"  # 40 minutes
                 elif data in ["BPIC17_t",  "BPIC19_t"]:
                     memory = 16
-                    exec_time = "04:00:00"  # 3 hours
+                    exec_time = "04:00:00"  # 4 hours
 
                 elif data in ["BPIC18_t"]:
                     memory = 32
-                    exec_time = "06:00:00"  # 3 hours
+                    exec_time = "06:00:00"  # 6 hours
 
 
                 job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
