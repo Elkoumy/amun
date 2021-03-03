@@ -557,7 +557,7 @@ def get_noise_case_variant(delta):
     noise = laplace.rvs(loc=0, scale=sens_time / eps, size=1)[0]
     noise = int(math.ceil(abs(noise)))
     print("case variant noise: %s"%(noise))
-    return noise
+    return noise,eps
 
 def normalize_relative_time(data):
     if data['relative_time_min']==data['relative_time_max']:

@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 import random as r
 import time
+import math
+from scipy.stats import laplace
 #import swifter
 
 def build_DAFSA_bit_vector(data):
@@ -48,7 +50,7 @@ def build_DAFSA_bit_vector(data):
 
 
 
-def build_DAFSA_bit_vector_compacted(data):
+def build_DAFSA_bit_vector_compacted(data,eps):
     #calculate the bit vector dataframe from the trace and state anotated event log
 
 
@@ -67,11 +69,18 @@ def build_DAFSA_bit_vector_compacted(data):
 
 
     bit_vector_df['added_noise']= [0]* bit_vector_df.shape[0]
+    noise=[get_noise(eps) for x in range(0,bit_vector_df.shape[0])]
+    bit_vector_df['noise']=noise
 
     # bit_vector_df.drop('case:concept:name', axis=1, inplace=True)
     # print("*********** yay ***************&&")
     return bit_vector_df ,bit_vector_trace_variant
 
+def get_noise(eps):
+    sens=1
+    noise = laplace.rvs(loc=0, scale=sens / eps, size=1)[0]
+    noise = int(math.ceil(abs(noise)))
+    return noise
 
 def reversed_normalization(a):
     # where 0 has the largest weight.
@@ -144,7 +153,7 @@ def pick_random_edge_trace(bit_vector_df,noise):
 
 
 
-def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant,noise):
+def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant):
     #picks a random edge, then picks a random trace variant of that edge. It adds the noise
     #to the column added noise
 
@@ -152,7 +161,7 @@ def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant,noi
 
     # need_noise = bit_vector_df.loc[bit_vector_df.added_noise < noise, :].dropna()
     added_noise=bit_vector_df.added_noise
-    need_noise=added_noise[added_noise<noise]
+    need_noise=added_noise[added_noise<bit_vector_df.noise]
 
 
     #performing weighted random sampling
@@ -183,8 +192,9 @@ def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant,noi
     #picking traces as the noise size
     # picked_trace= traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
 
-
-    picked_trace = traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
+    temp=bit_vector_df.loc[picked_edge_index,'noise']
+    picked_trace = traces.sample(n=bit_vector_df.loc[picked_edge_index,'noise'], weights=trace_sampling_weights, replace=True)
+    # picked_trace = traces.sample(n=noise, weights=trace_sampling_weights, replace=True)
 
 
     # picked_trace=picked_trace.trace_variant.iloc[0]
@@ -328,9 +338,9 @@ def anonymize_traces(data, noise):
     return data
 
 
-def anonymize_traces_compacted(data, noise):
+def anonymize_traces_compacted(data,  eps):
     # start=time.time()
-    bit_vector_df,bit_vector_trace_variant= build_DAFSA_bit_vector_compacted(data)
+    bit_vector_df,bit_vector_trace_variant= build_DAFSA_bit_vector_compacted(data,eps)
     # end = time.time()
     # print("build bit vector: %s" % (end - start))
 
@@ -339,21 +349,21 @@ def anonymize_traces_compacted(data, noise):
 
     # start = time.time()
     #  check if there is an edge that needs anonymization
-    cnt=bit_vector_df.loc[bit_vector_df.added_noise<noise,"added_noise"].shape[0]
+    cnt=bit_vector_df.loc[bit_vector_df.added_noise<bit_vector_df.noise,"added_noise"].shape[0]
 
     iter=0
     while cnt>0:
         loop_start=time.time()
         #  pick a random edge and a random trace
         start=time.time()
-        bit_vector_df, duplicated_trace= pick_random_edge_trace_compacted(bit_vector_df,bit_vector_trace_variant,noise)
+        bit_vector_df, duplicated_trace= pick_random_edge_trace_compacted(bit_vector_df,bit_vector_trace_variant)
         end=time.time()
         # print("pick_random_edge_trace_compacted: %s"%(end-start))
         # duplicated_traces.append(duplicated_trace)
         duplicated_traces.extend(duplicated_trace.trace_variant)
 
         start = time.time()
-        cnt = bit_vector_df.loc[bit_vector_df.added_noise < noise,"added_noise"].shape[0]
+        cnt = bit_vector_df.loc[bit_vector_df.added_noise < bit_vector_df.noise,"added_noise"].shape[0]
         end = time.time()
         # print("counting time: %s" % (end - start))
         iter+=1

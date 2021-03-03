@@ -34,9 +34,9 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     end = time.time()
     print("estimate epsilon :  %s" % (end - start))
     gc.collect()
-    noise = get_noise_case_variant(delta)
+    noise, eps = get_noise_case_variant(delta)
     start = time.time()
-    data = anonymize_traces_compacted(data, noise)
+    data = anonymize_traces_compacted(data, eps)
     end = time.time()
     print("anonymize traces %s" % (end - start))
     # Laplace Noise Injection
