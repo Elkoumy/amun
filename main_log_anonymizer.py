@@ -17,7 +17,7 @@ datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
-                "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t"]
+                "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t"]
 
 # datasets = ["temp"]
 memory = 4
