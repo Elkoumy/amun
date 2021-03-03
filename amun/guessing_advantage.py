@@ -421,7 +421,7 @@ def calculate_cdf_vectorized(data):
     return cdf.y[cur_idx]
 
 
-def estimate_epsilon_risk_vectorized(data, delta, precision):
+def estimate_epsilon_risk_vectorized(data, delta, precision,tmp_dir):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
 
@@ -488,19 +488,19 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     chunk_size=10000 # number of states per chunk
     #the problem is the first state all cases go through it.
 
-    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,chunk_size)
+    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,tmp_dir,chunk_size)
     # print("Partitioning Done")
     del(stats_df)
     del(plus_and_minus)
 
     gc.collect()
 
-    chunck_join(no_of_chunks,max_large_state)
+    chunck_join(no_of_chunks,max_large_state,tmp_dir)
     # del(plus_and_minus)
     #loading data back from hard disk
     data=pd.read_pickle('data.p')
     #appending cdf
-    cdf=append_cdf(1)
+    cdf=append_cdf(tmp_dir,1)
 
     # add the first cdf values to the dataframe
     data = data.merge(cdf, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
@@ -508,7 +508,7 @@ def estimate_epsilon_risk_vectorized(data, delta, precision):
     del(cdf)
 
     #appending cdf2
-    cdf2=append_cdf(2)
+    cdf2=append_cdf(tmp_dir,2)
     # add the values to the dataframe
     data = data.merge(cdf2, how='left', on=['state', 'relative_time'], suffixes=("", "_right"))
     del(cdf2)
@@ -565,7 +565,7 @@ def normalize_relative_time(data):
         return 1
 
     return (data['relative_time']-data['relative_time_min'])/(data['relative_time_max']-data['relative_time_min'])
-def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
+def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
 
@@ -659,7 +659,8 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     stats_df=stats_df[['prev_state','concept:name','state', 'relative_time', 'cdf']]
     # print("fix memory part")
     #fixing memory issues
-    data.to_pickle('data.p')
+    # set its directory to tmp
+    data.to_pickle(os.path.join( tmp_dir,'data.p'))
     del(data)
     # stats_df.to_pickle('stats_df.p')
 
@@ -671,19 +672,20 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     chunk_size=10000 # number of states per chunk
     #the problem is the first state all cases go through it.
 
-    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,chunk_size)
+    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,tmp_dir,chunk_size)
     # print("Partitioning Done")
     del(stats_df)
     del(plus_and_minus)
 
     gc.collect()
 
-    chunck_join(no_of_chunks,max_large_state)
+    chunck_join(no_of_chunks,max_large_state,tmp_dir)
     # del(plus_and_minus)
     #loading data back from hard disk
-    data=pd.read_pickle('data.p')
+    # set its directory to tmp
+    data=pd.read_pickle(os.path.join( tmp_dir,'data.p'))
     #appending cdf
-    cdf=append_cdf(1)
+    cdf=append_cdf(tmp_dir,1)
 
     # add the first cdf values to the dataframe
     data = data.merge(cdf, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
@@ -691,7 +693,7 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision):
     del(cdf)
 
     #appending cdf2
-    cdf2=append_cdf(2)
+    cdf2=append_cdf(tmp_dir,2)
     # add the values to the dataframe
     data = data.merge(cdf2, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
     del(cdf2)
@@ -755,7 +757,7 @@ def epsilon_vectorized_internal(data, delta):
     # r =1 because of normalization
     return (- np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0)))
 
-def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
+def partitioning_df(stats_df,plus_and_minus,tmp_dir,chunk_size = 1000):
     """ the first state for large files is very large. We split the first state in a separate file.
      Then all the other states are splitted into several files.
     """
@@ -781,9 +783,9 @@ def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
     """large state separately"""
     for index,row in large_states.iterrows():
         res = stats_df.loc[(stats_df.state==row['state']) & (stats_df.prev_state==row['prev_state']) & (stats_df['concept:name']==row['concept:name']), :]
-        res.to_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (idx)))
+        res.to_pickle(os.path.join( tmp_dir, 'stats_df_%s' % (idx)))
         plus_and_minus.loc[ (plus_and_minus.state==row['state']) & (plus_and_minus.prev_state==row['prev_state']) & (plus_and_minus['concept:name']==row['concept:name']), :] \
-            .to_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (idx)))
+            .to_pickle(os.path.join( tmp_dir, 'plus_and_minus_%s' % (idx)))
         # unique_states=unique_states[unique_states!=current_state]
         row_id=unique_states.index[ (unique_states.state==row['state'] )& (unique_states.prev_state==row['prev_state']) & (unique_states['concept:name']==row['concept:name'])].tolist()[0]
         unique_states.drop(row_id, axis=0,inplace=True)
@@ -800,26 +802,26 @@ def partitioning_df(stats_df,plus_and_minus,chunk_size = 1000):
         current_states = unique_states[i:i + chunk_size]
         # res = stats_df.loc[stats_df.state.isin(current_states), :]
         res = stats_df.iloc[current_states.index]
-        res.to_pickle(os.path.join(curr_dir, 'tmp','stats_df_%s'%(idx)))
+        res.to_pickle(os.path.join( tmp_dir,'stats_df_%s'%(idx)))
         # plus_and_minus.loc[plus_and_minus.state.isin(current_states), :]\
-        #     .to_pickle(os.path.join(curr_dir, 'tmp','plus_and_minus_%s'%(idx)))
+        #     .to_pickle(os.path.join( tmp_dir,'plus_and_minus_%s'%(idx)))
         plus_and_minus.iloc[current_states.index] \
-            .to_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (idx)))
+            .to_pickle(os.path.join( tmp_dir, 'plus_and_minus_%s' % (idx)))
         idx+=1
 
     # return len(list(range(0, unique_states.shape[0], chunk_size)))  #number of chunks
     return idx , max_index_of_large_states # number of chunks , max largest state
 
-def append_cdf(num=1):
+def append_cdf(tmp_dir,num=1):
     cdf_name=0
     if num==1:
         cdf_name='cdf_*'
     else:
         cdf_name='cdf2_*'
     curr_dir = os.getcwd()
-    # dir_path=os.path.join(curr_dir, 'tmp',cdf_name)
+    # dir_path=os.path.join( tmp_dir,cdf_name)
 
-    list_of_files = glob.glob(os.path.join(curr_dir, 'tmp',cdf_name))
+    list_of_files = glob.glob(os.path.join( tmp_dir,cdf_name))
 
     cdf=[]
     for i in list_of_files:
@@ -831,7 +833,7 @@ def append_cdf(num=1):
     return cdf
 
 
-def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx):
+def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx,tmp_dir):
 
 
     stats_df_chunk = stats_df_chunk.merge(plus_and_minus, how='inner', on=['prev_state','concept:name','state'],
@@ -858,14 +860,14 @@ def chunk_merge_plus(stats_df_chunk, plus_and_minus,idx):
     stats_df_chunk = stats_df_chunk.loc[:, ['prev_state','concept:name','state', 'relative_time', 'cdf']]
     cdf = stats_df_chunk.rename(columns={'cdf': 'cdf_plus'})  # holds the result
     curr_dir=os.getcwd()
-    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
+    # os.makedirs(os.path.join(tmp_dir,'new%s'%(idx)))
 
-    with open(os.path.join(curr_dir,'tmp','cdf_%s.p'%(idx)), 'wb') as handle:
+    with open(os.path.join(tmp_dir,'cdf_%s.p'%(idx)), 'wb') as handle:
         pickle.dump(cdf, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 
-def chunk_merge_minus(stats_df_chunk, plus_and_minus,idx):
+def chunk_merge_minus(stats_df_chunk, plus_and_minus,idx,tmp_dir):
     stats_df_chunk = stats_df_chunk.merge(plus_and_minus[['prev_state','concept:name','state', 'val_minus']], how='inner', on=['prev_state','concept:name','state'],
                               suffixes=("", "_right"))
     # df2=pd.merge(df1,x, left_on = "Colname1", right_on = "Colname2")
@@ -884,14 +886,14 @@ def chunk_merge_minus(stats_df_chunk, plus_and_minus,idx):
     # stats_df_chunk = stats_df_chunk.loc[stats_df_chunk.val_minus == stats_df_chunk.val_minus_right, ['state', 'relative_time', 'cdf']]
     cdf2 = stats_df_chunk.rename(columns={'cdf': 'cdf_minus'})  # holds the result
     curr_dir=os.getcwd()
-    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
-    # stats_df_chunk.to_pickle(os.path.join(curr_dir,'tmp','new%s'%(idx),'stats_df_chunk_merge_%s.p'%(idx)))
+    # os.makedirs(os.path.join(tmp_dir,'new%s'%(idx)))
+    # stats_df_chunk.to_pickle(os.path.join(tmp_dir,'new%s'%(idx),'stats_df_chunk_merge_%s.p'%(idx)))
 
-    with open(os.path.join(curr_dir, 'tmp', 'cdf2_%s.p' % (idx)), 'wb') as handle:
+    with open(os.path.join( tmp_dir, 'cdf2_%s.p' % (idx)), 'wb') as handle:
         pickle.dump(cdf2, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def chunk_merge_plus_single_large_state(stats_df_chunk, plus_and_minus,idx):
+def chunk_merge_plus_single_large_state(stats_df_chunk, plus_and_minus,idx,tmp_dir):
     # print("idx is :%s"%(idx))
     # print("plus_and_minus.val_plus: %s"%(plus_and_minus.val_plus))
     # print("plus_and_minus.val_plus[0]: %s"%(plus_and_minus.val_plus.iloc[0]) )
@@ -916,14 +918,14 @@ def chunk_merge_plus_single_large_state(stats_df_chunk, plus_and_minus,idx):
 
     cdf = stats_df_chunk.rename(columns={'cdf': 'cdf_plus'})  # holds the result
     curr_dir=os.getcwd()
-    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
+    # os.makedirs(os.path.join(tmp_dir,'new%s'%(idx)))
 
-    with open(os.path.join(curr_dir,'tmp','cdf_%s.p'%(idx)), 'wb') as handle:
+    with open(os.path.join(tmp_dir,'cdf_%s.p'%(idx)), 'wb') as handle:
         pickle.dump(cdf, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 
-def chunk_merge_minus_single_large_state(stats_df_chunk, plus_and_minus,idx):
+def chunk_merge_minus_single_large_state(stats_df_chunk, plus_and_minus,idx,tmp_dir):
 
     t = plus_and_minus.val_plus.iloc[0] - plus_and_minus.relative_time.iloc[0]  # the precision* max is the same for the same state
 
@@ -945,13 +947,13 @@ def chunk_merge_minus_single_large_state(stats_df_chunk, plus_and_minus,idx):
 
     cdf2 = stats_df_chunk.rename(columns={'cdf': 'cdf_minus'})  # holds the result
     curr_dir = os.getcwd()
-    # os.makedirs(os.path.join(curr_dir,'tmp','new%s'%(idx)))
-    # stats_df_chunk.to_pickle(os.path.join(curr_dir,'tmp','new%s'%(idx),'stats_df_chunk_merge_%s.p'%(idx)))
+    # os.makedirs(os.path.join(tmp_dir,'new%s'%(idx)))
+    # stats_df_chunk.to_pickle(os.path.join(tmp_dir,'new%s'%(idx),'stats_df_chunk_merge_%s.p'%(idx)))
 
-    with open(os.path.join(curr_dir, 'tmp', 'cdf2_%s.p' % (idx)), 'wb') as handle:
+    with open(os.path.join( tmp_dir, 'cdf2_%s.p' % (idx)), 'wb') as handle:
         pickle.dump(cdf2, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-def chunck_join(num_of_chunks,max_large_state):
+def chunck_join(num_of_chunks,max_large_state,tmp_dir):
 
     # print("performing first merge ")
     # stats_df = pd.read_csv('stats_df.csv', chunksize=chunksize, compression='gzip', encoding='utf-8')
@@ -964,14 +966,14 @@ def chunck_join(num_of_chunks,max_large_state):
 
 
     for i in range(0,num_of_chunks):
-        stats_df=pd.read_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (i)))
-        plus_and_minus = pd.read_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (i)))
+        stats_df=pd.read_pickle(os.path.join( tmp_dir, 'stats_df_%s' % (i)))
+        plus_and_minus = pd.read_pickle(os.path.join( tmp_dir, 'plus_and_minus_%s' % (i)))
 
         #the first state is large, so we separate it from the others
         if i<max_large_state:
-            chunk_merge_plus_single_large_state(stats_df,plus_and_minus,i)
+            chunk_merge_plus_single_large_state(stats_df,plus_and_minus,i,tmp_dir)
         else:
-            chunk_merge_plus(stats_df,plus_and_minus,i)
+            chunk_merge_plus(stats_df,plus_and_minus,i,tmp_dir)
 
     # print("plus merge done")
 
@@ -980,12 +982,12 @@ def chunck_join(num_of_chunks,max_large_state):
 
     for i in range(0,num_of_chunks):
         # print("current chunk id: %s"%(i))
-        stats_df=pd.read_pickle(os.path.join(curr_dir, 'tmp', 'stats_df_%s' % (i)))
-        plus_and_minus = pd.read_pickle(os.path.join(curr_dir, 'tmp', 'plus_and_minus_%s' % (i)))
+        stats_df=pd.read_pickle(os.path.join( tmp_dir, 'stats_df_%s' % (i)))
+        plus_and_minus = pd.read_pickle(os.path.join( tmp_dir, 'plus_and_minus_%s' % (i)))
         if i<max_large_state:
-            chunk_merge_minus_single_large_state(stats_df,plus_and_minus,i)
+            chunk_merge_minus_single_large_state(stats_df,plus_and_minus,i,tmp_dir)
         else:
-            chunk_merge_minus(stats_df,plus_and_minus,i)
+            chunk_merge_minus(stats_df,plus_and_minus,i,tmp_dir)
 
 
 
@@ -997,12 +999,12 @@ def chunck_join(num_of_chunks,max_large_state):
 
     # #removing temporary files
     # curr_dir = os.getcwd()
-    # if os.path.exists(os.path.join(curr_dir,'tmp')):
-    #     # os.rmdir(os.path.join(curr_dir,'tmp') )
-    #     shutil.rmtree(os.path.join(curr_dir,'tmp'), ignore_errors=True)
+    # if os.path.exists(os.path.join(tmp_dir)):
+    #     # os.rmdir(os.path.join(tmp_dir) )
+    #     shutil.rmtree(os.path.join(tmp_dir), ignore_errors=True)
     # # if os.path.exists("stats_df_chunk_merge.csv"):
     # #     os.remove("stats_df_chunk_merge.csv")
-    # os.makedirs('tmp')
+    # os.makedirs(tmp_dir)
 
     # stats_df = stats_df.merge(plus_and_minus[['state', 'val_plus']], how='inner', on='state',
     #                                                          suffixes=("", "_right"))

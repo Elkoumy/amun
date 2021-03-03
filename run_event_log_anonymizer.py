@@ -3,94 +3,32 @@ This module implements the main module for the event log anonymizer
 
 """
 
-import pandas as pd
-import numpy as np
-from pm4py.objects.conversion.log import factory as conversion_factory
-from pm4py.objects.log.exporter.xes import factory as xes_exporter
-from amun.input_module import xes_to_DAFSA, xes_to_prefix_tree
-from amun.guessing_advantage import  estimate_epsilon_risk_dataframe, calculate_cdf_dataframe,estimate_epsilon_risk_dataframe2,estimate_epsilon_risk_vectorized
-from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization
-from amun.trace_anonymization import  anonymize_traces_compacted, anonymize_traces
-from amun.noise_injection import laplace_noise_injection
+from amun.event_log_anonymization import event_log_anonymization
 from amun.measure_accuracy import estimate_SMAPE_variant_and_time
 from amun.log_exporter import relative_time_to_XES
-from amun.guessing_advantage import  get_noise_case_variant
 import time
-import gc
 #import swifter
-from statsmodels.distributions.empirical_distribution import ECDF
 import sys
 import warnings
 import os
-import shutil
 
 def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data",
                         out_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs",
-                        dataset="BPIC13_t"):
-    # data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
-    # dataset="temp"
-    # dataset="CCC19_t"
-    # dataset="Sepsis_t"
-    # dataset="CreditReq_t"
-    # dataset="BPIC12_t"
-    # dataset="BPIC19"
-    # dataset="Unrineweginfectie_t"
-    # dataset="Hospital_t"
-    # dataset="Traffic_t"
-    # dataset="Sepsis_t"
-    #event logs without lifecycle.
-    #"BPIC13", "BPIC20", "BPIC19", "BPIC14", "Unrineweginfectie", "temp"
-
-    delta=0.8
-    precision =0.5
-    temp_dir='tmp'
+                        dataset="BPIC13_t",
+                        delta=0.5,
+                        precision=0.5,
+                        iteration=1):
 
 
-
-    print("Processing the dataset: %s"%(dataset))
     start_all = time.time()
 
-    start = time.time()
-    data, variants_count= xes_to_DAFSA(data_dir, dataset)
-    # data, trace_variants= xes_to_prefix_tree(data_dir, dataset)
-    end = time.time()
-    print("reading to DAFSA annotation %s" %(end - start))
-
-    """ Clearing tmp folder"""
+    # delta=0.8
+    # precision =0.5
+    # temp directory name tmp/t_ event log name _ precision _ delta _ itertion
     curr_dir = os.getcwd()
-    if os.path.isdir(os.path.join(curr_dir, temp_dir)):
-        #delete tmp
-        # os.remove(os.path.join(curr_dir, 'tmp'))
-        shutil.rmtree(os.path.join(curr_dir, temp_dir))
+    temp_dir=os.path.join(curr_dir, 'tmp','t_%s_%s_%s_%s'%(dataset,precision,delta,iteration))
 
-    #create tmp
-    os.mkdir(os.path.join(curr_dir, temp_dir))
-
-
-
-    #move epsilon estimation before the trace anonymization
-    data=data[['case:concept:name','concept:name','time:timestamp','relative_time','trace_variant','prev_state','state']]
-    start=time.time()
-    #optimize epsilon estimation (memory issues)
-    #TODO: Fix tmp directory for concurrent runs
-    data=estimate_epsilon_risk_vectorized_with_normalization(data,delta, precision)
-
-    end=time.time()
-    print("estimate epsilon :  %s"%(end-start))
-    gc.collect()
-    # calculate case variant frequency noise here
-    noise = get_noise_case_variant(delta)
-
-    start = time.time()
-    # data=anonymize_traces(data,noise)
-
-    data = anonymize_traces_compacted(data, noise)
-    end = time.time()
-    print("anonymize traces %s" %(end - start))
-
-
-    #Laplace Noise Injection
-    data= laplace_noise_injection(data)
+    data, variants_count = event_log_anonymization(data_dir, dataset, delta, precision, temp_dir)
 
     end_all = time.time()
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
@@ -103,19 +41,6 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     print("SMAPE case variant: %s %%" % (smape_variant))
     # return from relative time to original timestamps
     data=relative_time_to_XES(data,dataset,out_dir)
-    data.to_csv("temp_anonymized.csv",index=0)
-    # log = conversion_factory.apply(data[['case:concept:name','concept:name','time:timestamp']])
-    # xes_exporter.export_log(log, os.path.join(data_dir,dataset+"_anonymized.xes"))
-
-    # start = time.time()
-
-
-    # data_cdf = data.groupby('state').relative_time.apply(calculate_cdf_dataframe)
-    # end = time.time()
-    # print("calculate cdf dataframe : %s" %(end - start))
-    #
-    # data_cdf['state']=data_cdf.index
-    #
 
 
 if __name__ == "__main__":
@@ -126,7 +51,7 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
 
-    datasets = ['temp']
+    datasets = ['Sepsis_t']
 
     data_dir="data"
     out_dir="anonymized_logs"
