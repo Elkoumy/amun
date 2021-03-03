@@ -69,7 +69,7 @@ def build_DAFSA_bit_vector_compacted(data):
     bit_vector_df['added_noise']= [0]* bit_vector_df.shape[0]
 
     # bit_vector_df.drop('case:concept:name', axis=1, inplace=True)
-    print("*********** yay ***************&&")
+    # print("*********** yay ***************&&")
     return bit_vector_df ,bit_vector_trace_variant
 
 

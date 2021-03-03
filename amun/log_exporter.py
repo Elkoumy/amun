@@ -3,7 +3,7 @@ from pm4py.objects.log.exporter.xes import factory as xes_exporter
 import pandas as pd
 import os
 
-def relative_time_to_XES(data,dataset,out_dir):
+def relative_time_to_XES(data,out_dir,file_name):
     """
     This method takes the dataframe as an input and transforms the relative time back to timestamps
     :param data: the anonymized event log (case:concept:name, concept:name, relative_time_anonymized)
@@ -25,7 +25,7 @@ def relative_time_to_XES(data,dataset,out_dir):
     data.loc[data.original_start == data['time:timestamp'], 'case_start_time'] = data.loc[
         data.original_start == data['time:timestamp'], 'relative_time_original']
 
-    #TODO: case start time to the entire case
+    # case start time to the entire case
 
     data[['case_start_time' ]] = data.groupby(['case:concept:name'])[
         'case_start_time'].transform('max')
@@ -70,7 +70,7 @@ def relative_time_to_XES(data,dataset,out_dir):
 
 
     log = conversion_factory.apply(data)
-    xes_exporter.export_log(log, os.path.join(out_dir,dataset+"_anonymized.xes"))
+    xes_exporter.export_log(log, os.path.join(out_dir,file_name+".xes"))
 
 
     return data

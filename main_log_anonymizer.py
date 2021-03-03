@@ -16,41 +16,57 @@ jobs_dir = "jobs"
 datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-datasets = ["BPIC17_t", "BPIC19_t"]
+datasets = ["Sepsis_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
-number_of_experiments =10
+no_of_iterations =10
 # number_of_experiments =70
-for data in datasets:
+deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+precisions = [0.5]
 
-    if data in ["CCC19_t","Unrineweginfectie_t"]:
-        memory = 4
-        exec_time = "00:5:00"  # 5 minutes
-    elif data in ["Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t"]:
-        memory = 16
-        exec_time = "00:20:00"  # 20 minutes
-    elif data in ["BPIC14_t","BPIC20_t","BPIC12_t", "BPIC13_t", "BPIC15_t"]:
-        memory = 16
-        exec_time = "00:40:00"  # 40 minutes
-    elif data in ["BPIC17_t", "BPIC18_t", "BPIC19_t"]:
-        memory = 32
-        exec_time = "03:00:00"  # 3 hours
+for precision in precisions:
+    for delta in deltas:
+        for data in datasets:
+
+            for iteration in range(0, no_of_iterations):
+                if data in ["CCC19_t","Unrineweginfectie_t"]:
+                    memory = 4
+                    exec_time = "00:5:00"  # 5 minutes
+                elif data in ["Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t"]:
+                    memory = 16
+                    exec_time = "00:20:00"  # 20 minutes
+                elif data in ["BPIC14_t","BPIC20_t","BPIC12_t", "BPIC13_t", "BPIC15_t"]:
+                    memory = 16
+                    exec_time = "00:40:00"  # 40 minutes
+                elif data in ["BPIC17_t", "BPIC18_t", "BPIC19_t"]:
+                    memory = 32
+                    exec_time = "03:00:00"  # 3 hours
 
 
-    job_name = os.path.join(jobs_dir,"job_%s.sh" % (data))
-    job_log_name =os.path.join(jobs_dir,"log_%s.txt" % (data))
+                job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
+                job_log_name =os.path.join(jobs_dir,"l_%s_%s_%s_%s.txt" % (data, precision, delta, iteration))
 
-    with open(job_name, "w") as fout:
-        fout.write("#!/bin/bash\n")
-        fout.write("#SBATCH --output=jobs/log_%s.txt\n" % (data))
-        fout.write("#SBATCH --mem=%sGB\n" % memory)
-        fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
-        #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-        fout.write("#SBATCH --partition=amd\n")
-        fout.write("#SBATCH --time=%s\n" % (exec_time))
-        fout.write("module load python-3.7.1\n")
-        # fout.write("cd ..\n")
-        fout.write("python -u %s \"%s\" \n" % ('"'+os.path.join(dir_path,"run_event_log_anonymizer_slurm.py")+'"',data))
+                with open(job_name, "w") as fout:
+                    fout.write("#!/bin/bash\n")
+                    fout.write("#SBATCH --output=jobs/l_%s_%s_%s_%s.txt" % (data, precision, delta, iteration))
+                    fout.write("#SBATCH --mem=%sGB\n" % memory)
+                    fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
+                    #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
+                    fout.write("#SBATCH --partition=amd\n")
+                    fout.write("#SBATCH --time=%s\n" % (exec_time))
+                    fout.write("module load python-3.7.1\n")
+                    # fout.write("cd ..\n")
 
-    time.sleep(1)
-    subprocess.Popen(("sbatch %s" % job_name).split())
+                    # dataset = os.sys.argv[1]
+                    # delta = os.sys.argv[2]
+                    # precision = os.sys.argv[3]
+                    # iteration = os.sys.argv[4]
+                    fout.write("python -u %s \"%s\" %s %s %s \n"
+                               %('"'+os.path.join(dir_path,"run_event_log_anonymizer_slurm.py")+'"',
+                                                           data,
+                                                           delta,
+                                                           precision,
+                                                           iteration))
+
+                # time.sleep(1)
+                # subprocess.Popen(("sbatch %s" % job_name).split())

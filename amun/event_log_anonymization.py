@@ -17,12 +17,12 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     print("reading to DAFSA annotation %s" % (end - start))
     """ Clearing tmp folder"""
     curr_dir = os.getcwd()
-    if os.path.isdir(os.path.join(curr_dir, tmp_dir)):
+    if os.path.isdir(os.path.join( tmp_dir)):
         # delete tmp
         # os.remove(os.path.join(curr_dir, 'tmp'))
-        shutil.rmtree(os.path.join(curr_dir, tmp_dir))
+        shutil.rmtree(os.path.join( tmp_dir))
     # create tmp
-    os.mkdir(os.path.join(curr_dir, tmp_dir))
+    os.mkdir(os.path.join( tmp_dir))
 
     # move epsilon estimation before the trace anonymization
     data = data[['case:concept:name', 'concept:name', 'time:timestamp', 'relative_time', 'trace_variant', 'prev_state',
