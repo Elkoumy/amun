@@ -68,5 +68,5 @@ for precision in precisions:
                                                            precision,
                                                            iteration))
 
-                # time.sleep(1)
-                # subprocess.Popen(("sbatch %s" % job_name).split())
+                time.sleep(1)
+                subprocess.Popen(("sbatch %s" % job_name).split())
