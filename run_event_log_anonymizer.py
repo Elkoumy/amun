@@ -95,13 +95,14 @@ if __name__ == "__main__":
     if not sys.warnoptions:
         warnings.simplefilter("ignore")
 
-    datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
+    datasets = [ "Hospital_t", "CreditReq_t", "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
+
 
     deltas=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
     precisions=[0.5]
-
-    datasets = ['temp']
+    deltas=[0.5]
+    #datasets = ['temp']
 
 
     # cur_dir=os.getcwd()
@@ -110,7 +111,7 @@ if __name__ == "__main__":
     out_dir=os.path.join(cur_dir,"anonymized_logs")
     experiment_log_dir=os.path.join(cur_dir,'experiment_event_anonymizer_log')
 
-    no_of_iterations=10
+    no_of_iterations=1
     for precision in precisions:
 
         for delta in deltas:
