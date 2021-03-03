@@ -16,7 +16,7 @@ def relative_time_to_XES(data,out_dir,file_name):
 
     # data[['case_start_time','case_start_time_anmzd','original_start']] = data.groupby(['case:concept:name'])['relative_time_original','relative_time_anonymized','time:timestamp'].transform('max')
 
-    data[['original_start']] = data.groupby(['case:concept:name'])[ 'time:timestamp'].transform('min')
+    data['original_start'] = data.groupby(['case:concept:name'])[ 'time:timestamp'].transform('min')
     data['case_start_time']=0.0
     data['case_start_time_anmzd'] = 0.0
 
@@ -27,10 +27,10 @@ def relative_time_to_XES(data,out_dir,file_name):
 
     # case start time to the entire case
 
-    data[['case_start_time' ]] = data.groupby(['case:concept:name'])[
+    data['case_start_time' ] = data.groupby(['case:concept:name'])[
         'case_start_time'].transform('max')
 
-    data[[ 'case_start_time_anmzd' ]] = data.groupby(['case:concept:name'])[
+    data[ 'case_start_time_anmzd' ] = data.groupby(['case:concept:name'])[
          'case_start_time_anmzd'].transform('max')
 
 
@@ -56,12 +56,22 @@ def relative_time_to_XES(data,out_dir,file_name):
 
     data['time:timestamp_original'] = data['case_start_time'] + data['cumm_relative_time'].astype(
         'timedelta64[ms]')   # in m seconds
-    data['cumm_relative_time_anymzd']=(data['cumm_relative_time_anymzd']/1000.0/60.0/60.0).astype('timedelta64[h]')
-    # data['cumm_relative_time_anymzd'] = data['cumm_relative_time_anymzd'].astype('timedelta64[s]')
-    # data['time:timestamp']=data.apply(lambda e:(e['case_start_time_anmzd']+ e['cumm_relative_time_anymzd'] ) ,axis=1)
 
+    try:
+        data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] / 1000.0 / 60.0 / 60.0).astype(
+            'timedelta64[h]')
+        # data['cumm_relative_time_anymzd'] = data['cumm_relative_time_anymzd'].astype('timedelta64[s]')
+        # data['time:timestamp']=data.apply(lambda e:(e['case_start_time_anmzd']+ e['cumm_relative_time_anymzd'] ) ,axis=1)
 
-    data['time:timestamp']= data['case_start_time_anmzd']+ data['cumm_relative_time_anymzd']   # in m seconds
+        data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd']  # in m seconds
+    except:
+
+        data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] /24).astype('timedelta64[D]')
+        # data['cumm_relative_time_anymzd'] = data['cumm_relative_time_anymzd'].astype('timedelta64[s]')
+        # data['time:timestamp']=data.apply(lambda e:(e['case_start_time_anmzd']+ e['cumm_relative_time_anymzd'] ) ,axis=1)
+
+        data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd'].astype('timedelta64[D]')  # in m seconds
+
 
     data['case:concept:name']= data['case:concept:name'].astype('str')
     data=data[['case:concept:name','concept:name','time:timestamp']]

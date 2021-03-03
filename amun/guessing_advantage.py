@@ -18,7 +18,7 @@ import gc
 from scipy.stats import laplace
 # import amun.multiprocessing_helper_functions
 # import concurrent.futures
-
+import math
 class AggregateType(Enum):
     SUM = 1
     AVG = 2
@@ -555,9 +555,9 @@ def get_noise_case_variant(delta):
 
     sens_time = 1
     noise = laplace.rvs(loc=0, scale=sens_time / eps, size=1)[0]
-    noise = round(abs(noise))
-
-    return noise
+    noise = int(math.ceil(abs(noise)))
+    print("case variant noise: %s"%(noise))
+    return noise,eps
 
 def normalize_relative_time(data):
     if data['relative_time_min']==data['relative_time_max']:
