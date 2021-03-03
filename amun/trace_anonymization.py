@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import random as r
 import time
-import swifter
+#import swifter
 
 def build_DAFSA_bit_vector(data):
     #calculate the bit vector dataframe from the trace and state anotated event log
