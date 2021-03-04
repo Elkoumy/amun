@@ -29,7 +29,7 @@ exec_time="01:00:00" # 1 hour
 
 # no_of_iterations =10
 no_of_iterations =1
-
+start_iteration=0
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 deltas=[0.5]
@@ -40,7 +40,7 @@ for precision in precisions:
     for delta in deltas:
         for data in datasets:
 
-            for iteration in range(0, no_of_iterations):
+            for iteration in range(start_iteration, no_of_iterations):
                 if data in ["CCC19_t","Unrineweginfectie_t"]:
                     memory = 4
                     exec_time = "00:1:00"  # 1 minutes
