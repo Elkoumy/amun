@@ -108,7 +108,7 @@ if __name__ == "__main__":
     precisions=[0.5]
     deltas=[0.5]
 
-    datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t"]
+    # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t"]
 
     datasets=["BPIC19_t"]
 
