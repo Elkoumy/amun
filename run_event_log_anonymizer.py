@@ -103,15 +103,11 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
     deltas=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-<<<<<<< HEAD
-    precisions=[0.5]
-    deltas=[0.5]
-    datasets = ['BPIC19_t']
-=======
+
     precisions=[0.3]
     # deltas=[0.5]
     datasets = ["CCC19_t"]
->>>>>>> 1930cffcd78d3cd6dad8af7b57a88be70a04e4b1
+
 
 
     # cur_dir=os.getcwd()
