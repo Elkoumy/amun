@@ -78,7 +78,8 @@ def relative_time_to_XES(data,out_dir,file_name):
             #BPI19 raises an error here
             data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] //365).astype('timedelta64[Y]')
             data.loc[data['case_start_time_anmzd'].isnull(), 'case_start_time_anmzd'] = pd.Timestamp.max
-
+            print("data dtypes are: %s"%(data.dtypes))
+            data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd']
             data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd'].astype(
                 'timedelta64[Y]')
 
