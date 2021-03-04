@@ -28,12 +28,12 @@ datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t", "BPIC14_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =4
+no_of_iterations =1
 # no_of_iterations =1
 start_iteration=0
 
-deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-# deltas=[0.5]
+# deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+deltas=[0.5]
 precisions = [0.5]
 # precisions = [0.1]
 
@@ -50,16 +50,16 @@ for precision in precisions:
                     exec_time = "00:07:00"  # 7 minutes
                 elif data in ["BPIC20_t", "BPIC13_t"]:
                     memory = 20
-                    exec_time = "00:30:00"  # 30 minutes
+                    exec_time = "01:00:00"  # 30 minutes
                 elif data in ["BPIC12_t" ]:
-                    memory = 16
-                    exec_time = "00:32:00"  # 32 minutes
+                    memory = 20
+                    exec_time = "01:00:00"  # 32 minutes
 
                 elif data in ["BPIC17_t"]:
-                    memory = 16
-                    exec_time = "00:40:00"  # 40 minutes
+                    memory = 20
+                    exec_time = "02:40:00"  # 40 minutes
                 elif data in ["BPIC14_t"]:
-                    memory = 16
+                    memory = 20
                     exec_time = "02:30:00"  # 1.5 hours
 
                 elif data in [  "BPIC19_t"]:
