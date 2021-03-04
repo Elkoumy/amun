@@ -19,7 +19,9 @@ datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t
 # datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
 #                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t"]
 
-datasets = ["BPIC18_t"]
+# datasets = ["BPIC18_t"]
+
+datasets = ["CCC19_t","CreditReq_t", "Sepsis_t", "Unrineweginfectie_t",  "Traffic_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
@@ -30,7 +32,8 @@ no_of_iterations =10
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 #deltas=[0.5]
-precisions = [0.5]
+#precisions = [0.5]
+precisions = [0.1]
 
 for precision in precisions:
     for delta in deltas:
