@@ -41,7 +41,7 @@ def relative_time_to_XES(data,out_dir,file_name):
     # return back to timestamp
     data['case_start_time']=data['case_start_time']*pd.Timedelta('1d') + pd.Timestamp(
         "1970-01-01T00:00:00Z")
-
+    #data['case_start_time_anmzd1']=data['case_start_time_anmzd']
     data['case_start_time_anmzd'] = data['case_start_time_anmzd'] * pd.Timedelta('1d') + pd.Timestamp(
         "1970-01-01T00:00:00Z")
 
@@ -74,7 +74,13 @@ def relative_time_to_XES(data,out_dir,file_name):
 
 
     data['case:concept:name']= data['case:concept:name'].astype('str')
-    data=data[['case:concept:name','concept:name','time:timestamp']]
+
+    #Fixing the overflow of time
+    data.loc[data['time:timestamp'].isnull(),'time:timestamp']=pd.Timestamp.max
+
+    #renaming epsilon columns
+    data.rename(columns={'eps': 'epsilon_per_event', 'eps_trace': 'case:epsilon_per_trace'}, inplace=True)
+    data=data[['case:concept:name','case:epsilon_per_trace','concept:name','time:timestamp','epsilon_per_event']]
     data['lifecycle:transition']="complete"
 
 

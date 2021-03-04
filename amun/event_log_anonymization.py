@@ -41,4 +41,5 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     print("anonymize traces %s" % (end - start))
     # Laplace Noise Injection
     data = laplace_noise_injection(data)
+    data['eps_trace']=eps
     return data, variants_count

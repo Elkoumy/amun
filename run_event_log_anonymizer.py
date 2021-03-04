@@ -35,6 +35,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
 
     # preparing the output logging
+
     result = [[dataset, precision, delta, iteration, (end_all - start_all)]]
     result = pd.DataFrame(result)
     result.to_csv(os.path.join(experiment_log_dir, 'wall_to_wall_execution_time',
@@ -46,12 +47,14 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
 
     # calculate the SMAPE
+
     data, smape_time, smape_variant=estimate_SMAPE_variant_and_time(data, variants_count)
     print("SMAPE time: %s %%"%(smape_time))
     print("SMAPE case variant: %s %%" % (smape_variant))
 
     #preparing the output logging
-    result=[[dataset,precision,delta,iteration,smape_time,smape_variant]]
+    # log median epsilon
+    result=[[dataset,precision,delta,iteration,smape_time,smape_variant,data.eps.median(),data.eps_trace.loc[0]]]
     result=pd.DataFrame(result)
     result.to_csv(os.path.join(experiment_log_dir,'error_metrics','error_metric_%s_%s_%s_%s.csv'%(dataset,precision,delta,iteration)),
                   index=False,
@@ -100,9 +103,15 @@ if __name__ == "__main__":
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
     deltas=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+<<<<<<< HEAD
     precisions=[0.5]
     deltas=[0.5]
     datasets = ['BPIC19_t']
+=======
+    precisions=[0.3]
+    # deltas=[0.5]
+    datasets = ["CCC19_t"]
+>>>>>>> 1930cffcd78d3cd6dad8af7b57a88be70a04e4b1
 
 
     # cur_dir=os.getcwd()
@@ -111,7 +120,7 @@ if __name__ == "__main__":
     out_dir=os.path.join(cur_dir,"anonymized_logs")
     experiment_log_dir=os.path.join(cur_dir,'experiment_event_anonymizer_log')
 
-    no_of_iterations=10
+    # no_of_iterations=10
     no_of_iterations = 1
 
     for precision in precisions:
