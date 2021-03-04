@@ -21,16 +21,16 @@ datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t
 
 # datasets = ["BPIC14_t"]
 
-datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t"]
+# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t"]
 
-# datasets =["BPIC20_t", "BPIC13_t"]
+datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t", "BPIC14_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =10
+no_of_iterations =4
 # no_of_iterations =1
-start_iteration=8
+start_iteration=0
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 # deltas=[0.5]
@@ -51,7 +51,7 @@ for precision in precisions:
                 elif data in ["BPIC20_t", "BPIC13_t"]:
                     memory = 20
                     exec_time = "00:30:00"  # 30 minutes
-                elif data in ["BPIC12_t", ]:
+                elif data in ["BPIC12_t" ]:
                     memory = 16
                     exec_time = "00:32:00"  # 32 minutes
 
