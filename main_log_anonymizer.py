@@ -23,7 +23,7 @@ datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t
 
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t"]
 
-datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t", "BPIC14_t"]
+datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t"]#, "BPIC14_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
