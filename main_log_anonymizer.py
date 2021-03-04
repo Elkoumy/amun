@@ -28,9 +28,9 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =4
+no_of_iterations =8
 # no_of_iterations =1
-start_iteration=2
+start_iteration=4
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 # deltas=[0.5]
@@ -60,7 +60,7 @@ for precision in precisions:
                     exec_time = "00:40:00"  # 40 minutes
                 elif data in ["BPIC14_t"]:
                     memory = 16
-                    exec_time = "01:30:00"  # 1.5 hours
+                    exec_time = "02:30:00"  # 1.5 hours
 
                 elif data in [  "BPIC19_t"]:
                     memory = 16
