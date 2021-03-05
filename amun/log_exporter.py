@@ -122,7 +122,7 @@ def relative_time_to_XES2(data,out_dir,file_name):
     data['cumm_noise_timedelta'] = data.groupby(['case:concept:name'])['noise_timedelta'].cumsum()
 
     #TODO: convert the seconds to timedelta
-    data['cumm_noise_timedelta'] =pd.to_timedelta(data['cumm_noise_timedelta'], unit='h')
+    data['cumm_noise_timedelta'] =pd.to_timedelta(data['cumm_noise_timedelta'], unit='m')
 
     data['time:timestamp']= data['time:timestamp']+ data['cumm_noise_timedelta']
 

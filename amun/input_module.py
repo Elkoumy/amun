@@ -303,8 +303,8 @@ def get_relative_time(data, dataset):
     # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
     #     'timedelta64[h]')   # in  hours
     # temp=(data['time:timestamp'] - data['time:timestamp_2']).dt.components.minutes
-    # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.seconds
-    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2'])/ np.timedelta64(1, 'h')
+    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.minutes
+    # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2'])/ np.timedelta64(1, 'h')
 
     ''' In case of the first activity, we set the relative time to the unix epoch time
         to make it an integer. The anonymization of the start time of each trace       
