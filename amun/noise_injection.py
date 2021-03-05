@@ -22,12 +22,16 @@ def laplace_noise_injection(data):
     return data
 
 def add_noise(data):
-    noise=0
-    sens_time=1
-    noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
-    noise=abs(noise)
+    #stop noise for starttime
+    if data.prev_state == 0:
+        noise=0
+    else:
+        noise=0
+        sens_time=1
+        noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
+        noise=abs(noise)
 
-    noise=noise *(data['relative_time_max']-data['relative_time_min'])+data['relative_time_min']
+        noise=noise *(data['relative_time_max']-data['relative_time_min'])+data['relative_time_min']
     return noise
 
 def divid_counts(row):

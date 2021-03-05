@@ -122,7 +122,7 @@ def relative_time_to_XES2(data,out_dir,file_name):
     data['cumm_noise_timedelta'] = data.groupby(['case:concept:name'])['noise_timedelta'].cumsum()
 
     #TODO: convert the seconds to timedelta
-    data['cumm_noise_timedelta'] =pd.to_timedelta(data['cumm_noise_timedelta'], unit='s')
+    data['cumm_noise_timedelta'] =pd.to_timedelta(data['cumm_noise_timedelta'], unit='h')
 
     data['time:timestamp']= data['time:timestamp']+ data['cumm_noise_timedelta']
 
@@ -149,6 +149,7 @@ def noise_unit_converter(row):
     if row.prev_state==0: #timestamp noise (in days)
         # convert weeks to seconds
         res=row.noise*7*24*60*60
+        res=0
 
     else:
         res=row.noise*1.0
