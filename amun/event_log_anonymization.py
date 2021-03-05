@@ -39,6 +39,9 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     data = anonymize_traces_compacted(data, eps)
     end = time.time()
     print("anonymize traces %s" % (end - start))
+
+    #TODO: Mark the start activity of traces ( they start from state s0)
+
     # Laplace Noise Injection
     data = laplace_noise_injection(data)
     data['eps_trace']=eps

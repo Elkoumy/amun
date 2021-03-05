@@ -15,7 +15,7 @@ def relative_time_to_XES(data,out_dir,file_name):
     # # WRONG WAY :or (maximum double representation, and convert it back to timestamp)
 
     # data[['case_start_time','case_start_time_anmzd','original_start']] = data.groupby(['case:concept:name'])['relative_time_original','relative_time_anonymized','time:timestamp'].transform('max')
-
+    min_timestamp=data['time:timestamp'].min()
     data['original_start'] = data.groupby(['case:concept:name'])[ 'time:timestamp'].transform('min')
     data['case_start_time']=0.0
     data['case_start_time_anmzd'] = 0.0
@@ -39,11 +39,15 @@ def relative_time_to_XES(data,out_dir,file_name):
     data.loc[data.original_start==data['time:timestamp'],'relative_time_anonymized']=0
 
     # return back to timestamp
-    data['case_start_time']=data['case_start_time']*pd.Timedelta('1d') + pd.Timestamp(
-        "1970-01-01T00:00:00Z")
+    data['case_start_time']=data['case_start_time']*pd.Timedelta('1d') +min_timestamp
     #data['case_start_time_anmzd1']=data['case_start_time_anmzd']
-    data['case_start_time_anmzd'] = data['case_start_time_anmzd'] * pd.Timedelta('1d') + pd.Timestamp(
-        "1970-01-01T00:00:00Z")
+    data['case_start_time_anmzd'] = data['case_start_time_anmzd'] * pd.Timedelta('1d') + min_timestamp
+
+    # data['case_start_time']=data['case_start_time']*pd.Timedelta('1d') + pd.Timestamp(
+    #     "1970-01-01T00:00:00Z")
+    # #data['case_start_time_anmzd1']=data['case_start_time_anmzd']
+    # data['case_start_time_anmzd'] = data['case_start_time_anmzd'] * pd.Timedelta('1d') + pd.Timestamp(
+    #     "1970-01-01T00:00:00Z")
 
 
     #CUMSUM relative time per group
@@ -54,12 +58,14 @@ def relative_time_to_XES(data,out_dir,file_name):
     # relative +time per group
     # we use m seconds as in the input module (should be selected by the user)
 
+    # data['time:timestamp_original'] = data['case_start_time'] + data['cumm_relative_time'].astype(
+    #     'timedelta64[ms]')   # in m seconds
+    #
+    # data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] / 1000.0 / 60.0 / 60.0).astype(
+    #     'timedelta64[h]')
+
     data['time:timestamp_original'] = data['case_start_time'] + data['cumm_relative_time'].astype(
-        'timedelta64[ms]')   # in m seconds
-
-
-    data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] / 1000.0 / 60.0 / 60.0).astype(
-        'timedelta64[h]')
+        'timedelta64[s]')  # in seconds
     try:
 
         # data['cumm_relative_time_anymzd'] = data['cumm_relative_time_anymzd'].astype('timedelta64[s]')
@@ -79,7 +85,7 @@ def relative_time_to_XES(data,out_dir,file_name):
             data['cumm_relative_time_anymzd'] = (data['cumm_relative_time_anymzd'] //365).astype('timedelta64[Y]')
             data.loc[data['case_start_time_anmzd'].isnull(), 'case_start_time_anmzd'] = pd.Timestamp.max
             data['case_start_time_anmzd']=pd.to_datetime(data['case_start_time_anmzd'])
-            print("data dtypes are: %s"%(data.dtypes))
+            # print("data dtypes are: %s"%(data.dtypes))
             # data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd']
             data['time:timestamp'] = data['case_start_time_anmzd'] + data['cumm_relative_time_anymzd'].astype(
                 'timedelta64[Y]')
@@ -103,3 +109,50 @@ def relative_time_to_XES(data,out_dir,file_name):
 
 
     return data
+
+
+
+
+
+def relative_time_to_XES2(data,out_dir,file_name):
+
+    data['noise_timedelta']=data.apply(noise_unit_converter, axis=1)
+
+    # cummulative sum per case.
+    data['cumm_noise_timedelta'] = data.groupby(['case:concept:name'])['noise_timedelta'].cumsum()
+
+    #TODO: convert the seconds to timedelta
+    data['cumm_noise_timedelta'] =pd.to_timedelta(data['cumm_noise_timedelta'], unit='s')
+
+    data['time:timestamp']= data['time:timestamp']+ data['cumm_noise_timedelta']
+
+    data['case:concept:name'] = data['case:concept:name'].astype('str')
+
+    # Fixing the overflow of time
+    data.loc[data['time:timestamp'].isnull(), 'time:timestamp'] = pd.Timestamp.max
+
+    # renaming epsilon columns
+    data.rename(columns={'eps': 'epsilon_per_event', 'eps_trace': 'case:epsilon_per_trace'}, inplace=True)
+    data = data[['case:concept:name', 'case:epsilon_per_trace', 'concept:name', 'time:timestamp', 'epsilon_per_event']]
+
+    data['lifecycle:transition'] = "complete"
+
+    log = conversion_factory.apply(data)
+    xes_exporter.export_log(log, os.path.join(out_dir, file_name + ".xes"))
+
+
+    return data
+
+
+def noise_unit_converter(row):
+    res=0
+    if row.prev_state==0: #timestamp noise (in days)
+        # convert weeks to seconds
+        res=row.noise*7*24*60*60
+
+    else:
+        res=row.noise*1.0
+    #
+        # res = pd.to_timedelta(row.noise ,unit='s')
+
+    return res

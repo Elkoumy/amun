@@ -297,12 +297,13 @@ def get_relative_time(data, dataset):
     data['time:timestamp']=pd.to_datetime(data['time:timestamp'],utc=True)
     data['time:timestamp_2'] = pd.to_datetime(data['time:timestamp_2'],utc=True)
 
-    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
-        'timedelta64[ms]')   # in m seconds
-
+    # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
+    #     'timedelta64[ms]')   # in m seconds
+    #
     # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
     #     'timedelta64[h]')   # in  hours
-
+    # temp=(data['time:timestamp'] - data['time:timestamp_2']).dt.components.minutes
+    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.seconds
 
     ''' In case of the first activity, we set the relative time to the unix epoch time
         to make it an integer. The anonymization of the start time of each trace       
@@ -320,12 +321,21 @@ def get_relative_time(data, dataset):
     #     (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - pd.Timestamp(
     #     "1970-01-01T00:00:00Z")) / pd.Timedelta('1s')
 
-    data.loc[0,'relative_time']= (data.loc[0]['time:timestamp'] - pd.Timestamp(
-        "1970-01-01T00:00:00Z")) / pd.Timedelta('1D')
+
+
+    min_timestamp= data['time:timestamp'].min()
+    data.loc[0,'relative_time']= (data.loc[0]['time:timestamp'] - min_timestamp).components.days/7
 
     data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
-        (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - pd.Timestamp(
-        "1970-01-01T00:00:00Z")) / pd.Timedelta('1D')
+        (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - min_timestamp).dt.days/7
+
+
+    # data.loc[0,'relative_time']= (data.loc[0]['time:timestamp'] - pd.Timestamp(
+    #     "1970-01-01T00:00:00Z")) / pd.Timedelta('1D')
+    #
+    # data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
+    #     (data.loc[data['case:concept:name'] !=data['case:concept:name_2'], 'time:timestamp'] - pd.Timestamp(
+    #     "1970-01-01T00:00:00Z")) / pd.Timedelta('1D')
 
 
     # data.loc[data['case:concept:name'] != data['case:concept:name_2'], 'relative_time'] = \
