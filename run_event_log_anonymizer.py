@@ -48,7 +48,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     # calculate the SMAPE
 
-    data, smape_time, smape_variant,oversampling_ratio=estimate_SMAPE_variant_and_time(data, variants_count)
+    data, smape_time, smape_variant,oversampling_ratio,oversampling_df=estimate_SMAPE_variant_and_time(data, variants_count)
     print("SMAPE time: %s %%"%(smape_time))
     print("SMAPE case variant: %s %%" % (smape_variant))
 
@@ -61,7 +61,10 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
                   header=False
                   )
 
-
+    oversampling_df.to_csv(os.path.join(experiment_log_dir,'error_metrics','oversampling_per_variant_%s_%s_%s_%s.csv'%(dataset,precision,delta,iteration)),
+                  index=False,
+                  header=False
+                  )
 
     #creating separate folder for each delta and for each precision
     if not os.path.isdir(os.path.join( out_dir)):

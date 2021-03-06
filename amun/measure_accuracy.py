@@ -84,14 +84,14 @@ def estimate_SMAPE_variant_and_time(data, variant_counts):
 
     variant_freq=pd.Series([ x['count'] for x in variant_counts])
 
-    # variant_freq_anonymized= data.groupby(['trace_variant']).size()
-    # smape_variant=((variant_freq-variant_freq_anonymized)/(variant_freq+variant_freq_anonymized)).abs().mean()*100
-    # dilation_per_variant=variant_freq_anonymized/variant_freq
-    # avg_dilation_per_variant=dilation_per_variant.mean()
+    variant_freq_anonymized= data.groupby(['trace_variant','case:concept:name'])['time:timestamp'].count().reset_index().groupby('trace_variant')['case:concept:name'].count()
+    smape_variant=((variant_freq-variant_freq_anonymized)/(variant_freq+variant_freq_anonymized)).abs().mean()*100
+    oversampling_per_variant=variant_freq_anonymized/variant_freq
+    avg_dilation_per_variant=oversampling_per_variant.mean()
     oversampling_ratio=data['case:concept:name'].unique().size/variant_freq.sum()
-    # dilation_df=pd.DataFrame()
-    # dilation_df['variant_freq_anonymized'] = variant_freq_anonymized
-    # dilation_df['variant_freq'] = variant_freq
-    # dilation_df['dilation_per_variant'] = dilation_per_variant
+    oversampling_df=pd.DataFrame()
+    oversampling_df['variant_freq_anonymized'] = variant_freq_anonymized
+    oversampling_df['variant_freq'] = variant_freq
+    oversampling_df['dilation_per_variant'] = oversampling_per_variant
 
-    return data,  smape_time, smape_variant, oversampling_ratio
+    return data,  smape_time, smape_variant, oversampling_ratio,oversampling_df
