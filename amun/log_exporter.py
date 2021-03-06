@@ -118,15 +118,19 @@ def relative_time_to_XES2(data,out_dir,file_name):
 
     data['noise_timedelta']=data.apply(noise_unit_converter, axis=1)
 
+    data['case:concept:name'] = data['case:concept:name'].astype('str')
+
     # cummulative sum per case.
     data['cumm_noise_timedelta'] = data.groupby(['case:concept:name'])['noise_timedelta'].cumsum()
 
     #TODO: convert the seconds to timedelta
     data['cumm_noise_timedelta'] =pd.to_timedelta(data['cumm_noise_timedelta'], unit='m')
+    t=data.sort_values('case:concept:name')
+    # data['cumm_noise_timedelta'] = pd.to_timedelta(data['cumm_noise_timedelta'], unit='D')
 
     data['time:timestamp']= data['time:timestamp']+ data['cumm_noise_timedelta']
 
-    data['case:concept:name'] = data['case:concept:name'].astype('str')
+
 
     # Fixing the overflow of time
     data.loc[data['time:timestamp'].isnull(), 'time:timestamp'] = pd.Timestamp.max

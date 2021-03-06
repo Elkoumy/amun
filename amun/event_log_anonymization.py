@@ -11,6 +11,7 @@ from amun.trace_anonymization import anonymize_traces_compacted
 
 def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     print("Processing the dataset: %s" % (dataset))
+    print("with Delta: %s , and precision: %s" %(delta,precision))
     start = time.time()
     data, variants_count = xes_to_DAFSA(data_dir, dataset)
     end = time.time()

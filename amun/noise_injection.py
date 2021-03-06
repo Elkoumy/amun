@@ -37,6 +37,9 @@ def add_noise(data):
 def divid_counts(row):
     if row.prev_state!=0:
         res=row.eps/row.counts
+        # if res<0.5:
+        #     res=0.4
+        # res = row.eps
     else:
         res=row.eps
     return res
