@@ -22,9 +22,9 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =1
+no_of_iterations =2
 # no_of_iterations =1
-start_iteration=0
+start_iteration=1
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
