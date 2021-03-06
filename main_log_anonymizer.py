@@ -14,20 +14,20 @@ jobs_dir = "jobs"
               "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds".
               """
 
-# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
-# "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
+datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
+"BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
-datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t"]#, "BPIC14_t"]
+# datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t"]#, "BPIC14_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =4
+no_of_iterations =1
 # no_of_iterations =1
 start_iteration=0
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
-# deltas=[0.5]
+
 precisions = [0.1]
 
 
