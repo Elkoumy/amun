@@ -29,8 +29,10 @@ def add_noise(data):
         noise=0
         sens_time=1
         noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
-        noise=abs(noise)
+        # if noise+data['relative_time_original']<0:
+        #     noise=abs(noise)
 
+        noise = abs(noise)
         noise=noise *(data['relative_time_max']-data['relative_time_min'])+data['relative_time_min']
     return noise
 

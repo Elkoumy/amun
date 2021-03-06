@@ -80,6 +80,7 @@ def estimate_SMAPE_variant_and_time(data, variant_counts):
     smape_variant=0
     # mape=((data['relative_time_original']-data["relative_time_anonymized"])/data['relative_time_original']).abs().mean()*100 #percentage
     #$
+    # print("MAPE %s" %(((data['relative_time_original']-data["relative_time_anonymized"])/data['relative_time_original']).abs().mean()*100))
     smape_time=((data['relative_time_original']-data["relative_time_anonymized"])/(data['relative_time_original']+data["relative_time_anonymized"])).abs().mean()*100
 
     variant_freq=pd.Series([ x['count'] for x in variant_counts])
