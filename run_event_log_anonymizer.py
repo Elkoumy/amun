@@ -48,24 +48,19 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     # calculate the SMAPE
 
-    data, smape_time, smape_variant,avg_dilation_per_variant,total_dilation, dilation_df=estimate_SMAPE_variant_and_time(data, variants_count)
+    data, smape_time, smape_variant,oversampling_ratio=estimate_SMAPE_variant_and_time(data, variants_count)
     print("SMAPE time: %s %%"%(smape_time))
     print("SMAPE case variant: %s %%" % (smape_variant))
 
     #preparing the output logging
     # log median epsilon
-    result=[[dataset,precision,delta,iteration,smape_time,smape_variant,avg_dilation_per_variant,total_dilation,data.eps.median(),data.eps_trace.loc[0]]]
+    result=[[dataset,precision,delta,iteration,smape_time,smape_variant,oversampling_ratio,data.eps.median(),data.eps_trace.loc[0]]]
     result=pd.DataFrame(result)
     result.to_csv(os.path.join(experiment_log_dir,'error_metrics','error_metric_%s_%s_%s_%s.csv'%(dataset,precision,delta,iteration)),
                   index=False,
                   header=False
                   )
 
-    dilation_df.to_csv(os.path.join(experiment_log_dir, 'error_metrics',
-                               'dilation_%s_%s_%s_%s.csv' % (dataset, precision, delta, iteration)),
-                  index=False,
-                  header=False
-                  )
 
 
     #creating separate folder for each delta and for each precision
