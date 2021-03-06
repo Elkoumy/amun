@@ -86,4 +86,12 @@ def estimate_SMAPE_variant_and_time(data, variant_counts):
 
     variant_freq_anonymized= data.groupby(['trace_variant']).size()
     smape_variant=((variant_freq-variant_freq_anonymized)/(variant_freq+variant_freq_anonymized)).abs().mean()*100
-    return data,  smape_time, smape_variant
+    dilation_per_variant=variant_freq_anonymized/variant_freq
+    avg_dilation_per_variant=dilation_per_variant.mean()
+    total_dilation=variant_freq_anonymized.sum()/variant_freq.sum()
+    dilation_df=pd.DataFrame()
+    dilation_df['variant_freq_anonymized'] = variant_freq_anonymized
+    dilation_df['variant_freq'] = variant_freq
+    dilation_df['dilation_per_variant'] = dilation_per_variant
+
+    return data,  smape_time, smape_variant, avg_dilation_per_variant,total_dilation, dilation_df
