@@ -13,15 +13,9 @@ jobs_dir = "jobs"
               formats    include    "minutes",    "minutes:seconds",     "hours:minutes:seconds",
               "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds".
               """
-datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
-                "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-# datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC20_t",
-#                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t"]
-
-# datasets = ["BPIC14_t"]
-
-# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t"]
+# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
+# "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
 datasets =["BPIC12_t", "BPIC13_t", "BPIC17_t"]#, "BPIC14_t"]
 
@@ -32,10 +26,10 @@ no_of_iterations =4
 # no_of_iterations =1
 start_iteration=0
 
-deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 # deltas=[0.5]
-precisions = [0.5]
-# precisions = [0.1]
+precisions = [0.1]
+
 
 for precision in precisions:
     for delta in deltas:
@@ -44,10 +38,10 @@ for precision in precisions:
             for iteration in range(start_iteration, no_of_iterations):
                 if data in ["CCC19_t","Unrineweginfectie_t"]:
                     memory = 4
-                    exec_time = "00:1:00"  # 1 minutes
+                    exec_time = "00:5:00"  # 1 minutes
                 elif data in ["Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t"]:
                     memory = 16
-                    exec_time = "00:07:00"  # 7 minutes
+                    exec_time = "00:14:00"  # 7 minutes
                 elif data in ["BPIC20_t", "BPIC13_t"]:
                     memory = 20
                     exec_time = "01:00:00"  # 30 minutes
@@ -64,7 +58,7 @@ for precision in precisions:
 
                 elif data in [  "BPIC19_t"]:
                     memory = 32
-                    exec_time = "03:00:00"  # 4 hours
+                    exec_time = "04:00:00"  # 4 hours
 
                 elif data in ["BPIC18_t"]:
                     memory = 32
