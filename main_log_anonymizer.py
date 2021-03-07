@@ -25,8 +25,8 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =7
-start_iteration=6
+no_of_iterations =8
+start_iteration=7
 # no_of_iterations =1
 # start_iteration=0
 
