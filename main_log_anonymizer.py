@@ -17,23 +17,23 @@ jobs_dir = "jobs"
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
 # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
-# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
-# "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
+datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
+"BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
-datasets =["BPIC18_t"]
+# datasets =["BPIC18_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-# no_of_iterations =6
-# start_iteration=5
-no_of_iterations =1
-start_iteration=0
+no_of_iterations =7
+start_iteration=6
+# no_of_iterations =1
+# start_iteration=0
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
 precisions = [0.1]
-deltas=[0.2]
+# deltas=[0.2]
 
 for precision in precisions:
     for delta in deltas:
