@@ -30,7 +30,7 @@ start_iteration=0
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
 
 precisions = [0.1]
-
+delta=[0.1]
 
 for precision in precisions:
     for delta in deltas:
