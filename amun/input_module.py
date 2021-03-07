@@ -428,8 +428,8 @@ def get_DAFSA_Dictionary(data_dir,dataset):
     # data_dir = r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data"
 
     #call the jar file and send the parameters to it
-    # root_dir=os.path.dirname(data_dir)
-    # os.system("java -jar \"%s\" \"%s\" \"%s\"" %(os.path.join(root_dir,"XEStoDAFSA","XEStoDAFSA.jar"),data_dir,dataset+".xes"))
+    root_dir=os.path.dirname(data_dir)
+    os.system("java -Xmx32g -jar \"%s\" \"%s\" \"%s\"" %(os.path.join(root_dir,"XEStoDAFSA","XEStoDAFSA.jar"),data_dir,dataset+".xes"))
 
     dafsa={}
     path=os.path.join(data_dir,dataset+".xes.txt")

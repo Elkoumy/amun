@@ -9,7 +9,7 @@ data=pd.read_csv("../error_metrics/all_error.csv",
 
 data=data.groupby(["dataset","precision","delta"]).mean().reset_index()
 
-#TODO: filter the precision in case of multiple precisions
+#filter the precision in case of multiple precisions
 data=data[["dataset","delta","smape_time","oversampling_ratio"]]
 
 t=pd.pivot_table(data, values = 'smape_time', index=['delta'], columns = 'dataset').reset_index()
