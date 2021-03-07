@@ -8,7 +8,7 @@ def laplace_noise_injection(data):
     data['counts']= data.groupby(['original_case:concept:name','prev_state','concept:name','state'])['concept:name'].transform('count')
 
     # data['eps']=data['eps']/data['counts']
-    #TODO: divide per counts only for relative time
+    # divide per counts only for relative time
     data['eps']=data.apply(divid_counts,axis=1)
 
     #noise according to the original value
@@ -29,10 +29,10 @@ def add_noise(data):
         noise=0
         sens_time=1
         noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
-        # if noise+data['relative_time_original']<0:
-        #     noise=abs(noise)
+        if noise+data['relative_time_original']<0:
+            noise=-data['relative_time_original']
 
-        noise = abs(noise)
+        # noise = abs(noise)
         noise=noise *(data['relative_time_max']-data['relative_time_min'])+data['relative_time_min']
     return noise
 

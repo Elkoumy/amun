@@ -114,7 +114,7 @@ if __name__ == "__main__":
     # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
     # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
-    datasets=["BPIC18_t"]
+    datasets=["Sepsis_t"]
 
 
     # cur_dir=os.getcwd()

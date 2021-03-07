@@ -81,12 +81,12 @@ def estimate_SMAPE_variant_and_time(data, variant_counts):
     # mape=((data['relative_time_original']-data["relative_time_anonymized"])/data['relative_time_original']).abs().mean()*100 #percentage
     #$
     # print("MAPE %s" %(((data['relative_time_original']-data["relative_time_anonymized"])/data['relative_time_original']).abs().mean()*100))
-    smape_time=((data['relative_time_original']-data["relative_time_anonymized"])/(data['relative_time_original']+data["relative_time_anonymized"])).abs().mean()*100
+    smape_time=((data['relative_time_original']-data["relative_time_anonymized"])/(data['relative_time_original'].abs()+data["relative_time_anonymized"].abs())).abs().mean()*100
 
     variant_freq=pd.Series([ x['count'] for x in variant_counts])
 
     variant_freq_anonymized= data.groupby(['trace_variant','case:concept:name'])['time:timestamp'].count().reset_index().groupby('trace_variant')['case:concept:name'].count()
-    smape_variant=((variant_freq-variant_freq_anonymized)/(variant_freq+variant_freq_anonymized)).abs().mean()*100
+    smape_variant=((variant_freq-variant_freq_anonymized).abs()/(variant_freq+variant_freq_anonymized)).mean()*100
     oversampling_per_variant=variant_freq_anonymized/variant_freq
     avg_dilation_per_variant=oversampling_per_variant.mean()
     oversampling_ratio=data['case:concept:name'].unique().size/variant_freq.sum()
