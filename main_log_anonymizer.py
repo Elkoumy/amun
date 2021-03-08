@@ -30,8 +30,8 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =4
-start_iteration=2
+no_of_iterations =6
+start_iteration=4
 # no_of_iterations =1
 # start_iteration=0
 
@@ -53,7 +53,7 @@ for precision in precisions:
                     exec_time = "00:14:00"  # 7 minutes
                 elif data in [ "Hospital_t"]:
                     memory = 16
-                    exec_time = "00:25:00"  # 25 minutes
+                    exec_time = "00:40:00"  # 25 minutes
                 elif data in ["BPIC20_t", "BPIC13_t"]:
                     memory = 20
                     exec_time = "01:00:00"  # 30 minutes
