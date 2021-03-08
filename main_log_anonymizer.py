@@ -67,7 +67,7 @@ for precision in precisions:
                     exec_time = "02:40:00"  # 40 minutes
                 elif data in ["BPIC14_t"]:
                     memory = 24
-                    exec_time = "02:30:00"  # 1.5 hours
+                    exec_time = "03:30:00"  # 1.5 hours
 
                 elif data in [  "BPIC19_t"]:
                     memory = 32
