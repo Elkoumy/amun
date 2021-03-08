@@ -31,8 +31,8 @@ datasets =[ "BPIC14_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =10
-start_iteration=9
+no_of_iterations =6
+start_iteration=5
 # no_of_iterations =1
 # start_iteration=0
 
