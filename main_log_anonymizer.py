@@ -31,13 +31,13 @@ datasets =[ "BPIC19_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =4
-start_iteration=3
+no_of_iterations =7
+start_iteration=4
 # no_of_iterations =2
 # start_iteration=1
 
 deltas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
-deltas = [ 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+
 
 precisions = [0.1]
 # deltas=[0.1]
