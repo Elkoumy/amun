@@ -31,8 +31,8 @@ datasets =[ "BPIC18_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =11
-start_iteration=10
+no_of_iterations =12
+start_iteration=11
 # no_of_iterations =2
 # start_iteration=1
 
@@ -76,7 +76,7 @@ for precision in precisions:
 
                 elif data in ["BPIC18_t"]:
                     memory = 64
-                    exec_time = "14:00:00"  # 5 hours
+                    exec_time = "20:00:00"  # 5 hours
 
 
                 job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
