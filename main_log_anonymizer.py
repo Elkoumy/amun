@@ -30,7 +30,7 @@ jobs_dir = "jobs"
 
 # datasets = ["BPIC13_t", "BPIC12_t", "BPIC17_t"]
 
-datasets=["BPIC19_t"]
+datasets=["BPIC14_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
@@ -94,7 +94,7 @@ for precision in precisions:
                     fout.write("#SBATCH --mem=%sGB\n" % memory)
                     fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                     #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                    fout.write("#SBATCH --partition=amd\n")
+                    fout.write("#SBATCH --partition=main\n")
                     fout.write("#SBATCH --time=%s\n" % (exec_time))
                     #fout.write("module load python-3.7.1\n")
                     # fout.write("cd ..\n")
