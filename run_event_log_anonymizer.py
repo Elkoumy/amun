@@ -109,12 +109,12 @@ if __name__ == "__main__":
     # precisions=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
     precisions=[0.1]
-    deltas=[0.2]
+    # deltas=[0.2]
 
     # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
     # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
-    datasets=["BPIC13_t"]
+    datasets=["BPIC18_t"]
 
 
     # cur_dir=os.getcwd()
