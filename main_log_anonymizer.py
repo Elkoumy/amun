@@ -31,8 +31,8 @@ datasets =[ "BPIC18_t"]
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =12
-start_iteration=11
+no_of_iterations =13
+start_iteration=12
 # no_of_iterations =2
 # start_iteration=1
 
@@ -75,7 +75,7 @@ for precision in precisions:
                     exec_time = "04:00:00"  # 4 hours
 
                 elif data in ["BPIC18_t"]:
-                    memory = 64
+                    memory = 80
                     exec_time = "20:00:00"  # 5 hours
 
 
@@ -88,7 +88,7 @@ for precision in precisions:
                     fout.write("#SBATCH --mem=%sGB\n" % memory)
                     fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                     #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                    fout.write("#SBATCH --partition=amd\n")
+                    fout.write("#SBATCH --partition=main\n")
                     fout.write("#SBATCH --time=%s\n" % (exec_time))
                     #fout.write("module load python-3.7.1\n")
                     # fout.write("cd ..\n")
