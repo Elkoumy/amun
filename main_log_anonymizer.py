@@ -24,23 +24,26 @@ jobs_dir = "jobs"
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
 # "BPIC12_t", "BPIC17_t"]
 
-datasets =[ "BPIC18_t"]
+# datasets =[ "BPIC18_t"]
 
 # datasets =["BPIC18_t", "BPIC14_t", "BPIC19_t" ]
+
+datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-no_of_iterations =14
-start_iteration=13
-# no_of_iterations =2
-# start_iteration=1
+# no_of_iterations =14
+# start_iteration=13
 
-deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
+no_of_iterations =2
+start_iteration=0
 
+# deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
+precisions = [0.1, 0.2, 0.3, 0.4, 0.5]
 
-precisions = [0.1]
-# deltas=[0.1]
+# precisions = [0.1]
+deltas=[0.2]
 
 for precision in precisions:
     for delta in deltas:
@@ -55,7 +58,7 @@ for precision in precisions:
                     exec_time = "00:14:00"  # 7 minutes
                 elif data in [ "Hospital_t"]:
                     memory = 16
-                    exec_time = "00:40:00"  # 25 minutes
+                    exec_time = "01:00:00"  # 25 minutes
                 elif data in ["BPIC20_t", "BPIC13_t"]:
                     memory = 20
                     exec_time = "01:00:00"  # 30 minutes
