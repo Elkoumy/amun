@@ -38,8 +38,8 @@ exec_time="01:00:00" # 1 hour
 # no_of_iterations =14
 # start_iteration=13
 
-no_of_iterations =1
-start_iteration=0
+no_of_iterations =4
+start_iteration=1
 
 # deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
 precisions = [0.1, 0.2, 0.3, 0.4, 0.5]
