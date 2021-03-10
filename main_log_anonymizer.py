@@ -21,10 +21,10 @@ jobs_dir = "jobs"
 # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
 
-datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
-"BPIC12_t", "BPIC17_t"]
+# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
+# "BPIC12_t", "BPIC17_t"]
 
-# datasets =[ "BPIC18_t"]
+datasets =[ "BPIC19_t"]
 
 # datasets =["BPIC18_t", "BPIC14_t", "BPIC19_t" ]
 
@@ -38,8 +38,8 @@ exec_time="01:00:00" # 1 hour
 # no_of_iterations =14
 # start_iteration=13
 
-no_of_iterations =9
-start_iteration=5
+no_of_iterations =10
+start_iteration=0
 
 # deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
 precisions = [0.1, 0.2, 0.3, 0.4, 0.5]
@@ -94,7 +94,7 @@ for precision in precisions:
                     fout.write("#SBATCH --mem=%sGB\n" % memory)
                     fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                     #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-                    fout.write("#SBATCH --partition=main\n")
+                    fout.write("#SBATCH --partition=amd\n")
                     fout.write("#SBATCH --time=%s\n" % (exec_time))
                     #fout.write("module load python-3.7.1\n")
                     # fout.write("cd ..\n")
