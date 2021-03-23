@@ -28,8 +28,10 @@ pip install -r requirements.txt
 The code was tested with ```python 3.7```.
 
 ### Example Usage
-An example of the usage of Amun can be found in the file ```run_example.py```.
+An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
 To perform the execution time experiment, you can use the file ```run_example_execution_time.py```. 
 An implementation of Amun with a single thread could be found in the branch ```amun-model```.
+
+An example of the usage of Amun to anonymize event logs can be found in the file ```run_event_log_anonymizer.py```.
 
 
