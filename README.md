@@ -25,7 +25,7 @@ You can install all the requirements with:
 ```
 pip install -r requirements.txt
 ```
-The code was tested with ```python 3.7```.
+The code was tested with ```python 3.8.5```.
 
 ### Example Usage
 An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
