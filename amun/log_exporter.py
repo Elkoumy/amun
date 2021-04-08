@@ -152,7 +152,7 @@ def relative_time_to_XES2(data,out_dir,file_name):
 def noise_unit_converter(row):
     res=0
     if row.prev_state==0: #timestamp noise (in days)
-        # convert das to hours
+        # convert das to seconds
         res=row.noise*24*60*60
         # res=0
 
