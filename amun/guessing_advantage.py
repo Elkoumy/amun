@@ -565,24 +565,13 @@ def normalize_relative_time(data):
         return 1
 
     return (data['relative_time']-data['relative_time_min'])/(data['relative_time_max']-data['relative_time_min'])
+
+
 def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
 
     # We estimate the min and max values for the normalization
-
-
-    # data_state_max = data.groupby(['prev_state','concept:name','state']).relative_time.max()
-    # # data_state_max = data.groupby('state').relative_time.max()
-    # data_state_max['state'] = data_state_max.index
-    #
-    # data_state_min = data.groupby('state').relative_time.min()
-    # data_state_min['state'] = data_state_min.index
-    # # data= pd.merge(data, data_cdf, on=['state'], suffixes=("","_ecdf"))
-    #
-    # data = pd.merge(data, data_state_max, on=['state'], suffixes=("", "_max"))
-    # data = pd.merge(data, data_state_min, on=['state'], suffixes=("", "_min"))
-
     data['relative_time_max'] = data.groupby(['prev_state','concept:name','state'])['relative_time'].transform('max')
 
     data['relative_time_min'] = data.groupby(['prev_state','concept:name','state'])['relative_time'].transform('min')
@@ -593,42 +582,27 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
 
     #calculate cdfs in vectorized manner
 
-    #data['r_ij']=data['relative_time_max']*precision
     """for the normalized input, the r_ij equals 1"""
-    # data['r_ij'] =  precision * max value
-
-    # data['val_plus']=data['relative_time'] + data['r_ij']
-    # data['val_minus'] = data['relative_time'] - data['r_ij']
-    # data.drop(['r_ij'], inplace=True, axis=1)
-
-
     #The range became +/- precision as r_ij =1
+    # data['val_plus']=data['relative_time'] + precision
+    # data['val_minus'] = data['relative_time'] - precision
+
+    """Estimate precision as one per unit time"""
+    precision = 1 / (data['relative_time_max']-data['relative_time_min']) #within hour and time unit is in seconds
+    #normalize precision
+    # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
+    precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
     data['val_plus']=data['relative_time'] + precision
     data['val_minus'] = data['relative_time'] - precision
 
     # #no cdf below zero, so we replace -ve values with zeros
-    # data.val_minus[data.val_minus<0]=0
-    #
     # # no cdf greater than 1, so we replace  values >1 with 1
-    # data.val_minus.loc[data.val_minus >1] = 1.0
-
-
-
-
-
-    # data['cdf_plus']=np.vectorize(calculate_cdf)(data.relative_time_ecdf,data.val_plus)
-    # data['cdf_minus'] = np.vectorize(calculate_cdf)(data.relative_time_ecdf, data.val_minus)
 
     #optimize  calculate cdf function
     """
     CDF calculation using pandas 
     https://stackoverflow.com/questions/25577352/plotting-cdf-of-a-pandas-series-in-python
     """
-    # data['cdf_plus'] = data[['relative_time_ecdf','val_plus']].swifter.apply(lambda x: calculate_cdf(x.relative_time_ecdf,x.val_plus),axis=1)
-    # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(
-    #     lambda x: calculate_cdf(x.relative_time_ecdf, x.val_minus), axis=1)
-
-    # 'prev_state','concept:name', state, relative_time 'prev_state','concept:name'
     stats_df = data.groupby(['prev_state','concept:name','state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
         columns={'relative_time': 'frequency'})
     # PDF
@@ -640,47 +614,30 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
 
 
     #the plus_and_minus works like a value lookup
-    # plus_and_minus=data.groupby(['prev_state','concept:name','state', 'relative_time','val_plus','val_minus']).state.agg('count').pipe(pd.DataFrame)\
-    #     .drop(['prev_state','concept:name','state'],axis=1)\
-    #     .reset_index()
-
     plus_and_minus=data.groupby(['prev_state','concept:name','state', 'relative_time','val_plus','val_minus'])['prev_state','concept:name','state'].agg('count').pipe(pd.DataFrame)\
         .drop(['prev_state','concept:name','state'],axis=1)\
         .reset_index()
 
     #calculating CDF of the value + r_ij
-    # temp = stats_df[['state', 'relative_time', 'cdf']].merge(plus_and_minus[['state', 'val_plus']], how='cross',
-    #                                                 suffixes=("", "_right"))
-    # temp = temp.loc[
-    #     (temp.state == temp.state_right) & (temp.val_plus >= temp.relative_time), ['state','relative_time', 'val_plus', 'cdf']]\
-    #     .groupby(['state', 'val_plus']).cdf.max().reset_index()
-
-
     stats_df=stats_df[['prev_state','concept:name','state', 'relative_time', 'cdf']]
-    # print("fix memory part")
     #fixing memory issues
     # set its directory to tmp
     data.to_pickle(os.path.join( tmp_dir,'data.p'))
     del(data)
-    # stats_df.to_pickle('stats_df.p')
 
     """   ********* Performing chunking join **********"""
     # we use chunks to avoid running out of memory for large event logs
-
-    # stats_df.to_csv('stats_df.csv',index=False, header=True, float_format='%.15f', compression='gzip', encoding='utf-8')
-    # stats_df_cols=stats_df.columns
     chunk_size=10000 # number of states per chunk
     #the problem is the first state all cases go through it.
 
     no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,tmp_dir,chunk_size)
-    # print("Partitioning Done")
     del(stats_df)
     del(plus_and_minus)
 
     gc.collect()
 
     chunck_join(no_of_chunks,max_large_state,tmp_dir)
-    # del(plus_and_minus)
+
     #loading data back from hard disk
     # set its directory to tmp
     data=pd.read_pickle(os.path.join( tmp_dir,'data.p'))
@@ -689,7 +646,7 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
 
     # add the first cdf values to the dataframe
     data = data.merge(cdf, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
-    data.drop(['val_plus'], inplace=True, axis=1)
+    # data.drop(['val_plus'], inplace=True, axis=1)
     del(cdf)
 
     #appending cdf2
@@ -704,39 +661,18 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     #and the maximum is 1
     data.cdf_plus = data.cdf_plus.fillna(1)
 
-    # print("Second CDF done")
-    # data= data.merge(cdf, how='left', on=['state','relative_time'], suffixes=("","_right"))
-    # print(cdf[['state','relative_time']])
-    # print(data.loc[data.cdf_plus.isna(), ['state','relative_time']])
-    # data['cdf_minus'] = data[['relative_time_ecdf', 'val_minus']].swifter.apply(calculate_cdf_vectorized,axis=1)
-
-
     #calculate p_k in a vectorized manner
-    # data['p_k'] = data.cdf_plus - data.cdf_minus
     data['p_k'] = 0
     #  adding a fix to the case of fixed distrubtion
     data['p_k']=data.apply(estimate_P_k_vectorized, delta=delta,axis=1)
 
     #calculate epsilon in a vectorized manner
-    # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))/ log(exp(1.0))* (1.0 / data.relative_time_max)
     # handle p_k+delta >1
     data['eps'] =data.apply(epsilon_vectorized_internal,delta=delta, axis=1)
-    # data['eps'] = - np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0))
-    # data['eps']=data['eps']/ log(exp(1.0))
-    # # r =1 because of normalization
-    # data['eps'] = data['eps']* (1.0 / data.relative_time_max.replace(0,-inf))
-
 
     #drop unused columns
-    # data.drop(['p_k','cdf_plus','cdf_minus','val_minus','relative_time_max'], inplace=True, axis=1)
     # we keep the max and min to denormalize the values
-    # data.drop(['p_k', 'cdf_plus', 'cdf_minus', 'val_minus'], inplace=True, axis=1)
-    data.drop([ 'cdf_plus', 'cdf_minus', 'val_minus'], inplace=True, axis=1)
-    # data.drop('case:concept:name_linker',inplace=True,axis=1)
-
-    # data['eps'] = data.swifter.apply(
-    #     lambda x: estimate_epsilon_risk_dataframe(x['relative_time'], x['relative_time_ecdf'], x['relative_time_max'],
-    #                                               delta, precision), axis=1)
+    data.drop([ 'cdf_plus', 'cdf_minus', 'val_minus','val_plus'], inplace=True, axis=1)
 
     return data
 

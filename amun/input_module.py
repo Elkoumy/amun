@@ -305,15 +305,19 @@ def get_relative_time(data, dataset):
     # temp=(data['time:timestamp'] - data['time:timestamp_2']).dt.components.minutes
     #
 
-    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.minutes
-    if data['relative_time'].mean()==0:
-        data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.days
+    # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.minutes
+    # if data['relative_time'].mean()==0:
+    #     data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.days
+
+    data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
+        'timedelta64[s]')   # in  hours
+
 
     # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2'])/ np.timedelta64(1, 'D')/30
     # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2'])/ np.timedelta64(1, 'h')
 
-    ''' In case of the first activity, we set the relative time to the unix epoch time
-        to make it an integer. The anonymization of the start time of each trace       
+    ''' In case of the first activity, we set the relative time to the number of days since the start of the log
+        to make it an integer. We handle that in the file epsilon_estimation_start_timestamp.py      
     '''
 
     #######set the relative time of the first activity of each case to zero

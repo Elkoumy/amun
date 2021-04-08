@@ -22,13 +22,15 @@ def laplace_noise_injection(data):
     return data
 
 def add_noise(data):
-    #stop noise for starttime
+    noise = 0
+    sens_time = 1
+    noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
+
     if data.prev_state == 0:
-        noise=0
+        #noise can be negative
+        noise = noise * (data['relative_time_max'] - data['relative_time_min']) + data['relative_time_min']
     else:
-        noise=0
-        sens_time=1
-        noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
+        #noise can be negative but the anonymized time can't be negative
         if noise+data['relative_time_original']<0:
             noise=-data['relative_time_original']
 

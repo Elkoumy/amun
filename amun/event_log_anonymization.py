@@ -7,6 +7,7 @@ from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normal
 from amun.input_module import xes_to_DAFSA
 from amun.noise_injection import laplace_noise_injection
 from amun.trace_anonymization import anonymize_traces_compacted
+from amun.epsilon_estimation_start_timestamp import estimate_epsilon_risk_for_start_timestamp
 
 
 def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
@@ -32,6 +33,7 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     # optimize epsilon estimation (memory issues)
     # tmp directory for concurrent runs
     data = estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir)
+    data= estimate_epsilon_risk_for_start_timestamp(data, delta)
     end = time.time()
     print("estimate epsilon :  %s" % (end - start))
     gc.collect()

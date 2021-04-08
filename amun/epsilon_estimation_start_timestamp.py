@@ -52,7 +52,29 @@ def add_noise(data, max, min):
     noise=noise *(max-min)+min
     return noise
 
-def estimate_epsilon_risk_for_start_timestamp(vals, delta):
+def estimate_epsilon_risk_for_start_timestamp(data,delta):
+    start_time=data[data.prev_state==0]
+    min_time = start_time['time:timestamp'].min()
+    start_time['time_diff'] = start_time['time:timestamp'] - min_time
+
+    """Days resolution"""
+    start_time['relative_time'] = start_time['time_diff'].astype('timedelta64[D]')
+    result = estimate_epsilon(start_time.relative_time, delta)
+    # data['eps_days'] = result['eps']
+    # data['time_diff_days'] = data['time_diff'] + pd.to_timedelta(result['noise'], unit='D')
+
+    # df[['eps', 'p_k', 'relative_time_original', 'relative_time_max', 'relative_time_min']]
+    # data['eps']=result['eps']
+    # data['p_k']=result['p_k']
+    # data['relative_time_original'] = result['relative_time_original']
+    # data['relative_time_max'] = result['relative_time_max']
+    # data['relative_time_min'] = result['relative_time_min']
+    data.update(result[['eps', 'p_k', 'relative_time_original', 'relative_time_max', 'relative_time_min']])
+    # data.iloc[result.index,['eps', 'p_k', 'relative_time_original', 'relative_time_max', 'relative_time_min']]=result[['eps', 'p_k', 'relative_time_original', 'relative_time_max', 'relative_time_min']]
+
+    return data
+
+def estimate_epsilon(vals, delta):
     #normalization
     min=vals.min()
     max=vals.max()
@@ -61,7 +83,7 @@ def estimate_epsilon_risk_for_start_timestamp(vals, delta):
     norm_vals=(vals-min)/(max-min)
     norm_vals=norm_vals.round(5)
 
-    norm_cdf = pd.Series(scipy.stats.norm.cdf(vals))
+
     norm_vals= norm_vals.sort_values()
 
 
@@ -70,7 +92,7 @@ def estimate_epsilon_risk_for_start_timestamp(vals, delta):
     cumsum= counts.cumsum()
 
     cumsum = cumsum / cumsum.iloc[-1]
-    # res = pd.DataFrame({'vales': vals, 'cumsum': cumsum})
+
 
     df=norm_vals.to_frame()
     df.columns = ['relative_time']
@@ -88,4 +110,6 @@ def estimate_epsilon_risk_for_start_timestamp(vals, delta):
     df['relative_time_original']=df['relative_time'] *(max-min)+min
     df['noise']=df.apply(add_noise, max=max, min= min, axis=1)
     df['time_diff']=df['noise'] +df['relative_time_original']
-    return df[['eps']]
+    df['relative_time_max']=max
+    df['relative_time_min']=min
+    return df[['eps','p_k','relative_time_original','relative_time_max','relative_time_min']]
