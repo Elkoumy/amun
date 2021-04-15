@@ -208,8 +208,9 @@ def pick_random_edge_trace_compacted(bit_vector_df, bit_vector_trace_variant):
     #     bit_vector_df.added_noise[bit_vector_df[trace] > 0] = bit_vector_df.added_noise[
     #                                                                      bit_vector_df[trace] > 0] + 1
     start=time.time()
+
     for trace_index in picked_trace.trace_variant:
-        trace_edges= bit_vector_trace_variant.iloc[trace_index]
+        trace_edges= bit_vector_trace_variant.loc[trace_index]
         bit_vector_df.added_noise.loc[trace_edges] = bit_vector_df.added_noise.loc[trace_edges] + 1
     end = time.time()
     # print("trace index loop : %s" % (end - start))

@@ -3,7 +3,8 @@ import os
 import shutil
 import time
 
-from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
+# from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
+from amun.guessing_advantage_new import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
 from amun.input_module import xes_to_DAFSA
 from amun.noise_injection import laplace_noise_injection
 from amun.trace_anonymization import anonymize_traces_compacted
@@ -33,7 +34,8 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     # optimize epsilon estimation (memory issues)
     # tmp directory for concurrent runs
     #TODO: filter out outliers
-    data_filtered=outlier_detection_and_removal(data)
+    # data_filtered=outlier_detection_and_removal(data)
+    # data = outlier_detection_and_removal(data)
 
 
     data = estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir)
@@ -54,23 +56,23 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     data['eps_trace']=eps
 
 
-    # TODO: estimate epsilon after outlier removal
-    data_filtered = estimate_epsilon_risk_vectorized_with_normalization(data_filtered, delta, precision, tmp_dir)
-    data_filtered = estimate_epsilon_risk_for_start_timestamp(data_filtered, delta)
-    end = time.time()
-    print("estimate epsilon :  %s" % (end - start))
-    gc.collect()
-    noise, eps = get_noise_case_variant(delta)
-    start = time.time()
-    data_filtered = anonymize_traces_compacted(data_filtered, eps)
-    end = time.time()
-    print("anonymize traces %s" % (end - start))
-
-    # Mark the start activity of traces ( they start from state s0)
-
-    # Laplace Noise Injection
-    data_filtered = laplace_noise_injection(data_filtered)
-    data_filtered['eps_trace'] = eps
+    # # TODO: estimate epsilon after outlier removal
+    # data_filtered = estimate_epsilon_risk_vectorized_with_normalization(data_filtered, delta, precision, tmp_dir)
+    # data_filtered = estimate_epsilon_risk_for_start_timestamp(data_filtered, delta)
+    # end = time.time()
+    # print("estimate epsilon :  %s" % (end - start))
+    # gc.collect()
+    # noise, eps = get_noise_case_variant(delta)
+    # start = time.time()
+    # data_filtered = anonymize_traces_compacted(data_filtered, eps)
+    # end = time.time()
+    # print("anonymize traces %s" % (end - start))
+    #
+    # # Mark the start activity of traces ( they start from state s0)
+    #
+    # # Laplace Noise Injection
+    # data_filtered = laplace_noise_injection(data_filtered)
+    # data_filtered['eps_trace'] = eps
 
 
     return data, variants_count

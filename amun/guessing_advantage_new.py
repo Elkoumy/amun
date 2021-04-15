@@ -567,6 +567,26 @@ def normalize_relative_time(data):
     return (data['relative_time']-data['relative_time_min'])/(data['relative_time_max']-data['relative_time_min'])
 
 
+def match_vals(row, cumsum):
+    # cdf=float(cumsum[cumsum.index==row['relative_time']])
+    #cdf plus
+    # val_plus= row['relative_time']+precision
+    group_cdf=cumsum.loc[(row['prev_state'], row['concept:name'], row['state']),['relative_time','cdf']]
+    if row['val_plus']>=1:
+        cdf_plus=1.0
+    else:
+        cdf_plus=float(group_cdf[group_cdf.relative_time <= row['val_plus']].cdf.max())
+
+    #cdf minus
+    # val_minus = row['relative_time'] - precision
+    if row['val_minus'] <= 0:
+        cdf_minus = 0.0
+    else:
+        cdf_minus = float(group_cdf[group_cdf.relative_time <= row['val_minus']].cdf.max())
+
+    return [ cdf_plus, cdf_minus]
+
+
 def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
@@ -601,10 +621,7 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     # # no cdf greater than 1, so we replace  values >1 with 1
 
     #optimize  calculate cdf function
-    """
-    CDF calculation using pandas 
-    https://stackoverflow.com/questions/25577352/plotting-cdf-of-a-pandas-series-in-python
-    """
+
     stats_df = data.groupby(['prev_state','concept:name','state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
         columns={'relative_time': 'frequency'})
     # PDF
@@ -612,56 +629,13 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     # CDF
     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state','concept:name','state']).cumsum()
     stats_df = stats_df.reset_index()
-    stats_df.drop(['pdf'], inplace=True, axis=1)
-
-
-    #the plus_and_minus works like a value lookup
-    plus_and_minus=data.groupby(['prev_state','concept:name','state', 'relative_time','val_plus','val_minus'])['prev_state','concept:name','state'].agg('count').pipe(pd.DataFrame)\
-        .drop(['prev_state','concept:name','state'],axis=1)\
-        .reset_index()
-
-    #calculating CDF of the value + r_ij
-    stats_df=stats_df[['prev_state','concept:name','state', 'relative_time', 'cdf']]
-    #fixing memory issues
-    # set its directory to tmp
-    data.to_pickle(os.path.join( tmp_dir,'data.p'))
-    del(data)
-
-    """   ********* Performing chunking join **********"""
-    # we use chunks to avoid running out of memory for large event logs
-    chunk_size=10000 # number of states per chunk
-    #the problem is the first state all cases go through it.
-
-    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,tmp_dir,chunk_size)
-    del(stats_df)
-    del(plus_and_minus)
-
-    gc.collect()
-
-    chunck_join(no_of_chunks,max_large_state,tmp_dir)
-
-    #loading data back from hard disk
-    # set its directory to tmp
-    data=pd.read_pickle(os.path.join( tmp_dir,'data.p'))
-    #appending cdf
-    cdf=append_cdf(tmp_dir,1)
-
-    # add the first cdf values to the dataframe
-    data = data.merge(cdf, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
-    # data.drop(['val_plus'], inplace=True, axis=1)
-    del(cdf)
-
-    #appending cdf2
-    cdf2=append_cdf(tmp_dir,2)
-    # add the values to the dataframe
-    data = data.merge(cdf2, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
-    del(cdf2)
-    # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
-    # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
-    # the minimum is zero
-    data.cdf_minus=data.cdf_minus.fillna(0)
-    #and the maximum is 1
-    data.cdf_plus = data.cdf_plus.fillna(1)
+    stats_df =stats_df.set_index(['prev_state','concept:name','state'])
+    temp = data.apply(match_vals, cumsum=stats_df, axis=1)
+    temp = pd.DataFrame.from_records(temp)
+    #cdf_plus
+    data['cdf_plus']=temp[0]
+    #cdf_minus
+    data['cdf_minus'] = temp[1]
 
     #calculate p_k in a vectorized manner
     data['p_k'] = 0

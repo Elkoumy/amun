@@ -32,7 +32,8 @@ def add_noise(data):
     else:
         #noise can be negative but the anonymized time can't be negative
         if noise+data['relative_time_original']<0:
-            noise=-data['relative_time_original']
+            # noise=-data['relative_time_original']
+            noise = abs(noise)
 
         # noise = abs(noise)
         noise=noise *(data['relative_time_max']-data['relative_time_min'])+data['relative_time_min']
@@ -41,6 +42,7 @@ def add_noise(data):
 def divid_counts(row):
     if row.prev_state!=0:
         res=row.eps/row.counts
+        # res=row.eps
         # if res<0.5:
         #     res=0.4
         # res = row.eps

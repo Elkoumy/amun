@@ -310,7 +310,7 @@ def get_relative_time(data, dataset):
     #     data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).dt.components.days
 
     data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2']).astype(
-        'timedelta64[s]')   # in  seconds
+        'timedelta64[m]')   # in  minutes
 
 
     # data['relative_time'] = (data['time:timestamp'] - data['time:timestamp_2'])/ np.timedelta64(1, 'D')/30
