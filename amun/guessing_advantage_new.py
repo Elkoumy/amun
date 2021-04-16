@@ -582,7 +582,16 @@ def match_vals(row, cumsum):
     if row['val_minus'] <= 0:
         cdf_minus = 0.0
     else:
-        cdf_minus = float(group_cdf[group_cdf.relative_time <= row['val_minus']].cdf.max())
+        query=group_cdf[group_cdf.relative_time <= row['val_minus']]
+
+        if query.shape[0]==0:
+            #in case the val_minus is lower than the minimum value but greater than zero
+            cdf_minus=0
+        else:
+            cdf_minus = float(query.cdf.max())
+        # if cdf_minus==nan:
+        #     cdf_minus===0
+
 
     return [ cdf_plus, cdf_minus]
 
@@ -600,50 +609,18 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     data['relative_time_original']=data['relative_time']
     data['relative_time']= data[['relative_time','relative_time_min', 'relative_time_max']].apply(normalize_relative_time, axis=1)
 
-    #calculate cdfs in vectorized manner
-
-    """for the normalized input, the r_ij equals 1"""
-    #The range became +/- precision as r_ij =1
-    # data['val_plus']=data['relative_time'] + precision
-    # data['val_minus'] = data['relative_time'] - precision
-
-    """Estimate precision as one per unit time"""
-    precision = 10*1 / (data['relative_time_max']-data['relative_time_min']) #within hour and time unit is in seconds
-    data['precision']=10*1 / (data['relative_time_max']-data['relative_time_min'])
-    #normalize precision
-    # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
-    # precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
-
-    data['val_plus']=data['relative_time'] + precision
-    data['val_minus'] = data['relative_time'] - precision
-
-    # #no cdf below zero, so we replace -ve values with zeros
-    # # no cdf greater than 1, so we replace  values >1 with 1
-
-    #optimize  calculate cdf function
-
-    stats_df = data.groupby(['prev_state','concept:name','state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
-        columns={'relative_time': 'frequency'})
-    # PDF
-    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state','concept:name','state']).frequency.sum()
-    # CDF
-    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state','concept:name','state']).cumsum()
-    stats_df = stats_df.reset_index()
-    stats_df =stats_df.set_index(['prev_state','concept:name','state'])
-    temp = data.apply(match_vals, cumsum=stats_df, axis=1)
-    temp = pd.DataFrame.from_records(temp)
-    #cdf_plus
-    data['cdf_plus']=temp[0]
-    #cdf_minus
-    data['cdf_minus'] = temp[1]
-
-    #calculate p_k in a vectorized manner
-    data['p_k'] = 0
-    #  adding a fix to the case of fixed distrubtion
-    data['p_k']=data.apply(estimate_P_k_vectorized, delta=delta,axis=1)
+    data=estimate_P_k(data, delta)
 
     #calculate epsilon in a vectorized manner
     # handle p_k+delta >1
+
+    '''delete records with prior knowledge + delta >=1'''
+    cases_to_delete = data.loc[data.p_k==1]['case:concept:name'].unique()
+    data = data[~data['case:concept:name'].isin(cases_to_delete)]
+    data = data.reset_index(drop=True)
+
+    data = estimate_P_k(data, delta)
+
     data['eps'] =data.apply(epsilon_vectorized_internal,delta=delta, axis=1)
 
     #drop unused columns
@@ -651,6 +628,47 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     data.drop([ 'cdf_plus', 'cdf_minus', 'val_minus','val_plus'], inplace=True, axis=1)
 
     return data
+
+
+def estimate_P_k(data, delta):
+    # calculate cdfs in vectorized manner
+    """for the normalized input, the r_ij equals 1"""
+    # The range became +/- precision as r_ij =1
+    # data['val_plus']=data['relative_time'] + precision
+    # data['val_minus'] = data['relative_time'] - precision
+    """Estimate precision as one per unit time"""
+    precision = 10 * 1 / (
+                data['relative_time_max'] - data['relative_time_min'])  # within hour and time unit is in seconds
+    data['precision'] = 10 * 1 / (data['relative_time_max'] - data['relative_time_min'])
+    # normalize precision
+    # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
+    # precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
+    data['val_plus'] = data['relative_time'] + precision
+    data['val_minus'] = data['relative_time'] - precision
+    # #no cdf below zero, so we replace -ve values with zeros
+    # # no cdf greater than 1, so we replace  values >1 with 1
+    # optimize  calculate cdf function
+    stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
+        'count').pipe(pd.DataFrame).rename(
+        columns={'relative_time': 'frequency'})
+    # PDF
+    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
+    # CDF
+    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+    stats_df = stats_df.reset_index()
+    stats_df = stats_df.set_index(['prev_state', 'concept:name', 'state'])
+    temp = data.apply(match_vals, cumsum=stats_df, axis=1)
+    temp = pd.DataFrame.from_records(temp)
+    # cdf_plus
+    data['cdf_plus'] = temp[0]
+    # cdf_minus
+    data['cdf_minus'] = temp[1]
+    # calculate p_k in a vectorized manner
+    data['p_k'] = 0
+    #  adding a fix to the case of fixed distrubtion
+    data['p_k'] = data.apply(estimate_P_k_vectorized, delta=delta, axis=1)
+    return data
+
 
 def estimate_P_k_vectorized(data,delta):
 
@@ -664,7 +682,7 @@ def estimate_P_k_vectorized(data,delta):
 def epsilon_vectorized_internal(data, delta):
     if data.p_k+delta >=1:
         #in case p_k+delta>1, set epsilon = 0.5
-        return 0.5
+        return 0.7
 
     # r =1 because of normalization
     return (- np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0)))

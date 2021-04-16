@@ -24,6 +24,7 @@ def laplace_noise_injection(data):
 def add_noise(data):
     noise = 0
     sens_time = 1
+
     noise = laplace.rvs(loc=0, scale=sens_time / data['eps'], size=1)[0]
 
     if data.prev_state == 0:
