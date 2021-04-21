@@ -11,6 +11,9 @@ from amun.noise_injection import laplace_noise_injection
 from amun.trace_anonymization_over_and_under_sampling import anonymize_traces_compacted
 from amun.epsilon_estimation_start_timestamp import estimate_epsilon_risk_for_start_timestamp
 from amun.outlier_detection_and_removal import outlier_detection_and_removal
+from amun.postprocessing import filtering_postprocessing
+
+
 
 def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     print("Processing the dataset: %s" % (dataset))
@@ -56,6 +59,7 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     data = laplace_noise_injection(data)
     data['eps_trace']=eps
 
+    data=filtering_postprocessing(data)
 
     # # TODO: estimate epsilon after outlier removal
     # data_filtered = estimate_epsilon_risk_vectorized_with_normalization(data_filtered, delta, precision, tmp_dir)

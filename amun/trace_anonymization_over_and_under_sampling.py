@@ -402,6 +402,8 @@ def execute_undersampling(data, traces_to_delete):
     return data
 
 
+
+
 def anonymize_traces_compacted(data,  eps):
     # start=time.time()
     bit_vector_df,bit_vector_trace_variant= build_DAFSA_bit_vector_compacted(data,eps)
@@ -479,11 +481,11 @@ def anonymize_traces_compacted(data,  eps):
         for j in range(0, int(traces_to_over_sample[i])):
             oversampling_traces.append(i)
             # print("no of iteration = %s"%(iter))
-    # execute the oversampling
-    # start=time.time()
+
+    # execute the oversampling and undersampling
     data = execute_oversampling(data, oversampling_traces)
     data= execute_undersampling(data,list(traces_to_under_sample.index))
-    # data=execute_oversampling(data,duplicated_traces)
-    # end=time.time()
-    # print("execute oversampoling %s:"%(end-start))
+
+
+
     return data
