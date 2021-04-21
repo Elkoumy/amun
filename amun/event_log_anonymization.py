@@ -7,7 +7,8 @@ import time
 from amun.guessing_advantage_new import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
 from amun.input_module import xes_to_DAFSA
 from amun.noise_injection import laplace_noise_injection
-from amun.trace_anonymization import anonymize_traces_compacted
+# from amun.trace_anonymization import anonymize_traces_compacted
+from amun.trace_anonymization_over_and_under_sampling import anonymize_traces_compacted
 from amun.epsilon_estimation_start_timestamp import estimate_epsilon_risk_for_start_timestamp
 from amun.outlier_detection_and_removal import outlier_detection_and_removal
 
