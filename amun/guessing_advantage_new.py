@@ -621,6 +621,7 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
 
     data = estimate_P_k(data, delta)
 
+
     data['eps'] =data.apply(epsilon_vectorized_internal,delta=delta, axis=1)
 
     #drop unused columns
