@@ -3,8 +3,8 @@ import os
 import shutil
 import time
 
-# from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
-from amun.guessing_advantage_new import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
+from amun.guessing_advantage import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
+# from amun.guessing_advantage_new import estimate_epsilon_risk_vectorized_with_normalization, get_noise_case_variant
 from amun.input_module import xes_to_DAFSA
 from amun.noise_injection import laplace_noise_injection
 # from amun.trace_anonymization import anonymize_traces_compacted

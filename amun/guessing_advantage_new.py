@@ -571,26 +571,33 @@ def match_vals(row, cumsum):
     # cdf=float(cumsum[cumsum.index==row['relative_time']])
     #cdf plus
     # val_plus= row['relative_time']+precision
-    group_cdf=cumsum.loc[(row['prev_state'], row['concept:name'], row['state']),['relative_time','cdf']]
+    # group_cdf=cumsum.loc[(row['prev_state'], row['concept:name'], row['state']),['relative_time','cdf']]
+    group_cdf = cumsum.loc[(row['prev_state'], row['concept:name'], row['state']),['cdf']]
+    # t1 = group_cdf.loc[group_cdf.index <= row['val_plus']]
+    # cdf_plus=float(t1.iloc[-1][0])
     if row['val_plus']>=1:
         cdf_plus=1.0
     else:
-        #TODO: enhance the following statement
-        cdf_plus=float(group_cdf[group_cdf.relative_time <= row['val_plus']].cdf.max())
+
+        cdf_plus=group_cdf.loc[group_cdf.index <= row['val_plus']]
+        cdf_plus = float(cdf_plus.iloc[-1][0])
+        # cdf_plus=float(group_cdf[group_cdf.relative_time <= row['val_plus']].cdf.max())
 
     #cdf minus
     # val_minus = row['relative_time'] - precision
     if row['val_minus'] <= 0:
         cdf_minus = 0.0
     else:
-        # TODO: enhance the following statement
-        query=group_cdf[group_cdf.relative_time <= row['val_minus']]
 
+        # query=group_cdf[group_cdf.relative_time <= row['val_minus']]
+        query=group_cdf.loc[group_cdf.index <= row['val_minus']]
         if query.shape[0]==0:
             #in case the val_minus is lower than the minimum value but greater than zero
             cdf_minus=0
         else:
-            cdf_minus = float(query.cdf.max())
+            cdf_minus = float(query.iloc[-1][0])
+
+            # cdf_minus = float(query.cdf.max())
         # if cdf_minus==nan:
         #     cdf_minus===0
 
@@ -662,10 +669,11 @@ def estimate_P_k(data, delta):
     stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
     # CDF
     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
-    stats_df = stats_df.reset_index()
-    stats_df = stats_df.set_index(['prev_state', 'concept:name', 'state'])
+    # stats_df = stats_df.reset_index()
+    # stats_df = stats_df.set_index(['prev_state', 'concept:name', 'state'])
 
     start=time.time()
+    #TODO: replace match_vals with a join
     temp = data.apply(match_vals, cumsum=stats_df, axis=1)
     end = time.time()
     print("match vals: %s" % (end - start))
