@@ -575,6 +575,7 @@ def match_vals(row, cumsum):
     if row['val_plus']>=1:
         cdf_plus=1.0
     else:
+        #TODO: enhance the following statement
         cdf_plus=float(group_cdf[group_cdf.relative_time <= row['val_plus']].cdf.max())
 
     #cdf minus
@@ -582,6 +583,7 @@ def match_vals(row, cumsum):
     if row['val_minus'] <= 0:
         cdf_minus = 0.0
     else:
+        # TODO: enhance the following statement
         query=group_cdf[group_cdf.relative_time <= row['val_minus']]
 
         if query.shape[0]==0:
@@ -609,6 +611,7 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     data['relative_time_original']=data['relative_time']
     data['relative_time']= data[['relative_time','relative_time_min', 'relative_time_max']].apply(normalize_relative_time, axis=1)
 
+
     data=estimate_P_k(data, delta)
 
     #calculate epsilon in a vectorized manner
@@ -619,10 +622,13 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     data = data[~data['case:concept:name'].isin(cases_to_delete)]
     data = data.reset_index(drop=True)
 
+
     data = estimate_P_k(data, delta)
 
 
+
     data['eps'] =data.apply(epsilon_vectorized_internal,delta=delta, axis=1)
+
 
     #drop unused columns
     # we keep the max and min to denormalize the values
@@ -658,7 +664,12 @@ def estimate_P_k(data, delta):
     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
     stats_df = stats_df.reset_index()
     stats_df = stats_df.set_index(['prev_state', 'concept:name', 'state'])
+
+    start=time.time()
     temp = data.apply(match_vals, cumsum=stats_df, axis=1)
+    end = time.time()
+    print("match vals: %s" % (end - start))
+
     temp = pd.DataFrame.from_records(temp)
     # cdf_plus
     data['cdf_plus'] = temp[0]
