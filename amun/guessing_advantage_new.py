@@ -652,7 +652,7 @@ def estimate_P_k(data, delta):
     # data['val_minus'] = data['relative_time'] - precision
     """Estimate precision as one per unit time"""
     precision = 10 * 1 / (
-                data['relative_time_max'] - data['relative_time_min'])  # within hour and time unit is in seconds
+                data['relative_time_max'] - data['relative_time_min'])  # within 10 minutes and time unit is in minutes
     data['precision'] = 10 * 1 / (data['relative_time_max'] - data['relative_time_min'])
     # normalize precision
     # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
@@ -669,22 +669,9 @@ def estimate_P_k(data, delta):
     stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
     # CDF
     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
-    # stats_df = stats_df.reset_index()
-    # stats_df = stats_df.set_index(['prev_state', 'concept:name', 'state'])
-
-    # start=time.time()
-    #
-    # temp = data.apply(match_vals, cumsum=stats_df, axis=1)
-    # end = time.time()
-    # print("match vals: %s" % (end - start))
-
-    # temp = pd.DataFrame.from_records(temp)
-    # # cdf_plus
-    # data['cdf_plus'] = temp[0]
-    # # cdf_minus
-    # data['cdf_minus'] = temp[1]
 
     start=time.time()
+
     temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
     stats_df = stats_df[['cdf']]
     t_stats = stats_df.reset_index()
@@ -745,6 +732,10 @@ def epsilon_vectorized_internal(data, delta):
         #in case p_k+delta>1, set epsilon = 0.5
         return 0.7
 
+    if data.p_k==0:
+        #in case of cdf_plus == cdf_minus, the epsilon will be inf
+        # we set epsilon to 10 at that case.
+        return 10
     # r =1 because of normalization
     return (- np.log(data.p_k / (1.0 - data.p_k) * (1.0 / (delta + data.p_k) - 1.0)))
 
