@@ -587,86 +587,9 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     # data['val_plus']=data['relative_time'] + precision
     # data['val_minus'] = data['relative_time'] - precision
 
-    """Estimate precision as one per unit time"""
-    precision = 10*1 / (data['relative_time_max']-data['relative_time_min']) #within hour and time unit is in seconds
-    data['precision']=10*1 / (data['relative_time_max']-data['relative_time_min'])
-    #normalize precision
-    # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
-    # precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
-
-    data['val_plus']=data['relative_time'] + precision
-    data['val_minus'] = data['relative_time'] - precision
-
-    # #no cdf below zero, so we replace -ve values with zeros
-    # # no cdf greater than 1, so we replace  values >1 with 1
-
-    #optimize  calculate cdf function
-    """
-    CDF calculation using pandas 
-    https://stackoverflow.com/questions/25577352/plotting-cdf-of-a-pandas-series-in-python
-    """
-    stats_df = data.groupby(['prev_state','concept:name','state', 'relative_time'])['relative_time'].agg('count').pipe(pd.DataFrame).rename(
-        columns={'relative_time': 'frequency'})
-    # PDF
-    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state','concept:name','state']).frequency.sum()
-    # CDF
-    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state','concept:name','state']).cumsum()
-    stats_df = stats_df.reset_index()
-    stats_df.drop(['pdf'], inplace=True, axis=1)
+    data = estimate_P_k(data, delta, tmp_dir)
 
 
-    #the plus_and_minus works like a value lookup
-    plus_and_minus=data.groupby(['prev_state','concept:name','state', 'relative_time','val_plus','val_minus'])['prev_state','concept:name','state'].agg('count').pipe(pd.DataFrame)\
-        .drop(['prev_state','concept:name','state'],axis=1)\
-        .reset_index()
-
-    #calculating CDF of the value + r_ij
-    stats_df=stats_df[['prev_state','concept:name','state', 'relative_time', 'cdf']]
-    #fixing memory issues
-    # set its directory to tmp
-    data.to_pickle(os.path.join( tmp_dir,'data.p'))
-    del(data)
-
-    """   ********* Performing chunking join **********"""
-    # we use chunks to avoid running out of memory for large event logs
-    chunk_size=10000 # number of states per chunk
-    #the problem is the first state all cases go through it.
-
-    no_of_chunks, max_large_state=partitioning_df(stats_df,plus_and_minus,tmp_dir,chunk_size)
-    del(stats_df)
-    del(plus_and_minus)
-
-    gc.collect()
-
-    chunck_join(no_of_chunks,max_large_state,tmp_dir)
-
-    #loading data back from hard disk
-    # set its directory to tmp
-    data=pd.read_pickle(os.path.join( tmp_dir,'data.p'))
-    #appending cdf
-    cdf=append_cdf(tmp_dir,1)
-
-    # add the first cdf values to the dataframe
-    data = data.merge(cdf, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
-    # data.drop(['val_plus'], inplace=True, axis=1)
-    del(cdf)
-
-    #appending cdf2
-    cdf2=append_cdf(tmp_dir,2)
-    # add the values to the dataframe
-    data = data.merge(cdf2, how='left', on=['prev_state','concept:name','state', 'relative_time'], suffixes=("", "_right"))
-    del(cdf2)
-    # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
-    # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
-    # the minimum is zero
-    data.cdf_minus=data.cdf_minus.fillna(0)
-    #and the maximum is 1
-    data.cdf_plus = data.cdf_plus.fillna(1)
-
-    #calculate p_k in a vectorized manner
-    data['p_k'] = 0
-    #  adding a fix to the case of fixed distrubtion
-    data['p_k']=data.apply(estimate_P_k_vectorized, delta=delta,axis=1)
 
     #calculate epsilon in a vectorized manner
     # handle p_k+delta >1
@@ -677,6 +600,82 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     data.drop([ 'cdf_plus', 'cdf_minus', 'val_minus','val_plus'], inplace=True, axis=1)
 
     return data
+
+
+def estimate_P_k(data, delta, tmp_dir):
+    """Estimate precision as one per unit time"""
+    precision = 10 * 1 / (
+                data['relative_time_max'] - data['relative_time_min'])  # within hour and time unit is in seconds
+    data['precision'] = 10 * 1 / (data['relative_time_max'] - data['relative_time_min'])
+    # normalize precision
+    # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
+    # precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
+    data['val_plus'] = data['relative_time'] + precision
+    data['val_minus'] = data['relative_time'] - precision
+    # #no cdf below zero, so we replace -ve values with zeros
+    # # no cdf greater than 1, so we replace  values >1 with 1
+    # optimize  calculate cdf function
+    """
+        CDF calculation using pandas 
+        https://stackoverflow.com/questions/25577352/plotting-cdf-of-a-pandas-series-in-python
+        """
+    stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
+        'count').pipe(pd.DataFrame).rename(
+        columns={'relative_time': 'frequency'})
+    # PDF
+    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
+    # CDF
+    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+    stats_df = stats_df.reset_index()
+    stats_df.drop(['pdf'], inplace=True, axis=1)
+    # the plus_and_minus works like a value lookup
+    plus_and_minus = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus', 'val_minus'])[
+        'prev_state', 'concept:name', 'state'].agg('count').pipe(pd.DataFrame) \
+        .drop(['prev_state', 'concept:name', 'state'], axis=1) \
+        .reset_index()
+    # calculating CDF of the value + r_ij
+    stats_df = stats_df[['prev_state', 'concept:name', 'state', 'relative_time', 'cdf']]
+    # fixing memory issues
+    # set its directory to tmp
+    data.to_pickle(os.path.join(tmp_dir, 'data.p'))
+    del (data)
+    """   ********* Performing chunking join **********"""
+    # we use chunks to avoid running out of memory for large event logs
+    chunk_size = 10000  # number of states per chunk
+    # the problem is the first state all cases go through it.
+    no_of_chunks, max_large_state = partitioning_df(stats_df, plus_and_minus, tmp_dir, chunk_size)
+    del (stats_df)
+    del (plus_and_minus)
+    gc.collect()
+    chunck_join(no_of_chunks, max_large_state, tmp_dir)
+    # loading data back from hard disk
+    # set its directory to tmp
+    data = pd.read_pickle(os.path.join(tmp_dir, 'data.p'))
+    # appending cdf
+    cdf = append_cdf(tmp_dir, 1)
+    # add the first cdf values to the dataframe
+    data = data.merge(cdf, how='left', on=['prev_state', 'concept:name', 'state', 'relative_time'],
+                      suffixes=("", "_right"))
+    # data.drop(['val_plus'], inplace=True, axis=1)
+    del (cdf)
+    # appending cdf2
+    cdf2 = append_cdf(tmp_dir, 2)
+    # add the values to the dataframe
+    data = data.merge(cdf2, how='left', on=['prev_state', 'concept:name', 'state', 'relative_time'],
+                      suffixes=("", "_right"))
+    del (cdf2)
+    # the minimum value of each distirubtion drops due to the condition "temp.val_minus >= temp.relative_time"
+    # to fix that, we perform left join and replace the nans with zeros which means that the CDF of a value that is lower than
+    # the minimum is zero
+    data.cdf_minus = data.cdf_minus.fillna(0)
+    # and the maximum is 1
+    data.cdf_plus = data.cdf_plus.fillna(1)
+    # calculate p_k in a vectorized manner
+    data['p_k'] = 0
+    #  adding a fix to the case of fixed distrubtion
+    data['p_k'] = data.apply(estimate_P_k_vectorized, delta=delta, axis=1)
+    return data
+
 
 def estimate_P_k_vectorized(data,delta):
 

@@ -672,17 +672,58 @@ def estimate_P_k(data, delta):
     # stats_df = stats_df.reset_index()
     # stats_df = stats_df.set_index(['prev_state', 'concept:name', 'state'])
 
-    start=time.time()
-    #TODO: replace match_vals with a join
-    temp = data.apply(match_vals, cumsum=stats_df, axis=1)
-    end = time.time()
-    print("match vals: %s" % (end - start))
+    # start=time.time()
+    #
+    # temp = data.apply(match_vals, cumsum=stats_df, axis=1)
+    # end = time.time()
+    # print("match vals: %s" % (end - start))
 
-    temp = pd.DataFrame.from_records(temp)
-    # cdf_plus
-    data['cdf_plus'] = temp[0]
-    # cdf_minus
-    data['cdf_minus'] = temp[1]
+    # temp = pd.DataFrame.from_records(temp)
+    # # cdf_plus
+    # data['cdf_plus'] = temp[0]
+    # # cdf_minus
+    # data['cdf_minus'] = temp[1]
+
+    start=time.time()
+    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
+    stats_df = stats_df[['cdf']]
+    t_stats = stats_df.reset_index()
+    temp = temp.merge(t_stats, how='inner', on=['prev_state', 'concept:name', 'state'],
+                  suffixes=("", "_right"))
+
+    temp = temp.loc[temp.val_plus >= temp.relative_time_right]
+
+    temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']).cdf.max().reset_index()
+
+    t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
+    cdf_plus=t_join.cdf
+
+    end = time.time()
+    print("join to estimate cdf: %s" % (end - start))
+
+
+    """CDF minus"""
+
+    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']]
+    stats_df = stats_df[['cdf']]
+    t_stats = stats_df.reset_index()
+    temp = temp.merge(t_stats, how='inner', on=['prev_state', 'concept:name', 'state'],
+                  suffixes=("", "_right"))
+    #negative values
+    temp.loc[temp.val_minus < 0,'val_minus'] = 0
+
+    temp = temp.loc[temp.val_minus >= temp.relative_time_right]
+
+    temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']).cdf.max().reset_index()
+
+    t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
+    cdf_minus=t_join.cdf
+    cdf_minus = cdf_minus.fillna(0)
+
+
+    data['cdf_plus']=cdf_plus
+    data['cdf_minus']=cdf_minus
+
     # calculate p_k in a vectorized manner
     data['p_k'] = 0
     #  adding a fix to the case of fixed distrubtion
