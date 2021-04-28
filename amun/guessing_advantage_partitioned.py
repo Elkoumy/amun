@@ -711,16 +711,28 @@ def estimate_CDF_paritioned(data, tmp_dir, chunk_size = 1000):
 
 
 def partition_eventlog(chunk_size, data, tmp_dir):
+    large_state_size=1000
     data.sort_values(['prev_state', 'concept:name', 'state'], ascending=True, inplace=True)
     # unique_states = stats_df.state.unique()
     # unique_states = data.groupby(['prev_state', 'concept:name', 'state']).size().reset_index().rename(
     #     columns={0: 'count'}).drop('count', axis=1)
     unique_states = data.groupby(['prev_state', 'concept:name', 'state']).original_index.apply(list)
-    unique_states = unique_states.reset_index()
+
 
     large_states = data.groupby(['prev_state', 'concept:name', 'state']).relative_time.count()
+
     # separating large states from the others
-    large_states = large_states[large_states > 1000].reset_index()
+    small_states = list(large_states.loc[large_states <= large_state_size].index)
+
+    large_states = large_states.reset_index().rename(columns={'relative_time': 'counts'})
+    large_states = large_states[large_states.counts > large_state_size].reset_index()
+
+    unique_states = unique_states.loc[small_states]
+    # unique_states = unique_states.reset_index()
+    # unique_states = unique_states.loc[small_states]
+    unique_states=unique_states.reset_index()
+
+
     # ['prev_state', 'concept:name', 'state']
     curr_dir = os.getcwd()
     idx = 0
@@ -730,10 +742,10 @@ def partition_eventlog(chunk_size, data, tmp_dir):
                     data['concept:name'] == row['concept:name']), :]
         res.to_pickle(os.path.join(tmp_dir, 'data_df_%s' % (idx)))
 
-        row_id = unique_states.index[
-            (unique_states.state == row['state']) & (unique_states.prev_state == row['prev_state']) & (
-                        unique_states['concept:name'] == row['concept:name'])].tolist()[0]
-        unique_states.drop(row_id, axis=0, inplace=True)
+        # row_id = unique_states.index[
+        #     (unique_states.state == row['state']) & (unique_states.prev_state == row['prev_state']) & (
+        #                 unique_states['concept:name'] == row['concept:name'])].tolist()[0]
+        # unique_states.drop(row_id, axis=0, inplace=True)
 
         idx += 1
     """ splitting other states regularly"""
@@ -746,7 +758,9 @@ def partition_eventlog(chunk_size, data, tmp_dir):
         # res = stats_df.loc[stats_df.state.isin(current_states), :]
 
         # res = data.iloc[current_states.index]
-        res = data.iloc[current_states]
+        current_states = current_states.astype('int32')
+        res = data.loc[current_states]
+        # res = data.iloc[current_states]
         res.to_pickle(os.path.join(tmp_dir, 'data_df_%s' % (idx)))
         # plus_and_minus.loc[plus_and_minus.state.isin(current_states), :]\
         #     .to_pickle(os.path.join( tmp_dir,'plus_and_minus_%s'%(idx)))
@@ -767,7 +781,7 @@ def estimate_CDF_with_partitioning(num_of_chunks, max_large_state, tmp_dir):
         if i<max_large_state:
 
             cdf_minus, cdf_plus = estimate_CDF_per_partition_single_transition(data)
-            print("*")
+            # print("*")
             # chunk_merge_plus_single_large_state(stats_df,plus_and_minus,i,tmp_dir)
         else:
             cdf_minus, cdf_plus = estimate_CDF_per_partition(data)
@@ -854,7 +868,7 @@ def estimate_CDF_per_partition_single_transition(data):
 
 def cdf_minus_single_state(data, stats_df):
     """CDF minus"""
-    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']]
+    temp = data[['original_index','prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']]
     # negative values
     temp.loc[temp.val_minus < 0, 'val_minus'] = 0
 
@@ -885,7 +899,7 @@ def cdf_minus_single_state(data, stats_df):
 
 def cdf_plus_single_state(data, stats_df):
     """ CDF  plus"""
-    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
+    temp = data[['original_index','prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
 
     # TODO: reduce the size used by the following merge
     # temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
@@ -908,7 +922,7 @@ def cdf_plus_single_state(data, stats_df):
     data = data.reset_index()
     t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
     # reindexing the t_join dataframe with the original data index
-    t_join = t_join.set_index('index')
+    t_join = t_join.set_index('original_index')
     cdf_plus = t_join.cdf
     return cdf_plus
 
