@@ -651,16 +651,26 @@ def estimate_P_k(data, delta,tmp_dir):
     # data['val_plus']=data['relative_time'] + precision
     # data['val_minus'] = data['relative_time'] - precision
     """Estimate precision as one per unit time"""
-    precision = 10 * 1 / (
-                data['relative_time_max'] - data['relative_time_min'])  # within 10 minutes and time unit is in minutes
-    data['precision'] = 10 * 1 / (data['relative_time_max'] - data['relative_time_min'])
+    precision = 1 * 1 *(data['relative_time_max'] - data['relative_time_min'])/ (
+                data['relative_time_max'] - data['relative_time_min'])**2  # within 10 minutes and time unit is in minutes
+    #nans happens when max=min
+    precision = precision.fillna(0)
+
+    data['precision'] = 1 * 1* (data['relative_time_max'] - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])**2
+    data.precision = data.precision.fillna(0)
     # normalize precision
     # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
     # precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
+
+
+
     data['val_plus'] = data['relative_time'] + precision
     data['val_plus']=data.val_plus.replace(inf,1)
+    data['val_plus'].loc[data.val_plus > 1] = 1
+
     data['val_minus'] = data['relative_time'] - precision
     data['val_minus'] = data.val_minus.replace(-inf, 0)
+    data['val_minus'].loc[data.val_minus<0]=0
     # #no cdf below zero, so we replace -ve values with zeros
     # # no cdf greater than 1, so we replace  values >1 with 1
     # optimize  calculate cdf function
@@ -779,11 +789,12 @@ def estimate_CDF_with_partitioning(num_of_chunks, max_large_state, tmp_dir):
         data=data[['original_index','prev_state', 'concept:name', 'state', 'relative_time','val_plus','val_minus']]
         #the first state is large, so we separate it from the others
         if i<max_large_state:
-
+            #single state partitions
             cdf_minus, cdf_plus = estimate_CDF_per_partition_single_transition(data)
             # print("*")
             # chunk_merge_plus_single_large_state(stats_df,plus_and_minus,i,tmp_dir)
         else:
+            #multiple states partitions
             cdf_minus, cdf_plus = estimate_CDF_per_partition(data)
             # chunk_merge_plus(stats_df,plus_and_minus,i,tmp_dir)
 
@@ -844,26 +855,72 @@ def estimate_CDF_per_partition(data):
     return cdf_minus, cdf_plus
 
 
-
 def estimate_CDF_per_partition_single_transition(data):
-    #here we don't need to group by 'prev_state', 'concept:name', 'state'
-    #todo: drop grouping by 'prev_state', 'concept:name', 'state'
-    # and set them as index of some dataframe, that is required by the join.
     stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
         'count').pipe(pd.DataFrame).rename(
         columns={'relative_time': 'frequency'})
-
     # PDF
     stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
+    """ CDF  plus"""
     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
     stats_df = stats_df[['cdf']]
     stats_df = stats_df.reset_index()
+    temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
+                      suffixes=("", "_right"))
+    temp = temp.loc[temp.val_plus >= temp.relative_time_right]
+    temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']).cdf.max().reset_index()
 
-    cdf_plus = cdf_plus_single_state(data, stats_df)
+    #reseting the data index to keep it the same after merge
+    data=data.reset_index()
+    t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
+    #reindexing the t_join dataframe with the original data index
+    t_join=t_join.set_index('index')
 
-    cdf_minus = cdf_minus_single_state(data, stats_df)
+    cdf_plus = t_join.cdf
+
+    """CDF minus"""
+    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']]
+    temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
+                      suffixes=("", "_right"))
+    # negative values
+    temp.loc[temp.val_minus < 0, 'val_minus'] = 0
+    temp = temp.loc[temp.val_minus >= temp.relative_time_right]
+    temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']).cdf.max().reset_index()
+
+    #reseting the data index to keep it the same after merge
+    data=data.reset_index()
+
+    t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
+
+    # reindexing the t_join dataframe with the original data index
+    t_join = t_join.set_index('index')
+
+    cdf_minus = t_join.cdf
+    cdf_minus = cdf_minus.fillna(0)
 
     return cdf_minus, cdf_plus
+
+
+# def estimate_CDF_per_partition_single_transition(data):
+#     #here we don't need to group by 'prev_state', 'concept:name', 'state'
+#     #todo: drop grouping by 'prev_state', 'concept:name', 'state'
+#     # and set them as index of some dataframe, that is required by the join.
+#     stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
+#         'count').pipe(pd.DataFrame).rename(
+#         columns={'relative_time': 'frequency'})
+#
+#     # PDF
+#     stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
+#     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+#     stats_df = stats_df[['cdf']]
+#     stats_df = stats_df.reset_index()
+#
+#     cdf_plus = cdf_plus_single_state(data, stats_df)
+#
+#     cdf_minus = cdf_minus_single_state(data, stats_df)
+#
+#     return cdf_minus, cdf_plus
 
 
 def cdf_minus_single_state(data, stats_df):
