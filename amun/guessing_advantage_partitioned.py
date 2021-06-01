@@ -651,24 +651,26 @@ def estimate_P_k(data, delta,tmp_dir):
     # data['val_plus']=data['relative_time'] + precision
     # data['val_minus'] = data['relative_time'] - precision
     """Estimate precision as one per unit time"""
-    precision = 1 * 1 *(data['relative_time_max'] - data['relative_time_min'])/ (
-                data['relative_time_max'] - data['relative_time_min'])**2  # within 10 minutes and time unit is in minutes
-    #nans happens when max=min
-    precision = precision.fillna(0)
+    # precision = 10 * 1 *(data['relative_time_max'] - data['relative_time_min'])/ (
+    #             data['relative_time_max'] - data['relative_time_min'])**2  # within 10 minutes and time unit is in minutes
+    # #nans happens when max=min
+    # precision = precision.fillna(0)
 
-    data['precision'] = 1 * 1* (data['relative_time_max'] - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])**2
+    data['precision'] = 10 * 1* (data['relative_time_max'] - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])**2
     data.precision = data.precision.fillna(0)
+    # precision >max becomes 1
+    data['precision'].loc[data.precision > 1] = 1
     # normalize precision
     # precision = (precision - data['relative_time_min']) / (data['relative_time_max'] - data['relative_time_min'])
     # precision = (precision ) / (data['relative_time_max'] - data['relative_time_min'])
 
 
 
-    data['val_plus'] = data['relative_time'] + precision
+    data['val_plus'] = data['relative_time'] + data['precision']
     data['val_plus']=data.val_plus.replace(inf,1)
     data['val_plus'].loc[data.val_plus > 1] = 1
 
-    data['val_minus'] = data['relative_time'] - precision
+    data['val_minus'] = data['relative_time'] - data['precision']
     data['val_minus'] = data.val_minus.replace(-inf, 0)
     data['val_minus'].loc[data.val_minus<0]=0
     # #no cdf below zero, so we replace -ve values with zeros
