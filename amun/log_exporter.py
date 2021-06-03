@@ -116,6 +116,11 @@ def relative_time_to_XES(data,out_dir,file_name):
 
 def relative_time_to_XES2(data,out_dir,file_name):
 
+    #estimating the original range of timestamp in days
+    original_range=data.groupby('case:concept:name')['time:timestamp'].min()
+    original_range = original_range - original_range.min()
+    original_range=original_range.max()
+
     data['noise_timedelta']=data.apply(noise_unit_converter, axis=1)
 
     data['case:concept:name'] = data['case:concept:name'].astype('str')
@@ -128,6 +133,15 @@ def relative_time_to_XES2(data,out_dir,file_name):
     #debugging the data
     # data.to_csv("data.csv", index=False)
     # data['cumm_noise_timedelta'] = pd.to_timedelta(data['cumm_noise_timedelta'], unit='D')
+
+    #estimating the anonymized range of timestamp
+    data['cumm_noise_timedelta_abs']=data['cumm_noise_timedelta'].abs()
+    anonymized_range = data.groupby(['case:concept:name'])['cumm_noise_timedelta_abs'].min()
+    anonymized_range=anonymized_range.max()
+
+    #compressing the noise to be within the range
+    compression_factor = 0.5*  original_range / (anonymized_range+original_range)
+    data['cumm_noise_timedelta']=data['cumm_noise_timedelta']*compression_factor
 
     data['time:timestamp']= data['time:timestamp']+ data['cumm_noise_timedelta']
     # data.to_csv("data_after_addition.csv", index=False)
