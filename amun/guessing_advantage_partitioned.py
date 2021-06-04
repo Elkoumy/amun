@@ -857,72 +857,80 @@ def estimate_CDF_per_partition(data):
     return cdf_minus, cdf_plus
 
 
-def estimate_CDF_per_partition_single_transition(data):
-    stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
-        'count').pipe(pd.DataFrame).rename(
-        columns={'relative_time': 'frequency'})
-    # PDF
-    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
-    """ CDF  plus"""
-    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
-    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
-    stats_df = stats_df[['cdf']]
-    stats_df = stats_df.reset_index()
-    temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
-                      suffixes=("", "_right"))
-    temp = temp.loc[temp.val_plus >= temp.relative_time_right]
-    temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']).cdf.max().reset_index()
-
-    #reseting the data index to keep it the same after merge
-    data=data.reset_index()
-    t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
-    #reindexing the t_join dataframe with the original data index
-    t_join=t_join.set_index('index')
-
-    cdf_plus = t_join.cdf
-
-    """CDF minus"""
-    temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']]
-    temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
-                      suffixes=("", "_right"))
-    # negative values
-    temp.loc[temp.val_minus < 0, 'val_minus'] = 0
-    temp = temp.loc[temp.val_minus >= temp.relative_time_right]
-    temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']).cdf.max().reset_index()
-
-    #reseting the data index to keep it the same after merge
-    data=data.reset_index()
-
-    t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
-
-    # reindexing the t_join dataframe with the original data index
-    t_join = t_join.set_index('index')
-
-    cdf_minus = t_join.cdf
-    cdf_minus = cdf_minus.fillna(0)
-
-    return cdf_minus, cdf_plus
-
-
 # def estimate_CDF_per_partition_single_transition(data):
-#     #here we don't need to group by 'prev_state', 'concept:name', 'state'
-#     #todo: drop grouping by 'prev_state', 'concept:name', 'state'
-#     # and set them as index of some dataframe, that is required by the join.
 #     stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
 #         'count').pipe(pd.DataFrame).rename(
 #         columns={'relative_time': 'frequency'})
-#
+#     # stats_df = data.groupby(['relative_time'])['relative_time'].agg(
+#     #     'count').pipe(pd.DataFrame).rename(
+#     #     columns={'relative_time': 'frequency'})
 #     # PDF
 #     stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
-#     stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+#     # stats_df['pdf'] = stats_df['frequency'] / stats_df.frequency.sum()
+#     """ CDF  plus"""
+#     # stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+#     stats_df['cdf'] = stats_df['pdf'].cumsum()
+#
+#     temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']]
 #     stats_df = stats_df[['cdf']]
 #     stats_df = stats_df.reset_index()
 #
-#     cdf_plus = cdf_plus_single_state(data, stats_df)
+#     # fix the below error (memory)
+#     temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
+#                       suffixes=("", "_right"))
+#     temp = temp.loc[temp.val_plus >= temp.relative_time_right]
+#     temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_plus']).cdf.max().reset_index()
 #
-#     cdf_minus = cdf_minus_single_state(data, stats_df)
+#     #reseting the data index to keep it the same after merge
+#     data=data.reset_index()
+#     t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
+#     #reindexing the t_join dataframe with the original data index
+#     t_join=t_join.set_index('index')
+#
+#     cdf_plus = t_join.cdf
+#
+#     """CDF minus"""
+#     temp = data[['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']]
+#     temp = temp.merge(stats_df, how='inner', on=['prev_state', 'concept:name', 'state'],
+#                       suffixes=("", "_right"))
+#     # negative values
+#     temp.loc[temp.val_minus < 0, 'val_minus'] = 0
+#     temp = temp.loc[temp.val_minus >= temp.relative_time_right]
+#     temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']).cdf.max().reset_index()
+#
+#     #reseting the data index to keep it the same after merge
+#     data=data.reset_index()
+#
+#     t_join = data.merge(temp, on=['prev_state', 'concept:name', 'state', 'relative_time'], how='left')
+#
+#     # reindexing the t_join dataframe with the original data index
+#     t_join = t_join.set_index('index')
+#
+#     cdf_minus = t_join.cdf
+#     cdf_minus = cdf_minus.fillna(0)
 #
 #     return cdf_minus, cdf_plus
+
+
+def estimate_CDF_per_partition_single_transition(data):
+    #here we don't need to group by 'prev_state', 'concept:name', 'state'
+
+
+    stats_df = data.groupby(['prev_state', 'concept:name', 'state', 'relative_time'])['relative_time'].agg(
+        'count').pipe(pd.DataFrame).rename(
+        columns={'relative_time': 'frequency'})
+
+    # PDF
+    stats_df['pdf'] = stats_df['frequency'] / stats_df.groupby(['prev_state', 'concept:name', 'state']).frequency.sum()
+    stats_df['cdf'] = stats_df['pdf'].groupby(['prev_state', 'concept:name', 'state']).cumsum()
+    stats_df = stats_df[['cdf']]
+    stats_df = stats_df.reset_index()
+
+    cdf_plus = cdf_plus_single_state(data, stats_df)
+
+    cdf_minus = cdf_minus_single_state(data, stats_df)
+
+    return cdf_minus, cdf_plus
 
 
 def cdf_minus_single_state(data, stats_df):
@@ -941,9 +949,9 @@ def cdf_minus_single_state(data, stats_df):
     temp.sort_values('val_minus', inplace=True)
     stats_df.sort_values('relative_time', inplace=True)
     temp = pd.merge_asof(temp, stats_df, left_on='val_minus', right_on='relative_time',
-                         by=['prev_state', 'concept:name', 'state', 'relative_time'],
-                         direction="backward", tolerance=None,
-                         suffixes=("_right", ""))
+                        # by=['prev_state', 'concept:name', 'state', 'relative_time'],
+                        # direction="backward", tolerance=None,
+                         suffixes=("", "_right"))
 
     temp = temp.groupby(['prev_state', 'concept:name', 'state', 'relative_time', 'val_minus']).cdf.max().reset_index()
     # reseting the data index to keep it the same after merge
@@ -970,9 +978,9 @@ def cdf_plus_single_state(data, stats_df):
     stats_df.prev_state = stats_df.prev_state.astype('int32')
     temp.sort_values('val_plus', inplace=True)
     stats_df.sort_values('relative_time', inplace=True)
-    temp=pd.merge_asof(temp,stats_df,left_on='val_plus', right_on='relative_time', by=['prev_state', 'concept:name', 'state', 'relative_time'],
-                         direction="backward", tolerance=None,
-                         suffixes=("_right", ""))
+    temp=pd.merge_asof(temp,stats_df,left_on='val_plus', right_on='relative_time', #by=['prev_state', 'concept:name', 'state', 'relative_time'],
+                         # direction="backward", tolerance=None,
+                         suffixes=("", "_right"))
 
 
 
