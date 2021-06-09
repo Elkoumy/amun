@@ -625,7 +625,14 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     # handle p_k+delta >1
 
     '''delete records with prior knowledge + delta >=1'''
-    cases_to_delete = data.loc[data.p_k==1]['case:concept:name'].unique()
+    # cases_to_delete = data.loc[data.p_k==1]['case:concept:name'].unique()
+    cases_to_delete = data.loc[data.p_k+delta >= 1]['case:concept:name'].unique()
+    #if the resulted event log is empty filter only p_k==1
+    # this case happens only in the Credit Requirement.
+
+    if data['case:concept:name'].unique().shape[0]== cases_to_delete.shape[0]:
+        cases_to_delete = data.loc[data.p_k == 1]['case:concept:name'].unique()
+
     data = data[~data['case:concept:name'].isin(cases_to_delete)]
     data = data.reset_index(drop=True)
 
