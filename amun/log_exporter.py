@@ -2,6 +2,7 @@ from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.exporter.xes import factory as xes_exporter
 import pandas as pd
 import os
+import numpy as np
 
 def relative_time_to_XES(data,out_dir,file_name):
     """
@@ -126,6 +127,7 @@ def relative_time_to_XES2(data,out_dir,file_name):
 
 def export_csv(data,out_dir,file_name):
     data = relative_time_to_timestamp(data)
+    data=adding_dummy_columns(data,20)
     data.to_csv(os.path.join(out_dir, file_name + ".csv"),index=False,header=False)
     return data
 
@@ -174,3 +176,10 @@ def noise_unit_converter(row):
         # res = pd.to_timedelta(row.noise ,unit='s')
 
     return res
+
+
+def adding_dummy_columns(data,num_of_columns):
+
+    for i in range(0,num_of_columns):
+        data['col_'+str(i)]= np.random.rand(data.shape[0])
+    return data

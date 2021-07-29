@@ -5,7 +5,7 @@ This module implements the main module for the event log anonymizer
 
 from amun.event_log_anonymization import event_log_anonymization
 from amun.measure_accuracy import estimate_SMAPE_variant_and_time
-from amun.log_exporter import relative_time_to_XES, relative_time_to_XES2, export_csv
+from amun.log_exporter import relative_time_to_XES, relative_time_to_XES2, export_csv, adding_dummy_columns
 import time
 #import swifter
 import sys
@@ -86,6 +86,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     # data=relative_time_to_XES2(data,out_dir,file_name)
     data=export_csv(data,out_dir,file_name)
 
+
     slurm_end_all = time.time()
     print("slurm wall-to-wall execution time is: %s  seconds" % (slurm_end_all - start_all))
 
@@ -96,6 +97,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
                                'slurm_time_%s_%s_%s_%s.csv' % (dataset, precision, delta, iteration)),
                   index=False,
                   header=False
+
                   )
 
 
