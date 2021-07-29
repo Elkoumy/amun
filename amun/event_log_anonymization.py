@@ -13,7 +13,7 @@ from amun.trace_anonymization_over_and_under_sampling import anonymize_traces_co
 from amun.epsilon_estimation_start_timestamp import estimate_epsilon_risk_for_start_timestamp
 from amun.outlier_detection_and_removal import outlier_detection_and_removal
 from amun.postprocessing import filtering_postprocessing
-
+from amun.hashing_ids import vectorized_hashing
 
 
 def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
@@ -80,5 +80,6 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     # data_filtered = laplace_noise_injection(data_filtered)
     # data_filtered['eps_trace'] = eps
 
-
+    #Hashing IDs
+    data['case:concept:name']=vectorized_hashing(data['case:concept:name'])
     return data, variants_count
