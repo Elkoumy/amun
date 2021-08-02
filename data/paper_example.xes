@@ -58,17 +58,17 @@
 		<event>
 			<string key="concept:name" value="A"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T15:30:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T15:30:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="B"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T15:55:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T15:55:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="C"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T22:55:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T22:55:00.000+02:00"/>
 		</event>
 	</trace>
 	<trace>
@@ -76,22 +76,22 @@
 		<event>
 			<string key="concept:name" value="D"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T17:00:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T17:00:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="A"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T19:00:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T19:00:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="B"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T19:40:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T19:40:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="C"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-09T01:45:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-10T01:45:00.000+02:00"/>
 		</event>
 	</trace>
 	<trace>
@@ -99,17 +99,19 @@
 		<event>
 			<string key="concept:name" value="A"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T18:40:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T18:40:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="E"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-08T19:55:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-09T19:55:00.000+02:00"/>
 		</event>
 		<event>
 			<string key="concept:name" value="C"/>
 			<string key="lifecycle:transition" value="COMPLETE"/>
-			<date key="time:timestamp" value="2020-08-09T01:55:00.000+02:00"/>
+			<date key="time:timestamp" value="2020-08-11T01:55:00.000+02:00"/>
 		</event>
 	</trace>
+	
+	
 </log>
