@@ -113,5 +113,24 @@
 		</event>
 	</trace>
 	
+	<trace>
+		<string key="concept:name" value="6"/>
+			<event>
+			<string key="concept:name" value="A"/>
+			<string key="lifecycle:transition" value="COMPLETE"/>
+			<date key="time:timestamp" value="2020-08-11T19:00:00.000+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="B"/>
+			<string key="lifecycle:transition" value="COMPLETE"/>
+			<date key="time:timestamp" value="2020-08-11T19:27:00.000+02:00"/>
+		</event>
+		<event>
+			<string key="concept:name" value="C"/>
+			<string key="lifecycle:transition" value="COMPLETE"/>
+			<date key="time:timestamp" value="2020-08-12T01:45:00.000+02:00"/>
+		</event>
+	</trace>
+	
 	
 </log>

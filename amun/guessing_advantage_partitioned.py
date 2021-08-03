@@ -1006,7 +1006,8 @@ def estimate_P_k_vectorized(data,delta):
     if data.relative_time_max==data.relative_time_min:
         #in case of fixed distribution, use the worst case scenario
         return (1-delta)/2
-
+    elif data.prev_state==0: #start time
+        return 0
     return data.cdf_plus - data.cdf_minus
 
 
