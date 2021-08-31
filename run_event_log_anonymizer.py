@@ -83,8 +83,8 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     file_name='e_anonymized_%s_%s_%s_%s'%(dataset,precision,delta,iteration)
     # return from relative time to original timestamps
-    # data=relative_time_to_XES2(data,out_dir,file_name)
-    data=export_csv(data,out_dir,file_name)
+    data=relative_time_to_XES2(data,out_dir,file_name)
+    # data=export_csv(data,out_dir,file_name)
 
 
     slurm_end_all = time.time()
@@ -112,12 +112,12 @@ if __name__ == "__main__":
     # precisions=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
     precisions=[0.2]
-    deltas=[0.3]
+    deltas=[0.5]
 
     # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
     # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
-    datasets=[ "paper_example" ]
+    datasets=[ "BPIC12_t" ]
 
 
     # cur_dir=os.getcwd()

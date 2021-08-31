@@ -60,7 +60,7 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     data = laplace_noise_injection(data)
     data['eps_trace']=eps
 
-    data=filtering_postprocessing(data)
+    # data=filtering_postprocessing(data)
 
     # # TODO: estimate epsilon after outlier removal
     # data_filtered = estimate_epsilon_risk_vectorized_with_normalization(data_filtered, delta, precision, tmp_dir)
