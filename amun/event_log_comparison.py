@@ -13,11 +13,11 @@ pripel = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Dif
 
 """Earth Movers' Distance"""
 "DFG frequencies"
-# res=earth_mover_dist_freq(original,amun)
-# print("DFG EMD of Amun= %s"%(res))
-#
-# res=earth_mover_dist_freq(original,pripel)
-# print("DFG EMD of Pripel= %s"%(res))
+res=earth_mover_dist_freq(original,amun)
+print("DFG frequency EMD of Amun= %s"%(res))
+
+res=earth_mover_dist_freq(original,pripel)
+print("DFG frequency EMD of Pripel= %s"%(res))
 
 
 "DFG Time"
