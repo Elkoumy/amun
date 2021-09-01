@@ -52,10 +52,5 @@ def soft_jaccard_score(tokens1, tokens2):
     return jaccard_distance
 
 
-l1 = [['A', 'B', 'C'], ['B', 'C', 'D'], ['E', 'A', 'D']]
-lx = [['A', 'B', 'C'], ['B', 'C', 'D']]
-l2 = [['A', 'B', 'E'], ['B', 'D', 'D'], ['E', 'Z', 'D'],['A', 'B', 'C']]
-l3 = [['Z', 'T', 'G'], ['E', 'X', 'A'], ['X', 'G', 'T']]
 
-print(soft_jaccard_score(lx,l1))
 
