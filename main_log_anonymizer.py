@@ -85,7 +85,7 @@ for precision in precisions:
                         exec_time = "24:00:00"  # 5 hours
 
 
-                    job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
+                    job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s_%s.sh" % (data, mode, precision, delta, iteration))
                     job_log_name =os.path.join(jobs_dir,"l_%s_%s_%s_%s_%s.txt" % (data,mode, precision, delta, iteration))
 
                     with open(job_name, "w") as fout:
