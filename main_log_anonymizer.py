@@ -86,11 +86,11 @@ for precision in precisions:
 
 
                     job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s.sh" % (data, precision, delta, iteration))
-                    job_log_name =os.path.join(jobs_dir,"l_%s_%s_%s_%s.txt" % (data, precision, delta, iteration))
+                    job_log_name =os.path.join(jobs_dir,"l_%s_%s_%s_%s_%s.txt" % (data,mode, precision, delta, iteration))
 
                     with open(job_name, "w") as fout:
                         fout.write("#!/bin/bash\n")
-                        fout.write("#SBATCH --output=jobs/l_%s_%s_%s_%s.txt" % (data, precision, delta, iteration))
+                        fout.write("#SBATCH --output=jobs/l_%s_%s_%s_%s_%s.txt" % (data,mode, precision, delta, iteration))
                         fout.write("#SBATCH --mem=%sGB\n" % memory)
                         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
                         #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
@@ -103,9 +103,10 @@ for precision in precisions:
                         # delta = os.sys.argv[2]
                         # precision = os.sys.argv[3]
                         # iteration = os.sys.argv[4]
-                        fout.write("python -u %s \"%s\" %s %s %s \n"
+                        fout.write("python -u %s \"%s\" \"%s\" %s %s %s \n"
                                    %('"'+os.path.join(dir_path,"run_event_log_anonymizer_slurm.py")+'"',
                                                                data,
+                                                               mode,
                                                                delta,
                                                                precision,
                                                                iteration))
