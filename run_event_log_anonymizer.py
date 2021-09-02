@@ -81,7 +81,13 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
 
     out_dir=os.path.join( out_dir,'delta_%s'%(delta),'precision_%s'%(precision))
 
-    file_name='e_anonymized_%s_%s_%s_%s'%(dataset,precision,delta,iteration)
+    epsilons = {'dataset':['%s_p%s_d%s_i%s'%(dataset,precision,delta,iteration)],'event_eps_min': [data.eps.min()], 'event_eps_median': [data.eps.median()],
+                'event_eps_mean': [data.eps.mean()], 'event_eps_max': [data.eps.max()], 'trace_eps': [data.eps_trace[0]]}
+    epsilons = pd.DataFrame.from_dict(epsilons, orient='columns')
+    eps_filename=os.path.join(experiment_log_dir,'epsilons','epsilon_%s_p%s_d%s_i%s.csv'%(dataset,precision,delta,iteration))
+    epsilons.to_csv(eps_filename,index=False)
+
+    file_name='e_anonymized_%s_p%s_d%s_i%s'%(dataset,precision,delta,iteration)
     # return from relative time to original timestamps
     data=relative_time_to_XES2(data,out_dir,file_name)
     # data=export_csv(data,out_dir,file_name)
