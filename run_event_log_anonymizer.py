@@ -28,7 +28,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     # precision =0.5
     # temp directory name tmp/t_ event log name _ precision _ delta _ itertion
     curr_dir = os.path.dirname(os.path.realpath(__file__))
-    temp_dir=os.path.join(curr_dir, 'tmp','t_%s_%s_%s_%s'%(dataset,precision,delta,iteration))
+    temp_dir=os.path.join(curr_dir, 'tmp','t_%s%s_%s_%s_%s'%(dataset,mode,precision,delta,iteration))
 
     data, variants_count = event_log_anonymization(data_dir, dataset, mode, delta, precision, temp_dir)
 
