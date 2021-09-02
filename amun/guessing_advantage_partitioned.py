@@ -605,7 +605,7 @@ def match_vals(row, cumsum):
     return [ cdf_plus, cdf_minus]
 
 
-def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir):
+def estimate_epsilon_risk_vectorized_with_normalization(data,mode, delta, precision,tmp_dir):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
 
@@ -624,22 +624,23 @@ def estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,t
     #calculate epsilon in a vectorized manner
     # handle p_k+delta >1
 
-    '''delete records with prior knowledge + delta >=1'''
-    # cases_to_delete = data.loc[data.p_k==1]['case:concept:name'].unique()
-    cases_to_delete = data.loc[data.p_k+delta >= 1]['case:concept:name'].unique()
-    #if the resulted event log is empty filter only p_k==1
-    # this case happens only in the Credit Requirement.
+    if mode=='filtering':
+        """**************** Filtering ****************"""
+        '''delete records with prior knowledge + delta >=1'''
+        # cases_to_delete = data.loc[data.p_k==1]['case:concept:name'].unique()
+        cases_to_delete = data.loc[data.p_k+delta >= 1]['case:concept:name'].unique()
+        #if the resulted event log is empty filter only p_k==1
+        # this case happens only in the Credit Requirement.
 
-    if data['case:concept:name'].unique().shape[0]== cases_to_delete.shape[0]:
-        cases_to_delete = data.loc[data.p_k == 1]['case:concept:name'].unique()
+        if data['case:concept:name'].unique().shape[0]== cases_to_delete.shape[0]:
+            cases_to_delete = data.loc[data.p_k == 1]['case:concept:name'].unique()
 
-    data = data[~data['case:concept:name'].isin(cases_to_delete)]
-    data = data.reset_index(drop=True)
+        data = data[~data['case:concept:name'].isin(cases_to_delete)]
+        data = data.reset_index(drop=True)
 
+        data = estimate_P_k(data, delta, tmp_dir)
 
-    data = estimate_P_k(data, delta, tmp_dir)
-
-
+        """******************************************"""
 
     data['eps'] =data.apply(epsilon_vectorized_internal,delta=delta, axis=1)
 

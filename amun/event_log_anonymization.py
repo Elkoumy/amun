@@ -16,7 +16,7 @@ from amun.postprocessing import filtering_postprocessing
 from amun.hashing_ids import vectorized_hashing
 
 
-def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
+def event_log_anonymization(data_dir, dataset, mode, delta, precision, tmp_dir):
     print("Processing the dataset: %s" % (dataset))
     print("with Delta: %s , and precision: %s" %(delta,precision))
     start = time.time()
@@ -43,14 +43,14 @@ def event_log_anonymization(data_dir, dataset, delta, precision, tmp_dir):
     # data = outlier_detection_and_removal(data)
 
 
-    data = estimate_epsilon_risk_vectorized_with_normalization(data, delta, precision,tmp_dir)
+    data = estimate_epsilon_risk_vectorized_with_normalization(data, mode, delta, precision,tmp_dir)
     data= estimate_epsilon_risk_for_start_timestamp(data, delta)
     end = time.time()
     print("estimate epsilon :  %s" % (end - start))
     gc.collect()
     noise, eps = get_noise_case_variant(delta)
     start = time.time()
-    data = anonymize_traces_compacted(data, eps)
+    data = anonymize_traces_compacted(data,mode, eps)
     end = time.time()
     print("anonymize traces %s" % (end - start))
 

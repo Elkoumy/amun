@@ -30,11 +30,12 @@ if __name__ == "__main__":
     experiment_log_dir=os.path.join(cur_dir,'experiment_event_anonymizer_log')
 
     dataset = os.sys.argv[1]
-    delta= float(os.sys.argv[2])
-    precision=float(os.sys.argv[3])
-    iteration=int(os.sys.argv[4])
+    mode=float(os.sys.argv[2])
+    delta= float(os.sys.argv[3])
+    precision=float(os.sys.argv[4])
+    iteration=int(os.sys.argv[5])
 
-    anonymize_event_log(data_dir, out_dir, experiment_log_dir, dataset, delta, precision, iteration)
+    anonymize_event_log(data_dir, out_dir, experiment_log_dir, dataset,mode, delta, precision, iteration)
 
 
 

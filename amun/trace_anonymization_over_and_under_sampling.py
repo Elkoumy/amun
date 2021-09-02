@@ -8,6 +8,7 @@ import random as r
 import time
 import math
 from scipy.stats import laplace
+import amun.trace_anonymization
 #import swifter
 
 def build_DAFSA_bit_vector(data):
@@ -402,52 +403,61 @@ def execute_undersampling(data, traces_to_delete):
     return data
 
 
+def trace_anonymization_oversampling(data, eps):
+    data = amun.trace_anonymization.anonymize_traces_compacted(data,eps)
+    return data
 
 
-def anonymize_traces_compacted(data,  eps):
+def anonymize_traces_compacted(data,mode, eps):
+    if mode =='sampling' or mode =='filtering':
+        data = trace_anonymization_sampling(data, eps)
+    elif mode=='oversampling':
+        data = trace_anonymization_oversampling(data,eps)
+    return data
+
+
+def trace_anonymization_sampling(data, eps):
     # start=time.time()
-    bit_vector_df,bit_vector_trace_variant= build_DAFSA_bit_vector_compacted(data,eps)
+    bit_vector_df, bit_vector_trace_variant = build_DAFSA_bit_vector_compacted(data, eps)
     # end = time.time()
     # print("build bit vector: %s" % (end - start))
-
     """ Positive noise"""
-    duplicated_traces=[] # to keep track of the duplicated trace ids
+    duplicated_traces = []  # to keep track of the duplicated trace ids
     # start = time.time()
     #  check if there is an edge that needs anonymization
-    cnt=bit_vector_df.loc[bit_vector_df.added_noise<bit_vector_df.noise,"added_noise"].shape[0]
-
-    iter=0
-    while cnt>0:
-        loop_start=time.time()
+    cnt = bit_vector_df.loc[bit_vector_df.added_noise < bit_vector_df.noise, "added_noise"].shape[0]
+    iter = 0
+    while cnt > 0:
+        loop_start = time.time()
         #  pick a random edge and a random trace
-        start=time.time()
-        bit_vector_df, duplicated_trace= pick_random_edge_trace_compacted_positive(bit_vector_df,bit_vector_trace_variant)
-        end=time.time()
+        start = time.time()
+        bit_vector_df, duplicated_trace = pick_random_edge_trace_compacted_positive(bit_vector_df,
+                                                                                    bit_vector_trace_variant)
+        end = time.time()
         # print("pick_random_edge_trace_compacted: %s"%(end-start))
         # duplicated_traces.append(duplicated_trace)
         duplicated_traces.extend(duplicated_trace.trace_variant)
 
         start = time.time()
-        cnt = bit_vector_df.loc[bit_vector_df.added_noise < bit_vector_df.noise,"added_noise"].shape[0]
+        cnt = bit_vector_df.loc[bit_vector_df.added_noise < bit_vector_df.noise, "added_noise"].shape[0]
         end = time.time()
         # print("counting time: %s" % (end - start))
-        iter+=1
-        loop_end=time.time()
+        iter += 1
+        loop_end = time.time()
         # print("loop time: %s" %(loop_end-loop_start))
-
     """*****************************************************************************"""
     """ Negative noise"""
     deleted_traces = []  # to keep track of the deleted trace ids
     # start = time.time()
     #  check if there is an edge that needs anonymization
     cnt = bit_vector_df.loc[bit_vector_df.subtracted_noise > bit_vector_df.noise, "subtracted_noise"].shape[0]
-
     iter = 0
     while cnt > 0:
         loop_start = time.time()
         #  pick a random edge and a random trace
         start = time.time()
-        bit_vector_df, deleted_trace = pick_random_edge_trace_compacted_negative(bit_vector_df, bit_vector_trace_variant)
+        bit_vector_df, deleted_trace = pick_random_edge_trace_compacted_negative(bit_vector_df,
+                                                                                 bit_vector_trace_variant)
         end = time.time()
         # print("pick_random_edge_trace_compacted: %s"%(end-start))
         # duplicated_traces.append(duplicated_trace)
@@ -460,12 +470,8 @@ def anonymize_traces_compacted(data,  eps):
         iter += 1
         loop_end = time.time()
         # print("loop time: %s" %(loop_end-loop_start))
-
-
-
     print("******** end of loop ****")
-    print("iter=:%s"%(iter))
-
+    print("iter=:%s" % (iter))
     """Deciding traces to oversampling and traces to undersample"""
     deleted_traces_series = pd.Series(deleted_traces)
     deleted_counts = deleted_traces_series.value_counts()
@@ -474,18 +480,13 @@ def anonymize_traces_compacted(data,  eps):
     diff_over_sample = duplicated_counts.subtract(deleted_counts)
     diff_to_delete = deleted_counts.subtract(duplicated_counts)
     traces_to_over_sample = diff_over_sample[diff_over_sample > 0]
-    traces_to_under_sample=diff_to_delete[diff_to_delete > 0]
-
+    traces_to_under_sample = diff_to_delete[diff_to_delete > 0]
     oversampling_traces = []
     for i in list(traces_to_over_sample.index):
         for j in range(0, int(traces_to_over_sample[i])):
             oversampling_traces.append(i)
             # print("no of iteration = %s"%(iter))
-
     # execute the oversampling and undersampling
     data = execute_oversampling(data, oversampling_traces)
-    data= execute_undersampling(data,list(traces_to_under_sample.index))
-
-
-
+    data = execute_undersampling(data, list(traces_to_under_sample.index))
     return data
