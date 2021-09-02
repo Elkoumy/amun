@@ -27,11 +27,9 @@ jobs_dir = "jobs"
 # datasets =[ "BPIC17_t", "BPIC18_t", "BPIC19_t" ]
 datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
                 "BPIC20_t",  "BPIC17_t", "BPIC14_t", "BPIC19_t","BPIC18_t" ]
-# datasets =["BPIC18_t", "BPIC14_t", "BPIC19_t" ]
 
-# datasets = ["BPIC13_t", "BPIC12_t", "BPIC17_t"]
 
-# datasets=["BPIC18_t"]
+# datasets=["Sepsis_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
@@ -98,7 +96,7 @@ for precision in precisions:
                         #fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
                         fout.write("#SBATCH --partition=amd\n")
                         fout.write("#SBATCH --time=%s\n" % (exec_time))
-                        fout.write("module load python-3.8.6\n")
+                        fout.write("module load python/3.8.6\n")
                         # fout.write("cd ..\n")
 
                         # dataset = os.sys.argv[1]
