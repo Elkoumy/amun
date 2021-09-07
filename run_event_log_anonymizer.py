@@ -123,13 +123,13 @@ if __name__ == "__main__":
 
     # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
     # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
-    datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
-                "BPIC20_t", "BPIC13_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
+    # datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
+    #             "BPIC20_t", "BPIC13_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
-    # datasets=[ "Sepsis_t","BPIC12_t"]
+    datasets=[ "BPIC13_t"]
 
-    modes=['oversampling','filtering','sampling']
-    # modes=['sampling']
+    # modes=['oversampling','filtering','sampling']
+    modes=['sampling']
     # cur_dir=os.getcwd()
     cur_dir=os.path.dirname(os.path.realpath(__file__))
     data_dir=os.path.join(cur_dir,'data')

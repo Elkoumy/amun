@@ -4,12 +4,12 @@ from pm4py.objects.log.importer.xes import importer as xes_importer
 from pm4py.statistics.traces.log import case_statistics
 
 
-original = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data\BPIC12_t.xes")
+original = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\data\Sepsis_t.xes")
 
-amun_sampling = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs\delta_0.4\precision_0.2\e_anonymized_BPIC12_t_sampling_p0.2_d0.4_i0.xes")
-amun_filtering = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs\delta_0.4\precision_0.2\e_anonymized_BPIC12_t_filtering_p0.2_d0.4_i0.xes")
-amun_oversampling = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs\delta_0.4\precision_0.2\e_anonymized_BPIC12_t_oversampling_p0.2_d0.4_i0.xes")
-pripel = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\External Source Code\PPPM Tools\PRIPEL\comparison\BPIC12_t_epsilon_1.7_k3_N185_anonymizied.xes")
+amun_sampling = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs\delta_0.3\precision_0.2\e_anonymized_Sepsis_t_sampling_p0.2_d0.3_i0.xes")
+amun_filtering = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs\delta_0.3\precision_0.2\e_anonymized_Sepsis_t_filtering_p0.2_d0.3_i0.xes")
+amun_oversampling = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\anonymized_logs\delta_0.3\precision_0.2\e_anonymized_Sepsis_t_oversampling_p0.2_d0.3_i0.xes")
+pripel = xes_importer.apply(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\External Source Code\PPPM Tools\PRIPEL\comparison\Sepsis_t_epsilon_1.9675273440249_k7_N380_anonymizied.xes")
 #
 #
 

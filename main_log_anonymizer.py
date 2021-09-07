@@ -25,11 +25,11 @@ jobs_dir = "jobs"
 # "BPIC12_t", "BPIC17_t"]
 
 # datasets =[ "BPIC17_t", "BPIC18_t", "BPIC19_t" ]
-datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
-                "BPIC20_t",  "BPIC17_t", "BPIC14_t", "BPIC19_t","BPIC18_t" ]
+# datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
+#                 "BPIC20_t",  "BPIC17_t", "BPIC14_t", "BPIC19_t","BPIC18_t" ]
 
 
-# datasets=["Sepsis_t"]
+datasets=["BPIC13_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
