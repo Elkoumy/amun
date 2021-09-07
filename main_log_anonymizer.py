@@ -29,7 +29,7 @@ jobs_dir = "jobs"
 #                 "BPIC20_t",  "BPIC17_t", "BPIC14_t", "BPIC19_t","BPIC18_t" ]
 
 
-datasets=["BPIC13_t"]
+datasets=["BPIC18_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
@@ -42,7 +42,8 @@ start_iteration=0
 
 # deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
 precisions = [ 0.2]
-modes=['oversampling','filtering','sampling']
+# modes=['oversampling','filtering','sampling']
+modes=['oversampling']
 # precisions = [0.1]
 deltas=[0.2,0.3,0.4]
 
@@ -82,7 +83,7 @@ for precision in precisions:
 
                     elif data in ["BPIC18_t"]:
                         memory = 80
-                        exec_time = "24:00:00"  # 5 hours
+                        exec_time = "30:00:00"  # 5 hours
 
 
                     job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s_%s.sh" % (data, mode, precision, delta, iteration))
