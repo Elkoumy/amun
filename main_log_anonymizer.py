@@ -29,7 +29,7 @@ jobs_dir = "jobs"
 #                 "BPIC20_t",  "BPIC17_t", "BPIC14_t", "BPIC19_t","BPIC18_t" ]
 
 
-datasets=["Sepsis_t"]
+datasets=["BPIC12_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
@@ -42,8 +42,8 @@ start_iteration=0
 
 # deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
 precisions = [ 0.2]
-# modes=['oversampling','filtering','sampling']
-modes=['oversampling']
+modes=['oversampling','filtering','sampling']
+# modes=['oversampling']
 # precisions = [0.1]
 deltas=[0.2,0.3,0.4]
 
