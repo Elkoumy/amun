@@ -41,11 +41,11 @@ no_of_iterations =1
 start_iteration=0
 
 # deltas = [0.1, 0.2, 0.3, 0.4, 0.5]
-precisions = [ 0.2,0.3,0.4]
+precisions = [ 0.2]
 # modes=['oversampling','filtering','sampling']
 modes=['oversampling']
 # precisions = [0.1]
-deltas=[0.2]
+deltas=[0.2,0.3,0.4]
 
 for precision in precisions:
     for delta in deltas:
