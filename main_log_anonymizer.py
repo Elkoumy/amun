@@ -29,7 +29,7 @@ jobs_dir = "jobs"
 #                 "BPIC20_t",  "BPIC17_t", "BPIC14_t", "BPIC19_t","BPIC18_t" ]
 
 
-datasets=["Sepsis"]
+datasets=["Sepsis_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
