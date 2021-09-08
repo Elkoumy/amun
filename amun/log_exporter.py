@@ -150,7 +150,12 @@ def relative_time_to_timestamp(data):
     anonymized_range = data.groupby(['case:concept:name'])['cumm_noise_timedelta_abs'].min()
     anonymized_range = anonymized_range.max()
     # compressing the noise to be within the range
+
+    #overflow fix
+    original_range=original_range.total_seconds() / (24 * 60 * 60)
+    anonymized_range = anonymized_range.total_seconds() / (24 * 60 * 60)
     compression_factor = 0.5 * original_range / (anonymized_range + original_range)
+
     data['cumm_noise_timedelta'] = data['cumm_noise_timedelta'] * compression_factor
     data['time:timestamp'] = data['time:timestamp'] + data['cumm_noise_timedelta']
     # data.to_csv("data_after_addition.csv", index=False)
