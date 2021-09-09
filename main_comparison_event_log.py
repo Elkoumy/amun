@@ -14,7 +14,7 @@ def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,a
         exec_time = "10:00:00"  # 1 day
     elif dataset in ["BPIC14_t", "BPIC19_t", "BPIC18_t"]:
         exec_time = "24:00:00"  # 1 day
-        if engine=="amun" and mode=="emd" and dataset in ["BPIC19_t", "BPIC18_t"]:
+        if engine=="amun" and mode=="emd" and dataset in ["BPIC14_t","BPIC19_t", "BPIC18_t"]:
             memory=32
 
     job_name = os.path.join(jobs_dir, "comp_%s_%s_%s_%s.sh" % (mode, dataset, engine, anonymized_name))
