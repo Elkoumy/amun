@@ -51,10 +51,11 @@ if __name__ == "__main__":
     # datasets = ["CCC19_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
     #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
-    datasets=["BPIC14_t"]
+    datasets=["Sepsis_t"]
     dir_path = os.path.dirname(os.path.realpath(__file__))
     comparison_dir = os.path.join(dir_path, "comparison")
-    amun_dir=os.path.join(dir_path,"anonymized_logs","amun")
+    # amun_dir = os.path.join(dir_path, "anonymized_logs", "amun")
+    amun_dir=os.path.join(dir_path,"anonymized_logs","amun_sub")
     pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel","trace_variant")
     pripel_time_dir = os.path.join(dir_path, "anonymized_logs", "pripel","time")
 
@@ -64,7 +65,7 @@ if __name__ == "__main__":
         for log in files:
             if log.find(dataset)!=-1:
                 anonymized_dir=os.path.join(amun_dir,log)
-                # generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
+                generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
                 generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
                 # compare_emd(org_path,anonymized_dir,comparison_dir)
                 # compare_jaccard(org_path, anonymized_dir, comparison_dir)
