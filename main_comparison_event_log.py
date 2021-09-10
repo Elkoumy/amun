@@ -12,6 +12,8 @@ def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,a
     if dataset in ["BPIC12_t", "Hospital_t", "BPIC15_t", "Traffic_t",
                 "BPIC20_t", "BPIC17_t"]:
         exec_time = "10:00:00"  # 1 day
+        if dataset in ["Traffic_t"]:
+            memory = 32
     elif dataset in ["Hospital_t","BPIC14_t", "BPIC19_t", "BPIC18_t"]:
         exec_time = "24:00:00"  # 1 day
         if engine=="amun" and mode=="emd" and dataset in ["BPIC14_t","BPIC19_t", "BPIC18_t"]:
@@ -51,7 +53,7 @@ if __name__ == "__main__":
     # datasets = ["CCC19_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
     #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
-    datasets=["Hospital_t"]
+    datasets=["Traffic_t"]
     dir_path = os.path.dirname(os.path.realpath(__file__))
     comparison_dir = os.path.join(dir_path, "comparison")
     # amun_dir = os.path.join(dir_path, "anonymized_logs", "amun")
@@ -66,7 +68,7 @@ if __name__ == "__main__":
             if log.find(dataset)!=-1:
                 anonymized_dir=os.path.join(amun_dir,log)
                 generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
-                generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
+                # generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
                 # compare_emd(org_path,anonymized_dir,comparison_dir)
                 # compare_jaccard(org_path, anonymized_dir, comparison_dir)
         #
