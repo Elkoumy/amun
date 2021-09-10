@@ -22,16 +22,20 @@ def compare_emd(original_dir,anonymized_dir,comparison_dir):
 def compare_jaccard(original_dir,anonymized_dir,comparison_dir):
     original = xes_importer.apply(original_dir)
 
-    anonymized = xes_importer.apply(anonymized_dir)
+
 
     variants_count = case_statistics.get_variant_statistics(original)
     original_variant = [var['variant'].split(',') for var in variants_count]
+    del original
+    del variants_count
 
+    anonymized = xes_importer.apply(anonymized_dir)
     variants_count = case_statistics.get_variant_statistics(anonymized)
     anonymized_variant = [var['variant'].split(',') for var in variants_count]
-
-    del original
     del anonymized
+    del variants_count
+
+
     jaccard=soft_jaccard_score(original_variant, anonymized_variant)
 
 
@@ -44,7 +48,7 @@ if __name__ == "__main__":
     # datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
     #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
-    datasets=['Sepsis_t']
+    datasets=['BPIC18_t']
     dir_path = os.path.dirname(os.path.realpath(__file__))
     comparison_dir = os.path.join(dir_path, "comparison")
     amun_dir=os.path.join(dir_path,"anonymized_logs","amun")
@@ -57,17 +61,17 @@ if __name__ == "__main__":
         for log in files:
             if log.find(dataset)!=-1:
                 anonymized_dir=os.path.join(amun_dir,log)
-                compare_emd(org_path,anonymized_dir,comparison_dir)
+                # compare_emd(org_path,anonymized_dir,comparison_dir)
                 compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
-        files = list(os.walk(pripel_trace_dir))[0][2]
-        for log in files:
-            if log.find(dataset)!=-1:
-                anonymized_dir = os.path.join(pripel_trace_dir, log)
-                compare_jaccard(org_path, anonymized_dir, comparison_dir)
-
-        files = list(os.walk(pripel_time_dir))[0][2]
-        for log in files:
-            if log.find(dataset)!=-1:
-                anonymized_dir = os.path.join(pripel_time_dir, log)
-                compare_emd(org_path, anonymized_dir, comparison_dir)
+        # files = list(os.walk(pripel_trace_dir))[0][2]
+        # for log in files:
+        #     if log.find(dataset)!=-1:
+        #         anonymized_dir = os.path.join(pripel_trace_dir, log)
+        #         compare_jaccard(org_path, anonymized_dir, comparison_dir)
+        #
+        # files = list(os.walk(pripel_time_dir))[0][2]
+        # for log in files:
+        #     if log.find(dataset)!=-1:
+        #         anonymized_dir = os.path.join(pripel_time_dir, log)
+        #         compare_emd(org_path, anonymized_dir, comparison_dir)
