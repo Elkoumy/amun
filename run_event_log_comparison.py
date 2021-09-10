@@ -59,6 +59,7 @@ if __name__ == "__main__":
         org_path=os.path.join(dir_path,"data",dataset+".xes")
         files=list(os.walk(amun_dir))[0][2]
         for log in files:
+            print("Current file : %s"%(log))
             if log.find(dataset)!=-1:
                 anonymized_dir=os.path.join(amun_dir,log)
                 # compare_emd(org_path,anonymized_dir,comparison_dir)
