@@ -36,15 +36,42 @@ def soft_intersection_list(tokens1, tokens2):
 
     return included_list
 
+import time
 
 def soft_jaccard_score(tokens1, tokens2):
+    start=time.time()
     tokens1=convert_log_traces_to_paths(tokens1)
-    tokens2 = convert_log_traces_to_paths(tokens2)
+    end=time.time()
+    diff=end-start
+    print("first token : %s (minutes)" %(diff/60.0))
 
+    start = time.time()
+    tokens2 = convert_log_traces_to_paths(tokens2)
+    end = time.time()
+    diff = end - start
+    print("second token : %s (minutes)" % (diff / 60.0))
+
+    start = time.time()
     intersection_list = soft_intersection_list(tokens1, tokens2)
+    end = time.time()
+    diff = end - start
+    print("soft_intersection_list : %s (minutes)" % (diff / 60.0))
+
+    start = time.time()
     num_intersections = sum([item[1] for item in intersection_list])
+    end = time.time()
+    diff = end - start
+    print("num_intersections : %s (minutes)" % (diff / 60.0))
+
+
+    start = time.time()
     length_of_tokens1= sum([len(trace.split(os.sep)) for trace in tokens1 ])
     length_of_tokens2 = sum([len(trace.split(os.sep)) for trace in tokens2])
+    end = time.time()
+    diff = end - start
+    print("length of tokens : %s (minutes)" % (diff / 60.0))
+
+
     # num_unions = len(tokens1) + len(tokens2) - num_intersections
     num_unions = length_of_tokens1 + length_of_tokens2 - num_intersections
     jaccard_similarity=float(num_intersections)/float(num_unions)
