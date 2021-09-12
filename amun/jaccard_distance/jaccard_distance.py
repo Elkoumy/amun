@@ -22,18 +22,32 @@ def convert_log_traces_to_paths(l):
 
 
 def soft_intersection_list(tokens1, tokens2):
+    start = time.time()
     intersected_list = [((token1, token2), similarity(token1, token2)) for token1, token2 in product(tokens1, tokens2)]
+    end = time.time()
+    diff = end - start
+    print("intersected_list : %s (minutes)" % (diff / 60.0))
+
+    start = time.time()
     intersected_list = sorted(intersected_list, key=lambda item: item[1], reverse=True)
+    end = time.time()
+    diff = end - start
+    print("sort intersected_list : %s (minutes)" % (diff / 60.0))
+
 
     included_list = set()
     used_tokens1 = set()
     used_tokens2 = set()
+
+    start = time.time()
     for (token1, token2), sim in intersected_list:
         if (not (token1 in used_tokens1)) and (not (token2 in used_tokens2)):
             included_list.add(((token1, token2), sim))
             used_tokens1.add(token1)
             used_tokens2.add(token2)
-
+    end = time.time()
+    diff = end - start
+    print("loop to fill the included list : %s (minutes)" % (diff / 60.0))
     return included_list
 
 import time
@@ -52,6 +66,7 @@ def soft_jaccard_score(tokens1, tokens2):
     print("second token : %s (minutes)" % (diff / 60.0))
 
     start = time.time()
+    """The longest part is in soft_intersection_list"""
     intersection_list = soft_intersection_list(tokens1, tokens2)
     end = time.time()
     diff = end - start
