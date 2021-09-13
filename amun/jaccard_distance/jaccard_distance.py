@@ -2,7 +2,7 @@
 This module implements the functionality of comparing two event logs based on Jaccard Distance between case variants.
 
 """
-
+import pandas as pd
 from itertools import product
 import os
 
@@ -21,33 +21,59 @@ def convert_log_traces_to_paths(l):
     return res
 
 
+def similarity_apply(row):
+    res=similarity(row[0],row[1])
+    return res
+
+import swifter
+
 def soft_intersection_list(tokens1, tokens2):
     start = time.time()
     intersected_list = [((token1, token2), similarity(token1, token2)) for token1, token2 in product(tokens1, tokens2)]
-    end = time.time()
-    diff = end - start
-    print("intersected_list : %s (minutes)" % (diff / 60.0))
 
-    start = time.time()
     intersected_list = sorted(intersected_list, key=lambda item: item[1], reverse=True)
-    end = time.time()
-    diff = end - start
-    print("sort intersected_list : %s (minutes)" % (diff / 60.0))
-
 
     included_list = set()
     used_tokens1 = set()
     used_tokens2 = set()
-
-    start = time.time()
     for (token1, token2), sim in intersected_list:
         if (not (token1 in used_tokens1)) and (not (token2 in used_tokens2)):
             included_list.add(((token1, token2), sim))
             used_tokens1.add(token1)
             used_tokens2.add(token2)
+
     end = time.time()
     diff = end - start
-    print("loop to fill the included list : %s (minutes)" % (diff / 60.0))
+    print("intersected_list (list): %s (minutes)" % (diff / 60.0))
+
+
+
+    start = time.time()
+    tokens = pd.DataFrame(product(tokens1, tokens2))
+
+    tokens['similarity'] = tokens.swifter.apply(similarity_apply, axis=1)
+    tokens = tokens.groupby([0, 1]).max() #unique values
+
+    tokens.sort_values('similarity', ascending=False, inplace=True)
+
+    included_list = set()
+    used_tokens1 = set()
+    used_tokens2 = set()
+
+    for item in tokens.iterrows():
+        token1=item[0][0]
+        token2=item[0][1]
+        sim=item[1]['similarity']
+        if (not (token1 in used_tokens1)) and (not (token2 in used_tokens2)):
+            included_list.add(((token1, token2), sim))
+            used_tokens1.add(token1)
+            used_tokens2.add(token2)
+
+    end = time.time()
+    diff = end - start
+    print("intersected_list Dataframe: %s (minutes)" % (diff / 60.0))
+
+
     return included_list
 
 import time
