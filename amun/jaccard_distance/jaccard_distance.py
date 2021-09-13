@@ -65,7 +65,7 @@ def soft_intersection_list(tokens1, tokens2):
     for item in tokens.itertuples():
         token1=item[0][0]
         token2=item[0][1]
-        sim=item[1]['similarity']
+        sim=item[1]
         if (not (token1 in used_tokens1)) and (not (token2 in used_tokens2)):
             included_list.add(((token1, token2), sim))
             used_tokens1.add(token1)
