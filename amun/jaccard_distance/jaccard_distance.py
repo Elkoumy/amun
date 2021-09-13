@@ -59,7 +59,9 @@ def soft_intersection_list(tokens1, tokens2):
     included_list = set()
     used_tokens1 = set()
     used_tokens2 = set()
-
+    end1 = time.time()
+    diff = end1 - start
+    print("intersected_list Dataframe before loop: %s (minutes)" % (diff / 60.0))
     for item in tokens.iterrows():
         token1=item[0][0]
         token2=item[0][1]
