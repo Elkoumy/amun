@@ -5,6 +5,7 @@ import pm4py
 import pandas as pd
 from scipy.stats import wasserstein_distance
 import collections
+import time
 
 from amun.guessing_advantage import AggregateType
 
@@ -12,7 +13,9 @@ from amun.guessing_advantage import AggregateType
 def earth_mover_dist_freq(log1, log2):
 
     dfg1, start_activities, end_activities = pm4py.discover_dfg(log1)
+    del log1
     dfg2, start_activities, end_activities = pm4py.discover_dfg(log2)
+    del log2
 
     dic1=dict(dfg1)
     dic2=dict(dfg2)
@@ -35,12 +38,21 @@ def earth_mover_dist_freq(log1, log2):
 
 
 def earth_mover_dist_time(log1, log2):
+    start = time.time()
     data = get_dataframe_from_event_stream(log1)
     dfg1= get_dfg_time(data)
+    del log1
+    del data
 
     data = get_dataframe_from_event_stream(log2)
     dfg2= get_dfg_time(data)
+    del log2
+    del data
+    end = time.time()
+    diff = end - start
+    print("log to DFG : %s (minutes)" % (diff / 60.0))
 
+    start=time.time()
 
     keys = set(list(dfg1.keys()) + list(dfg2.keys()))
     for key in keys:
@@ -48,14 +60,21 @@ def earth_mover_dist_time(log1, log2):
             dfg1[key] = 0
         if key not in dfg2.keys():
             dfg2[key] = 0
+    end = time.time()
+    diff = end - start
+    print("keys loop : %s (minutes)" % (diff / 60.0))
+
 
     dic1 = collections.OrderedDict(sorted(dfg1.items()))
     dic2 = collections.OrderedDict(sorted(dfg2.items()))
     v1=list(dic1.values())
     v2=list(dic2.values())
 
+    start = time.time()
     distance = wasserstein_distance(v1,v2)
-
+    end = time.time()
+    diff = end - start
+    print("wasserstein_distance : %s (minutes)" % (diff / 60.0))
     return distance
 
 
