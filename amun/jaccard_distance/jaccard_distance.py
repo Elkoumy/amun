@@ -80,25 +80,41 @@ def soft_intersection_list(tokens1, tokens2):
 
 import time
 
-def soft_jaccard_score(tokens1, tokens2):
+def false_positives_and_negatives(original_tokens, anonymized_tokens):
+    false_positives=0
+    false_negatives=0
+
+    for token in original_tokens:
+        if token not in anonymized_tokens:
+            false_negatives+=1
+
+    for token in anonymized_tokens:
+        if token not in original_tokens:
+            false_positives+=1
+
+    return false_positives, false_negatives
+
+def soft_jaccard_score(original_tokens, anonymized_tokens):
     start=time.time()
-    tokens1=convert_log_traces_to_paths(tokens1)
+    original_tokens=convert_log_traces_to_paths(original_tokens)
     end=time.time()
     diff=end-start
     print("first token : %s (minutes)" %(diff/60.0))
 
     start = time.time()
-    tokens2 = convert_log_traces_to_paths(tokens2)
+    anonymized_tokens = convert_log_traces_to_paths(anonymized_tokens)
     end = time.time()
     diff = end - start
     print("second token : %s (minutes)" % (diff / 60.0))
 
     start = time.time()
     """The longest part is in soft_intersection_list"""
-    intersection_list = soft_intersection_list(tokens1, tokens2)
+    intersection_list = soft_intersection_list(original_tokens, anonymized_tokens)
     end = time.time()
     diff = end - start
     print("soft_intersection_list : %s (minutes)" % (diff / 60.0))
+
+    false_positives,false_negatives=false_positives_and_negatives(original_tokens, anonymized_tokens)
 
     start = time.time()
     num_intersections = sum([item[1] for item in intersection_list])
@@ -108,18 +124,18 @@ def soft_jaccard_score(tokens1, tokens2):
 
 
     start = time.time()
-    length_of_tokens1= sum([len(trace.split(os.sep)) for trace in tokens1 ])
-    length_of_tokens2 = sum([len(trace.split(os.sep)) for trace in tokens2])
+    length_of_original_tokens= sum([len(trace.split(os.sep)) for trace in original_tokens ])
+    length_of_anonymized_tokens = sum([len(trace.split(os.sep)) for trace in anonymized_tokens])
     end = time.time()
     diff = end - start
     print("length of tokens : %s (minutes)" % (diff / 60.0))
 
 
-    # num_unions = len(tokens1) + len(tokens2) - num_intersections
-    num_unions = length_of_tokens1 + length_of_tokens2 - num_intersections
+    # num_unions = len(original_tokens) + len(anonymized_tokens) - num_intersections
+    num_unions = length_of_original_tokens + length_of_anonymized_tokens - num_intersections
     jaccard_similarity=float(num_intersections)/float(num_unions)
     jaccard_distance=1-jaccard_similarity
-    return jaccard_distance
+    return jaccard_distance, false_positives,false_negatives
 
 
 
