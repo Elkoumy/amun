@@ -60,6 +60,7 @@ if __name__ == "__main__":
 
     for dataset in datasets:
         org_path=os.path.join(dir_path,"data",dataset+".xes")
+        print("Dataset: %s"%(dataset))
         files=list(os.walk(amun_dir))[0][2]
         for log in files:
             print("Current file : %s"%(log))
