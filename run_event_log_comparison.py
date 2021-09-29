@@ -62,13 +62,13 @@ if __name__ == "__main__":
         org_path=os.path.join(dir_path,"data",dataset+".xes")
         print("Dataset: %s"%(dataset))
         files=list(os.walk(amun_dir))[0][2]
-        for log in files:
-            print("Current file : %s"%(log))
-            print(datetime.now())
-            if log.find(dataset)!=-1:
-                anonymized_dir=os.path.join(amun_dir,log)
-                compare_emd(org_path,anonymized_dir,comparison_dir)
-                compare_jaccard(org_path, anonymized_dir, comparison_dir)
+        # for log in files:
+        #     print("Current file : %s"%(log))
+        #     print(datetime.now())
+        #     if log.find(dataset)!=-1:
+        #         anonymized_dir=os.path.join(amun_dir,log)
+        #         compare_emd(org_path,anonymized_dir,comparison_dir)
+        #         compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
         # files = list(os.walk(pripel_trace_dir))[0][2]
         # for log in files:
@@ -82,9 +82,9 @@ if __name__ == "__main__":
         #         anonymized_dir = os.path.join(pripel_time_dir, log)
         #         # compare_emd(org_path, anonymized_dir, comparison_dir)
 
-            files = list(os.walk(SaCoFa_trace_dir))[0][2]
-            for log in files:
-                if log.find(dataset) != -1:
-                    anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
-                    compare_jaccard(org_path, anonymized_dir, comparison_dir)
+        files = list(os.walk(SaCoFa_trace_dir))[0][2]
+        for log in files:
+            if log.find(dataset) != -1:
+                anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
+                compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
