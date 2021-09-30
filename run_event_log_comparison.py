@@ -70,21 +70,22 @@ if __name__ == "__main__":
         #         compare_emd(org_path,anonymized_dir,comparison_dir)
         #         compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
-        files = list(os.walk(pripel_trace_dir))[0][2]
-        for log in files:
-            if log.find(dataset)!=-1:
-                anonymized_dir = os.path.join(pripel_trace_dir, log)
-                compare_jaccard(org_path, anonymized_dir, comparison_dir)
-
-        files = list(os.walk(pripel_time_dir))[0][2]
-        for log in files:
-            if log.find(dataset)!=-1:
-                anonymized_dir = os.path.join(pripel_time_dir, log)
-                compare_emd(org_path, anonymized_dir, comparison_dir)
-
-        # files = list(os.walk(SaCoFa_trace_dir))[0][2]
+        # files = list(os.walk(pripel_trace_dir))[0][2]
         # for log in files:
-        #     if log.find(dataset) != -1:
-        #         anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
+        #     if log.find(dataset)!=-1:
+        #         anonymized_dir = os.path.join(pripel_trace_dir, log)
         #         compare_jaccard(org_path, anonymized_dir, comparison_dir)
+        #
+        # files = list(os.walk(pripel_time_dir))[0][2]
+        # for log in files:
+        #     if log.find(dataset)!=-1:
+        #         anonymized_dir = os.path.join(pripel_time_dir, log)
+        #         compare_emd(org_path, anonymized_dir, comparison_dir)
+
+        files = list(os.walk(SaCoFa_trace_dir))[0][2]
+        for log in files:
+            if log.find(dataset) != -1:
+                anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
+                compare_jaccard(org_path, anonymized_dir, comparison_dir)
+                compare_emd(org_path, anonymized_dir, comparison_dir)
 
