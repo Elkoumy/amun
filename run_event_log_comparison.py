@@ -91,5 +91,5 @@ if __name__ == "__main__":
             if log.find(dataset) != -1:
                 anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
                 compare_jaccard(org_path, anonymized_dir, comparison_dir)
-                compare_emd(org_path, anonymized_dir, comparison_dir)
+                # compare_emd(org_path, anonymized_dir, comparison_dir)
 
