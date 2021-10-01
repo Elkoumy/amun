@@ -56,7 +56,6 @@ if __name__ == "__main__":
     comparison_dir = os.path.join(dir_path, "comparison")
     amun_dir=os.path.join(dir_path,"anonymized_logs","amun")
     pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel","trace_variant")
-    pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel", "new_events")
     pripel_time_dir = os.path.join(dir_path, "anonymized_logs", "pripel","time")
     SaCoFa_trace_dir = os.path.join(dir_path, "anonymized_logs", "SaCoFa")
 
