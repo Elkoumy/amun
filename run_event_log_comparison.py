@@ -46,7 +46,11 @@ def compare_jaccard(original_dir,anonymized_dir,comparison_dir):
     res.to_csv(os.path.join(comparison_dir,"jaccard",file_name+".comp"),index=False)
 
 if __name__ == "__main__":
-    datasets = [ "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
+    # datasets = [ "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
+    #             "BPIC20_t",
+    #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
+
+    datasets = [  "Traffic_t", "Hospital_t", "CreditReq_t",
                 "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
     # datasets=["Unrineweginfectie_t"]
