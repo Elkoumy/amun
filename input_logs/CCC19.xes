@@ -1,0 +1,2852 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<log>
+  <string key="origin" value="csv"/>
+  <trace>
+    <string key="concept:name" value="1539302414925-video_1.3_CVC"/>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-11T23:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-11T23:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-11T23:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-11T23:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-11T23:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-11T23:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-11T23:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-11T23:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-11T23:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-11T23:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-11T23:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-11T23:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-11T23:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-11T23:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-11T23:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-11T23:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-11T23:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-11T23:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-11T23:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-11T23:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-11T23:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-11T23:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-11T23:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-11T23:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-11T23:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-11T23:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-11T23:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-11T23:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-11T23:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-11T23:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-11T23:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-11T23:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-11T23:22:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539303857517-video_1.4_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-12T00:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-12T00:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position patient"/>
+      <date key="time:timestamp" value="2018-10-12T00:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T00:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-12T00:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-12T00:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T00:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-12T00:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-12T00:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T00:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-12T00:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-12T00:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-12T00:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-12T00:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T00:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-12T00:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-12T00:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-12T00:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-12T00:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T00:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-12T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-12T00:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-12T00:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-12T00:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-12T00:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-12T00:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-12T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-12T00:21:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547683734202-video_1.c_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-16T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-16T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-16T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-16T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-16T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-16T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-16T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-16T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-16T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-16T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-16T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Doppler identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547722738650-video_1.d_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Doppler identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-17T01:17:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547693943698-video_1.f_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-17T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-17T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Doppler identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-17T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547915248799-video_1.g_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-19T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-19T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-19T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-19T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-19T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-19T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-19T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-19T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-19T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-19T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-19T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-19T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-19T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-19T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-19T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-19T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-19T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-19T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-19T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-19T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-19T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-19T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-19T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-19T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-19T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-19T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-19T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-19T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-19T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-19T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-19T01:16:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547698148253-video_1.h_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-17T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-17T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-17T01:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-17T01:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-17T01:21:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547986862398-video_1.l_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-20T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-20T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-20T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-20T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-20T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-20T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position patient"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-20T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-20T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-20T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-20T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-20T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-20T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-20T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539314415211-video_2.1_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T02:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-12T02:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-12T02:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-12T02:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-12T02:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-12T02:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-12T02:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T02:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-12T02:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-12T02:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T02:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-12T02:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-12T02:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-12T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-12T02:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T02:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T02:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-12T02:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T02:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T02:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T02:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T03:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T03:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-12T03:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T03:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T03:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-12T03:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-12T03:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-12T03:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2018-10-12T03:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-12T03:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-12T03:25:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:26:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:26:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-12T03:27:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:27:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T03:28:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T03:28:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:29:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-12T03:29:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-12T03:29:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:29:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:30:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-12T03:30:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:31:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:31:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:32:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-12T03:33:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:33:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:34:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-12T03:34:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-12T03:34:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-12T03:34:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1547997805806-video_2.a_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-20T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-20T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-20T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-20T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-20T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-20T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-20T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-20T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-20T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-20T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-20T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-20T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-20T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-20T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-20T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-20T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-20T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-20T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-20T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-20T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-20T01:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-20T01:18:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1548033283992-video_2.b_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-21T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-21T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-21T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-21T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-21T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-21T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-21T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-21T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-21T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-21T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-21T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-21T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-21T01:13:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1548034300723-video_2.c_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-21T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-21T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-21T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-21T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-21T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-21T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-21T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-21T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-21T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-21T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-21T01:11:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1548037113729-video_2.d_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-21T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2019-01-21T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2019-01-21T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position patient"/>
+      <date key="time:timestamp" value="2019-01-21T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2019-01-21T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2019-01-21T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2019-01-21T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2019-01-21T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2019-01-21T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2019-01-21T01:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2019-01-21T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2019-01-21T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2019-01-21T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2019-01-21T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2019-01-21T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2019-01-21T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2019-01-21T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2019-01-21T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2019-01-21T01:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2019-01-21T01:25:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2019-01-21T01:25:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2019-01-21T01:25:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2019-01-21T01:25:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539316889981-video_3.1_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T03:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-12T03:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position patient"/>
+      <date key="time:timestamp" value="2018-10-12T03:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-12T03:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-12T03:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T03:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-12T03:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T03:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-12T03:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-12T03:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-12T03:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T03:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-12T03:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-12T03:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-12T03:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-12T03:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-12T03:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-12T03:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-12T03:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Doppler identification"/>
+      <date key="time:timestamp" value="2018-10-12T03:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T03:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T03:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-12T03:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-12T03:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-12T03:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-12T03:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-12T03:24:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-12T03:24:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-12T03:25:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:26:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-12T03:26:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-12T03:27:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-12T03:27:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-12T03:27:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-12T03:27:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-12T03:29:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-12T03:29:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:30:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-12T03:30:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-12T03:31:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-12T04:33:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539734942389-video_3.2_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-16T23:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-16T23:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-16T23:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-16T23:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-16T23:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-16T23:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-16T23:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-16T23:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-16T23:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-16T23:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-16T23:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-16T23:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-16T23:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-16T23:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-16T23:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-16T23:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-17T00:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-17T00:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-17T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-17T00:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T00:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T00:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T00:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-17T00:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-17T00:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-17T00:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-17T00:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-17T00:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-17T00:23:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539737717686-video_3.3_CVC"/>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T00:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position patient"/>
+      <date key="time:timestamp" value="2018-10-17T00:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-17T00:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T00:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-17T00:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-17T00:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T00:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-17T00:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T00:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-17T00:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-17T00:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-17T00:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-17T00:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-17T00:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-17T00:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-17T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-17T00:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T00:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-17T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-17T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T00:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T00:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T00:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-17T00:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-17T00:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T00:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T00:24:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-17T00:24:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-17T00:24:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-17T00:26:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-17T00:27:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539739275781-video_4.5_CVC"/>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-17T01:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T01:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:17:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T01:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-17T01:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Wire in good position"/>
+      <date key="time:timestamp" value="2018-10-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-17T01:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-17T01:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-17T01:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-17T01:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-17T01:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-17T01:23:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-17T01:23:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539740347920-video_4.6_CVC"/>
+    <event>
+      <string key="concept:name" value="Position patient"/>
+      <date key="time:timestamp" value="2018-10-17T01:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-17T01:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T01:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-17T01:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-17T01:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-17T01:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-17T01:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-17T01:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-17T01:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-17T01:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-17T01:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-17T01:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-17T01:16:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539831132678-video_4.7_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-18T02:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-18T02:01:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-18T02:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-18T02:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-18T02:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-18T02:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-18T02:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-18T02:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-18T02:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-18T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-18T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-18T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-18T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Doppler identification"/>
+      <date key="time:timestamp" value="2018-10-18T02:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anesthetize"/>
+      <date key="time:timestamp" value="2018-10-18T02:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-18T02:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-18T02:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-18T02:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-18T02:18:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-18T02:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-18T02:19:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-18T02:20:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-18T02:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-18T02:21:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-18T02:22:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-18T02:23:00.000+11:00"/>
+    </event>
+  </trace>
+  <trace>
+    <string key="concept:name" value="1539832275246-video_4.8_CVC"/>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-18T02:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Hand washing"/>
+      <date key="time:timestamp" value="2018-10-18T02:00:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Get in sterile clothes"/>
+      <date key="time:timestamp" value="2018-10-18T02:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-18T02:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Clean puncture area"/>
+      <date key="time:timestamp" value="2018-10-18T02:02:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drap puncture area"/>
+      <date key="time:timestamp" value="2018-10-18T03:03:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Gel in probe"/>
+      <date key="time:timestamp" value="2018-10-18T03:04:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Cover probe"/>
+      <date key="time:timestamp" value="2018-10-18T03:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Put sterile gel"/>
+      <date key="time:timestamp" value="2018-10-18T03:05:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Prepare implements"/>
+      <date key="time:timestamp" value="2018-10-18T03:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Position probe"/>
+      <date key="time:timestamp" value="2018-10-18T03:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Anatomic identification"/>
+      <date key="time:timestamp" value="2018-10-18T03:06:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-18T03:07:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Ultrasound configuration"/>
+      <date key="time:timestamp" value="2018-10-18T03:08:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Compression identification"/>
+      <date key="time:timestamp" value="2018-10-18T03:09:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-18T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-18T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-18T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-18T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-18T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-18T03:10:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-18T03:11:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-18T03:12:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Puncture"/>
+      <date key="time:timestamp" value="2018-10-18T03:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Blood return"/>
+      <date key="time:timestamp" value="2018-10-18T03:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Drop probe"/>
+      <date key="time:timestamp" value="2018-10-18T03:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove syringe"/>
+      <date key="time:timestamp" value="2018-10-18T03:13:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Guidewire install"/>
+      <date key="time:timestamp" value="2018-10-18T03:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in short axis"/>
+      <date key="time:timestamp" value="2018-10-18T03:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check wire in long axis"/>
+      <date key="time:timestamp" value="2018-10-18T03:14:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove trocar"/>
+      <date key="time:timestamp" value="2018-10-18T03:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Widen pathway"/>
+      <date key="time:timestamp" value="2018-10-18T03:15:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Advance catheter"/>
+      <date key="time:timestamp" value="2018-10-18T03:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Remove guidewire"/>
+      <date key="time:timestamp" value="2018-10-18T03:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check flow and reflow"/>
+      <date key="time:timestamp" value="2018-10-18T03:16:00.000+11:00"/>
+    </event>
+    <event>
+      <string key="concept:name" value="Check catheter position"/>
+      <date key="time:timestamp" value="2018-10-18T03:16:00.000+11:00"/>
+    </event>
+  </trace>
+</log>

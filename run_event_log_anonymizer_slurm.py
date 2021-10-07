@@ -35,7 +35,7 @@ if __name__ == "__main__":
     precision=float(os.sys.argv[4])
     iteration=int(os.sys.argv[5])
 
-    anonymize_event_log(data_dir, out_dir, experiment_log_dir, dataset,mode, delta, precision, iteration)
+    anonymize_event_log(data_dir, out_dir, experiment_log_dir, dataset,mode, delta)
 
 
 

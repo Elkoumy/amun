@@ -24,7 +24,7 @@ def preprocess_PRIPEL(row):
     row['engine'] = 'pripel'
     row['dataset'] = row['file'].split("_")[0]
     # row['approach'] = "pripel"
-    row['epsilon'] = row['file'].split("_")[2]
+    row['epsilon'] = row['file'].split("_")[3]
     if row['file'].split("_")[3] == '0.81':
         row['delta'] = '0.2'
     elif row['file'].split("_")[3] == '1.238':

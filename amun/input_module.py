@@ -82,32 +82,32 @@ def xes_to_DAFSA(data_dir,dataset):
         * Event log as a dataframe annotated with states and contains the relative time.
     """
     #read the xes file
-    if dataset == "BPIC14":
-        # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
-        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
-        data['case:concept:name']=data['Incident ID']
-        data['time:timestamp']= data['DateStamp']
-        data['concept:name']= data['IncidentActivity_Type']
-        log = conversion_factory.apply(data)
-    elif dataset=="Unrineweginfectie":
-        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
-        data['case:concept:name'] = data['Patientnummer']
-        data['time:timestamp'] = data['Starttijd']
-        data['concept:name'] = data['Aciviteit']
-        log = conversion_factory.apply(data)
-        result = get_variant_statistics(log)
-        data = get_dataframe_from_event_stream(log) # because pm4py drops one trace for a value in an event column
+    # if dataset == "BPIC14":
+    #     # log = csv_importer.import_event_stream(os.path.join(data_dir, dataset + ".csv"))
+    #     data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=";")
+    #     data['case:concept:name']=data['Incident ID']
+    #     data['time:timestamp']= data['DateStamp']
+    #     data['concept:name']= data['IncidentActivity_Type']
+    #     log = conversion_factory.apply(data)
+    # elif dataset=="Unrineweginfectie":
+    #     data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+    #     data['case:concept:name'] = data['Patientnummer']
+    #     data['time:timestamp'] = data['Starttijd']
+    #     data['concept:name'] = data['Aciviteit']
+    #     log = conversion_factory.apply(data)
+    #     result = get_variant_statistics(log)
+    #     data = get_dataframe_from_event_stream(log) # because pm4py drops one trace for a value in an event column
+    #
+    # elif dataset=="temp":
+    #     data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
+    #     log = conversion_factory.apply(data)
+    # else:
+    log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
+    data = get_dataframe_from_event_stream(log)
 
-    elif dataset=="temp":
-        data = csv_import_adapter.import_dataframe_from_path(os.path.join(data_dir, dataset + ".csv"), sep=",")
-        log = conversion_factory.apply(data)
-    else:
-        log = xes_import_factory.apply(os.path.join(data_dir, dataset + ".xes"))
-        data = get_dataframe_from_event_stream(log)
-
-    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"] and dataset[-2:]!="_t":
-        data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
-        data=data.dropna(subset=['lifecycle:transition'])
+    # if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"] and dataset[-2:]!="_t":
+    #     data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
+    #     data=data.dropna(subset=['lifecycle:transition'])
 
     log = conversion_factory.apply(data)
 
@@ -263,9 +263,9 @@ def get_relative_time(data, dataset):
     Returns the event log with the relative time difference of every activity
     """
     # taking only the complete event to avoid ambiguoutiy
-    if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"] and dataset[-2:]!='_t':
-        data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
-        data=data.dropna(subset=['lifecycle:transition'])
+    # if dataset not in ["BPIC13","BPIC20","BPIC19","BPIC14","Unrineweginfectie","temp"] and dataset[-2:]!='_t':
+    #     data=data.where((data["lifecycle:transition"].str.upper()=="COMPLETE" ) )
+    #     data=data.dropna(subset=['lifecycle:transition'])
 
     #moving first row to the last one
     temp_row= data.iloc[0]

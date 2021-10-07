@@ -18,8 +18,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
                         dataset="BPIC13_t",
                         mode='sampling',
                         delta=0.5,
-                        precision=0.5,
-                        iteration=1):
+                        ):
 
 
     start_all = time.time()
@@ -28,9 +27,9 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     # precision =0.5
     # temp directory name tmp/t_ event log name _ precision _ delta _ itertion
     curr_dir = os.path.dirname(os.path.realpath(__file__))
-    temp_dir=os.path.join(curr_dir, 'tmp','t_%s%s_%s_%s_%s'%(dataset,mode,precision,delta,iteration))
+    temp_dir=os.path.join(curr_dir, 'tmp','t_%s%s_%s'%(dataset,mode,delta))
 
-    data, variants_count = event_log_anonymization(data_dir, dataset, mode, delta, precision, temp_dir)
+    data, variants_count = event_log_anonymization(data_dir, dataset, mode, delta,  temp_dir)
 
     end_all = time.time()
     print("wall-to-wall execution time is: %s  seconds"  %(end_all - start_all))
@@ -40,7 +39,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     result = [[dataset, precision, delta, iteration, (end_all - start_all)]]
     result = pd.DataFrame(result)
     result.to_csv(os.path.join(experiment_log_dir, 'wall_to_wall_execution_time',
-                               'time_%s_%s_%s_%s_%s.csv' % (dataset,mode, precision, delta, iteration)),
+                               'time_%s_%s_%s.csv' % (dataset,mode, delta)),
                   index=False,
                   header=False
                   )
@@ -122,14 +121,14 @@ if __name__ == "__main__":
 
     precisions=[0.2]
     deltas=[0.2,0.3,0.4]
-    # deltas = [0.2]
+    deltas = [0.3]
 
     # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
     # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
     # datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
     #             "BPIC20_t", "BPIC13_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
-    datasets=[ "BPIC13_t"]
+    datasets=[ "Sepsis_t"]
 
     modes=['oversampling','filtering','sampling']
     # modes=['sampling']
@@ -149,6 +148,6 @@ if __name__ == "__main__":
             for dataset in datasets:
                 for mode in modes:
                     for iteration in range(0,no_of_iterations):
-                        anonymize_event_log(data_dir,out_dir,experiment_log_dir,dataset,mode,delta,precision,iteration)
+                        anonymize_event_log(data_dir,out_dir,experiment_log_dir,dataset,mode,delta)
 
 

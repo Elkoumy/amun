@@ -605,7 +605,7 @@ def match_vals(row, cumsum):
     return [ cdf_plus, cdf_minus]
 
 
-def estimate_epsilon_risk_vectorized_with_normalization(data,mode, delta, precision,tmp_dir):
+def estimate_epsilon_risk_vectorized_with_normalization(data,mode, delta, tmp_dir):
     # NOTE: in the current version, there are no fixed time values.
     # Becuase the starting time now is being anonymized.
 

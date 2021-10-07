@@ -16,9 +16,9 @@ from amun.postprocessing import filtering_postprocessing
 from amun.hashing_ids import vectorized_hashing
 
 
-def event_log_anonymization(data_dir, dataset, mode, delta, precision, tmp_dir):
+def event_log_anonymization(data_dir, dataset, mode, delta,  tmp_dir):
     print("Processing the dataset: %s" % (dataset))
-    print("with Delta: %s , and precision: %s" %(delta,precision))
+    print("with Delta: %s " %(delta))
     start = time.time()
     data, variants_count = xes_to_DAFSA(data_dir, dataset)
     end = time.time()
@@ -43,7 +43,7 @@ def event_log_anonymization(data_dir, dataset, mode, delta, precision, tmp_dir):
     # data = outlier_detection_and_removal(data)
 
 
-    data = estimate_epsilon_risk_vectorized_with_normalization(data, mode, delta, precision,tmp_dir)
+    data = estimate_epsilon_risk_vectorized_with_normalization(data, mode, delta, tmp_dir)
     data= estimate_epsilon_risk_for_start_timestamp(data, delta)
     end = time.time()
     print("estimate epsilon :  %s" % (end - start))
