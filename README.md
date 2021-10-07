@@ -28,10 +28,16 @@ pip install -r requirements.txt
 The code was tested with ```python 3.8.5```.
 
 ### Example Usage
+To anonymize an event log, place the XES file in the directory ```input_logs```. Then you can run the command
+```
+python Amun.py Sepsis sampling 0.2
+```
+
+### Reproduce Emperical Evaluation
 An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
 To perform the execution time experiment, you can use the file ```run_example_execution_time.py```. 
 An implementation of Amun with a single thread could be found in the branch ```amun-model```.
 
-An example of the usage of Amun to anonymize event logs can be found in the file ```run_event_log_anonymizer.py```.
+To reproduce the emperical evaluation of Amun to anonymize event logs you can use the file ```run_event_log_anonymizer.py```.
 
 
