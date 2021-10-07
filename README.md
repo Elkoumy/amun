@@ -32,6 +32,7 @@ To anonymize an event log, place the XES file in the directory ```input_logs```.
 ```
 python Amun.py Sepsis sampling 0.2
 ```
+Amun assumes that the event log has only the three columns: ```case:concept:name```, ```concept:name```, and ```time:timestamp``` in your XES file.
 
 ### Reproduce Emperical Evaluation
 An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
