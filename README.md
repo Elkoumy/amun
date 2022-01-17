@@ -35,6 +35,14 @@ organizations publish anonymized process models. The main contributions of the p
 }
   
 ```
+```
+@article{elkoumy2022differentially,
+  title={Differentially Private Release of Event Logs for Process Mining},
+  author={Elkoumy, Gamal and Pankova, Alisa and Dumas, Marlon},
+  journal={arXiv preprint arXiv:2201.03010},
+  year={2022}
+}
+```
 
 ```
 @article{DBLP:journals/corr/abs-2012-01119,
