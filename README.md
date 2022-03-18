@@ -1,6 +1,8 @@
 # Amun
 Amun is a framework that leverage recently developed Privacy-Enhancing Technologies (PETs) to help 
 organizations publish anonymized process models. The main contributions of the project are listed below.
+
+- Amun proposes a framework to anonymize event logs to the extent that no individual can be singled out using the anonymized log. It anonymizes event logs in order to guarantee that, upon the disclosure of the anonymized log, the probability that an attacker may single out any individual represented in the original log, does not increase by more than a threshold. Amun proposes a differentially private disclosure mechanism, which oversamples the cases in the log and adds noise to the timestamps to the extent required to achieve the above privacy guarantee. An emperical evaluation of Amun using 14 real-world event logs could be found in our recent [paper](https://ieeexplore.ieee.org/document/9576852).
 - Amun uses a mathematically proven privacy model to 
   balance the risk correlated with publishing process models and the utility after anonymization.
   It uses an ε-differential-privacy mechanism to anonymize Directly-Follows Graphs (DFGs).
@@ -8,15 +10,58 @@ organizations publish anonymized process models. The main contributions of the p
   injected a process mining model that optimizes the risk and utility measures. 
   Amun keeps all the traces and all the activities of a DFG. 
   An emperical evaluation of Amun using 13 real-world event logs could be found in our recent [paper](https://arxiv.org/pdf/2012.01119.pdf).
-- Amun proposes a framework to anonymize event logs to the extent that no individual can be singled out using the anonymized log. It anonymizes event logs in order to guarantee that, upon the disclosure of the anonymized log, the probability that an attacker may single out any individual represented in the original log, does not increase by more than a threshold. Amun proposes a differentially private disclosure mechanism, which oversamples the cases in the log and adds noise to the timestamps to the extent required to achieve the above privacy guarantee. An emperical evaluation of Amun using 14 real-world event logs could be found in our recent [paper](https://arxiv.org/abs/2103.11739).
 ### Cite the Project
+
 ```
-Elkoumy, Gamal, Alisa Pankova, and Marlon Dumas. "Privacy-Preserving Directly-Follows Graphs: 
-Balancing Risk and Utility in Process Mining". arXiv preprint arXiv:2012.01119 (2020)
+@inproceedings{DBLP:conf/icpm/ElkoumyPD21,
+  author    = {Gamal Elkoumy and
+               Alisa Pankova and
+               Marlon Dumas},
+  editor    = {Claudio Di Ciccio and
+               Chiara Di Francescomarino and
+               Pnina Soffer},
+  title     = {Mine Me but Don't Single Me Out: Differentially Private Event Logs
+               for Process Mining},
+  booktitle = {3rd International Conference on Process Mining, {ICPM} 2021, Eindhoven,
+               Netherlands, October 31 - Nov. 4, 2021},
+  pages     = {80--87},
+  publisher = {{IEEE}},
+  year      = {2021},
+  url       = {https://doi.org/10.1109/ICPM53251.2021.9576852},
+  doi       = {10.1109/ICPM53251.2021.9576852},
+  timestamp = {Fri, 29 Oct 2021 16:42:41 +0200},
+  biburl    = {https://dblp.org/rec/conf/icpm/ElkoumyPD21.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+  
 ```
 ```
-Elkoumy, Gamal, Alisa Pankova, and Marlon Dumas. "Mine Me but Don't Single Me Out: 
-Differentially Private Event Logs for Process Mining". arXiv preprint arXiv:2103.11739 (2021)
+@article{elkoumy2022differentially,
+  title={Differentially Private Release of Event Logs for Process Mining},
+  author={Elkoumy, Gamal and Pankova, Alisa and Dumas, Marlon},
+  journal={arXiv preprint arXiv:2201.03010},
+  year={2022}
+}
+```
+
+```
+@article{DBLP:journals/corr/abs-2012-01119,
+  author    = {Gamal Elkoumy and
+               Alisa Pankova and
+               Marlon Dumas},
+  title     = {Privacy-Preserving Directly-Follows Graphs: Balancing Risk and Utility
+               in Process Mining},
+  journal   = {CoRR},
+  volume    = {abs/2012.01119},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2012.01119},
+  eprinttype = {arXiv},
+  eprint    = {2012.01119},
+  timestamp = {Fri, 04 Dec 2020 12:07:23 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2012-01119.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
 ```
 
 ### Prerequisite
