@@ -24,7 +24,7 @@ def anonymize_event_log(data_dir=r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikoo
     start_all = time.time()
 
     # delta=0.8
-    # precision =0.5
+    precision =0.0
     # temp directory name tmp/t_ event log name _ precision _ delta _ itertion
     curr_dir = os.path.dirname(os.path.realpath(__file__))
     temp_dir=os.path.join(curr_dir, 'tmp','t_%s%s_%s'%(dataset,mode,delta))
