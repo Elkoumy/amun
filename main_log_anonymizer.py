@@ -55,7 +55,7 @@ for precision in precisions:
 
                 for iteration in range(start_iteration, no_of_iterations):
                     if data in ["CCC19_t","Unrineweginfectie_t"]:
-                        memory = 8
+                        memory = 32
                         exec_time = "00:5:00"  # 1 minutes
                     elif data in ["Sepsis_t","Traffic_t","CreditReq_t", "BPIC15_t"]:
                         memory = 32
