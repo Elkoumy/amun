@@ -14,8 +14,8 @@ jobs_dir = "jobs"
               "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds".
               """
 
-# datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
-# "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
+datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
+"BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
 # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
@@ -46,7 +46,7 @@ precisions = [ 0.2]
 modes=['oversampling']
 # precisions = [0.1]
 # deltas=[0.2,0.3,0.4]
-deltas=[0.025]
+deltas=[0.0032, 0.025, 0.24]
 
 for precision in precisions:
     for delta in deltas:
@@ -55,26 +55,26 @@ for precision in precisions:
 
                 for iteration in range(start_iteration, no_of_iterations):
                     if data in ["CCC19_t","Unrineweginfectie_t"]:
-                        memory = 4
+                        memory = 8
                         exec_time = "00:5:00"  # 1 minutes
                     elif data in ["Sepsis_t","Traffic_t","CreditReq_t", "BPIC15_t"]:
-                        memory = 16
+                        memory = 32
                         exec_time = "00:14:00"  # 7 minutes
                     elif data in [ "Hospital_t"]:
-                        memory = 16
+                        memory = 32
                         exec_time = "01:00:00"  # 25 minutes
                     elif data in ["BPIC20_t", "BPIC13_t"]:
-                        memory = 20
+                        memory = 32
                         exec_time = "01:00:00"  # 30 minutes
                     elif data in ["BPIC12_t" ]:
-                        memory = 20
+                        memory = 32
                         exec_time = "01:00:00"  # 32 minutes
 
                     elif data in ["BPIC17_t"]:
-                        memory = 20
+                        memory = 32
                         exec_time = "02:40:00"  # 40 minutes
                     elif data in ["BPIC14_t"]:
-                        memory = 24
+                        memory = 32
                         exec_time = "03:30:00"  # 1.5 hours
 
                     elif data in [  "BPIC19_t"]:
