@@ -25,7 +25,7 @@ def similarity_apply(row):
     res=similarity(row[0],row[1])
     return res
 
-# import swifter
+import swifter
 
 def soft_intersection_list(tokens1, tokens2):
     # start = time.time()
