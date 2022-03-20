@@ -78,6 +78,7 @@ if __name__ == "__main__":
 
                 """Pripel"""
         files = list(os.walk(pripel_trace_dir))[0][2]
+        print("***")
         for log in files:
             if log.find(dataset)!=-1:
                 anonymized_dir = os.path.join(pripel_trace_dir, log)
