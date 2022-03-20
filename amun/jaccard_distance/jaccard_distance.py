@@ -52,7 +52,7 @@ def soft_intersection_list(tokens1, tokens2):
     tokens = pd.DataFrame(product(tokens1, tokens2))
 
     # tokens['similarity'] = tokens.swifter.apply(similarity_apply, axis=1)
-    tokens['similarity'] = tokens.swifter.apply(similarity_apply, axis=1)
+    tokens['similarity'] = tokens.apply(similarity_apply, axis=1)
     tokens = tokens.groupby([0, 1]).max() #unique values
 
     tokens.sort_values('similarity', ascending=False, inplace=True)
