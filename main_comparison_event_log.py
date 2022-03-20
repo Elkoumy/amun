@@ -98,6 +98,7 @@ if __name__ == "__main__":
         #         # compare_emd(org_path, anonymized_dir, comparison_dir)
 
         """Libra"""
+        files = list(os.walk(libra_dir))[0][2]
         for log in files:
             if log.find(dataset)!=-1:
                 files = list(os.walk(libra_dir))[0][2]
