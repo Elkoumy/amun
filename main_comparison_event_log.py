@@ -29,7 +29,8 @@ def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,a
         # fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
         fout.write("#SBATCH --partition=amd\n")
         fout.write("#SBATCH --time=%s\n" % (exec_time))
-        fout.write("module load python-3.7.1\n")
+        # fout.write("module load python-3.7.1\n")
+        fout.write("module load python/3.8.6\n")
         # fout.write("cd ..\n")
 
         # dataset = os.sys.argv[1]
