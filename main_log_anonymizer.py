@@ -49,7 +49,7 @@ modes=['oversampling']
 # precisions = [0.1]
 # deltas=[0.2,0.3,0.4]
 # deltas=[0.0032, 0.025, 0.24]
-deltas=[0.005, 0.04, 0.15]
+deltas=[0.01, 0.075, 0.4]
 
 for precision in precisions:
     for delta in deltas:
