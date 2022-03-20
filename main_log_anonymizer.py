@@ -31,7 +31,8 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
 # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
-# datasets=["Sepsis_t"]
+
+datasets=["BPIC12_t", "BPIC14_t","BPIC17_t","Hospital_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
