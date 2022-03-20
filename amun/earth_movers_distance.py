@@ -1,5 +1,3 @@
-from pm4py.objects.log.importer.xes import importer as xes_importer
-from pm4py.statistics.variants.log import get as variants_module
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
 import pm4py
 import pandas as pd
