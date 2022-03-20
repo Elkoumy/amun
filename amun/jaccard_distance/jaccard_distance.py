@@ -25,7 +25,7 @@ def similarity_apply(row):
     res=similarity(row[0],row[1])
     return res
 
-import swifter
+# import swifter
 
 def soft_intersection_list(tokens1, tokens2):
     # start = time.time()
@@ -51,6 +51,7 @@ def soft_intersection_list(tokens1, tokens2):
     start = time.time()
     tokens = pd.DataFrame(product(tokens1, tokens2))
 
+    # tokens['similarity'] = tokens.swifter.apply(similarity_apply, axis=1)
     tokens['similarity'] = tokens.swifter.apply(similarity_apply, axis=1)
     tokens = tokens.groupby([0, 1]).max() #unique values
 
