@@ -84,15 +84,17 @@ if __name__ == "__main__":
             if log.find(dataset)!=-1:
                 anonymized_dir = os.path.join(pripel_trace_dir, log)
                 generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "pripel", log)
+                generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "pripel", log)
                 # compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
         """SaCoFa"""
-        # files = list(os.walk(pripel_time_dir))[0][2]
-        # for log in files:
-        #     if log.find(dataset)!=-1:
-        #         anonymized_dir = os.path.join(pripel_time_dir, log)
-        #         generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "pripel", log)
-        #         # compare_emd(org_path, anonymized_dir, comparison_dir)
+        files = list(os.walk(pripel_time_dir))[0][2]
+        for log in files:
+            if log.find(dataset)!=-1:
+                anonymized_dir = os.path.join(pripel_time_dir, log)
+                generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "sacofa", log)
+                generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "sacofa", log)
+                # compare_emd(org_path, anonymized_dir, comparison_dir)
 
         """Libra"""
         # anonymized_dir = os.path.join(libra_dir, log)
