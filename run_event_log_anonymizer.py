@@ -130,7 +130,7 @@ if __name__ == "__main__":
     # datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
     #             "BPIC20_t", "BPIC13_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
-    datasets=[ "BPIC12_t", ]
+    datasets=[ "BPIC17_t" ]
 
     # modes=['oversampling','filtering','sampling']
     modes=['oversampling']
