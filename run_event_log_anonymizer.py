@@ -133,9 +133,10 @@ if __name__ == "__main__":
 
     # datasets=[ "BPIC12_t" ]
     datasets = ["BPIC12_t", "BPIC14_t", "BPIC17_t", "Hospital_t"]
-
+    datasets=['Sepsis_t']
     # modes=['oversampling','filtering','sampling']
-    modes=['oversampling']
+    modes=['sampling']
+    # modes=['oversampling']
     # cur_dir=os.getcwd()
     cur_dir=os.path.dirname(os.path.realpath(__file__))
     data_dir=os.path.join(cur_dir,'data')
