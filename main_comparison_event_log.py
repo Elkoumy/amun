@@ -6,7 +6,7 @@ import subprocess
 def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,anonymized_name):
     dir_path = os.path.dirname(os.path.realpath(__file__))
     jobs_dir = "comp_jobs"
-    memory = 16
+    memory = 32
     exec_time = "04:00:00"  # 12 hour
 
     if dataset in ["BPIC12_t", "Hospital_t", "BPIC15_t", "Traffic_t",
@@ -51,7 +51,7 @@ if __name__ == "__main__":
                 "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-
+    datasets = ["BPIC12_t"]
 
     # datasets = ["CCC19_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
