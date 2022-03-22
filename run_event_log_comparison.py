@@ -69,8 +69,8 @@ if __name__ == "__main__":
             print(datetime.now())
             if log.find(dataset)!=-1:
                 anonymized_dir=os.path.join(amun_dir,log)
-                # compare_emd(org_path,anonymized_dir,comparison_dir)
-                compare_jaccard(org_path, anonymized_dir, comparison_dir)
+                compare_emd(org_path,anonymized_dir,comparison_dir)
+                # compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
         # files = list(os.walk(pripel_trace_dir))[0][2]
         # for log in files:
