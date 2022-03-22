@@ -122,8 +122,8 @@ if __name__ == "__main__":
 
     precisions=[0.2]
     deltas=[0.2,0.3,0.4]
-    deltas = [0.2]
-    deltas = [0.01, 0.075, 0.4]
+    deltas = [0.075]
+    # deltas = [0.01, 0.075, 0.4]
 
 
     # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
@@ -131,10 +131,10 @@ if __name__ == "__main__":
     # datasets = ["CCC19_t", "Unrineweginfectie_t",  "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t",
     #             "BPIC20_t", "BPIC13_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
-    # datasets=[ "BPIC12_t" ]
-    datasets = [ "BPIC14_t", "Hospital_t",
-                "BPIC20_t",
-                "BPIC12_t", "BPIC17_t"]
+    datasets=[ "BPIC12_t" ]
+    # datasets = [ "BPIC14_t", "Hospital_t",
+    #             "BPIC20_t",
+    #             "BPIC12_t", "BPIC17_t"]
 
     # datasets=['Sepsis_t']
     # modes=['oversampling','filtering','sampling']
