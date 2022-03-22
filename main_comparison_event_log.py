@@ -76,7 +76,7 @@ if __name__ == "__main__":
                 """Amun"""
                 anonymized_dir=os.path.join(amun_dir,log)
                 generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
-                generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
+                # generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
                 # compare_emd(org_path,anonymized_dir,comparison_dir)
                 # compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
