@@ -32,14 +32,12 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
 # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
-datasets = [ "BPIC14_t", "Hospital_t",
-                "BPIC20_t",
-                "BPIC12_t", "BPIC17_t"]
+datasets = [ "BPIC13_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
 
-memory = 64
+memory = 32
 exec_time = "04:00:00"
 
 # no_of_iterations =14
@@ -56,6 +54,7 @@ modes=['oversampling']
 # deltas=[0.2,0.3,0.4]
 # deltas=[0.0032, 0.025, 0.24]
 deltas=[0.01, 0.075, 0.4]
+deltas=[0.01, 0.075]
 
 for precision in precisions:
     for delta in deltas:
