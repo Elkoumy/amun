@@ -32,12 +32,15 @@ datasets = ["CCC19_t",  "Unrineweginfectie_t", "Sepsis_t","Traffic_t", "Hospital
 # datasets = ["CCC19_t",  "Unrineweginfectie_t", "Traffic_t", "Hospital_t", "CreditReq_t", "BPIC15_t","BPIC20_t", "BPIC13_t",
 # "BPIC12_t", "BPIC17_t", "BPIC14_t", "BPIC19_t", "BPIC18_t" ]
 
-datasets = ["Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Hospital_t",
-            "BPIC20_t",
-            "BPIC12_t", "BPIC17_t"]
+datasets = [ "BPIC14_t", "Hospital_t",
+                "BPIC20_t",
+                "BPIC12_t", "BPIC17_t"]
 
 memory = 4
 exec_time="01:00:00" # 1 hour
+
+memory = 64
+exec_time = "04:00:00"
 
 # no_of_iterations =14
 # start_iteration=13
@@ -60,37 +63,37 @@ for precision in precisions:
             for mode in modes:
 
                 for iteration in range(start_iteration, no_of_iterations):
-                    if data in ["CCC19_t","Unrineweginfectie_t"]:
-                        memory = 40
-                        exec_time = "00:5:00"  # 1 minutes
-                    elif data in ["Sepsis_t","Traffic_t","CreditReq_t", "BPIC15_t"]:
-                        memory = 40
-                        exec_time = "00:14:00"  # 7 minutes
-                    elif data in [ "Hospital_t"]:
-                        memory = 40
-                        exec_time = "01:00:00"  # 25 minutes
-                    elif data in ["BPIC20_t", "BPIC13_t"]:
-                        memory = 40
-                        exec_time = "01:00:00"  # 30 minutes
-                    elif data in ["BPIC12_t" ]:
-                        memory = 40
-                        exec_time = "01:00:00"  # 32 minutes
-
-                    elif data in ["BPIC17_t"]:
-                        memory = 40
-                        exec_time = "02:40:00"  # 40 minutes
-                    elif data in ["BPIC14_t"]:
-                        memory = 40
-                        exec_time = "03:30:00"  # 1.5 hours
-
-                    elif data in [  "BPIC19_t"]:
-                        # memory = 32
-                        memory = 40
-                        exec_time = "24:00:00"  # 4 hours
-
-                    elif data in ["BPIC18_t"]:
-                        memory = 80
-                        exec_time = "30:00:00"  # 5 hours
+                    # if data in ["CCC19_t","Unrineweginfectie_t"]:
+                    #     memory = 32
+                    #     exec_time = "00:5:00"  # 1 minutes
+                    # elif data in ["Sepsis_t","Traffic_t","CreditReq_t", "BPIC15_t"]:
+                    #     memory = 32
+                    #     exec_time = "00:14:00"  # 7 minutes
+                    # elif data in [ "Hospital_t"]:
+                    #     memory = 32
+                    #     exec_time = "01:00:00"  # 25 minutes
+                    # elif data in ["BPIC20_t", "BPIC13_t"]:
+                    #     memory = 32
+                    #     exec_time = "01:00:00"  # 30 minutes
+                    # elif data in ["BPIC12_t" ]:
+                    #     memory = 32
+                    #     exec_time = "01:00:00"  # 32 minutes
+                    #
+                    # elif data in ["BPIC17_t"]:
+                    #     memory = 32
+                    #     exec_time = "02:40:00"  # 40 minutes
+                    # elif data in ["BPIC14_t"]:
+                    #     memory = 32
+                    #     exec_time = "03:30:00"  # 1.5 hours
+                    #
+                    # elif data in [  "BPIC19_t"]:
+                    #     # memory = 32
+                    #     memory = 36
+                    #     exec_time = "24:00:00"  # 4 hours
+                    #
+                    # elif data in ["BPIC18_t"]:
+                    #     memory = 80
+                    #     exec_time = "30:00:00"  # 5 hours
 
 
                     job_name = os.path.join(jobs_dir,"j_%s_%s_%s_%s_%s.sh" % (data, mode, precision, delta, iteration))

@@ -132,7 +132,7 @@ if __name__ == "__main__":
     #             "BPIC20_t", "BPIC13_t", "BPIC17_t", "BPIC14_t", "BPIC19_t" ]
 
     # datasets=[ "BPIC12_t" ]
-    datasets = ["Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Hospital_t",
+    datasets = [ "BPIC14_t", "Hospital_t",
                 "BPIC20_t",
                 "BPIC12_t", "BPIC17_t"]
 
