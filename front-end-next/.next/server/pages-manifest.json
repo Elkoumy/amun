@@ -2,10 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.html",
-  "/": "pages/index.html",
-  "/contact": "pages/contact.html",
-  "/upload": "pages/upload.html",
-  "/view": "pages/view.html",
-  "/404": "pages/404.html"
+  "/": "pages/index.js"
 }

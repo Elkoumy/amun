@@ -123,7 +123,7 @@ const About = (props) => {
         </div>
         <footer className="about-footer">
           <span className="about-text6">
-            © 2022 Gamal Elkoumy, All Rights Reserved.
+            © 2022 University of Tartu, All Rights Reserved.
           </span>
         </footer>
       </div>

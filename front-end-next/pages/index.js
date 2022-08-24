@@ -170,7 +170,7 @@ const Home = (props) => {
         </div>
         <footer className="home-footer">
           <span className="home-text11">
-            © 2022 Gamal Elkoumy, All Rights Reserved.
+            © 2022 University of Tartu, All Rights Reserved.
           </span>
         </footer>
       </div>
@@ -191,7 +191,7 @@ const Home = (props) => {
             align-items: center;
             flex-direction: column;
             background-size: cover;
-            background-image: url('/playground_assets/gdpr.svg');
+            background-image: url('/playground_assets/front-page.jpg');
           }
           .home-navbar {
             width: 100%;
@@ -430,7 +430,7 @@ const Home = (props) => {
           @media (max-width: 991px) {
             .home-top-container {
               background-size: cover;
-              background-image: url('/playground_assets/gdpr.svg');
+              background-image: url('/playground_assets/front-page.jpg');
             }
             .home-hero {
               padding-left: var(--dl-space-space-tripleunit);

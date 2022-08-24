@@ -366,7 +366,7 @@ function onChangeValue(event) {
         </div>
         <footer className="uploadlog-footer">
           <span className="uploadlog-text10">
-            © 2022 Gamal Elkoumy, All Rights Reserved.
+            © 2022 University of Tartu, All Rights Reserved.
           </span>
         </footer>
       </div>

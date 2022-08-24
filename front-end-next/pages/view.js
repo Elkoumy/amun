@@ -135,7 +135,7 @@ const Viewlog = (props) => {
         </div>
         <footer className="viewlog-footer">
           <span className="viewlog-text8">
-            © 2022 Gamal Elkoumy, All Rights Reserved.
+            © 2022 University of Tartu, All Rights Reserved.
           </span>
         </footer>
       </div>
