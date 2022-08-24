@@ -11,7 +11,6 @@ COPY /front-end-next/out ./out
 COPY /front-end-next/pages ./pages
 COPY /front-end-next/public ./public
 
-
 RUN yarn install
 RUN yarn build
 RUN yarn export -o ../build/
