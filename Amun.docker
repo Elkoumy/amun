@@ -18,6 +18,7 @@ RUN yarn export -o ../build/
 # Build step #2: build an nginx container
 FROM python:3.9
 WORKDIR /app
+COPY --from=build-step /app/build ./build
 
 COPY flask-server flask-server/
 COPY uploads   uploads/
