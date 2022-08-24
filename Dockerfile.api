@@ -1,9 +1,9 @@
 FROM python:3.9
 WORKDIR /app
 
-COPY flask-server ./flask-server
-COPY uploads    ./uploads
-COPY output     ./output
+COPY flask-server ./
+COPY uploads   ./
+COPY output     ./
 
 RUN pip install -r ./flask-server/requirements.txt
 
