@@ -3,9 +3,14 @@ FROM node:16-alpine as build-step
 WORKDIR /front-end-next
 ENV PATH /front-end-next/node_modules/.bin:$PATH
 COPY /front-end-next/package.json  ./
+COPY /front-end-next/package-lock.json  ./
 # yarn.lock
-COPY ./src ./src
-COPY ./public ./public
+COPY /front-end-next/components ./components
+COPY /front-end-next/out ./out
+COPY /front-end-next/pages ./pages
+COPY /front-end-next/public ./public
+
+
 RUN yarn install
 RUN yarn build
 RUN yarn export -o ../build/
