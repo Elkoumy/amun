@@ -79,7 +79,7 @@ def upload_file():
 
 
 @app.route('/uploaded', methods=['GET', 'POST'])
-def uploaded_file():
+def  uploaded_file():
     filename=request.args['filename']
     #perform validation here.
     if filename.split('.')[-1]=='csv':
@@ -106,11 +106,12 @@ def uploaded_file():
 
             return '''error_null'''
 
+        file.to_csv( os.path.join( os.getcwd(),'..', 'uploads', filename), index=False)
 
     elif filename.split('.')[-1]=='xes':
         #validate xes
         try:
-            file =xes_import_factory.apply(os.path.join( os.getcwd(), 'uploads', filename))
+            file =xes_import_factory.apply(os.path.join( os.getcwd(), '..','uploads', filename))
             file = get_dataframe_from_event_stream(file)
         except:
             return '''xes_error'''
@@ -131,7 +132,8 @@ def uploaded_file():
 
             return '''error_null'''
 
-
+        log = conversion_factory.apply(file)
+        xes_exporter.export_log(log, os.path.join( os.getcwd(), '..','uploads', filename))
 
     else:
         #raise an error
@@ -143,6 +145,7 @@ def uploaded_file():
 	<title>Uploaded the file</title>
 	<h1> File has been Successfully Uploaded </h1>
 	'''
+
 
 
 @app.route('/anonymize', methods=['GET', 'POST'])
