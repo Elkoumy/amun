@@ -6,6 +6,7 @@ COPY uploads    ./uploads
 COPY output     ./output
 
 RUN pip install -r ./flask-server/requirements.txt
+
 ENV FLASK_ENV production
 
 EXPOSE 5000
