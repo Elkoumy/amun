@@ -1,9 +1,9 @@
 FROM python:3.9
 WORKDIR /app
 
-COPY flask-server ./
-COPY uploads   ./
-COPY output     ./
+COPY flask-server flask-server/
+COPY uploads   uploads/
+COPY output     output/
 
 RUN ls
 RUN ls -R flask-server
