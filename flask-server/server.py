@@ -23,7 +23,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/')
 def index():
-    return app.send_static_file('../build/index.html')
+    return app.send_static_file('/index.html')
 
 
 
