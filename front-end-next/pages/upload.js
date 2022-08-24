@@ -40,7 +40,7 @@ function onChangeValue(event) {
       // $(file).val(''); //for clearing with Jquery
     } else {
          event.preventDefault()
-    const url = 'http://localhost:5000/upload';
+    const url = 'http://localhost:5000/uploadLog';
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
