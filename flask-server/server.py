@@ -29,7 +29,8 @@ ALLOWED_EXTENSIONS = set(['csv', 'xes'])
 
 def CreateNewDir():
     print ("I am being called")
-    UPLOAD_FOLDER = r'C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\flask-react-app\uploads'
+    # UPLOAD_FOLDER = r'C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\flask-react-app\uploads'
+    UPLOAD_FOLDER = '../uploads'
     print (UPLOAD_FOLDER)
     UPLOAD_FOLDER = UPLOAD_FOLDER+datetime.datetime.now().strftime("%d%m%y%H")
     cmd="mkdir -p %s && ls -lrt %s"%(UPLOAD_FOLDER,UPLOAD_FOLDER)
@@ -59,7 +60,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            UPLOAD_FOLDER= r'C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\flask-react-app\uploads'
+            # UPLOAD_FOLDER= r'C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\flask-react-app\uploads'
+            UPLOAD_FOLDER = '../uploads'
             CreateNewDir()
             # global UPLOAD_FOLDER
             file.save(os.path.join(UPLOAD_FOLDER, filename))
