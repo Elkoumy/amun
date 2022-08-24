@@ -21,6 +21,12 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]iasdfffsd/'
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+@app.route('/')
+def index():
+    return app.send_static_file('../build/index.html')
+
+
+
 ALLOWED_EXTENSIONS = set(['csv', 'xes'])
 
 
@@ -167,9 +173,7 @@ def anonymize():
     return 'success'
 
 
-@app.route('/')
-def index():
-    return app.send_static_file('../build/index.html')
+
 
 
 @app.route('/output/<path:filename>', methods=['GET', 'POST'])
