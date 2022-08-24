@@ -7,7 +7,7 @@ COPY output     output/
 
 RUN ls
 RUN ls -R flask-server
-RUN pip install -r ./flask-server/requirements.txt
+RUN pip install -r flask-server/requirement.txt
 
 
 ENV FLASK_ENV production
