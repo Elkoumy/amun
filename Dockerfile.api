@@ -5,8 +5,7 @@ COPY flask-server flask-server/
 COPY uploads   uploads/
 COPY output     output/
 
-RUN ls
-RUN ls -R flask-server
+
 RUN pip install -r flask-server/requirement.txt
 
 WORKDIR /app/flask-server
