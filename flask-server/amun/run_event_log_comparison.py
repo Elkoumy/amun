@@ -1,5 +1,5 @@
-from amun.earth_movers_distance import earth_mover_dist_freq,earth_mover_dist_time
-from amun.jaccard_distance.jaccard_distance import soft_jaccard_score
+from amun.amun.earth_movers_distance import earth_mover_dist_freq,earth_mover_dist_time
+from amun.amun.jaccard_distance.jaccard_distance import soft_jaccard_score
 from pm4py.objects.log.importer.xes import importer as xes_importer
 from pm4py.statistics.traces.log import case_statistics
 import pandas as pd

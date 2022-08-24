@@ -1,7 +1,7 @@
-from amun.event_log_anonymization import event_log_anonymization
-from amun.input_module import xes_to_DAFSA
-from amun.measure_accuracy import estimate_SMAPE_variant_and_time
-from amun.log_exporter import relative_time_to_XES,relative_time_to_XES2
+from amun.amun.event_log_anonymization import event_log_anonymization
+from amun.amun.input_module import xes_to_DAFSA
+from amun.amun.measure_accuracy import estimate_SMAPE_variant_and_time
+from amun.amun.log_exporter import relative_time_to_XES,relative_time_to_XES2
 import time
 #import swifter
 import sys

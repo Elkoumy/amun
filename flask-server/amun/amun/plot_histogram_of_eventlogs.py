@@ -5,8 +5,8 @@ from pm4py.objects.conversion.log import converter as log_converter
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 from reportlab import xrange
 
-# from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
-from amun.guessing_advantage import AggregateType
+# from amun.amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
+from amun.amun.guessing_advantage import AggregateType
 from math import log10
 import os
 
@@ -19,8 +19,8 @@ from pm4py.objects.log.adapters.pandas import csv_import_adapter
 
 # from pruning_edges import get_pruning_edges
 
-from amun.guessing_advantage import AggregateType
-from amun.input_module import read_xes
+from amun.amun.guessing_advantage import AggregateType
+from amun.amun.input_module import read_xes
 
 import seaborn as sns, numpy as np
 import matplotlib.pyplot as plt

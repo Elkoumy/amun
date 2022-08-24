@@ -5,7 +5,7 @@ from scipy.stats import wasserstein_distance
 import collections
 import time
 
-from amun.guessing_advantage import AggregateType
+from amun.amun.guessing_advantage import AggregateType
 
 
 def earth_mover_dist_freq(log1, log2):

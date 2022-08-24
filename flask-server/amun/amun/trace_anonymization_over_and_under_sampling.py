@@ -8,7 +8,7 @@ import random as r
 import time
 import math
 from scipy.stats import laplace
-import amun.trace_anonymization
+import amun.amun.trace_anonymization
 #import swifter
 
 def build_DAFSA_bit_vector(data):
@@ -404,7 +404,7 @@ def execute_undersampling(data, traces_to_delete):
 
 
 def trace_anonymization_oversampling(data, eps):
-    data = amun.trace_anonymization.anonymize_traces_compacted(data,eps)
+    data = amun.amun.trace_anonymization.anonymize_traces_compacted(data,eps)
     return data
 
 

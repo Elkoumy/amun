@@ -4,7 +4,7 @@ This module implements the main module for the event log anonymizer
 """
 from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.exporter.xes import factory as xes_exporter
-# from amun.event_log_anonymization import event_log_anonymization
+# from amun.amun.event_log_anonymization import event_log_anonymization
 
 
 from amun.amun.log_exporter import relative_time_to_timestamp
@@ -12,7 +12,7 @@ from amun.amun.log_exporter import relative_time_to_timestamp
 from amun.amun.event_log_anonymization import event_log_anonymization
 
 
-# from amun.log_exporter import relative_time_to_XES, relative_time_to_XES2, export_csv, adding_dummy_columns, relative_time_to_timestamp
+# from amun.amun.log_exporter import relative_time_to_XES, relative_time_to_XES2, export_csv, adding_dummy_columns, relative_time_to_timestamp
 import time
 #import swifter
 import sys

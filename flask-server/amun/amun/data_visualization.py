@@ -7,7 +7,7 @@ import seaborn as sns
 import pandas as pd
 import os
 
-from amun.guessing_advantage import AggregateType
+from amun.amun.guessing_advantage import AggregateType
 
 
 def plot_results(result_log_delta,result_log_alpha,delta_logger_freq, delta_logger_time,execution_time_log, dir=r'C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\source code\experiment_figures'):

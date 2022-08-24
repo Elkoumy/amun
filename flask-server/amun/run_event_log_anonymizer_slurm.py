@@ -3,9 +3,9 @@ This module implements the main module for the event log anonymizer
 
 """
 
-from amun.event_log_anonymization import event_log_anonymization
-from amun.measure_accuracy import estimate_SMAPE_variant_and_time
-from amun.log_exporter import relative_time_to_XES
+from amun.amun.event_log_anonymization import event_log_anonymization
+from amun.amun.measure_accuracy import estimate_SMAPE_variant_and_time
+from amun.amun.log_exporter import relative_time_to_XES
 import time
 #import swifter
 import sys

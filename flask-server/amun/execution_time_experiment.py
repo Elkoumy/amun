@@ -3,13 +3,13 @@ In this file, we run the experiments for different files
 
 """
 
-from amun.differental_privacy_module import *
+from amun.amun.differental_privacy_module import *
 # from GUI_module import *
-from amun.input_module import *
+from amun.amun.input_module import *
 import pandas as pd
-from amun.data_visualization import plot_results
+from amun.amun.data_visualization import plot_results
 from statistics import median
-from amun.model_visualization import view_model
+from amun.amun.model_visualization import view_model
 import os
 import time
 

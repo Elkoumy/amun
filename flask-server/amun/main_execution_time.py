@@ -2,7 +2,7 @@
 import os
 import subprocess
 import time
-from amun.guessing_advantage import  AggregateType
+from amun.amun.guessing_advantage import  AggregateType
 dir_path = os.path.dirname(os.path.realpath(__file__))
 jobs_dir = "jobs"
 

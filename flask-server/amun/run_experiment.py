@@ -3,13 +3,13 @@ In this file, we implement the parameterized job to run over slurm HPC.
 
 """
 
-from amun.differental_privacy_module import *
+from amun.amun.differental_privacy_module import *
 # from GUI_module import *
-from amun.input_module import *
+from amun.amun.input_module import *
 import pandas as pd
-# from amun.data_visualization import plot_results
+# from amun.amun.data_visualization import plot_results
 from statistics import median
-# from amun.model_visualization import view_model
+# from amun.amun.model_visualization import view_model
 import os
 
 def run_experiment(data="Sepsis",parameter="0.1", mode="nonpruning",aggregate_type=AggregateType.FREQ, input_val="delta",iteration=0,precision=0.5):

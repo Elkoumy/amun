@@ -75,7 +75,7 @@ The code was tested with ```python 3.8.5```.
 ### Example Usage
 To anonymize an event log, place the XES file in the directory ```input_logs```. Then you can run the command
 ```
-python Amun.py Sepsis sampling 0.2
+python amun.amun.py Sepsis sampling 0.2
 ```
 Amun assumes that the event log has only the three columns: ```case:concept:name```, ```concept:name```, and ```time:timestamp``` in your XES file.
 

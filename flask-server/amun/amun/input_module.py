@@ -6,7 +6,7 @@ This module implements the functionality of reading the input from the user. The
 import pandas as pd
 import time
 import numpy as np
-from amun.trie import PrefixTree
+from amun.amun.trie import PrefixTree
 from pm4py.objects.log.importer.xes import factory as xes_import_factory
 from pm4py.statistics.traces.log.case_statistics import get_variant_statistics
 from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_from_event_stream
@@ -15,11 +15,11 @@ from pm4py.objects.log.exporter.xes import factory as xes_exporter
 
 from pm4py.algo.discovery.dfg import factory as dfg_factory
 
-# from amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
-from amun.guessing_advantage import AggregateType
+# from amun.amun.edges_pruning import pruning_by_edge_name_freq, pruning_by_edge_name_time
+from amun.amun.guessing_advantage import AggregateType
 from math import log10
 import os
-from amun.dafsa_classes import DAFSA
+from amun.amun.dafsa_classes import DAFSA
 # import swifter
 # from pm4py.algo.discovery.dfg import algorithm as dfg_discovery
 from pm4py.algo.filtering.log.start_activities import start_activities_filter
