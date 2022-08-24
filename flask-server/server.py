@@ -10,7 +10,7 @@ from pm4py.objects.conversion.log.versions.to_dataframe import get_dataframe_fro
 from pm4py.objects.conversion.log import factory as conversion_factory
 from pm4py.objects.log.exporter.xes import factory as xes_exporter
 import json
-from amun import amun_service
+from amun.amun import amun_service
 
 from flask import send_file
 

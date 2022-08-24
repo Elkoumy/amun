@@ -16,8 +16,8 @@ import itertools
 import networkx as nx
 
 # Import other modules from the library
-from amun import dafsa_output as output
-from amun import dafsa_utils as utils
+from amun.amun import dafsa_output as output
+from amun.amun import dafsa_utils as utils
 
 # comment on internal node_id, meaningless
 class DAFSANode:
