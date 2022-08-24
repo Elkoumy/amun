@@ -13,4 +13,4 @@ RUN pip install -r flask-server/requirement.txt
 ENV FLASK_ENV production
 
 EXPOSE 5000
-CMD ["gunicorn", "-b", ":5000", "api:app"]
+CMD ["gunicorn", "-b", ":5000", "server:app"]
