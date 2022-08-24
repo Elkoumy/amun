@@ -40,7 +40,7 @@ function onChangeValue(event) {
       // $(file).val(''); //for clearing with Jquery
     } else {
          event.preventDefault()
-    const url = 'http://localhost:5000/uploadLog';
+    const url = 'http://localhost:3000/uploadLog';
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
@@ -102,7 +102,7 @@ function onChangeValue(event) {
     // take the file and pass it to amun
   console.log("Calling anonymize")
        event.preventDefault()
-    const url = 'http://localhost:5000/anonymize';
+    const url = 'http://localhost:3000/anonymize';
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
@@ -130,7 +130,7 @@ function onChangeValue(event) {
   event.preventDefault();
 
   const filename=file.name;
-  const url = 'http://localhost:5000/output/anonymized_'+filename;
+  const url = 'http://localhost:3000/output/anonymized_'+filename;
   const link=document.createElement('a');
   link.href=url;
   link.click();
@@ -144,7 +144,7 @@ function onChangeValue(event) {
 
   const org_file_name=filename.split('.')[0];
 
-  const url = 'http://localhost:5000/output/'+org_file_name+'_risk.csv';
+  const url = 'http://localhost:3000/output/'+org_file_name+'_risk.csv';
   const link=document.createElement('a');
   link.href=url;
   link.click();
