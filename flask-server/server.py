@@ -53,6 +53,7 @@ def allowed_file(filename):
 
 @app.route('/uploadLog', methods=['GET', 'POST'])
 def upload_file():
+    new_filename=''
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -66,15 +67,17 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            filename = file.filename
             # UPLOAD_FOLDER= r'C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\flask-react-app\uploads'
             UPLOAD_FOLDER = '../uploads'
             CreateNewDir()
             # global UPLOAD_FOLDER
-            file.save(os.path.join(UPLOAD_FOLDER, filename))
+            x=file.save(os.path.join(UPLOAD_FOLDER, filename))
+            new_filename=filename
             x=url_for('uploaded_file',filename=filename)
             return redirect(url_for('uploaded_file',
                                     filename=filename))
-    return 'success'
+    return new_filename
 
 
 
@@ -106,11 +109,12 @@ def uploaded_file():
 
             return '''error_null'''
 
+        file.to_csv( os.path.join( os.getcwd(),'..', 'uploads', filename), index=False)
 
     elif filename.split('.')[-1]=='xes':
         #validate xes
         try:
-            file =xes_import_factory.apply(os.path.join( os.getcwd(), 'uploads', filename))
+            file =xes_import_factory.apply(os.path.join( os.getcwd(), '..','uploads', filename))
             file = get_dataframe_from_event_stream(file)
         except:
             return '''xes_error'''
@@ -131,7 +135,8 @@ def uploaded_file():
 
             return '''error_null'''
 
-
+        log = conversion_factory.apply(file)
+        xes_exporter.export_log(log, os.path.join( os.getcwd(), '..','uploads', filename))
 
     else:
         #raise an error
