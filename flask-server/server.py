@@ -53,6 +53,7 @@ def allowed_file(filename):
 
 @app.route('/uploadLog', methods=['GET', 'POST'])
 def upload_file():
+    print('Calling file upload')
     new_filename=''
     if request.method == 'POST':
         # check if the post request has the file part
@@ -83,6 +84,7 @@ def upload_file():
 
 @app.route('/uploaded', methods=['GET', 'POST'])
 def uploaded_file():
+    print('calling uploaded')
     filename=request.args['filename']
     #perform validation here.
     if filename.split('.')[-1]=='csv':

@@ -102,11 +102,11 @@ function onChangeValue(event) {
     // take the file and pass it to amun
   console.log("Calling anonymize")
        event.preventDefault()
-    const url = 'http://193.40.11.242/anonymize';
+    const url = 'http://193.40.11.242:5000/anonymize';
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
-
+    console.log(file.name);
     const config = {
       headers: {
         'content-type': 'application/json',
