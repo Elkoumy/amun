@@ -34,11 +34,11 @@ def about():
     return app.send_static_file('about.html')
 
 @app.route('/contact')
-def about():
+def contact():
     return app.send_static_file('contact.html')
 
 @app.route('/upload')
-def about():
+def upload():
     return app.send_static_file('upload.html')
 
 
