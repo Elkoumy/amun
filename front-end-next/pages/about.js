@@ -17,18 +17,18 @@ const About = (props) => {
           <h1>Amun</h1>
           <div className="about-right-side">
             <div className="about-links-container">
-              <Link href="/index">
+              <Link href="/index.html">
                 <a className="about-link">Home</a>
               </Link>
-              <Link href="/about">
+              <Link href="/about.html">
                 <a className="about-link1">About</a>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact.html">
                 <a className="about-link2">Contact</a>
               </Link>
             </div>
             <div className="about-container1">
-              <Link href="/upload">
+              <Link href="/upload.html">
                 <a className="about-link3">
                   <Component3 className="about-component"></Component3>
                 </a>

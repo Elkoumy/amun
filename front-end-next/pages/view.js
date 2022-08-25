@@ -17,18 +17,18 @@ const Viewlog = (props) => {
           <h1>Amun</h1>
           <div className="viewlog-right-side">
             <div className="viewlog-links-container">
-              <Link href="/index">
+              <Link href="/index.html">
                 <a className="viewlog-link">Home</a>
               </Link>
-              <Link href="/about">
+              <Link href="/about.html">
                 <a className="viewlog-link1">About</a>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact.html">
                 <a className="viewlog-link2">Contact</a>
               </Link>
             </div>
             <div className="viewlog-container1">
-              <Link href="/upload">
+              <Link href="/upload.html">
                 <a className="viewlog-link3">
                   <Component3 className="viewlog-component"></Component3>
                 </a>

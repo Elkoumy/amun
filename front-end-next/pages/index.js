@@ -24,15 +24,15 @@ const Home = (props) => {
             <div className="home-right-side">
               <div className="home-links-container">
                 <span className="home-text">Home</span>
-                <Link href="/about">
+                <Link href="/about.html">
                   <a className="home-link">About</a>
                 </Link>
-                <Link href="/contact">
+                <Link href="/contact.html">
                   <a className="home-link1">Contact</a>
                 </Link>
               </div>
               <div className="home-container1">
-                <Link href="/upload">
+                <Link href="/upload.html">
                   <a className="home-link2">
                     <Component5 className="home-component"></Component5>
                   </a>
@@ -136,7 +136,7 @@ const Home = (props) => {
                 <br></br>
               </span>
               <div className="home-container2">
-                <Link href="/upload">
+                <Link href="/upload.html">
                   <a className="home-link6">
                     <Component4 className="home-component2"></Component4>
                   </a>

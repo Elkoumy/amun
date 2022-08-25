@@ -165,15 +165,15 @@ function onChangeValue(event) {
               <Link href="/">
                 <a className="uploadlog-link">Home</a>
               </Link>
-              <Link href="/about">
+              <Link href="/about.html">
                 <a className="uploadlog-link1">About</a>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact.html">
                 <a className="uploadlog-link2">Contact</a>
               </Link>
             </div>
             <div className="uploadlog-container1">
-              <Link href="/upload">
+              <Link href="/upload.html">
                 <a className="uploadlog-link3">
                   <Component3 className="uploadlog-component"></Component3>
                 </a>

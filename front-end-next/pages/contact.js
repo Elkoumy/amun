@@ -17,18 +17,18 @@ const Contact = (props) => {
           <h1>Amun</h1>
           <div className="contact-right-side">
             <div className="contact-links-container">
-              <Link href="/index">
+              <Link href="/index.html">
                 <a className="contact-link">Home</a>
               </Link>
-              <Link href="/about">
+              <Link href="/about.html">
                 <a className="contact-link1">About</a>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact.html">
                 <a className="contact-link2">Contact</a>
               </Link>
             </div>
             <div className="contact-container1">
-              <Link href="/upload">
+              <Link href="/upload.html">
                 <a className="contact-link3">
                   <Component3 className="contact-component"></Component3>
                 </a>
