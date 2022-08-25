@@ -51,7 +51,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/uploadLog', methods=['GET', 'POST'])
+@app.route('/api/uploadLog', methods=['GET', 'POST'])
 def upload_file():
     print('Calling file upload')
     new_filename=''
@@ -82,7 +82,7 @@ def upload_file():
 
 
 
-@app.route('/uploaded', methods=['GET', 'POST'])
+@app.route('/api/uploaded', methods=['GET', 'POST'])
 def uploaded_file():
     print('calling uploaded')
     filename=request.args['filename']
@@ -152,7 +152,7 @@ def uploaded_file():
 	'''
 
 
-@app.route('/anonymize', methods=['GET', 'POST'])
+@app.route('/api/anonymize', methods=['GET', 'POST'])
 def anonymize():
     print("Starting Anonymization")
     filename = json.loads(request.data.decode('utf-8'))['filename']
@@ -183,7 +183,7 @@ def anonymize():
 
 
 
-@app.route('/output/<path:filename>', methods=['GET', 'POST'])
+@app.route('/api/output/<path:filename>', methods=['GET', 'POST'])
 def download(filename):
     org_file_name = filename.split('.')[0]
     path = os.path.join(os.getcwd(),'..','output',filename)
