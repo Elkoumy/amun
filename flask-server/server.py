@@ -25,6 +25,22 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def index():
     return app.send_static_file('index.html')
 
+@app.route('/index')
+def index_1():
+    return app.send_static_file('index.html')
+
+@app.route('/about')
+def about():
+    return app.send_static_file('about.html')
+
+@app.route('/contact')
+def about():
+    return app.send_static_file('contact.html')
+
+@app.route('/upload')
+def about():
+    return app.send_static_file('upload.html')
+
 
 
 ALLOWED_EXTENSIONS = set(['csv', 'xes'])
