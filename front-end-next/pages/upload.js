@@ -110,6 +110,7 @@ function onChangeValue(event) {
     const config = {
       headers: {
         'content-type': 'application/json',
+        'timeout': 10000
       },
     };
 
