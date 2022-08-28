@@ -77,6 +77,35 @@ def upload_file():
     return 'success'
 
 
+def log_column_naming(log):
+    case_id="case:concept:name"
+    activity_label="case:concept"
+    time="time:timestamp"
+    case_id_synonyms=['CaseID', 'case_id','case:concept:name','caseid','CASEID','caseid','Case ID']
+    activity_synonyms=['activity','Activity','case:concept','ACTIVITY']
+    time_synonyms=['time:timestamp','Timestamp', 'timestamp', 'end_timestamp', 'Complete Timestamp','TIMESTAMP','time','end_time']
+
+    origin_names=list(log.columns)
+
+    for name in list(case_id_synonyms):
+        if name in origin_names:
+            case_id=name
+            break
+
+    for name in list(activity_synonyms):
+        if name in origin_names:
+            activity_label=name
+            break
+
+    for name in list(time_synonyms):
+        if name in origin_names:
+            time=name
+            break
+
+    log=log[[case_id,activity_label, time]]
+    log.columns=['case:concept:name', 'concept:name', 'time:timestamp']
+
+    return log
 
 @app.route('/uploaded', methods=['GET', 'POST'])
 def  uploaded_file():
@@ -91,7 +120,8 @@ def  uploaded_file():
             return '''error_csv'''
 
         try:
-            file = file[['case:concept:name', 'concept:name', 'time:timestamp']]
+            # file = file[['case:concept:name', 'concept:name', 'time:timestamp']]
+            file = log_column_naming(file)
         except KeyError as e:
 
             return '''error_column'''
@@ -117,7 +147,8 @@ def  uploaded_file():
             return '''xes_error'''
 
         try:
-            file = file[['case:concept:name', 'concept:name', 'time:timestamp']]
+            # file = file[['case:concept:name', 'concept:name', 'time:timestamp']]
+            file = log_column_naming(file)
         except KeyError as e:
 
             return '''error_column'''
