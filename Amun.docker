@@ -17,6 +17,13 @@ RUN yarn export -o ../build/
 
 # Build step #2: build an nginx container
 FROM python:3.9
+
+#install java
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk && \
+    apt-get install -y ant && \
+    apt-get clean; \
+
 WORKDIR /app
 COPY --from=build-step /app/build ./build
 
