@@ -62,7 +62,8 @@ function onChangeValue(event) {
     formData.append('file', file);
     formData.append('fileName', file.name);
     formData.append('mode',mode);
-    formdata.append('delta',delta);
+    formData.append('delta',delta);
+
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
