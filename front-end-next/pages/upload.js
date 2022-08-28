@@ -36,9 +36,6 @@ function onChangeValue(event) {
   setmode(event.target.value);
   }
 
-  function inputDelta(event){
-    setdelta(event.target.value);
-  }
   function handleSlider(event) {
     var range = document.getElementById("deltaRange");
       var output = document.getElementById("sliderValue");
@@ -315,6 +312,20 @@ function onChangeValue(event) {
               <span>.</span>
             </span>
 
+            <form onSubmit={handleSubmit}>
+                <div className="uploadlog-btn-group">
+                  <div className="uploadlog-container6">
+                    <div className="uploadlog-container7">
+                       <input type="file" onChange={handleChange } accept=".csv,.xes"/>
+                      <button className={"uploadlog-button2 button"}>Upload</button>
+                       <div id="msg" type="text"  >{errorMessage}</div>
+                    </div>
+                  </div>
+
+                </div>
+            </form>
+
+            <div> <br/>   </div>
             <div>
               Please choose the maximum acceptable risk probability (between 0 and 1).
 
@@ -355,20 +366,7 @@ function onChangeValue(event) {
             {/*</form>*/}
 
 
-            <form onSubmit={handleSubmit}>
-            <div className="uploadlog-btn-group">
-              <div className="uploadlog-container6">
-                <div className="uploadlog-container7">
-                   <input type="file" onChange={handleChange } accept=".csv,.xes"/>
-                  <button className={"uploadlog-button2 button"}>Upload</button>
-                   <div id="msg" type="text"  >{errorMessage}</div>
-                </div>
-              </div>
 
-            </div>
-            </form>
-
-            <div> <br/>   </div>
             <form onSubmit={anonymize}>
               {isLoading ? <LoadingSpinner /> : <button className={anonymizeAppearnce} type='submit'  disabled={anonymizeState}>Anonymize</button>}
 
