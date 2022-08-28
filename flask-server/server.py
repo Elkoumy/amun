@@ -159,13 +159,14 @@ def anonymize():
     print("Starting Anonymization")
     filename = json.loads(request.data.decode('utf-8'))['filename']
     mode=json.loads(request.data.decode('utf-8'))['mode']
+    delta = json.loads(request.data.decode('utf-8'))['delta']
     dataset=os.path.join(os.getcwd(),'..','uploads',filename)
 
     #call amun here
 
     # mode = 'sampling'
     # modes=['oversampling','filtering','sampling']
-    delta = 0.2
+    delta = float(delta)
 
     data,risk_pert_event = amun_service.amun(dataset, mode, delta)
     org_file_name=filename.split('.')[0]

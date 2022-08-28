@@ -24,6 +24,7 @@ const Uploadlog = (props) => {
 
     const [errorMessage,seterrorMessage]= useState('');
     const [mode, setmode] = useState('sampling');
+    const [delta, setdelta] = useState(0.2);
 
 
   function handleChange(event) {
@@ -33,6 +34,16 @@ const Uploadlog = (props) => {
 function onChangeValue(event) {
   setmode(event.target.value);
   }
+
+  function handleSlider(event) {
+    var range = document.getElementById("deltaRange");
+      var output = document.getElementById("sliderValue");
+      output.innerHTML = event.target.value;
+      range.setAttribute('value',event.target.value);
+
+      setdelta(event.target.value);
+}
+
 
   function handleSubmit(event) {
     //validate the uploaded file here
@@ -47,6 +58,8 @@ function onChangeValue(event) {
     formData.append('file', file);
     formData.append('fileName', file.name);
     formData.append('mode',mode);
+    formData.append('delta',delta);
+
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
@@ -120,7 +133,8 @@ function onChangeValue(event) {
     axios.post(url, {
   file: file,
   filename: file.name,
-    mode:mode}, config).then(response =>{
+    mode:mode,
+    delta:delta}, config).then(response =>{
     console.log(response.data);
     if (response.data==='success'){
       setIsLoading(false);
@@ -298,6 +312,17 @@ function onChangeValue(event) {
             </span>
 
             <div>
+              Please choose the maximum acceptable risk probability (between 0 and 1).
+
+
+              <div className="slidecontainer" >
+                <input type="range" min="0.01" max="1" value={delta} step="0.01" className="slider" id="deltaRange" onChange={handleSlider}/>
+                <div id="sliderValue">0.2</div>
+              </div>
+
+            </div>
+
+            <div>
                 Please choose the anonymization mode:
               </div>
             <form className="uploadlog-form">
@@ -379,6 +404,35 @@ function onChangeValue(event) {
       </div>
       <style jsx>
         {`
+                .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
           .uploadlog-container {
             width: 100%;
             display: flex;
