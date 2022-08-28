@@ -290,10 +290,10 @@ function onChangeValue(event) {
             <span className="uploadlog-text06">
               <span>
                 Each user trace in the event log should contain the attributes
-                &apos;case:concept:name&apos;, &apos;concept:name&apos;, and
-                &apos;time:timestamp&apos;. The timestamp should be in the UTC
+                &apos;CasID&apos;, &apos;Activity&apos;, and
+                &apos;Timestamp&apos;. The timestamp should be in the ISO-8601
                 format &apos;%Y-%m-%dT%H:%M:%S.%f&apos;. An example event log
-                could be found
+                can be found
                 <span
                   dangerouslySetInnerHTML={{
                     __html: ' ',
