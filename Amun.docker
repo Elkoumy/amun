@@ -22,7 +22,7 @@ FROM python:3.9
 RUN apt-get update && \
     apt-get install -y openjdk-11-jdk && \
     apt-get install -y ant && \
-    apt-get clean; \
+    apt-get clean;
 
 WORKDIR /app
 COPY --from=build-step /app/build ./build
