@@ -8,6 +8,8 @@ import SolidButton from '../components/solid-button'
 import Component7 from '../components/component7'
 import Component9 from '../components/component9'
 import Component8 from '../components/component8'
+import LoadingSpinner from "../components/LoadingSpinner";
+
 
 const Uploadlog = (props) => {
 
@@ -18,7 +20,7 @@ const Uploadlog = (props) => {
    const[anonymizeAppearnce,setanonymizeAppearnce]=useState();
     const [downloadState,setdownloadState]=useState(true);
     const [downloadAppearance,setdownloadAppearance]=useState();
-
+    const [isLoading, setIsLoading] = useState(false);
 
     const [errorMessage,seterrorMessage]= useState('');
     const [mode, setmode] = useState('sampling');
@@ -112,13 +114,16 @@ function onChangeValue(event) {
         'content-type': 'application/json',
       },
     };
-
+    setIsLoading(true);
+    setanonymizeState(true);
     axios.post(url, {
   file: file,
   filename: file.name,
     mode:mode}, config).then(response =>{
     console.log(response.data);
     if (response.data==='success'){
+      setIsLoading(false);
+      setanonymizeState(false);
       setdownloadState(false);
       setdownloadAppearance('uploadlog-button2 button')
     }
@@ -332,7 +337,8 @@ function onChangeValue(event) {
 
             <div> <br/>   </div>
             <form onSubmit={anonymize}>
-               <button className={anonymizeAppearnce} type='submit'  disabled={anonymizeState}>Anonymize</button>
+              {isLoading ? <LoadingSpinner /> : <button className={anonymizeAppearnce} type='submit'  disabled={anonymizeState}>Anonymize</button>}
+
             </form>
 
             <div> <br/>   </div>

@@ -1,0 +1,53 @@
+import React from 'react'
+
+import PropTypes from 'prop-types'
+
+const FeatureCard = (props) => {
+  return (
+    <>
+       <div className="spinner-container">
+      <div className="loading-spinner">
+      </div>
+    </div>
+      <style jsx>
+        {`
+                      @keyframes spinner {
+              0% {
+                transform: rotate(0deg);
+              }
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+            .loading-spinner {
+              width: 50px;
+              height: 50px;
+              border: 10px solid #f3f3f3; /* Light grey */
+              border-top: 10px solid #383636; /* Blue */
+              border-radius: 50%;
+              animation: spinner 1.5s linear infinite;
+            }
+            
+            .spinner-container {
+              display: grid;
+              justify-content: center;
+              align-items: center;
+              height: 350px;
+            }
+        `}
+      </style>
+    </>
+  )
+}
+
+FeatureCard.defaultProps = {
+  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lorem lorem, malesuada in metus vitae, scelerisque accumsan ipsum.',
+  heading: 'Risk Quantification',
+}
+
+FeatureCard.propTypes = {
+  text: PropTypes.string,
+  heading: PropTypes.string,
+}
+
+export default FeatureCard
