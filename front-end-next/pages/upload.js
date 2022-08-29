@@ -62,10 +62,10 @@ function onChangeValue(event) {
 
     const config = {
       headers: {
-        'content-type': 'multipart/form-data',
+        'content-type': 'multipart/form-data'},
         maxContentLength: Infinity,
         maxBodyLength: Infinity
-      },
+
     };
     axios.post(url, formData, config).then((response) => {
 
