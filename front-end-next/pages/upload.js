@@ -63,8 +63,7 @@ function onChangeValue(event) {
     const config = {
       headers: {
         'content-type': 'multipart/form-data'},
-        maxContentLength: Infinity,
-        maxBodyLength: Infinity
+        maxRedirects: 0
 
     };
     axios.post(url, formData, config).then((response) => {
