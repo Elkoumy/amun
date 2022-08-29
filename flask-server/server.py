@@ -203,7 +203,7 @@ def anonymize():
     if  filename.split('.')[-1]== 'csv':
         data.columns = ['caseid', 'activity', 'end_time', 'lifecycle_transition']
         data.end_time = data.end_time.astype('datetime64[ms]')
-    data.to_csv(os.path.join(os.getcwd(),'..','output','anonymized_'+filename),index=False,encoding='utf-8',sep=',')
+        data.to_csv(os.path.join(os.getcwd(),'..','output','anonymized_'+filename),index=False,encoding='utf-8',sep=',')
         risk_pert_event.to_csv(os.path.join(os.getcwd(),'..','output',org_file_name+'_risk.csv'),index=False,encoding='utf-8',sep=',')
 
     else:
