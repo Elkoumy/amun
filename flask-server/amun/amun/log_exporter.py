@@ -154,7 +154,11 @@ def relative_time_to_timestamp(data):
     #overflow fix
     original_range=original_range.total_seconds() / (24 * 60 * 60)
     anonymized_range = anonymized_range.total_seconds() / (24 * 60 * 60)
-    compression_factor = 0.5 * original_range / (anonymized_range + original_range)
+    if original_range>0:
+        compression_factor = 0.5 * original_range / (anonymized_range + original_range)
+    else:
+        compression_factor=1
+    # compression_factor = 0.5 * original_range / (anonymized_range + original_range)
 
     data['cumm_noise_timedelta'] = data['cumm_noise_timedelta'] * compression_factor
     data['time:timestamp'] = data['time:timestamp'] + data['cumm_noise_timedelta']
