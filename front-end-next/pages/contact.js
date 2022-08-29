@@ -126,7 +126,7 @@ const Contact = (props) => {
         </div>
         <footer className="contact-footer">
           <span className="contact-text11">
-            © 2022 University of Tartu, All Rights Reserved.
+            © 2022 University of Tartu, All Rights Reserved. This work is funded by the European Research Council (PIX Project).
           </span>
         </footer>
       </div>
