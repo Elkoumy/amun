@@ -82,7 +82,7 @@ def log_column_naming(log):
     activity_label="case:concept"
     time="time:timestamp"
     case_id_synonyms=['CaseID', 'case_id','case:concept:name','caseid','CASEID','caseid','Case ID']
-    activity_synonyms=['activity','Activity','case:concept','ACTIVITY']
+    activity_synonyms=['concept:name','activity','Activity','case:concept','ACTIVITY']
     time_synonyms=['time:timestamp','Timestamp', 'timestamp', 'end_timestamp', 'Complete Timestamp','TIMESTAMP','time','end_time']
 
     origin_names=list(log.columns)
