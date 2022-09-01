@@ -48,7 +48,7 @@ function onChangeValue(event) {
   function handleSubmit(event) {
     //validate the uploaded file here
     const fileSize = file.size / 1024 / 1024; // in MiB
-    if (fileSize > 25) {
+    if (fileSize > 5) {
       alert('File size exceeds 5 MiB');
       // $(file).val(''); //for clearing with Jquery
     } else {
