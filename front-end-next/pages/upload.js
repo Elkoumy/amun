@@ -126,7 +126,7 @@ function onChangeValue(event) {
     const config = {
       headers: {
         'content-type': 'application/json',
-        'timeout': 10000
+        'timeout': 1000*60*10 // 10 minutes
       },
     };
     setIsLoading(true);
