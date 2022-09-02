@@ -105,7 +105,11 @@ function onChangeValue(event) {
       }
 
 
-    });
+    }).catch(error =>{
+      // console.log("error occured");
+      alert(`An error occured while uploading the file. Failed due to status code ${error}`);
+       // alert(error);   // Using this line
+      }) ;
 
     }
 
@@ -143,7 +147,11 @@ function onChangeValue(event) {
       setdownloadState(false);
       setdownloadAppearance('uploadlog-button2 button')
     }
-    });
+    }).catch(error =>{
+      // console.log("error occured");
+      alert(`Restart the server and increase the memory size. Failed due to status code ${error}`);
+       // alert(error);   // Using this line
+      }) ;
 
   }
 
