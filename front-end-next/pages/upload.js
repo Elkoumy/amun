@@ -114,6 +114,7 @@ function onChangeValue(event) {
 
   function anonymize(event) {
 
+    try{
   //  call anonymization function here
     // take the file and pass it to amun
   console.log("Calling anonymize")
@@ -131,7 +132,7 @@ function onChangeValue(event) {
     };
     setIsLoading(true);
     setanonymizeState(true);
-    try{
+
     axios.post(url, {
   file: file,
   filename: file.name,
@@ -143,11 +144,16 @@ function onChangeValue(event) {
       setanonymizeState(false);
       setdownloadState(false);
       setdownloadAppearance('uploadlog-button2 button')
+
+    }else{
+      alert('Restart the server and increase the memory size.');
     }
     });
+
+
     }catch(error){
-         Alert.alert(`Restart the server and increase the memory size. Failed due to status code ${response.status}`)
-       Alert.alert(error);   // Using this line
+         alert('Restart the server and increase the memory size. Failed due to status code ${response.status}');
+       alert(error);   // Using this line
 
    }
 
