@@ -49,23 +49,23 @@ function onChangeValue(event) {
   function handleSubmit(event) {
     //validate the uploaded file here
     const fileSize = file.size / 1024 / 1024; // in MiB
-    if (fileSize > 5) {
-      alert('File size exceeds 5 MiB');
-      // $(file).val(''); //for clearing with Jquery
-    } else {
-         event.preventDefault()
+    // if (fileSize > 5) {
+    //   alert('File size exceeds 5 MiB');
+    //   // $(file).val(''); //for clearing with Jquery
+    // } else {
+    event.preventDefault()
     const url = 'http://localhost:3000/uploadLog';
     const formData = new FormData();
     formData.append('file', file);
     formData.append('fileName', file.name);
-    formData.append('mode',mode);
-    formData.append('delta',delta);
+    formData.append('mode', mode);
+    formData.append('delta', delta);
 
     const config = {
       headers: {
         'content-type': 'multipart/form-data',
         maxContentLength: Infinity,
-maxBodyLength: Infinity
+        maxBodyLength: Infinity
       },
     };
     axios.post(url, formData, config).then((response) => {
@@ -73,43 +73,41 @@ maxBodyLength: Infinity
       // console.log(response.data);
       // print the validation here
       // if it is not valide keep setanonymizeState(true);
-      if (response.data=== 'error_csv'){
+      if (response.data === 'error_csv') {
         seterrorMessage("Please make sure the file is a CSV.");
         setanonymizeState(true);
         setanonymizeAppearnce('');
 
-      }else if (response.data==='error_timestamp'){
+      } else if (response.data === 'error_timestamp') {
         seterrorMessage("Incorrect Timestamp.");
-      setanonymizeState(true);
-      setanonymizeAppearnce('');
-      }else if (response.data==='error_column'){
-         seterrorMessage("Please make sure that the file has the column names: 'case:concept:name', 'concept:name', 'time:timestamp'");
-      setanonymizeState(true);
-      setanonymizeAppearnce('');
-      }else if (response.data==='error_null'){
+        setanonymizeState(true);
+        setanonymizeAppearnce('');
+      } else if (response.data === 'error_column') {
+        seterrorMessage("Please make sure that the file has the column names: 'case:concept:name', 'concept:name', 'time:timestamp'");
+        setanonymizeState(true);
+        setanonymizeAppearnce('');
+      } else if (response.data === 'error_null') {
         seterrorMessage("Please make sure that the file does not have null values.");
-      setanonymizeState(true);
-      setanonymizeAppearnce('');
-      }else if (response.data==='error'){
+        setanonymizeState(true);
+        setanonymizeAppearnce('');
+      } else if (response.data === 'error') {
         seterrorMessage("Please make sure that the file is in a correct CSV or XES format.");
-      setanonymizeState(true);
-      setanonymizeAppearnce('');
-      }else if (response.data==='xes_error'){
+        setanonymizeState(true);
+        setanonymizeAppearnce('');
+      } else if (response.data === 'xes_error') {
         seterrorMessage("Please make sure that the XES file is in the correct format");
-      setanonymizeState(true);
-      setanonymizeAppearnce('');
-      }
-
-      else{
+        setanonymizeState(true);
+        setanonymizeAppearnce('');
+      } else {
         seterrorMessage('');
-      setanonymizeState(false);
-      setanonymizeAppearnce('uploadlog-button2 button');
+        setanonymizeState(false);
+        setanonymizeAppearnce('uploadlog-button2 button');
       }
 
 
     });
+  // }
 
-    }
 
   }
 
