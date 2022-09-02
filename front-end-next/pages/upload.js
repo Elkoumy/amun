@@ -23,6 +23,8 @@ const Uploadlog = (props) => {
     const [downloadAppearance,setdownloadAppearance]=useState();
     const [isLoading, setIsLoading] = useState(false);
 
+    const [uploadState, setuploadState] = useState(false);
+
     const [errorMessage,seterrorMessage]= useState('');
     const [mode, setmode] = useState('sampling');
     const [delta, setdelta] = useState(0.2);
@@ -53,6 +55,9 @@ function onChangeValue(event) {
     //   alert('File size exceeds 5 MiB');
     //   // $(file).val(''); //for clearing with Jquery
     // } else {
+
+    setuploadState(true);
+
     event.preventDefault()
     const url = 'http://localhost:3000/uploadLog';
     const formData = new FormData();
@@ -104,10 +109,12 @@ function onChangeValue(event) {
         setanonymizeAppearnce('uploadlog-button2 button');
       }
 
+      setuploadState(false);
 
     }).catch(error =>{
       // console.log("error occured");
       alert(`An error happened while uploading the file. Failed due to status code ${error}`);
+      setuploadState(false);
        // alert(error);   // Using this line
       });
   // }
@@ -335,7 +342,7 @@ function onChangeValue(event) {
                   <div className="uploadlog-container6">
                     <div className="uploadlog-container7">
                        <input type="file" onChange={handleChange } accept=".csv,.xes"/>
-                      <button className={"uploadlog-button2 button"}>Upload</button>
+                      <button className={"uploadlog-button2 button"} disabled={uploadState}>Upload</button>
                        <div id="msg" type="text"  >{errorMessage}</div>
                     </div>
                   </div>
