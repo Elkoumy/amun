@@ -138,8 +138,9 @@ function onChangeValue(event) {
   filename: file.name,
     mode:mode,
     delta:delta}, config).then(response =>{
-    console.log(response.data);
+
     if (response.data==='success'){
+      console.log(response.data);
       setIsLoading(false);
       setanonymizeState(false);
       setdownloadState(false);
@@ -148,7 +149,13 @@ function onChangeValue(event) {
     }else{
       alert('Restart the server and increase the memory size.');
     }
-    });
+    }
+
+    ).catch(error =>{
+      console.log("error occured");
+      alert('Restart the server and increase the memory size. Failed due to status code ${response.status}');
+       alert(error);   // Using this line
+      }) ;
 
 
     }catch(error){
