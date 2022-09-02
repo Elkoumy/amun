@@ -127,6 +127,7 @@ function onChangeValue(event) {
       headers: {
         'content-type': 'application/json',
       },
+      timeout:1000 *60 * 60 * 1 //1 HOUR
     };
     setIsLoading(true);
     setanonymizeState(true);
@@ -142,7 +143,12 @@ function onChangeValue(event) {
       setdownloadState(false);
       setdownloadAppearance('uploadlog-button2 button')
     }
-    });
+    }).catch(err => {
+    console.log(err);
+
+    // In case of an error, let the client know as well.
+    res.status(500).send(err);
+  });
 
 
   }
