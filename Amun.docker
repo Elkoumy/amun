@@ -38,4 +38,4 @@ WORKDIR /app/flask-server
 ENV FLASK_ENV production
 
 EXPOSE 3000
-CMD ["gunicorn", "-b", ":3000", "server:app"]
+CMD ["gunicorn", "-b", ":3000", "server:app", "-t","3000"]
