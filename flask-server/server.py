@@ -14,12 +14,16 @@ from amun import amun_service
 
 from flask import send_file
 
+import logging
+
 
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]iasdfffsd/'
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+log = logging.getLogger('werkzeug')
+log.disabled = True
 
 @app.route('/')
 def index():
