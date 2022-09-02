@@ -131,6 +131,7 @@ function onChangeValue(event) {
     };
     setIsLoading(true);
     setanonymizeState(true);
+    try{
     axios.post(url, {
   file: file,
   filename: file.name,
@@ -143,12 +144,12 @@ function onChangeValue(event) {
       setdownloadState(false);
       setdownloadAppearance('uploadlog-button2 button')
     }
-    }).catch( // In case of an error, let the client know as well.
-   function(error) {
-     Alert.alert(`Restart the server and increase the memory size. Failed due to status code ${response.status}`)
+    });
+    }catch(error){
+         Alert.alert(`Restart the server and increase the memory size. Failed due to status code ${response.status}`)
        Alert.alert(error);   // Using this line
 
-   });
+   }
 
 
   }
