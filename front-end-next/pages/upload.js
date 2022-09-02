@@ -105,7 +105,11 @@ function onChangeValue(event) {
       }
 
 
-    });
+    }).catch(error =>{
+      // console.log("error occured");
+      alert(`An error happened while uploading the file. Failed due to status code ${error}`);
+       // alert(error);   // Using this line
+      });
   // }
 
 
@@ -114,7 +118,7 @@ function onChangeValue(event) {
 
   function anonymize(event) {
 
-    try{
+
   //  call anonymization function here
     // take the file and pass it to amun
   console.log("Calling anonymize")
@@ -146,23 +150,17 @@ function onChangeValue(event) {
       setdownloadState(false);
       setdownloadAppearance('uploadlog-button2 button')
 
-    }else{
-      alert('Restart the server and increase the memory size.');
     }
     }
 
     ).catch(error =>{
-      console.log("error occured");
-      alert('Restart the server and increase the memory size. Failed due to status code ${response.status}');
-       alert(error);   // Using this line
+      // console.log("error occured");
+      alert(`Restart the server and increase the memory size. Failed due to status code ${error}`);
+       // alert(error);   // Using this line
       }) ;
 
 
-    }catch(error){
-         alert('Restart the server and increase the memory size. Failed due to status code ${response.status}');
-       alert(error);   // Using this line
 
-   }
 
 
   }
