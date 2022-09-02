@@ -21,11 +21,13 @@ pip install -r requirements.txt
 The code was tested with ```python 3.8.5```.
 
 ### Example Usage
-To anonymize an event log, place the XES file in the directory ```input_logs```. Then you can run the command
+Amun is available as a python package and a docker image. To anonymize an event log, place the XES file in the directory ```input_logs```. Then you can run the command
 ```
 python Amun.py Sepsis sampling 0.2
 ```
 Amun assumes that the event log has only the three columns: ```case:concept:name```, ```concept:name```, and ```time:timestamp``` in your XES file.
+
+The docker image and the installation steps are presented at the branch [amun-flask-app](https://github.com/Elkoumy/amun/tree/amun-flask-app).
 
 ### Reproduce Emperical Evaluation
 An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
