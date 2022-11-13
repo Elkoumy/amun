@@ -51,7 +51,7 @@ if __name__ == "__main__":
                 "BPIC20_t",
                 "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-    datasets = ["BPIC12_t"]
+    # datasets = ["BPIC12_t"]
 
     # datasets = ["CCC19_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
@@ -71,14 +71,14 @@ if __name__ == "__main__":
     for dataset in datasets:
         org_path=os.path.join(dir_path,"data",dataset+".xes")
         files=list(os.walk(amun_dir))[0][2]
-        for log in files:
-            if log.find(dataset)!=-1:
-                """Amun"""
-                anonymized_dir=os.path.join(amun_dir,log)
-                generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
-                # generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
-                # compare_emd(org_path,anonymized_dir,comparison_dir)
-                # compare_jaccard(org_path, anonymized_dir, comparison_dir)
+        # for log in files:
+        #     if log.find(dataset)!=-1:
+        #         """Amun"""
+        #         anonymized_dir=os.path.join(amun_dir,log)
+        #         generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
+        #         # generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "amun", log)
+        #         # compare_emd(org_path,anonymized_dir,comparison_dir)
+        #         # compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
         # """Pripel"""
         # files = list(os.walk(pripel_trace_dir))[0][2]
@@ -90,14 +90,14 @@ if __name__ == "__main__":
         #         generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "pripel", log)
         #         # compare_jaccard(org_path, anonymized_dir, comparison_dir)
 
-        # """SaCoFa"""
-        # files = list(os.walk(sacofa_dir))[0][2]
-        # for log in files:
-        #     if log.find(dataset)!=-1:
-        #         anonymized_dir = os.path.join(sacofa_dir, log)
-        #         generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "sacofa", log)
-        #         generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "sacofa", log)
-        #         # compare_emd(org_path, anonymized_dir, comparison_dir)
+        """SaCoFa"""
+        files = list(os.walk(sacofa_dir))[0][2]
+        for log in files:
+            if log.find(dataset)!=-1:
+                anonymized_dir = os.path.join(sacofa_dir, log)
+                # generate_jobs("jaccard", org_path, anonymized_dir, comparison_dir, dataset, "sacofa", log)
+                generate_jobs("emd", org_path, anonymized_dir, comparison_dir, dataset, "sacofa", log)
+                # compare_emd(org_path, anonymized_dir, comparison_dir)
 
         # """Libra"""
         # files = list(os.walk(libra_dir))[0][2]
