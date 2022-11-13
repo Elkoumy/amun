@@ -2,7 +2,7 @@
 Amun is a framework that leverage recently developed Privacy-Enhancing Technologies (PETs) to help 
 organizations publish anonymized process models. The main contributions of the project are listed below.
 
-- Amun proposes a framework to anonymize event logs to the extent that no individual can be singled out using the anonymized log. It anonymizes event logs in order to guarantee that, upon the disclosure of the anonymized log, the probability that an attacker may single out any individual represented in the original log, does not increase by more than a threshold. Amun proposes a differentially private disclosure mechanism, which oversamples the cases in the log and adds noise to the timestamps to the extent required to achieve the above privacy guarantee. An emperical evaluation of Amun using 14 real-world event logs could be found in our recent [paper](https://ieeexplore.ieee.org/document/9576852).
+- Amun proposes a framework to anonymize event logs to the extent that no individual can be singled out using the anonymized log. It anonymizes event logs in order to guarantee that, upon the disclosure of the anonymized log, the probability that an attacker may single out any individual represented in the original log, does not increase by more than a threshold. Amun proposes a differentially private disclosure mechanism, which oversamples the cases in the log and adds noise to the timestamps to the extent required to achieve the above privacy guarantee. An emperical evaluation of Amun using 14 real-world event logs can be found in our recent [paper](https://ieeexplore.ieee.org/document/9576852). Also, Amun supports other anonymization approaches such as sampling and filtering, which are presented in the [journal extension paper](https://arxiv.org/pdf/2201.03010.pdf).
 - Amun uses a mathematically proven privacy model to 
   balance the risk correlated with publishing process models and the utility after anonymization.
   It uses an ε-differential-privacy mechanism to anonymize Directly-Follows Graphs (DFGs).
@@ -10,6 +10,35 @@ organizations publish anonymized process models. The main contributions of the p
   injected a process mining model that optimizes the risk and utility measures. 
   Amun keeps all the traces and all the activities of a DFG. 
   An emperical evaluation of Amun using 13 real-world event logs could be found in our recent [paper](https://arxiv.org/pdf/2012.01119.pdf).
+
+
+
+### Availability 
+Amun is available as a python package and a docker image. To anonymize an event log, place the XES file in the directory ```input_logs```. Then you can run the command
+```
+python Amun.py Sepsis sampling 0.2
+```
+Amun assumes that the event log has only the three columns: ```case:concept:name```, ```concept:name```, and ```time:timestamp``` in your XES file.
+
+## Docker Image
+The docker image and the installation steps are presented at the branch [amun-flask-app](https://github.com/Elkoumy/amun/tree/amun-flask-app).
+
+
+### Prerequisite
+The main dependencies are: [pm4py](https://pm4py.fit.fraunhofer.de/), [diffprivlib](https://github.com/IBM/differential-privacy-library), [multiprocessing](https://pypi.org/project/multiprocess/) and [statistics](https://pypi.org/project/statistics/)
+You can install all the requirements with:
+```
+pip install -r requirements.txt
+```
+The code was tested with ```python 3.8.5```.
+
+### Reproduce Emperical Evaluation
+An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
+To perform the execution time experiment, you can use the file ```run_example_execution_time.py```. 
+An implementation of Amun with a single thread could be found in the branch ```amun-model```.
+
+To reproduce the emperical evaluation of Amun to anonymize event logs you can use the file ```run_event_log_anonymizer.py```.
+
 ### Cite the Project
 
 ```
@@ -63,27 +92,3 @@ organizations publish anonymized process models. The main contributions of the p
 }
 
 ```
-
-### Prerequisite
-The main dependencies are: [pm4py](https://pm4py.fit.fraunhofer.de/), [diffprivlib](https://github.com/IBM/differential-privacy-library), [multiprocessing](https://pypi.org/project/multiprocess/) and [statistics](https://pypi.org/project/statistics/)
-You can install all the requirements with:
-```
-pip install -r requirements.txt
-```
-The code was tested with ```python 3.8.5```.
-
-### Example Usage
-To anonymize an event log, place the XES file in the directory ```input_logs```. Then you can run the command
-```
-python Amun.py Sepsis sampling 0.2
-```
-Amun assumes that the event log has only the three columns: ```case:concept:name```, ```concept:name```, and ```time:timestamp``` in your XES file.
-
-### Reproduce Emperical Evaluation
-An example of the usage of Amun to anonymize DFGs can be found in the file ```run_example.py```.
-To perform the execution time experiment, you can use the file ```run_example_execution_time.py```. 
-An implementation of Amun with a single thread could be found in the branch ```amun-model```.
-
-To reproduce the emperical evaluation of Amun to anonymize event logs you can use the file ```run_event_log_anonymizer.py```.
-
-
