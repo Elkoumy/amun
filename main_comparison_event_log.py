@@ -66,7 +66,7 @@ if __name__ == "__main__":
     pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel")
     pripel_time_dir = os.path.join(dir_path, "anonymized_logs", "pripel")
     libra_dir=os.path.join(dir_path, "anonymized_logs", "libra")
-    sacofa_dir=os.path.join(dir_path, "anonymized_logs", "sacofa")
+    sacofa_dir=os.path.join(dir_path, "anonymized_logs", "SaCoFa")
 
     for dataset in datasets:
         org_path=os.path.join(dir_path,"data",dataset+".xes")
