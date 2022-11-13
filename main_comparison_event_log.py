@@ -47,11 +47,11 @@ def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,a
     subprocess.Popen(("sbatch %s" % job_name).split())
 
 if __name__ == "__main__":
-    datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
-                "BPIC20_t",
-                "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
+    # datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
+    #             "BPIC20_t",
+    #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-    # datasets = ["BPIC12_t"]
+    datasets = ["CCC19_t", "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t"]
 
     # datasets = ["CCC19_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
