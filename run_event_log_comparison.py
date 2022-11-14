@@ -46,12 +46,16 @@ def compare_jaccard(original_dir,anonymized_dir,comparison_dir):
     res.to_csv(os.path.join(comparison_dir,"jaccard",file_name+".comp"),index=False)
 
 if __name__ == "__main__":
+
     # datasets = [ "Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
     #             "BPIC20_t",
     #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
-    datasets = [  "Sepsis_t"]
-    # datasets=["Unrineweginfectie_t"]
+    # datasets = [  "Sepsis_t"]
+    datasets=["Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
+                "BPIC20_t",
+                "BPIC12_t", "BPIC13_t", "BPIC15_t"]
+
     dir_path = os.path.dirname(os.path.realpath(__file__))
     comparison_dir = os.path.join(dir_path, "comparison")
     amun_dir=os.path.join(dir_path,"anonymized_logs","amun")
@@ -78,16 +82,16 @@ if __name__ == "__main__":
         #         anonymized_dir = os.path.join(pripel_trace_dir, log)
         #         compare_jaccard(org_path, anonymized_dir, comparison_dir)
         #
-        # files = list(os.walk(pripel_time_dir))[0][2]
-        # for log in files:
-        #     if log.find(dataset)!=-1:
-        #         anonymized_dir = os.path.join(pripel_time_dir, log)
-        #         compare_emd(org_path, anonymized_dir, comparison_dir)
-
-        files = list(os.walk(SaCoFa_trace_dir))[0][2]
+        files = list(os.walk(pripel_time_dir))[0][2]
         for log in files:
-            if log.find(dataset) != -1:
-                anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
-                # compare_jaccard(org_path, anonymized_dir, comparison_dir)
+            if log.find(dataset)!=-1:
+                anonymized_dir = os.path.join(pripel_time_dir, log)
                 compare_emd(org_path, anonymized_dir, comparison_dir)
+
+        # files = list(os.walk(SaCoFa_trace_dir))[0][2]
+        # for log in files:
+        #     if log.find(dataset) != -1:
+        #         anonymized_dir = os.path.join(SaCoFa_trace_dir, log)
+        #         # compare_jaccard(org_path, anonymized_dir, comparison_dir)
+        #         compare_emd(org_path, anonymized_dir, comparison_dir)
 
