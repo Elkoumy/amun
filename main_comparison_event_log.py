@@ -63,8 +63,8 @@ if __name__ == "__main__":
     # amun_dir=os.path.join(dir_path,"anonymized_logs","amun_sub")
     # pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel","trace_variant")
     # pripel_time_dir = os.path.join(dir_path, "anonymized_logs", "pripel","time")
-    pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel")
-    pripel_time_dir = os.path.join(dir_path, "anonymized_logs", "pripel")
+    # pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel")
+    pripel_trace_dir = os.path.join(dir_path, "anonymized_logs", "pripel","time")
     libra_dir=os.path.join(dir_path, "anonymized_logs", "libra")
     sacofa_dir=os.path.join(dir_path, "anonymized_logs", "SaCoFa")
 
