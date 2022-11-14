@@ -52,9 +52,7 @@ if __name__ == "__main__":
     #             "BPIC12_t", "BPIC13_t", "BPIC15_t", "BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
     # datasets = [  "Sepsis_t"]
-    datasets=["Sepsis_t", "Unrineweginfectie_t", "BPIC14_t", "Traffic_t", "Hospital_t", "CreditReq_t",
-                "BPIC20_t",
-                "BPIC12_t", "BPIC13_t", "BPIC15_t"]
+    datasets=["BPIC17_t", "BPIC18_t", "BPIC19_t"]
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
     comparison_dir = os.path.join(dir_path, "comparison")
