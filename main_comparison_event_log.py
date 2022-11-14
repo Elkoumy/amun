@@ -15,7 +15,7 @@ def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,a
         if dataset in ["Traffic_t"]:
             memory = 32
     elif dataset in ["Hospital_t","BPIC14_t", "BPIC19_t", "BPIC18_t"]:
-        exec_time = "24:00:00"  # 1 day
+        exec_time = "20:00:00"  # 1 day
         if engine=="amun" and mode=="emd" and dataset in ["BPIC14_t","BPIC19_t", "BPIC18_t"]:
             memory=32
 
@@ -27,7 +27,7 @@ def generate_jobs(mode,org_path, anonymized_dir, comparison_dir,dataset,engine,a
         fout.write("#SBATCH --mem=%sGB\n" % memory)
         fout.write("#SBATCH --ntasks=1\n")  ## Run on a single CPU
         # fout.write("#SBATCH --cpus-per-task=12\n")  # 8 cores per cpu
-        fout.write("#SBATCH --partition=main\n")
+        fout.write("#SBATCH --partition=amd\n")
         fout.write("#SBATCH --time=%s\n" % (exec_time))
         # fout.write("module load python-3.7.1\n")
         fout.write("module load python/3.8.6\n")
