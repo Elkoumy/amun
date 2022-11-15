@@ -54,14 +54,14 @@ def preprocess_emd(row):
 
     return row
 
-data=pd.read_csv(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\jaccard.csv")
-data=data.apply(preprocess_jaccard,axis=1)
-data=data.drop('file',axis=1)
-data.to_csv(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\final_result_jaccard_parsed.csv",index=False)
+# data=pd.read_csv(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\jaccard.csv")
+# data=data.apply(preprocess_jaccard,axis=1)
+# data=data.drop('file',axis=1)
+# data.to_csv(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\final_result_jaccard_parsed.csv",index=False)
 
-data=pd.read_csv(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\emd.csv")
+data=pd.read_csv(r"C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\emd_all_pripel.csv")
 data=data.apply(preprocess_emd,axis=1)
 data=data.drop('file',axis=1)
-data.to_csv(r"C:\Gamal Elkoumy\PhD\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\final_result_emd_parsed.csv",index=False)
+data.to_csv(r"C:\Users\elkoumy\OneDrive - Tartu Ülikool\Differential Privacy\amun\comparison\emd_all_pripel_parsed.csv",index=False)
 
 print("**")
