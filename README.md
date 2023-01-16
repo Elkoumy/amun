@@ -41,6 +41,38 @@ To reproduce the emperical evaluation of Amun to anonymize event logs you can us
 
 ### Cite the Project
 
+#### Our Information Systems paper:
+```
+@article{ELKOUMY2022102161,
+title = {Differentially private release of event logs for process mining},
+journal = {Information Systems},
+pages = {102161},
+year = {2022},
+issn = {0306-4379},
+doi = {https://doi.org/10.1016/j.is.2022.102161},
+url = {https://www.sciencedirect.com/science/article/pii/S0306437922001399},
+author = {Gamal Elkoumy and Alisa Pankova and Marlon Dumas},
+}
+```
+
+#### Our ICPM22 Demo paper:
+```
+@inproceedings{DBLP:conf/icpm/ElkoumyPD22,
+  author    = {Gamal Elkoumy and
+               Alisa Pankova and
+               Marlon Dumas},
+  title     = {Amun: {A} tool for Differentially Private Release of Event Logs for
+               Process Mining (Extended Abstract)},
+  booktitle = {{ICPM} Doctoral Consortium / Demo},
+  series    = {{CEUR} Workshop Proceedings},
+  volume    = {3299},
+  pages     = {56--60},
+  publisher = {CEUR-WS.org},
+  year      = {2022}
+}
+```
+
+#### Our ICPM21 paper:
 ```
 @inproceedings{DBLP:conf/icpm/ElkoumyPD21,
   author    = {Gamal Elkoumy and
@@ -64,15 +96,8 @@ To reproduce the emperical evaluation of Amun to anonymize event logs you can us
 }
   
 ```
-```
-@article{elkoumy2022differentially,
-  title={Differentially Private Release of Event Logs for Process Mining},
-  author={Elkoumy, Gamal and Pankova, Alisa and Dumas, Marlon},
-  journal={arXiv preprint arXiv:2201.03010},
-  year={2022}
-}
-```
 
+#### Undersubmission preprint:
 ```
 @article{DBLP:journals/corr/abs-2012-01119,
   author    = {Gamal Elkoumy and
